@@ -1,2 +1,2 @@
-export * from './lib/suku-heading.component';
-export * from './lib/suku-heading.module';
+export * from './lib/suku-web-components.component';
+export * from './lib/suku-web-components.module';

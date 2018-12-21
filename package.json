@@ -1,19 +1,22 @@
 {
-  "name": "suku-heading",
+  "name": "suku-web-components",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^7.0.0",
-    "@angular/core": "^7.0.0"
+    "@angular/core": "^7.0.0",
+    "@angular/material": "^7.0.4",
+    "@angular/forms": "^7.0.4",
+    "@angular/platform-browser": "*"
   },
-  "main": "bundles/suku-heading.umd.js",
-  "module": "fesm5/suku-heading.js",
-  "es2015": "fesm2015/suku-heading.js",
-  "esm5": "esm5/suku-heading.js",
-  "esm2015": "esm2015/suku-heading.js",
-  "fesm5": "fesm5/suku-heading.js",
-  "fesm2015": "fesm2015/suku-heading.js",
-  "typings": "suku-heading.d.ts",
-  "metadata": "suku-heading.metadata.json",
+  "main": "bundles/suku-web-components.umd.js",
+  "module": "fesm5/suku-web-components.js",
+  "es2015": "fesm2015/suku-web-components.js",
+  "esm5": "esm5/suku-web-components.js",
+  "esm2015": "esm2015/suku-web-components.js",
+  "fesm5": "fesm5/suku-web-components.js",
+  "fesm2015": "fesm2015/suku-web-components.js",
+  "typings": "suku-web-components.d.ts",
+  "metadata": "suku-web-components.metadata.json",
   "sideEffects": false,
   "dependencies": {
     "tslib": "^1.9.0"
