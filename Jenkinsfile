@@ -29,7 +29,7 @@ pipeline {
         stage("static code analysis"){
             steps {
                 withSonarQubeEnv('sonarqube') {
-                    sh '/opt/sonar/bin/sonar-scanner -Dsonar.projectKey=suku-webcomponents-library -Dsonar.sources=./'
+                    sh '/opt/sonar/bin/sonar-scanner -Dsonar.projectKey=suku-webcomponents-library -Dsonar.sources=.*'
                 }
             }
         }        
