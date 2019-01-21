@@ -1,5 +1,5 @@
-import { OnChanges } from '@angular/core';
-export declare class SukuTreeComponent implements OnChanges {
+import { OnInit } from '@angular/core';
+export declare class SukuTreeComponent implements OnInit {
     treeDataFromApi: any;
     tree: any;
     root: any;
@@ -19,4 +19,6 @@ export declare class SukuTreeComponent implements OnChanges {
     ngOnChanges(): void;
     constructTree(): void;
     drawTree(): void;
+    constructor();
+    ngOnInit(): void;
 }
