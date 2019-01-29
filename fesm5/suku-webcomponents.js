@@ -242,8 +242,8 @@ var SukuNotificationWidgetComponent = /** @class */ (function () {
     SukuNotificationWidgetComponent.decorators = [
         { type: Component, args: [{
                     selector: 'suku-notification-widget',
-                    template: "<div [class]=\"customclass\">\n  <div class=\"col box pointer text-center\">\n    <div class=\"pt-3 pb-2\">\n      <strong>\n        <a class=\"box-title\" id=\"{{id}}\">\n          {{notificationTitle || 'review bids' }}\n        </a>\n      </strong>\n    </div>\n    <div class=\"pb-4\">\n      <strong class=\"box-counter\">\n        {{ notificationValue > 9 ? ' ' :\n        '0'}}{{ notificationValue === 0 ? 0 :\n        ''}}{{notificationValue}}\n      </strong>\n    </div>\n  </div>\n</div>\n",
-                    styles: [".box{border-radius:2px;background-color:#fff;box-shadow:0 3px 3px 0 rgba(0,0,0,.09)}.box-title{font-family:Poppins,sans-serif;font-size:17px;font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.2px;text-align:center;color:#1d1d1d}.box-counter{font-size:50px;font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.6px;text-align:center;color:#a7bf2e}.default{width:300px}"]
+                    template: "<div [class]=\"customclass\">\n  <div class=\"col box pointer text-center\">\n    <div class=\"pt-4 pb-2\">\n      <strong>\n        <a class=\"box-title\" id=\"{{id}}\">\n          {{notificationTitle || 'review bids' }}\n        </a>\n      </strong>\n    </div>\n    <div class=\"pb-4\">\n      <strong class=\"box-counter\">\n        {{ notificationValue > 9 ? ' ' :\n        '0'}}{{ notificationValue === 0 ? 0 :\n        ''}}{{notificationValue}}\n      </strong>\n    </div>\n  </div>\n</div>\n",
+                    styles: [".box{border-radius:2px;background-color:#fff;box-shadow:0 3px 3px 0 rgba(0,0,0,.09)}.box-title{font-family:Poppins,sans-serif;font-size:17px;font-weight:600;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.2px;text-align:center;color:#1d1d1d}.box-counter{font-size:50px;font-weight:600;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.6px;text-align:center;color:#a7bf2e}.default{width:300px}"]
                 }] }
     ];
     /** @nocollapse */
@@ -481,10 +481,10 @@ var SukuCardLineComponent = /** @class */ (function () {
         this.customclass = '';
         this.customIconclass = 'text-center';
         this.bgColor = '';
-        this.imageColSize = "col-sm-1 pt-1 pl-2";
-        this.txtcolsize = "col-sm-5 pl-4 pt-2 mt-1";
-        this.txttwocolsize = "col-sm-2 pt-2 mt-1";
-        this.txtthreecolsize = "col-sm-3 pt-2 mt-1";
+        this.imageColSize = 'col-sm-1 pt-1 pl-2';
+        this.txtcolsize = 'col-sm-5 pl-4 pt-2 mt-1';
+        this.txttwocolsize = 'col-sm-2 pt-2 mt-1';
+        this.txtthreecolsize = 'col-sm-3 pt-2 mt-1';
         this.titleOne = 'Title One';
         this.titleOneColor = 'black';
         this.titleOneWeight = '600';
@@ -613,8 +613,8 @@ var SukuDashboardProfileComponent = /** @class */ (function () {
     SukuDashboardProfileComponent.decorators = [
         { type: Component, args: [{
                     selector: 'suku-dashboard-profile',
-                    template: "<div class=\"profileBox\">\n    <div class=\"col-md-12 col-sm-12 text-center\">\n      <img class=\"circle mb-4 mt-4\" id=\"image\" src=\"{{image}}\" alt=\"PROFILE\">\n    </div>\n    <div class=\"col-md-12 col-sm-12 text-center\">\n      <label class=\"userName\">\n        <b>{{ userName || 'Emery' }}</b>\n      </label>\n    </div>\n    <div class=\"bLine form-group\"></div>\n    <div class=\"col-sm-12 col-md-12\"  id=\"newSellList\">\n      <div class=\"row pointer\">\n        <div class=\"p-3 col mb-1\" >\n        <img src=\"{{icon}}\" alt=\"icon\" height=\"33px\" width=\"33px\">\n        <span class=\"create-interest-listing c-pointer pl-1 pt-3\" (click)=\"createNewList.emit(1)\">{{titleOne || 'CREATE NEW LISTING'}} </span>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-sm-12 col-md-12 form-group\"  id=\"newBuyInterest\">\n      <div class=\"row pointer\">\n        <div class=\"pl-3 pb-3 pr-3 pt-2 col mb-2\" >\n        <img src=\"{{icon}}\" alt=\"icon\" height=\"33px\" width=\"33px\">\n        <span class=\"create-interest-listing c-pointer pl-1 pt-3 mB-170\" (click)=\"clearBuyInterestStorage.emit(1)\">{{titleTwo || 'CREATE NEW INTEREST'}}</span>\n        </div>\n        </div>\n    </div>\n  </div>\n",
-                    styles: [".box{border-radius:2px;background-color:#fff;box-shadow:0 3px 3px 0 rgba(0,0,0,.09)}.box-title{font-family:Poppins-Regular,Arial;font-size:17px;font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.2px;text-align:center;color:#1d1d1d}.box-counter{font-size:50px;font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.6px;text-align:center;color:#a7bf2e}.profileBox{width:200px;border-radius:0 0 30px 30px;background-color:#fff;box-shadow:0 6px 8px 0 rgba(0,0,0,.09)}.circle{background-color:gray;height:150px;width:150px;border-radius:100%}.bLine{opacity:.09;border:1px solid #979797}.userName{font-family:Poppins,sans-serif;font-size:20px;font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.2px;color:#1d1d1d;color:var(--black);word-break:break-all!important}.create-interest-listing{font-family:abelregular,Arial,Helvetica,sans-serif;font-size:14px;color:#b6b6b6;line-height:18px;letter-spacing:.01em;word-break:break-all!important}.default{width:170px;height:274px;box-shadow:0 2px 4px 0 rgba(0,0,0,.03);background-color:#fff}"]
+                    template: "<div class=\"profileBox\">\n    <div class=\"col-md-12 col-sm-12 text-center\">\n      <img class=\"circle mb-4 mt-4\" id=\"image\" src=\"{{image}}\" alt=\"PROFILE\">\n    </div>\n    <div class=\"col-md-12 col-sm-12 text-center\">\n      <label class=\"userName\">\n        <b>{{ userName || 'Emery' }}</b>\n      </label>\n    </div>\n    <div class=\"bLine form-group\"></div>\n    <div class=\"col-sm-12 col-md-12\"  id=\"newSellList\">\n      <div class=\"row pointer\">\n        <div class=\"p-3 col mb-1\" >\n        <img src=\"{{icon}}\" alt=\"icon\" height=\"33px\" width=\"33px\">\n        <span class=\"create-interest-listing c-pointer pl-2 pt-3\" (click)=\"createNewList.emit(1)\">{{titleOne || 'CREATE NEW LISTING'}} </span>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-sm-12 col-md-12 form-group mb-3\"  id=\"newBuyInterest\">\n      <div class=\"row pointer\">\n        <div class=\"pl-3 pb-3 pr-3 pt-2 col mb-2\" >\n        <img src=\"{{icon}}\" alt=\"icon\" height=\"33px\" width=\"33px\">\n        <span class=\"create-interest-listing c-pointer pl-2 pt-3 mB-170\" (click)=\"clearBuyInterestStorage.emit(1)\">{{titleTwo || 'CREATE NEW INTEREST'}}</span>\n        </div>\n        </div>\n    </div>\n  </div>\n",
+                    styles: [".box{border-radius:2px;background-color:#fff;box-shadow:0 3px 3px 0 rgba(0,0,0,.09)}.box-title{font-family:Poppins-Regular,Arial;font-size:17px;font-weight:600;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.2px;text-align:center;color:#1d1d1d}.box-counter{font-size:50px;font-weight:600;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.6px;text-align:center;color:#a7bf2e}.profileBox{width:200px;border-radius:0 0 30px 30px;background-color:#fff;box-shadow:0 6px 8px 0 rgba(0,0,0,.09)}.circle{background-color:gray;height:150px;width:150px;border-radius:100%}.bLine{opacity:.09;border:1px solid #979797}.userName{font-family:Poppins,sans-serif;font-size:20px;font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.2px;color:#1d1d1d;color:var(--black);word-break:break-all!important}.create-interest-listing{font-family:abelregular,Arial,Helvetica,sans-serif;font-size:14px;color:#b6b6b6;line-height:18px;letter-spacing:.01em;word-break:break-all!important}.default{width:170px;height:274px;box-shadow:0 2px 4px 0 rgba(0,0,0,.03);background-color:#fff}"]
                 }] }
     ];
     /** @nocollapse */
@@ -851,7 +851,7 @@ var SukuAddWidgetComponent = /** @class */ (function () {
     SukuAddWidgetComponent.decorators = [
         { type: Component, args: [{
                     selector: 'suku-add-widget',
-                    template: "<a (click)=\"action.emit()\">\n  <span><img [src]=\"image\"  width=\"33px\" height=\"33px\">\n  <span [style.font-size.px]=\"size\" [style.color]=\"color\"\n  [class]=\"customclass\" [style.font-weight]=\"weight\">\n  <ng-content></ng-content>\n  </span>\n  </span>\n</a>\n",
+                    template: "<a (click)=\"action.emit()\">\n  <span><img [src]=\"image\" width=\"33px\" height=\"33px\">\n    <span [style.font-size.px]=\"size\" [style.color]=\"color\" [class]=\"customclass\" [style.font-weight]=\"weight\">\n      <ng-content></ng-content>\n    </span>\n  </span>\n</a>\n",
                     styles: [".add-widget{font-family:abelregular,Arial,Helvetica,sans-serif!important;font-size:12px;text-transform:uppercase;text-align:left}"]
                 }] }
     ];
@@ -906,8 +906,8 @@ var SukuSelectInputComponent = /** @class */ (function () {
     SukuSelectInputComponent.decorators = [
         { type: Component, args: [{
                     selector: 'suku-select-input',
-                    template: "<div class=\"form-group\">\n  <div class=\"select-out input-group\">\n    <label for=\"select\" id=\"sortBy\" class=\"sort-by col-sm-2 p-0 mt-3 mb-0 mr-3\">Sort by</label>\n    <span [class]=\"customclass\">\n      <select class=\"optionsBox form-control fcontrol mt-1\" id=\"interestTwo\" name=\"sort\" #addRe (change)=\"sort.emit(addRe.value)\">\n        <option id=\"default\" value=\"default\" disabled>Choose sort method</option>\n        <option *ngFor=\"let option of options;let i=index\" id=\"{{option.value}}\" value=\"{{option.value}}\">{{option.name}}</option>\n      </select>\n    </span>\n  </div>\n</div>",
-                    styles: [".optionsBox{letter-spacing:-.01px;text-transform:uppercase}.sort-by{font-family:Poppins,sans-serif;font-size:15px;font-weight:400;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px;color:#b6b6b6;text-transform:uppercase}.optionsBox{font-family:'Encode Sans',sans-serif!important;font-size:14px;font-weight:400;font-style:normal;font-stretch:normal;line-height:1.43;letter-spacing:-.4px;color:#000;height:36px!important;text-transform:lowercase;border-radius:0;border-color:#cdcdcd}.default{width:281px}"]
+                    template: "<div class=\"input-group mb-3\">\n  <div class=\"input-group-prepend\">\n    <span class=\"sort-by mt-2 mr-3\"> SORT BY </span>\n  </div>\n  <span [class]=\"customclass\">\n    <select class=\"custom-select optionsBox\" id=\"inputGroupSelect03\" name=\"sort\" #addRe (change)=\"sort.emit(addRe.value)\">\n      <option id=\"default\" value=\"default\" disabled>Choose sort method</option>\n      <option *ngFor=\"let option of options;let i=index\" id=\"{{option.value}}\" value=\"{{option.value}}\">{{option.name}}</option>\n    </select>\n  </span>\n</div>\n",
+                    styles: [".custom-select{font-family:'Encode Sans',sans-serif!important;font-size:12px;font-weight:400;font-style:normal;font-stretch:normal;line-height:1.43;letter-spacing:-.01px;color:#3e3e3e;text-transform:uppercase;background-color:#f2f2f2!important}.sort-by{font-family:Poppins,sans-serif;font-size:15px;font-weight:400;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px;color:#b6b6b6;text-transform:uppercase}.optionsBox{font-family:'Encode Sans',sans-serif!important;font-size:14px;font-weight:400;font-style:normal;font-stretch:normal;line-height:1.43;letter-spacing:-.4px;color:#000;height:36px!important;text-transform:lowercase;border-radius:0;border-color:#cdcdcd}.default{width:281px}.custom-select:focus{outline:0;box-shadow:none}"]
                 }] }
     ];
     /** @nocollapse */
@@ -990,7 +990,7 @@ var SukuAddressWidgetComponent = /** @class */ (function () {
     SukuAddressWidgetComponent.decorators = [
         { type: Component, args: [{
                     selector: 'suku-address-widget',
-                    template: "<span class=\"row\">\n  <img src=\"{{image}}\">\n\t<h2 [style.font-size.px]=\"size\" [class]=\"customClass\" id=\"{{id}}\" [style.font-weight]=\"weight\" [style.color]=\"color\">\n  {{name}}\n  </h2>\n  </span>\n",
+                    template: "<span class=\"row\">\n  <img src=\"{{image}}\">\n  <h2 [style.font-size.px]=\"size\" [class]=\"customClass\" id=\"{{id}}\" [style.font-weight]=\"weight\" [style.color]=\"color\">\n    <ng-content></ng-content>\n  </h2>\n</span>\n",
                     styles: ["h2{font-family:'Encode Sans',sans-serif!important;font-size:12px!important;font-weight:500!important;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.4px!important;color:#b6b6b6!important;word-break:break-all!important}"]
                 }] }
     ];
