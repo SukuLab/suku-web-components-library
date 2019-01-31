@@ -7,6 +7,7 @@ export { SukuAddressWidgetComponent as ɵw } from './lib/suku-address-widget/suk
 export { SukuBidInfoComponent as ɵu } from './lib/suku-bid-info/suku-bid-info.component';
 export { SukuBidTagComponent as ɵa } from './lib/suku-bid-tag/suku-bid-tag.component';
 export { SukuCardLineComponent as ɵb } from './lib/suku-card-line/suku-card-line.component';
+export { SukuCardTitleComponent as ɵbe } from './lib/suku-card-title/suku-card-title.component';
 export { SukuDashboardProfileComponent as ɵc } from './lib/suku-dashboard-profile/suku-dashboard-profile.component';
 export { SukuDefaultButtonComponent as ɵd } from './lib/suku-default-button/suku-default-button.component';
 export { SukuFiltersComponent as ɵba } from './lib/suku-filters/suku-filters.component';
@@ -25,7 +26,7 @@ export { SukuPrimaryButtonComponent as ɵm } from './lib/suku-primary-button/suk
 export { SukuProductTraceWidgetComponent as ɵbc } from './lib/suku-product-trace-widget/suku-product-trace-widget.component';
 export { SukuProfileWidgetComponent as ɵy } from './lib/suku-profile-widget/suku-profile-widget.component';
 export { SukuProgressBarComponent as ɵn } from './lib/suku-progress-bar/suku-progress-bar.component';
-export { SukuRatingStarComponent as ɵbe } from './lib/suku-rating-star/suku-rating-star.component';
+export { SukuRatingStarComponent as ɵbf } from './lib/suku-rating-star/suku-rating-star.component';
 export { SukuSearchInputComponent as ɵx } from './lib/suku-search-input/suku-search-input.component';
 export { SukuSecondaryButtonComponent as ɵo } from './lib/suku-secondary-button/suku-secondary-button.component';
 export { SukuSelectInputComponent as ɵs } from './lib/suku-select-input/suku-select-input.component';
