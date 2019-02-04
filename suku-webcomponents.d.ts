@@ -30,6 +30,7 @@ export { SukuRatingStarComponent as ɵbf } from './lib/suku-rating-star/suku-rat
 export { SukuSearchInputComponent as ɵx } from './lib/suku-search-input/suku-search-input.component';
 export { SukuSecondaryButtonComponent as ɵo } from './lib/suku-secondary-button/suku-secondary-button.component';
 export { SukuSelectInputComponent as ɵs } from './lib/suku-select-input/suku-select-input.component';
+export { SukuShippingWidgetComponent as ɵbg } from './lib/suku-shipping-widget/suku-shipping-widget.component';
 export { SukuStarBadgeComponent as ɵz } from './lib/suku-star-badge/suku-star-badge.component';
 export { SukuSubHeadingComponent as ɵp } from './lib/suku-sub-heading/suku-sub-heading.component';
 export { SukuTrackProgressBarComponent as ɵbb } from './lib/suku-track-progress-bar/suku-track-progress-bar.component';

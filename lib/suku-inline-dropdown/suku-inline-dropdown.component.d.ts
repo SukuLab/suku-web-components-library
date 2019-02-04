@@ -4,8 +4,7 @@ export declare class SukuInlineDropdownComponent implements OnInit {
     color: string;
     weight: string;
     id: string;
-    customclass: string;
-    customcontentclass: string;
+    customClass: string;
     action: EventEmitter<{}>;
     constructor();
     ngOnInit(): void;
