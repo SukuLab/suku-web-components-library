@@ -10,6 +10,7 @@ export declare class SukuProductTraceWidgetComponent implements OnInit {
     selectedItem: any;
     isSearch: boolean;
     _result: any;
+    i: any;
     headName: any;
     subHeadName: any;
     name: any;

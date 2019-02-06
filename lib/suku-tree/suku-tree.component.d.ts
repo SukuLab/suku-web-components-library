@@ -23,6 +23,8 @@ export declare class SukuTreeComponent implements OnChanges {
     tree1: any;
     maxHeight: any;
     dataUID: any;
+    svgNOde: any;
+    j: any;
     ngOnChanges(): void;
     constructTree(): void;
     drawTree(): void;
