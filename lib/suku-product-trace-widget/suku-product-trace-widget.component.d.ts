@@ -17,6 +17,7 @@ export declare class SukuProductTraceWidgetComponent implements OnInit {
     control: any;
     searchId: string;
     productId: string;
+    traceMethodRadio: string;
     searchFun: EventEmitter<{}>;
     selectproducts: EventEmitter<{}>;
     searchByProduct: EventEmitter<{}>;
