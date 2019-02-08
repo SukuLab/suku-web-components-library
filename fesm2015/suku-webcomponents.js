@@ -1573,7 +1573,7 @@ class SukuTreeComponent {
             }
         }));
         this.width = (this.max + 1) * 270 - this.margin.left - this.margin.right;
-        this.height = (this.maxHeight + 1) * 120 - this.margin.top - this.margin.bottom;
+        this.height = (this.maxHeight + 1) * 133 - this.margin.top - this.margin.bottom;
         console.log('width', this.width);
         this.i = 0;
         this.j = 0;
