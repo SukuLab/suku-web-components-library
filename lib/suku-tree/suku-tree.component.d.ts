@@ -1,6 +1,7 @@
 import { OnChanges, EventEmitter } from '@angular/core';
 export declare class SukuTreeComponent implements OnChanges {
     treeDataFromApi: any;
+    relation: any;
     action: EventEmitter<{}>;
     tree: any;
     root: any;
