@@ -1,7 +1,7 @@
 import { OnInit, EventEmitter } from '@angular/core';
 export declare class SukuFundingSourceComponent implements OnInit {
     constructor();
-    arrayOne: any[];
+    fundingDetails: any[];
     defaultText: string;
     defaultbankName: string;
     headerOneTxt: string;
@@ -22,5 +22,6 @@ export declare class SukuFundingSourceComponent implements OnInit {
     makeDefaultAction: EventEmitter<{}>;
     removeSourceAction: EventEmitter<{}>;
     achMakeDefaultAction: EventEmitter<{}>;
+    addSource: EventEmitter<{}>;
     ngOnInit(): void;
 }

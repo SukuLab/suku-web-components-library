@@ -31,5 +31,4 @@ export declare class SukuCreateCustomerComponent implements OnInit {
     businessTypeFunAction(val: any): void;
     validateTypeFun(type: any): void;
     action1(): void;
-    action2(): void;
 }
