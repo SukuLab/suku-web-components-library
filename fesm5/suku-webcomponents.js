@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { layout, select } from 'd3';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBar, MatAutocompleteModule, MatBadgeModule, MatBottomSheetModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule, MatDividerModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatSortModule, MatStepperModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 import { Injectable, Component, Input, Output, EventEmitter, ViewEncapsulation, ChangeDetectionStrategy, NgModule, defineInjectable } from '@angular/core';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 /**
  * @fileoverview added by tsickle
@@ -56,7 +56,7 @@ var SukuACHSettingsComponent = /** @class */ (function () {
         { type: Component, args: [{
                     selector: 'suku-ach-setting',
                     template: "<div class=\"col poppinsFont p-0\">\r\n  <div class=\"col-sm-12 text-center\">\r\n    <span class=\"font20\" id=\"{{titleId}}\">{{title}}</span>\r\n  </div>\r\n  <div class=\"col-sm-12 mt-4\">\r\n    <div class=\"form-group col-xs-12 col Rectangle-2 p-3\">\r\n      <div class=\"col-sm-12 text-center\">\r\n        <div class=\"col\">\r\n          <span class=\"text-center subTitle\" id=\"{{subtitleId}}\"> {{subTitle}}</span>\r\n          <br>\r\n          <p class=\"text-center mt-2 mb-2\" id=\"{{subContentId}}\">Customer status: <b class=\"status\">{{subContent}}</b></p>\r\n        </div>\r\n        <span class=\"redText\" id=\"{{upperTextId}}\">{{upperText}}</span>\r\n      </div>\r\n      <div class=\"col-sm-12 text-center mt-2\">\r\n        <i> <span class=\"font12\" id=\"{{lowerTextId}}\">{{lowerText}} </span> </i>\r\n      </div>\r\n      <div class=\"col-sm-12 mt-4 mb-3 text-center\">\r\n        <button class=\" btn textBold\" id=\"{{paymentButtonId}}\" (click)=\"action.emit()\">{{SetupACHPaymentsBtnText}}</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>",
-                    styles: [".redText{color:red;font-size:12px}.font12{font-size:12px}.textBold{font-weight:700}.Rectangle-2{border-radius:0 0 41px 41px;background-color:#fff;box-shadow:0 12px 14px 0 rgba(0,0,0,.05)}.poppinsFont{font-family:Poppins}.btn{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.775rem 1.85rem;font-size:12px;font-weight:700;font-family:Poppins}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{outline:0!important;box-shadow:none!important}.font20{font-size:25px}.subTitle{font-weight:700!important;font-family:Poppins,sans-serif!important}.status{color:red}"]
+                    styles: [".redText{color:red;font-size:12px}.font12{font-size:12px}.textBold{font-weight:700}.Rectangle-2{border-radius:0 0 41px 41px;background-color:#fff;box-shadow:0 12px 14px 0 rgba(0,0,0,.05)}.poppinsFont{font-family:Poppins}.btn{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.775rem 1.85rem;font-size:12px;font-weight:700;font-family:Poppins}.btn:focus,.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{outline:0!important;box-shadow:none!important}.font20{font-size:25px}.subTitle{font-weight:700!important;font-family:Poppins,sans-serif!important}.status{color:red}"]
                 }] }
     ];
     /** @nocollapse */
@@ -112,7 +112,7 @@ var SukuTransactionHistoryComponent = /** @class */ (function () {
                 'myAccount': 'My Account',
                 'counterparty': 'Counter Party',
                 'amount': 'Amount',
-                'status': 'Stataus',
+                'status': 'Status',
                 'dateCreated': 'Date Created',
                 'paymentManagement': 'Payment Management'
             }];
@@ -186,7 +186,7 @@ var SukuFundingSourceComponent = /** @class */ (function () {
     SukuFundingSourceComponent.decorators = [
         { type: Component, args: [{
                     selector: 'suku-funding-source',
-                    template: "<div class=\"col-sm-12 d-flex pt-4\">\r\n  <div class=\"Rectangle-2 col mB-2\">\r\n    <div class=\"col-sm-12\">\r\n      <div class=\"row\" (click)=\"addSource.emit()\">\r\n        <div class=\"col-sm-1\">\r\n          {{headerOneTxt}} <br>\r\n          {{headerTwoText}}\r\n        </div>\r\n        <div class=\"col-sm-10\">\r\n          <div class=\"add-btn p-2 text-left\" *ngIf=\"fundingDetails.length !== 8\">\r\n            <a>\r\n              <i class=\"fa fa-plus-circle plusIcon\"></i>\r\n            </a>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-sm-12\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-4 mt-3 pr-5 pl-5\">\r\n          <div class=\"jumbotron col m-6  container defaultDiv samBoxStyle boxShadowStyle jumbotron_cus2\">\r\n            <div class=\"col-sm-12 p-3 mt-2\">\r\n              <div class=\"col-sm-12 text-center\">\r\n                <b>{{defaultText}}</b>\r\n              </div>\r\n              <div class=\"col-sm-12 text-center mt-4\">\r\n                {{defaultbankName}}\r\n              </div>\r\n              <div class=\"col-sm-12 text-center\">\r\n                {{DefaultaccountNumber}}\r\n              </div>\r\n              <div class=\"col-sm-12 text-center mT-22\">\r\n                <button class=\"btnDanger col-sm-8 btnFnt\" (click)='removeDefault.emit()' id=\"{{defaultRemoveBtnId}}\">{{defaultRemoveBtnTxt}}</button>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-sm-4 mt-3 pr-5 pl-5\" *ngFor=\"let item of fundingDetails; let i = index;\">\r\n          <div class=\"jumbotron m-6 justify-content-center container defaultDiv\r\n          samBoxStyle boxShadowStyle jumbotron_cus2\">\r\n            <div class=\"col-sm-12  p-3  mt-2 \">\r\n              <div class=\"col-sm-12 text-center mt-35\">\r\n                {{item.name}}\r\n              </div>\r\n              <div class=\"col-sm-12 text-center pt8\">\r\n                XXXXXX{{item.id | slice:-4}}\r\n              </div>\r\n              <div class=\"matBoxStyle\">\r\n                <div class=\"col-sm-12 text-center pt13\">\r\n                  <div class=\"col-sm-10  offset-sm-1\">\r\n                    <button class=\"btn btn-info mb9 col-sm-12 btnFnt\" (click)=\"makeDefaultAction.emit();\" id=\"{{defaultBtnId}}\">{{defaultBtnTxt}}</button>\r\n                    <button class=\"btnDanger  col-sm-12 mt-1 btnFnt\" (click)=\"removeSourceAction.emit(item);\" id=\"{{removeBtnId}}\">{{removeBtnTxt}}</button>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-sm-4 mt-3 pr-5 pl-5\">\r\n          <div class=\"jumbotron  m-6 container defaultDiv samBoxStyle boxShadowStyle jumbotron_cus2\">\r\n            <div class=\"col-sm-12  p-3  mt-2\">\r\n              <div class=\"col-sm-12 text-center pb10\">\r\n                {{achWalletTxt}}\r\n              </div>\r\n              <div class=\"col-sm-12 text-center\">\r\n                {{balanceLblTxt}}:\r\n              </div>\r\n              <div class=\"col-sm-12 text-center\">\r\n                ${{WalletBalance}}\r\n              </div>\r\n              <div class=\" matBoxStyle\">\r\n                <div class=\"col-sm-12 text-center pt8 mT-15\">\r\n                  <div class=\"col-sm-10 offset-sm-1 mt-12\">\r\n                    <button class=\"btn btn-info  col-sm-12 mt-1\" (click)=\"achMakeDefaultAction.emit()\" id=\"{{achMakeDefaultBtnId}}\">{{achMakeDefaultBtnText}}</button>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>",
+                    template: "<div class=\"col-sm-12 d-flex pt-4\">\r\n  <div class=\"Rectangle-2 col mB-2 pb-5\">\r\n    <div class=\"col-sm-12\">\r\n      <div class=\"row\" (click)=\"addSource.emit()\">\r\n        <div class=\"col-sm-1\">\r\n          {{headerOneTxt}} <br>\r\n          {{headerTwoText}}\r\n        </div>\r\n        <div class=\"col-sm-10\">\r\n          <div class=\"add-btn p-2 pl-sm-5 ml-sm-4 text-left\" *ngIf=\"fundingDetails.length !== 8\">\r\n            <a>\r\n              <i class=\"fa fa-plus-circle plusIcon\"></i>\r\n            </a>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-sm-12\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-4 mt-3 pr-5 pl-5\">\r\n          <div class=\"jumbotron col m-6  container defaultDiv samBoxStyle boxShadowStyle jumbotron_cus2\">\r\n            <div class=\"col-sm-12 p-3 mt-2\">\r\n              <div class=\"col-sm-12 text-center\">\r\n                <b>{{defaultText}}</b>\r\n              </div>\r\n              <div class=\"col-sm-12 text-center mt-4\">\r\n                {{defaultbankName}}\r\n              </div>\r\n              <div class=\"col-sm-12 text-center\">\r\n                {{DefaultaccountNumber}}\r\n              </div>\r\n              <div class=\"col-sm-12 text-center mT-22\">\r\n                <button class=\"btnDanger col-sm-8 btnFnt\" (click)='removeDefault.emit()' id=\"{{defaultRemoveBtnId}}\">{{defaultRemoveBtnTxt}}</button>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-sm-4 mt-3 pr-5 pl-5\" *ngFor=\"let item of fundingDetails; let i = index;\">\r\n          <div class=\"jumbotron m-6 justify-content-center container defaultDiv\r\n          samBoxStyle boxShadowStyle jumbotron_cus2\">\r\n            <div class=\"col-sm-12  p-3  mt-2 \">\r\n              <div class=\"col-sm-12 text-center mt-35\">\r\n                {{item.name}}\r\n              </div>\r\n              <div class=\"col-sm-12 text-center pt8\">\r\n                XXXXXX{{item.id | slice:-4}}\r\n              </div>\r\n              <div class=\"matBoxStyle\">\r\n                <div class=\"col-sm-12 text-center pt13\">\r\n                  <div class=\"col-sm-10  offset-sm-1\">\r\n                    <button class=\"btn btn-info mb9 col-sm-12 btnFnt\" (click)=\"makeDefaultAction.emit();\" id=\"{{defaultBtnId}}\">{{defaultBtnTxt}}</button>\r\n                    <button class=\"btnDanger  col-sm-12 mt-1 btnFnt\" (click)=\"removeSourceAction.emit(item);\" id=\"{{removeBtnId}}\">{{removeBtnTxt}}</button>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-sm-4 mt-3 pr-5 pl-5\">\r\n          <div class=\"jumbotron  m-6 container defaultDiv samBoxStyle boxShadowStyle jumbotron_cus2\">\r\n            <div class=\"col-sm-12  p-3  mt-2\">\r\n              <div class=\"col-sm-12 text-center pb10\">\r\n                {{achWalletTxt}}\r\n              </div>\r\n              <div class=\"col-sm-12 text-center\">\r\n                {{balanceLblTxt}}:\r\n              </div>\r\n              <div class=\"col-sm-12 text-center\">\r\n                ${{WalletBalance}}\r\n              </div>\r\n              <div class=\" matBoxStyle\">\r\n                <div class=\"col-sm-12 text-center pt8 mT-15\">\r\n                  <div class=\"col-sm-10 offset-sm-1 mt-12\">\r\n                    <button class=\"btn btn-info  col-sm-12 mt-1\" (click)=\"achMakeDefaultAction.emit()\" id=\"{{achMakeDefaultBtnId}}\">{{achMakeDefaultBtnText}}</button>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>",
                     styles: [".btnDanger{border-radius:28px 76px 63px;display:inline-block;font-weight:400;text-align:center;white-space:nowrap;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;padding:.375rem .75rem;font-size:1rem;line-height:1.5;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;background-color:#fff;border:2px solid red}.btnDanger:hover{background-color:red;color:#fff}.jumbotron_cus1{padding:10px 5px;margin-bottom:15px;margin-left:10px}.jumbotron_cus2{margin-bottom:15px;margin-right:15px;padding:15px}.samBoxStyle{margin-bottom:17px;background-color:#f5f5f58c;border-top:3px solid #a7bf2e;border-radius:41px 45px 11px 14px;box-shadow:0 1px 1px rgba(0,0,0,.5)}.boxShadowStyle{box-shadow:0 4px 8px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19)}.matBoxStyle{border-radius:25px;box-shadow:0 4px 8px 0 rgba(0,0,0,.1),0 6px 20px 0 rgba(0,0,0,.1);background-color:#fff}.mb9{margin-bottom:9px}.pl34{padding-left:34px}.pt25{padding-top:25px}.borderBtm{border-bottom:5px solid #a7bf2e}.mb40{margin-bottom:40px}.progressTxt{font-family:'Encode Sans',sans-serif!important;font-size:14px;font-weight:1;text-align:center;color:#b6b6b6}.pl60{padding-left:60px}.Rectangle-2{background-color:#fff;border-radius:0 0 42px 42px;padding-top:15px;padding-bottom:10px}.pl49{padding-left:49px}.Pl0{padding-left:0!important;font-size:20px}.cancelTxt{font-size:20px;font-weight:700}.border{border-radius:0 0 42px 42px;border-top:3px solid #b6b6b6}.pb70{padding-bottom:70px}.pt37{padding-top:37px;padding-left:55px}.pb9{padding-bottom:9px}.pb10{padding-bottom:10px}.pt8{padding-top:8px;padding-bottom:9px}.pt13{padding-top:13px;padding-bottom:13px}.btn{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.375rem .75rem;font-size:10px;font-family:Poppins}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{outline:0!important;box-shadow:none!important}.poppinsFont{font-family:Poppins}.btnFnt{font-size:10px}.mT-18{margin-top:18%}.mT-22{margin-top:22%}.mT-15{margin-top:15%}.plusIcon{color:#a7bf2e;font-size:30px}.m-6{margin:3%}.btnRmv{border:2px solid #757575;border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.375rem .75rem;font-size:10px;font-family:Poppins}.btnRmv:hover{border:2px solid #757575;border-radius:28px 76px 63px;background-color:#757575;color:#fff}.btnRmv:focus{outline:0!important;box-shadow:none!important}"]
                 }] }
     ];
@@ -3005,6 +3005,7 @@ var SukuDwollaFundingSourceComponent = /** @class */ (function () {
     function SukuDwollaFundingSourceComponent(snackBar) {
         this.snackBar = snackBar;
         this.iavtoken = 'hZ29TKB3CRpZ6z2MBPmMFYKKTbdbXLWAYUOt3A5niEoQs8mvqw';
+        this.action = new EventEmitter();
     }
     /**
      * @return {?}
@@ -3021,7 +3022,15 @@ var SukuDwollaFundingSourceComponent = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        console.log('triggered');
+        ((/** @type {?} */ (document.getElementById('start')))).disabled = true;
+        if (document.getElementById('iavContainer')) {
+            /** @type {?} */
+            var list = document.getElementById('iavContainer');
+            while (list.hasChildNodes()) {
+                list.removeChild(list.firstChild);
+            }
+        }
+        console.log('triggered', this.iavtoken);
         dwolla.configure('sandbox');
         dwolla.iav.start(this.iavtoken, {
             container: 'iavContainer',
@@ -3038,12 +3047,16 @@ var SukuDwollaFundingSourceComponent = /** @class */ (function () {
          */
         function (err, res) {
             console.log('Error: ' + JSON.stringify(err) + ' -- Response: ' + JSON.stringify(res));
+            if (err) {
+                console.log('failed');
+                ((/** @type {?} */ (document.getElementById('start')))).disabled = false;
+            }
         }));
     };
     SukuDwollaFundingSourceComponent.decorators = [
         { type: Component, args: [{
                     selector: 'suku-dwolla-funding-source',
-                    template: "<div class=\"col p-2\">\r\n  <div id=\"mainContainer\">\r\n    <input type=\"button\" class=\"suku-button\" id=\"start\" (click)=\"getDwollaHtml()\" value=\"Add Bank\">\r\n  </div>\r\n  <div id=\"iavContainer\" class=\"bg m-3\"></div>\r\n</div>",
+                    template: "<div class=\"col p-2\">\r\n    <div id=\"mainContainer\">\r\n      <input type=\"button\" class=\"suku-button\" id=\"start\" (click)=\"getDwollaHtml()\" value=\"Add Bank\">\r\n    </div>\r\n    <div id=\"iavContainer\" class=\"bg m-3\"></div>\r\n  </div>",
                     styles: [".suku-button{cursor:pointer;border:2px solid #a7bf2e!important;padding:10px 32px!important;background-color:#fff!important;color:#0000009c!important;border-radius:29px 77px 61px!important;font-weight:900!important;font-family:Poppins,sans-serif!important;letter-spacing:1px}.suku-button:hover{cursor:pointer;border:2px solid #a7bf2e!important;padding:10px 32px!important;background-color:#a7bf2e!important;color:#0000009c!important;border-radius:29px 77px 61px!important;font-weight:900!important;font-family:Poppins,sans-serif!important;letter-spacing:1px}.suku-button:focus{box-shadow:none!important;outline:0!important}.dwolla-iav-link{font-weight:400;color:#a7bf2e!important;font-family:Poppins,sans-serif!important;letter-spacing:.2px}.dwolla-iav-button{cursor:pointer;border:2px solid #a7bf2e!important;padding:10px 32px!important;background-color:#fff!important;color:#0000009c!important;border-radius:29px 77px 61px!important;font-weight:900!important;font-family:Poppins,sans-serif!important;letter-spacing:1px}.dwolla-iav-back-button{width:auto!important;cursor:pointer;border:2px solid #a7bf2e!important;padding:10px 32px!important;background-color:#fff!important;color:#0000009c!important;border-radius:29px 77px 61px!important;font-weight:900!important;font-family:Poppins,sans-serif!important;letter-spacing:1.1px}.bg{border-radius:0 0 41px 41px;background-color:#fff;box-shadow:0 12px 14px 0 rgba(0,0,0,.05)}"]
                 }] }
     ];
@@ -3052,7 +3065,8 @@ var SukuDwollaFundingSourceComponent = /** @class */ (function () {
         { type: MatSnackBar }
     ]; };
     SukuDwollaFundingSourceComponent.propDecorators = {
-        iavtoken: [{ type: Input, args: ['iav-token',] }]
+        iavtoken: [{ type: Input, args: ['iav-token',] }],
+        action: [{ type: Output }]
     };
     return SukuDwollaFundingSourceComponent;
 }());
@@ -3128,6 +3142,58 @@ var SukuPaymentPortalHelpComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+var SukuTermsAndConditionsComponent = /** @class */ (function () {
+    function SukuTermsAndConditionsComponent(fb) {
+        this.fb = fb;
+        this.action = new EventEmitter();
+    }
+    /**
+     * @return {?}
+     */
+    SukuTermsAndConditionsComponent.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () {
+        this.termsandcondition = this.fb.group({
+            'contractTerms': false
+        });
+    };
+    // action(eventvalue)
+    // action(eventvalue)
+    /**
+     * @return {?}
+     */
+    SukuTermsAndConditionsComponent.prototype.action1 = 
+    // action(eventvalue)
+    /**
+     * @return {?}
+     */
+    function () {
+        /** @type {?} */
+        var data = this.termsandcondition.value.contractTerms;
+        this.action.emit(data);
+    };
+    SukuTermsAndConditionsComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'suku-terms-and-conditions',
+                    template: "<form [formGroup]=\"termsandcondition\">\n    <div class=\" container-fluid  d-flex flex-column justify-content-center py-3\">\n      <div class=\"text-center \"><b>Contract Terms & Conditions</b></div>\n      <div class=\"d-flex flex-row\">\n        <mat-checkbox color=\"primary\" type=\"checkbox\" #t (change)=\"action1()\" id=\"contractTerms\" \n        formControlName=\"contractTerms\" name=\"contractTerms\">\n        </mat-checkbox>\n        <span class=\"col Spring-Cases txtFlow termsAndConditions\"> I Accept the terms and conditions and authorize\n          this transaction.\n          <a class=\"link ws\" href=\"https://citizensreserve.com/legal\" target=\"_blank\">LEGAL</a>\n          <a class=\"link ws\" href=\"https://citizensreserve.com/privacy\" target=\"_blank\">PRIVACY</a>\n        </span>\n      </div>\n    </div>\n  </form>",
+                    styles: [".link{color:#757575;text-decoration:underline;margin-left:5px;margin-right:5px}.ws{white-space:pre}.termsAndConditions{font-family:EncodeSans;font-size:15px;font-weight:500;font-style:normal;font-stretch:normal;letter-spacing:.4px;color:#757575}"]
+                }] }
+    ];
+    /** @nocollapse */
+    SukuTermsAndConditionsComponent.ctorParameters = function () { return [
+        { type: FormBuilder }
+    ]; };
+    SukuTermsAndConditionsComponent.propDecorators = {
+        action: [{ type: Output }]
+    };
+    return SukuTermsAndConditionsComponent;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var SukuWebcomponentsModule = /** @class */ (function () {
     function SukuWebcomponentsModule() {
     }
@@ -3176,7 +3242,8 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         SukuDwollaFundingAgreementComponent,
                         SukuDwollaFundingSourceComponent,
                         SukuCreationCustomerFileuploadComponent,
-                        SukuPaymentPortalHelpComponent
+                        SukuPaymentPortalHelpComponent,
+                        SukuTermsAndConditionsComponent
                     ],
                     imports: [
                         CommonModule,
@@ -3262,6 +3329,7 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         SukuDwollaFundingSourceComponent,
                         SukuCreationCustomerFileuploadComponent,
                         SukuPaymentPortalHelpComponent,
+                        SukuTermsAndConditionsComponent,
                     ]
                 },] }
     ];
@@ -3278,6 +3346,6 @@ var SukuWebcomponentsModule = /** @class */ (function () {
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { SukuWebcomponentsService, SukuWebcomponentsModule, SukuACHSettingsComponent as ɵbi, SukuAddWidgetComponent as ɵr, SukuAddressWidgetComponent as ɵw, SukuBeneficialOwnerComponent as ɵbm, SukuBidInfoComponent as ɵu, SukuBidTagComponent as ɵa, SukuCardLineComponent as ɵb, SukuCardTitleComponent as ɵbe, SukuCreateCustomerComponent as ɵbl, SukuCreationCustomerFileuploadComponent as ɵbp, SukuDashboardProfileComponent as ɵc, SukuDefaultButtonComponent as ɵd, SukuDwollaFundingAgreementComponent as ɵbn, SukuDwollaFundingSourceComponent as ɵbo, SukuFiltersComponent as ɵba, SukuFundingSourceComponent as ɵbk, SukuHeadingComponent as ɵe, SukuHomeItalicHeadingComponent as ɵf, SukuHomeWidgetComponent as ɵg, SukuInfoButtonComponent as ɵh, SukuInlineDropdownComponent as ɵi, SukuLinkComponent as ɵq, SukuMailWidgetComponent as ɵj, SukuMatchChipComponent as ɵk, SukuNavSubmenuComponent as ɵt, SukuNotificationWidgetComponent as ɵl, SukuPaymentPortalHelpComponent as ɵbq, SukuPhoneWidgetComponent as ɵv, SukuPrimaryButtonComponent as ɵm, SukuProductTraceWidgetComponent as ɵbc, SukuProfileWidgetComponent as ɵy, SukuProgressBarComponent as ɵn, SukuRatingStarComponent as ɵbf, SukuResponseComponent as ɵbh, SukuSearchInputComponent as ɵx, SukuSecondaryButtonComponent as ɵo, SukuSelectInputComponent as ɵs, SukuShippingWidgetComponent as ɵbg, SukuStarBadgeComponent as ɵz, SukuSubHeadingComponent as ɵp, SukuTrackProgressBarComponent as ɵbb, SukuTransactionHistoryComponent as ɵbj, SukuTreeComponent as ɵbd };
+export { SukuWebcomponentsService, SukuWebcomponentsModule, SukuACHSettingsComponent as ɵbi, SukuAddWidgetComponent as ɵr, SukuAddressWidgetComponent as ɵw, SukuBeneficialOwnerComponent as ɵbm, SukuBidInfoComponent as ɵu, SukuBidTagComponent as ɵa, SukuCardLineComponent as ɵb, SukuCardTitleComponent as ɵbe, SukuCreateCustomerComponent as ɵbl, SukuCreationCustomerFileuploadComponent as ɵbp, SukuDashboardProfileComponent as ɵc, SukuDefaultButtonComponent as ɵd, SukuDwollaFundingAgreementComponent as ɵbn, SukuDwollaFundingSourceComponent as ɵbo, SukuFiltersComponent as ɵba, SukuFundingSourceComponent as ɵbk, SukuHeadingComponent as ɵe, SukuHomeItalicHeadingComponent as ɵf, SukuHomeWidgetComponent as ɵg, SukuInfoButtonComponent as ɵh, SukuInlineDropdownComponent as ɵi, SukuLinkComponent as ɵq, SukuMailWidgetComponent as ɵj, SukuMatchChipComponent as ɵk, SukuNavSubmenuComponent as ɵt, SukuNotificationWidgetComponent as ɵl, SukuPaymentPortalHelpComponent as ɵbq, SukuPhoneWidgetComponent as ɵv, SukuPrimaryButtonComponent as ɵm, SukuProductTraceWidgetComponent as ɵbc, SukuProfileWidgetComponent as ɵy, SukuProgressBarComponent as ɵn, SukuRatingStarComponent as ɵbf, SukuResponseComponent as ɵbh, SukuSearchInputComponent as ɵx, SukuSecondaryButtonComponent as ɵo, SukuSelectInputComponent as ɵs, SukuShippingWidgetComponent as ɵbg, SukuStarBadgeComponent as ɵz, SukuSubHeadingComponent as ɵp, SukuTermsAndConditionsComponent as ɵbr, SukuTrackProgressBarComponent as ɵbb, SukuTransactionHistoryComponent as ɵbj, SukuTreeComponent as ɵbd };
 
 //# sourceMappingURL=suku-webcomponents.js.map
