@@ -16,6 +16,7 @@ export declare class SukuBeneficialOwnerComponent implements OnInit {
     submitOwner: EventEmitter<{}>;
     add: EventEmitter<{}>;
     submitData: EventEmitter<{}>;
+    verify: EventEmitter<{}>;
     selected: any[];
     toggle: any[];
     customClass: any;

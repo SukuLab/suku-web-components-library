@@ -11,6 +11,7 @@ export declare class SukuDwollaFundingAgreementComponent implements OnInit {
     contentSize: string;
     btnTextSize: string;
     submit: EventEmitter<{}>;
+    verify: EventEmitter<{}>;
     formValid: Boolean;
     constructor();
     ngOnInit(): void;
