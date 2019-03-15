@@ -17,6 +17,7 @@ export declare class SukuCreateCustomerComponent implements OnInit {
     stateSelect: EventEmitter<{}>;
     industryTypeFun: EventEmitter<{}>;
     businessTypeFun: EventEmitter<{}>;
+    ssnLimit: any;
     businessTypeValue: any;
     industryTypeValue: any;
     businessClassificationValue: any;
