@@ -1,0 +1,35 @@
+import { OnInit, EventEmitter } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+export declare class SukuCreateCustomerComponent implements OnInit {
+    private fb;
+    _data: any;
+    _data1: any;
+    _ssnLimit: any;
+    maxDate: string;
+    form: FormGroup;
+    formArrayNameValue: any;
+    countriesList: any;
+    statesList: any;
+    CRDwollaTOSControl: any;
+    countrySelect: EventEmitter<{}>;
+    submitData: EventEmitter<{}>;
+    onSubmit: EventEmitter<{}>;
+    stateSelect: EventEmitter<{}>;
+    industryTypeFun: EventEmitter<{}>;
+    businessTypeFun: EventEmitter<{}>;
+    ssnLimit: any;
+    businessTypeValue: any;
+    industryTypeValue: any;
+    businessClassificationValue: any;
+    DwollaTOSformValid: boolean;
+    CitizensReserveTOSformValid: boolean;
+    validateType: boolean;
+    getControl: any;
+    constructor(fb: FormBuilder);
+    ngOnInit(): void;
+    countrySelectAction(val: any): void;
+    industryTypeFunAction(val: any): void;
+    businessTypeFunAction(val: any): void;
+    validateTypeFun(type: any): void;
+    action1(): void;
+}
