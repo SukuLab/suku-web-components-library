@@ -3095,9 +3095,25 @@ class SukuCreationCustomerFileuploadComponent {
      */
     constructor(snackBar) {
         this.snackBar = snackBar;
-        this.onFileChange = new EventEmitter();
-        this.submitData = new EventEmitter();
         this.docType = [];
+        this.fileArrayList = [];
+        this.title = 'Document upload:';
+        this.OnFileChange = new EventEmitter();
+        this.submitData = new EventEmitter();
+    }
+    /**
+     * @return {?}
+     */
+    get classification() {
+        return this._classification;
+    }
+    /**
+     * @param {?} val
+     * @return {?}
+     */
+    set classification(val) {
+        console.log(val);
+        this._classification = val;
     }
     /**
      * @return {?}
@@ -3116,10 +3132,6 @@ class SukuCreationCustomerFileuploadComponent {
             {
                 name: 'idCard',
                 value: 'idCard'
-            },
-            {
-                name: 'other',
-                value: 'other'
             }
         ];
     }
@@ -3140,6 +3152,10 @@ class SukuCreationCustomerFileuploadComponent {
      */
     fileupload(e) {
         console.log(e);
+        if (this._classification == 'business') {
+            this.documentType = true;
+            this.uploadType = 'other';
+        }
         if (this.documentType) {
             /** @type {?} */
             const files = e.target.files;
@@ -3163,7 +3179,9 @@ class SukuCreationCustomerFileuploadComponent {
                                 file: file,
                                 documentType: docType
                             };
-                            this.onFileChange.emit(data);
+                            this.fileArrayList.push(file);
+                            console.log("this.fileArrayList", this.fileArrayList);
+                            this.OnFileChange.emit(data);
                             currentFileSize = file.size;
                         }
                         e.target.value = '';
@@ -3196,7 +3214,7 @@ class SukuCreationCustomerFileuploadComponent {
 SukuCreationCustomerFileuploadComponent.decorators = [
     { type: Component, args: [{
                 selector: 'suku-creation-customer-fileupload',
-                template: "<div class=\"col Rectangle-2 d-flex\">\r\n  <div class=\"col p-3\">\r\n    <div class=\"col p-5 col-xs-12 offset-xs-1 noPadding \">\r\n      <div class=\"row\">\r\n        <div class=\"col\">\r\n          <div class=\"col flexCol p-0\">\r\n            <div class=\"col-sm-10 pL0 f14 textdev\">\r\n              <span class=\"poppins\">Upload the following Documents:</span>\r\n            </div>\r\n            <div class=\"col-sm-12 pL0 textdev\">\r\n              <p class=\"mB-0 Spring-Cases txtFlow\"> 1. Controller's Driver's License:</p>\r\n              <p class=\"mB-0 Spring-Cases txtFlow\"> 2. EIN documentation (IRS-issued SS4 confirmation letter)</p>\r\n            </div>\r\n          </div>  \r\n        </div>\r\n        <div class=\"col\">\r\n          <div class=\"col pl-sm-5 pr-sm-5\">\r\n            <mat-form-field class=\"col pl-sm-5 pr-sm-5\">\r\n                <mat-select placeholder=\"type of Document\" id=\"uploadDoc\"  #types (selectionChange)=\"imageType(types.value)\">\r\n                  <mat-option *ngFor=\"let type of docType\" [value]=\"type.value\">\r\n                    {{type.name}}\r\n                  </mat-option>\r\n                </mat-select>\r\n              </mat-form-field>\r\n          </div>\r\n          <div class=\"col flexCol p-0\">\r\n            <div class=\" col-sm-8 offset-sm-2 border-dot rounded-0 bg-light d-flex justify-content-center text-center p-4\">\r\n              <div class=\"col-sm-5 col-xs-4 p-4 \">\r\n                <a onclick=\"document.getElementById('myFileInput').click()\" class=\" fa fa-cloud-upload f60 text-muted center-block  pT9 \"\r\n                  id=\"saleTwoUpload\" style=\"width: 100%\"> </a>\r\n                <input type=\"file\" placeholder={{imagepath}} id=\"myFileInput\" accept=\".pdf,.jpg, .jpeg, .png\"\r\n                  name=\"uploadDocument[]\" #fileInput (change)=\"fileupload($event)\" multiple=\"true\"/>\r\n              </div>\r\n              <div class=\"col-sm-8 err_style \" *ngIf=\"showPdfErrorMsg\" id=\"uploadcanExceed\">The file type\r\n                pdf/doc/docx\r\n                files\r\n                are allowed! </div>\r\n              <div class=\"col-sm-8 err_style \" *ngIf=\"showMessage\" id=\"uploadcanExceed\">The file size cannot exceed\r\n                10\r\n                MB</div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col\">\r\n      <div class=\"row\">\r\n          <div class=\"col\">\r\n            <div class=\"col d-flex justify-content-center mt-4 mb-3  pB40\">\r\n              <button class=\"btn btn-info\" (click)=\"submitData.emit(); \">Agree & Continue</button>\r\n            </div>\r\n          </div>\r\n        </div>\r\n    </div>\r\n  </div>\r\n</div>",
+                template: "<div class=\"col p-0\">\r\n  <label class=\"titleClass\"><strong>{{title}}</strong></label>\r\n  <div class=\"col Rectangle-2 d-flex\">\r\n    <div class=\"col p-3\">\r\n      <div class=\"col p-5 col-xs-12 noPadding \">\r\n        <div class=\"row\">\r\n          <div class=\"col\">\r\n            <div class=\"col flexCol p-0\">\r\n              <div class=\"col-sm-10 f14\">\r\n                <span class=\"poppins\">Upload the following Documents:</span>\r\n              </div>\r\n              <div class=\"col-sm-12 docText\">\r\n                <p class=\"mB-0 Spring-Cases txtFlow\"> 1. Controller's Driver's License:</p>\r\n                <p class=\"mB-0 Spring-Cases txtFlow\"> 2. EIN documentation (IRS-issued SS4 confirmation letter)</p>\r\n                <div class=\"col mt-3 mb-3 p-0\" *ngIf=\"fileArrayList?.length > 0\">\r\n                    <p class=\"poppins\">Document uploaded list:</p>\r\n                    <ul class=\"pl-4 ml-2\">\r\n                      <li *ngFor=\"let file of fileArrayList\"><i>{{file?.name}}</i></li>\r\n                    </ul>\r\n                  </div>\r\n              </div>\r\n            </div>  \r\n          </div>\r\n          <div class=\"col\">\r\n            <div class=\"col pl-sm-5 pr-sm-5\">\r\n              <mat-form-field class=\"col pl-sm-5 pr-sm-5\" *ngIf=\"_classification == 'controller'\">\r\n                  <mat-select placeholder=\"type of Document\" id=\"uploadDoc\"  #types (selectionChange)=\"imageType(types.value)\">\r\n                    <mat-option *ngFor=\"let type of docType\" [value]=\"type.value\">\r\n                      {{type.name}}\r\n                    </mat-option>\r\n                  </mat-select>\r\n               </mat-form-field>\r\n            </div>\r\n            <div class=\"col flexCol p-0\">\r\n              <div class=\" col-sm-8 offset-sm-2 border-dot rounded-0 bg-light d-flex justify-content-center text-center p-4\">\r\n                <div class=\"col-sm-5 col-xs-4 p-4 \">\r\n                  <a onclick=\"document.getElementById('myFileInput').click()\" class=\" fa fa-cloud-upload f60 text-muted center-block  pT9 \"\r\n                    id=\"saleTwoUpload\" style=\"width: 100%\"> </a>\r\n                  <input type=\"file\" placeholder={{imagepath}} id=\"myFileInput\" accept=\".pdf,.jpg, .jpeg, .png\"\r\n                    name=\"uploadDocument[]\" #fileInput (change)=\"fileupload($event)\" multiple=\"true\"/>\r\n                </div>\r\n                <div class=\"col-sm-8 err_style \" *ngIf=\"showPdfErrorMsg\" id=\"uploadcanExceed\">The file type\r\n                  pdf/doc/docx\r\n                  files\r\n                  are allowed! </div>\r\n                <div class=\"col-sm-8 err_style \" *ngIf=\"showMessage\" id=\"uploadcanExceed\">The file size cannot exceed\r\n                  10\r\n                  MB</div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n              <div class=\"col d-flex justify-content-center mt-4 mb-3  pB40\">\r\n                <button class=\"btn btn-info\" (click)=\"submitData.emit(); \">Agree & Continue</button>\r\n              </div>\r\n            </div>\r\n          </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  </div>\r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  <!-- <div class=\"col p-0\">\r\n      <label class=\"titleClass\"><strong>{{title}}</strong></label>\r\n      <div class=\"col Rectangle-2 d-flex\">\r\n        <div class=\"col p-3\">\r\n          <div class=\"col p-5 col-xs-12 offset-xs-1 noPadding \">\r\n            <div class=\"row\">\r\n              <div class=\"col\">\r\n                <div class=\"col flexCol p-0\">\r\n                  <div class=\"col-sm-10 f14\">\r\n                    <span class=\"poppins\">Upload the following Documents:</span>\r\n                  </div>\r\n                  <div class=\"col-sm-12 docText\">\r\n                    <p class=\"mB-0 Spring-Cases txtFlow\"> 1. Controller's Driver's License:</p>\r\n                    <p class=\"mB-0 Spring-Cases txtFlow\"> 2. EIN documentation (IRS-issued SS4 confirmation letter)</p>\r\n                  </div>\r\n                  <div class=\"col mt-3 mb-3\" *ngIf=\"fileArrayList\">\r\n                    <p class=\"poppins\">Document list:</p>\r\n                    <ul class=\"pl-5\">\r\n                      <li *ngFor=\"let file of fileArrayList\">{{file?.name}}</li>\r\n                    </ul>\r\n                  </div>\r\n                </div>  \r\n              </div>\r\n              <div class=\"col\">\r\n                <div class=\"col pl-sm-5 pr-sm-5\">\r\n                  <mat-form-field class=\"col pl-sm-5 pr-sm-5\" *ngIf=\"_classification == 'controller'\">\r\n                      <mat-select placeholder=\"type of Document\" id=\"uploadDoc\"  #types (selectionChange)=\"imageType(types.value)\">\r\n                        <mat-option *ngFor=\"let type of docType\" [value]=\"type.value\">\r\n                          {{type.name}}\r\n                        </mat-option>\r\n                      </mat-select>\r\n                   </mat-form-field>\r\n                </div>\r\n                <div class=\"col flexCol p-0\">\r\n                  <div class=\" col-sm-8 offset-sm-2 border-dot rounded-0 bg-light d-flex justify-content-center text-center p-4\">\r\n                    <div class=\"col-sm-5 col-xs-4 p-4 \">\r\n                      <a onclick=\"document.getElementById('myFileInput').click()\" class=\" fa fa-cloud-upload f60 text-muted center-block  pT9 \"\r\n                        id=\"saleTwoUpload\" style=\"width: 100%\"> </a>\r\n                      <input type=\"file\" placeholder={{imagepath}} id=\"myFileInput\" accept=\".pdf,.jpg, .jpeg, .png\"\r\n                        name=\"uploadDocument[]\" #fileInput (change)=\"fileupload($event)\" multiple=\"true\"/>\r\n                    </div>\r\n                    <div class=\"col-sm-8 err_style \" *ngIf=\"showPdfErrorMsg\" id=\"uploadcanExceed\">The file type\r\n                      pdf/doc/docx\r\n                      files\r\n                      are allowed! </div>\r\n                    <div class=\"col-sm-8 err_style \" *ngIf=\"showMessage\" id=\"uploadcanExceed\">The file size cannot exceed\r\n                      10\r\n                      MB</div>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col\">\r\n            <div class=\"row\">\r\n                <div class=\"col\">\r\n                  <div class=\"col d-flex justify-content-center mt-4 mb-3  pB40\">\r\n                    <button class=\"btn btn-info\" (click)=\"submitData.emit(); \">Agree & Continue</button>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      </div> -->",
                 styles: [".display-2{font-size:5.2rem!important;line-height:1.5!important}.border-dot{border-style:dashed!important;border-color:#6a68689e;border-radius:1px;border-width:2px}.upload{opacity:0;width:277px!important;position:relative;height:120px}.upload:hover{cursor:pointer!important}.upload-icon{position:absolute}.icon{font-size:2.2rem!important;color:#ccda5c!important}.btn{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#000;border-radius:29px 77px 61px;font-weight:900;font-family:Poppins,sans-serif!important;font-size:1.5rem}.btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.btn-info:active,.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.btn-info.disabled.focus,.btn-info.disabled:focus,.btn-info.disabled:hover,.btn-info[disabled].focus,.btn-info[disabled]:focus,.btn-info[disabled]:hover,fieldset[disabled] .btn-info.focus,fieldset[disabled] .btn-info:focus,fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.btn-info.focus,.btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.btn-info.active.focus,.btn-info.active:focus,.btn-info.active:hover,.btn-info:active.focus,.btn-info:active:focus,.btn-info:active:hover,.open>.dropdown-toggle .btn-info.focus,.open>.dropdown-toggle .btn-info:focus,.open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.disabled{cursor:not-allowed!important}.add{font-family:Poppins,sans-serif!important;font-size:1.7rem;font-weight:400;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:.3px;color:#ccda5c}.add:hover{font-weight:600}"]
             }] }
 ];
@@ -3205,7 +3223,9 @@ SukuCreationCustomerFileuploadComponent.ctorParameters = () => [
     { type: MatSnackBar }
 ];
 SukuCreationCustomerFileuploadComponent.propDecorators = {
-    onFileChange: [{ type: Output }],
+    title: [{ type: Input }],
+    classification: [{ type: Input }],
+    OnFileChange: [{ type: Output }],
     submitData: [{ type: Output }]
 };
 
