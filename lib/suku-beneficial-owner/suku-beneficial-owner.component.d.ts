@@ -1,6 +1,8 @@
 import { OnInit, EventEmitter } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material';
 export declare class SukuBeneficialOwnerComponent implements OnInit {
+    private snackBar;
     form: FormGroup;
     title: string;
     titleClass: string;
@@ -20,10 +22,14 @@ export declare class SukuBeneficialOwnerComponent implements OnInit {
     selected: any[];
     toggle: any[];
     customClass: any;
-    constructor();
+    documentType: any;
+    uploadType: any;
+    constructor(snackBar: MatSnackBar);
     ngOnInit(): void;
     active(i: any): void;
     action(): void;
     countrySelectAction(val: any, i: any): void;
     agree(): void;
+    fileupload(e: any): void;
+    snackbar(msg: any): void;
 }
