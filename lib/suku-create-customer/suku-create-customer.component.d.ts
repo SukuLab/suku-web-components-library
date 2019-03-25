@@ -5,7 +5,8 @@ export declare class SukuCreateCustomerComponent implements OnInit {
     _data: any;
     _data1: any;
     _ssnLimit: any;
-    maxDate: string;
+    maxDate: any;
+    currentDate: any;
     form: FormGroup;
     formArrayNameValue: any;
     countriesList: any;
@@ -34,4 +35,5 @@ export declare class SukuCreateCustomerComponent implements OnInit {
     businessTypeFunAction(val: any): void;
     validateTypeFun(type: any): void;
     action1(): void;
+    GetFormattedDate(): void;
 }
