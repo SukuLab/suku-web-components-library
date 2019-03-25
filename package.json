@@ -1,0 +1,25 @@
+{
+  "name": "suku-webcomponents",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.0.0",
+    "@angular/core": "^7.0.0",
+    "@angular/material": "^7.0.4",
+    "@angular/forms": "^7.0.4",
+    "@angular/platform-browser": "*",
+    "d3": "^3.5.17"
+  },
+  "main": "bundles/suku-webcomponents.umd.js",
+  "module": "fesm5/suku-webcomponents.js",
+  "es2015": "fesm2015/suku-webcomponents.js",
+  "esm5": "esm5/suku-webcomponents.js",
+  "esm2015": "esm2015/suku-webcomponents.js",
+  "fesm5": "fesm5/suku-webcomponents.js",
+  "fesm2015": "fesm2015/suku-webcomponents.js",
+  "typings": "suku-webcomponents.d.ts",
+  "metadata": "suku-webcomponents.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}
