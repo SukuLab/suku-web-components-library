@@ -3341,7 +3341,7 @@ class SukuCardLineTypeOneComponent {
         this.bgColor = '';
         this.imageColSize = "col-sm-1 pt-1 pl-2";
         this.txtcolsize = "col-sm-5 pl-4 pt-2 mt-1";
-        this.txttwocolsize = "col-sm-2 pt-2 mt-1";
+        this.txttwocolsize = "col-sm-2 pt-2 pl-lg-2 pr-lg-2 mt-1";
         this.txtthreecolsize = "col-sm-3 pt-2 mt-1";
         this.titleOne = 'Title One';
         this.titleOneColor = 'black';
@@ -3450,7 +3450,7 @@ class SukuCardLineTypeTwoComponent {
         this.bgColor = '';
         this.imageColSize = "col-sm-1 pt-1 pl-2";
         this.txtcolsize = "col-sm-4 pl-sm-5 pt-2 mt-1";
-        this.txttwocolsize = "col-sm-2 pt-2 mt-1";
+        this.txttwocolsize = "col-sm-2 pt-2 pl-lg-2 pr-lg-2 mt-1";
         this.txtthreecolsize = "col-sm-3 pt-2 mt-1";
         this.titleOne = 'Title One';
         this.titleOneColor = 'black';
@@ -3559,7 +3559,7 @@ class SukuRatingCardLineComponent {
         this.bgColor = '';
         this.imageColSize = 'col-sm-1 p-0';
         this.txtcolsize = 'col-sm-3 col-xs-12 pl-lg-2 pr-2 pt-1 mt-1';
-        this.txttwocolsize = 'col-sm-3 pt-2 mt-1';
+        this.txttwocolsize = 'col-sm-3 pt-2 pl-lg-2 pr-lg-2 mt-1';
         this.txtthreecolsize = 'col-sm-3 pt-2 mt-1';
         this.titleOne = 'Title One';
         this.titleOneColor = 'black';
