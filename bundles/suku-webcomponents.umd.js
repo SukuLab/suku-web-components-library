@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('@angular/router'), require('d3'), require('@angular/material'), require('@angular/core'), require('@angular/forms')) :
-    typeof define === 'function' && define.amd ? define('suku-webcomponents', ['exports', '@angular/common', '@angular/router', 'd3', '@angular/material', '@angular/core', '@angular/forms'], factory) :
-    (factory((global['suku-webcomponents'] = {}),global.ng.common,global.ng.router,global.d3,global.ng.material,global.ng.core,global.ng.forms));
-}(this, (function (exports,common,router,d3,material,i0,forms) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('@angular/router'), require('d3'), require('@angular/material'), require('@angular/forms'), require('@angular/core')) :
+    typeof define === 'function' && define.amd ? define('suku-webcomponents', ['exports', '@angular/common', '@angular/router', 'd3', '@angular/material', '@angular/forms', '@angular/core'], factory) :
+    (factory((global['suku-webcomponents'] = {}),global.ng.common,global.ng.router,global.d3,global.ng.material,global.ng.forms,global.ng.core));
+}(this, (function (exports,common,router,d3,material,forms,i0) { 'use strict';
 
     /**
      * @fileoverview added by tsickle
@@ -3331,7 +3331,7 @@
                     var file = e.target.files[0];
                     currentFileSize = file.size;
                     if (currentFileSize <= maxFileSize) {
-                        if (file.type == 'image/jpeg' || file.type == 'image/png' || file.type == 'image/jpg') {
+                        if (file.type == 'image/jpeg' || file.type == 'image/png' || file.type == 'image/jpg' || file.type == 'application/pdf') {
                             if (e.target.files && e.target.files.length > 0) {
                                 for (var i = 0; i < e.target.files.length; i++) {
                                     /** @type {?} */
@@ -3352,7 +3352,7 @@
                             }
                         }
                         else {
-                            this.snackbar('The file type jpg/jpeg/png files are allowed!');
+                            this.snackbar('The file type jpg/jpeg/png/pdf files are allowed!');
                         }
                     }
                     else {
@@ -3381,8 +3381,8 @@
         SukuCreationCustomerFileuploadComponent.decorators = [
             { type: i0.Component, args: [{
                         selector: 'suku-creation-customer-fileupload',
-                        template: "<div class=\"col p-0\">\r\n  <label class=\"titleClass\"><strong>{{title}}</strong></label>\r\n  <div class=\"col Rectangle-2 d-flex\">\r\n    <div class=\"col p-3\">\r\n      <div class=\"col p-5 col-xs-12 noPadding \">\r\n        <div class=\"row\">\r\n          <div class=\"col\">\r\n            <div class=\"col flexCol p-0\">\r\n              <div class=\"col-sm-10 f14\">\r\n                <span class=\"poppins\">Upload the following Documents:</span>\r\n              </div>\r\n              <div class=\"col-sm-12 docText\">\r\n                <p class=\"mB-0 Spring-Cases txtFlow\"> 1. Controller's Driver's License:</p>\r\n                <p class=\"mB-0 Spring-Cases txtFlow\"> 2. EIN documentation (IRS-issued SS4 confirmation letter)</p>\r\n                <div class=\"col mt-3 mb-3 p-0\" *ngIf=\"fileArrayList?.length > 0\">\r\n                    <p class=\"poppins\">Document uploaded list:</p>\r\n                    <ul class=\"pl-4 ml-2\">\r\n                      <li *ngFor=\"let file of fileArrayList\"><i>{{file?.name}}</i></li>\r\n                    </ul>\r\n                  </div>\r\n              </div>\r\n            </div>  \r\n          </div>\r\n          <div class=\"col\">\r\n            <div class=\"col pl-sm-5 pr-sm-5\">\r\n              <mat-form-field class=\"col pl-sm-5 pr-sm-5\" *ngIf=\"_classification == 'controller'\">\r\n                  <mat-select placeholder=\"type of Document\" id=\"uploadDoc\"  #types (selectionChange)=\"imageType(types.value)\">\r\n                    <mat-option *ngFor=\"let type of docType\" [value]=\"type.value\">\r\n                      {{type.name}}\r\n                    </mat-option>\r\n                  </mat-select>\r\n               </mat-form-field>\r\n            </div>\r\n            <div class=\"col flexCol p-0\">\r\n              <div class=\" col-sm-8 offset-sm-2 border-dot rounded-0 bg-light d-flex justify-content-center text-center p-4\">\r\n                <div class=\"col-sm-5 col-xs-4 p-4 \">\r\n                  <a onclick=\"document.getElementById('myFileInput').click()\" class=\" fa fa-cloud-upload f60 text-muted center-block  pT9 \"\r\n                    id=\"saleTwoUpload\" style=\"width: 100%\"> </a>\r\n                  <input type=\"file\" placeholder={{imagepath}} id=\"myFileInput\" accept=\".pdf,.jpg, .jpeg, .png\"\r\n                    name=\"uploadDocument[]\" #fileInput (change)=\"fileupload($event)\" multiple=\"true\"/>\r\n                </div>\r\n                <div class=\"col-sm-8 err_style \" *ngIf=\"showPdfErrorMsg\" id=\"uploadcanExceed\">The file type\r\n                  pdf/doc/docx\r\n                  files\r\n                  are allowed! </div>\r\n                <div class=\"col-sm-8 err_style \" *ngIf=\"showMessage\" id=\"uploadcanExceed\">The file size cannot exceed\r\n                  10\r\n                  MB</div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n              <div class=\"col d-flex justify-content-center mt-4 mb-3  pB40\">\r\n                <button class=\"btn btn-info\" (click)=\"submitData.emit(); \">Agree & Continue</button>\r\n              </div>\r\n            </div>\r\n          </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  </div>\r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  <!-- <div class=\"col p-0\">\r\n      <label class=\"titleClass\"><strong>{{title}}</strong></label>\r\n      <div class=\"col Rectangle-2 d-flex\">\r\n        <div class=\"col p-3\">\r\n          <div class=\"col p-5 col-xs-12 offset-xs-1 noPadding \">\r\n            <div class=\"row\">\r\n              <div class=\"col\">\r\n                <div class=\"col flexCol p-0\">\r\n                  <div class=\"col-sm-10 f14\">\r\n                    <span class=\"poppins\">Upload the following Documents:</span>\r\n                  </div>\r\n                  <div class=\"col-sm-12 docText\">\r\n                    <p class=\"mB-0 Spring-Cases txtFlow\"> 1. Controller's Driver's License:</p>\r\n                    <p class=\"mB-0 Spring-Cases txtFlow\"> 2. EIN documentation (IRS-issued SS4 confirmation letter)</p>\r\n                  </div>\r\n                  <div class=\"col mt-3 mb-3\" *ngIf=\"fileArrayList\">\r\n                    <p class=\"poppins\">Document list:</p>\r\n                    <ul class=\"pl-5\">\r\n                      <li *ngFor=\"let file of fileArrayList\">{{file?.name}}</li>\r\n                    </ul>\r\n                  </div>\r\n                </div>  \r\n              </div>\r\n              <div class=\"col\">\r\n                <div class=\"col pl-sm-5 pr-sm-5\">\r\n                  <mat-form-field class=\"col pl-sm-5 pr-sm-5\" *ngIf=\"_classification == 'controller'\">\r\n                      <mat-select placeholder=\"type of Document\" id=\"uploadDoc\"  #types (selectionChange)=\"imageType(types.value)\">\r\n                        <mat-option *ngFor=\"let type of docType\" [value]=\"type.value\">\r\n                          {{type.name}}\r\n                        </mat-option>\r\n                      </mat-select>\r\n                   </mat-form-field>\r\n                </div>\r\n                <div class=\"col flexCol p-0\">\r\n                  <div class=\" col-sm-8 offset-sm-2 border-dot rounded-0 bg-light d-flex justify-content-center text-center p-4\">\r\n                    <div class=\"col-sm-5 col-xs-4 p-4 \">\r\n                      <a onclick=\"document.getElementById('myFileInput').click()\" class=\" fa fa-cloud-upload f60 text-muted center-block  pT9 \"\r\n                        id=\"saleTwoUpload\" style=\"width: 100%\"> </a>\r\n                      <input type=\"file\" placeholder={{imagepath}} id=\"myFileInput\" accept=\".pdf,.jpg, .jpeg, .png\"\r\n                        name=\"uploadDocument[]\" #fileInput (change)=\"fileupload($event)\" multiple=\"true\"/>\r\n                    </div>\r\n                    <div class=\"col-sm-8 err_style \" *ngIf=\"showPdfErrorMsg\" id=\"uploadcanExceed\">The file type\r\n                      pdf/doc/docx\r\n                      files\r\n                      are allowed! </div>\r\n                    <div class=\"col-sm-8 err_style \" *ngIf=\"showMessage\" id=\"uploadcanExceed\">The file size cannot exceed\r\n                      10\r\n                      MB</div>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col\">\r\n            <div class=\"row\">\r\n                <div class=\"col\">\r\n                  <div class=\"col d-flex justify-content-center mt-4 mb-3  pB40\">\r\n                    <button class=\"btn btn-info\" (click)=\"submitData.emit(); \">Agree & Continue</button>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      </div> -->",
-                        styles: [".display-2{font-size:5.2rem!important;line-height:1.5!important}.border-dot{border-style:dashed!important;border-color:#6a68689e;border-radius:1px;border-width:2px}.upload{opacity:0;width:277px!important;position:relative;height:120px}.upload:hover{cursor:pointer!important}.upload-icon{position:absolute}.icon{font-size:2.2rem!important;color:#ccda5c!important}.btn{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#000;border-radius:29px 77px 61px;font-weight:900;font-family:Poppins,sans-serif!important;font-size:1.5rem}.btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.btn-info:active,.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.btn-info.disabled.focus,.btn-info.disabled:focus,.btn-info.disabled:hover,.btn-info[disabled].focus,.btn-info[disabled]:focus,.btn-info[disabled]:hover,fieldset[disabled] .btn-info.focus,fieldset[disabled] .btn-info:focus,fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.btn-info.focus,.btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.btn-info.active.focus,.btn-info.active:focus,.btn-info.active:hover,.btn-info:active.focus,.btn-info:active:focus,.btn-info:active:hover,.open>.dropdown-toggle .btn-info.focus,.open>.dropdown-toggle .btn-info:focus,.open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.disabled{cursor:not-allowed!important}.add{font-family:Poppins,sans-serif!important;font-size:1.7rem;font-weight:400;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:.3px;color:#ccda5c}.add:hover{font-weight:600}"]
+                        template: "<div class=\"col p-0\">\r\n    <label class=\"titleClass\"><strong>{{title}}</strong></label>\r\n    <div class=\"col Rectangle-2 d-flex\">\r\n      <div class=\"col p-3\">\r\n        <div class=\"col p-3 mt-3 col-xs-12 noPadding \">\r\n          <div class=\"col\">\r\n            <div class=\"col flexCol p-0\">\r\n              <div class=\"col-sm-10 f14\">\r\n                <span class=\"poppins\" *ngIf=\"!(_classification == 'business')\">For Controller Verification:</span>\r\n                <span class=\"poppins\" *ngIf=\"(_classification == 'business')\">For Business Verification:</span>\r\n              </div>\r\n              <div class=\"col-sm-12 preFont\">\r\n                <div *ngIf=\"!(_classification == 'business')\"  class=\"pl-2\">\r\n                  <p class=\"mB-0 Spring-Cases txtFlow\">\r\n                    Please submit verification documentation.\r\n                    Files must be either a .jpg, .jpeg, .png, or .pdf up to 10MB in size.*\r\n                  </p>\r\n                  Allowed Documents:\r\n                  <ul class=\"pl-5 ml-2\">\r\n                    <li>Unexpired Passport</li>\r\n                    <li>Unexpired driver's license</li>\r\n                    <li>Other unexpired Government Issued ID card</li>\r\n                  </ul>\r\n                </div>\r\n                <div *ngIf=\"(_classification == 'business')\" class=\"pl-2\">\r\n                  <p class=\"mB-0 Spring-Cases txtFlow\">\r\n                    Please submit verification documentation.\r\n                    Files must be either a .jpg, .jpeg, .png, or .pdf up to 10MB in size.*\r\n                  </p>\r\n                  <ul class=\"pl-5 ml-2\">\r\n                    <li>Partnership, General Partnership: EIN Letter (IRS-issued SS4 confirmation letter).</li>\r\n                    <li>(Limited Liability Corporation (LLC), Corporation: EIN Letter (IRS-issued SS4 confirmation\r\n                      letter).</li>\r\n                    <li class=\"text-justify\">Sole Proprietorship: One or more of the following, as applicable to your sole\r\n                      proprietorship: Fictitious Business Name Statement; Certificate of Assumed Name; Business License;\r\n                      Sales/Use Tax License; Registration of Trade Name; EIN documentation (IRS-issued SS4 confirmation\r\n                      letter); Color copy of a valid government-issued photo ID (e.g., a driver's license, passport, or\r\n                      state ID card).\r\n                      Other business documents that are applicable includes any US government entity (federal, state,\r\n                      local) issued business formation or licensing exhibiting the name of the business enrolling with\r\n                      Dwolla, or; Any business formation documents exhibiting the name of the business entity in addition\r\n                      to being filed and stamped by a US government entity. Examples include:</li>\r\n                    <li>Filed and stamped Articles of Organization or Incorporation</li>\r\n                    <li>Sales/Use Tax License</li>\r\n                    <li>Business License</li>\r\n                    <li>Certificate of Good Standing</li>\r\n                  </ul>\r\n                </div>\r\n                <div class=\"col mt-3 mb-3 p-0\" *ngIf=\"fileArrayList?.length > 0\">\r\n                  <p class=\"poppins\">Document uploaded list:</p>\r\n                  <ul class=\"pl-5 ml-2\">\r\n                    <li *ngFor=\"let file of fileArrayList\"><i>{{file?.name}}</i></li>\r\n                  </ul>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col\">\r\n            <div class=\"col pl-sm-5 pr-sm-5\">\r\n              <mat-form-field class=\"col pl-sm-5 pr-sm-5\" *ngIf=\"_classification == 'controller'\">\r\n                <mat-select placeholder=\"type of Document\" id=\"uploadDoc\" #types\r\n                  (selectionChange)=\"imageType(types.value)\">\r\n                  <mat-option *ngFor=\"let type of docType\" [value]=\"type.value\">\r\n                    {{type.name}}\r\n                  </mat-option>\r\n                </mat-select>\r\n              </mat-form-field>\r\n            </div>\r\n            <div class=\"col flexCol p-0\">\r\n              <div\r\n                class=\"col-sm-4 offset-sm-8 border-dot rounded-0 bg-light d-flex justify-content-center text-center p-4\">\r\n                <div class=\"col-sm-5 col-xs-4 p-4 \">\r\n                  <a onclick=\"document.getElementById('myFileInput').click()\"\r\n                    class=\" fa fa-cloud-upload f60 text-muted center-block  pT9 \" id=\"saleTwoUpload\" style=\"width: 100%\">\r\n                  </a>\r\n                  <input type=\"file\" placeholder={{imagepath}} id=\"myFileInput\" accept=\".pdf,.jpg, .jpeg, .png\"\r\n                    name=\"uploadDocument[]\" #fileInput (change)=\"fileupload($event)\" multiple=\"true\" />\r\n                </div>\r\n                <div class=\"col-sm-8 err_style \" *ngIf=\"showPdfErrorMsg\" id=\"uploadcanExceed\">The file type\r\n                  pdf/doc/docx\r\n                  files\r\n                  are allowed! </div>\r\n                <div class=\"col-sm-8 err_style \" *ngIf=\"showMessage\" id=\"uploadcanExceed\">The file size cannot exceed\r\n                  10\r\n                  MB</div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"col\">\r\n          <div class=\"row\">\r\n            <div class=\"col\">\r\n              <div class=\"col d-flex justify-content-center mt-4 mb-3  pB40\">\r\n                <button class=\"btn btn-info\" (click)=\"submitData.emit(); \">Agree & Continue</button>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>",
+                        styles: [".display-2{font-size:5.2rem!important;line-height:1.5!important}.border-dot{border-style:dashed!important;border-color:#6a68689e;border-radius:1px;border-width:2px}.upload{opacity:0;width:277px!important;position:relative;height:120px}.upload:hover{cursor:pointer!important}.upload-icon{position:absolute}.icon{font-size:2.2rem!important;color:#ccda5c!important}.btn{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#000;border-radius:29px 77px 61px;font-weight:900;font-family:Poppins,sans-serif!important;font-size:1.5rem}.btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.btn-info:active,.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.btn-info.disabled.focus,.btn-info.disabled:focus,.btn-info.disabled:hover,.btn-info[disabled].focus,.btn-info[disabled]:focus,.btn-info[disabled]:hover,fieldset[disabled] .btn-info.focus,fieldset[disabled] .btn-info:focus,fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.btn-info.focus,.btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.btn-info.active.focus,.btn-info.active:focus,.btn-info.active:hover,.btn-info:active.focus,.btn-info:active:focus,.btn-info:active:hover,.open>.dropdown-toggle .btn-info.focus,.open>.dropdown-toggle .btn-info:focus,.open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.disabled{cursor:not-allowed!important}.add{font-family:Poppins,sans-serif!important;font-size:1.7rem;font-weight:400;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:.3px;color:#ccda5c}.add:hover{font-weight:600}.docText{font-family:Poppins,sans-serif!important;letter-spacing:.1px}label.titleClass{font-family:Poppins,sans-serif!important;font-size:20px;font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:.1px}.preFont{font-family:\"Encode sans\",sans-serif!important;letter-spacing:.1px;font-size:14px}"]
                     }] }
         ];
         /** @nocollapse */
@@ -3493,6 +3493,418 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
+    var SukuCardLineTypeOneComponent = /** @class */ (function () {
+        function SukuCardLineTypeOneComponent() {
+            this.image = 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSTqz64A2Xj54f5v44rD9vNUqyTXz5c0r7zTlfh18idoyUYGH8hF51pP6_efodnajCuYVB4okcMnT0&usqp=CAc';
+            this.chatReadIcon = '../assets/images/chat_read.png';
+            this.chatUnreadIcon = '../assets/images/chat_unread.png';
+            this.customclass = '';
+            this.customImgclass = '';
+            this.customIconclass = 'text-center';
+            this.bgColor = '';
+            this.imageColSize = "col-sm-1 pt-1 pl-2";
+            this.txtcolsize = "col-sm-5 pl-4 pt-2 mt-1";
+            this.txttwocolsize = "col-sm-2 pt-2 mt-1";
+            this.txtthreecolsize = "col-sm-3 pt-2 mt-1";
+            this.titleOne = 'Title One';
+            this.titleOneColor = 'black';
+            this.titleOneWeight = '600';
+            this.titleOneSize = '14';
+            this.titleOnecustomclass = '';
+            this.contentOne = '$100';
+            this.contentOneColor = '#3e3e3e';
+            this.contentOneWeight = '500';
+            this.contentOneSize = '14';
+            this.contentOnecustomclass = '';
+            this.contentTwo = 'John Smith';
+            this.contentTwoColor = '#3e3e3e';
+            this.contentTwoWeight = '500';
+            this.contentTwoSize = '14';
+            this.contentTwocustomclass = '';
+            this.subTitleTwo = 'SOLD BY';
+            this.subTitleTwoColor = '#b6b6b6';
+            this.subTitleTwoWeight = '500';
+            this.subTitleTwoSize = '12';
+            this.subTitleTwocustomclass = '';
+            this.subTitleThree = 'EXPIRY DATE';
+            this.subTitleThreecolor = '#b6b6b6';
+            this.subTitleThreeWeight = '500';
+            this.subTitleThreeSize = '12';
+            this.subTitleThreeClass = '';
+            this.contentThree = '28 Nov 2018';
+            this.contentThreeColor = '#3e3e3e';
+            this.contentThreeWeight = '500';
+            this.contentThreeSize = '14';
+            this.contentThreecustomclass = '';
+        }
+        /**
+         * @return {?}
+         */
+        SukuCardLineTypeOneComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+            function () {
+            };
+        SukuCardLineTypeOneComponent.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'suku-card-line-type-one',
+                        template: "<div class=\"col p-0\">\r\n  <div class=\"row card-line-bg p-3 m-3 {{customclass}}\" [style.background-color]=\"bgColor\">\r\n    <div [class]=\"imageColSize\">\r\n      <img [class]=\"customclass\" src=\"{{image}}\" alt=\"card-img\" width=\"55px\" height=\"46px\">\r\n    </div>\r\n    <div class=\"col-sm-1\" *ngIf=\"msgStatus == 'read'\">\r\n      <img [class]=\"customIconclass\" src=\"{{chatUnreadIcon}}\" alt=\"card-img\" width=\"50px\" height=\"50px\">\r\n    </div>\r\n    <div class=\"col-sm-1\" *ngIf=\"msgStatus == 'unRead'\">\r\n      <img [class]=\"customIconclass\" src=\"{{chatReadIcon}}\" alt=\"card-img\" width=\"50px\" height=\"50px\">\r\n    </div>\r\n    <div class=\"col-sm-1\" *ngIf=\"!msgStatus\"></div>\r\n    <div [class]=\"txtcolsize\">\r\n      <h2 [style.font-size.px]=\"titleOneSize\" [class]=\"titleOnecustomclass\"  [style.font-weight]=\"titleOneWeight\"\r\n        [style.color]=\"titleOneColor\">{{titleOne}}</h2>\r\n      <h2 [style.font-size.px]=\"contentOneSize\" [class]=\"contentOnecustomclass\"  [style.font-weight]=\"contentOneWeight\" [style.color]=\"contentOneColor\">{{contentOne}}</h2>\r\n    </div>\r\n    <div [class]=\"txttwocolsize\">\r\n      <h2 [style.font-size.px]=\"subTitleTwoSize\" [class]=\"subTitleTwocustomclass\"  [style.font-weight]=\"subTitleTwoWeight\" [style.color]=\"subTitleTwoColor\">{{subTitleTwo}}</h2>\r\n      <h2 [style.font-size.px]=\"contentTwoSize\" [class]=\"contentTwocustomclass\"  [style.font-weight]=\"contentTwoWeight\" [style.color]=\"contentTwoColor\">{{contentTwo}}</h2>\r\n    </div>\r\n    <div [class]=\"txtthreecolsize\">\r\n        <h2 [style.font-size.px]=\"subTitleThreeSize\" [class]=\"subTitleThreeClass\"  [style.font-weight]=\"subTitleThreeWeight\" [style.color]=\"subTitleThreecolor\">{{subTitleThree}}</h2>\r\n        <h2 [style.font-size.px]=\"contentThreeSize\" [class]=\"contentThreecustomclass\"  [style.font-weight]=\"contentThreeWeight\" [style.color]=\"contentThreeColor\">{{contentThree}}</h2>\r\n      </div>\r\n  </div>\r\n</div>",
+                        styles: ["h2{font-family:'Encode Sans',sans-serif;font-size:12px;font-weight:500;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.2px;color:#b6b6b6;word-break:break-all!important}.card-line-bg{background-color:#fff;box-shadow:0 2px 4px 0 rgba(0,0,0,.05)}.card-line-img{border:1px solid #e3dbdb36!important;box-shadow:0 2px 4px 0 rgba(0,0,0,.06)}.border-top-box{border-top:1px solid #dee2e670!important}.c-pointer{cursor:pointer}"]
+                    }] }
+        ];
+        /** @nocollapse */
+        SukuCardLineTypeOneComponent.ctorParameters = function () { return []; };
+        SukuCardLineTypeOneComponent.propDecorators = {
+            image: [{ type: i0.Input }],
+            chatReadIcon: [{ type: i0.Input, args: ['char-read-icon',] }],
+            chatUnreadIcon: [{ type: i0.Input, args: ['char-unread-icon',] }],
+            msgStatus: [{ type: i0.Input, args: ['msg-status',] }],
+            customclass: [{ type: i0.Input, args: ['customclass',] }],
+            customImgclass: [{ type: i0.Input, args: ['customImgclass',] }],
+            customIconclass: [{ type: i0.Input, args: ['custom-iconclass',] }],
+            bgColor: [{ type: i0.Input }],
+            interest: [{ type: i0.Input }],
+            imageColSize: [{ type: i0.Input }],
+            txtcolsize: [{ type: i0.Input }],
+            txttwocolsize: [{ type: i0.Input }],
+            txtthreecolsize: [{ type: i0.Input }],
+            titleOne: [{ type: i0.Input, args: ['title-one',] }],
+            titleOneColor: [{ type: i0.Input, args: ['title-one-color',] }],
+            titleOneWeight: [{ type: i0.Input, args: ['title-one-weight',] }],
+            titleOneSize: [{ type: i0.Input, args: ['title-one-size',] }],
+            titleOnecustomclass: [{ type: i0.Input, args: ['title-one-customclass',] }],
+            contentOne: [{ type: i0.Input, args: ['content-one',] }],
+            contentOneColor: [{ type: i0.Input, args: ['content-one-color',] }],
+            contentOneWeight: [{ type: i0.Input, args: ['content-one-weight',] }],
+            contentOneSize: [{ type: i0.Input, args: ['content-one-size',] }],
+            contentOnecustomclass: [{ type: i0.Input, args: ['content-one-customclass',] }],
+            contentTwo: [{ type: i0.Input, args: ['content-two',] }],
+            contentTwoColor: [{ type: i0.Input, args: ['content-two-color',] }],
+            contentTwoWeight: [{ type: i0.Input, args: ['content-two-weight',] }],
+            contentTwoSize: [{ type: i0.Input, args: ['content-two-size',] }],
+            contentTwocustomclass: [{ type: i0.Input, args: ['content-two-customclass',] }],
+            subTitleTwo: [{ type: i0.Input, args: ['sub-title-two',] }],
+            subTitleTwoColor: [{ type: i0.Input, args: ['sub-title-two-color',] }],
+            subTitleTwoWeight: [{ type: i0.Input, args: ['sub-title-two-weight',] }],
+            subTitleTwoSize: [{ type: i0.Input, args: ['sub-title-two-size',] }],
+            subTitleTwocustomclass: [{ type: i0.Input, args: ['sub-title-two-customclass',] }],
+            subTitleThree: [{ type: i0.Input, args: ['sub-title-three',] }],
+            subTitleThreecolor: [{ type: i0.Input, args: ['sub-title-three-color',] }],
+            subTitleThreeWeight: [{ type: i0.Input, args: ['sub-title-three-weight',] }],
+            subTitleThreeSize: [{ type: i0.Input, args: ['sub-title-three-size',] }],
+            subTitleThreeClass: [{ type: i0.Input, args: ['sub-title-threeclass',] }],
+            contentThree: [{ type: i0.Input, args: ['content-three',] }],
+            contentThreeColor: [{ type: i0.Input, args: ['content-three-color',] }],
+            contentThreeWeight: [{ type: i0.Input, args: ['content-three-widget',] }],
+            contentThreeSize: [{ type: i0.Input, args: ['content-three-size',] }],
+            contentThreecustomclass: [{ type: i0.Input, args: ['content-three-customclass',] }]
+        };
+        return SukuCardLineTypeOneComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+    var SukuCardLineTypeTwoComponent = /** @class */ (function () {
+        function SukuCardLineTypeTwoComponent() {
+            this.image = 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSTqz64A2Xj54f5v44rD9vNUqyTXz5c0r7zTlfh18idoyUYGH8hF51pP6_efodnajCuYVB4okcMnT0&usqp=CAc';
+            this.iconOne = '';
+            this.iconTwo = '';
+            this.customclass = '';
+            this.customImgclass = '';
+            this.customIconclass = 'text-center';
+            this.bgColor = '';
+            this.imageColSize = "col-sm-1 pt-1 pl-2";
+            this.txtcolsize = "col-sm-4 pl-sm-5 pt-2 mt-1";
+            this.txttwocolsize = "col-sm-2 pt-2 mt-1";
+            this.txtthreecolsize = "col-sm-3 pt-2 mt-1";
+            this.titleOne = 'Title One';
+            this.titleOneColor = 'black';
+            this.titleOneWeight = '600';
+            this.titleOneSize = '14';
+            this.titleOnecustomclass = '';
+            this.contentOne = '$100';
+            this.contentOneColor = '#3e3e3e';
+            this.contentOneWeight = '500';
+            this.contentOneSize = '14';
+            this.contentOnecustomclass = '';
+            this.contentTwo = 'John Smith';
+            this.contentTwoColor = '#3e3e3e';
+            this.contentTwoWeight = '500';
+            this.contentTwoSize = '14';
+            this.contentTwocustomclass = '';
+            this.subTitleTwo = 'SOLD BY';
+            this.subTitleTwoColor = '#b6b6b6';
+            this.subTitleTwoWeight = '500';
+            this.subTitleTwoSize = '12';
+            this.subTitleTwocustomclass = '';
+            this.subTitleThree = 'EXPIRY DATE';
+            this.subTitleThreecolor = '#b6b6b6';
+            this.subTitleThreeWeight = '500';
+            this.subTitleThreeSize = '12';
+            this.subTitleThreeClass = '';
+            this.contentThree = '28 Nov 2018';
+            this.contentThreeColor = '#3e3e3e';
+            this.contentThreeWeight = '500';
+            this.contentThreeSize = '14';
+            this.contentThreecustomclass = '';
+        }
+        /**
+         * @return {?}
+         */
+        SukuCardLineTypeTwoComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+            function () {
+            };
+        SukuCardLineTypeTwoComponent.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'suku-card-line-type-two',
+                        template: "<div class=\"col p-0\">\r\n  <div class=\"row card-line-bg p-3 m-3 {{customclass}}\" [style.background-color]=\"bgColor\">\r\n    <div [class]=\"imageColSize\">\r\n      <img [class]=\"customImgclass\" src=\"{{image}}\" alt=\"card-img\" width=\"55px\" height=\"46px\">\r\n    </div>\r\n    <div class=\"col-sm-1\">\r\n      <img [class]=\"customIconclass\" [src]=\"iconOne\" alt=\"card-img\" width=\"50px\" height=\"50px\">\r\n    </div>\r\n    <div class=\"col-sm-1\">\r\n      <img [class]=\"customIconclass\" src=\"{{iconTwo}}\" alt=\"card-img\" width=\"50px\" height=\"50px\">\r\n    </div>\r\n    <div [class]=\"txtcolsize\">\r\n      <h2 [style.font-size.px]=\"titleOneSize\" [class]=\"titleOnecustomclass\"  [style.font-weight]=\"titleOneWeight\"\r\n        [style.color]=\"titleOneColor\">{{titleOne}}</h2>\r\n      <h2 [style.font-size.px]=\"contentOneSize\" [class]=\"contentOnecustomclass\"  [style.font-weight]=\"contentOneWeight\" [style.color]=\"contentOneColor\">{{contentOne}}</h2>\r\n    </div>\r\n    <div [class]=\"txttwocolsize\">\r\n      <h2 [style.font-size.px]=\"subTitleTwoSize\" [class]=\"subTitleTwocustomclass\"  [style.font-weight]=\"subTitleTwoWeight\" [style.color]=\"subTitleTwoColor\">{{subTitleTwo}}</h2>\r\n      <h2 [style.font-size.px]=\"contentTwoSize\" [class]=\"contentTwocustomclass\"  [style.font-weight]=\"contentTwoWeight\" [style.color]=\"contentTwoColor\">{{contentTwo}}</h2>\r\n    </div>\r\n    <div [class]=\"txtthreecolsize\">\r\n        <h2 [style.font-size.px]=\"subTitleThreeSize\" [class]=\"subTitleThreeClass\"  [style.font-weight]=\"subTitleThreeWeight\" [style.color]=\"subTitleThreecolor\">{{subTitleThree}}</h2>\r\n        <h2 [style.font-size.px]=\"contentThreeSize\" [class]=\"contentThreecustomclass\"  [style.font-weight]=\"contentThreeWeight\" [style.color]=\"contentThreeColor\">{{contentThree}}</h2>\r\n      </div>\r\n  </div>\r\n</div>\r\n",
+                        styles: ["h2{font-family:'Encode Sans',sans-serif;font-size:12px;font-weight:500;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.2px;color:#b6b6b6;word-break:break-all!important}.card-line-bg{background-color:#fff;box-shadow:0 2px 4px 0 rgba(0,0,0,.05)}.card-line-img{border:1px solid #e3dbdb36!important;box-shadow:0 2px 4px 0 rgba(0,0,0,.06)}.border-top-box{border-top:1px solid #dee2e670!important}.c-pointer{cursor:pointer}"]
+                    }] }
+        ];
+        /** @nocollapse */
+        SukuCardLineTypeTwoComponent.ctorParameters = function () { return []; };
+        SukuCardLineTypeTwoComponent.propDecorators = {
+            image: [{ type: i0.Input }],
+            iconOne: [{ type: i0.Input, args: ['icon-one',] }],
+            iconTwo: [{ type: i0.Input, args: ['icon-two',] }],
+            msgStatus: [{ type: i0.Input, args: ['msg-status',] }],
+            customclass: [{ type: i0.Input, args: ['customclass',] }],
+            customImgclass: [{ type: i0.Input, args: ['customImgclass',] }],
+            customIconclass: [{ type: i0.Input, args: ['custom-iconclass',] }],
+            bgColor: [{ type: i0.Input }],
+            interest: [{ type: i0.Input }],
+            imageColSize: [{ type: i0.Input }],
+            txtcolsize: [{ type: i0.Input }],
+            txttwocolsize: [{ type: i0.Input }],
+            txtthreecolsize: [{ type: i0.Input }],
+            titleOne: [{ type: i0.Input, args: ['title-one',] }],
+            titleOneColor: [{ type: i0.Input, args: ['title-one-color',] }],
+            titleOneWeight: [{ type: i0.Input, args: ['title-one-weight',] }],
+            titleOneSize: [{ type: i0.Input, args: ['title-one-size',] }],
+            titleOnecustomclass: [{ type: i0.Input, args: ['title-one-customclass',] }],
+            contentOne: [{ type: i0.Input, args: ['content-one',] }],
+            contentOneColor: [{ type: i0.Input, args: ['content-one-color',] }],
+            contentOneWeight: [{ type: i0.Input, args: ['content-one-weight',] }],
+            contentOneSize: [{ type: i0.Input, args: ['content-one-size',] }],
+            contentOnecustomclass: [{ type: i0.Input, args: ['content-one-customclass',] }],
+            contentTwo: [{ type: i0.Input, args: ['content-two',] }],
+            contentTwoColor: [{ type: i0.Input, args: ['content-two-color',] }],
+            contentTwoWeight: [{ type: i0.Input, args: ['content-two-weight',] }],
+            contentTwoSize: [{ type: i0.Input, args: ['content-two-size',] }],
+            contentTwocustomclass: [{ type: i0.Input, args: ['content-two-customclass',] }],
+            subTitleTwo: [{ type: i0.Input, args: ['sub-title-two',] }],
+            subTitleTwoColor: [{ type: i0.Input, args: ['sub-title-two-color',] }],
+            subTitleTwoWeight: [{ type: i0.Input, args: ['sub-title-two-weight',] }],
+            subTitleTwoSize: [{ type: i0.Input, args: ['sub-title-two-size',] }],
+            subTitleTwocustomclass: [{ type: i0.Input, args: ['sub-title-two-customclass',] }],
+            subTitleThree: [{ type: i0.Input, args: ['sub-title-three',] }],
+            subTitleThreecolor: [{ type: i0.Input, args: ['sub-title-three-color',] }],
+            subTitleThreeWeight: [{ type: i0.Input, args: ['sub-title-three-weight',] }],
+            subTitleThreeSize: [{ type: i0.Input, args: ['sub-title-three-size',] }],
+            subTitleThreeClass: [{ type: i0.Input, args: ['sub-title-threeclass',] }],
+            contentThree: [{ type: i0.Input, args: ['content-three',] }],
+            contentThreeColor: [{ type: i0.Input, args: ['content-three-color',] }],
+            contentThreeWeight: [{ type: i0.Input, args: ['content-three-widget',] }],
+            contentThreeSize: [{ type: i0.Input, args: ['content-three-size',] }],
+            contentThreecustomclass: [{ type: i0.Input, args: ['content-three-customclass',] }]
+        };
+        return SukuCardLineTypeTwoComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+    var SukuRatingCardLineComponent = /** @class */ (function () {
+        function SukuRatingCardLineComponent() {
+            this.image = 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSTqz64A2Xj54f5v44rD9vNUqyTXz5c0r7zTlfh18idoyUYGH8hF51pP6_efodnajCuYVB4okcMnT0&usqp=CAc';
+            this.iconOne = '';
+            this.iconTwo = '';
+            this.customclass = '';
+            this.customImgclass = 'img-res';
+            this.customIconclass = 'text-center';
+            this.bgColor = '';
+            this.imageColSize = 'col-sm-1 p-0';
+            this.txtcolsize = 'col-sm-3 col-xs-12 pl-lg-2 pr-2 pt-1 mt-1';
+            this.txttwocolsize = 'col-sm-3 pt-2 mt-1';
+            this.txtthreecolsize = 'col-sm-3 pt-2 mt-1';
+            this.titleOne = 'Title One';
+            this.titleOneColor = 'black';
+            this.titleOneWeight = '600';
+            this.titleOneSize = '14';
+            this.titleOnecustomclass = '';
+            this.ratingTitle = 'TRANSACTION RATING';
+            this.ratingtitleColor = '#b6b6b6';
+            this.ratingtitleWeight = '500';
+            this.ratingtitleSize = '12';
+            this.ratingtitlecustomclass = '';
+            this.contentOne = '$100';
+            this.contentOneColor = '#3e3e3e';
+            this.contentOneWeight = '500';
+            this.contentOneSize = '14';
+            this.contentOnecustomclass = '';
+            this.contentTwo = 'John Smith';
+            this.contentTwoColor = '#3e3e3e';
+            this.contentTwoWeight = '500';
+            this.contentTwoSize = '14';
+            this.contentTwocustomclass = '';
+            this.subTitleTwo = 'SOLD BY';
+            this.subTitleTwoColor = '#b6b6b6';
+            this.subTitleTwoWeight = '500';
+            this.subTitleTwoSize = '12';
+            this.subTitleTwocustomclass = '';
+            this.subTitleThree = 'EXPIRY DATE';
+            this.subTitleThreecolor = '#b6b6b6';
+            this.subTitleThreeWeight = '500';
+            this.subTitleThreeSize = '12';
+            this.subTitleThreeClass = '';
+            this.contentThree = '28 Nov 2018';
+            this.contentThreeColor = '#3e3e3e';
+            this.contentThreeWeight = '500';
+            this.contentThreeSize = '14';
+            this.contentThreecustomclass = '';
+            this._rate = 0;
+            this.action = new i0.EventEmitter();
+        }
+        Object.defineProperty(SukuRatingCardLineComponent.prototype, "ratingValue", {
+            set: /**
+             * @param {?} ratingValue
+             * @return {?}
+             */ function (ratingValue) {
+                this._rate = ratingValue;
+                console.log('', this._rate);
+                this.callOfStarts(this._rate);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        /**
+         * @param {?} e
+         * @return {?}
+         */
+        SukuRatingCardLineComponent.prototype.callOfStarts = /**
+         * @param {?} e
+         * @return {?}
+         */
+            function (e) {
+                switch (true) {
+                    case e == 0:
+                        this.myHTML = "\n      <span class=\"fa fa-star-o \"></span>\n      <span class=\"fa fa-star-o \"></span>\n      <span class=\"fa fa-star-o \"></span>\n      <span class=\"fa fa-star-o \"></span>\n      <span class=\"fa fa-star-o \"></span>\n      </div>";
+                        break;
+                    case e <= 0.5:
+                        this.myHTML = "\n      <span class=\"fa fa-star-half-empty \"></span>\n      <span class=\"fa fa-star-o \"></span>\n      <span class=\"fa fa-star-o \"></span>\n      <span class=\"fa fa-star-o \"></span>\n      <span class=\"fa fa-star-o \"></span>\n      </div>";
+                        break;
+                    case e > 0.5 && e <= 1:
+                        this.myHTML = "\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star-o \"></span>\n      <span class=\"fa fa-star-o \"></span>\n      <span class=\"fa fa-star-o \"></span>\n      <span class=\"fa fa-star-o \"></span> </div>";
+                        break;
+                    case e <= 1.5:
+                        this.myHTML = "\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star-half-empty \"></span>\n      <span class=\"fa fa-star-o \"></span>\n      <span class=\"fa fa-star-o \"></span>\n      <span class=\"fa fa-star-o \"></span> </div>";
+                        break;
+                    case e > 1.5 && e <= 2:
+                        this.myHTML = "\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star-o \"></span>\n      <span class=\"fa fa-star-o \"></span>\n      <span class=\"fa fa-star-o \"></span> </div>";
+                        break;
+                    case e <= 2.5:
+                        this.myHTML = "\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star-half-empty \"></span>\n      <span class=\"fa fa-star-o \"></span>\n      <span class=\"fa fa-star-o \"></span> </div>";
+                        break;
+                    case e > 2.5 && e <= 3:
+                        this.myHTML = "\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star-o \"></span>\n      <span class=\"fa fa-star-o \"></span> </div>";
+                        break;
+                    case e <= 3.5:
+                        this.myHTML = "\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star-half-empty \"></span>\n      <span class=\"fa fa-star-o \"></span> </div>";
+                        break;
+                    case e > 3.5 && e <= 4:
+                        this.myHTML = "\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star-o \"></span> </div>";
+                        break;
+                    case e <= 4.5:
+                        this.myHTML = "\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star-half-empty \"></span>\n    </div>";
+                        break;
+                    case e > 4.5 && e <= 5:
+                        this.myHTML = "\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star \"></span>\n      <span class=\"fa fa-star \"></span>\n       </div>";
+                        break;
+                    default:
+                        break;
+                }
+            };
+        /**
+         * @return {?}
+         */
+        SukuRatingCardLineComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+            function () { };
+        SukuRatingCardLineComponent.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'suku-rating-card-line',
+                        template: "<div class=\"col p-0\">\r\n  <div class=\"row card-line-bg p-3 m-3 {{customclass}}\" [style.background-color]=\"bgColor\">\r\n    <div [class]=\"imageColSize\">\r\n      <img [class]=\"customImgclass\" src=\"{{image}}\" alt=\"card-img\" width=\"55px\" height=\"46px\">\r\n    </div>\r\n    <span class=\"col d-lg-flex d-md-flex p-0 mt-2 pt-1\">\r\n    <div [class]=\"txtcolsize\">\r\n      <h2 [style.font-size.px]=\"titleOneSize\" [class]=\"titleOnecustomclass\" [style.font-weight]=\"titleOneWeight\"\r\n        [style.color]=\"titleOneColor\">{{titleOne}}</h2>\r\n      <h2 [style.font-size.px]=\"contentOneSize\" [class]=\"contentOnecustomclass\" [style.font-weight]=\"contentOneWeight\"\r\n        [style.color]=\"contentOneColor\">{{contentOne}}</h2>\r\n    </div>\r\n    <div class=\"col-sm-3 p-lg-0 pr-0 d-flex mt-2 pt-2 flex-column\" *ngIf=\"true\">\r\n      <h2 [style.font-size.px]=\"ratingtitleSize\" [class]=\"ratingtitlecustomclass\"\r\n        [style.font-weight]=\"ratingtitleWeight\" [style.color]=\"ratingtitleColor\">{{ratingTitle}}</h2>\r\n      <p class=\"mb-0\">\r\n        <span (change)=\"action.emit(ratingValue)\" class=\"starSize\">\r\n          <div [innerHTML]=\"myHTML\" [class]=\"customRatingclass\" ratingValue=\"\"></div>\r\n        </span>\r\n      </p>\r\n    </div>\r\n    <div [class]=\"txttwocolsize\">\r\n      <h2 [style.font-size.px]=\"subTitleTwoSize\" [class]=\"subTitleTwocustomclass\"\r\n        [style.font-weight]=\"subTitleTwoWeight\" [style.color]=\"subTitleTwoColor\">{{subTitleTwo}}</h2>\r\n      <h2 [style.font-size.px]=\"contentTwoSize\" [class]=\"contentTwocustomclass\" [style.font-weight]=\"contentTwoWeight\"\r\n        [style.color]=\"contentTwoColor\">{{contentTwo}}</h2>\r\n    </div>\r\n    <div [class]=\"txtthreecolsize\">\r\n      <h2 [style.font-size.px]=\"subTitleThreeSize\" [class]=\"subTitleThreeClass\"\r\n        [style.font-weight]=\"subTitleThreeWeight\" [style.color]=\"subTitleThreecolor\">{{subTitleThree}}</h2>\r\n      <h2 [style.font-size.px]=\"contentThreeSize\" [class]=\"contentThreecustomclass\"\r\n        [style.font-weight]=\"contentThreeWeight\" [style.color]=\"contentThreeColor\">{{contentThree}}</h2>\r\n    </div>\r\n  </span>\r\n  </div>\r\n</div>",
+                        styles: ["h2{font-family:'Encode Sans',sans-serif;font-size:12px;font-weight:500;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.2px;color:#b6b6b6;word-break:break-all!important}.card-line-bg{background-color:#fff;box-shadow:0 2px 4px 0 rgba(0,0,0,.05)}.card-line-img{border:1px solid #e3dbdb36!important;box-shadow:0 2px 4px 0 rgba(0,0,0,.06)}.border-top-box{border-top:1px solid #dee2e670!important}.c-pointer{cursor:pointer}.starSize{font-size:20px!important}.img-res{width:100px;height:auto;max-width:100%;max-height:100%;padding:6px 5px}"]
+                    }] }
+        ];
+        /** @nocollapse */
+        SukuRatingCardLineComponent.ctorParameters = function () { return []; };
+        SukuRatingCardLineComponent.propDecorators = {
+            image: [{ type: i0.Input }],
+            iconOne: [{ type: i0.Input, args: ['icon-one',] }],
+            iconTwo: [{ type: i0.Input, args: ['icon-two',] }],
+            msgStatus: [{ type: i0.Input, args: ['msg-status',] }],
+            customclass: [{ type: i0.Input, args: ['customclass',] }],
+            customImgclass: [{ type: i0.Input, args: ['customImgclass',] }],
+            customIconclass: [{ type: i0.Input, args: ['custom-iconclass',] }],
+            bgColor: [{ type: i0.Input }],
+            interest: [{ type: i0.Input }],
+            imageColSize: [{ type: i0.Input }],
+            txtcolsize: [{ type: i0.Input }],
+            txttwocolsize: [{ type: i0.Input }],
+            txtthreecolsize: [{ type: i0.Input }],
+            titleOne: [{ type: i0.Input, args: ['title-one',] }],
+            titleOneColor: [{ type: i0.Input, args: ['title-one-color',] }],
+            titleOneWeight: [{ type: i0.Input, args: ['title-one-weight',] }],
+            titleOneSize: [{ type: i0.Input, args: ['title-one-size',] }],
+            titleOnecustomclass: [{ type: i0.Input, args: ['title-one-customclass',] }],
+            ratingTitle: [{ type: i0.Input, args: ['rating-title',] }],
+            ratingtitleColor: [{ type: i0.Input, args: ['rating-title-color',] }],
+            ratingtitleWeight: [{ type: i0.Input, args: ['rating-title-weight',] }],
+            ratingtitleSize: [{ type: i0.Input, args: ['rating-title-size',] }],
+            ratingtitlecustomclass: [{ type: i0.Input, args: ['rating-title-customclass',] }],
+            contentOne: [{ type: i0.Input, args: ['content-one',] }],
+            contentOneColor: [{ type: i0.Input, args: ['content-one-color',] }],
+            contentOneWeight: [{ type: i0.Input, args: ['content-one-weight',] }],
+            contentOneSize: [{ type: i0.Input, args: ['content-one-size',] }],
+            contentOnecustomclass: [{ type: i0.Input, args: ['content-one-customclass',] }],
+            contentTwo: [{ type: i0.Input, args: ['content-two',] }],
+            contentTwoColor: [{ type: i0.Input, args: ['content-two-color',] }],
+            contentTwoWeight: [{ type: i0.Input, args: ['content-two-weight',] }],
+            contentTwoSize: [{ type: i0.Input, args: ['content-two-size',] }],
+            contentTwocustomclass: [{ type: i0.Input, args: ['content-two-customclass',] }],
+            subTitleTwo: [{ type: i0.Input, args: ['sub-title-two',] }],
+            subTitleTwoColor: [{ type: i0.Input, args: ['sub-title-two-color',] }],
+            subTitleTwoWeight: [{ type: i0.Input, args: ['sub-title-two-weight',] }],
+            subTitleTwoSize: [{ type: i0.Input, args: ['sub-title-two-size',] }],
+            subTitleTwocustomclass: [{ type: i0.Input, args: ['sub-title-two-customclass',] }],
+            subTitleThree: [{ type: i0.Input, args: ['sub-title-three',] }],
+            subTitleThreecolor: [{ type: i0.Input, args: ['sub-title-three-color',] }],
+            subTitleThreeWeight: [{ type: i0.Input, args: ['sub-title-three-weight',] }],
+            subTitleThreeSize: [{ type: i0.Input, args: ['sub-title-three-size',] }],
+            subTitleThreeClass: [{ type: i0.Input, args: ['sub-title-threeclass',] }],
+            contentThree: [{ type: i0.Input, args: ['content-three',] }],
+            contentThreeColor: [{ type: i0.Input, args: ['content-three-color',] }],
+            contentThreeWeight: [{ type: i0.Input, args: ['content-three-widget',] }],
+            contentThreeSize: [{ type: i0.Input, args: ['content-three-size',] }],
+            contentThreecustomclass: [{ type: i0.Input, args: ['content-three-customclass',] }],
+            action: [{ type: i0.Output }],
+            customRatingclass: [{ type: i0.Input }],
+            ratingValue: [{ type: i0.Input, args: ['rating-value',] }]
+        };
+        return SukuRatingCardLineComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
     var SukuWebcomponentsModule = /** @class */ (function () {
         function SukuWebcomponentsModule() {
         }
@@ -3542,7 +3954,10 @@
                             SukuDwollaFundingSourceComponent,
                             SukuCreationCustomerFileuploadComponent,
                             SukuPaymentPortalHelpComponent,
-                            SukuTermsAndConditionsComponent
+                            SukuTermsAndConditionsComponent,
+                            SukuCardLineTypeOneComponent,
+                            SukuCardLineTypeTwoComponent,
+                            SukuRatingCardLineComponent
                         ],
                         imports: [
                             common.CommonModule,
@@ -3629,6 +4044,9 @@
                             SukuCreationCustomerFileuploadComponent,
                             SukuPaymentPortalHelpComponent,
                             SukuTermsAndConditionsComponent,
+                            SukuCardLineTypeOneComponent,
+                            SukuCardLineTypeTwoComponent,
+                            SukuRatingCardLineComponent
                         ]
                     },] }
         ];
@@ -3653,6 +4071,8 @@
     exports.ɵbm = SukuBeneficialOwnerComponent;
     exports.ɵu = SukuBidInfoComponent;
     exports.ɵa = SukuBidTagComponent;
+    exports.ɵbs = SukuCardLineTypeOneComponent;
+    exports.ɵbt = SukuCardLineTypeTwoComponent;
     exports.ɵb = SukuCardLineComponent;
     exports.ɵbe = SukuCardTitleComponent;
     exports.ɵbl = SukuCreateCustomerComponent;
@@ -3679,6 +4099,7 @@
     exports.ɵbc = SukuProductTraceWidgetComponent;
     exports.ɵy = SukuProfileWidgetComponent;
     exports.ɵn = SukuProgressBarComponent;
+    exports.ɵbu = SukuRatingCardLineComponent;
     exports.ɵbf = SukuRatingStarComponent;
     exports.ɵbh = SukuResponseComponent;
     exports.ɵx = SukuSearchInputComponent;
