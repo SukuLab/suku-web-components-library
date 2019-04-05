@@ -29,6 +29,7 @@ export { SukuLinkComponent as ɵq } from './lib/suku-link/suku-link.component';
 export { SukuMailWidgetComponent as ɵj } from './lib/suku-mail-widget/suku-mail-widget.component';
 export { SukuMatchChipComponent as ɵk } from './lib/suku-match-chip/suku-match-chip.component';
 export { SukuNavSubmenuComponent as ɵt } from './lib/suku-nav-submenu/suku-nav-submenu.component';
+export { SukuNotificationPanelComponent as ɵbv } from './lib/suku-notification-panel/suku-notification-panel.component';
 export { SukuNotificationWidgetComponent as ɵl } from './lib/suku-notification-widget/suku-notification-widget.component';
 export { SukuPaymentPortalHelpComponent as ɵbq } from './lib/suku-payment-portal-help/suku-payment-portal-help.component';
 export { SukuPhoneWidgetComponent as ɵv } from './lib/suku-phone-widget/suku-phone-widget.component';

@@ -1,5 +1,11 @@
 import { OnInit, EventEmitter } from '@angular/core';
 export declare class SukuRatingCardLineComponent implements OnInit {
+    fullStars: number;
+    fullStarsArray: any[];
+    halfStar: number;
+    emptyStars: number;
+    emptyStarsArray: any[];
+    _ratingValue: any;
     image: string;
     iconOne: string;
     iconTwo: string;
@@ -53,7 +59,6 @@ export declare class SukuRatingCardLineComponent implements OnInit {
     action: EventEmitter<{}>;
     customRatingclass: any;
     ratingValue: number;
-    callOfStarts(e: any): void;
     constructor();
     ngOnInit(): void;
 }

@@ -7,7 +7,6 @@ export declare class SukuDashboardProfileComponent implements OnInit {
     titleTwo: any;
     createNewList: EventEmitter<{}>;
     clearBuyInterestStorage: EventEmitter<{}>;
-    test(i: any): void;
     constructor();
     ngOnInit(): void;
 }

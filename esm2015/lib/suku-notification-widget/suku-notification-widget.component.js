@@ -5,8 +5,7 @@
 import { Component, Input } from '@angular/core';
 export class SukuNotificationWidgetComponent {
     constructor() {
-        this.notificationCount = "notificationCountId";
-        this.customclass = 'col p-0 pointer text-center';
+        this.customclass = 'col box pointer text-center';
     }
     /**
      * @return {?}
@@ -17,15 +16,14 @@ export class SukuNotificationWidgetComponent {
 SukuNotificationWidgetComponent.decorators = [
     { type: Component, args: [{
                 selector: 'suku-notification-widget',
-                template: "<div [class]=\"customclass\">\r\n  <div class=\"col box pointer text-center\">\r\n    <div class=\"pt-4 pb-2\">\r\n      <strong>\r\n        <a class=\"box-title\" id=\"{{id}}\">\r\n          {{notificationTitle || 'review bids' }}\r\n        </a>\r\n      </strong>\r\n    </div>\r\n    <div class=\"pb-4\">\r\n      <strong class=\"box-counter\" id=\"{{notificationCount}}\">\r\n        {{ notificationValue > 9 ? ' ' :\r\n        '0'}}{{ notificationValue === 0 ? 0 :\r\n        ''}}{{notificationValue}}\r\n      </strong>\r\n    </div>\r\n  </div>\r\n</div>\r\n",
-                styles: [".box{border-radius:2px;background-color:#fff;box-shadow:0 3px 3px 0 rgba(0,0,0,.09)}.box-title{font-family:Poppins-Regular,sans-serif;font-size:17px;font-weight:600;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.2px;text-align:center;color:#1d1d1d}.box-counter{font-size:50px;font-weight:600;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.6px;text-align:center;color:#a7bf2e}.default{width:300px}"]
+                template: "<div [class]=\"customclass\">\r\n  <div class=\"col pointer text-center p-0\">\r\n    <div class=\"pt-4\">\r\n      <span class=\"box-counter\">\r\n        {{ notificationValue > 9 ? ' ' :\r\n        '0'}}{{ notificationValue === 0 ? 0 :\r\n        ''}}{{notificationValue}}\r\n      </span>\r\n      <p class=\"pb-3 n-m mb-0\">\r\n        <a class=\"box-title\" id=\"{{id}}\">\r\n          {{notificationTitle || 'review bids' }}\r\n        </a>\r\n      </p>\r\n    </div>\r\n  </div>\r\n</div>",
+                styles: [".box{border-radius:2px;background-color:#fff;box-shadow:0 3px 3px 0 rgba(0,0,0,.03);border-left:1px solid #dee2e68a!important;border-bottom:1px solid #dee2e68a!important}.box-title{font-family:Poppins,sans-serif;font-size:17px;font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.2px;text-align:center;color:#1d1d1d;word-break:break-word!important}.box-counter{font-family:Poppins,sans-serif;font-size:50px;font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.6px;text-align:center;color:#a7bf2e}.default{width:300px}.n-m{margin-top:-15px}@media (min-width:575.98px){.box{height:145px!important}}@media (min-width:767.98px){.box{height:175px!important}}@media (min-width:991.98px){.box{height:180px!important}}@media (min-width:1199.98px){.box{height:150px!important}}"]
             }] }
 ];
 /** @nocollapse */
 SukuNotificationWidgetComponent.ctorParameters = () => [];
 SukuNotificationWidgetComponent.propDecorators = {
     id: [{ type: Input }],
-    notificationCount: [{ type: Input }],
     customclass: [{ type: Input }],
     notificationTitle: [{ type: Input, args: ['notification-title',] }],
     notificationValue: [{ type: Input, args: ['notification-value',] }]
@@ -34,12 +32,10 @@ if (false) {
     /** @type {?} */
     SukuNotificationWidgetComponent.prototype.id;
     /** @type {?} */
-    SukuNotificationWidgetComponent.prototype.notificationCount;
-    /** @type {?} */
     SukuNotificationWidgetComponent.prototype.customclass;
     /** @type {?} */
     SukuNotificationWidgetComponent.prototype.notificationTitle;
     /** @type {?} */
     SukuNotificationWidgetComponent.prototype.notificationValue;
 }
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3VrdS1ub3RpZmljYXRpb24td2lkZ2V0LmNvbXBvbmVudC5qcyIsInNvdXJjZVJvb3QiOiJuZzovL3N1a3Utd2ViY29tcG9uZW50cy8iLCJzb3VyY2VzIjpbImxpYi9zdWt1LW5vdGlmaWNhdGlvbi13aWRnZXQvc3VrdS1ub3RpZmljYXRpb24td2lkZ2V0LmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxLQUFLLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFPekQsTUFBTSxPQUFPLCtCQUErQjtJQU0xQztRQUpTLHNCQUFpQixHQUFHLHFCQUFxQixDQUFBO1FBQ3pDLGdCQUFXLEdBQUcsNkJBQTZCLENBQUM7SUFHckMsQ0FBQzs7OztJQUVqQixRQUFRO0lBQ1IsQ0FBQzs7O1lBZEYsU0FBUyxTQUFDO2dCQUNULFFBQVEsRUFBRSwwQkFBMEI7Z0JBQ3BDLGtrQkFBd0Q7O2FBRXpEOzs7OztpQkFFRSxLQUFLO2dDQUNMLEtBQUs7MEJBQ0wsS0FBSztnQ0FDTixLQUFLLFNBQUMsb0JBQW9CO2dDQUMxQixLQUFLLFNBQUMsb0JBQW9COzs7O0lBSjFCLDZDQUFZOztJQUNaLDREQUFrRDs7SUFDbEQsc0RBQXFEOztJQUN0RCw0REFBK0M7O0lBQy9DLDREQUErQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgT25Jbml0LCBJbnB1dCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xyXG5cclxuQENvbXBvbmVudCh7XHJcbiAgc2VsZWN0b3I6ICdzdWt1LW5vdGlmaWNhdGlvbi13aWRnZXQnLFxyXG4gIHRlbXBsYXRlVXJsOiAnLi9zdWt1LW5vdGlmaWNhdGlvbi13aWRnZXQuY29tcG9uZW50Lmh0bWwnLFxyXG4gIHN0eWxlVXJsczogWycuL3N1a3Utbm90aWZpY2F0aW9uLXdpZGdldC5jb21wb25lbnQuc2NzcyddXHJcbn0pXHJcbmV4cG9ydCBjbGFzcyBTdWt1Tm90aWZpY2F0aW9uV2lkZ2V0Q29tcG9uZW50IGltcGxlbWVudHMgT25Jbml0IHtcclxuICBASW5wdXQoKSBpZDtcclxuICBASW5wdXQoKSBub3RpZmljYXRpb25Db3VudCA9IFwibm90aWZpY2F0aW9uQ291bnRJZFwiXHJcbiAgQElucHV0KCkgY3VzdG9tY2xhc3MgPSAnY29sIHAtMCBwb2ludGVyIHRleHQtY2VudGVyJztcclxuXHRASW5wdXQoJ25vdGlmaWNhdGlvbi10aXRsZScpIG5vdGlmaWNhdGlvblRpdGxlO1xyXG5cdEBJbnB1dCgnbm90aWZpY2F0aW9uLXZhbHVlJykgbm90aWZpY2F0aW9uVmFsdWU7XHJcbiAgY29uc3RydWN0b3IoKSB7IH1cclxuXHJcbiAgbmdPbkluaXQoKSB7XHJcbiAgfVxyXG5cclxufVxyXG4iXX0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3VrdS1ub3RpZmljYXRpb24td2lkZ2V0LmNvbXBvbmVudC5qcyIsInNvdXJjZVJvb3QiOiJuZzovL3N1a3Utd2ViY29tcG9uZW50cy8iLCJzb3VyY2VzIjpbImxpYi9zdWt1LW5vdGlmaWNhdGlvbi13aWRnZXQvc3VrdS1ub3RpZmljYXRpb24td2lkZ2V0LmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxLQUFLLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFPekQsTUFBTSxPQUFPLCtCQUErQjtJQUsxQztRQUhTLGdCQUFXLEdBQUcsNkJBQTZCLENBQUM7SUFHckMsQ0FBQzs7OztJQUVqQixRQUFRO0lBQ1IsQ0FBQzs7O1lBYkYsU0FBUyxTQUFDO2dCQUNULFFBQVEsRUFBRSwwQkFBMEI7Z0JBQ3BDLDRmQUF3RDs7YUFFekQ7Ozs7O2lCQUVFLEtBQUs7MEJBQ0wsS0FBSztnQ0FDTixLQUFLLFNBQUMsb0JBQW9CO2dDQUMxQixLQUFLLFNBQUMsb0JBQW9COzs7O0lBSDFCLDZDQUFZOztJQUNaLHNEQUFxRDs7SUFDdEQsNERBQStDOztJQUMvQyw0REFBK0MiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQsIE9uSW5pdCwgSW5wdXQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcclxuXHJcbkBDb21wb25lbnQoe1xyXG4gIHNlbGVjdG9yOiAnc3VrdS1ub3RpZmljYXRpb24td2lkZ2V0JyxcclxuICB0ZW1wbGF0ZVVybDogJy4vc3VrdS1ub3RpZmljYXRpb24td2lkZ2V0LmNvbXBvbmVudC5odG1sJyxcclxuICBzdHlsZVVybHM6IFsnLi9zdWt1LW5vdGlmaWNhdGlvbi13aWRnZXQuY29tcG9uZW50LnNjc3MnXVxyXG59KVxyXG5leHBvcnQgY2xhc3MgU3VrdU5vdGlmaWNhdGlvbldpZGdldENvbXBvbmVudCBpbXBsZW1lbnRzIE9uSW5pdCB7XHJcbiAgQElucHV0KCkgaWQ7XHJcbiAgQElucHV0KCkgY3VzdG9tY2xhc3MgPSAnY29sIGJveCBwb2ludGVyIHRleHQtY2VudGVyJztcclxuXHRASW5wdXQoJ25vdGlmaWNhdGlvbi10aXRsZScpIG5vdGlmaWNhdGlvblRpdGxlO1xyXG5cdEBJbnB1dCgnbm90aWZpY2F0aW9uLXZhbHVlJykgbm90aWZpY2F0aW9uVmFsdWU7XHJcbiAgY29uc3RydWN0b3IoKSB7IH1cclxuXHJcbiAgbmdPbkluaXQoKSB7XHJcbiAgfVxyXG5cclxufVxyXG4iXX0=
