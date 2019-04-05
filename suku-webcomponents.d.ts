@@ -3,6 +3,7 @@
  */
 export * from './public_api';
 export { SukuACHSettingsComponent as ɵbi } from './lib/suku-achsettings/suku-achsettings.component';
+export { SukuAddIconComponent as ɵbw } from './lib/suku-add-icon/suku-add-icon.component';
 export { SukuAddWidgetComponent as ɵr } from './lib/suku-add-widget/suku-add-widget.component';
 export { SukuAddressWidgetComponent as ɵw } from './lib/suku-address-widget/suku-address-widget.component';
 export { SukuBeneficialOwnerComponent as ɵbm } from './lib/suku-beneficial-owner/suku-beneficial-owner.component';
