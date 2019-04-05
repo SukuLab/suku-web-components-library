@@ -37,9 +37,7 @@ var SukuACHSettingsComponent = /** @class */ (function () {
         this.subContentId = ' unverified';
         this.SetupACHPaymentsBtnText = 'Setup ACH Payments';
         this.paymentButtonId = 'SetupACHPayments';
-        this.lowerText = 'please setup your ACH payment profile below';
-        this.upperText = 'ACH Payment Profile Not Complete';
-        this.upperTextId = 'upperTextId';
+        this.lowerText = 'Please setup your ACH payment profile below';
         this.lowerTextId = 'lowerTextId';
         this.subtitleId = 'subtitleId';
         this.action = new EventEmitter();
@@ -61,6 +59,11 @@ var SukuACHSettingsComponent = /** @class */ (function () {
         function (val) {
             console.log(val);
             this._beneficialOwnerStatus = val;
+            console.log("beneficial ownership status: " + val);
+            console.log(val);
+            if (val) {
+                this.lowerText = 'Please upload beneficial owner documents below';
+            }
         },
         enumerable: true,
         configurable: true
@@ -102,6 +105,57 @@ var SukuACHSettingsComponent = /** @class */ (function () {
         this.upload.emit(val);
     };
     /**
+     * @param {?} docType
+     * @return {?}
+     */
+    SukuACHSettingsComponent.prototype.getDocTypeString = /**
+     * @param {?} docType
+     * @return {?}
+     */
+    function (docType) {
+        switch (docType) {
+            case 'idcard':
+                return 'Government Issued ID';
+                break;
+            case 'passport':
+                return 'Passport';
+                break;
+            case 'license':
+                return "Driver's License";
+                break;
+            default:
+                return docType;
+                break;
+        }
+    };
+    /**
+     * @param {?} failureType
+     * @return {?}
+     */
+    SukuACHSettingsComponent.prototype.getDocFailureString = /**
+     * @param {?} failureType
+     * @return {?}
+     */
+    function (failureType) {
+        switch (failureType) {
+            case 'ScanNotReadable':
+                return 'Scan Not Readable';
+                break;
+            case 'ScanNotUploaded':
+                return 'Scan Not Uploaded';
+                break;
+            case 'ScanIdTypeNotSupported':
+                return 'ID Type Not Supported';
+                break;
+            case 'ScanNameMismatch':
+                return 'Name Mismatch';
+                break;
+            default:
+                return failureType;
+                break;
+        }
+    };
+    /**
      * @param {?} i
      * @return {?}
      */
@@ -135,8 +189,8 @@ var SukuACHSettingsComponent = /** @class */ (function () {
     SukuACHSettingsComponent.decorators = [
         { type: Component, args: [{
                     selector: 'suku-ach-setting',
-                    template: "<div class=\"col poppinsFont p-0\">\r\n  <div class=\"col-sm-12 text-center\">\r\n    <span class=\"font20\" id=\"{{titleId}}\">{{title}}</span>\r\n  </div>\r\n  <div class=\"col-sm-12 mt-4\">\r\n    <div class=\"form-group col-xs-12 col Rectangle-2 p-3\">\r\n      <div class=\"col-sm-12 text-center encode-font\">\r\n        <div class=\"col\">\r\n          <span class=\"text-center subTitle\" id=\"{{subtitleId}}\"> {{subTitle}}</span>\r\n          <br>\r\n          <p class=\"text-center mt-2 mb-2\" id=\"{{subContentId}}\">Customer status: <b\r\n              [ngClass]=\"{'statusVerified': subContent == 'verified', 'status': subContent !== 'verified'}\">{{subContent}}</b>\r\n          </p>\r\n          <p class=\"text-center encode-font mb-2\" *ngIf=\"subContent == 'document'\">Note: Document verification may take 2-3 business days\r\n            to get verified.</p>\r\n        </div>\r\n        <span class=\"redText\" id=\"{{upperTextId}}\">{{upperText}}</span>\r\n      </div>\r\n      <div class=\"col-sm-12 text-center mt-2\">\r\n        <i> <span class=\"font12\" id=\"{{lowerTextId}}\">{{lowerText}} </span> </i>\r\n      </div>\r\n\r\n      <!-- customer status start -->\r\n      <div class=\"col pl-5 pr-5 pb-2 pt-2\" *ngIf=\"subContent == 'document'\">\r\n        <div class=\"row\">\r\n          <div class=\"col\">\r\n            <p class=\"doclabel mt-4\" *ngIf=\"documentStatus?.length > 0\"><b>Document Status:</b></p>\r\n          </div>\r\n          <div class=\"col mt-3 mb-3 text-right pr-sm-4 mr-sm-1\" *ngIf=\"documentStatus?.length > 0\">\r\n            <!-- <button class=\"btn textBold\" id=\"upload\" (click)=\"action.emit()\">Upload Document</button> -->\r\n            <span class=\"secondary-btn c-pointer\">\r\n              <a class=\"secondary-btn c-pointer\" id=\"upload\" (click)=\"action.emit()\">\r\n                Upload Document\r\n              </a>\r\n            </span>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"col document pl-sm-4 mb-3\" *ngFor=\"let doc of documentStatus;let imageIndex = index;\">\r\n          <div class=\"row p-2\">\r\n            <div class=\"col\">\r\n              <p class=\"mb-0 pb-1\">Doc Type:</p>\r\n              <p class=\"mb-0\"><b>{{doc?.type}}</b></p>\r\n            </div>\r\n            <div class=\"col\">\r\n              <p class=\"mb-0 pb-1\">Status:</p>\r\n              <p class=\"mb-0\"><b>{{doc?.status}}</b></p>\r\n            </div>\r\n            <div class=\"col\" *ngIf=\"!doc?.failureReason\"></div>\r\n            <div class=\"col\" *ngIf=\"doc?.failureReason\">\r\n              <p class=\"mb-0 pb-1\">Failure-Reason:</p>\r\n              <p class=\"mb-0\"><b>{{doc?.failureReason}}</b></p>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"col pb-4\" id=\"beneficialOwnerBlock\">\r\n        <div class=\"col\">\r\n          <p class=\"doclabel mt-4\" *ngIf=\"_beneficialOwnerStatus\"><b>Beneficial Owners:</b></p>\r\n        </div>\r\n        <!-- id=\"document\" *ngIf=\"subContent == 'document'\" -->\r\n        <div class=\"col pl-sm-4 mb-3\" *ngFor=\"let user of _beneficialOwnerStatus;let i = index;\">\r\n          <div class=\"col card-line mt-3 mb-4 c-pointer\" data-toggle=\"collapse\" [attr.data-target]=\"'#ownerBlock' + i\"\r\n            (click)=\"active(i)\">\r\n            <div class=\"row\">\r\n              <label class=\"m-2 pl-3 owner c-pointer\">\r\n                Beneficial Owner {{i+1}}\r\n              </label>\r\n              <label class=\"d-flex justify-content-end col pl-0 c-pointer\">\r\n                <span class=\"pt-3 pr-2 icon\" [ngClass]=\"{'d-none': selected[i] != i}\">\r\n                  <i class=\"fa fa-arrow-circle-down icon\"></i>\r\n                </span>\r\n                <span class=\"pt-3 pr-2 icon\" [ngClass]=\"{'d-none': selected[i] == i}\">\r\n                  <i class=\"fa fa-arrow-circle-up icon\"></i>\r\n                </span>\r\n              </label>\r\n            </div>\r\n          </div>\r\n          <div class=\"col collapse p-0\" [ngClass]=\"{'show': i == 0 }\" data-parent=\"#beneficialOwnerBlock\"\r\n            id=\"ownerBlock{{i}}\">\r\n            <div class=\"col\">\r\n              <!-- <p class=\"doclabel mt-4\" *ngIf=\"documentStatus\"><b>Document Status:</b></p> -->\r\n              <div class=\"row p-2\">\r\n                <div class=\"col\">\r\n                  <p class=\"mb-0 pb-1\">First Name:</p>\r\n                  <p class=\"mb-0\"><b>{{user?.firstName}}</b></p>\r\n                </div>\r\n                <div class=\"col\">\r\n                  <p class=\"mb-0 pb-1\">Status:</p>\r\n                  <p class=\"mb-0\"><b>{{user?.verificationStatus}}</b></p>\r\n                </div>\r\n                <div class=\"col\" *ngIf=\"user?.verificationStatus == 'document'\">\r\n                  <div class=\"col d-flex justify-content-center mt-3 mb-3\">\r\n                    <button class=\"btn btn-info\" (click)=\"uploadDoc(user)\" id=\"uploadDocument\">Upload Document</button>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col pl-4 pr-4 pb-2 pt-1\" *ngIf=\"user?.verificationStatus == 'document'\">\r\n              <p class=\"doclabel mt-4\" *ngIf=\"user?.data?.length > 0 \"><b>Document Status:</b></p>\r\n              <div class=\"col document pl-sm-4 mb-3\"\r\n                *ngFor=\"let doc of user?.data;let statusIndex = index;\">\r\n                \r\n                <div class=\"row p-2\">\r\n                  <div class=\"col\">\r\n                    <p class=\"mb-0 pb-1\">Doc Type:</p>\r\n                    <p class=\"mb-0\"><b>{{doc?.type}}</b></p>\r\n                  </div>\r\n                  <div class=\"col\">\r\n                    <p class=\"mb-0 pb-1\">Status:</p>\r\n                    <p class=\"mb-0\"><b>{{doc?.status}}</b></p>\r\n                  </div>\r\n                  <div class=\"col\" *ngIf=\"!doc?.failureReason\"></div>\r\n                  <div class=\"col\" *ngIf=\"doc?.failureReason\">\r\n                    <p class=\"mb-0 pb-1\">Failure-Reason:</p>\r\n                    <p class=\"mb-0\"><b>{{doc?.failureReason}}</b></p>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col-sm-12 mt-2 mb-4 text-center\" *ngIf=\"(subContent == 'not exist' ) || (subContent != 'verified' ) && (documentStatus?.length == 0 && (subContent == 'document'))\">\r\n        <button class=\" btn textBold\" id=\"{{paymentButtonId}}\"\r\n          (click)=\"action.emit()\">{{SetupACHPaymentsBtnText}}</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n</div>",
-                    styles: [".redText{color:red;font-size:12px}.font12{font-size:12px}.textBold{font-weight:700}.Rectangle-2{border-radius:0 0 41px 41px;background-color:#fff;box-shadow:0 12px 14px 0 rgba(0,0,0,.05)}.poppinsFont{font-family:Poppins}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:balck}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#000;outline:0!important;box-shadow:none!important}.font20{font-size:25px}.subTitle{font-weight:700!important;font-family:Poppins,sans-serif!important}.status{color:red;letter-spacing:.3px}.statusVerified{color:#99c002!important;letter-spacing:.3px}.docLabel{font-family:Poppins,sans-serif!important;letter-spacing:.1px}.document,.mat-chip.mat-standard-chip{background-color:#e0e0e059!important;color:rgba(0,0,0,.87)!important;border-radius:0!important;border-left:3px solid #a7bf2e!important;min-height:40px!important}#document p{font-size:1.5rem}@media screen and (max-width:575px){#document p{font-size:1.4rem}}.card-line{background-color:#fff;color:#2c2727;height:46px;border-radius:2px;letter-spacing:.5px;box-shadow:0 1px 5px 0 rgba(0,0,0,.2);border-top:3px solid #bfd131c9}.display-2{font-size:6.2rem!important;line-height:1.5!important}.icon{font-size:2.2rem!important;color:#ccda5c!important}.btn{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#000;border-radius:29px 77px 61px;font-weight:900;font-family:Poppins,sans-serif!important;font-size:1.3rem}.btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.btn-info:active,.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.btn-info.disabled.focus,.btn-info.disabled:focus,.btn-info.disabled:hover,.btn-info[disabled].focus,.btn-info[disabled]:focus,.btn-info[disabled]:hover,fieldset[disabled] .btn-info.focus,fieldset[disabled] .btn-info:focus,fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.btn-info.focus,.btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.btn-info.active.focus,.btn-info.active:focus,.btn-info.active:hover,.btn-info:active.focus,.btn-info:active:focus,.btn-info:active:hover,.open>.dropdown-toggle .btn-info.focus,.open>.dropdown-toggle .btn-info:focus,.open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.upload-btn{color:#000;font-weight:900;font-family:Poppins,sans-serif!important;font-size:1.3rem;border-bottom:3px solid #a7bf2e}.secondary-btn{font-family:Poppins,sans-serif!important;font-size:14px;font-weight:800;font-style:normal;font-stretch:normal;line-height:1.43;letter-spacing:-.4px;color:#1c1c1c!important;border-bottom:3.5px solid #a7bf2e}.secondary-btn:hover{cursor:pointer!important}.encode-font{font-family:'Encode Sans',sans-serif!important}"]
+                    template: "<div class=\"col poppinsFont p-0\">\r\n  <div class=\"col-sm-12 text-center\">\r\n    <span class=\"font20\" id=\"{{titleId}}\">{{title}}</span>\r\n  </div>\r\n  <div class=\"col-sm-12 mt-4\">\r\n    <div class=\"form-group col-xs-12 col Rectangle-2 p-3\">\r\n      <div class=\"col-sm-12 text-center encode-font\">\r\n        <div class=\"col\">\r\n          <span class=\"text-center subTitle\" id=\"{{subtitleId}}\"> {{subTitle}}</span>\r\n          <br>\r\n          <p class=\"text-center mt-2 mb-2 text-capitalize\" id=\"{{subContentId}}\">Payment profile status: <b\r\n              [ngClass]=\"{'statusVerified': subContent == 'verified', 'status': subContent !== 'verified'}\">{{subContent}}</b>\r\n          </p>\r\n          <p class=\"text-center mt-2 mb-2\" *ngIf=\"_beneficialOwnerStatus\" id=\"beneficial-owner-status\">Beneficial Owner\r\n            Status: <b class=\"statusUnverified\">Documentation Upload Needed</b>\r\n          </p>\r\n          <p class=\"text-center encode-font mb-2\" *ngIf=\"subContent == 'document'\">Note: Document verification may take\r\n            2-3 business days\r\n            to get verified.</p>\r\n        </div>\r\n      </div>\r\n      <div class=\"col-sm-12 text-center mt-2\">\r\n        <i> <span class=\"font12\" id=\"{{lowerTextId}}\">{{lowerText}} </span> </i>\r\n      </div>\r\n\r\n      <!-- customer status start -->\r\n      <div class=\"col pl-5 pr-5 pb-2 pt-2\" *ngIf=\"subContent == 'document'\">\r\n        <div class=\"row\">\r\n          <div class=\"col\">\r\n            <p class=\"doclabel mt-4\" *ngIf=\"documentStatus?.length > 0\"><b>Document Status:</b></p>\r\n          </div>\r\n          <div class=\"col mt-3 mb-3 text-right pr-sm-4 mr-sm-1\" *ngIf=\"documentStatus?.length > 0\">\r\n            <!-- <button class=\"btn textBold\" id=\"upload\" (click)=\"action.emit()\">Upload Document</button> -->\r\n            <span class=\"secondary-btn c-pointer\">\r\n              <a class=\"secondary-btn c-pointer\" id=\"upload\" (click)=\"action.emit()\">\r\n                Upload Document\r\n              </a>\r\n            </span>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"col document pl-sm-4 mb-3\" *ngFor=\"let doc of documentStatus;let imageIndex = index;\">\r\n          <div class=\"row p-2\">\r\n            <div class=\"col\">\r\n              <p class=\"mb-0 pb-1\">Doc Type:</p>\r\n              <p class=\"mb-0\"><b>{{doc?.type}}</b></p>\r\n            </div>\r\n            <div class=\"col\">\r\n              <p class=\"mb-0 pb-1\">Status:</p>\r\n              <p class=\"mb-0\"><b>{{doc?.status}}</b></p>\r\n            </div>\r\n            <div class=\"col\" *ngIf=\"!doc?.failureReason\"></div>\r\n            <div class=\"col\" *ngIf=\"doc?.failureReason\">\r\n              <p class=\"mb-0 pb-1\">Failure Reason:</p>\r\n              <p class=\"mb-0\"><b>{{doc?.failureReason}}</b></p>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col pb-4\" id=\"beneficialOwnerBlock\">\r\n        <div class=\"col\">\r\n          <p class=\"doclabel mt-4\" *ngIf=\"_beneficialOwnerStatus\"><b>Beneficial Owners:</b></p>\r\n        </div>\r\n        <!-- id=\"document\" *ngIf=\"subContent == 'document'\" -->\r\n        <div class=\"col pl-sm-4 mb-3\" *ngFor=\"let user of _beneficialOwnerStatus;let i = index;\">\r\n          <div class=\"col card-line mt-3 mb-4 c-pointer\" data-toggle=\"collapse\" [attr.data-target]=\"'#ownerBlock' + i\"\r\n            (click)=\"active(i)\">\r\n            <div class=\"row\">\r\n              <label class=\"m-2 pl-3 owner c-pointer\">\r\n                Beneficial Owner {{i+1}}\r\n              </label>\r\n              <label class=\"d-flex justify-content-end col pl-0 c-pointer\">\r\n                <span class=\"pt-3 pr-2 icon\" [ngClass]=\"{'d-none': selected[i] != i}\">\r\n                  <i class=\"fa fa-arrow-circle-down icon\"></i>\r\n                </span>\r\n                <span class=\"pt-3 pr-2 icon\" [ngClass]=\"{'d-none': selected[i] == i}\">\r\n                  <i class=\"fa fa-arrow-circle-up icon\"></i>\r\n                </span>\r\n              </label>\r\n            </div>\r\n          </div>\r\n          <div class=\"col collapse p-0\" [ngClass]=\"{'show': i == 0 }\" data-parent=\"#beneficialOwnerBlock\"\r\n            id=\"ownerBlock{{i}}\">\r\n            <div class=\"col\">\r\n              <!-- <p class=\"doclabel mt-4\" *ngIf=\"documentStatus\"><b>Document Status:</b></p> -->\r\n              <div class=\"row p-2\">\r\n                <div class=\"col\">\r\n                  <p class=\"mb-0 pb-1\">Beneficial Owner Name:</p>\r\n                  <p class=\"mb-0\"><b>{{user?.firstName}}</b></p>\r\n                </div>\r\n                <div class=\"col\">\r\n                  <p class=\"mb-0 pb-1\">Status:</p>\r\n                  <p class=\"mb-0\"><b>{{user?.verificationStatus}}</b></p>\r\n                </div>\r\n                <div class=\"col\" *ngIf=\"user?.verificationStatus == 'document'\">\r\n                  <div class=\"col d-flex justify-content-center mt-3 mb-3\">\r\n                    <button class=\"btn btn-info\" (click)=\"uploadDoc(user)\" id=\"uploadDocument\">Upload Document</button>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"col pl-4 pr-4 pb-2 pt-1\" *ngIf=\"user?.verificationStatus == 'document'\">\r\n              <p class=\"doclabel mt-4\" *ngIf=\"user?.data?.length > 0 \"><b>Document Status:</b></p>\r\n              <div class=\"col document pl-sm-4 mb-3\" *ngFor=\"let doc of user?.data;let statusIndex = index;\">\r\n                <div class=\"row p-2\">\r\n                  <div class=\"col\">\r\n                    <p class=\"mb-0 pb-1\">Doc Type:</p>\r\n                    <p class=\"mb-0\"><b>{{getDocTypeString(doc?.type)}}</b></p>\r\n                  </div>\r\n                  <div class=\"col\">\r\n                    <p class=\"mb-0 pb-1\">Status:</p>\r\n                    <p class=\"mb-0\"><b>{{doc?.status}}</b></p>\r\n                  </div>\r\n                  <div class=\"col\" *ngIf=\"!doc?.failureReason\"></div>\r\n                  <div class=\"col\" *ngIf=\"doc?.failureReason\">\r\n                    <p class=\"mb-0 pb-1\">Failure-Reason:</p>\r\n                    <p class=\"mb-0\"><b>{{getDocFailureString(doc?.failureReason)}}</b></p>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col-sm-12 mt-2 mb-4 text-center\" *ngIf=\"(subContent == 'not complete' ) || (subContent != 'verified' ) && (documentStatus?.length == 0 && (subContent == 'document'))\">\r\n        <button class=\" btn textBold\" id=\"{{paymentButtonId}}\"\r\n          (click)=\"action.emit()\">{{SetupACHPaymentsBtnText}}</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>",
+                    styles: [".redText{color:red;font-size:12px}.font12{font-size:12px}.textBold{font-weight:700}.Rectangle-2{border-radius:0 0 41px 41px;background-color:#fff;box-shadow:0 12px 14px 0 rgba(0,0,0,.05)}.poppinsFont{font-family:Poppins}.btn{font-size:12px!important}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:balck}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#000;outline:0!important;box-shadow:none!important}.font20{font-size:25px}.subTitle{font-weight:700!important;font-family:Poppins,sans-serif!important}.statusUnverified{color:red;letter-spacing:.3px}.statusVerified{color:#99c002!important;letter-spacing:.3px}.docLabel{font-family:Poppins,sans-serif!important;letter-spacing:.1px}.document,.mat-chip.mat-standard-chip{background-color:#e0e0e059!important;color:rgba(0,0,0,.87)!important;border-radius:0!important;border-left:3px solid #a7bf2e!important;min-height:40px!important}#document p{font-size:1.5rem}@media screen and (max-width:575px){#document p{font-size:1.4rem}}.card-line{background-color:#fff;color:#2c2727;height:46px;border-radius:2px;letter-spacing:.5px;box-shadow:0 1px 5px 0 rgba(0,0,0,.2);border-top:3px solid #bfd131c9}.display-2{font-size:6.2rem!important;line-height:1.5!important}.icon{font-size:2.2rem!important;color:#ccda5c!important}.btn{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#000;border-radius:29px 77px 61px;font-weight:900;font-family:Poppins,sans-serif!important}.btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.btn-info:active,.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.btn-info.disabled.focus,.btn-info.disabled:focus,.btn-info.disabled:hover,.btn-info[disabled].focus,.btn-info[disabled]:focus,.btn-info[disabled]:hover,fieldset[disabled] .btn-info.focus,fieldset[disabled] .btn-info:focus,fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.btn-info.focus,.btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.btn-info.active.focus,.btn-info.active:focus,.btn-info.active:hover,.btn-info:active.focus,.btn-info:active:focus,.btn-info:active:hover,.open>.dropdown-toggle .btn-info.focus,.open>.dropdown-toggle .btn-info:focus,.open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.upload-btn{color:#000;font-weight:900;font-family:Poppins,sans-serif!important;font-size:1.3rem;border-bottom:3px solid #a7bf2e}.secondary-btn{font-family:Poppins,sans-serif!important;font-size:14px;font-weight:800;font-style:normal;font-stretch:normal;line-height:1.43;letter-spacing:-.4px;color:#1c1c1c!important;border-bottom:3.5px solid #a7bf2e}.secondary-btn:hover{cursor:pointer!important}.encode-font{font-family:'Encode Sans',sans-serif!important}"]
                 }] }
     ];
     /** @nocollapse */
@@ -151,8 +205,6 @@ var SukuACHSettingsComponent = /** @class */ (function () {
         SetupACHPaymentsBtnText: [{ type: Input }],
         paymentButtonId: [{ type: Input }],
         lowerText: [{ type: Input }],
-        upperText: [{ type: Input }],
-        upperTextId: [{ type: Input }],
         lowerTextId: [{ type: Input }],
         subtitleId: [{ type: Input }],
         action: [{ type: Output }],
@@ -3885,6 +3937,42 @@ var SukuNotificationPanelComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+var SukuAddIconComponent = /** @class */ (function () {
+    function SukuAddIconComponent() {
+        this.customClass = 'clearAll c-pointer';
+    }
+    /**
+     * @return {?}
+     */
+    SukuAddIconComponent.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () {
+    };
+    SukuAddIconComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'suku-add-icon',
+                    template: "<div class=\"add-btn mt-1\">\r\n    <a [style.font-size.px]=\"size\" [style.color]=\"color\" id=\"addNew\" [class]=\"customClass\"\r\n    [style.font-weight]=\"weight\">\r\n    <i [style.color] = \"iconColor\" class=\"fa fa-plus \"></i>\r\n    <ng-content></ng-content>\r\n  </a>\r\n</div>\r\n",
+                    styles: [".c-pointer{cursor:pointer!important}.clearAll{font-family:abelregular,Arial,Helvetica,sans-serif;font-size:12px;font-weight:400;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px;color:#b6b6b6!important;text-decoration:underline;text-transform:uppercase}.add-btn{width:100%;float:left}.add-btn a{width:100px;height:33px;float:left;font-family:abelregular,Arial,Helvetica,sans-serif;font-size:12px;text-transform:uppercase;line-height:33px;text-align:right;text-decoration:none;position:relative;padding:0 0 0 33px}.add-btn a i{width:33px;height:33px;float:none;display:inline-block;vertical-align:middle;font-size:12px;color:#d4c5a0;text-align:center;line-height:31px;border:1px solid #ebedee;border-radius:33px;position:absolute;top:0;left:0;z-index:10}.add-btn a:hover{text-decoration:underline}"]
+                }] }
+    ];
+    /** @nocollapse */
+    SukuAddIconComponent.ctorParameters = function () { return []; };
+    SukuAddIconComponent.propDecorators = {
+        name: [{ type: Input }],
+        size: [{ type: Input }],
+        color: [{ type: Input }],
+        weight: [{ type: Input }],
+        iconColor: [{ type: Input }],
+        customClass: [{ type: Input }]
+    };
+    return SukuAddIconComponent;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var SukuWebcomponentsModule = /** @class */ (function () {
     function SukuWebcomponentsModule() {
     }
@@ -3938,7 +4026,8 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         SukuCardLineTypeOneComponent,
                         SukuCardLineTypeTwoComponent,
                         SukuRatingCardLineComponent,
-                        SukuNotificationPanelComponent
+                        SukuNotificationPanelComponent,
+                        SukuAddIconComponent
                     ],
                     imports: [
                         CommonModule,
@@ -4028,7 +4117,8 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         SukuCardLineTypeOneComponent,
                         SukuCardLineTypeTwoComponent,
                         SukuRatingCardLineComponent,
-                        SukuNotificationPanelComponent
+                        SukuNotificationPanelComponent,
+                        SukuAddIconComponent
                     ]
                 },] }
     ];
@@ -4045,6 +4135,6 @@ var SukuWebcomponentsModule = /** @class */ (function () {
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { SukuWebcomponentsService, SukuWebcomponentsModule, SukuACHSettingsComponent as ɵbi, SukuAddWidgetComponent as ɵr, SukuAddressWidgetComponent as ɵw, SukuBeneficialOwnerComponent as ɵbm, SukuBidInfoComponent as ɵu, SukuBidTagComponent as ɵa, SukuCardLineTypeOneComponent as ɵbs, SukuCardLineTypeTwoComponent as ɵbt, SukuCardLineComponent as ɵb, SukuCardTitleComponent as ɵbe, SukuCreateCustomerComponent as ɵbl, SukuCreationCustomerFileuploadComponent as ɵbp, SukuDashboardProfileComponent as ɵc, SukuDefaultButtonComponent as ɵd, SukuDwollaFundingAgreementComponent as ɵbn, SukuDwollaFundingSourceComponent as ɵbo, SukuFiltersComponent as ɵba, SukuFundingSourceComponent as ɵbk, SukuHeadingComponent as ɵe, SukuHomeItalicHeadingComponent as ɵf, SukuHomeWidgetComponent as ɵg, SukuInfoButtonComponent as ɵh, SukuInlineDropdownComponent as ɵi, SukuLinkComponent as ɵq, SukuMailWidgetComponent as ɵj, SukuMatchChipComponent as ɵk, SukuNavSubmenuComponent as ɵt, SukuNotificationPanelComponent as ɵbv, SukuNotificationWidgetComponent as ɵl, SukuPaymentPortalHelpComponent as ɵbq, SukuPhoneWidgetComponent as ɵv, SukuPrimaryButtonComponent as ɵm, SukuProductTraceWidgetComponent as ɵbc, SukuProfileWidgetComponent as ɵy, SukuProgressBarComponent as ɵn, SukuRatingCardLineComponent as ɵbu, SukuRatingStarComponent as ɵbf, SukuResponseComponent as ɵbh, SukuSearchInputComponent as ɵx, SukuSecondaryButtonComponent as ɵo, SukuSelectInputComponent as ɵs, SukuShippingWidgetComponent as ɵbg, SukuStarBadgeComponent as ɵz, SukuSubHeadingComponent as ɵp, SukuTermsAndConditionsComponent as ɵbr, SukuTrackProgressBarComponent as ɵbb, SukuTransactionHistoryComponent as ɵbj, SukuTreeComponent as ɵbd };
+export { SukuWebcomponentsService, SukuWebcomponentsModule, SukuACHSettingsComponent as ɵbi, SukuAddIconComponent as ɵbw, SukuAddWidgetComponent as ɵr, SukuAddressWidgetComponent as ɵw, SukuBeneficialOwnerComponent as ɵbm, SukuBidInfoComponent as ɵu, SukuBidTagComponent as ɵa, SukuCardLineTypeOneComponent as ɵbs, SukuCardLineTypeTwoComponent as ɵbt, SukuCardLineComponent as ɵb, SukuCardTitleComponent as ɵbe, SukuCreateCustomerComponent as ɵbl, SukuCreationCustomerFileuploadComponent as ɵbp, SukuDashboardProfileComponent as ɵc, SukuDefaultButtonComponent as ɵd, SukuDwollaFundingAgreementComponent as ɵbn, SukuDwollaFundingSourceComponent as ɵbo, SukuFiltersComponent as ɵba, SukuFundingSourceComponent as ɵbk, SukuHeadingComponent as ɵe, SukuHomeItalicHeadingComponent as ɵf, SukuHomeWidgetComponent as ɵg, SukuInfoButtonComponent as ɵh, SukuInlineDropdownComponent as ɵi, SukuLinkComponent as ɵq, SukuMailWidgetComponent as ɵj, SukuMatchChipComponent as ɵk, SukuNavSubmenuComponent as ɵt, SukuNotificationPanelComponent as ɵbv, SukuNotificationWidgetComponent as ɵl, SukuPaymentPortalHelpComponent as ɵbq, SukuPhoneWidgetComponent as ɵv, SukuPrimaryButtonComponent as ɵm, SukuProductTraceWidgetComponent as ɵbc, SukuProfileWidgetComponent as ɵy, SukuProgressBarComponent as ɵn, SukuRatingCardLineComponent as ɵbu, SukuRatingStarComponent as ɵbf, SukuResponseComponent as ɵbh, SukuSearchInputComponent as ɵx, SukuSecondaryButtonComponent as ɵo, SukuSelectInputComponent as ɵs, SukuShippingWidgetComponent as ɵbg, SukuStarBadgeComponent as ɵz, SukuSubHeadingComponent as ɵp, SukuTermsAndConditionsComponent as ɵbr, SukuTrackProgressBarComponent as ɵbb, SukuTransactionHistoryComponent as ɵbj, SukuTreeComponent as ɵbd };
 
 //# sourceMappingURL=suku-webcomponents.js.map

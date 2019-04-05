@@ -10,8 +10,6 @@ export declare class SukuACHSettingsComponent implements OnInit, AfterViewInit {
     SetupACHPaymentsBtnText: string;
     paymentButtonId: string;
     lowerText: string;
-    upperText: string;
-    upperTextId: string;
     lowerTextId: string;
     subtitleId: string;
     action: EventEmitter<{}>;
@@ -25,5 +23,7 @@ export declare class SukuACHSettingsComponent implements OnInit, AfterViewInit {
     ngOnInit(): void;
     ngAfterViewInit(): void;
     uploadDoc(val: any): void;
+    getDocTypeString(docType: any): string;
+    getDocFailureString(failureType: any): string;
     active(i: any): void;
 }
