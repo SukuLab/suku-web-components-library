@@ -24,6 +24,9 @@ export { SukuFundingSourceComponent as ɵbk } from './lib/suku-funding-source/su
 export { SukuHeadingComponent as ɵe } from './lib/suku-heading/suku-heading.component';
 export { SukuHomeItalicHeadingComponent as ɵf } from './lib/suku-home-italic-heading/suku-home-italic-heading.component';
 export { SukuHomeWidgetComponent as ɵg } from './lib/suku-home-widget/suku-home-widget.component';
+export { SukuHomepageButtonComponent as ɵbz } from './lib/suku-homepage-button/suku-homepage-button.component';
+export { SukuHomepageSectionComponent as ɵby } from './lib/suku-homepage-section/suku-homepage-section.component';
+export { SukuHomepageComponent as ɵbx } from './lib/suku-homepage/suku-homepage.component';
 export { SukuInfoButtonComponent as ɵh } from './lib/suku-info-button/suku-info-button.component';
 export { SukuInlineDropdownComponent as ɵi } from './lib/suku-inline-dropdown/suku-inline-dropdown.component';
 export { SukuLinkComponent as ɵq } from './lib/suku-link/suku-link.component';

@@ -54,10 +54,7 @@
              * @param {?} val
              * @return {?}
              */ function (val) {
-                console.log(val);
                 this._beneficialOwnerStatus = val;
-                console.log("beneficial ownership status: " + val);
-                console.log(val);
                 if (val) {
                     this.lowerText = 'Please upload beneficial owner documents below';
                 }
@@ -72,7 +69,6 @@
          * @return {?}
          */
             function () {
-                console.log('this.documentStatus', this.documentStatus);
                 if (this.documentStatus) {
                     for (var j = 0; j < this.documentStatus.length; j++) {
                         this.toggle[j] = false;
@@ -98,7 +94,6 @@
          * @return {?}
          */
             function (val) {
-                console.log('val', val);
                 this.upload.emit(val);
             };
         /**
@@ -2981,7 +2976,6 @@
          * @return {?}
          */
             function (e) {
-                console.log(e);
                 /** @type {?} */
                 var files = e.target.files;
                 /** @type {?} */
@@ -3937,6 +3931,230 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
+    var SukuHomepageButton = /** @class */ (function () {
+        function SukuHomepageButton(values) {
+            if (values === void 0) {
+                values = {};
+            }
+            Object.assign(this, values);
+        }
+        return SukuHomepageButton;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+    var SukuHomepageSection = /** @class */ (function () {
+        function SukuHomepageSection(values) {
+            if (values === void 0) {
+                values = {};
+            }
+            Object.assign(this, values);
+        }
+        return SukuHomepageSection;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+    /** @type {?} */
+    var sukuHomepageData = [
+        new SukuHomepageSection({
+            header: 'SUKU Core Applications',
+            subheader: '',
+            info: 'SUKU Core Applications offer the primary feature set on the SUKU Platform. Click any of the icons below to open that SUKU Core Application.',
+            buttons: [
+                new SukuHomepageButton({
+                    title: 'Marketplace',
+                    icon: 'fas fa-shopping-cart',
+                    path: '/userDashboard',
+                    disabled: false,
+                }),
+                new SukuHomepageButton({
+                    title: 'Track & Trace',
+                    icon: 'fas fa-link',
+                    path: '/productSearch',
+                    disabled: false,
+                }),
+                new SukuHomepageButton({
+                    title: 'Document Authenticator',
+                    icon: 'far fa-file-code',
+                    path: '/verify',
+                    disabled: false,
+                }),
+                new SukuHomepageButton({
+                    title: 'Payment Portal',
+                    icon: 'fas fa-sliders-h',
+                    path: '/paymentPortal',
+                    disabled: false,
+                }),
+            ],
+        }),
+        new SukuHomepageSection({
+            header: 'SUKU Applications and Services',
+            subheader: '- Coming Soon',
+            info: 'SUKU Applications and Services provide additional functionality and features, which typically leverage the the SUKU Core. We expect these Applications and Services to be built by 3rd parties and by the SUKU Team. These features are coming soon!',
+            buttons: [
+                new SukuHomepageButton({
+                    title: 'Inventory Management',
+                    icon: 'fas fa-box-open',
+                    path: '/',
+                    disabled: true,
+                }),
+                new SukuHomepageButton({
+                    title: 'Warehouse Management',
+                    icon: 'fas fa-dolly',
+                    path: '/',
+                    disabled: true,
+                }),
+                new SukuHomepageButton({
+                    title: 'Insurance',
+                    icon: 'fas fa-shield-alt',
+                    path: '/',
+                    disabled: true,
+                }),
+                new SukuHomepageButton({
+                    title: 'Quorum Block Explorer',
+                    icon: 'fas fa-cubes',
+                    path: '/',
+                    disabled: true,
+                }),
+            ],
+        }),
+    ];
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+    var SukuHomepageComponent = /** @class */ (function () {
+        function SukuHomepageComponent() {
+            this.sendRoutePath = new i0.EventEmitter();
+            this.homepageData = sukuHomepageData;
+        }
+        /**
+         * @return {?}
+         */
+        SukuHomepageComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+            function () { };
+        /**
+         * @param {?} string
+         * @return {?}
+         */
+        SukuHomepageComponent.prototype.onSendRoutePath = /**
+         * @param {?} string
+         * @return {?}
+         */
+            function (string) {
+                this.sendRoutePath.emit(string);
+            };
+        SukuHomepageComponent.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'suku-homepage',
+                        template: "<div class=\"homepage col-md-10 col-12 m-auto\">\r\n  <div *ngFor=\"let section of homepageData\">\r\n    <suku-homepage-section (sendRoutePath)=\"onSendRoutePath($event)\" [sectionData]=\"section\"></suku-homepage-section>\r\n  </div>\r\n</div>",
+                        styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);.homepage{padding:30px 0 40px;font-family:Poppins,sans-serif;background:#fff;box-shadow:0 3px 3px 0 rgba(0,0,0,.5);border-radius:0 0 41px 41px}"]
+                    }] }
+        ];
+        /** @nocollapse */
+        SukuHomepageComponent.ctorParameters = function () { return []; };
+        SukuHomepageComponent.propDecorators = {
+            sendRoutePath: [{ type: i0.Output }]
+        };
+        return SukuHomepageComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+    var SukuHomepageSectionComponent = /** @class */ (function () {
+        function SukuHomepageSectionComponent() {
+            this.sendRoutePath = new i0.EventEmitter();
+        }
+        /**
+         * @return {?}
+         */
+        SukuHomepageSectionComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+            function () { };
+        /**
+         * @param {?} string
+         * @return {?}
+         */
+        SukuHomepageSectionComponent.prototype.onSendRoutePath = /**
+         * @param {?} string
+         * @return {?}
+         */
+            function (string) {
+                this.sendRoutePath.emit(string);
+            };
+        SukuHomepageSectionComponent.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'suku-homepage-section',
+                        template: "<section class=\"homepage-section\">\r\n  <div class=\"header row ml-3 ml-sm-5\">\r\n    <div class=\"title mt-3\">{{sectionData.header}}</div>\r\n    <div class=\"mt-3 d-flex pr-5\">\r\n      <span class=\"title italic font-italic\">{{sectionData.subheader}}</span>\r\n      <div class=\"ml-2 info\">\r\n        <i class=\"fas fa-info\"></i>\r\n        <div class=\"info-box\">{{sectionData.info}}</div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row m-3 d-flex justify-content-around\">\r\n    <div class=\"justify-content-center d-flex mt-3 mt-md-5 col-lg-3 col-md-6 col-12\"\r\n      *ngFor=\"let button of sectionData.buttons\">\r\n      <suku-homepage-button [buttonData]=\"button\" (sendRoutePath)=\"onSendRoutePath($event)\"></suku-homepage-button>\r\n    </div>\r\n  </div>\r\n</section>",
+                        styles: [".homepage-section{font-family:Poppins,sans-serif}.title{font-size:23px;font-weight:700}.italic{font-weight:400}.info{text-align:center;height:23px;width:23px;border-radius:100px;background:#303030;color:#d8f40b}.info:hover .info-box{display:block}.info-box{z-index:100;width:300px;border-radius:6px;word-wrap:break-word;background:#000;display:none;position:relative;bottom:-10px;right:23px;text-align:left;padding:20px;font-size:13px;font-family:\"Encode Sans\";font-weight:500;font-style:normal;font-stretch:normal;line-height:1.45;letter-spacing:.4px;color:#b6b6b6}.info-box::after{content:\"\";position:absolute;top:-10px;left:35px;margin-left:-5px;border-width:5px;border-style:solid;border-color:transparent transparent #191922;font-style:normal;font-stretch:normal}"]
+                    }] }
+        ];
+        /** @nocollapse */
+        SukuHomepageSectionComponent.ctorParameters = function () { return []; };
+        SukuHomepageSectionComponent.propDecorators = {
+            sectionData: [{ type: i0.Input }],
+            sendRoutePath: [{ type: i0.Output }]
+        };
+        return SukuHomepageSectionComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+    var SukuHomepageButtonComponent = /** @class */ (function () {
+        function SukuHomepageButtonComponent() {
+            this.sendRoutePath = new i0.EventEmitter();
+        }
+        /**
+         * @return {?}
+         */
+        SukuHomepageButtonComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+            function () { };
+        /**
+         * @return {?}
+         */
+        SukuHomepageButtonComponent.prototype.onClick = /**
+         * @return {?}
+         */
+            function () {
+                if (!this.buttonData.disabled) {
+                    this.sendRoutePath.emit(this.buttonData.path);
+                }
+            };
+        SukuHomepageButtonComponent.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'suku-homepage-button',
+                        template: "<div class=\"button-container d-flex flex-column align-items-center\">\r\n  <div class=\"suku-button d-flex justify-content-center align-items-center\" [ngClass]=\"{\r\n      'disabled': buttonData.disabled\r\n    }\" (click)=\"onClick()\">\r\n    <i [ngClass]=\"[buttonData.icon, 'icon']\"></i>\r\n  </div>\r\n  <div class=\"suku-button-text text-center mt-3\">\r\n    <h3 class=\"button-title\">{{buttonData.title}}</h3>\r\n  </div>\r\n</div>",
+                        styles: [".button-container{width:106.4px;font-family:Poppins,sans-serif;font-weight:700}.suku-button{height:80px;width:80px;background:#303030;color:#d8f40b;box-shadow:0 3px 3px 0 rgba(0,0,0,.5);transition:.1s ease-in-out;border-radius:12px 28px}.suku-button:hover{-webkit-transform:translateY(-3px);transform:translateY(-3px);box-shadow:0 6px 3px 0 rgba(0,0,0,.5)}.suku-button:active{box-shadow:0 4px 3px 0 rgba(0,0,0,.5);-webkit-transform:translateY(-1px);transform:translateY(-1px);transition:none}.disabled{background:#d9d9d9;color:#7f7f7f;cursor:default}.disabled:active,.disabled:hover{box-shadow:0 3px 3px 0 rgba(0,0,0,.5);-webkit-transform:translateY(0);transform:translateY(0)}.icon{font-size:40px}.button-title{font-size:14px;font-weight:700}"]
+                    }] }
+        ];
+        /** @nocollapse */
+        SukuHomepageButtonComponent.ctorParameters = function () { return []; };
+        SukuHomepageButtonComponent.propDecorators = {
+            buttonData: [{ type: i0.Input }],
+            sendRoutePath: [{ type: i0.Output }]
+        };
+        return SukuHomepageButtonComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
     var SukuWebcomponentsModule = /** @class */ (function () {
         function SukuWebcomponentsModule() {
         }
@@ -3991,7 +4209,10 @@
                             SukuCardLineTypeTwoComponent,
                             SukuRatingCardLineComponent,
                             SukuNotificationPanelComponent,
-                            SukuAddIconComponent
+                            SukuAddIconComponent,
+                            SukuHomepageComponent,
+                            SukuHomepageSectionComponent,
+                            SukuHomepageButtonComponent
                         ],
                         imports: [
                             common.CommonModule,
@@ -4082,7 +4303,10 @@
                             SukuCardLineTypeTwoComponent,
                             SukuRatingCardLineComponent,
                             SukuNotificationPanelComponent,
-                            SukuAddIconComponent
+                            SukuAddIconComponent,
+                            SukuHomepageComponent,
+                            SukuHomepageSectionComponent,
+                            SukuHomepageButtonComponent
                         ]
                     },] }
         ];
@@ -4123,6 +4347,9 @@
     exports.ɵe = SukuHeadingComponent;
     exports.ɵf = SukuHomeItalicHeadingComponent;
     exports.ɵg = SukuHomeWidgetComponent;
+    exports.ɵbz = SukuHomepageButtonComponent;
+    exports.ɵby = SukuHomepageSectionComponent;
+    exports.ɵbx = SukuHomepageComponent;
     exports.ɵh = SukuInfoButtonComponent;
     exports.ɵi = SukuInlineDropdownComponent;
     exports.ɵq = SukuLinkComponent;
