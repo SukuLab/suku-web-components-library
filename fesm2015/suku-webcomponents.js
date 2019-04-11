@@ -4047,22 +4047,22 @@ class SukuSocialIconsComponent {
         this.socialIcons = [
             {
                 icon: 'fa fa-twitter',
-                path: '/userDashboard',
+                path: '/companyInfo',
                 id: 'twitter'
             },
             {
                 icon: 'fa fa-facebook',
-                path: '/userDashboard',
+                path: '/companyInfo',
                 id: 'facebook'
             },
             {
                 icon: 'fa fa-linkedin',
-                path: '/userDashboard',
+                path: '/companyInfo',
                 id: 'linkedin'
             },
             {
                 icon: 'fa fa-instagram',
-                path: '/userDashboard',
+                path: '/companyInfo',
                 id: 'instagram'
             }
         ];
@@ -4072,13 +4072,13 @@ class SukuSocialIconsComponent {
      * @return {?}
      */
     sendRoutePath(e) {
-        console.log("path", e);
+        this.action.emit(e);
     }
 }
 SukuSocialIconsComponent.decorators = [
     { type: Component, args: [{
                 selector: 'suku-social-icons',
-                template: "<ul id=\"socialIcon\" class=\"icon-effect icon-effect-1a\">\n  <li class=\"mrc-2\" *ngFor=\"let icon of socialIcons;let i=index\" >\n    <a class=\"icon\" id=\"icon?.id\"><i [ngClass]=\"icon?.icon\" (click)=\"sendRoutePath(icon.icon)\"></i></a>\n  </li>\n</ul>",
+                template: "<ul id=\"socialIcon\" class=\"icon-effect icon-effect-1a\">\n  <li class=\"mrc-2\" *ngFor=\"let icon of socialIcons;let i=index\" >\n    <a class=\"icon\" id=\"icon?.id\" (click)=\"sendRoutePath(icon?.path)\"><i [ngClass]=\"icon?.icon\"></i></a>\n  </li>\n</ul>",
                 styles: ["ul{list-style:none;padding:0!important}ul>li{display:inline;padding:0!important;margin-right:10px}.icon{display:inline-block;position:relative;z-index:0;width:44px;height:44px;border-radius:50%;font-size:20px!important;color:#d3d2d2;line-height:44px;text-align:center;background-color:#f1f1f1}.icon:after{position:absolute;width:100%;height:100%;border-radius:50%;content:'';box-sizing:content-box}.icon-effect .icon{transition:.5s}.icon-effect .icon:after{top:-7px;left:-7px;box-shadow:0 0 0 3px #caec1c;color:#fff;transition:.5s;-webkit-transform:scale(.9);transform:scale(.9);opacity:0;padding:6.9px 7.1px 8px}.icon-effect-1a .icon:hover{background-color:#caec1c;color:#fff;cursor:pointer!important}.icon-effect-1a .icon:hover:after{-webkit-transform:scale(.9);transform:scale(.9);opacity:1}.mrc-2{margin-right:2rem!important}@media only screen and (min-width:1440px){.mrc-2{margin-right:2.5rem!important}}@media only screen and (min-width:1640px){.mrc-2{margin-right:3.8rem!important}}@media only screen and (min-width:1800px){.mrc-2{margin-right:4.5rem!important}}"]
             }] }
 ];
