@@ -27,7 +27,8 @@ export declare class SukuProfileHeaderComponent implements OnInit {
     rateDetailsCustomClass: string;
     ratingPrivacy: Boolean;
     rateDetailsId: string;
-    rating: EventEmitter<{}>;
+    actionOne: EventEmitter<{}>;
+    actionTwo: EventEmitter<{}>;
     customClass: any;
     ratingValue: number;
     subHeadingOne: string;
@@ -63,4 +64,6 @@ export declare class SukuProfileHeaderComponent implements OnInit {
     samIconAction: EventEmitter<{}>;
     constructor();
     ngOnInit(): void;
+    editAccount(): void;
+    changePass(): void;
 }
