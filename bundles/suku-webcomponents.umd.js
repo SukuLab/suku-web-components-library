@@ -4382,7 +4382,7 @@
             { type: i0.Component, args: [{
                         selector: 'suku-social-icons',
                         template: "<ul id=\"socialIcon\" class=\"icon-effect icon-effect-1a\">\n  <li class=\"mrc-2\" *ngFor=\"let icon of socialIcons;let i=index\" >\n    <a class=\"icon\" id=\"icon?.id\" (click)=\"sendRoutePath(icon?.path)\"><i [ngClass]=\"icon?.icon\"></i></a>\n  </li>\n</ul>",
-                        styles: ["ul{list-style:none;padding:0!important}ul>li{display:inline;padding:0!important;margin-right:10px}.icon{display:inline-block;position:relative;z-index:0;width:39px;height:39px;border-radius:50%;font-size:20px!important;line-height:42px;text-align:center;box-shadow:0 2px 2px 0 rgba(0,0,0,.1);background-color:#fff}.icon:after{position:absolute;width:100%;height:100%;border-radius:50%;content:'';box-sizing:content-box}.icon-effect .icon{transition:.5s}.icon-effect .icon:after{top:-7px;left:-7px;box-shadow:0 0 0 3px #caec1c;color:#fff;transition:.5s;-webkit-transform:scale(.9);transform:scale(.9);opacity:0;padding:6.9px 7.1px 8px}.icon-effect-1a .icon:hover{background-color:#caec1c;color:#fff;cursor:pointer!important}.icon-effect-1a .icon:hover:after{-webkit-transform:scale(.9);transform:scale(.9);opacity:1}.mrc-2{margin-right:2rem!important}@media only screen and (min-width:1440px){.mrc-2{margin-right:2.5rem!important}}@media only screen and (min-width:1640px){.mrc-2{margin-right:3.8rem!important}}@media only screen and (min-width:1800px){.mrc-2{margin-right:4.5rem!important}}"]
+                        styles: ["ul{list-style:none;padding:0!important}ul>li{display:inline;padding:0!important;margin-right:10px}.icon{display:inline-block;position:relative;z-index:0;width:39px;height:39px;border-radius:50%;font-size:20px!important;line-height:42px;text-align:center;box-shadow:0 2px 2px 0 rgba(0,0,0,.1);background-color:#fff}.icon:after{position:absolute;width:100%;height:100%;border-radius:50%;content:'';box-sizing:content-box}.icon-effect .icon{transition:.5s}.icon-effect .icon:after{top:-7px;left:-7px;box-shadow:0 0 0 3px #caec1c;color:#fff;transition:.5s;-webkit-transform:scale(.9);transform:scale(.9);opacity:0;padding:6.9px 7.1px 8px}.icon-effect-1a .icon:hover{background-color:#caec1c;color:#fff;cursor:pointer!important}.icon-effect-1a .icon:hover:after{-webkit-transform:scale(.9);transform:scale(.9);opacity:1}.mrc-2{margin-right:2rem!important}@media only screen and (min-width:1440px){.mrc-2{margin-right:3.2rem!important}}@media only screen and (min-width:1640px){.mrc-2{margin-right:3.8rem!important}}@media only screen and (min-width:1800px){.mrc-2{margin-right:4.5rem!important}}"]
                     }] }
         ];
         /** @nocollapse */
@@ -4392,6 +4392,58 @@
             action: [{ type: i0.Output }]
         };
         return SukuSocialIconsComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+    var SukuRadioButtonComponent = /** @class */ (function () {
+        function SukuRadioButtonComponent() {
+            this.control = 'traceabilityProduct';
+            this.content = 'using an id';
+            this.contentCustomClass = 'traceSelectedProd';
+            this.radioButtonId = 'sukuRadioButton';
+            this.color = 'primary';
+            this.value = 1;
+            this.action = new i0.EventEmitter();
+        }
+        /**
+         * @return {?}
+         */
+        SukuRadioButtonComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+            function () { };
+        /**
+         * @return {?}
+         */
+        SukuRadioButtonComponent.prototype.buttonAction = /**
+         * @return {?}
+         */
+            function () {
+                this.action.emit();
+            };
+        SukuRadioButtonComponent.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'suku-radio-button',
+                        template: "<span [formGroup]=\"form\">\n  <mat-radio-group formControlName=\"{{control}}\" name=\"{{control}}\">\n    <mat-radio-button type=\"radio\" (click)=\"buttonAction()\" class=\"radio-inline thisProductInfoLabel\"\n      [id]=\"radioButtonId\" [color]=\"color\" [value]=\"value\">\n      <span [class]=\"contentCustomClass\">{{content}}</span>\n    </mat-radio-button>\n  </mat-radio-group>\n</span>",
+                        styles: [".thisProductInfoLabel{font-family:'Encode Sans',sans-serif;font-size:14px;font-style:normal;font-stretch:normal;line-height:2;letter-spacing:-.4px;color:#1c1c1c}.radio-inline{margin-top:0!important}"]
+                    }] }
+        ];
+        /** @nocollapse */
+        SukuRadioButtonComponent.ctorParameters = function () { return []; };
+        SukuRadioButtonComponent.propDecorators = {
+            form: [{ type: i0.Input }],
+            control: [{ type: i0.Input }],
+            content: [{ type: i0.Input }],
+            contentCustomClass: [{ type: i0.Input }],
+            radioButtonId: [{ type: i0.Input }],
+            color: [{ type: i0.Input }],
+            value: [{ type: i0.Input }],
+            action: [{ type: i0.Output }]
+        };
+        return SukuRadioButtonComponent;
     }());
 
     /**
@@ -4457,7 +4509,8 @@
                             SukuHomepageSectionComponent,
                             SukuHomepageButtonComponent,
                             SukuProfileHeaderComponent,
-                            SukuSocialIconsComponent
+                            SukuSocialIconsComponent,
+                            SukuRadioButtonComponent
                         ],
                         imports: [
                             common.CommonModule,
@@ -4553,7 +4606,8 @@
                             SukuHomepageSectionComponent,
                             SukuHomepageButtonComponent,
                             SukuProfileHeaderComponent,
-                            SukuSocialIconsComponent
+                            SukuSocialIconsComponent,
+                            SukuRadioButtonComponent
                         ]
                     },] }
         ];
@@ -4612,6 +4666,7 @@
     exports.ɵca = SukuProfileHeaderComponent;
     exports.ɵy = SukuProfileWidgetComponent;
     exports.ɵn = SukuProgressBarComponent;
+    exports.ɵcc = SukuRadioButtonComponent;
     exports.ɵbu = SukuRatingCardLineComponent;
     exports.ɵbf = SukuRatingStarComponent;
     exports.ɵbh = SukuResponseComponent;

@@ -42,6 +42,7 @@ export { SukuProductTraceWidgetComponent as ɵbc } from './lib/suku-product-trac
 export { SukuProfileHeaderComponent as ɵca } from './lib/suku-profile-header/suku-profile-header.component';
 export { SukuProfileWidgetComponent as ɵy } from './lib/suku-profile-widget/suku-profile-widget.component';
 export { SukuProgressBarComponent as ɵn } from './lib/suku-progress-bar/suku-progress-bar.component';
+export { SukuRadioButtonComponent as ɵcc } from './lib/suku-radio-button/suku-radio-button.component';
 export { SukuRatingCardLineComponent as ɵbu } from './lib/suku-rating-card-line/suku-rating-card-line.component';
 export { SukuRatingStarComponent as ɵbf } from './lib/suku-rating-star/suku-rating-star.component';
 export { SukuResponseComponent as ɵbh } from './lib/suku-response/suku-response.component';

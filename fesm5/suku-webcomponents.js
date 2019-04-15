@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { layout, select } from 'd3';
 import { MatSnackBar, MatAutocompleteModule, MatBadgeModule, MatBottomSheetModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule, MatDividerModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatSortModule, MatStepperModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Injectable, Component, Input, Output, EventEmitter, ViewEncapsulation, ChangeDetectionStrategy, NgModule, defineInjectable } from '@angular/core';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 /**
  * @fileoverview added by tsickle
@@ -4415,7 +4415,7 @@ var SukuSocialIconsComponent = /** @class */ (function () {
         { type: Component, args: [{
                     selector: 'suku-social-icons',
                     template: "<ul id=\"socialIcon\" class=\"icon-effect icon-effect-1a\">\n  <li class=\"mrc-2\" *ngFor=\"let icon of socialIcons;let i=index\" >\n    <a class=\"icon\" id=\"icon?.id\" (click)=\"sendRoutePath(icon?.path)\"><i [ngClass]=\"icon?.icon\"></i></a>\n  </li>\n</ul>",
-                    styles: ["ul{list-style:none;padding:0!important}ul>li{display:inline;padding:0!important;margin-right:10px}.icon{display:inline-block;position:relative;z-index:0;width:39px;height:39px;border-radius:50%;font-size:20px!important;line-height:42px;text-align:center;box-shadow:0 2px 2px 0 rgba(0,0,0,.1);background-color:#fff}.icon:after{position:absolute;width:100%;height:100%;border-radius:50%;content:'';box-sizing:content-box}.icon-effect .icon{transition:.5s}.icon-effect .icon:after{top:-7px;left:-7px;box-shadow:0 0 0 3px #caec1c;color:#fff;transition:.5s;-webkit-transform:scale(.9);transform:scale(.9);opacity:0;padding:6.9px 7.1px 8px}.icon-effect-1a .icon:hover{background-color:#caec1c;color:#fff;cursor:pointer!important}.icon-effect-1a .icon:hover:after{-webkit-transform:scale(.9);transform:scale(.9);opacity:1}.mrc-2{margin-right:2rem!important}@media only screen and (min-width:1440px){.mrc-2{margin-right:2.5rem!important}}@media only screen and (min-width:1640px){.mrc-2{margin-right:3.8rem!important}}@media only screen and (min-width:1800px){.mrc-2{margin-right:4.5rem!important}}"]
+                    styles: ["ul{list-style:none;padding:0!important}ul>li{display:inline;padding:0!important;margin-right:10px}.icon{display:inline-block;position:relative;z-index:0;width:39px;height:39px;border-radius:50%;font-size:20px!important;line-height:42px;text-align:center;box-shadow:0 2px 2px 0 rgba(0,0,0,.1);background-color:#fff}.icon:after{position:absolute;width:100%;height:100%;border-radius:50%;content:'';box-sizing:content-box}.icon-effect .icon{transition:.5s}.icon-effect .icon:after{top:-7px;left:-7px;box-shadow:0 0 0 3px #caec1c;color:#fff;transition:.5s;-webkit-transform:scale(.9);transform:scale(.9);opacity:0;padding:6.9px 7.1px 8px}.icon-effect-1a .icon:hover{background-color:#caec1c;color:#fff;cursor:pointer!important}.icon-effect-1a .icon:hover:after{-webkit-transform:scale(.9);transform:scale(.9);opacity:1}.mrc-2{margin-right:2rem!important}@media only screen and (min-width:1440px){.mrc-2{margin-right:3.2rem!important}}@media only screen and (min-width:1640px){.mrc-2{margin-right:3.8rem!important}}@media only screen and (min-width:1800px){.mrc-2{margin-right:4.5rem!important}}"]
                 }] }
     ];
     /** @nocollapse */
@@ -4425,6 +4425,58 @@ var SukuSocialIconsComponent = /** @class */ (function () {
         action: [{ type: Output }]
     };
     return SukuSocialIconsComponent;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var SukuRadioButtonComponent = /** @class */ (function () {
+    function SukuRadioButtonComponent() {
+        this.control = 'traceabilityProduct';
+        this.content = 'using an id';
+        this.contentCustomClass = 'traceSelectedProd';
+        this.radioButtonId = 'sukuRadioButton';
+        this.color = 'primary';
+        this.value = 1;
+        this.action = new EventEmitter();
+    }
+    /**
+     * @return {?}
+     */
+    SukuRadioButtonComponent.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () { };
+    /**
+     * @return {?}
+     */
+    SukuRadioButtonComponent.prototype.buttonAction = /**
+     * @return {?}
+     */
+    function () {
+        this.action.emit();
+    };
+    SukuRadioButtonComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'suku-radio-button',
+                    template: "<span [formGroup]=\"form\">\n  <mat-radio-group formControlName=\"{{control}}\" name=\"{{control}}\">\n    <mat-radio-button type=\"radio\" (click)=\"buttonAction()\" class=\"radio-inline thisProductInfoLabel\"\n      [id]=\"radioButtonId\" [color]=\"color\" [value]=\"value\">\n      <span [class]=\"contentCustomClass\">{{content}}</span>\n    </mat-radio-button>\n  </mat-radio-group>\n</span>",
+                    styles: [".thisProductInfoLabel{font-family:'Encode Sans',sans-serif;font-size:14px;font-style:normal;font-stretch:normal;line-height:2;letter-spacing:-.4px;color:#1c1c1c}.radio-inline{margin-top:0!important}"]
+                }] }
+    ];
+    /** @nocollapse */
+    SukuRadioButtonComponent.ctorParameters = function () { return []; };
+    SukuRadioButtonComponent.propDecorators = {
+        form: [{ type: Input }],
+        control: [{ type: Input }],
+        content: [{ type: Input }],
+        contentCustomClass: [{ type: Input }],
+        radioButtonId: [{ type: Input }],
+        color: [{ type: Input }],
+        value: [{ type: Input }],
+        action: [{ type: Output }]
+    };
+    return SukuRadioButtonComponent;
 }());
 
 /**
@@ -4490,7 +4542,8 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         SukuHomepageSectionComponent,
                         SukuHomepageButtonComponent,
                         SukuProfileHeaderComponent,
-                        SukuSocialIconsComponent
+                        SukuSocialIconsComponent,
+                        SukuRadioButtonComponent
                     ],
                     imports: [
                         CommonModule,
@@ -4586,7 +4639,8 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         SukuHomepageSectionComponent,
                         SukuHomepageButtonComponent,
                         SukuProfileHeaderComponent,
-                        SukuSocialIconsComponent
+                        SukuSocialIconsComponent,
+                        SukuRadioButtonComponent
                     ]
                 },] }
     ];
@@ -4603,6 +4657,6 @@ var SukuWebcomponentsModule = /** @class */ (function () {
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { SukuWebcomponentsService, SukuWebcomponentsModule, SukuACHSettingsComponent as ɵbi, SukuAddIconComponent as ɵbw, SukuAddWidgetComponent as ɵr, SukuAddressWidgetComponent as ɵw, SukuBeneficialOwnerComponent as ɵbm, SukuBidInfoComponent as ɵu, SukuBidTagComponent as ɵa, SukuCardLineTypeOneComponent as ɵbs, SukuCardLineTypeTwoComponent as ɵbt, SukuCardLineComponent as ɵb, SukuCardTitleComponent as ɵbe, SukuCreateCustomerComponent as ɵbl, SukuCreationCustomerFileuploadComponent as ɵbp, SukuDashboardProfileComponent as ɵc, SukuDefaultButtonComponent as ɵd, SukuDwollaFundingAgreementComponent as ɵbn, SukuDwollaFundingSourceComponent as ɵbo, SukuFiltersComponent as ɵba, SukuFundingSourceComponent as ɵbk, SukuHeadingComponent as ɵe, SukuHomeItalicHeadingComponent as ɵf, SukuHomeWidgetComponent as ɵg, SukuHomepageButtonComponent as ɵbz, SukuHomepageSectionComponent as ɵby, SukuHomepageComponent as ɵbx, SukuInfoButtonComponent as ɵh, SukuInlineDropdownComponent as ɵi, SukuLinkComponent as ɵq, SukuMailWidgetComponent as ɵj, SukuMatchChipComponent as ɵk, SukuNavSubmenuComponent as ɵt, SukuNotificationPanelComponent as ɵbv, SukuNotificationWidgetComponent as ɵl, SukuPaymentPortalHelpComponent as ɵbq, SukuPhoneWidgetComponent as ɵv, SukuPrimaryButtonComponent as ɵm, SukuProductTraceWidgetComponent as ɵbc, SukuProfileHeaderComponent as ɵca, SukuProfileWidgetComponent as ɵy, SukuProgressBarComponent as ɵn, SukuRatingCardLineComponent as ɵbu, SukuRatingStarComponent as ɵbf, SukuResponseComponent as ɵbh, SukuSearchInputComponent as ɵx, SukuSecondaryButtonComponent as ɵo, SukuSelectInputComponent as ɵs, SukuShippingWidgetComponent as ɵbg, SukuSocialIconsComponent as ɵcb, SukuStarBadgeComponent as ɵz, SukuSubHeadingComponent as ɵp, SukuTermsAndConditionsComponent as ɵbr, SukuTrackProgressBarComponent as ɵbb, SukuTransactionHistoryComponent as ɵbj, SukuTreeComponent as ɵbd };
+export { SukuWebcomponentsService, SukuWebcomponentsModule, SukuACHSettingsComponent as ɵbi, SukuAddIconComponent as ɵbw, SukuAddWidgetComponent as ɵr, SukuAddressWidgetComponent as ɵw, SukuBeneficialOwnerComponent as ɵbm, SukuBidInfoComponent as ɵu, SukuBidTagComponent as ɵa, SukuCardLineTypeOneComponent as ɵbs, SukuCardLineTypeTwoComponent as ɵbt, SukuCardLineComponent as ɵb, SukuCardTitleComponent as ɵbe, SukuCreateCustomerComponent as ɵbl, SukuCreationCustomerFileuploadComponent as ɵbp, SukuDashboardProfileComponent as ɵc, SukuDefaultButtonComponent as ɵd, SukuDwollaFundingAgreementComponent as ɵbn, SukuDwollaFundingSourceComponent as ɵbo, SukuFiltersComponent as ɵba, SukuFundingSourceComponent as ɵbk, SukuHeadingComponent as ɵe, SukuHomeItalicHeadingComponent as ɵf, SukuHomeWidgetComponent as ɵg, SukuHomepageButtonComponent as ɵbz, SukuHomepageSectionComponent as ɵby, SukuHomepageComponent as ɵbx, SukuInfoButtonComponent as ɵh, SukuInlineDropdownComponent as ɵi, SukuLinkComponent as ɵq, SukuMailWidgetComponent as ɵj, SukuMatchChipComponent as ɵk, SukuNavSubmenuComponent as ɵt, SukuNotificationPanelComponent as ɵbv, SukuNotificationWidgetComponent as ɵl, SukuPaymentPortalHelpComponent as ɵbq, SukuPhoneWidgetComponent as ɵv, SukuPrimaryButtonComponent as ɵm, SukuProductTraceWidgetComponent as ɵbc, SukuProfileHeaderComponent as ɵca, SukuProfileWidgetComponent as ɵy, SukuProgressBarComponent as ɵn, SukuRadioButtonComponent as ɵcc, SukuRatingCardLineComponent as ɵbu, SukuRatingStarComponent as ɵbf, SukuResponseComponent as ɵbh, SukuSearchInputComponent as ɵx, SukuSecondaryButtonComponent as ɵo, SukuSelectInputComponent as ɵs, SukuShippingWidgetComponent as ɵbg, SukuSocialIconsComponent as ɵcb, SukuStarBadgeComponent as ɵz, SukuSubHeadingComponent as ɵp, SukuTermsAndConditionsComponent as ɵbr, SukuTrackProgressBarComponent as ɵbb, SukuTransactionHistoryComponent as ɵbj, SukuTreeComponent as ɵbd };
 
 //# sourceMappingURL=suku-webcomponents.js.map
