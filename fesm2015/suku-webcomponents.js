@@ -3383,9 +3383,8 @@ class SukuCardLineTypeTwoComponent {
         this.customIconclass = 'text-center';
         this.bgColor = '';
         this.imageColSize = "col-sm-1 pt-1 pl-2";
-        this.txtcolsize = "col-sm-4 pl-sm-5 pt-2 mt-1";
-        this.txttwocolsize = "col-sm-2 pt-2 pl-lg-2 pr-lg-2 mt-1";
-        this.txtthreecolsize = "col-sm-3 pt-2 mt-1";
+        this.txtcolsize = "col-sm-6 pl-sm-5 pt-2 mt-1";
+        this.txttwocolsize = "col pt-2 pl-lg-2 pr-lg-2 mt-1";
         this.titleOne = 'Title One';
         this.titleOneColor = 'black';
         this.titleOneWeight = '600';
@@ -3406,16 +3405,6 @@ class SukuCardLineTypeTwoComponent {
         this.subTitleTwoWeight = '500';
         this.subTitleTwoSize = '12';
         this.subTitleTwocustomclass = '';
-        this.subTitleThree = 'EXPIRY DATE';
-        this.subTitleThreecolor = '#b6b6b6';
-        this.subTitleThreeWeight = '500';
-        this.subTitleThreeSize = '12';
-        this.subTitleThreeClass = '';
-        this.contentThree = '28 Nov 2018';
-        this.contentThreeColor = '#3e3e3e';
-        this.contentThreeWeight = '500';
-        this.contentThreeSize = '14';
-        this.contentThreecustomclass = '';
     }
     /**
      * @return {?}
@@ -3426,7 +3415,7 @@ class SukuCardLineTypeTwoComponent {
 SukuCardLineTypeTwoComponent.decorators = [
     { type: Component, args: [{
                 selector: 'suku-card-line-type-two',
-                template: "<div class=\"col p-0\">\n  <div class=\"row card-line-bg p-3 m-3 {{customclass}}\" [style.background-color]=\"bgColor\">\n    <div [class]=\"imageColSize\">\n      <img [class]=\"customImgclass\" src=\"{{image}}\" alt=\"card-img\" width=\"55px\" height=\"46px\">\n    </div>\n    <div class=\"col-sm-1\">\n      <img [class]=\"customIconclass\" [src]=\"iconOne\" alt=\"card-img\" width=\"50px\" height=\"50px\">\n    </div>\n    <div class=\"col-sm-1\">\n      <img [class]=\"customIconclass\" src=\"{{iconTwo}}\" alt=\"card-img\" width=\"50px\" height=\"50px\">\n    </div>\n    <div [class]=\"txtcolsize\">\n      <h2 [style.font-size.px]=\"titleOneSize\" [class]=\"titleOnecustomclass\"  [style.font-weight]=\"titleOneWeight\"\n        [style.color]=\"titleOneColor\">{{titleOne}}</h2>\n      <h2 [style.font-size.px]=\"contentOneSize\" [class]=\"contentOnecustomclass\"  [style.font-weight]=\"contentOneWeight\" [style.color]=\"contentOneColor\">{{contentOne}}</h2>\n    </div>\n    <div [class]=\"txttwocolsize\">\n      <h2 [style.font-size.px]=\"subTitleTwoSize\" [class]=\"subTitleTwocustomclass\"  [style.font-weight]=\"subTitleTwoWeight\" [style.color]=\"subTitleTwoColor\">{{subTitleTwo}}</h2>\n      <h2 [style.font-size.px]=\"contentTwoSize\" [class]=\"contentTwocustomclass\"  [style.font-weight]=\"contentTwoWeight\" [style.color]=\"contentTwoColor\">{{contentTwo}}</h2>\n    </div>\n    <div [class]=\"txtthreecolsize\">\n        <h2 [style.font-size.px]=\"subTitleThreeSize\" [class]=\"subTitleThreeClass\"  [style.font-weight]=\"subTitleThreeWeight\" [style.color]=\"subTitleThreecolor\">{{subTitleThree}}</h2>\n        <h2 [style.font-size.px]=\"contentThreeSize\" [class]=\"contentThreecustomclass\"  [style.font-weight]=\"contentThreeWeight\" [style.color]=\"contentThreeColor\">{{contentThree}}</h2>\n      </div>\n  </div>\n</div>\n",
+                template: "<div class=\"col p-0\">\n  <div class=\"row card-line-bg p-3 m-3 {{customclass}}\" [style.background-color]=\"bgColor\">\n    <div [class]=\"imageColSize\">\n      <img [class]=\"customImgclass\" src=\"{{image}}\" alt=\"card-img\" width=\"55px\" height=\"46px\">\n    </div>\n    <div class=\"col-sm-1\">\n      <img [class]=\"customIconclass\" [src]=\"iconOne\" alt=\"card-img\" width=\"50px\" height=\"50px\">\n    </div>\n    <div class=\"col-sm-1\">\n      <img [class]=\"customIconclass\" src=\"{{iconTwo}}\" alt=\"card-img\" width=\"50px\" height=\"50px\">\n    </div>\n    <div [class]=\"txtcolsize\">\n      <h2 [style.font-size.px]=\"titleOneSize\" [class]=\"titleOnecustomclass\"  [style.font-weight]=\"titleOneWeight\"\n        [style.color]=\"titleOneColor\">{{titleOne}}</h2>\n      <h2 [style.font-size.px]=\"contentOneSize\" [class]=\"contentOnecustomclass\"  [style.font-weight]=\"contentOneWeight\" [style.color]=\"contentOneColor\">{{contentOne}}</h2>\n    </div>\n    <div [class]=\"txttwocolsize\">\n      <h2 [style.font-size.px]=\"subTitleTwoSize\" [class]=\"subTitleTwocustomclass\"  [style.font-weight]=\"subTitleTwoWeight\" [style.color]=\"subTitleTwoColor\">{{subTitleTwo}}</h2>\n      <h2 [style.font-size.px]=\"contentTwoSize\" [class]=\"contentTwocustomclass\"  [style.font-weight]=\"contentTwoWeight\" [style.color]=\"contentTwoColor\">{{contentTwo}}</h2>\n  </div>\n</div>\n",
                 styles: ["h2{font-family:'Encode Sans',sans-serif;font-size:12px;font-weight:500;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.2px;color:#b6b6b6;word-break:break-all!important}.card-line-bg{background-color:#fff;box-shadow:0 2px 4px 0 rgba(0,0,0,.05)}.card-line-img{border:1px solid #e3dbdb36!important;box-shadow:0 2px 4px 0 rgba(0,0,0,.06)}.border-top-box{border-top:1px solid #dee2e670!important}.c-pointer{cursor:pointer}"]
             }] }
 ];
@@ -3445,7 +3434,6 @@ SukuCardLineTypeTwoComponent.propDecorators = {
     imageColSize: [{ type: Input }],
     txtcolsize: [{ type: Input }],
     txttwocolsize: [{ type: Input }],
-    txtthreecolsize: [{ type: Input }],
     titleOne: [{ type: Input, args: ['title-one',] }],
     titleOneColor: [{ type: Input, args: ['title-one-color',] }],
     titleOneWeight: [{ type: Input, args: ['title-one-weight',] }],
@@ -3465,17 +3453,7 @@ SukuCardLineTypeTwoComponent.propDecorators = {
     subTitleTwoColor: [{ type: Input, args: ['sub-title-two-color',] }],
     subTitleTwoWeight: [{ type: Input, args: ['sub-title-two-weight',] }],
     subTitleTwoSize: [{ type: Input, args: ['sub-title-two-size',] }],
-    subTitleTwocustomclass: [{ type: Input, args: ['sub-title-two-customclass',] }],
-    subTitleThree: [{ type: Input, args: ['sub-title-three',] }],
-    subTitleThreecolor: [{ type: Input, args: ['sub-title-three-color',] }],
-    subTitleThreeWeight: [{ type: Input, args: ['sub-title-three-weight',] }],
-    subTitleThreeSize: [{ type: Input, args: ['sub-title-three-size',] }],
-    subTitleThreeClass: [{ type: Input, args: ['sub-title-threeclass',] }],
-    contentThree: [{ type: Input, args: ['content-three',] }],
-    contentThreeColor: [{ type: Input, args: ['content-three-color',] }],
-    contentThreeWeight: [{ type: Input, args: ['content-three-widget',] }],
-    contentThreeSize: [{ type: Input, args: ['content-three-size',] }],
-    contentThreecustomclass: [{ type: Input, args: ['content-three-customclass',] }]
+    subTitleTwocustomclass: [{ type: Input, args: ['sub-title-two-customclass',] }]
 };
 
 /**
