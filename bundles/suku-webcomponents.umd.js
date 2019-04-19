@@ -4460,6 +4460,43 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
+    var SukuDropdownComponent = /** @class */ (function () {
+        function SukuDropdownComponent() {
+            this.control = 'productTraceability';
+            this.data = [];
+            this.icon = '../assets/images/arrow-icon.png';
+            this.select = new i0.EventEmitter();
+        }
+        /**
+         * @return {?}
+         */
+        SukuDropdownComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+            function () { };
+        SukuDropdownComponent.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'suku-dropdown',
+                        template: "<span [formGroup]=\"form\">\n<mat-form-field class=\"col p-0\">\n  <mat-select id=\"sttProductTraceability\" formControlName=\"{{control}}\" (selectionChange)=\"select.emit()\"\n    placeholder=\"select product from this listing\">\n    <mat-option *ngFor=\"let item of data\" value=\"{{item?.productName}}\" id=\"sttProductTraceabilityPn\">\n      {{item?.productName}}\n    </mat-option>\n  </mat-select>\n  <span matSuffix>\n    <mat-icon><span><img height=\"23\" [src]=\"icon\" width=\"20\"></span></mat-icon>\n  </span>\n</mat-form-field>\n</span>",
+                        styles: [""]
+                    }] }
+        ];
+        /** @nocollapse */
+        SukuDropdownComponent.ctorParameters = function () { return []; };
+        SukuDropdownComponent.propDecorators = {
+            form: [{ type: i0.Input }],
+            control: [{ type: i0.Input }],
+            data: [{ type: i0.Input }],
+            icon: [{ type: i0.Input }],
+            select: [{ type: i0.Output }]
+        };
+        return SukuDropdownComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
     var SukuWebcomponentsModule = /** @class */ (function () {
         function SukuWebcomponentsModule() {
         }
@@ -4520,7 +4557,8 @@
                             SukuHomepageButtonComponent,
                             SukuProfileHeaderComponent,
                             SukuSocialIconsComponent,
-                            SukuRadioButtonComponent
+                            SukuRadioButtonComponent,
+                            SukuDropdownComponent
                         ],
                         imports: [
                             common.CommonModule,
@@ -4617,7 +4655,8 @@
                             SukuHomepageButtonComponent,
                             SukuProfileHeaderComponent,
                             SukuSocialIconsComponent,
-                            SukuRadioButtonComponent
+                            SukuRadioButtonComponent,
+                            SukuDropdownComponent
                         ]
                     },] }
         ];
@@ -4651,6 +4690,7 @@
     exports.ɵbp = SukuCreationCustomerFileuploadComponent;
     exports.ɵc = SukuDashboardProfileComponent;
     exports.ɵd = SukuDefaultButtonComponent;
+    exports.ɵcd = SukuDropdownComponent;
     exports.ɵbn = SukuDwollaFundingAgreementComponent;
     exports.ɵbo = SukuDwollaFundingSourceComponent;
     exports.ɵba = SukuFiltersComponent;

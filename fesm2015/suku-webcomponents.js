@@ -4162,6 +4162,39 @@ SukuRadioButtonComponent.propDecorators = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+class SukuDropdownComponent {
+    constructor() {
+        this.control = 'productTraceability';
+        this.data = [];
+        this.icon = '../assets/images/arrow-icon.png';
+        this.select = new EventEmitter();
+    }
+    /**
+     * @return {?}
+     */
+    ngOnInit() { }
+}
+SukuDropdownComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'suku-dropdown',
+                template: "<span [formGroup]=\"form\">\n<mat-form-field class=\"col p-0\">\n  <mat-select id=\"sttProductTraceability\" formControlName=\"{{control}}\" (selectionChange)=\"select.emit()\"\n    placeholder=\"select product from this listing\">\n    <mat-option *ngFor=\"let item of data\" value=\"{{item?.productName}}\" id=\"sttProductTraceabilityPn\">\n      {{item?.productName}}\n    </mat-option>\n  </mat-select>\n  <span matSuffix>\n    <mat-icon><span><img height=\"23\" [src]=\"icon\" width=\"20\"></span></mat-icon>\n  </span>\n</mat-form-field>\n</span>",
+                styles: [""]
+            }] }
+];
+/** @nocollapse */
+SukuDropdownComponent.ctorParameters = () => [];
+SukuDropdownComponent.propDecorators = {
+    form: [{ type: Input }],
+    control: [{ type: Input }],
+    data: [{ type: Input }],
+    icon: [{ type: Input }],
+    select: [{ type: Output }]
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 class SukuWebcomponentsModule {
 }
 SukuWebcomponentsModule.decorators = [
@@ -4221,7 +4254,8 @@ SukuWebcomponentsModule.decorators = [
                     SukuHomepageButtonComponent,
                     SukuProfileHeaderComponent,
                     SukuSocialIconsComponent,
-                    SukuRadioButtonComponent
+                    SukuRadioButtonComponent,
+                    SukuDropdownComponent
                 ],
                 imports: [
                     CommonModule,
@@ -4318,7 +4352,8 @@ SukuWebcomponentsModule.decorators = [
                     SukuHomepageButtonComponent,
                     SukuProfileHeaderComponent,
                     SukuSocialIconsComponent,
-                    SukuRadioButtonComponent
+                    SukuRadioButtonComponent,
+                    SukuDropdownComponent
                 ]
             },] }
 ];
@@ -4333,6 +4368,6 @@ SukuWebcomponentsModule.decorators = [
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { SukuWebcomponentsService, SukuWebcomponentsModule, SukuACHSettingsComponent as ɵbi, SukuAddIconComponent as ɵbw, SukuAddWidgetComponent as ɵr, SukuAddressWidgetComponent as ɵw, SukuBeneficialOwnerComponent as ɵbm, SukuBidInfoComponent as ɵu, SukuBidTagComponent as ɵa, SukuCardLineTypeOneComponent as ɵbs, SukuCardLineTypeTwoComponent as ɵbt, SukuCardLineComponent as ɵb, SukuCardTitleComponent as ɵbe, SukuCreateCustomerComponent as ɵbl, SukuCreationCustomerFileuploadComponent as ɵbp, SukuDashboardProfileComponent as ɵc, SukuDefaultButtonComponent as ɵd, SukuDwollaFundingAgreementComponent as ɵbn, SukuDwollaFundingSourceComponent as ɵbo, SukuFiltersComponent as ɵba, SukuFundingSourceComponent as ɵbk, SukuHeadingComponent as ɵe, SukuHomeItalicHeadingComponent as ɵf, SukuHomeWidgetComponent as ɵg, SukuHomepageButtonComponent as ɵbz, SukuHomepageSectionComponent as ɵby, SukuHomepageComponent as ɵbx, SukuInfoButtonComponent as ɵh, SukuInlineDropdownComponent as ɵi, SukuLinkComponent as ɵq, SukuMailWidgetComponent as ɵj, SukuMatchChipComponent as ɵk, SukuNavSubmenuComponent as ɵt, SukuNotificationPanelComponent as ɵbv, SukuNotificationWidgetComponent as ɵl, SukuPaymentPortalHelpComponent as ɵbq, SukuPhoneWidgetComponent as ɵv, SukuPrimaryButtonComponent as ɵm, SukuProductTraceWidgetComponent as ɵbc, SukuProfileHeaderComponent as ɵca, SukuProfileWidgetComponent as ɵy, SukuProgressBarComponent as ɵn, SukuRadioButtonComponent as ɵcc, SukuRatingCardLineComponent as ɵbu, SukuRatingStarComponent as ɵbf, SukuResponseComponent as ɵbh, SukuSearchInputComponent as ɵx, SukuSecondaryButtonComponent as ɵo, SukuSelectInputComponent as ɵs, SukuShippingWidgetComponent as ɵbg, SukuSocialIconsComponent as ɵcb, SukuStarBadgeComponent as ɵz, SukuSubHeadingComponent as ɵp, SukuTermsAndConditionsComponent as ɵbr, SukuTrackProgressBarComponent as ɵbb, SukuTransactionHistoryComponent as ɵbj, SukuTreeComponent as ɵbd };
+export { SukuWebcomponentsService, SukuWebcomponentsModule, SukuACHSettingsComponent as ɵbi, SukuAddIconComponent as ɵbw, SukuAddWidgetComponent as ɵr, SukuAddressWidgetComponent as ɵw, SukuBeneficialOwnerComponent as ɵbm, SukuBidInfoComponent as ɵu, SukuBidTagComponent as ɵa, SukuCardLineTypeOneComponent as ɵbs, SukuCardLineTypeTwoComponent as ɵbt, SukuCardLineComponent as ɵb, SukuCardTitleComponent as ɵbe, SukuCreateCustomerComponent as ɵbl, SukuCreationCustomerFileuploadComponent as ɵbp, SukuDashboardProfileComponent as ɵc, SukuDefaultButtonComponent as ɵd, SukuDropdownComponent as ɵcd, SukuDwollaFundingAgreementComponent as ɵbn, SukuDwollaFundingSourceComponent as ɵbo, SukuFiltersComponent as ɵba, SukuFundingSourceComponent as ɵbk, SukuHeadingComponent as ɵe, SukuHomeItalicHeadingComponent as ɵf, SukuHomeWidgetComponent as ɵg, SukuHomepageButtonComponent as ɵbz, SukuHomepageSectionComponent as ɵby, SukuHomepageComponent as ɵbx, SukuInfoButtonComponent as ɵh, SukuInlineDropdownComponent as ɵi, SukuLinkComponent as ɵq, SukuMailWidgetComponent as ɵj, SukuMatchChipComponent as ɵk, SukuNavSubmenuComponent as ɵt, SukuNotificationPanelComponent as ɵbv, SukuNotificationWidgetComponent as ɵl, SukuPaymentPortalHelpComponent as ɵbq, SukuPhoneWidgetComponent as ɵv, SukuPrimaryButtonComponent as ɵm, SukuProductTraceWidgetComponent as ɵbc, SukuProfileHeaderComponent as ɵca, SukuProfileWidgetComponent as ɵy, SukuProgressBarComponent as ɵn, SukuRadioButtonComponent as ɵcc, SukuRatingCardLineComponent as ɵbu, SukuRatingStarComponent as ɵbf, SukuResponseComponent as ɵbh, SukuSearchInputComponent as ɵx, SukuSecondaryButtonComponent as ɵo, SukuSelectInputComponent as ɵs, SukuShippingWidgetComponent as ɵbg, SukuSocialIconsComponent as ɵcb, SukuStarBadgeComponent as ɵz, SukuSubHeadingComponent as ɵp, SukuTermsAndConditionsComponent as ɵbr, SukuTrackProgressBarComponent as ɵbb, SukuTransactionHistoryComponent as ɵbj, SukuTreeComponent as ɵbd };
 
 //# sourceMappingURL=suku-webcomponents.js.map

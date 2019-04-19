@@ -17,6 +17,7 @@ export { SukuCreateCustomerComponent as ɵbl } from './lib/suku-create-customer/
 export { SukuCreationCustomerFileuploadComponent as ɵbp } from './lib/suku-creation-customer-fileupload/suku-creation-customer-fileupload.component';
 export { SukuDashboardProfileComponent as ɵc } from './lib/suku-dashboard-profile/suku-dashboard-profile.component';
 export { SukuDefaultButtonComponent as ɵd } from './lib/suku-default-button/suku-default-button.component';
+export { SukuDropdownComponent as ɵcd } from './lib/suku-dropdown/suku-dropdown.component';
 export { SukuDwollaFundingAgreementComponent as ɵbn } from './lib/suku-dwolla-funding-agreement/suku-dwolla-funding-agreement.component';
 export { SukuDwollaFundingSourceComponent as ɵbo } from './lib/suku-dwolla-funding-source/suku-dwolla-funding-source.component';
 export { SukuFiltersComponent as ɵba } from './lib/suku-filters/suku-filters.component';
