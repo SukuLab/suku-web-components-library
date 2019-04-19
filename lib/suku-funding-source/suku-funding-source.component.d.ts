@@ -4,8 +4,6 @@ export declare class SukuFundingSourceComponent implements OnInit {
     fundingDetails: any[];
     defaultText: string;
     defaultbankName: string;
-    headerOneTxt: string;
-    headerTwoText: string;
     defaultBtnTxt: string;
     removeBtnTxt: string;
     defaultBtnId: string;

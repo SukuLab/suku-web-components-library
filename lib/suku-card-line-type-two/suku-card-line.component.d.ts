@@ -12,6 +12,7 @@ export declare class SukuCardLineTypeTwoComponent implements OnInit {
     imageColSize: string;
     txtcolsize: string;
     txttwocolsize: string;
+    txtthreecolsize: string;
     titleOne: string;
     titleOneColor: string;
     titleOneWeight: string;
@@ -32,6 +33,16 @@ export declare class SukuCardLineTypeTwoComponent implements OnInit {
     subTitleTwoWeight: string;
     subTitleTwoSize: string;
     subTitleTwocustomclass: string;
+    subTitleThree: string;
+    subTitleThreecolor: string;
+    subTitleThreeWeight: string;
+    subTitleThreeSize: string;
+    subTitleThreeClass: string;
+    contentThree: string;
+    contentThreeColor: string;
+    contentThreeWeight: string;
+    contentThreeSize: string;
+    contentThreecustomclass: string;
     constructor();
     ngOnInit(): void;
 }

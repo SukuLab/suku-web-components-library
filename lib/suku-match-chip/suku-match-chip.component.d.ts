@@ -1,7 +1,9 @@
 import { OnInit, EventEmitter } from '@angular/core';
 export declare class SukuMatchChipComponent implements OnInit {
     image: string;
+    imgId: string;
     match: EventEmitter<{}>;
+    userAction: EventEmitter<{}>;
     customclass: string;
     listNameSize: string;
     listWeight: string;
@@ -34,6 +36,7 @@ export declare class SukuMatchChipComponent implements OnInit {
     sellVColor: string;
     sellVCustomClass: string;
     id: string;
+    sellerid: string;
     constructor();
     ngOnInit(): void;
 }

@@ -253,8 +253,6 @@ class SukuFundingSourceComponent {
         this.fundingDetails = [];
         this.defaultText = 'Default';
         this.defaultbankName = 'Bank Name';
-        this.headerOneTxt = 'FUNDING';
-        this.headerTwoText = 'SOURCES';
         this.defaultBtnTxt = 'Make Default';
         this.removeBtnTxt = 'Remove';
         this.defaultBtnId = 'defaultBtnId';
@@ -284,8 +282,8 @@ class SukuFundingSourceComponent {
 SukuFundingSourceComponent.decorators = [
     { type: Component, args: [{
                 selector: 'suku-funding-source',
-                template: "<div class=\"col-sm-12 d-flex pt-4\">\n  <div class=\"Rectangle-2 col mB-2 pb-5\">\n    <div class=\"col-sm-12\">\n      <div class=\"row\" >\n        <div class=\"col-sm-1\">\n          {{headerOneTxt}} <br>\n          {{headerTwoText}}\n        </div>\n        <div class=\"col-sm-10\">\n          <div class=\"add-btn p-2 pl-sm-5 ml-sm-4 text-left\" *ngIf=\"fundingDetails.length !== 8\">\n            <a>\n              <i class=\"fa fa-plus-circle plusIcon\" (click)=\"addSource.emit()\"></i>\n            </a>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-sm-12\">\n      <div class=\"row\">\n        <div class=\"col-xl-3 col-lg-4 col-md-6 clearfix mt-3 pr-5 pl-5\">\n          <div class=\"jumbotron col m-6  container defaultDiv samBoxStyle boxShadowStyle jumbotron_cus2\">\n            <div class=\"col-12 p-3 mt-2\">\n              <div class=\"col-sm-12 w74 text-center\">\n                <b>{{defaultText}}</b>\n              </div>\n              <div class=\"col-12 w74 text-center mt-4\">\n                <span>{{defaultbankName}}</span>\n              </div>\n              <div class=\"col-12 w74 text-center\">\n                <span>\n                {{DefaultaccountNumber}}\n                </span>\n              </div>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-xl-3 col-lg-4 col-md-6  clearfix mt-3 pr-5 pl-5\" *ngFor=\"let item of fundingDetails; let i = index;\">\n          <div class=\"jumbotron m-6 justify-content-center container defaultDiv\n          samBoxStyle boxShadowStyle jumbotron_cus2\">\n            <div class=\"col-sm-12  p-3  mt-2 \">\n              <div class=\"col-sm-12 w74 text-center mt-35\">\n                <span>{{item.name}}</span>\n              </div>\n              <div class=\"col-sm-12 w74 text-center pt8\">\n               <span>XXXXXX{{item.id | slice:-4}}</span> \n              </div>\n              <div class=\"col mt-5 text-center\">\n                </div>\n                <div class=\"col-sm-12 text-center pt13\">\n                  <div class=\"col-sm-10 col-xs-12 offset-xs-0  offset-sm-1 p-2\">\n                      <div class=\"row\">\n                          <div class=\"col-lg-12 p-0\">\n                            <button *ngIf=\"!item.defaultAccount==true\" class=\"btn btn-info mb9 btn-block btnFnt p-2\" (click)=\"makeDefaultAction.emit(item);\" id=\"{{defaultBtnId}}\">{{defaultBtnTxt}}</button>\n                            <button class=\"btnDanger mt-1 clearfix btnFnt p-2 btn-block\" (click)=\"removeSourceAction.emit(item);\" id=\"{{removeBtnId}}\">{{removeBtnTxt}}</button>\n                         </div>\n                      </div>\n                  </div>\n                </div>\n              </div>\n          </div>\n        </div>\n        <div class=\"col-xl-3 col-lg-4 col-md-6 clearfix mt-3 pr-5 pl-5\">\n          <div class=\"jumbotron  m-6 container defaultDiv samBoxStyle boxShadowStyle jumbotron_cus2\">\n            <div class=\"col-sm-12  p-3  mt-2\">\n              <div class=\"col-sm-12 text-center w74 pb10 p-2\">\n                {{achWalletTxt}}\n              </div>\n              <div class=\"col-sm-12 w74 text-center\">\n                {{balanceLblTxt}}:\n              </div>\n              <div class=\"col-sm-12 w74 text-center\">\n                ${{WalletBalance}}\n              </div>\n              <div class=\"col-sm-12 text-center p15\">\n                <div class=\"col-sm-10 col-xs-12 offset-xs-0  offset-sm-1 p-2\">\n                    <div class=\"row\">\n                        <div class=\"col-lg-12 p-0\">\n                          <button class=\"btn btn-info mb9 clearfix btnFnt p-2 mt-3 btn-block\" (click)=\"transferFundAction.emit();\" id=\"{{transferFundId}}\">\n                            Transfer Balance\n                          </button>\n                        </div>\n                    </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n",
-                styles: [".btnDanger{border-radius:28px 76px 63px;display:inline-block;font-weight:400;text-align:center;white-space:nowrap;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;padding:.375rem .75rem;font-size:1rem;line-height:1.5;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;background-color:#fff;cursor:pointer;border:2px solid red}.btnDanger:hover{background-color:red;color:#fff}.jumbotron_cus1{padding:10px 5px;margin-bottom:15px;margin-left:10px}.jumbotron_cus2{margin-bottom:15px;margin-right:15px;padding:15px 5px}.samBoxStyle{margin-bottom:17px;background-color:#f5f5f58c;border-top:3px solid #a7bf2e;border-radius:41px 45px 11px 14px;box-shadow:0 1px 1px rgba(0,0,0,.5);height:100%}.boxShadowStyle{box-shadow:0 4px 8px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19)}.matBoxStyle{border-radius:25px;box-shadow:0 4px 8px 0 rgba(0,0,0,.1),0 6px 20px 0 rgba(0,0,0,.1);background-color:#fff}.mb9{margin-bottom:9px}.pl34{padding-left:34px}.pt25{padding-top:25px}.borderBtm{border-bottom:5px solid #a7bf2e}.mb40{margin-bottom:40px}.progressTxt{font-family:\"Encode Sans\",sans-serif!important;font-size:14px;font-weight:1;text-align:center;color:#b6b6b6}.pl60{padding-left:60px}.Rectangle-2{background-color:#fff;border-radius:0 0 42px 42px;padding-top:15px;padding-bottom:10px}.pl49{padding-left:49px}.Pl0{padding-left:0!important;font-size:20px}.cancelTxt{font-size:20px;font-weight:700}.border{border-radius:0 0 42px 42px;border-top:3px solid #b6b6b6}.pb70{padding-bottom:70px}.pt37{padding-top:37px;padding-left:55px}.pb9{padding-bottom:9px}.pb10{padding-bottom:8px}.pt8{padding-top:8px;padding-bottom:9px}.pt13{padding-top:13px;padding-bottom:13px}.p15{padding-top:12%;padding-bottom:13px}.btn{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.375rem .75rem;font-size:10px;font-family:Poppins}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e}.poppinsFont{font-family:Poppins}.btnFnt{font-size:10px}.mT-18{margin-top:18%}.mT-22{margin-top:22%}.mT-15{margin-top:15%}.plusIcon{color:#a7bf2e;font-size:30px}.m-6{margin:3%}.btnRmv{border:2px solid #757575;border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.375rem .75rem;font-size:10px;font-family:Poppins;cursor:pointer}.btnRmv:hover{border:2px solid #757575;border-radius:28px 76px 63px;background-color:#757575;color:#fff}.btn:focus,.btnRmv:focus{outline:0!important;box-shadow:none!important;color:#000}.icon-size{font-size:74px!important;color:#a6bf2e}@media only screen and (max-width:800px){.jumbotron_cus1,.jumbotron_cus2{width:100%}}.w74{word-wrap:break-word}"]
+                template: "<div class=\"col-sm-12 d-flex pt-4\">\r\n  <div class=\"Rectangle-2 col mB-2 pb-5\">\r\n    <div class=\"col-sm-12\">\r\n      <div class=\"row\" (click)=\"addSource.emit()\">\r\n        <div class=\"col-sm-5\">\r\n          FUNDING SOURCES\r\n          <span class=\"add-btn p-2 text-left\" *ngIf=\"fundingDetails.length !== 8\">\r\n            <a>\r\n              <i class=\"fa fa-plus-circle plusIcon\"></i>\r\n            </a>\r\n          </span>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-sm-12\">\r\n      <div class=\"row\">\r\n        <div class=\"col-xl-3 col-lg-4 col-md-6 clearfix mt-3 pr-5 pl-5\">\r\n          <div class=\"jumbotron col m-6  container defaultDiv samBoxStyle boxShadowStyle jumbotron_cus2\">\r\n            <div class=\"col-12 p-3 mt-2\">\r\n              <div class=\"col-sm-12 w74 text-center\">\r\n                <b>{{defaultText}}</b>\r\n              </div>\r\n              <div class=\"col-12 w74 text-center mt-4\">\r\n                <span>{{defaultbankName}}</span>\r\n              </div>\r\n              <div class=\"col-12 w74 text-center\">\r\n                <span>\r\n                  {{DefaultaccountNumber}}\r\n                </span>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-xl-3 col-lg-4 col-md-6  clearfix mt-3 pr-5 pl-5\"\r\n          *ngFor=\"let item of fundingDetails; let i = index;\">\r\n          <div class=\"card box-shadow pb-3 samBoxStyle boxShadowStyle mt-3\">\r\n            <div class=\"card-body\">\r\n              <div class=\"col-sm-12 w74 text-center mt-35\">\r\n                <span>{{item.name}}</span>\r\n              </div>\r\n              <div class=\"col-sm-12 w74 text-center pt8\">\r\n                <span>XXXXXX{{item.id | slice:-4}}</span>\r\n              </div>\r\n            </div>\r\n            <div class=\"card-footer\">\r\n              <button *ngIf=\"!item.defaultAccount==true\" class=\"btn btn-info w74 mb9 btn-block btnFnt p-2\"\r\n                (click)=\"makeDefaultAction.emit(item);\" id=\"{{defaultBtnId}}\">{{defaultBtnTxt}}</button>\r\n              <button class=\"btnDanger mt-1 w74 clearfix btnFnt p-2 btn-block\" (click)=\"removeSourceAction.emit(item);\"\r\n                id=\"{{removeBtnId}}\">{{removeBtnTxt}}</button>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-xl-3 col-lg-4 col-md-6 clearfix mt-3 pr-5 pl-5\">\r\n          <div class=\"card box-shadow pb-3 samBoxStyle boxShadowStyle mt-3\">\r\n            <div class=\"card-body\">\r\n              <div class=\"col-sm-12 text-center w74 pb10 p-2\">\r\n                {{achWalletTxt}}\r\n              </div>\r\n              <div class=\"col-sm-12 w74 text-center\">\r\n                {{balanceLblTxt}}:\r\n              </div>\r\n              <div class=\"col-sm-12 w74 text-center\">\r\n                ${{WalletBalance}}\r\n              </div>\r\n            </div>\r\n            <div class=\"card-footer\">\r\n              <button type=\"button\" class=\"btn btn-lg btn-block btn-primary\" (click)=\"transferFundAction.emit();\"\r\n                id=\"{{transferFundId}}\"> Transfer Balance</button>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>",
+                styles: [".btnDanger{border-radius:28px 76px 63px;display:inline-block;font-weight:400;text-align:center;white-space:nowrap;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;padding:.375rem .75rem;font-size:1rem;line-height:1.5;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;background-color:#fff;cursor:pointer;border:2px solid red}.btnDanger:hover{background-color:red;color:#fff}.jumbotron_cus1{padding:10px 5px;margin-bottom:15px;margin-left:10px}.jumbotron_cus2{margin-bottom:15px;margin-right:15px;padding:15px 5px}.samBoxStyle{margin-bottom:17px;background-color:#f5f5f58c;border-top:3px solid #a7bf2e;border-radius:41px 45px 11px 14px;box-shadow:0 1px 1px rgba(0,0,0,.5);height:250px;padding:1rem}.boxShadowStyle{box-shadow:0 4px 8px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19)}.matBoxStyle{border-radius:25px;box-shadow:0 4px 8px 0 rgba(0,0,0,.1),0 6px 20px 0 rgba(0,0,0,.1);background-color:#fff}.mb9{margin-bottom:9px}.pl34{padding-left:34px}.pt25{padding-top:25px}.borderBtm{border-bottom:5px solid #a7bf2e}.mb40{margin-bottom:40px}.progressTxt{font-family:\"Encode Sans\",sans-serif!important;font-size:14px;font-weight:1;text-align:center;color:#b6b6b6}.pl60{padding-left:60px}.Rectangle-2{background-color:#fff;border-radius:0 0 42px 42px;padding-top:15px;padding-bottom:10px}.pl49{padding-left:49px}.Pl0{padding-left:0!important;font-size:20px}.cancelTxt{font-size:20px;font-weight:700}.border{border-radius:0 0 42px 42px;border-top:3px solid #b6b6b6}.pb70{padding-bottom:70px}.pt37{padding-top:37px;padding-left:55px}.pb9{padding-bottom:9px}.pb10{padding-bottom:8px}.pt8{padding-top:8px;padding-bottom:9px}.pt13{padding-top:13px;padding-bottom:13px}.p15{padding-top:12%;padding-bottom:13px}.btn{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.375rem .75rem;font-size:10px;font-family:Poppins,sans-serif!important}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e}.poppinsFont{font-family:Poppins,sans-serif!important}.btnFnt{font-size:10px}.mT-18{margin-top:18%}.mT-22{margin-top:22%}.mT-15{margin-top:15%}.plusIcon{color:#a7bf2e;font-size:20px}.m-6{margin:3%}.btnRmv{border:2px solid #757575;border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.375rem .75rem;font-size:10px;font-family:Poppins,sans-serif!important;cursor:pointer}.btnRmv:hover{border:2px solid #757575;border-radius:28px 76px 63px;background-color:#757575;color:#fff}.btn:focus,.btnRmv:focus{outline:0!important;box-shadow:none!important;color:#000}.icon-size{font-size:74px!important;color:#a6bf2e}@media only screen and (max-width:800px){.jumbotron_cus1,.jumbotron_cus2{width:100%}}.w74{word-wrap:break-word}.main-container{justify-content:space-between;flex-direction:column;height:250px;display:flex}.main-container .btn-holder{justify-content:center;display:flex}.card-footer{padding:.75rem 1.25rem;background-color:#f9f9f9!important;border-top:none!important}"]
             }] }
 ];
 /** @nocollapse */
@@ -294,8 +292,6 @@ SukuFundingSourceComponent.propDecorators = {
     fundingDetails: [{ type: Input }],
     defaultText: [{ type: Input }],
     defaultbankName: [{ type: Input }],
-    headerOneTxt: [{ type: Input }],
-    headerTwoText: [{ type: Input }],
     defaultBtnTxt: [{ type: Input }],
     removeBtnTxt: [{ type: Input }],
     defaultBtnId: [{ type: Input }],
@@ -699,7 +695,9 @@ SukuBidInfoComponent.propDecorators = {
 class SukuMatchChipComponent {
     constructor() {
         this.image = '../../assets/images/manageTrack.png';
+        this.imgId = 'img-id';
         this.match = new EventEmitter();
+        this.userAction = new EventEmitter();
         this.customclass = 'col p-0';
         this.listNameSize = '16';
         this.listWeight = '600';
@@ -710,8 +708,8 @@ class SukuMatchChipComponent {
         this.prizeSize = '14';
         this.prizeWeight = '500';
         this.prizeColor = '#3e3e3e';
-        this.prizeCustomClass = 'mb-0';
-        this.date = 'EXPIRY DATE';
+        this.prizeCustomClass = 'mb-0 pt-2';
+        this.date = 'LISTING EXPIRATION DATE';
         this.dateSize = '12';
         this.dateWeight = '500';
         this.dateColor = '#b6b6b6';
@@ -721,7 +719,7 @@ class SukuMatchChipComponent {
         this.dateVWeight = '500';
         this.dateVColor = '#3e3e3e';
         this.dateVCustomClass = '';
-        this.sell = 'SELLER';
+        this.sell = 'SOLD BY';
         this.sellSize = '12';
         this.sellWeight = '500';
         this.sellColor = '#b6b6b6';
@@ -730,8 +728,9 @@ class SukuMatchChipComponent {
         this.sellVSize = '14';
         this.sellVWeight = '500';
         this.sellVColor = '#3e3e3e';
-        this.sellVCustomClass = '';
+        this.sellVCustomClass = 'c-pointer';
         this.id = 'suku-match-chip';
+        this.sellerid = '0';
     }
     /**
      * @return {?}
@@ -742,15 +741,17 @@ class SukuMatchChipComponent {
 SukuMatchChipComponent.decorators = [
     { type: Component, args: [{
                 selector: 'suku-match-chip',
-                template: "<div [class]=\"customclass\">\n  <div class=\"col p-0\">\n    <div class=\"col-sm-12 p-0 bg-white text-center col-xs-12 match-chip-shadow rounded-0\">\n      <a id=\"matchhun\">\n        <img (click)=\"match.emit()\" src=\"{{image}}\"  class=\"m-1\" width=\"75%\" height=\"120px\" alt=\"Image\">\n      </a>\n      <br>\n      <div class=\"col-sm-12 p-0 border-top-box pt-3 text-center \">\n\t\t\t\t <h2 [style.font-size.px]=\"listNameSize\" [class]=\"listCustomClass\" id=\"{{id}}\" [style.font-weight]=\"listWeight\" [style.color]=\"listColor\">\n          {{listName}}\n\t\t\t\t</h2>\n\t\t\t\t<h2 [style.font-size.px]=\"prizeSize\" [class]=\"prizeCustomClass\" id=\"{{id}}\" [style.font-weight]=\"prizeWeight\" [style.color]=\"prizeColor\">\n\t\t\t\t{{prize}}\n\t\t  \t</h2>\n\t\t\t\t<div class=\"pt-2\">\n\t\t\t\t<h2 [style.font-size.px]=\"dateSize\" [class]=\"dateCustomClass\" id=\"{{id}}\" [style.font-weight]=\"dateWeight\" [style.color]=\"dateColor\">\n          {{date}}\n\t\t\t\t</h2>\n\t\t\t\t<h2 [style.font-size.px]=\"dateVSize\" [class]=\"dateVCustomClass\" id=\"{{id}}\" [style.font-weight]=\"dateVWeight\" [style.color]=\"dateVColor\">\n\t\t\t\t{{dateV}}\n\t\t\t\t</h2>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"pt-2 pb-3\">\n\t\t\t \t<h2 [style.font-size.px]=\"sellSize\" [class]=\"sellCustomClass\" id=\"{{id}}\" [style.font-weight]=\"sellWeight\" [style.color]=\"sellColor\">\n\t\t\t\t{{sell}}\n\t\t   \t</h2>\n\t\t\t   <h2 [style.font-size.px]=\"sellVSize\" [class]=\"sellVCustomClass\" id=\"{{id}}\" [style.font-weight]=\"sellVWeight\" [style.color]=\"sellVColor\">\n\t\t    \t{{sellV}}\n\t\t\t   </h2>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n",
-                styles: [".border-top-box{border-top:1px solid #dee2e670!important}.match-chip-shadow{box-shadow:0 2px 4px 0 rgba(0,0,0,.05)}.default{width:200px}"]
+                template: "<div [class]=\"customclass\">\r\n  <div class=\"col p-0\">\r\n    <div class=\"col-sm-12 p-0 bg-white text-center col-xs-12 match-chip-shadow rounded-0\">\r\n      <a id=\"match-chip\">\r\n        <img (click)=\"match.emit()\" src=\"{{image}}\" id=\"listImg{{imgId}}\" class=\"m-1 p-2 pt-3 pb-3 c-pointer\"\r\n          width=\"90%\" height=\"120px\" alt=\"Image\" />\r\n      </a>\r\n      <br>\r\n      <div class=\"col-sm-12 p-0 pl-3 pr-3 border-top-box pt-4 text-center \">\r\n        <h2 [style.font-size.px]=\"listNameSize\" [class]=\"listCustomClass\" id=\"{{id}}\" [style.font-weight]=\"listWeight\"\r\n          [style.color]=\"listColor\">\r\n          {{listName}}\r\n        </h2>\r\n        <h2 [style.font-size.px]=\"prizeSize\" [class]=\"prizeCustomClass\" id=\"{{id}}\" [style.font-weight]=\"prizeWeight\"\r\n          [style.color]=\"prizeColor\">\r\n          {{prize}}\r\n        </h2>\r\n        <div class=\"pt-4\">\r\n          <h2 [style.font-size.px]=\"dateSize\" [class]=\"dateCustomClass\" id=\"{{id}}\" [style.font-weight]=\"dateWeight\"\r\n            [style.color]=\"dateColor\">\r\n            {{date}}\r\n          </h2>\r\n          <h2 [style.font-size.px]=\"dateVSize\" [class]=\"dateVCustomClass\" id=\"{{id}}\" [style.font-weight]=\"dateVWeight\"\r\n            [style.color]=\"dateVColor\">\r\n            {{dateV}}\r\n          </h2>\r\n        </div>\r\n        <div class=\"pt-3 pb-3\">\r\n          <h2 [style.font-size.px]=\"sellSize\" [class]=\"sellCustomClass\" id=\"{{id}}\" [style.font-weight]=\"sellWeight\"\r\n            [style.color]=\"sellColor\">\r\n            {{sell}}\r\n          </h2>\r\n          <h2 (click)=\"userAction.emit()\" [style.font-size.px]=\"sellVSize\" [class]=\"sellVCustomClass\"\r\n            id=\"sellerName{{sellerid}}\" [style.font-weight]=\"sellVWeight\" [style.color]=\"sellVColor\">\r\n            {{sellV}}\r\n          </h2>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>",
+                styles: [".border-top-box{border-top:1px solid #dee2e670!important}.match-chip-shadow{box-shadow:0 2px 4px 0 rgba(0,0,0,.05);height:340px}.default{width:200px}h2{font-family:'Encode Sans',sans-serif!important;font-size:14px;font-weight:600;font-style:normal;font-stretch:normal;line-height:1.43;letter-spacing:-.4px;word-break:break-word!important;margin-bottom:0!important}.c-pointer{cursor:pointer!important}.c-pointer:hover{font-weight:900!important}"]
             }] }
 ];
 /** @nocollapse */
 SukuMatchChipComponent.ctorParameters = () => [];
 SukuMatchChipComponent.propDecorators = {
     image: [{ type: Input }],
+    imgId: [{ type: Input }],
     match: [{ type: Output }],
+    userAction: [{ type: Output }],
     customclass: [{ type: Input }],
     listNameSize: [{ type: Input }],
     listWeight: [{ type: Input }],
@@ -782,7 +783,8 @@ SukuMatchChipComponent.propDecorators = {
     sellVWeight: [{ type: Input }],
     sellVColor: [{ type: Input }],
     sellVCustomClass: [{ type: Input }],
-    id: [{ type: Input }]
+    id: [{ type: Input }],
+    sellerid: [{ type: Input }]
 };
 
 /**
@@ -3382,9 +3384,10 @@ class SukuCardLineTypeTwoComponent {
         this.customImgclass = '';
         this.customIconclass = 'text-center';
         this.bgColor = '';
-        this.imageColSize = "col-sm-1 pt-1 pl-2";
-        this.txtcolsize = "col-sm-6 pl-sm-5 pt-2 mt-1";
-        this.txttwocolsize = "col pt-2 pl-lg-2 pr-lg-2 mt-1";
+        this.imageColSize = 'col-sm-1 pt-1 pl-2';
+        this.txtcolsize = 'col-sm-5 pl-sm-5 pt-2 mt-1';
+        this.txttwocolsize = 'col-sm-2 pl-lg-0 pr-lg-2 pt-2 mt-1';
+        this.txtthreecolsize = 'col pt-2 mt-1';
         this.titleOne = 'Title One';
         this.titleOneColor = 'black';
         this.titleOneWeight = '600';
@@ -3405,6 +3408,16 @@ class SukuCardLineTypeTwoComponent {
         this.subTitleTwoWeight = '500';
         this.subTitleTwoSize = '12';
         this.subTitleTwocustomclass = '';
+        this.subTitleThree = 'TOTAL PRICE';
+        this.subTitleThreecolor = '#b6b6b6';
+        this.subTitleThreeWeight = '500';
+        this.subTitleThreeSize = '12';
+        this.subTitleThreeClass = '';
+        this.contentThree = 'N/A';
+        this.contentThreeColor = '#3e3e3e';
+        this.contentThreeWeight = '500';
+        this.contentThreeSize = '14';
+        this.contentThreecustomclass = '';
     }
     /**
      * @return {?}
@@ -3415,8 +3428,8 @@ class SukuCardLineTypeTwoComponent {
 SukuCardLineTypeTwoComponent.decorators = [
     { type: Component, args: [{
                 selector: 'suku-card-line-type-two',
-                template: "<div class=\"col p-0\">\n  <div class=\"row card-line-bg p-3 m-3 {{customclass}}\" [style.background-color]=\"bgColor\">\n    <div [class]=\"imageColSize\">\n      <img [class]=\"customImgclass\" src=\"{{image}}\" alt=\"card-img\" width=\"55px\" height=\"46px\">\n    </div>\n    <div class=\"col-sm-1\">\n      <img [class]=\"customIconclass\" [src]=\"iconOne\" alt=\"card-img\" width=\"50px\" height=\"50px\">\n    </div>\n    <div class=\"col-sm-1\">\n      <img [class]=\"customIconclass\" src=\"{{iconTwo}}\" alt=\"card-img\" width=\"50px\" height=\"50px\">\n    </div>\n    <div [class]=\"txtcolsize\">\n      <h2 [style.font-size.px]=\"titleOneSize\" [class]=\"titleOnecustomclass\"  [style.font-weight]=\"titleOneWeight\"\n        [style.color]=\"titleOneColor\">{{titleOne}}</h2>\n      <h2 [style.font-size.px]=\"contentOneSize\" [class]=\"contentOnecustomclass\"  [style.font-weight]=\"contentOneWeight\" [style.color]=\"contentOneColor\">{{contentOne}}</h2>\n    </div>\n    <div [class]=\"txttwocolsize\">\n      <h2 [style.font-size.px]=\"subTitleTwoSize\" [class]=\"subTitleTwocustomclass\"  [style.font-weight]=\"subTitleTwoWeight\" [style.color]=\"subTitleTwoColor\">{{subTitleTwo}}</h2>\n      <h2 [style.font-size.px]=\"contentTwoSize\" [class]=\"contentTwocustomclass\"  [style.font-weight]=\"contentTwoWeight\" [style.color]=\"contentTwoColor\">{{contentTwo}}</h2>\n  </div>\n</div>\n",
-                styles: ["h2{font-family:'Encode Sans',sans-serif;font-size:12px;font-weight:500;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.2px;color:#b6b6b6;word-break:break-all!important}.card-line-bg{background-color:#fff;box-shadow:0 2px 4px 0 rgba(0,0,0,.05)}.card-line-img{border:1px solid #e3dbdb36!important;box-shadow:0 2px 4px 0 rgba(0,0,0,.06)}.border-top-box{border-top:1px solid #dee2e670!important}.c-pointer{cursor:pointer}"]
+                template: "<div class=\"col p-0\">\n  <div class=\"row card-line-bg p-3 m-2 {{customclass}}\" [style.background-color]=\"bgColor\">\n    <div [class]=\"imageColSize\">\n      <img [class]=\"customImgclass\" src=\"{{image}}\" alt=\"card-img\" width=\"55px\" height=\"46px\">\n    </div>\n    <div class=\"col-sm-1\">\n      <img [class]=\"customIconclass\" [src]=\"iconOne\" alt=\"card-img\" width=\"50px\" height=\"50px\">\n    </div>\n    <div class=\"col-sm-1\">\n      <img [class]=\"customIconclass\" src=\"{{iconTwo}}\" alt=\"card-img\" width=\"50px\" height=\"50px\">\n    </div>\n    <div [class]=\"txtcolsize\">\n      <h2 [style.font-size.px]=\"titleOneSize\" [class]=\"titleOnecustomclass\" [style.font-weight]=\"titleOneWeight\"\n        [style.color]=\"titleOneColor\">{{titleOne}}</h2>\n      <h2 [style.font-size.px]=\"contentOneSize\" [class]=\"contentOnecustomclass\" [style.font-weight]=\"contentOneWeight\"\n        [style.color]=\"contentOneColor\">{{contentOne}}</h2>\n    </div>\n    <div [class]=\"txttwocolsize\">\n      <h2 [style.font-size.px]=\"subTitleTwoSize\" [class]=\"subTitleTwocustomclass\"\n        [style.font-weight]=\"subTitleTwoWeight\" [style.color]=\"subTitleTwoColor\">{{subTitleTwo}}</h2>\n      <h2 [style.font-size.px]=\"contentTwoSize\" [class]=\"contentTwocustomclass\" [style.font-weight]=\"contentTwoWeight\"\n        [style.color]=\"contentTwoColor\">{{contentTwo}}</h2>\n    </div>\n    <div [class]=\"txtthreecolsize\">\n      <h2 [style.font-size.px]=\"subTitleThreeSize\" [class]=\"subTitleThreeClass\"\n        [style.font-weight]=\"subTitleThreeWeight\" [style.color]=\"subTitleThreecolor\">{{subTitleThree}}</h2>\n      <h2 [style.font-size.px]=\"contentThreeSize\" [class]=\"contentThreecustomclass\"\n        [style.font-weight]=\"contentThreeWeight\" [style.color]=\"contentThreeColor\">{{contentThree}}</h2>\n    </div>\n  </div>\n</div>",
+                styles: ["h2{font-family:'Encode Sans',sans-serif;font-size:12px;font-weight:500;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.2px;color:#b6b6b6;word-break:break-all!important}.card-line-bg{background-color:#fff;box-shadow:0 2px 4px 0 rgba(0,0,0,.05)}.card-line-img{border:1px solid #e3dbdb36!important;box-shadow:0 2px 4px 0 rgba(0,0,0,.06)}.border-top-box{border-top:1px solid #dee2e670!important}.c-pointer{cursor:pointer}.tipTool{position:relative;display:inline-block;width:35px;height:0;text-align:center;border-radius:15px;background-color:#d8d8d8a8 transparent;font-size:18px;color:#757575;font-weight:700;font-style:italic;font-stretch:normal;letter-spacing:.5px}.tipTool .tipTooltext{visibility:hidden;width:200px;background-color:#000000eb;text-align:left;border-radius:6px;padding:15px 18px;position:absolute;z-index:1;bottom:150%;left:70%;margin-left:-60px;font-style:normal;font-stretch:normal;font-size:13px;font-family:\"Encode Sans\",sans-serif;font-weight:500;line-height:1.45;letter-spacing:.4px;color:#b6b6b6}.tipTool .tipTooltext::after{content:\"\";position:absolute;top:100%;left:25.5%;margin-left:-5px;border-width:5px;border-style:solid;border-color:#191922 transparent transparent;font-style:normal;font-stretch:normal}.tipTool:hover .tipTooltext{visibility:visible}"]
             }] }
 ];
 /** @nocollapse */
@@ -3434,6 +3447,7 @@ SukuCardLineTypeTwoComponent.propDecorators = {
     imageColSize: [{ type: Input }],
     txtcolsize: [{ type: Input }],
     txttwocolsize: [{ type: Input }],
+    txtthreecolsize: [{ type: Input }],
     titleOne: [{ type: Input, args: ['title-one',] }],
     titleOneColor: [{ type: Input, args: ['title-one-color',] }],
     titleOneWeight: [{ type: Input, args: ['title-one-weight',] }],
@@ -3453,7 +3467,17 @@ SukuCardLineTypeTwoComponent.propDecorators = {
     subTitleTwoColor: [{ type: Input, args: ['sub-title-two-color',] }],
     subTitleTwoWeight: [{ type: Input, args: ['sub-title-two-weight',] }],
     subTitleTwoSize: [{ type: Input, args: ['sub-title-two-size',] }],
-    subTitleTwocustomclass: [{ type: Input, args: ['sub-title-two-customclass',] }]
+    subTitleTwocustomclass: [{ type: Input, args: ['sub-title-two-customclass',] }],
+    subTitleThree: [{ type: Input, args: ['sub-title-three',] }],
+    subTitleThreecolor: [{ type: Input, args: ['sub-title-three-color',] }],
+    subTitleThreeWeight: [{ type: Input, args: ['sub-title-three-weight',] }],
+    subTitleThreeSize: [{ type: Input, args: ['sub-title-three-size',] }],
+    subTitleThreeClass: [{ type: Input, args: ['sub-title-threeclass',] }],
+    contentThree: [{ type: Input, args: ['content-three',] }],
+    contentThreeColor: [{ type: Input, args: ['content-three-color',] }],
+    contentThreeWeight: [{ type: Input, args: ['content-three-widget',] }],
+    contentThreeSize: [{ type: Input, args: ['content-three-size',] }],
+    contentThreecustomclass: [{ type: Input, args: ['content-three-customclass',] }]
 };
 
 /**
@@ -3483,17 +3507,17 @@ class SukuRatingCardLineComponent {
         this.titleOneWeight = '600';
         this.titleOneSize = '14';
         this.titleOnecustomclass = '';
-        this.ratingTitle = 'TRANSACTION RATING';
+        this.ratingTitle = 'RATING RECEIVED';
         this.ratingtitleColor = '#b6b6b6';
         this.ratingtitleWeight = '500';
         this.ratingtitleSize = '12';
         this.ratingtitlecustomclass = '';
-        this.contentOne = '$100';
+        this.contentOne = 'N/A';
         this.contentOneColor = '#3e3e3e';
         this.contentOneWeight = '500';
         this.contentOneSize = '14';
         this.contentOnecustomclass = '';
-        this.contentTwo = 'John Smith';
+        this.contentTwo = 'N/A';
         this.contentTwoColor = '#3e3e3e';
         this.contentTwoWeight = '500';
         this.contentTwoSize = '14';
@@ -3503,12 +3527,12 @@ class SukuRatingCardLineComponent {
         this.subTitleTwoWeight = '500';
         this.subTitleTwoSize = '12';
         this.subTitleTwocustomclass = '';
-        this.subTitleThree = 'EXPIRY DATE';
+        this.subTitleThree = 'TOTAL PRICE';
         this.subTitleThreecolor = '#b6b6b6';
         this.subTitleThreeWeight = '500';
         this.subTitleThreeSize = '12';
         this.subTitleThreeClass = '';
-        this.contentThree = '28 Nov 2018';
+        this.contentThree = 'N/A';
         this.contentThreeColor = '#3e3e3e';
         this.contentThreeWeight = '500';
         this.contentThreeSize = '14';
@@ -3536,7 +3560,7 @@ class SukuRatingCardLineComponent {
 SukuRatingCardLineComponent.decorators = [
     { type: Component, args: [{
                 selector: 'suku-rating-card-line',
-                template: "<div class=\"col p-0\">\n  <div class=\"row card-line-bg p-3 m-3 {{customclass}}\" [style.background-color]=\"bgColor\">\n    <div [class]=\"imageColSize\">\n      <img [class]=\"customImgclass\" src=\"{{image}}\" alt=\"card-img\" width=\"55px\" height=\"46px\">\n    </div>\n    <span class=\"col d-lg-flex d-md-flex p-0 mt-2 pt-1\">\n    <div [class]=\"txtcolsize\">\n      <h2 [style.font-size.px]=\"titleOneSize\" [class]=\"titleOnecustomclass\" [style.font-weight]=\"titleOneWeight\"\n        [style.color]=\"titleOneColor\">{{titleOne}}</h2>\n      <h2 [style.font-size.px]=\"contentOneSize\" [class]=\"contentOnecustomclass\" [style.font-weight]=\"contentOneWeight\"\n        [style.color]=\"contentOneColor\">{{contentOne}}</h2>\n    </div>\n    <div class=\"col-sm-3 p-lg-0 pr-0 d-flex mt-2 pt-2 flex-column c-pointer\" (click)=\"action.emit()\"  *ngIf=\"true\">\n      <h2 [style.font-size.px]=\"ratingtitleSize\" [class]=\"ratingtitlecustomclass\"\n        [style.font-weight]=\"ratingtitleWeight\" [style.color]=\"ratingtitleColor\">{{ratingTitle}}</h2>\n      <p class=\"mb-0\">\n        <span class=\"starSize\">\n          <div class=\"pl-1\">\n              <span class=\"fa fa-star fullStar f20\" *ngFor=\"let star of fullStarsArray\"> </span>\n              <span class=\"fa fa-star-half halfStarLeft f20\" *ngIf=\"halfStar == 1\"> </span>\n              <span class=\"fa fa-star-half fa-flip-horizontal halfStarRight f20\" *ngIf=\"halfStar == 1\"> </span>\n              <span class=\"fa fa-star emptyStar f20\" *ngFor=\"let star of emptyStarsArray\"> </span>\n          </div>\n        </span>\n      </p>\n    </div>\n    <div [class]=\"txttwocolsize\">\n      <h2 [style.font-size.px]=\"subTitleTwoSize\" [class]=\"subTitleTwocustomclass\"\n        [style.font-weight]=\"subTitleTwoWeight\" [style.color]=\"subTitleTwoColor\">{{subTitleTwo}}</h2>\n      <h2 [style.font-size.px]=\"contentTwoSize\" [class]=\"contentTwocustomclass\" [style.font-weight]=\"contentTwoWeight\"\n        [style.color]=\"contentTwoColor\">{{contentTwo}}</h2>\n    </div>\n    <div [class]=\"txtthreecolsize\">\n      <h2 [style.font-size.px]=\"subTitleThreeSize\" [class]=\"subTitleThreeClass\"\n        [style.font-weight]=\"subTitleThreeWeight\" [style.color]=\"subTitleThreecolor\">{{subTitleThree}}</h2>\n      <h2 [style.font-size.px]=\"contentThreeSize\" [class]=\"contentThreecustomclass\"\n        [style.font-weight]=\"contentThreeWeight\" [style.color]=\"contentThreeColor\">{{contentThree}}</h2>\n    </div>\n  </span>\n  </div>\n</div>",
+                template: "<div class=\"col p-0\">\n  <div class=\"row card-line-bg p-3 m-3 {{customclass}}\" [style.background-color]=\"bgColor\">\n    <div [class]=\"imageColSize\">\n      <img [class]=\"customImgclass\" src=\"{{image}}\" alt=\"card-img\" width=\"55px\" height=\"46px\">\n    </div>\n    <span class=\"col d-lg-flex d-md-flex p-0 mt-2 pt-1\">\n    <div [class]=\"txtcolsize\">\n      <h2 [style.font-size.px]=\"titleOneSize\" [class]=\"titleOnecustomclass\" [style.font-weight]=\"titleOneWeight\"\n        [style.color]=\"titleOneColor\">{{titleOne}}</h2>\n      <h2 [style.font-size.px]=\"contentOneSize\" [class]=\"contentOnecustomclass\" [style.font-weight]=\"contentOneWeight\"\n        [style.color]=\"contentOneColor\">{{contentOne}}</h2>\n    </div>\n    <div class=\"col-sm-3 p-lg-0 pr-0 d-flex mt-2 pt-2 flex-column\" (click)=\"action.emit()\"  *ngIf=\"true\">\n      <h2 [style.font-size.px]=\"ratingtitleSize\" [class]=\"ratingtitlecustomclass\"\n        [style.font-weight]=\"ratingtitleWeight\" [style.color]=\"ratingtitleColor\">{{ratingTitle}}</h2>\n      <p class=\"mb-0\">\n        <span class=\"starSize\">\n          <div class=\"pl-1\">\n              <span class=\"fa fa-star fullStar f20\" *ngFor=\"let star of fullStarsArray\"> </span>\n              <span class=\"fa fa-star-half halfStarLeft f20\" *ngIf=\"halfStar == 1\"> </span>\n              <span class=\"fa fa-star-half fa-flip-horizontal halfStarRight f20\" *ngIf=\"halfStar == 1\"> </span>\n              <span class=\"fa fa-star emptyStar f20\" *ngFor=\"let star of emptyStarsArray\"> </span>\n          </div>\n        </span>\n      </p>\n    </div>\n    <div [class]=\"txttwocolsize\">\n      <h2 [style.font-size.px]=\"subTitleTwoSize\" [class]=\"subTitleTwocustomclass\"\n        [style.font-weight]=\"subTitleTwoWeight\" [style.color]=\"subTitleTwoColor\">{{subTitleTwo}}</h2>\n      <h2 [style.font-size.px]=\"contentTwoSize\" [class]=\"contentTwocustomclass\" [style.font-weight]=\"contentTwoWeight\"\n        [style.color]=\"contentTwoColor\">{{contentTwo}}</h2>\n    </div>\n    <div [class]=\"txtthreecolsize\">\n      <h2 [style.font-size.px]=\"subTitleThreeSize\" [class]=\"subTitleThreeClass\"\n        [style.font-weight]=\"subTitleThreeWeight\" [style.color]=\"subTitleThreecolor\">{{subTitleThree}}</h2>\n      <h2 [style.font-size.px]=\"contentThreeSize\" [class]=\"contentThreecustomclass\"\n        [style.font-weight]=\"contentThreeWeight\" [style.color]=\"contentThreeColor\">{{contentThree}}</h2>\n    </div>\n  </span>\n  </div>\n</div>",
                 styles: ["h2{font-family:'Encode Sans',sans-serif;font-size:12px;font-weight:500;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.2px;color:#b6b6b6;word-break:break-all!important}.card-line-bg{background-color:#fff;box-shadow:0 2px 4px 0 rgba(0,0,0,.05)}.card-line-img{border:1px solid #e3dbdb36!important;box-shadow:0 2px 4px 0 rgba(0,0,0,.06)}.border-top-box{border-top:1px solid #dee2e670!important}.c-pointer{cursor:pointer}.starSize{font-size:20px!important}.img-res{width:100px;height:auto;max-width:100%;max-height:100%;padding:6px 5px}.emptyStar{color:#e1e1e1;margin-right:5px}.fullStar{color:#898989;margin-right:5px}.halfStarLeft{color:#898989;position:relative;left:1px}.halfStarRight{color:#e1e1e1;position:relative;right:1px}.f20{font-size:20px}"]
             }] }
 ];
@@ -3702,26 +3726,30 @@ let sukuHomepageData = [
                 icon: 'fas fa-shopping-cart',
                 path: '/userDashboard',
                 disabled: false,
+                id: 'Marketplace'
             }),
             new SukuHomepageButton({
                 title: 'Track & Trace',
                 icon: 'fas fa-link',
                 path: '/productSearch',
                 disabled: false,
+                id: 'trackAndTrace'
             }),
             new SukuHomepageButton({
                 title: 'Document Authenticator',
                 icon: 'far fa-file-code',
                 path: '/verify',
                 disabled: false,
+                id: 'documentAuthenticator'
             }),
             new SukuHomepageButton({
                 title: 'Payment Portal',
                 icon: 'fas fa-sliders-h',
                 path: '/paymentPortal',
                 disabled: false,
-            }),
-        ],
+                id: 'paymentPortal'
+            })
+        ]
     }),
     new SukuHomepageSection({
         header: 'SUKU Applications and Services',
@@ -3733,27 +3761,31 @@ let sukuHomepageData = [
                 icon: 'fas fa-box-open',
                 path: '/',
                 disabled: true,
+                id: 'inventoryManagement'
             }),
             new SukuHomepageButton({
                 title: 'Warehouse Management',
                 icon: 'fas fa-dolly',
                 path: '/',
                 disabled: true,
+                id: 'warehouseManagement'
             }),
             new SukuHomepageButton({
                 title: 'Insurance',
                 icon: 'fas fa-shield-alt',
                 path: '/',
                 disabled: true,
+                id: 'insurance'
             }),
             new SukuHomepageButton({
                 title: 'Quorum Block Explorer',
                 icon: 'fas fa-cubes',
                 path: '/',
                 disabled: true,
-            }),
-        ],
-    }),
+                id: 'quorumBlockExplorer'
+            })
+        ]
+    })
 ];
 
 /**
@@ -3780,8 +3812,8 @@ class SukuHomepageComponent {
 SukuHomepageComponent.decorators = [
     { type: Component, args: [{
                 selector: 'suku-homepage',
-                template: "<div class=\"homepage col-md-10 col-12 m-auto\">\n  <div *ngFor=\"let section of homepageData\">\n    <suku-homepage-section (sendRoutePath)=\"onSendRoutePath($event)\" [sectionData]=\"section\"></suku-homepage-section>\n  </div>\n</div>",
-                styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);.homepage{padding:30px 0 40px;font-family:Poppins,sans-serif;background:#fff;box-shadow:0 3px 3px 0 rgba(0,0,0,.5);border-radius:0 0 41px 41px}"]
+                template: "<div class=\"homepage col-md-10 col-12 m-auto\">\r\n  <div *ngFor=\"let section of homepageData\">\r\n    <suku-homepage-section (sendRoutePath)=\"onSendRoutePath($event)\" [sectionData]=\"section\"></suku-homepage-section>\r\n  </div>\r\n</div>",
+                styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);.homepage{padding:30px 0 40px;font-family:Poppins,sans-serif;background:#fff;box-shadow:0 12px 14px 0 rgba(0,0,0,.05);border-radius:0 0 41px 41px}"]
             }] }
 ];
 /** @nocollapse */
@@ -3813,8 +3845,8 @@ class SukuHomepageSectionComponent {
 SukuHomepageSectionComponent.decorators = [
     { type: Component, args: [{
                 selector: 'suku-homepage-section',
-                template: "<section class=\"homepage-section\">\n  <div class=\"header row ml-3 ml-sm-5\">\n    <div class=\"title mt-3\">{{sectionData.header}}</div>\n    <div class=\"mt-3 d-flex pr-5\">\n      <span class=\"title italic font-italic\">{{sectionData.subheader}}</span>\n      <div class=\"ml-2 info\">\n        <i class=\"fas fa-info\"></i>\n        <div class=\"info-box\">{{sectionData.info}}</div>\n      </div>\n    </div>\n  </div>\n  <div class=\"row m-3 d-flex justify-content-around\">\n    <div class=\"justify-content-center d-flex mt-3 mt-md-5 col-lg-3 col-md-6 col-12\"\n      *ngFor=\"let button of sectionData.buttons\">\n      <suku-homepage-button [buttonData]=\"button\" (sendRoutePath)=\"onSendRoutePath($event)\"></suku-homepage-button>\n    </div>\n  </div>\n</section>",
-                styles: [".homepage-section{font-family:Poppins,sans-serif}.title{font-size:23px;font-weight:700}.italic{font-weight:400}.info{text-align:center;height:23px;width:23px;border-radius:100px;background:#303030;color:#d8f40b}.info:hover .info-box{display:block}.info-box{z-index:100;width:300px;border-radius:6px;word-wrap:break-word;background:#000;display:none;position:relative;bottom:-10px;right:23px;text-align:left;padding:20px;font-size:13px;font-family:\"Encode Sans\";font-weight:500;font-style:normal;font-stretch:normal;line-height:1.45;letter-spacing:.4px;color:#b6b6b6}.info-box::after{content:\"\";position:absolute;top:-10px;left:35px;margin-left:-5px;border-width:5px;border-style:solid;border-color:transparent transparent #191922;font-style:normal;font-stretch:normal}"]
+                template: "<section class=\"homepage-section\">\r\n  <div class=\"header row ml-3 ml-sm-5\">\r\n    <div class=\"title mt-3\">{{sectionData.header}}</div>\r\n    <div class=\"mt-3 d-flex pr-5\">\r\n      <span class=\"title italic font-italic\">{{sectionData.subheader}}</span>\r\n      <div class=\"ml-2 info\">\r\n        <i class=\"fas fa-info\"></i>\r\n        <div class=\"info-box\">{{sectionData.info}}</div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row m-3 d-flex justify-content-around\">\r\n    <div class=\"justify-content-center d-flex mt-3 mt-md-5 col-lg-3 col-md-6 col-12\"\r\n      *ngFor=\"let button of sectionData.buttons\">\r\n      <suku-homepage-button [buttonData]=\"button\" (sendRoutePath)=\"onSendRoutePath($event)\"></suku-homepage-button>\r\n    </div>\r\n  </div>\r\n</section>",
+                styles: [".homepage-section{font-family:Poppins,sans-serif}.title{font-size:23px;font-weight:700}.italic{font-weight:400}.info{text-align:center;height:23px;width:23px;border-radius:100px;background:#303030;color:#d8f40b}.info:hover .info-box{display:block}.info-box{z-index:100;width:300px;border-radius:6px;word-wrap:break-word;background:#000;display:none;position:relative;bottom:-10px;right:23px;text-align:left;padding:20px;font-size:13px;font-family:\"Encode Sans\",sans-serif;font-weight:500;font-style:normal;font-stretch:normal;line-height:1.45;letter-spacing:.4px;color:#b6b6b6}.info-box::after{content:\"\";position:absolute;top:-10px;left:35px;margin-left:-5px;border-width:5px;border-style:solid;border-color:transparent transparent #191922;font-style:normal;font-stretch:normal}"]
             }] }
 ];
 /** @nocollapse */
@@ -3848,8 +3880,8 @@ class SukuHomepageButtonComponent {
 SukuHomepageButtonComponent.decorators = [
     { type: Component, args: [{
                 selector: 'suku-homepage-button',
-                template: "<div class=\"button-container d-flex flex-column align-items-center\">\n  <div class=\"suku-button d-flex justify-content-center align-items-center\" [ngClass]=\"{\n      'disabled': buttonData.disabled\n    }\" (click)=\"onClick()\">\n    <i [ngClass]=\"[buttonData.icon, 'icon']\"></i>\n  </div>\n  <div class=\"suku-button-text text-center mt-3\">\n    <h3 class=\"button-title\">{{buttonData.title}}</h3>\n  </div>\n</div>",
-                styles: [".button-container{width:106.4px;font-family:Poppins,sans-serif;font-weight:700}.suku-button{height:80px;width:80px;background:#303030;color:#d8f40b;box-shadow:0 3px 3px 0 rgba(0,0,0,.5);transition:.1s ease-in-out;border-radius:12px 28px}.suku-button:hover{-webkit-transform:translateY(-3px);transform:translateY(-3px);box-shadow:0 6px 3px 0 rgba(0,0,0,.5)}.suku-button:active{box-shadow:0 4px 3px 0 rgba(0,0,0,.5);-webkit-transform:translateY(-1px);transform:translateY(-1px);transition:none}.disabled{background:#d9d9d9;color:#7f7f7f;cursor:default}.disabled:active,.disabled:hover{box-shadow:0 3px 3px 0 rgba(0,0,0,.5);-webkit-transform:translateY(0);transform:translateY(0)}.icon{font-size:40px}.button-title{font-size:14px;font-weight:700}"]
+                template: "<div class=\"button-container d-flex flex-column align-items-center\">\r\n  <div class=\"suku-button d-flex justify-content-center align-items-center\" [ngClass]=\"{\r\n      'disabled': buttonData.disabled\r\n    }\" (click)=\"onClick()\" id=\"{{buttonData?.id}}\">\r\n    <i [ngClass]=\"[buttonData.icon, 'icon']\"></i>\r\n  </div>\r\n  <div class=\"suku-button-text text-center mt-3\">\r\n    <h3 class=\"button-title\">{{buttonData.title}}</h3>\r\n  </div>\r\n</div>",
+                styles: [".button-container{width:106.4px;font-family:Poppins,sans-serif;font-weight:700}.suku-button{height:80px;width:80px;background:#303030;color:#d8f40b;cursor:pointer!important;box-shadow:0 3px 3px 0 rgba(0,0,0,.5);transition:.1s ease-in-out;border-radius:12px 28px}.suku-button:hover{-webkit-transform:translateY(-3px);transform:translateY(-3px);box-shadow:0 6px 3px 0 rgba(0,0,0,.5)}.suku-button:active{box-shadow:0 4px 3px 0 rgba(0,0,0,.5);-webkit-transform:translateY(-1px);transform:translateY(-1px);transition:none}.disabled{background:#d9d9d9;color:#7f7f7f;cursor:default}.disabled:active,.disabled:hover{box-shadow:0 3px 3px 0 rgba(0,0,0,.5);-webkit-transform:translateY(0);transform:translateY(0)}.icon{font-size:40px}.button-title{font-size:14px;font-weight:700}"]
             }] }
 ];
 /** @nocollapse */
