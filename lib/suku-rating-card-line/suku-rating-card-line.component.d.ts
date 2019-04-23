@@ -54,9 +54,8 @@ export declare class SukuRatingCardLineComponent implements OnInit {
     contentThreeWeight: string;
     contentThreeSize: string;
     contentThreecustomclass: string;
-    myHTML: any;
-    _rate: number;
     action: EventEmitter<{}>;
+    userAction: EventEmitter<{}>;
     customRatingclass: any;
     ratingValue: number;
     constructor();

@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { OnInit, EventEmitter } from '@angular/core';
 export declare class SukuCardLineTypeTwoComponent implements OnInit {
     image: string;
     iconOne: string;
@@ -45,6 +45,7 @@ export declare class SukuCardLineTypeTwoComponent implements OnInit {
     contentThreeWeight: string;
     contentThreeSize: string;
     contentThreecustomclass: string;
+    userAction: EventEmitter<{}>;
     constructor();
     ngOnInit(): void;
 }

@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { OnInit, EventEmitter } from '@angular/core';
 export declare class SukuCardLineTypeOneComponent implements OnInit {
     image: string;
     chatReadIcon: string;
@@ -43,6 +43,10 @@ export declare class SukuCardLineTypeOneComponent implements OnInit {
     contentThreeWeight: string;
     contentThreeSize: string;
     contentThreecustomclass: string;
+    action: EventEmitter<{}>;
+    userAction: EventEmitter<{}>;
     constructor();
     ngOnInit(): void;
+    cardAction(): void;
+    contentAction(e: any): void;
 }
