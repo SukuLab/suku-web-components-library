@@ -22,6 +22,7 @@ export { SukuDwollaFundingAgreementComponent as ɵbn } from './lib/suku-dwolla-f
 export { SukuDwollaFundingSourceComponent as ɵbo } from './lib/suku-dwolla-funding-source/suku-dwolla-funding-source.component';
 export { SukuFiltersComponent as ɵba } from './lib/suku-filters/suku-filters.component';
 export { SukuFundingSourceComponent as ɵbk } from './lib/suku-funding-source/suku-funding-source.component';
+export { SukuHeaderComponent as ɵce } from './lib/suku-header/suku-header.component';
 export { SukuHeadingComponent as ɵe } from './lib/suku-heading/suku-heading.component';
 export { SukuHomeItalicHeadingComponent as ɵf } from './lib/suku-home-italic-heading/suku-home-italic-heading.component';
 export { SukuHomeWidgetComponent as ɵg } from './lib/suku-home-widget/suku-home-widget.component';

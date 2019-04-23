@@ -14,6 +14,8 @@ export declare class SukuCardLineTypeTwoComponent implements OnInit {
     txttwocolsize: string;
     txtthreecolsize: string;
     titleOne: string;
+    iconOneInfo: string;
+    iconTwoInfo: string;
     titleOneColor: string;
     titleOneWeight: string;
     titleOneSize: string;
