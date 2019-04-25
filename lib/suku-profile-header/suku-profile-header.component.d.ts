@@ -29,6 +29,7 @@ export declare class SukuProfileHeaderComponent implements OnInit {
     rateDetailsId: string;
     actionOne: EventEmitter<{}>;
     actionTwo: EventEmitter<{}>;
+    rating: EventEmitter<{}>;
     customClass: any;
     ratingValue: number;
     subHeadingOne: string;
