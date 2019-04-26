@@ -4638,7 +4638,7 @@
         SukuHeaderComponent.decorators = [
             { type: i0.Component, args: [{
                         selector: 'suku-header',
-                        template: "<div class=\"product-boxContent\">\n  <div class=\"col pl-lg-5 pt-3 pb-3\">\n    <div class=\"row\">\n      <div class=\"col pl-lg-5\">\n        <h1>{{titleOne}}</h1>\n        <h2>{{contentOne}}</h2>\n      </div>\n      <div class=\"col pl-lg-5\">\n        <h1>{{titleTwo}}</h1>\n        <h2 class=\"c-pointer\" (click)=\"action.emit()\">{{contentTwo}}</h2>\n      </div>\n      <div class=\"col pl-lg-5\">\n        <h1>{{titleThree}}</h1>\n        <h2 *ngIf=\"(_enableTimer == 'false')\">\n          {{contentThree}}\n        </h2>\n        <h2 *ngIf=\"(_enableTimer == 'true')\">\n          <countdown-timer [end]=\"_date\"></countdown-timer>\n        </h2>\n      </div>\n    </div>\n  </div>\n</div>",
+                        template: "<div class=\"product-boxContent\">\n  <div class=\"col pl-lg-5 pt-3 pb-3\">\n    <div class=\"row\">\n      <div class=\"col pl-lg-5\">\n        <h1 [style.font-size.px]=\"titleOneSize\" [class]=\"titleOneCustomClass\" [style.font-weight]=\"titleOneWeight\"\n          [style.color]=\"titleOneColor\" id=\"{{titleOneId}}\">{{titleOne}}</h1>\n        <h2 [style.font-size.px]=\"contentOneSize\" [class]=\"contentOneCustomClass\" [style.font-weight]=\"contentOneWeight\"\n          [style.color]=\"contentOneColor\" id=\"{{contentOneId}}\">{{contentOne}}</h2>\n      </div>\n      <div class=\"col pl-lg-5\">\n        <h1 [style.font-size.px]=\"titleTwoSize\" [class]=\"titleTwoCustomClass\" [style.font-weight]=\"titleTwoWeight\"\n          [style.color]=\"titleTwoColor\" id=\"{{titleTwoId}}\">{{titleTwo}}</h1>\n        <h2 class=\"c-pointer\" (click)=\"action.emit()\" [style.font-size.px]=\"contentTwoSize\"\n          [class]=\"contentTwoCustomClass\" [style.font-weight]=\"contentTwoWeight\" [style.color]=\"contentTwoColor\"\n          id=\"{{contentTwoId}}\">{{contentTwo}}</h2>\n      </div>\n      <div class=\"col pl-lg-5\">\n        <h1 [style.font-size.px]=\"titleThreeSize\" [class]=\"titleThreeCustomClass\" [style.font-weight]=\"titleThreeWeight\"\n          [style.color]=\"titleThreeColor\" id=\"{{titleThreeId}}\">{{titleThree}}</h1>\n        <h2 *ngIf=\"(_enableTimer == 'false')\" [style.font-size.px]=\"contentThreeSize\" [class]=\"contentThreeCustomClass\"\n          [style.font-weight]=\"contentThreeWeight\" [style.color]=\"contentThreeColor\" id=\"{{contentThreeId}}\">\n          {{contentThree}}\n        </h2>\n        <h2 *ngIf=\"(_enableTimer == 'true')\">\n          <countdown-timer [end]=\"_date\"></countdown-timer>\n        </h2>\n      </div>\n    </div>\n  </div>\n</div>",
                         styles: [".product-boxContent{width:100%;float:left;background:#2f2e2e;border-left:5px solid #a7bf2e;border-radius:0 40px 0 0;box-shadow:-4px 4px 5px 0 rgba(0,0,0,.08);padding:10px 5px 0 15px;margin:0}h1{color:#fafaf8;font-size:17px}h2{color:#f9f9f1bd;font-size:15px}.c-pointer{cursor:pointer;text-transform:capitalize}.c-pointer:hover{color:#fff;text-decoration:underline}.prizeHead{width:100%;float:left;color:#e5e5e5;line-height:1em;margin:0 0 8px}.prizesubHead{width:100%;float:left;font-family:Poppins-Regular,sans-serif!important;font-size:15px;color:#e5e5e5;line-height:1em;margin:0 0 12px}.RectangleBorder{background-color:#fff;box-shadow:-4px 4px 5px 0 rgba(0,0,0,.08);border-radius:0;margin-top:63px!important;padding-right:20px;padding-left:20px}.productName{color:#7f7e7e;font-size:13px}"]
                     }] }
         ];
@@ -4646,12 +4646,42 @@
         SukuHeaderComponent.ctorParameters = function () { return []; };
         SukuHeaderComponent.propDecorators = {
             titleOne: [{ type: i0.Input }],
+            titleOneId: [{ type: i0.Input }],
+            titleOneSize: [{ type: i0.Input }],
+            titleOneColor: [{ type: i0.Input }],
+            titleOneWeight: [{ type: i0.Input }],
+            titleOneCustomClass: [{ type: i0.Input }],
             contentOne: [{ type: i0.Input }],
+            contentOneId: [{ type: i0.Input }],
+            contentOneSize: [{ type: i0.Input }],
+            contentOneColor: [{ type: i0.Input }],
+            contentOneWeight: [{ type: i0.Input }],
+            contentOneCustomClass: [{ type: i0.Input }],
             titleTwo: [{ type: i0.Input }],
+            titleTwoId: [{ type: i0.Input }],
+            titleTwoSize: [{ type: i0.Input }],
+            titleTwoColor: [{ type: i0.Input }],
+            titleTwoWeight: [{ type: i0.Input }],
+            titleTwoCustomClass: [{ type: i0.Input }],
             contentTwo: [{ type: i0.Input }],
+            contentTwoId: [{ type: i0.Input }],
+            contentTwoSize: [{ type: i0.Input }],
+            contentTwoColor: [{ type: i0.Input }],
+            contentTwoWeight: [{ type: i0.Input }],
+            contentTwoCustomClass: [{ type: i0.Input }],
             titleThree: [{ type: i0.Input }],
+            titleThreeId: [{ type: i0.Input }],
+            titleThreeSize: [{ type: i0.Input }],
+            titleThreeColor: [{ type: i0.Input }],
+            titleThreeWeight: [{ type: i0.Input }],
+            titleThreeCustomClass: [{ type: i0.Input }],
             contentThree: [{ type: i0.Input }],
             enableTimer: [{ type: i0.Input }],
+            contentThreeId: [{ type: i0.Input }],
+            contentThreeSize: [{ type: i0.Input }],
+            contentThreeColor: [{ type: i0.Input }],
+            contentThreeWeight: [{ type: i0.Input }],
+            contentThreeCustomClass: [{ type: i0.Input }],
             action: [{ type: i0.Output }]
         };
         return SukuHeaderComponent;
