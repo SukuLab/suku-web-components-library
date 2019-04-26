@@ -1,10 +1,7 @@
 import { OnInit, EventEmitter } from '@angular/core';
 export declare class SukuFundingSourceComponent implements OnInit {
     fundingDetails: any[];
-    loader: {
-        diameter: number;
-        loaderMessage: string;
-    };
+    iconClass: string;
     fundingSourceLabel: {
         labelOne: string;
         labelOneId: string;
@@ -32,6 +29,11 @@ export declare class SukuFundingSourceComponent implements OnInit {
         labelThreeId: string;
     };
     contentOne: string;
+    labelOneId: any;
+    labelOneSize: any;
+    labelOneColor: any;
+    labelOneWeight: any;
+    labelOneCustomClass: any;
     removeDefault: EventEmitter<{}>;
     makeDefaultAction: EventEmitter<{}>;
     removeSourceAction: EventEmitter<{}>;
