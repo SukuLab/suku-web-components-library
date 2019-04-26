@@ -206,22 +206,22 @@ class SukuTransactionHistoryComponent {
      * @return {?}
      */
     ngOnInit() {
-        this.headings = [{
-                'type': 'Type',
-                'myAccount': 'My Account',
-                'counterparty': 'Counter Party',
-                'amount': 'Amount',
-                'status': 'Status',
-                'dateInitiated': 'Initiated On',
-                'dateCreated': 'Completed On',
-                'paymentManagement': 'Payment Management'
-            }];
+        this.heading = {
+            type: 'Type',
+            myAccount: 'My Account',
+            counterparty: 'Counterparty',
+            amount: 'Amount',
+            status: 'Status',
+            dateInitiated: 'Initiated On',
+            dateCreated: 'Completed On',
+            paymentManagement: 'Payment Management'
+        };
     }
 }
 SukuTransactionHistoryComponent.decorators = [
     { type: Component, args: [{
                 selector: 'suku-transaction-history',
-                template: "<div class=\"col fontPoppins p-5 d-flex\">\n  <div class=\"form-group col-12 historyWidget p-3\">\n    <div class=\"col-sm-12 text-center mb-2 pt-2 pb-3\">\n      <b>{{transactionHistory | uppercase}}</b>\n    </div>\n    <div class=\"col-sm-12 table-responsive mb-3\" id=\"transactionTable\">\n      <table class=\"col-sm-12  table table-bordered tableBg\" id=\"transactionHisTable\" style=\"overflow-x:auto;\">\n        <thead>\n          <tr *ngFor=\"let heading of headings\">\n            <th scope=\"col\" class=\"text-center\" id=\"{{typeId}}\">{{heading.type}}</th>\n            <th scope=\"col\" class=\"text-center\" id=\"{{myAccountId}}\">{{heading.myAccount}}</th>\n            <th scope=\"col\" class=\"text-center\" id=\"{{counterPartyId}}\">{{heading.counterparty}}</th>\n            <th scope=\"col\" class=\"text-center\" id=\"{{amountId}}\">{{heading.amount}}</th>\n            <th scope=\"col\" class=\"text-center\" id=\"{{statusId}}\">{{heading.status}}</th>\n            <th scope=\"col\" class=\"text-center\" id=\"{{dateCreatedId}}\">{{heading.dateInitiated}}</th>\n            <th scope=\"col\" class=\"text-center\" id=\"{{dateCreatedId}}\">{{heading.dateCreated}}</th>\n            <th scope=\"col\" class=\"text-center\" id=\"{{paymentManagementId}}\">{{heading.paymentManagement}}</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr id=\"{{transactionDetailsId}}\" *ngFor=\"let transaction of transactionDetails\">\n            <td scope=\"row\" class=\"text-center {{( (transaction?.type) == 'outgoing') ? 'outgoing' : 'incoming'}}\">\n              {{transaction?.type}}</td>\n            <td scope=\"row\" class=\"text-center\">{{transaction?.accountName}}</td>\n            <td scope=\"row\" class=\"text-center\">{{transaction?.counterParty}}</td>\n            <td scope=\"row\" class=\"text-center\">{{transaction?.amount}}</td>\n            <td scope=\"row\" class=\"text-center {{( (transaction.status) == 'Failed') ? 'falied' : 'incoming'}}\">{{transaction?.status}}</td>\n            <td scope=\"row\" class=\"text-center\">{{transaction?.created | date:'d MMM yyyy HH:MM a'}}</td>\n            <td scope=\"row\" class=\"text-center\">{{(transaction?.completedOn | date:'d MMM yyyy HH:MM a') || 'Not available'}}</td>\n            <td class=\"text-center\"><button *ngIf=\"transaction?.status=='pending' && transaction?.type=='outgoing'\" id=\"{{cancelId}}\" (click)=\"action.emit(transaction);\" class=\"btn  btnCancel\">{{cancel}}</button></td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n  </div>\n</div>",
+                template: "<div class=\"col fontPoppins p-5 d-flex\">\n  <div class=\"form-group col-12 p-3\">\n    <div class=\"col-sm-12 text-center text-white historyWidget p-4 pt-2 pb-3\">\n      <p class=\"pop text-center mb-0\">{{transactionHistory | uppercase}}</p>\n    </div>\n    <div class=\"col-sm-12 table-responsive box-shadows mb-3 p-0\" id=\"transactionTable\">\n      <div class=\"col-sm-12 p-5\" *ngIf=\"!transactionDetails\">\n        <div class=\"col-sm-12 d-flex justify-content-center\">\n          <mat-spinner diameter=\"65\"></mat-spinner>\n        </div>\n        <div class=\"mt-4 pb-3 col-sm-12 text-center\">\n          <span id=\"loading\">Please wait...</span>\n        </div>\n      </div>\n      <table class=\"col-sm-12 table table-striped tableBg mb-0 pl-4 pr-5\" *ngIf=\"transactionDetails\"\n        id=\"transactionHisTable\" style=\"overflow-x:auto;\">\n        <thead>\n          <tr>\n            <th scope=\"col\" class=\"text-center col-sm-1\" id=\"{{typeId}}\">{{heading.type}}</th>\n            <th scope=\"col\" class=\"text-center col-sm-4\" id=\"{{myAccountId}}\">{{heading.myAccount}}</th>\n            <th scope=\"col\" class=\"text-center col-sm-1\" id=\"{{counterPartyId}}\">{{heading.counterparty}}</th>\n            <th scope=\"col\" class=\"text-center col-sm-2\" id=\"{{amountId}}\">{{heading.amount}}</th>\n            <th scope=\"col\" class=\"text-center col-sm-1\" id=\"{{statusId}}\">{{heading.status}}</th>\n            <th scope=\"col\" class=\"text-center col-sm-2\" id=\"{{dateCreatedId}}\">{{heading.dateInitiated}}</th>\n            <th scope=\"col\" class=\"text-center col-sm-2\" id=\"{{dateCreatedId}}\">{{heading.dateCreated}}</th>\n            <th scope=\"col\" class=\"text-center col-sm-1\" id=\"{{paymentManagementId}}\">{{heading.paymentManagement}}</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr id=\"{{transactionDetailsId}}\" *ngFor=\"let transaction of transactionDetails\">\n            <td scope=\"row\" class=\"text-left {{( (transaction?.type) == 'outgoing') ? 'outgoing' : 'incoming'}}\">\n              {{transaction?.type || 'N/A'}}</td>\n            <td scope=\"row\" class=\"text-left\">{{transaction?.accountName || 'N/A'}}</td>\n            <td scope=\"row\" class=\"text-left\">{{transaction?.counterParty || 'N/A'}}</td>\n            <td scope=\"row\" class=\"text-left\">${{transaction?.amount || 'N/A'}}</td>\n            <td scope=\"row\" class=\"text-left {{( (transaction.status) == 'Failed') ? 'falied' : 'incoming'}}\">\n              {{transaction?.status || 'N/A'}}</td>\n            <td scope=\"row\" class=\"text-left\">{{transaction?.created | date:'d MMM yyyy h:mm:s a'  || 'N/A'}}</td>\n            <td scope=\"row\" class=\"text-left\">\n              {{(transaction?.completedOn | date:'d MMM yyyy h:mm:s a') || 'N/A'}}</td>\n            <td class=\"text-left\"><button *ngIf=\"transaction?.status=='pending'\" id=\"{{cancelId}}\"\n                (click)=\"action.emit(transaction);\" class=\"btn  btnCancel\">{{cancel}}</button></td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n  </div>\n</div>",
                 styles: [".cancelText{font-size:12px;color:red}.outgoing{color:#af0a0a}.incoming{color:#000}.falied{color:red}.defaultDiv{background-color:#d8fc40;border-radius:30px}.dangerBtn{background-color:#f13030;color:#fff}.bankDiv{background-color:#f0f4f5;border-radius:30px;border:1px solid gray}.mT-35{margin-top:18%}#transactionTable{max-height:300px;overflow-x:auto;overflow-y:auto}#transactionHisTable{white-space:nowrap}.fontPoppins{font-family:Poppins}.btn{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.375rem .75rem;font-size:10px;font-weight:700;font-family:Poppins}.btnCancel{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#fff;color:red;padding:.475rem 2.95rem;font-size:10px;font-weight:700;font-family:Poppins}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{outline:0!important;box-shadow:none!important;color:#000}.tableBg{background-color:#fff}.pT-5{padding-top:2%}.historyWidget{border-radius:0 0 41px 41px;background-color:#fff;box-shadow:0 12px 14px 0 rgba(0,0,0,.05);border-top:5px solid #a7bf2e}"]
             }] }
 ];
@@ -231,7 +231,7 @@ SukuTransactionHistoryComponent.propDecorators = {
     transactionHistory: [{ type: Input }],
     transactionDetailsId: [{ type: Input }],
     transactionDetails: [{ type: Input }],
-    headings: [{ type: Input }],
+    heading: [{ type: Input }],
     typeId: [{ type: Input }],
     myAccountId: [{ type: Input }],
     counterPartyId: [{ type: Input }],
