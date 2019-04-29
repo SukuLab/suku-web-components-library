@@ -20,7 +20,20 @@ export declare class SukuProgressBarComponent implements OnInit {
     customHeadingThreeClass: string;
     customHeadingFourClass: string;
     customHeadingFiveClass: string;
-    max: any;
+    progressBarIconId: {
+        IconOneId: string;
+        IconTwoId: string;
+        IconThreeId: string;
+        IconFourId: string;
+        IconFiveId: string;
+    };
+    progressBarTitleId: {
+        labelOneId: string;
+        labelTwoId: string;
+        labelThreeId: string;
+        labelFourId: string;
+        labelFiveId: string;
+    };
     constructor();
     ngOnInit(): void;
 }

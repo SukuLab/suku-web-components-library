@@ -1025,11 +1025,11 @@ var SukuNavSubmenuComponent = /** @class */ (function () {
  */
 var SukuProgressBarComponent = /** @class */ (function () {
     function SukuProgressBarComponent() {
-        this.progressStyleOne = '';
-        this.progressStyleTwo = '';
-        this.progressStyleThree = '';
-        this.progressStyleFour = '';
-        this.progressStyleFive = '';
+        this.progressStyleOne = 'progressCompleted';
+        this.progressStyleTwo = 'progressUpcoming';
+        this.progressStyleThree = 'progressUpcoming';
+        this.progressStyleFour = 'progressUpcoming';
+        this.progressStyleFive = 'progressUpcoming';
         this.headingOne = 'LISTING DETAILS';
         this.headingTwo = 'PRODUCT DETAILS';
         this.headingThree = 'PRODUCT TRACEABILITY';
@@ -1040,11 +1040,25 @@ var SukuProgressBarComponent = /** @class */ (function () {
         this.headingThreeId = 'thirdHeading';
         this.headingFourId = 'fourthHeading';
         this.headingFiveId = 'fifthHeading';
-        this.customHeadingOneClass = '';
+        this.customHeadingOneClass = 'text-bold';
         this.customHeadingTwoClass = '';
         this.customHeadingThreeClass = '';
         this.customHeadingFourClass = '';
         this.customHeadingFiveClass = '';
+        this.progressBarIconId = {
+            IconOneId: 'listingDetails',
+            IconTwoId: 'productDetails',
+            IconThreeId: 'productTraceability',
+            IconFourId: 'termsOfSale',
+            IconFiveId: 'confirm'
+        };
+        this.progressBarTitleId = {
+            labelOneId: 'listingDetails',
+            labelTwoId: 'productDetails',
+            labelThreeId: 'productTraceability',
+            labelFourId: 'termsOfSale',
+            labelFiveId: 'confirm'
+        };
     }
     /**
      * @return {?}
@@ -1052,23 +1066,22 @@ var SukuProgressBarComponent = /** @class */ (function () {
     SukuProgressBarComponent.prototype.ngOnInit = /**
      * @return {?}
      */
-    function () {
-    };
+    function () { };
     SukuProgressBarComponent.decorators = [
         { type: Component, args: [{
                     selector: 'suku-progress-bar',
-                    template: "<table class=\"col-sm-10 offset-sm-1\">\n  <tr class=\"pt-3\">\n    <td class=\"{{progressStyleOne}} text-center\">\n      <i *ngIf=\"(progressStyleOne == 'progressCompleted')\" class=\"fa fa-check tickSign\"></i>\n      <span *ngIf=\"!(progressStyleOne == 'progressCompleted')\">1</span>\n    </td>\n    <td>\n      <hr class=\"hrLine\">\n    </td>\n    <td class=\"{{progressStyleTwo}} text-center\">\n    <i *ngIf=\"(progressStyleTwo == 'progressCompleted')\" class=\"fa fa-check tickSign\"></i>\n    <span *ngIf=\"!(progressStyleTwo == 'progressCompleted')\">2</span>\n  </td>\n    <td>\n      <hr class=\"hrLine\">\n    </td>\n    <td class=\"{{progressStyleThree}} text-center\">\n    <i *ngIf=\"(progressStyleThree == 'progressCompleted')\" class=\"fa fa-check tickSign\"></i>\n    <span *ngIf=\"!(progressStyleThree == 'progressCompleted')\">3</span>\n  </td>\n    <td>\n      <hr class=\"hrLine\">\n    </td>\n    <td class=\"{{progressStyleFour}} text-center\">\n    <i *ngIf=\"(progressStyleFour == 'progressCompleted')\" class=\"fa fa-check tickSign\"></i>\n    <span *ngIf=\"!(progressStyleFour == 'progressCompleted')\">4</span>\n  </td>\n    <td>\n      <hr class=\"hrLine\">\n    </td>\n    <td class=\"{{progressStyleFive}} text-center\">\n    <i *ngIf=\"(progressStyleFive == 'progressCompleted')\" class=\"fa fa-check tickSign\"></i>\n    <span *ngIf=\"!(progressStyleFive == 'progressCompleted')\">5</span>\n  </td>\n  </tr>\n</table>\n<table class=\"col-sm-12 text-center\">\n<tr id=\"txt\" class=\"pt-3\">\n\t<td class=\"{{customHeadingOneClass}} progressTitle\">\n\t\t{{headingOne}}\n\t</td>\n\t<td class=\"{{customHeadingTwoClass}} progressTitle\">\n\t\t{{headingTwo}}\n\t</td>\n\t<td class=\"{{customHeadingThreeClass}} progressTitle \">\n\t{{headingThree}}\n\t</td>\n\t<td class=\"{{customHeadingFourClass}} progressTitle\">\n\t{{headingFour}}\n\t</td>\n\t<td class=\"{{customHeadingFiveClass}} progressTitle\">\n\t{{headingFive}}\n\t</td>\n</tr>\n</table>",
-                    styles: [".Progresscircle{width:50px;height:50px;color:#fff;background:#031103;border-radius:50%}.progressActive{width:50px!important;height:50px;color:#fff;background:var(--main-color);border-radius:50%!important;font-family:Poppins-Regular}.progressUpcoming{width:50px!important;height:50px!important;color:#fff;background:#757575;border-radius:50%!important;font-family:Poppins-Regular}.PRODUCT-1{width:90px;height:24px;font-family:Poppins;font-size:17px;font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.2px;color:#b6b6b6}.progressCompleted{width:50px!important;height:50px!important;color:#fff;background-color:#1c1c1c;border-radius:50%!important;font-family:Poppins-Regular}.progressTitle{font-family:EncodeSans;font-size:12px;font-weight:500;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.4px;text-align:center;color:#b6b6b6}.progress-bar-active{font-family:EncodeSans;font-size:12px;font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.4px;text-align:center;color:var(--black)}.circleP{width:50px!important;height:50px!important;background:gray;border-radius:50%!important}.tableMar{margin-top:1%;margin-bottom:4%}.tickSign{color:#d8fc40}tr#txt td{width:20%}.starChecked{color:#686868!important}.card-line-bg{background-color:#fff;box-shadow:0 2px 4px 0 rgba(0,0,0,.05)}.card-line-img{border:1px solid #e3dbdb36!important;box-shadow:0 2px 4px 0 rgba(0,0,0,.06)}.border-top-box{border-top:1px solid #dee2e670!important}"]
+                    template: "<table class=\"col-sm-10 offset-sm-1\">\n  <tr class=\"pt-3\">\n    <td class=\"{{progressStyleOne}} text-center\" id=\"{{progressBarIconId?.IconOneId}}\">\n      <i *ngIf=\"(progressStyleOne == 'progressCompleted')\" class=\"fa fa-check tickSign\"></i>\n      <span *ngIf=\"!(progressStyleOne == 'progressCompleted')\">1</span>\n    </td>\n    <td>\n      <hr class=\"hrLine\">\n    </td>\n    <td class=\"{{progressStyleTwo}} text-center\" id=\"{{progressBarIconId?.IconTwoId}}\">\n      <i *ngIf=\"(progressStyleTwo == 'progressCompleted')\" class=\"fa fa-check tickSign\"></i>\n      <span *ngIf=\"!(progressStyleTwo == 'progressCompleted')\">2</span>\n    </td>\n    <td>\n      <hr class=\"hrLine\">\n    </td>\n    <td class=\"{{progressStyleThree}} text-center\" id=\"{{progressBarIconId?.IconThreeId}}\">\n      <i *ngIf=\"(progressStyleThree == 'progressCompleted')\" class=\"fa fa-check tickSign\"></i>\n      <span *ngIf=\"!(progressStyleThree == 'progressCompleted')\">3</span>\n    </td>\n    <td>\n      <hr class=\"hrLine\">\n    </td>\n    <td class=\"{{progressStyleFour}} text-center\" id=\"{{progressBarIconId?.IconFourId}}\">\n      <i *ngIf=\"(progressStyleFour == 'progressCompleted')\" class=\"fa fa-check tickSign\"></i>\n      <span *ngIf=\"!(progressStyleFour == 'progressCompleted')\">4</span>\n    </td>\n    <td>\n      <hr class=\"hrLine\">\n    </td>\n    <td class=\"{{progressStyleFive}} text-center\" id=\"{{progressBarIconId?.IconFiveId}}\">\n      <i *ngIf=\"(progressStyleFive == 'progressCompleted')\" class=\"fa fa-check tickSign\"></i>\n      <span *ngIf=\"!(progressStyleFive == 'progressCompleted')\">5</span>\n    </td>\n  </tr>\n</table>\n<table class=\"col-sm-12 text-center\">\n  <tr id=\"txt\" class=\"pt-3\">\n    <td class=\"progressTitle\" id=\"{{progressBarTitleId?.labelOneId}}\">\n      <span class=\"pl-4 {{customHeadingOneClass}}\">{{headingOne}}</span>\n    </td>\n    <td class=\"progressTitle\" id=\"{{progressBarTitleId?.labelTwoId}}\">\n      <span class=\"{{customHeadingTwoClass}} pl-4\">{{headingTwo}}</span>\n    </td>\n    <td class=\"progressTitle\" id=\"{{progressBarTitleId?.labelThreeId}}\">\n      <span class=\"{{customHeadingThreeClass}}\">{{headingThree}}</span>\n    </td>\n    <td class=\"progressTitle\" id=\"{{progressBarTitleId?.labelFourId}}\">\n      <span class=\"pr-3 {{customHeadingFourClass}}\">{{headingFour}}</span>\n    </td>\n    <td class=\"progressTitle\" id=\"{{progressBarTitleId?.labelFiveId}}\">\n      <span class=\"pr-4 {{customHeadingFiveClass}}\">{{headingFive}}</span>\n    </td>\n  </tr>\n</table>",
+                    styles: [".Progresscircle{width:50px;height:50px;color:#fff;background:#031103;border-radius:50%}.progressActive{width:50px!important;height:50px;color:#fff;background:var(--main-color);border-radius:50%!important;font-family:Poppins,sans-serif!important}.progressUpcoming{width:50px!important;height:50px!important;color:#fff;background:#757575;border-radius:50%!important;font-family:Poppins,sans-serif!important}.PRODUCT-1{width:90px;height:24px;font-family:Poppins,sans-serif!important;font-size:17px;font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.2px;color:#b6b6b6}.progressCompleted{width:50px!important;height:50px!important;color:#fff;background-color:#1c1c1c;border-radius:50%!important;font-family:Poppins,sans-serif!important}.progressTitle{font-family:'Encode Sans',sans-serif!important;font-size:12px;font-weight:500;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.4px;text-align:center;color:#b6b6b6}.progress-bar-active{font-family:'Encode Sans',sans-serif!important;font-size:12px;font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.4px;text-align:center;color:var(--black)}.circleP{background-color:gray;width:50px!important;height:50px!important;border-radius:50%!important}.tableMar{margin-top:1%;margin-bottom:4%}.tickSign{color:#d8fc40}tr#txt td{width:20%}.starChecked{color:#686868!important}.card-line-bg{background-color:#fff;box-shadow:0 2px 4px 0 rgba(0,0,0,.05)}.card-line-img{border:1px solid #e3dbdb36!important;box-shadow:0 2px 4px 0 rgba(0,0,0,.06)}.border-top-box{border-top:1px solid #dee2e670!important}.text-bold{color:#000!important;font-weight:700!important;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.4px;text-align:center}"]
                 }] }
     ];
     /** @nocollapse */
     SukuProgressBarComponent.ctorParameters = function () { return []; };
     SukuProgressBarComponent.propDecorators = {
-        progressStyleOne: [{ type: Input, args: ['progress-style-one',] }],
-        progressStyleTwo: [{ type: Input, args: ['progress-style-two',] }],
-        progressStyleThree: [{ type: Input, args: ['progress-style-three',] }],
-        progressStyleFour: [{ type: Input, args: ['progress-style-four',] }],
-        progressStyleFive: [{ type: Input, args: ['progress-style-five',] }],
+        progressStyleOne: [{ type: Input }],
+        progressStyleTwo: [{ type: Input }],
+        progressStyleThree: [{ type: Input }],
+        progressStyleFour: [{ type: Input }],
+        progressStyleFive: [{ type: Input }],
         headingOne: [{ type: Input }],
         headingTwo: [{ type: Input }],
         headingThree: [{ type: Input }],
@@ -1084,7 +1097,8 @@ var SukuProgressBarComponent = /** @class */ (function () {
         customHeadingThreeClass: [{ type: Input, args: ['custom-heading-three-class',] }],
         customHeadingFourClass: [{ type: Input, args: ['custom-heading-four-class',] }],
         customHeadingFiveClass: [{ type: Input, args: ['custom-heading-five-class',] }],
-        max: [{ type: Input }]
+        progressBarIconId: [{ type: Input }],
+        progressBarTitleId: [{ type: Input }]
     };
     return SukuProgressBarComponent;
 }());
@@ -4593,6 +4607,12 @@ var SukuDropdownComponent = /** @class */ (function () {
         this.control = 'productTraceability';
         this.data = [];
         this.icon = '../assets/images/arrow-icon.png';
+        this.keyValue = 'productName';
+        this.displayKey = 'productName';
+        this.placeholder = 'select product from this listing';
+        this.selectId = 'sttProductTraceability';
+        this.errorMsg = 'Cannot be blank';
+        this.customSelectClass = '';
         this.select = new EventEmitter();
     }
     /**
@@ -4602,10 +4622,22 @@ var SukuDropdownComponent = /** @class */ (function () {
      * @return {?}
      */
     function () { };
+    /**
+     * @param {?} field
+     * @return {?}
+     */
+    SukuDropdownComponent.prototype.isFieldValid = /**
+     * @param {?} field
+     * @return {?}
+     */
+    function (field) {
+        return ((!this.form.get(field).valid && this.form.get(field).touched) ||
+            (this.form.get(field).untouched && this.formSumitAttempt));
+    };
     SukuDropdownComponent.decorators = [
         { type: Component, args: [{
                     selector: 'suku-dropdown',
-                    template: "<span [formGroup]=\"form\">\n<mat-form-field class=\"col p-0\">\n  <mat-select id=\"sttProductTraceability\" formControlName=\"{{control}}\" (selectionChange)=\"select.emit()\"\n    placeholder=\"select product from this listing\">\n    <mat-option *ngFor=\"let item of data\" value=\"{{item?.productName}}\" id=\"sttProductTraceabilityPn\">\n      {{item?.productName}}\n    </mat-option>\n  </mat-select>\n  <span matSuffix>\n    <mat-icon><span><img height=\"23\" [src]=\"icon\" width=\"20\"></span></mat-icon>\n  </span>\n</mat-form-field>\n</span>",
+                    template: "<span [formGroup]=\"form\">\n  <mat-form-field class=\"col p-0\">\n    <mat-select id=\"{{selectId}}\" [class]=\"customSelectClass\" #selector formControlName=\"{{control}}\"\n      (selectionChange)=\"select.emit(selector.value)\" [placeholder]=\"placeholder\">\n      <mat-option *ngFor=\"let item of data;let i=index\" value=\"{{item[keyValue]}}\" id=\"option{{i}}\">\n        {{item[displayKey]}}\n      </mat-option>\n    </mat-select>\n    <span matSuffix>\n      <mat-icon><span><img height=\"23\" [src]=\"icon\" width=\"20\"></span></mat-icon>\n    </span>\n    <!-- *ngIf=\"isFieldValid(control)\" -->\n    <mat-error>\n      <span class=\"err_style\">\n        <span *ngIf=\"form.hasError('required',[control])\" id=\"countryReq\">{{errorMsg}}\n        </span>\n      </span>\n    </mat-error>\n  </mat-form-field>\n</span>",
                     styles: [""]
                 }] }
     ];
@@ -4616,6 +4648,13 @@ var SukuDropdownComponent = /** @class */ (function () {
         control: [{ type: Input }],
         data: [{ type: Input }],
         icon: [{ type: Input }],
+        keyValue: [{ type: Input }],
+        displayKey: [{ type: Input }],
+        placeholder: [{ type: Input }],
+        formSumitAttempt: [{ type: Input }],
+        selectId: [{ type: Input }],
+        errorMsg: [{ type: Input }],
+        customSelectClass: [{ type: Input }],
         select: [{ type: Output }]
     };
     return SukuDropdownComponent;
