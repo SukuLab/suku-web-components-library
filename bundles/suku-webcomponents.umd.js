@@ -4779,6 +4779,53 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
+    var SukuShippingInfoWidgetComponent = /** @class */ (function () {
+        function SukuShippingInfoWidgetComponent() {
+            this.widgetTitle = 'Shipping Information';
+            this.firstName = '';
+            this.secondName = '';
+            this.addressOne = '';
+            this.addressTwo = '';
+            this.city = '';
+            this.state = '';
+            this.zip = '';
+            this.country = '';
+        }
+        /**
+         * @return {?}
+         */
+        SukuShippingInfoWidgetComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+            function () {
+            };
+        SukuShippingInfoWidgetComponent.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'suku-shipping-info-widget',
+                        template: "<div class=\"paddingbottom48\">{{widgetTitle}} </div>\n<div class=\"article mb-4\">\n  <div class=\"col-sm-12 col-xs-12  borderTop border borderLeft\">\n    <div class=\"col-sm-11 col-xs-12 marginBottom22\">\n      <div class=\"font_weight paddingTop15\">\n        <!-- {{shippingAddress}} -->\n        <p class=\"bidderAdd mb-1\"><span>{{firstName || 'no data'}}</span>\n          <span class=\"ml-2\">{{secondName}}</span></p>\n        <p class=\"bidderAdd mb-1\">{{addressOne}}</p>\n        <p class=\"bidderAdd mb-1\">{{addressTwo}}</p>\n        <p class=\"bidderAdd mb-1\"><span>{{city}}</span><span\n            class=\"ml-2\">{{state}}</span><span class=\"ml-2\">\n            {{zip}}</span></p>\n        <p class=\"bidderAdd mb-1\">{{country}}</p>\n      </div>\n    </div>\n  </div>\n</div>",
+                        styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);.article{width:40.6%;float:left;margin:0 8.4% 50px 0}.paddingbottom48{padding-bottom:9px;padding-left:48px}.paddingTop15{padding-top:15px}.marginBottom22{margin-bottom:22px}.bidderAdd{font-family:Poppins,sans-serif!important;font-size:15px;font-weight:400;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.4px;color:#020202d9;margin-bottom:1px;text-transform:capitalize}"]
+                    }] }
+        ];
+        /** @nocollapse */
+        SukuShippingInfoWidgetComponent.ctorParameters = function () { return []; };
+        SukuShippingInfoWidgetComponent.propDecorators = {
+            widgetTitle: [{ type: i0.Input }],
+            firstName: [{ type: i0.Input }],
+            secondName: [{ type: i0.Input }],
+            addressOne: [{ type: i0.Input }],
+            addressTwo: [{ type: i0.Input }],
+            city: [{ type: i0.Input }],
+            state: [{ type: i0.Input }],
+            zip: [{ type: i0.Input }],
+            country: [{ type: i0.Input }]
+        };
+        return SukuShippingInfoWidgetComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
     var SukuWebcomponentsModule = /** @class */ (function () {
         function SukuWebcomponentsModule() {
         }
@@ -4842,7 +4889,8 @@
                             SukuRadioButtonComponent,
                             SukuDropdownComponent,
                             SukuHeaderComponent,
-                            SukuTitleHeaderComponent
+                            SukuTitleHeaderComponent,
+                            SukuShippingInfoWidgetComponent
                         ],
                         imports: [
                             common.CommonModule,
@@ -4943,7 +4991,8 @@
                             SukuRadioButtonComponent,
                             SukuDropdownComponent,
                             SukuHeaderComponent,
-                            SukuTitleHeaderComponent
+                            SukuTitleHeaderComponent,
+                            SukuShippingInfoWidgetComponent
                         ]
                     },] }
         ];
@@ -5011,6 +5060,7 @@
     exports.ɵx = SukuSearchInputComponent;
     exports.ɵo = SukuSecondaryButtonComponent;
     exports.ɵs = SukuSelectInputComponent;
+    exports.ɵcg = SukuShippingInfoWidgetComponent;
     exports.ɵbg = SukuShippingWidgetComponent;
     exports.ɵcb = SukuSocialIconsComponent;
     exports.ɵz = SukuStarBadgeComponent;

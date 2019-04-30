@@ -51,6 +51,7 @@ export { SukuResponseComponent as ɵbh } from './lib/suku-response/suku-response
 export { SukuSearchInputComponent as ɵx } from './lib/suku-search-input/suku-search-input.component';
 export { SukuSecondaryButtonComponent as ɵo } from './lib/suku-secondary-button/suku-secondary-button.component';
 export { SukuSelectInputComponent as ɵs } from './lib/suku-select-input/suku-select-input.component';
+export { SukuShippingInfoWidgetComponent as ɵcg } from './lib/suku-shipping-info-widget/suku-shipping-info-widget.component';
 export { SukuShippingWidgetComponent as ɵbg } from './lib/suku-shipping-widget/suku-shipping-widget.component';
 export { SukuSocialIconsComponent as ɵcb } from './lib/suku-social-icons/suku-social-icons.component';
 export { SukuStarBadgeComponent as ɵz } from './lib/suku-star-badge/suku-star-badge.component';
