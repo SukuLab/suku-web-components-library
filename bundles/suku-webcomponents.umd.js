@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('@angular/router'), require('d3'), require('@angular/material'), require('@angular/forms'), require('@angular/core'), require('ngx-countdown-timer')) :
-    typeof define === 'function' && define.amd ? define('suku-webcomponents', ['exports', '@angular/common', '@angular/router', 'd3', '@angular/material', '@angular/forms', '@angular/core', 'ngx-countdown-timer'], factory) :
-    (factory((global['suku-webcomponents'] = {}),global.ng.common,global.ng.router,global.d3,global.ng.material,global.ng.forms,global.ng.core,global.ngxCountdownTimer));
-}(this, (function (exports,common,router,d3,material,forms,i0,ngxCountdownTimer) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('@angular/router'), require('d3'), require('@angular/material'), require('@angular/forms'), require('ngx-countdown-timer'), require('@angular/core')) :
+    typeof define === 'function' && define.amd ? define('suku-webcomponents', ['exports', '@angular/common', '@angular/router', 'd3', '@angular/material', '@angular/forms', 'ngx-countdown-timer', '@angular/core'], factory) :
+    (factory((global['suku-webcomponents'] = {}),global.ng.common,global.ng.router,global.d3,global.ng.material,global.ng.forms,global.ngxCountdownTimer,global.ng.core));
+}(this, (function (exports,common,router,d3,material,forms,ngxCountdownTimer,i0) { 'use strict';
 
     /**
      * @fileoverview added by tsickle
@@ -4742,6 +4742,43 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
+    var SukuTitleHeaderComponent = /** @class */ (function () {
+        function SukuTitleHeaderComponent() {
+            this.titleOne = 'LISTING NAME';
+            this.titleOneCustomClass = 'pop';
+        }
+        /**
+         * @return {?}
+         */
+        SukuTitleHeaderComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+            function () {
+            };
+        SukuTitleHeaderComponent.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'suku-title-header',
+                        template: "<div class=\"product-boxContent\">\n    <div class=\"col pl-0 pt-3 pb-3\">\n      <div class=\"row\">\n        <div class=\"col\">\n          <h1 [style.font-size.px]=\"titleOneSize\" [class]=\"titleOneCustomClass\" [style.font-weight]=\"titleOneWeight\"\n            [style.color]=\"titleOneColor\" id=\"{{titleOneId}}\">{{titleOne}}</h1>\n        </div>\n      </div>\n    </div>\n  </div>",
+                        styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);.product-boxContent{width:100%;float:left;background:#2f2e2e;border-left:5px solid #a7bf2e;border-radius:0 40px 0 0;box-shadow:-4px 4px 5px 0 rgba(0,0,0,.08);padding:10px 5px 0 15px;margin:0}h1{color:#fafaf8;font-size:17px}.c-pointer{cursor:pointer;text-transform:capitalize}.c-pointer:hover{color:#fff;text-decoration:underline}.RectangleBorder{background-color:#fff;box-shadow:-4px 4px 5px 0 rgba(0,0,0,.08);border-radius:0;margin-top:63px!important;padding-right:20px;padding-left:20px}.productName{color:#7f7e7e;font-size:13px}.pop{font-family:Poppins,sans-serif!important;font-weight:600;font-size:20px;text-transform:uppercase}"]
+                    }] }
+        ];
+        /** @nocollapse */
+        SukuTitleHeaderComponent.ctorParameters = function () { return []; };
+        SukuTitleHeaderComponent.propDecorators = {
+            titleOne: [{ type: i0.Input }],
+            titleOneId: [{ type: i0.Input }],
+            titleOneSize: [{ type: i0.Input }],
+            titleOneColor: [{ type: i0.Input }],
+            titleOneWeight: [{ type: i0.Input }],
+            titleOneCustomClass: [{ type: i0.Input }]
+        };
+        return SukuTitleHeaderComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
     var SukuWebcomponentsModule = /** @class */ (function () {
         function SukuWebcomponentsModule() {
         }
@@ -4804,7 +4841,8 @@
                             SukuSocialIconsComponent,
                             SukuRadioButtonComponent,
                             SukuDropdownComponent,
-                            SukuHeaderComponent
+                            SukuHeaderComponent,
+                            SukuTitleHeaderComponent
                         ],
                         imports: [
                             common.CommonModule,
@@ -4904,7 +4942,8 @@
                             SukuSocialIconsComponent,
                             SukuRadioButtonComponent,
                             SukuDropdownComponent,
-                            SukuHeaderComponent
+                            SukuHeaderComponent,
+                            SukuTitleHeaderComponent
                         ]
                     },] }
         ];
@@ -4977,6 +5016,7 @@
     exports.ɵz = SukuStarBadgeComponent;
     exports.ɵp = SukuSubHeadingComponent;
     exports.ɵbr = SukuTermsAndConditionsComponent;
+    exports.ɵcf = SukuTitleHeaderComponent;
     exports.ɵbb = SukuTrackProgressBarComponent;
     exports.ɵbj = SukuTransactionHistoryComponent;
     exports.ɵbd = SukuTreeComponent;

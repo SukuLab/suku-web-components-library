@@ -3,8 +3,8 @@ import { RouterModule } from '@angular/router';
 import { layout, select } from 'd3';
 import { MatSnackBar, MatAutocompleteModule, MatBadgeModule, MatBottomSheetModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule, MatDividerModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatSortModule, MatStepperModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Injectable, Component, Input, Output, EventEmitter, ViewEncapsulation, ChangeDetectionStrategy, NgModule, defineInjectable } from '@angular/core';
 import { CountdownTimerModule } from 'ngx-countdown-timer';
+import { Injectable, Component, Input, Output, EventEmitter, ViewEncapsulation, ChangeDetectionStrategy, NgModule, defineInjectable } from '@angular/core';
 
 /**
  * @fileoverview added by tsickle
@@ -4784,6 +4784,43 @@ var SukuHeaderComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+var SukuTitleHeaderComponent = /** @class */ (function () {
+    function SukuTitleHeaderComponent() {
+        this.titleOne = 'LISTING NAME';
+        this.titleOneCustomClass = 'pop';
+    }
+    /**
+     * @return {?}
+     */
+    SukuTitleHeaderComponent.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () {
+    };
+    SukuTitleHeaderComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'suku-title-header',
+                    template: "<div class=\"product-boxContent\">\n    <div class=\"col pl-0 pt-3 pb-3\">\n      <div class=\"row\">\n        <div class=\"col\">\n          <h1 [style.font-size.px]=\"titleOneSize\" [class]=\"titleOneCustomClass\" [style.font-weight]=\"titleOneWeight\"\n            [style.color]=\"titleOneColor\" id=\"{{titleOneId}}\">{{titleOne}}</h1>\n        </div>\n      </div>\n    </div>\n  </div>",
+                    styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);.product-boxContent{width:100%;float:left;background:#2f2e2e;border-left:5px solid #a7bf2e;border-radius:0 40px 0 0;box-shadow:-4px 4px 5px 0 rgba(0,0,0,.08);padding:10px 5px 0 15px;margin:0}h1{color:#fafaf8;font-size:17px}.c-pointer{cursor:pointer;text-transform:capitalize}.c-pointer:hover{color:#fff;text-decoration:underline}.RectangleBorder{background-color:#fff;box-shadow:-4px 4px 5px 0 rgba(0,0,0,.08);border-radius:0;margin-top:63px!important;padding-right:20px;padding-left:20px}.productName{color:#7f7e7e;font-size:13px}.pop{font-family:Poppins,sans-serif!important;font-weight:600;font-size:20px;text-transform:uppercase}"]
+                }] }
+    ];
+    /** @nocollapse */
+    SukuTitleHeaderComponent.ctorParameters = function () { return []; };
+    SukuTitleHeaderComponent.propDecorators = {
+        titleOne: [{ type: Input }],
+        titleOneId: [{ type: Input }],
+        titleOneSize: [{ type: Input }],
+        titleOneColor: [{ type: Input }],
+        titleOneWeight: [{ type: Input }],
+        titleOneCustomClass: [{ type: Input }]
+    };
+    return SukuTitleHeaderComponent;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var SukuWebcomponentsModule = /** @class */ (function () {
     function SukuWebcomponentsModule() {
     }
@@ -4846,7 +4883,8 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         SukuSocialIconsComponent,
                         SukuRadioButtonComponent,
                         SukuDropdownComponent,
-                        SukuHeaderComponent
+                        SukuHeaderComponent,
+                        SukuTitleHeaderComponent
                     ],
                     imports: [
                         CommonModule,
@@ -4946,7 +4984,8 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         SukuSocialIconsComponent,
                         SukuRadioButtonComponent,
                         SukuDropdownComponent,
-                        SukuHeaderComponent
+                        SukuHeaderComponent,
+                        SukuTitleHeaderComponent
                     ]
                 },] }
     ];
@@ -4963,6 +5002,6 @@ var SukuWebcomponentsModule = /** @class */ (function () {
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { SukuWebcomponentsService, SukuWebcomponentsModule, SukuACHSettingsComponent as ɵbi, SukuAddIconComponent as ɵbw, SukuAddWidgetComponent as ɵr, SukuAddressWidgetComponent as ɵw, SukuBeneficialOwnerComponent as ɵbm, SukuBidInfoComponent as ɵu, SukuBidTagComponent as ɵa, SukuCardLineTypeOneComponent as ɵbs, SukuCardLineTypeTwoComponent as ɵbt, SukuCardLineComponent as ɵb, SukuCardTitleComponent as ɵbe, SukuCreateCustomerComponent as ɵbl, SukuCreationCustomerFileuploadComponent as ɵbp, SukuDashboardProfileComponent as ɵc, SukuDefaultButtonComponent as ɵd, SukuDropdownComponent as ɵcd, SukuDwollaFundingAgreementComponent as ɵbn, SukuDwollaFundingSourceComponent as ɵbo, SukuFiltersComponent as ɵba, SukuFundingSourceComponent as ɵbk, SukuHeaderComponent as ɵce, SukuHeadingComponent as ɵe, SukuHomeItalicHeadingComponent as ɵf, SukuHomeWidgetComponent as ɵg, SukuHomepageButtonComponent as ɵbz, SukuHomepageSectionComponent as ɵby, SukuHomepageComponent as ɵbx, SukuInfoButtonComponent as ɵh, SukuInlineDropdownComponent as ɵi, SukuLinkComponent as ɵq, SukuMailWidgetComponent as ɵj, SukuMatchChipComponent as ɵk, SukuNavSubmenuComponent as ɵt, SukuNotificationPanelComponent as ɵbv, SukuNotificationWidgetComponent as ɵl, SukuPaymentPortalHelpComponent as ɵbq, SukuPhoneWidgetComponent as ɵv, SukuPrimaryButtonComponent as ɵm, SukuProductTraceWidgetComponent as ɵbc, SukuProfileHeaderComponent as ɵca, SukuProfileWidgetComponent as ɵy, SukuProgressBarComponent as ɵn, SukuRadioButtonComponent as ɵcc, SukuRatingCardLineComponent as ɵbu, SukuRatingStarComponent as ɵbf, SukuResponseComponent as ɵbh, SukuSearchInputComponent as ɵx, SukuSecondaryButtonComponent as ɵo, SukuSelectInputComponent as ɵs, SukuShippingWidgetComponent as ɵbg, SukuSocialIconsComponent as ɵcb, SukuStarBadgeComponent as ɵz, SukuSubHeadingComponent as ɵp, SukuTermsAndConditionsComponent as ɵbr, SukuTrackProgressBarComponent as ɵbb, SukuTransactionHistoryComponent as ɵbj, SukuTreeComponent as ɵbd };
+export { SukuWebcomponentsService, SukuWebcomponentsModule, SukuACHSettingsComponent as ɵbi, SukuAddIconComponent as ɵbw, SukuAddWidgetComponent as ɵr, SukuAddressWidgetComponent as ɵw, SukuBeneficialOwnerComponent as ɵbm, SukuBidInfoComponent as ɵu, SukuBidTagComponent as ɵa, SukuCardLineTypeOneComponent as ɵbs, SukuCardLineTypeTwoComponent as ɵbt, SukuCardLineComponent as ɵb, SukuCardTitleComponent as ɵbe, SukuCreateCustomerComponent as ɵbl, SukuCreationCustomerFileuploadComponent as ɵbp, SukuDashboardProfileComponent as ɵc, SukuDefaultButtonComponent as ɵd, SukuDropdownComponent as ɵcd, SukuDwollaFundingAgreementComponent as ɵbn, SukuDwollaFundingSourceComponent as ɵbo, SukuFiltersComponent as ɵba, SukuFundingSourceComponent as ɵbk, SukuHeaderComponent as ɵce, SukuHeadingComponent as ɵe, SukuHomeItalicHeadingComponent as ɵf, SukuHomeWidgetComponent as ɵg, SukuHomepageButtonComponent as ɵbz, SukuHomepageSectionComponent as ɵby, SukuHomepageComponent as ɵbx, SukuInfoButtonComponent as ɵh, SukuInlineDropdownComponent as ɵi, SukuLinkComponent as ɵq, SukuMailWidgetComponent as ɵj, SukuMatchChipComponent as ɵk, SukuNavSubmenuComponent as ɵt, SukuNotificationPanelComponent as ɵbv, SukuNotificationWidgetComponent as ɵl, SukuPaymentPortalHelpComponent as ɵbq, SukuPhoneWidgetComponent as ɵv, SukuPrimaryButtonComponent as ɵm, SukuProductTraceWidgetComponent as ɵbc, SukuProfileHeaderComponent as ɵca, SukuProfileWidgetComponent as ɵy, SukuProgressBarComponent as ɵn, SukuRadioButtonComponent as ɵcc, SukuRatingCardLineComponent as ɵbu, SukuRatingStarComponent as ɵbf, SukuResponseComponent as ɵbh, SukuSearchInputComponent as ɵx, SukuSecondaryButtonComponent as ɵo, SukuSelectInputComponent as ɵs, SukuShippingWidgetComponent as ɵbg, SukuSocialIconsComponent as ɵcb, SukuStarBadgeComponent as ɵz, SukuSubHeadingComponent as ɵp, SukuTermsAndConditionsComponent as ɵbr, SukuTitleHeaderComponent as ɵcf, SukuTrackProgressBarComponent as ɵbb, SukuTransactionHistoryComponent as ɵbj, SukuTreeComponent as ɵbd };
 
 //# sourceMappingURL=suku-webcomponents.js.map
