@@ -1,25 +1,22 @@
 import { OnInit } from '@angular/core';
-export declare class SukuProgressBarComponent implements OnInit {
+export declare class SukuProgressBarTypeTwoComponent implements OnInit {
     progressStyleOne: string;
     progressStyleTwo: string;
     progressStyleThree: string;
     progressStyleFour: string;
     progressStyleFive: string;
-    headingOne: string;
-    headingTwo: string;
-    headingThree: string;
-    headingFour: string;
-    headingFive: string;
-    headingOneId: string;
-    headingTwoId: string;
-    headingThreeId: string;
-    headingFourId: string;
-    headingFiveId: string;
     customHeadingOneClass: string;
     customHeadingTwoClass: string;
     customHeadingThreeClass: string;
     customHeadingFourClass: string;
     customHeadingFiveClass: string;
+    progressBarLabels: {
+        labelOne: string;
+        labelTwo: string;
+        labelThree: string;
+        labelFour: string;
+        labelFive: string;
+    };
     progressBarIconId: {
         IconOneId: string;
         IconTwoId: string;
