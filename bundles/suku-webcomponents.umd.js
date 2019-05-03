@@ -4899,7 +4899,7 @@
             { type: i0.Component, args: [{
                         selector: 'suku-image-widget',
                         template: "<div class=\"product-img\">\n    <img src=\"{{imageSrc}}\"\n      class=\"ImgRes imgBorder rounded-0\" alt=\"product-01\" />\n  </div>",
-                        styles: [".product-img{max-width:256px;height:auto;float:left;text-align:center;line-height:172px;position:relative;margin:16px -255px -212px 35px;z-index:10}.ImgRes{max-width:100%;max-height:158px}.imgBorder{border:1px solid #f2f2f2!important}"]
+                        styles: [".product-img{width:auto;max-width:256px;max-height:158px;height:auto;float:left;text-align:center;line-height:172px;position:relative;z-index:10}.ImgRes{max-width:100%;max-height:158px}.imgBorder{border:1px solid #f2f2f2!important}"]
                     }] }
         ];
         /** @nocollapse */
