@@ -29,6 +29,7 @@ export { SukuHomeWidgetComponent as ɵg } from './lib/suku-home-widget/suku-home
 export { SukuHomepageButtonComponent as ɵca } from './lib/suku-homepage-button/suku-homepage-button.component';
 export { SukuHomepageSectionComponent as ɵbz } from './lib/suku-homepage-section/suku-homepage-section.component';
 export { SukuHomepageComponent as ɵby } from './lib/suku-homepage/suku-homepage.component';
+export { SukuImageWidgetComponent as ɵci } from './lib/suku-image-widget/suku-image-widget.component';
 export { SukuInfoButtonComponent as ɵh } from './lib/suku-info-button/suku-info-button.component';
 export { SukuInlineDropdownComponent as ɵi } from './lib/suku-inline-dropdown/suku-inline-dropdown.component';
 export { SukuLinkComponent as ɵr } from './lib/suku-link/suku-link.component';
