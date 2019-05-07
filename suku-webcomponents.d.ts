@@ -13,6 +13,7 @@ export { SukuCardLineTypeOneComponent as ɵbt } from './lib/suku-card-line-type-
 export { SukuCardLineTypeTwoComponent as ɵbu } from './lib/suku-card-line-type-two/suku-card-line.component';
 export { SukuCardLineComponent as ɵb } from './lib/suku-card-line/suku-card-line.component';
 export { SukuCardTitleComponent as ɵbf } from './lib/suku-card-title/suku-card-title.component';
+export { SukuChatWidgetComponent as ɵcj } from './lib/suku-chat-widget/suku-chat-widget.component';
 export { SukuCreateCustomerComponent as ɵbm } from './lib/suku-create-customer/suku-create-customer.component';
 export { SukuCreationCustomerFileuploadComponent as ɵbq } from './lib/suku-creation-customer-fileupload/suku-creation-customer-fileupload.component';
 export { SukuDashboardProfileComponent as ɵc } from './lib/suku-dashboard-profile/suku-dashboard-profile.component';
