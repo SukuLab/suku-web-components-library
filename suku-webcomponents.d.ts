@@ -13,6 +13,7 @@ export { SukuCardLineTypeOneComponent as ɵbt } from './lib/suku-card-line-type-
 export { SukuCardLineTypeTwoComponent as ɵbu } from './lib/suku-card-line-type-two/suku-card-line.component';
 export { SukuCardLineComponent as ɵb } from './lib/suku-card-line/suku-card-line.component';
 export { SukuCardTitleComponent as ɵbf } from './lib/suku-card-title/suku-card-title.component';
+export { ScrollToBottomDirective as ɵck } from './lib/suku-chat-widget/suku-chat-scroll-directive';
 export { SukuChatWidgetComponent as ɵcj } from './lib/suku-chat-widget/suku-chat-widget.component';
 export { SukuCreateCustomerComponent as ɵbm } from './lib/suku-create-customer/suku-create-customer.component';
 export { SukuCreationCustomerFileuploadComponent as ɵbq } from './lib/suku-creation-customer-fileupload/suku-creation-customer-fileupload.component';
@@ -34,7 +35,7 @@ export { SukuImageWidgetComponent as ɵci } from './lib/suku-image-widget/suku-i
 export { SukuInfoButtonComponent as ɵh } from './lib/suku-info-button/suku-info-button.component';
 export { SukuInlineDropdownComponent as ɵi } from './lib/suku-inline-dropdown/suku-inline-dropdown.component';
 export { SukuLinkComponent as ɵr } from './lib/suku-link/suku-link.component';
-export { SukuLoaderComponent as ɵck } from './lib/suku-loader/suku-loader.component';
+export { SukuLoaderComponent as ɵcl } from './lib/suku-loader/suku-loader.component';
 export { SukuMailWidgetComponent as ɵj } from './lib/suku-mail-widget/suku-mail-widget.component';
 export { SukuMatchChipComponent as ɵk } from './lib/suku-match-chip/suku-match-chip.component';
 export { SukuNavSubmenuComponent as ɵu } from './lib/suku-nav-submenu/suku-nav-submenu.component';

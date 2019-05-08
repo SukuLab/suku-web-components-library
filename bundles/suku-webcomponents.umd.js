@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('@angular/router'), require('d3'), require('@angular/material'), require('@angular/forms'), require('ngx-countdown-timer'), require('@angular/core')) :
-    typeof define === 'function' && define.amd ? define('suku-webcomponents', ['exports', '@angular/common', '@angular/router', 'd3', '@angular/material', '@angular/forms', 'ngx-countdown-timer', '@angular/core'], factory) :
-    (factory((global['suku-webcomponents'] = {}),global.ng.common,global.ng.router,global.d3,global.ng.material,global.ng.forms,global.ngxCountdownTimer,global.ng.core));
-}(this, (function (exports,common,router,d3,material,forms,ngxCountdownTimer,i0) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('@angular/router'), require('d3'), require('@angular/material'), require('@angular/forms'), require('ngx-countdown-timer'), require('events'), require('@angular/core')) :
+    typeof define === 'function' && define.amd ? define('suku-webcomponents', ['exports', '@angular/common', '@angular/router', 'd3', '@angular/material', '@angular/forms', 'ngx-countdown-timer', 'events', '@angular/core'], factory) :
+    (factory((global['suku-webcomponents'] = {}),global.ng.common,global.ng.router,global.d3,global.ng.material,global.ng.forms,global.ngxCountdownTimer,global.events,global.ng.core));
+}(this, (function (exports,common,router,d3,material,forms,ngxCountdownTimer,events,i0) { 'use strict';
 
     /**
      * @fileoverview added by tsickle
@@ -4913,6 +4913,51 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
+    var ScrollToBottomDirective = /** @class */ (function () {
+        function ScrollToBottomDirective(_el) {
+            this._el = _el;
+        }
+        /**
+         * @return {?}
+         */
+        ScrollToBottomDirective.prototype.scrollToBottom = /**
+         * @return {?}
+         */
+            function () {
+                /** @type {?} */
+                var el = this._el.nativeElement;
+                el.scrollTop = Math.max(0, el.scrollHeight - el.offsetHeight);
+            };
+        /**
+         * @return {?}
+         */
+        ScrollToBottomDirective.prototype.scrolling = /**
+         * @return {?}
+         */
+            function () {
+                console.log('scrolling');
+            };
+        ScrollToBottomDirective.decorators = [
+            { type: i0.Directive, args: [{
+                        selector: '[scrollToBottom]'
+                    },] }
+        ];
+        /** @nocollapse */
+        ScrollToBottomDirective.ctorParameters = function () {
+            return [
+                { type: i0.ElementRef }
+            ];
+        };
+        ScrollToBottomDirective.propDecorators = {
+            scrolling: [{ type: i0.HostListener, args: ['scroll',] }]
+        };
+        return ScrollToBottomDirective;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
     var SukuChatWidgetComponent = /** @class */ (function () {
         function SukuChatWidgetComponent() {
             this.chat = {
@@ -4924,6 +4969,8 @@
             this.contentOne = 'Camila';
             this.chatStatus = false;
             this.messageData = [];
+            this.IconSrc = '../assets/images/send-message-icon.png';
+            this.message = new events.EventEmitter();
         }
         /**
          * @return {?}
@@ -4933,6 +4980,23 @@
          */
             function () {
                 this.scrollDown();
+                if (this.messageData) {
+                    this._messageObj = {
+                        message: this.messageData[0].message,
+                        timestamp: this.messageData[0].dateTime,
+                        userId: this.messageData[0].from.userId,
+                        from: {
+                            userId: this.messageData[0].from.userId,
+                            userName: this.messageData[0].from.userName,
+                            userImg: this.messageData[0].from.userImg,
+                        },
+                        to: {
+                            userId: this.messageData[0].to.userId,
+                            userName: this.messageData[0].to.userName,
+                            userImg: this.messageData[0].to.userImg,
+                        }
+                    };
+                }
             };
         /**
          * @return {?}
@@ -4957,22 +5021,29 @@
          */
             function (val) {
                 console.log('test-send', val);
-                this.scrollDown();
+                this._messageObj.message = val;
+                this._messageObj.timestamp = new Date().toLocaleString();
+                this.message.emit(this._messageObj);
+                console.log("messageObj", this._messageObj);
+                this.messageData.push(this._messageObj);
             };
         SukuChatWidgetComponent.decorators = [
             { type: i0.Component, args: [{
                         selector: 'suku-chat-widget',
-                        template: "<div class=\"col p-0\" [ngClass]=\"{'disabled': chatStatus }\">\n  <div class=\"col p-0\">\n    <div class=\"col-sm-12 chat-header p-3\">\n      <div class=\"col p-0\">\n        <div class=\"col p-0\">\n          <div class=\"col-sm-12\">\n            <h1 class=\"title\" id=\"{{chat?.labelOneId}}\">{{chat?.labelOne}}\n            </h1>\n          </div>\n          <div class=\"col-sm-12\">\n            <h2>{{chat?.labelTwo}}<span class=\"pl-lg-2 pop-bold\"\n                id=\"{{chat?.labelTwoId}}\">{{contentOne || 'N/A'}}</span></h2>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"form-group box-shadows col-xs-12 col-sm-12 p-0\">\n      <div id=\"scrollDiv\" class=\"chatBox p-1\">\n        <div class=\"blockChat\" *ngFor=\"let item of messageData; let i=index\">\n          <div class=\"col\">\n            <div class=\"messageStyle mb-2\" [class.rightFloat]=\"item?.to?.userId == item?.from?.userId\">\n              <img [src]=\"((item?.userId == item?.from?.userId)? item?.from?.userImg : item?.to?.userImg)\" alt=\"Avatar\"\n                class=\"user-icon m-1 p-1\"\n                [ngClass]=\"{'order-last align-self-end': item?.userId == item?.from?.userId }\">\n              <span class=\"d-flex\" [class.rightFloat]=\"item?.userId == item?.from?.userId\" class=\"msg-content hoverable\">\n                <div class=\"d-flex\" id=\"messageBlock\" [ngClass]=\"{ 'float-right': item?.to?.userId == item?.from?.userId}\">\n                  <span class=\"mb-0\" id=\"chatMessage{{i}}\">\n                    <p class=\"p-2 mb-0 mt-2 chatMessage\"\n                      [ngClass]=\"{'senderColor': item?.userId == item?.from?.userId, 'receiverColor': item?.userId != item?.from?.userId }\">\n                      {{item?.message}}</p>\n                  </span>\n                </div>\n                <p class=\"timeStamp mb-0\" id=\"timeStamp\">{{item?.timestamp}}</p>\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"col\">\n        <div class=\"row p-3 bg-light\">\n          <div style=\"text-align: center;\" class=\"col-sm-10 pl-1 pr-1\">\n            <input class=\"form-control\" [ngClass]=\"{'disabled': chatStatus }\" autofocus=\"autofocus\" #messageValue\n              type=\"text\" name=\"message \" id=\"message\" placeholder=\"type message here... \"\n              (keyup.enter)=\"sendMessage(messageValue?.value);messageValue.value = ''\">\n          </div>\n          <div class=\"col-sm-2 mx-auto mt-2 f22 fa fa-paper-plane-o c-pointer\" [ngClass]=\"{'disabled': chatStatus }\"\n            (click)=\"sendMessage(messageValue?.value);messageValue.value = ''\">\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>",
-                        styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);.messageStyle{display:flex;width:100%;float:left}.borderChat{height:400.59306px;margin-bottom:25px;border-top:4px solid #a7bf2e;border-bottom:4px solid #a7bf2e}.box-shadows{box-shadow:0 12px 14px 0 rgba(0,0,0,.05);background-color:#fff}.chat-header{background:#2f2e2e;border-left:5px solid #a7bf2e;border-radius:0 40px 0 0;padding:10px 5px 0 15px;margin:0}.title{color:#fafaf8;font-size:28px;font-family:Poppins,sans-serif!important;font-weight:200!important}h1{color:#fafaf8;font-size:20px;font-family:Poppins,sans-serif!important;font-weight:200!important}h2{color:#ccc;font-size:15px;font-family:Poppins,sans-serif!important;font-weight:200;letter-spacing:.15px}.source-title{font-family:Poppins,sans-serif!important;font-weight:700;font-size:15px!important}.pop-bold{font-family:Poppins,sans-serif!important;font-weight:600!important;font-size:16px}.c-pointer{cursor:pointer;text-transform:capitalize}.f22{font-size:22px}.user-icon{vertical-align:middle;width:50px;height:50px;border-radius:50%}.rightFloat{justify-content:flex-end!important}.chatBox{height:300px!important;overflow-x:hidden!important}::-webkit-scrollbar-thumb{background:#726868;border-radius:6px}#scrollDiv::-webkit-scrollbar-track{box-shadow:0 0 0 #726868;border-radius:6px}#scrollDiv::-webkit-scrollbar{width:8px}#scrollDiv::-webkit-scrollbar-thumb{border-radius:6px;box-shadow:0 0 0 #726868}.scrollbar{float:left;height:390px;overflow-y:scroll}.msg-content{font-family:Poppins,sans-serif!important;font-weight:400;font-size:15px}.senderColor{background-color:#a7bf2e!important;border-radius:.8rem;color:#fff;padding-left:.75rem!important;padding-right:.75rem!important}.receiverColor{background-color:#2f2e2e!important;border-radius:.8rem;color:#fff;padding-left:.75rem!important;padding-right:.75rem!important}.form-control:focus{color:#495057;background-color:#fff!important;border-color:none;outline:0;box-shadow:none!important}#timeStamp{color:#716868;font-family:Poppins,sans-serif!important;font-size:12px;padding-left:.75rem;padding-top:.25rem;display:none}#messageBlock{width:80%}#messageBlock:hover+#timeStamp{display:block}"]
+                        template: "<div class=\"col p-0\" [ngClass]=\"{'disabled': chatStatus }\">\n  <div class=\"col p-0\">\n    <div class=\"col-sm-12 chat-header p-3\">\n      <div class=\"col p-0\">\n        <div class=\"col p-0\">\n          <div class=\"col-sm-12\">\n            <h1 class=\"title\" id=\"{{chat?.labelOneId}}\">{{chat?.labelOne}}\n            </h1>\n          </div>\n          <div class=\"col-sm-12\">\n            <h2>{{chat?.labelTwo}}<span class=\"pl-lg-2 pop-bold\"\n                id=\"{{chat?.labelTwoId}}\">{{contentOne || 'N/A'}}</span></h2>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"form-group box-shadows col-xs-12 col-sm-12 p-0\">\n      <div id=\"scrollDiv\" class=\"chatBox p-1\" #scrollMe [scrollTop]=\"scrollMe.scrollHeight\">\n        <div class=\"blockChat\" *ngFor=\"let item of messageData; let i=index\" scrollToBottom>\n          <div class=\"col\" [class.messageContainer]=\"item?.userId == item?.from?.userId\">\n            <div class=\"messageStyle mb-2\" [class.rightFloat]=\"item?.userId == item?.from?.userId\">\n              <img [src]=\"((item?.userId == item?.from?.userId)? item?.from?.userImg : item?.to?.userImg)\" alt=\"Avatar\"\n                class=\"user-icon m-1 p-1\"\n                [ngClass]=\"{'order-last align-self-end': item?.userId == item?.from?.userId }\">\n              <span class=\"d-flex\" [class.rightFloat]=\"item?.userId == item?.from?.userId\"\n                class=\"msg-content hoverable\">\n                <div class=\"d-flex\" [class.rightFloat]=\"item?.userId == item?.from?.userId\" id=\"messageBlock\">\n                  <span class=\"mb-0\" id=\"chatMessage{{i}}\">\n                    <p class=\"p-2 mb-0 mt-2 chatMessage\"\n                      [ngClass]=\"{'senderColor': item?.userId == item?.from?.userId, 'receiverColor': item?.userId != item?.from?.userId }\">\n                      {{item?.message}}</p>\n                  </span>\n                </div>\n                <p class=\"timeStamp mb-0\" id=\"timeStamp\"\n                  [ngClass]=\"{ 'float-right': item?.userId == item?.from?.userId, 'float-left': item?.userId != item?.from?.userId }\">\n                  {{item?.timestamp}}</p>\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"col\">\n        <!-- to scroll down -->\n        <!--  <div class=\"scroll-to-top\" [ngClass]=\"{'show-scrollTop': windowScrolled}\">\n              <button (click)=\"scrollToTop()\">\n                  <i class=\"fa fa-chevron-up\"></i>\n              </button>\n          </div> -->\n        <div class=\"row p-3 bg-light\">\n          <div style=\"text-align: center;\" class=\"col-sm-10 pl-1 pr-1\">\n            <input class=\"form-control\" [ngClass]=\"{'disabled': chatStatus }\" autofocus=\"autofocus\" #messageValue\n              type=\"text\" name=\"message \" id=\"message\" placeholder=\"type message here... \"\n              (keyup.enter)=\"sendMessage(messageValue?.value);messageValue.value = ''\">\n          </div>\n          <div class=\"col-sm-2 mx-auto f22 c-pointer\" [ngClass]=\"{'disabled': chatStatus }\"\n            (click)=\"sendMessage(messageValue?.value);messageValue.value = ''\">\n            <img [src]=\"IconSrc\" alt=\"send-icon\" class=\"rotateIcon\">\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>",
+                        styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);.messageStyle{display:flex;width:100%}.borderChat{height:400.59306px;margin-bottom:25px;border-top:4px solid #a7bf2e;border-bottom:4px solid #a7bf2e}.box-shadows{box-shadow:0 12px 14px 0 rgba(0,0,0,.05);background-color:#fff}.chat-header{background:#2f2e2e;border-left:5px solid #a7bf2e;border-radius:0 40px 0 0;padding:10px 5px 0 15px;margin:0}.title{color:#fafaf8;font-size:28px;font-family:Poppins,sans-serif!important;font-weight:200!important}h1{color:#fafaf8;font-size:20px;font-family:Poppins,sans-serif!important;font-weight:200!important}h2{color:#ccc;font-size:15px;font-family:Poppins,sans-serif!important;font-weight:200;letter-spacing:.15px}.source-title{font-family:Poppins,sans-serif!important;font-weight:700;font-size:15px!important}.pop-bold{font-family:Poppins,sans-serif!important;font-weight:600!important;font-size:16px}.c-pointer{cursor:pointer;text-transform:capitalize}.f22{font-size:22px}.user-icon{vertical-align:middle;width:50px;height:50px;border-radius:50%}.rightFloat{justify-content:flex-end!important}.chatBox{height:300px!important;overflow-x:hidden!important}::-webkit-scrollbar-thumb{background:#726868;border-radius:6px}#scrollDiv::-webkit-scrollbar-track{box-shadow:0 0 0 #726868;border-radius:6px}#scrollDiv::-webkit-scrollbar{width:8px}#scrollDiv::-webkit-scrollbar-thumb{border-radius:6px;box-shadow:0 0 0 #726868}.scrollbar{float:left;height:390px;overflow-y:scroll}.msg-content{font-family:Poppins,sans-serif!important;font-weight:400;font-size:15px}.senderColor{background-color:#a7bf2e!important;border-radius:.8rem;color:#fff;padding-left:.75rem!important;padding-right:.75rem!important;float:right;box-shadow:0 5px 20px -15px rgba(0,0,0,.8)}.receiverColor{background-color:#2f2e2e!important;border-radius:.8rem;color:#fff;padding-left:.75rem!important;padding-right:.75rem!important;float:left;box-shadow:0 5px 20px -15px rgba(0,0,0,.8)}.form-control:focus{color:#495057;background-color:#fff!important;border-color:none;outline:0;box-shadow:none!important}#timeStamp{color:#716868;font-family:Poppins,sans-serif!important;font-size:10px;padding-top:.25rem;display:none;padding-left:.25rem;padding-right:.25rem;opacity:0;transition:.5s ease-in-out}.messageContainer{float:right!important;width:83%}#messageBlock:hover+#timeStamp{display:block;opacity:1}.bg-light{background-color:#f2f2f2!important}.rotateIcon{width:34px;height:34px;-webkit-transform:rotate(90)!important;transform:rotate(90)!important}.scroll-to-top{position:fixed;bottom:15px;right:15px;opacity:0;transition:.2s ease-in-out}.show-scrollTop{opacity:1;transition:.2s ease-in-out}"]
                     }] }
         ];
         /** @nocollapse */
         SukuChatWidgetComponent.ctorParameters = function () { return []; };
         SukuChatWidgetComponent.propDecorators = {
+            scroll: [{ type: i0.ViewChild, args: [ScrollToBottomDirective,] }],
             chat: [{ type: i0.Input }],
             contentOne: [{ type: i0.Input }],
             chatStatus: [{ type: i0.Input }],
-            messageData: [{ type: i0.Input }]
+            messageData: [{ type: i0.Input }],
+            IconSrc: [{ type: i0.Input }],
+            message: [{ type: i0.Output }]
         };
         return SukuChatWidgetComponent;
     }());
@@ -5084,6 +5155,7 @@
                             SukuShippingInfoWidgetComponent,
                             SukuImageWidgetComponent,
                             SukuChatWidgetComponent,
+                            ScrollToBottomDirective,
                             SukuLoaderComponent
                         ],
                         imports: [
@@ -5220,6 +5292,7 @@
     exports.ɵbu = SukuCardLineTypeTwoComponent;
     exports.ɵb = SukuCardLineComponent;
     exports.ɵbf = SukuCardTitleComponent;
+    exports.ɵck = ScrollToBottomDirective;
     exports.ɵcj = SukuChatWidgetComponent;
     exports.ɵbm = SukuCreateCustomerComponent;
     exports.ɵbq = SukuCreationCustomerFileuploadComponent;
@@ -5241,7 +5314,7 @@
     exports.ɵh = SukuInfoButtonComponent;
     exports.ɵi = SukuInlineDropdownComponent;
     exports.ɵr = SukuLinkComponent;
-    exports.ɵck = SukuLoaderComponent;
+    exports.ɵcl = SukuLoaderComponent;
     exports.ɵj = SukuMailWidgetComponent;
     exports.ɵk = SukuMatchChipComponent;
     exports.ɵu = SukuNavSubmenuComponent;
