@@ -4629,6 +4629,37 @@ SukuChatWidgetComponent.propDecorators = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+class SukuLoaderComponent {
+    constructor() {
+        this.waitingMessage = 'please wait...';
+        this.lodingDescription = 'The document you are downloading is being authenticated against the SUKU Blockchain.';
+        this.loadingMessage = 'Please wait momentarily while this process completes...';
+    }
+    /**
+     * @return {?}
+     */
+    ngOnInit() {
+    }
+}
+SukuLoaderComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'suku-loader',
+                template: "<div class=\" col-sm-12 col-xs-12 d-flex col-md-12 col-lg-12 p-0\">\n  <form>\n    <div class=\"col p-0\">\n      <div class=\"col p-0\">\n        <div class=\"col text-center\">\n          <div class=\"row justify-content-center\">\n            <div class=\"product-boxContent\">\n              <div class=\"col pl-lg-4 pt-1 pb-3\">\n                <div class=\"row\">\n                  <div class=\"col pl-lg-0 pl-0 mt-3 mb-3\">\n                    <img\n                      width=\"50\"\n                      src=\"../../../assets/icons/icon-96x96.png\"\n                      class=\" mb-3\"\n                      aria-hidden=\"true\"\n                    />\n                    <br />\n                    <span id=\"confirmation\" class=\"color pb-1 mt-3 mb-3\">\n                      {{ waitingMessage }}\n                    </span>\n                  </div>\n                </div>\n              </div>\n            </div>\n            <h2 class=\" col-sm-10 FontStyle mt-5 mb-2 text-center\">\n              {{ lodingDescription }}\n            </h2>\n            <div class=\"col-sm-10 spinnerStyle\">\n              <i class=\"fa fa-spinner fa-spin\"></i>\n            </div>\n            <h2 class=\" col-sm-10 FontStyle2 mt-3 text-center\">\n              {{ loadingMessage }}\n            </h2>\n          </div>\n        </div>\n      </div>\n    </div>\n  </form>\n</div>\n",
+                styles: [".product-boxContent{width:100%;float:left;background-image:linear-gradient(to bottom,rgba(101,102,243,.06),rgba(101,102,243,.06)),radial-gradient(circle at 50% 0,#3a3a3a,#000);border-radius:12px;box-shadow:-4px 4px 5px 0 rgba(0,0,0,.08);padding:10px 5px 0 15px;margin:0}.color{font-family:Poppins,sans-serif!important;color:#fff!important;font-size:20px;font-weight:300}.width100{width:100%}.FontStyle{font-family:Poppins,sans-serif!important;font-size:17px;letter-spacing:.4px;font-weight:700}.FontStyle2{font-family:Poppins,sans-serif!important;font-size:17px;letter-spacing:.4px;font-weight:300}.spinnerStyle{font-size:50px;padding-top:20px;padding-bottom:20px}.boxStyle{border-radius:7px 7px 22px 22px;background-color:#fff;box-shadow:0 12px 14px 0 rgba(0,0,0,.05)}.bgColor{background-color:#3a3a3a;opacity:.5}"]
+            }] }
+];
+/** @nocollapse */
+SukuLoaderComponent.ctorParameters = () => [];
+SukuLoaderComponent.propDecorators = {
+    waitingMessage: [{ type: Input, args: ['waiting-message',] }],
+    lodingDescription: [{ type: Input, args: ['loding-description',] }],
+    loadingMessage: [{ type: Input, args: ['loading-message',] }]
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 class SukuWebcomponentsModule {
 }
 SukuWebcomponentsModule.decorators = [
@@ -4695,7 +4726,8 @@ SukuWebcomponentsModule.decorators = [
                     SukuTitleHeaderComponent,
                     SukuShippingInfoWidgetComponent,
                     SukuImageWidgetComponent,
-                    SukuChatWidgetComponent
+                    SukuChatWidgetComponent,
+                    SukuLoaderComponent
                 ],
                 imports: [
                     CommonModule,
@@ -4815,6 +4847,6 @@ SukuWebcomponentsModule.decorators = [
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { SukuWebcomponentsService, SukuWebcomponentsModule, SukuACHSettingsComponent as ɵbj, SukuAddIconComponent as ɵbx, SukuAddWidgetComponent as ɵs, SukuAddressWidgetComponent as ɵx, SukuBeneficialOwnerComponent as ɵbn, SukuBidInfoComponent as ɵv, SukuBidTagComponent as ɵa, SukuCardLineTypeOneComponent as ɵbt, SukuCardLineTypeTwoComponent as ɵbu, SukuCardLineComponent as ɵb, SukuCardTitleComponent as ɵbf, SukuChatWidgetComponent as ɵcj, SukuCreateCustomerComponent as ɵbm, SukuCreationCustomerFileuploadComponent as ɵbq, SukuDashboardProfileComponent as ɵc, SukuDefaultButtonComponent as ɵd, SukuDropdownComponent as ɵce, SukuDwollaFundingAgreementComponent as ɵbo, SukuDwollaFundingSourceComponent as ɵbp, SukuFiltersComponent as ɵbb, SukuFundingSourceComponent as ɵbl, SukuHeaderComponent as ɵcf, SukuHeadingComponent as ɵe, SukuHomeItalicHeadingComponent as ɵf, SukuHomeWidgetComponent as ɵg, SukuHomepageButtonComponent as ɵca, SukuHomepageSectionComponent as ɵbz, SukuHomepageComponent as ɵby, SukuImageWidgetComponent as ɵci, SukuInfoButtonComponent as ɵh, SukuInlineDropdownComponent as ɵi, SukuLinkComponent as ɵr, SukuMailWidgetComponent as ɵj, SukuMatchChipComponent as ɵk, SukuNavSubmenuComponent as ɵu, SukuNotificationPanelComponent as ɵbw, SukuNotificationWidgetComponent as ɵl, SukuPaymentPortalHelpComponent as ɵbr, SukuPhoneWidgetComponent as ɵw, SukuPrimaryButtonComponent as ɵm, SukuProductTraceWidgetComponent as ɵbd, SukuProfileHeaderComponent as ɵcb, SukuProfileWidgetComponent as ɵz, SukuProgressBarTypeOneComponent as ɵn, SukuProgressBarTypeTwoComponent as ɵo, SukuRadioButtonComponent as ɵcd, SukuRatingCardLineComponent as ɵbv, SukuRatingStarComponent as ɵbg, SukuResponseComponent as ɵbi, SukuSearchInputComponent as ɵy, SukuSecondaryButtonComponent as ɵp, SukuSelectInputComponent as ɵt, SukuShippingInfoWidgetComponent as ɵch, SukuShippingWidgetComponent as ɵbh, SukuSocialIconsComponent as ɵcc, SukuStarBadgeComponent as ɵba, SukuSubHeadingComponent as ɵq, SukuTermsAndConditionsComponent as ɵbs, SukuTitleHeaderComponent as ɵcg, SukuTrackProgressBarComponent as ɵbc, SukuTransactionHistoryComponent as ɵbk, SukuTreeComponent as ɵbe };
+export { SukuWebcomponentsService, SukuWebcomponentsModule, SukuACHSettingsComponent as ɵbj, SukuAddIconComponent as ɵbx, SukuAddWidgetComponent as ɵs, SukuAddressWidgetComponent as ɵx, SukuBeneficialOwnerComponent as ɵbn, SukuBidInfoComponent as ɵv, SukuBidTagComponent as ɵa, SukuCardLineTypeOneComponent as ɵbt, SukuCardLineTypeTwoComponent as ɵbu, SukuCardLineComponent as ɵb, SukuCardTitleComponent as ɵbf, SukuChatWidgetComponent as ɵcj, SukuCreateCustomerComponent as ɵbm, SukuCreationCustomerFileuploadComponent as ɵbq, SukuDashboardProfileComponent as ɵc, SukuDefaultButtonComponent as ɵd, SukuDropdownComponent as ɵce, SukuDwollaFundingAgreementComponent as ɵbo, SukuDwollaFundingSourceComponent as ɵbp, SukuFiltersComponent as ɵbb, SukuFundingSourceComponent as ɵbl, SukuHeaderComponent as ɵcf, SukuHeadingComponent as ɵe, SukuHomeItalicHeadingComponent as ɵf, SukuHomeWidgetComponent as ɵg, SukuHomepageButtonComponent as ɵca, SukuHomepageSectionComponent as ɵbz, SukuHomepageComponent as ɵby, SukuImageWidgetComponent as ɵci, SukuInfoButtonComponent as ɵh, SukuInlineDropdownComponent as ɵi, SukuLinkComponent as ɵr, SukuLoaderComponent as ɵck, SukuMailWidgetComponent as ɵj, SukuMatchChipComponent as ɵk, SukuNavSubmenuComponent as ɵu, SukuNotificationPanelComponent as ɵbw, SukuNotificationWidgetComponent as ɵl, SukuPaymentPortalHelpComponent as ɵbr, SukuPhoneWidgetComponent as ɵw, SukuPrimaryButtonComponent as ɵm, SukuProductTraceWidgetComponent as ɵbd, SukuProfileHeaderComponent as ɵcb, SukuProfileWidgetComponent as ɵz, SukuProgressBarTypeOneComponent as ɵn, SukuProgressBarTypeTwoComponent as ɵo, SukuRadioButtonComponent as ɵcd, SukuRatingCardLineComponent as ɵbv, SukuRatingStarComponent as ɵbg, SukuResponseComponent as ɵbi, SukuSearchInputComponent as ɵy, SukuSecondaryButtonComponent as ɵp, SukuSelectInputComponent as ɵt, SukuShippingInfoWidgetComponent as ɵch, SukuShippingWidgetComponent as ɵbh, SukuSocialIconsComponent as ɵcc, SukuStarBadgeComponent as ɵba, SukuSubHeadingComponent as ɵq, SukuTermsAndConditionsComponent as ɵbs, SukuTitleHeaderComponent as ɵcg, SukuTrackProgressBarComponent as ɵbc, SukuTransactionHistoryComponent as ɵbk, SukuTreeComponent as ɵbe };
 
 //# sourceMappingURL=suku-webcomponents.js.map
