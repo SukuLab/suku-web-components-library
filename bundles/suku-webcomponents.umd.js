@@ -4660,8 +4660,10 @@
      */
     var SukuTitleHeaderComponent = /** @class */ (function () {
         function SukuTitleHeaderComponent() {
-            this.titleOne = 'LISTING NAME';
-            this.titleOneCustomClass = 'pop';
+            this.id = 'title';
+            this.size = '20';
+            this.weight = '600';
+            this.customClass = 'pop';
         }
         /**
          * @return {?}
@@ -4669,24 +4671,22 @@
         SukuTitleHeaderComponent.prototype.ngOnInit = /**
          * @return {?}
          */
-            function () {
-            };
+            function () { };
         SukuTitleHeaderComponent.decorators = [
             { type: i0.Component, args: [{
                         selector: 'suku-title-header',
-                        template: "<div class=\"product-boxContent\">\n  <div class=\"col pl-0 pt-3 pb-3\">\n    <div class=\"row\">\n      <div class=\"col\">\n        <h1 [style.font-size.px]=\"titleOneSize\" [class]=\"titleOneCustomClass\" [style.font-weight]=\"titleOneWeight\"\n          [style.color]=\"titleOneColor\" id=\"{{titleOneId}}\"><ng-content></ng-content> </h1>\n      </div>\n    </div>\n  </div>\n</div>",
-                        styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);.product-boxContent{width:100%;float:left;background:#2f2e2e;border-left:5px solid #a7bf2e;border-radius:0 40px 0 0;padding:10px 5px 0 15px;margin:0}h1{color:#fafaf8;font-size:17px}.c-pointer{cursor:pointer;text-transform:capitalize}.c-pointer:hover{color:#fff;text-decoration:underline}.RectangleBorder{background-color:#fff;border-radius:0;margin-top:63px!important;padding-right:20px;padding-left:20px}.productName{color:#7f7e7e;font-size:13px}.pop{font-family:Poppins,sans-serif!important;font-weight:600;font-size:20px;text-transform:uppercase}"]
+                        template: "<div class=\"product-boxContent col\">\n  <div class=\"col p-2\">\n    <div class=\"row\">\n      <div class=\"col\">\n        <h1 [style.font-size.px]=\"size\" [class]=\"customClass\" [style.font-weight]=\"weight\" [style.color]=\"color\"\n          id=\"{{id}}\">\n          <ng-content></ng-content>\n        </h1>\n      </div>\n    </div>\n  </div>\n</div>",
+                        styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);.product-boxContent{width:100%;float:left;background:#2f2e2e;border-left:5px solid #a7bf2e;border-radius:0 40px 0 0;box-shadow:-4px 4px 5px 0 rgba(0,0,0,.08);padding:10px 5px 5px 20px}h1{color:#fafaf8;font-size:17px}.c-pointer{cursor:pointer;text-transform:capitalize}.c-pointer:hover{color:#fff;text-decoration:underline}.pop{font-family:Poppins,sans-serif!important;font-weight:600;font-size:20px}"]
                     }] }
         ];
         /** @nocollapse */
         SukuTitleHeaderComponent.ctorParameters = function () { return []; };
         SukuTitleHeaderComponent.propDecorators = {
-            titleOne: [{ type: i0.Input }],
-            titleOneId: [{ type: i0.Input }],
-            titleOneSize: [{ type: i0.Input }],
-            titleOneColor: [{ type: i0.Input }],
-            titleOneWeight: [{ type: i0.Input }],
-            titleOneCustomClass: [{ type: i0.Input }]
+            id: [{ type: i0.Input }],
+            size: [{ type: i0.Input }],
+            color: [{ type: i0.Input }],
+            weight: [{ type: i0.Input }],
+            customClass: [{ type: i0.Input }]
         };
         return SukuTitleHeaderComponent;
     }());
