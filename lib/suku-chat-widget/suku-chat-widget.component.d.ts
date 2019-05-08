@@ -4,6 +4,7 @@ import { ScrollToBottomDirective } from './suku-chat-scroll-directive';
 import { EventEmitter } from 'events';
 export declare class SukuChatWidgetComponent implements OnInit {
     _messageObj: any;
+    _imgPlaceholder: string;
     scroll: ScrollToBottomDirective;
     chat: {
         labelOne: string;
@@ -15,7 +16,10 @@ export declare class SukuChatWidgetComponent implements OnInit {
     chatStatus: boolean;
     messageData: any[];
     IconSrc: string;
+    userImg: string;
+    toUserImg: string;
     message: EventEmitter;
+    scrollHandler(event: any): void;
     constructor();
     ngOnInit(): void;
     scrollDown(): void;
