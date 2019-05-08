@@ -4832,7 +4832,8 @@ SukuWebcomponentsModule.decorators = [
                     SukuProgressBarTypeOneComponent,
                     SukuProgressBarTypeTwoComponent,
                     SukuImageWidgetComponent,
-                    SukuChatWidgetComponent
+                    SukuChatWidgetComponent,
+                    SukuLoaderComponent
                 ]
             },] }
 ];

@@ -5189,7 +5189,8 @@
                             SukuProgressBarTypeOneComponent,
                             SukuProgressBarTypeTwoComponent,
                             SukuImageWidgetComponent,
-                            SukuChatWidgetComponent
+                            SukuChatWidgetComponent,
+                            SukuLoaderComponent
                         ]
                     },] }
         ];

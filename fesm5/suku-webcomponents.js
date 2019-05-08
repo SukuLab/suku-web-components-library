@@ -5231,7 +5231,8 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         SukuProgressBarTypeOneComponent,
                         SukuProgressBarTypeTwoComponent,
                         SukuImageWidgetComponent,
-                        SukuChatWidgetComponent
+                        SukuChatWidgetComponent,
+                        SukuLoaderComponent
                     ]
                 },] }
     ];
