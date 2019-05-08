@@ -15,6 +15,7 @@ export { SukuCardLineComponent as ɵb } from './lib/suku-card-line/suku-card-lin
 export { SukuCardTitleComponent as ɵbf } from './lib/suku-card-title/suku-card-title.component';
 export { ScrollToBottomDirective as ɵck } from './lib/suku-chat-widget/suku-chat-scroll-directive';
 export { SukuChatWidgetComponent as ɵcj } from './lib/suku-chat-widget/suku-chat-widget.component';
+export { SukuConfirmationComponent as ɵcm } from './lib/suku-confirmation/suku-confirmation.component';
 export { SukuCreateCustomerComponent as ɵbm } from './lib/suku-create-customer/suku-create-customer.component';
 export { SukuCreationCustomerFileuploadComponent as ɵbq } from './lib/suku-creation-customer-fileupload/suku-creation-customer-fileupload.component';
 export { SukuDashboardProfileComponent as ɵc } from './lib/suku-dashboard-profile/suku-dashboard-profile.component';
