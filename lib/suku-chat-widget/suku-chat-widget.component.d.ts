@@ -4,6 +4,7 @@ import { EventEmitter } from '@angular/core';
 export declare class SukuChatWidgetComponent implements OnInit {
     _messageObj: any;
     _imgPlaceholder: string;
+    _scrollHeight: any;
     scroll: ScrollToBottomDirective;
     chat: {
         labelOne: string;
@@ -18,9 +19,11 @@ export declare class SukuChatWidgetComponent implements OnInit {
     userImg: string;
     toUserImg: string;
     sendmessage: EventEmitter<{}>;
+    userAction: EventEmitter<{}>;
     scrollHandler(event: any): void;
     constructor();
     ngOnInit(): void;
-    scrollDown(): void;
+    action(): void;
     sendMessage(val: any): void;
+    scrollToTop(): void;
 }
