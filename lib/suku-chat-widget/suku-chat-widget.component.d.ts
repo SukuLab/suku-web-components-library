@@ -5,6 +5,9 @@ export declare class SukuChatWidgetComponent implements OnInit {
     _messageObj: any;
     _imgPlaceholder: string;
     _scrollHeight: any;
+    _touserID: any;
+    _initialScrollHeight: any;
+    _showScrollDownIcon: any;
     scroll: ScrollToBottomDirective;
     chat: {
         labelOne: string;
@@ -25,5 +28,6 @@ export declare class SukuChatWidgetComponent implements OnInit {
     ngOnInit(): void;
     action(): void;
     sendMessage(val: any): void;
-    scrollToTop(): void;
+    scrollToBottomOnClik(): void;
+    animateScroll(duration: any): void;
 }
