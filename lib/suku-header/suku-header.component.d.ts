@@ -25,7 +25,7 @@ export declare class SukuHeaderComponent implements OnInit {
     contentTwoSize: any;
     contentTwoColor: any;
     contentTwoWeight: any;
-    contentTwoCustomClass: any;
+    contentTwoCustomClass: string;
     titleThree: string;
     titleThreeId: any;
     titleThreeSize: any;

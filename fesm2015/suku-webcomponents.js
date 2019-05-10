@@ -4244,6 +4244,7 @@ class SukuHeaderComponent {
         this.contentOne = 'N/A';
         this.titleTwo = 'SELLER NAME';
         this.contentTwo = 'N/A';
+        this.contentTwoCustomClass = "c-pointer";
         this.titleThree = 'TIME REMAINING';
         this.action = new EventEmitter();
     }
@@ -4258,7 +4259,6 @@ class SukuHeaderComponent {
      * @return {?}
      */
     set contentThree(val) {
-        console.log(val);
         this._date = val;
     }
     /**
@@ -4272,7 +4272,6 @@ class SukuHeaderComponent {
      * @return {?}
      */
     set enableTimer(val) {
-        console.log(val);
         this._enableTimer = val;
     }
     /**

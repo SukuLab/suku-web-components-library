@@ -4557,6 +4557,7 @@
             this.contentOne = 'N/A';
             this.titleTwo = 'SELLER NAME';
             this.contentTwo = 'N/A';
+            this.contentTwoCustomClass = "c-pointer";
             this.titleThree = 'TIME REMAINING';
             this.action = new i0.EventEmitter();
         }
@@ -4570,7 +4571,6 @@
              * @param {?} val
              * @return {?}
              */ function (val) {
-                console.log(val);
                 this._date = val;
             },
             enumerable: true,
@@ -4586,7 +4586,6 @@
              * @param {?} val
              * @return {?}
              */ function (val) {
-                console.log(val);
                 this._enableTimer = val;
             },
             enumerable: true,
