@@ -15,7 +15,8 @@ export declare class SukuChatWidgetComponent implements OnInit {
         labelTwo: string;
         labelTwoId: string;
     };
-    contentOne: string;
+    toUserName: string;
+    toUserNameId: string;
     chatStatus: boolean;
     messageData: any[];
     IconSrc: string;
@@ -28,6 +29,6 @@ export declare class SukuChatWidgetComponent implements OnInit {
     ngOnInit(): void;
     action(): void;
     sendMessage(val: any): void;
-    scrollToBottomOnClik(): void;
+    scrollToBottom(): void;
     animateScroll(duration: any): void;
 }
