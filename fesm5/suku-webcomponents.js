@@ -2644,24 +2644,38 @@ var SukuShippingWidgetComponent = /** @class */ (function () {
  */
 var SukuResponseComponent = /** @class */ (function () {
     function SukuResponseComponent() {
-        this.customClass = 'filterResult text-center col';
-        this.iconClass = 'fa fa-frown-o responseIcon';
-        this.iconColor = '#c0ca33';
-        this.content = 'no data available';
+        this.customClass = 'filterResult text-center col p-0';
+        this.title = 'No results found';
+        this.titleId = 'noResultsFound';
+        this.titleSize = '26';
+        this.titleColor = 'black';
+        this.titleWeight = '300';
+        this.description = 'Try changing your filter settings on the left to see a different set of results.';
+        this.descriptionId = 'description';
+        this.descriptionSize = '18';
+        this.descriptionColor = '#979797';
+        this.descriptionWeight = '400';
         this.bgColor = '';
     }
     SukuResponseComponent.decorators = [
         { type: Component, args: [{
                     selector: 'suku-response',
-                    template: "<div [class]=\"customClass\" [style.background-color]=\"bgColor\">\n  <img src=\"../../assets/images/no_data.png\">\n</div>",
-                    styles: [".filterResult{margin-top:170px}.responseIcon{font-size:36px;color:#c0ca33}"]
+                    template: "<div [class]=\"customClass\" [style.background-color]=\"bgColor\">\n  <div class=\"col-lg-5 p-0 col-sm-12 justify-content-center mx-auto\">\n    <p class=\"response-title\" id=\"{{titleId}}\" [style.font-size.px]=\"titleSize\" [style.color]=\"titleColor\"\n    [style.font-weight]=\"titleWeight\">{{title}}</p>\n    <img src=\"../../assets/images/no-data-search-icon.svg\" class=\"img-res mb-4 mt-4\" height=\"70px\" width=\"70px\"\n      alt=\"no-data-search-icon\">\n    <p class=\"text-justify text-center mx-auto description\" id=\"{{descriptionId}}\" [style.font-size.px]=\"descriptionSize\"\n      [style.color]=\"descriptionColor\" [style.font-weight]=\"descriptionWeight\">{{description}}</p>\n  </div>\n</div>",
+                    styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);.filterResult{margin-top:170px}.response-title{font-family:Poppins,sans-serif!important;font-weight:300}.description{font-family:Poppins,sans-serif!important;color:#979797;width:350px}"]
                 }] }
     ];
     SukuResponseComponent.propDecorators = {
         customClass: [{ type: Input }],
-        iconClass: [{ type: Input }],
-        iconColor: [{ type: Input }],
-        content: [{ type: Input }],
+        title: [{ type: Input }],
+        titleId: [{ type: Input }],
+        titleSize: [{ type: Input }],
+        titleColor: [{ type: Input }],
+        titleWeight: [{ type: Input }],
+        description: [{ type: Input }],
+        descriptionId: [{ type: Input }],
+        descriptionSize: [{ type: Input }],
+        descriptionColor: [{ type: Input }],
+        descriptionWeight: [{ type: Input }],
         bgColor: [{ type: Input }]
     };
     return SukuResponseComponent;
