@@ -8,6 +8,7 @@ export { SukuAddWidgetComponent as ɵs } from './lib/suku-add-widget/suku-add-wi
 export { SukuAddressWidgetComponent as ɵx } from './lib/suku-address-widget/suku-address-widget.component';
 export { SukuBeneficialOwnerComponent as ɵbn } from './lib/suku-beneficial-owner/suku-beneficial-owner.component';
 export { SukuBidInfoComponent as ɵv } from './lib/suku-bid-info/suku-bid-info.component';
+export { SukuLargeBidTagComponent as ɵcn } from './lib/suku-bid-tag-type-two/suku-bid-tag-type-two.component';
 export { SukuBidTagComponent as ɵa } from './lib/suku-bid-tag/suku-bid-tag.component';
 export { SukuCardLineTypeOneComponent as ɵbt } from './lib/suku-card-line-type-one/suku-card-line.component';
 export { SukuCardLineTypeTwoComponent as ɵbu } from './lib/suku-card-line-type-two/suku-card-line.component';
