@@ -8,6 +8,7 @@ export declare class SukuChatWidgetComponent implements OnInit {
     _touserID: any;
     _initialScrollHeight: any;
     _showScrollDownIcon: any;
+    _chkmessageStatus: any;
     scroll: ScrollToBottomDirective;
     chat: {
         labelOne: string;
@@ -22,6 +23,7 @@ export declare class SukuChatWidgetComponent implements OnInit {
     IconSrc: string;
     userImg: string;
     toUserImg: string;
+    chkmessageStatus: any;
     sendmessage: EventEmitter<{}>;
     userAction: EventEmitter<{}>;
     scrollHandler(event: any): void;
