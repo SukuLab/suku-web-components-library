@@ -10,6 +10,7 @@ export { SukuBeneficialOwnerComponent as ɵbn } from './lib/suku-beneficial-owne
 export { SukuBidInfoComponent as ɵv } from './lib/suku-bid-info/suku-bid-info.component';
 export { SukuLargeBidTagComponent as ɵcn } from './lib/suku-bid-tag-type-two/suku-bid-tag-type-two.component';
 export { SukuBidTagComponent as ɵa } from './lib/suku-bid-tag/suku-bid-tag.component';
+export { SukuBidWidgetTagComponent as ɵco } from './lib/suku-bid-widget/suku-bid-widget.component';
 export { SukuCardLineTypeOneComponent as ɵbt } from './lib/suku-card-line-type-one/suku-card-line.component';
 export { SukuCardLineTypeTwoComponent as ɵbu } from './lib/suku-card-line-type-two/suku-card-line.component';
 export { SukuCardLineComponent as ɵb } from './lib/suku-card-line/suku-card-line.component';
