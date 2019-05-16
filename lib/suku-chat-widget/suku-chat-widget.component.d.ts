@@ -4,11 +4,15 @@ import { EventEmitter } from '@angular/core';
 export declare class SukuChatWidgetComponent implements OnInit {
     _messageObj: any;
     _imgPlaceholder: string;
+    _userImg: string;
+    _toUserImg: string;
     _scrollHeight: any;
     _touserID: any;
     _initialScrollHeight: any;
     _showScrollDownIcon: any;
     _chkmessageStatus: any;
+    _oldMessage: any;
+    _newMessageCount: any;
     scroll: ScrollToBottomDirective;
     chat: {
         labelOne: string;
@@ -20,7 +24,7 @@ export declare class SukuChatWidgetComponent implements OnInit {
     toUserNameId: string;
     chatStatus: boolean;
     messageData: any[];
-    IconSrc: string;
+    sendMessageIconSrc: string;
     userImg: string;
     toUserImg: string;
     chkmessageStatus: any;
