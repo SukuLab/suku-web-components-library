@@ -4,6 +4,10 @@ export declare class SukuDwollaFundingAgreementComponent implements OnInit {
     form: FormGroup;
     title: string;
     titleClass: string;
+    titleid: string;
+    titleWeight: string;
+    titleColor: string;
+    titleSize: string;
     control: any;
     checkBoxId: string;
     content: string;

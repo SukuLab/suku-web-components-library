@@ -3,9 +3,9 @@ export declare class SukuConfirmationComponent implements OnInit {
     Titleone: any;
     Titletwo: any;
     Titlethree: any;
-    Buttonone: any;
+    Buttonone: string;
     Buttononeid: any;
-    Buttontwo: any;
+    Buttontwo: string;
     Buttontwoid: any;
     triggerone: EventEmitter<{}>;
     triggertwo: EventEmitter<{}>;

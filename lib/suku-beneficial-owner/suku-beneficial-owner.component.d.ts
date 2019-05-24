@@ -6,6 +6,11 @@ export declare class SukuBeneficialOwnerComponent implements OnInit {
     form: FormGroup;
     title: string;
     titleClass: string;
+    titleCustomClass: string;
+    titleid: string;
+    titleWeight: string;
+    titleColor: string;
+    titleSize: string;
     countriesList: any;
     statesList: any;
     formValid: Boolean;

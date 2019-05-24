@@ -6,6 +6,12 @@ import { Component, Input } from '@angular/core';
 var SukuShippingInfoWidgetComponent = /** @class */ (function () {
     function SukuShippingInfoWidgetComponent() {
         this.widgetTitle = 'Shipping Information';
+        this.widgetTitleColor = '';
+        this.widgetTitleWeight = '';
+        this.widgetTitleSize = '';
+        this.widgetTitlecustomclass = '';
+        this.widgetTitleid = '';
+        this.shippingaddressCustomClass = '';
         this.firstName = '';
         this.secondName = '';
         this.addressOne = '';
@@ -26,14 +32,20 @@ var SukuShippingInfoWidgetComponent = /** @class */ (function () {
     SukuShippingInfoWidgetComponent.decorators = [
         { type: Component, args: [{
                     selector: 'suku-shipping-info-widget',
-                    template: "<div class=\"headingStyle\">{{widgetTitle}} </div>\n<div class=\"article mb-4\">\n  <div class=\"col-sm-12 col-xs-12  borderTop border borderLeft\">\n    <div class=\"col-sm-11 col-xs-12 marginBottom22\">\n      <div class=\"font_weight contentStyle\">\n        <!-- {{shippingAddress}} -->\n        <p class=\"bidderAdd mb-1\"><span>{{firstName || 'no data'}}</span>\n          <span class=\"ml-2\">{{secondName}}</span></p>\n        <p class=\"bidderAdd mb-1\">{{addressOne}}</p>\n        <p class=\"bidderAdd mb-1\">{{addressTwo}}</p>\n        <p class=\"bidderAdd mb-1\"><span>{{city}}</span><span\n            class=\"ml-2\">{{state}}</span><span class=\"ml-2\">\n            {{zip}}</span></p>\n        <p class=\"bidderAdd mb-1\">{{country}}</p>\n      </div>\n    </div>\n  </div>\n</div>",
-                    styles: [".headingStyle{font-family:Poppins,sans-serif;padding-bottom:9px}.contentStyle{padding-top:15px}.marginBottom22{margin-bottom:22px}.bidderAdd{font-family:\"Encode Sans\",sans-serif;font-size:15px;font-weight:400;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.4px;color:#020202d9;margin-bottom:1px;text-transform:capitalize}.article{width:100%;float:left;margin:0 8.4% 50px 0}"]
+                    template: "<div class=\"headingStyle\" [style.font-size.px]=\"widgetTitleSize\" [class]=\"widgetTitlecustomclass\" id=\"{{widgetTitleid}}\"\n  [style.font-weight]=\"widgetTitleWeight\" [style.color]=\"widgetTitleColor\">{{widgetTitle}} </div>\n<div class=\"article mb-3\">\n  <div class=\"col-sm-12 col-xs-12 border\">\n    <div class=\"col-sm-12 col-xs-12 pt-3 p-2\">\n      <div class=\"font_weight contentStyle shipping-address\" [class]=\"shippingaddressCustomClass\">\n        <p class=\"mb-1\"><span>{{firstName || 'no data'}}</span>\n          <span class=\"ml-2\">{{secondName}}</span></p>\n        <p class=\"mb-1\">{{addressOne}}</p>\n        <p class=\"mb-1\">{{addressTwo}}</p>\n        <p class=\"mb-1\"><span>{{city}}</span><span class=\"ml-2\">{{state}}</span><span class=\"ml-2\">\n            {{zip}}</span></p>\n        <p class=\"mb-1\">{{country}}</p>\n      </div>\n    </div>\n  </div>\n</div>",
+                    styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);.headingStyle{font-family:Poppins,sans-serif!important;padding-bottom:9px}.contentStyle{padding-top:15px}.marginBottom22{margin-bottom:22px}.shipping-address{font-family:\"Encode Sans\",sans-serif!important;font-size:15px;font-weight:400;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.4px;color:#020202d9;margin-bottom:1px;text-transform:capitalize}.article{width:100%;float:left}"]
                 }] }
     ];
     /** @nocollapse */
     SukuShippingInfoWidgetComponent.ctorParameters = function () { return []; };
     SukuShippingInfoWidgetComponent.propDecorators = {
         widgetTitle: [{ type: Input }],
+        widgetTitleColor: [{ type: Input }],
+        widgetTitleWeight: [{ type: Input }],
+        widgetTitleSize: [{ type: Input }],
+        widgetTitlecustomclass: [{ type: Input }],
+        widgetTitleid: [{ type: Input }],
+        shippingaddressCustomClass: [{ type: Input }],
         firstName: [{ type: Input }],
         secondName: [{ type: Input }],
         addressOne: [{ type: Input }],
@@ -49,6 +61,18 @@ export { SukuShippingInfoWidgetComponent };
 if (false) {
     /** @type {?} */
     SukuShippingInfoWidgetComponent.prototype.widgetTitle;
+    /** @type {?} */
+    SukuShippingInfoWidgetComponent.prototype.widgetTitleColor;
+    /** @type {?} */
+    SukuShippingInfoWidgetComponent.prototype.widgetTitleWeight;
+    /** @type {?} */
+    SukuShippingInfoWidgetComponent.prototype.widgetTitleSize;
+    /** @type {?} */
+    SukuShippingInfoWidgetComponent.prototype.widgetTitlecustomclass;
+    /** @type {?} */
+    SukuShippingInfoWidgetComponent.prototype.widgetTitleid;
+    /** @type {?} */
+    SukuShippingInfoWidgetComponent.prototype.shippingaddressCustomClass;
     /** @type {?} */
     SukuShippingInfoWidgetComponent.prototype.firstName;
     /** @type {?} */
@@ -66,4 +90,4 @@ if (false) {
     /** @type {?} */
     SukuShippingInfoWidgetComponent.prototype.country;
 }
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3VrdS1zaGlwcGluZy1pbmZvLXdpZGdldC5jb21wb25lbnQuanMiLCJzb3VyY2VSb290Ijoibmc6Ly9zdWt1LXdlYmNvbXBvbmVudHMvIiwic291cmNlcyI6WyJsaWIvc3VrdS1zaGlwcGluZy1pbmZvLXdpZGdldC9zdWt1LXNoaXBwaW5nLWluZm8td2lkZ2V0LmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxLQUFLLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFFekQ7SUFlRTtRQVRPLGdCQUFXLEdBQUcsc0JBQXNCLENBQUM7UUFDckMsY0FBUyxHQUFHLEVBQUUsQ0FBQztRQUNmLGVBQVUsR0FBRyxFQUFFLENBQUM7UUFDaEIsZUFBVSxHQUFHLEVBQUUsQ0FBQztRQUNoQixlQUFVLEdBQUcsRUFBRSxDQUFDO1FBQ2hCLFNBQUksR0FBRyxFQUFFLENBQUM7UUFDVixVQUFLLEdBQUcsRUFBRSxDQUFDO1FBQ1gsUUFBRyxHQUFHLEVBQUUsQ0FBQztRQUNULFlBQU8sR0FBRyxFQUFFLENBQUM7SUFDSixDQUFDOzs7O0lBRWpCLGtEQUFROzs7SUFBUjtJQUNBLENBQUM7O2dCQWxCRixTQUFTLFNBQUM7b0JBQ1QsUUFBUSxFQUFFLDJCQUEyQjtvQkFDckMsd3lCQUF5RDs7aUJBRTFEOzs7Ozs4QkFFQSxLQUFLOzRCQUNMLEtBQUs7NkJBQ0wsS0FBSzs2QkFDTCxLQUFLOzZCQUNMLEtBQUs7dUJBQ0wsS0FBSzt3QkFDTCxLQUFLO3NCQUNMLEtBQUs7MEJBQ0wsS0FBSzs7SUFNTixzQ0FBQztDQUFBLEFBcEJELElBb0JDO1NBZlksK0JBQStCOzs7SUFDNUMsc0RBQThDOztJQUM5QyxvREFBd0I7O0lBQ3hCLHFEQUF5Qjs7SUFDekIscURBQXlCOztJQUN6QixxREFBeUI7O0lBQ3pCLCtDQUFtQjs7SUFDbkIsZ0RBQW9COztJQUNwQiw4Q0FBa0I7O0lBQ2xCLGtEQUFzQiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgT25Jbml0LCBJbnB1dCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdzdWt1LXNoaXBwaW5nLWluZm8td2lkZ2V0JyxcbiAgdGVtcGxhdGVVcmw6ICcuL3N1a3Utc2hpcHBpbmctaW5mby13aWRnZXQuY29tcG9uZW50Lmh0bWwnLFxuICBzdHlsZVVybHM6IFsnLi9zdWt1LXNoaXBwaW5nLWluZm8td2lkZ2V0LmNvbXBvbmVudC5zY3NzJ11cbn0pXG5leHBvcnQgY2xhc3MgU3VrdVNoaXBwaW5nSW5mb1dpZGdldENvbXBvbmVudCBpbXBsZW1lbnRzIE9uSW5pdCB7XG5ASW5wdXQoKSB3aWRnZXRUaXRsZSA9ICdTaGlwcGluZyBJbmZvcm1hdGlvbic7XG5ASW5wdXQoKSBmaXJzdE5hbWUgPSAnJztcbkBJbnB1dCgpIHNlY29uZE5hbWUgPSAnJztcbkBJbnB1dCgpIGFkZHJlc3NPbmUgPSAnJztcbkBJbnB1dCgpIGFkZHJlc3NUd28gPSAnJztcbkBJbnB1dCgpIGNpdHkgPSAnJztcbkBJbnB1dCgpIHN0YXRlID0gJyc7XG5ASW5wdXQoKSB6aXAgPSAnJztcbkBJbnB1dCgpIGNvdW50cnkgPSAnJztcbiAgY29uc3RydWN0b3IoKSB7IH1cblxuICBuZ09uSW5pdCgpIHtcbiAgfVxuXG59XG4iXX0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3VrdS1zaGlwcGluZy1pbmZvLXdpZGdldC5jb21wb25lbnQuanMiLCJzb3VyY2VSb290Ijoibmc6Ly9zdWt1LXdlYmNvbXBvbmVudHMvIiwic291cmNlcyI6WyJsaWIvc3VrdS1zaGlwcGluZy1pbmZvLXdpZGdldC9zdWt1LXNoaXBwaW5nLWluZm8td2lkZ2V0LmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxLQUFLLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFFekQ7SUFxQkU7UUFmTyxnQkFBVyxHQUFHLHNCQUFzQixDQUFDO1FBQ3JDLHFCQUFnQixHQUFHLEVBQUUsQ0FBQztRQUN0QixzQkFBaUIsR0FBRyxFQUFFLENBQUM7UUFDdkIsb0JBQWUsR0FBRyxFQUFFLENBQUM7UUFDckIsMkJBQXNCLEdBQUcsRUFBRSxDQUFDO1FBQzVCLGtCQUFhLEdBQUcsRUFBRSxDQUFDO1FBQ25CLCtCQUEwQixHQUFHLEVBQUUsQ0FBQztRQUNoQyxjQUFTLEdBQUcsRUFBRSxDQUFDO1FBQ2YsZUFBVSxHQUFHLEVBQUUsQ0FBQztRQUNoQixlQUFVLEdBQUcsRUFBRSxDQUFDO1FBQ2hCLGVBQVUsR0FBRyxFQUFFLENBQUM7UUFDaEIsU0FBSSxHQUFHLEVBQUUsQ0FBQztRQUNWLFVBQUssR0FBRyxFQUFFLENBQUM7UUFDWCxRQUFHLEdBQUcsRUFBRSxDQUFDO1FBQ1QsWUFBTyxHQUFHLEVBQUUsQ0FBQztJQUNKLENBQUM7Ozs7SUFFakIsa0RBQVE7OztJQUFSO0lBQ0EsQ0FBQzs7Z0JBeEJGLFNBQVMsU0FBQztvQkFDVCxRQUFRLEVBQUUsMkJBQTJCO29CQUNyQyxvNUJBQXlEOztpQkFFMUQ7Ozs7OzhCQUVBLEtBQUs7bUNBQ0wsS0FBSztvQ0FDTCxLQUFLO2tDQUNMLEtBQUs7eUNBQ0wsS0FBSztnQ0FDTCxLQUFLOzZDQUNMLEtBQUs7NEJBQ0wsS0FBSzs2QkFDTCxLQUFLOzZCQUNMLEtBQUs7NkJBQ0wsS0FBSzt1QkFDTCxLQUFLO3dCQUNMLEtBQUs7c0JBQ0wsS0FBSzswQkFDTCxLQUFLOztJQU1OLHNDQUFDO0NBQUEsQUExQkQsSUEwQkM7U0FyQlksK0JBQStCOzs7SUFDNUMsc0RBQThDOztJQUM5QywyREFBK0I7O0lBQy9CLDREQUFnQzs7SUFDaEMsMERBQThCOztJQUM5QixpRUFBcUM7O0lBQ3JDLHdEQUE0Qjs7SUFDNUIscUVBQXlDOztJQUN6QyxvREFBd0I7O0lBQ3hCLHFEQUF5Qjs7SUFDekIscURBQXlCOztJQUN6QixxREFBeUI7O0lBQ3pCLCtDQUFtQjs7SUFDbkIsZ0RBQW9COztJQUNwQiw4Q0FBa0I7O0lBQ2xCLGtEQUFzQiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgT25Jbml0LCBJbnB1dCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdzdWt1LXNoaXBwaW5nLWluZm8td2lkZ2V0JyxcbiAgdGVtcGxhdGVVcmw6ICcuL3N1a3Utc2hpcHBpbmctaW5mby13aWRnZXQuY29tcG9uZW50Lmh0bWwnLFxuICBzdHlsZVVybHM6IFsnLi9zdWt1LXNoaXBwaW5nLWluZm8td2lkZ2V0LmNvbXBvbmVudC5zY3NzJ11cbn0pXG5leHBvcnQgY2xhc3MgU3VrdVNoaXBwaW5nSW5mb1dpZGdldENvbXBvbmVudCBpbXBsZW1lbnRzIE9uSW5pdCB7XG5ASW5wdXQoKSB3aWRnZXRUaXRsZSA9ICdTaGlwcGluZyBJbmZvcm1hdGlvbic7XG5ASW5wdXQoKSB3aWRnZXRUaXRsZUNvbG9yID0gJyc7XG5ASW5wdXQoKSB3aWRnZXRUaXRsZVdlaWdodCA9ICcnO1xuQElucHV0KCkgd2lkZ2V0VGl0bGVTaXplID0gJyc7XG5ASW5wdXQoKSB3aWRnZXRUaXRsZWN1c3RvbWNsYXNzID0gJyc7XG5ASW5wdXQoKSB3aWRnZXRUaXRsZWlkID0gJyc7XG5ASW5wdXQoKSBzaGlwcGluZ2FkZHJlc3NDdXN0b21DbGFzcyA9ICcnO1xuQElucHV0KCkgZmlyc3ROYW1lID0gJyc7XG5ASW5wdXQoKSBzZWNvbmROYW1lID0gJyc7XG5ASW5wdXQoKSBhZGRyZXNzT25lID0gJyc7XG5ASW5wdXQoKSBhZGRyZXNzVHdvID0gJyc7XG5ASW5wdXQoKSBjaXR5ID0gJyc7XG5ASW5wdXQoKSBzdGF0ZSA9ICcnO1xuQElucHV0KCkgemlwID0gJyc7XG5ASW5wdXQoKSBjb3VudHJ5ID0gJyc7XG4gIGNvbnN0cnVjdG9yKCkgeyB9XG5cbiAgbmdPbkluaXQoKSB7XG4gIH1cblxufVxuIl19

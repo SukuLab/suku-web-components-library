@@ -4,6 +4,7 @@ export declare class SukuMailWidgetComponent implements OnInit {
     size: string;
     color: string;
     weight: string;
+    alt: string;
     customClass: string;
     id: string;
     image: string;
