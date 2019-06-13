@@ -6,6 +6,7 @@ export declare class SukuAddressWidgetComponent implements OnInit {
     color: string;
     weight: string;
     id: string;
+    iconAlt: string;
     customClass: string;
     constructor();
     ngOnInit(): void;

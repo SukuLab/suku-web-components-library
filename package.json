@@ -9,6 +9,11 @@
     "@angular/platform-browser": "*",
     "d3": "^3.5.17"
   },
+  "schematics": "./collection.json",
+  "dependencies": {
+    "schematics-utilities": "^1.1.2",
+    "tslib": "^1.9.0"
+  },
   "main": "bundles/suku-webcomponents.umd.js",
   "module": "fesm5/suku-webcomponents.js",
   "es2015": "fesm2015/suku-webcomponents.js",
@@ -18,8 +23,5 @@
   "fesm2015": "fesm2015/suku-webcomponents.js",
   "typings": "suku-webcomponents.d.ts",
   "metadata": "suku-webcomponents.metadata.json",
-  "sideEffects": false,
-  "dependencies": {
-    "tslib": "^1.9.0"
-  }
+  "sideEffects": false
 }

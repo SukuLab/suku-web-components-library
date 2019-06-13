@@ -3,7 +3,7 @@ export declare class SukuTransactionHistoryComponent implements OnInit {
     transactionHistory: string;
     transactionDetailsId: string;
     transactionDetails: any;
-    headings: any;
+    heading: any;
     typeId: string;
     myAccountId: string;
     counterPartyId: string;

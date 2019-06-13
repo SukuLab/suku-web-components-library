@@ -7,6 +7,10 @@ export declare class SukuCreateCustomerComponent implements OnInit {
     _ssnLimit: any;
     maxDate: any;
     currentDate: any;
+    DwollaTOSformValid: boolean;
+    CitizensReserveTOSformValid: boolean;
+    validateType: boolean;
+    getControl: any;
     form: FormGroup;
     formArrayNameValue: any;
     countriesList: any;
@@ -23,11 +27,6 @@ export declare class SukuCreateCustomerComponent implements OnInit {
     industryTypeValue: any;
     businessClassificationValue: any;
     ssnLimit: any;
-    DwollaTOSformValid: boolean;
-    CitizensReserveTOSformValid: boolean;
-    validateType: boolean;
-    getControl: any;
-    ima: any;
     constructor(fb: FormBuilder);
     ngOnInit(): void;
     countrySelectAction(val: any): void;

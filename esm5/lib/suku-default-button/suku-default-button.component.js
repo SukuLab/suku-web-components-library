@@ -19,7 +19,7 @@ var SukuDefaultButtonComponent = /** @class */ (function () {
         { type: Component, args: [{
                     selector: 'suku-default-button',
                     template: "<a class=\"default-btn c-pointer\" id=\"{{id}}\" (click)=\"trigger.emit()\">\n  <ng-content></ng-content>\n </a>\n",
-                    styles: [".default-btn{font-family:'Encode Sans',sans-serif;font-size:14px;font-weight:400;font-style:normal;font-stretch:normal;line-height:1.43;letter-spacing:-.4px;color:#fff!important}"]
+                    styles: [".default-btn{font-family:'Encode Sans',sans-serif;font-size:14px;font-weight:400;font-style:normal;font-stretch:normal;line-height:1.43;letter-spacing:-.4px;color:#fff!important}.c-pointer:hover{cursor:pointer;text-decoration:underline!important}"]
                 }] }
     ];
     /** @nocollapse */

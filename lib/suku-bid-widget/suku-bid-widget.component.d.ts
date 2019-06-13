@@ -1,0 +1,36 @@
+import { OnInit } from '@angular/core';
+export declare class SukuBidWidgetTagComponent implements OnInit {
+    paymentMethod: string;
+    productPrice: number;
+    productTotalPrice: string;
+    productQuantity: number;
+    minimumQuantity: any;
+    paymentTerms: number;
+    deliveryTerms: number;
+    paymentMethodLabel: string;
+    paymentTermsLabel: string;
+    deliveryTermsLabel: string;
+    totalPriceLabel: string;
+    quantityLabel: string;
+    minQtyLabel: string;
+    titleText: string;
+    documents: any[];
+    customClass: string;
+    priceFontSize: string;
+    priceFontColor: string;
+    listFontColor: string;
+    listFontSize: string;
+    bidTitleFontColor: string;
+    bidTitleFontSize: string;
+    bidDetilsFontColor: string;
+    bidDetilsFontSize: string;
+    priceFontWeight: string;
+    listFontWeight: string;
+    bidTitleFontWeight: string;
+    bidDetilsFontWeight: string;
+    titleFontColor: string;
+    titleFontSize: string;
+    titleFontWeight: string;
+    constructor();
+    ngOnInit(): void;
+}

@@ -5,6 +5,10 @@ export declare class SukuSelectInputComponent implements OnInit {
     color: any;
     weight: any;
     customclass: any;
+    keyValue: string;
+    displayKey: string;
+    titleText: string;
+    placeHolder: string;
     sort: EventEmitter<{}>;
     options: any[];
     constructor();
