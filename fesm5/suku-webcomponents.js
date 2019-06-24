@@ -4,7 +4,7 @@ import { layout, select } from 'd3';
 import { MatSnackBar, MatAutocompleteModule, MatBadgeModule, MatBottomSheetModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule, MatDividerModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatSortModule, MatStepperModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CountdownTimerModule } from 'ngx-countdown-timer';
-import { Injectable, Component, Input, Directive, ElementRef, Output, EventEmitter, ChangeDetectionStrategy, ViewChild, HostListener, NgModule, defineInjectable } from '@angular/core';
+import { Injectable, Component, Input, Output, EventEmitter, Directive, ElementRef, ChangeDetectionStrategy, ViewChild, HostListener, NgModule, defineInjectable } from '@angular/core';
 
 /**
  * @fileoverview added by tsickle
@@ -4100,7 +4100,7 @@ var sukuHomepageData = [
                 icon: 'fas fa-landmark',
                 path: '/governance',
                 disabled: false,
-                id: 'paymentPortal'
+                id: 'governance'
             })
         ]
     }),

@@ -4063,7 +4063,7 @@
                     icon: 'fas fa-landmark',
                     path: '/governance',
                     disabled: false,
-                    id: 'paymentPortal'
+                    id: 'governance'
                 })
             ]
         }),
