@@ -4070,21 +4070,21 @@ var sukuHomepageData = [
             new SukuHomepageButton({
                 title: 'Marketplace',
                 icon: 'fas fa-shopping-cart',
-                path: '/userDashboard',
+                path: '/marketplaceDashboard',
                 disabled: false,
                 id: 'Marketplace'
             }),
             new SukuHomepageButton({
                 title: 'Track & Trace',
                 icon: 'fas fa-link',
-                path: '/productSearch',
+                path: '/traceProductSearch',
                 disabled: false,
                 id: 'trackAndTrace'
             }),
             new SukuHomepageButton({
                 title: 'Document Authenticator',
                 icon: 'far fa-file-code',
-                path: '/verify',
+                path: '/documentAuth',
                 disabled: false,
                 id: 'documentAuthenticator'
             }),
