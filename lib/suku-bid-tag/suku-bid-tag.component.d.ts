@@ -5,23 +5,26 @@ export declare class SukuBidTagComponent implements OnInit {
     prizeWeight: string;
     prizeColor: string;
     prizeCustomClass: string;
+    prizeId: string;
     unit: string;
     unitSize: string;
     unitWeight: string;
     unitColor: string;
     unitCustomClass: string;
+    unitId: string;
     qContent: string;
     qSize: string;
     qWeight: string;
     qColor: string;
     qCustomClass: string;
+    quantityId: string;
     pContent: string;
     pSize: string;
     pWeight: string;
     pColor: string;
     pCustomClass: string;
+    totalPrizeId: string;
     bidtagclass: string;
-    id: string;
     constructor();
     ngOnInit(): void;
 }
