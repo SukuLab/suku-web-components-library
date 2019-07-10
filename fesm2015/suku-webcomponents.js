@@ -3124,7 +3124,7 @@ class SukuConfirmationComponent {
 SukuConfirmationComponent.decorators = [
     { type: Component, args: [{
                 selector: 'suku-confirmation',
-                template: "<div class=\"col p-0\">\n  <div class=\"col text-center\">\n    <div class=\"row justify-content-center\">\n      <div class=\"dialog-title-box {{dialogData?.titleBoxCustomClass}}\">\n        <div class=\"col\">\n          <div class=\"row\">\n            <div class=\"col pt-3\">\n              <i class=\"{{dialogData?.icon}} icon {{dialogData?.iconCustomClass}}\" id=\"iconId\"></i>\n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"col pb-3 pt-1\">\n              <span id=\"{{ dialogData?.titleOneId }}\" class=\"title pb-1 mt-3 mb-3\">\n                {{ dialogData?.titleOne }}\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n<mat-dialog-content class=\"mat-typography\">\n  <div class=\"col p-0\">\n    <h2 class=\"col maincontent pt-3 mb-1 text-center\" id=\"{{ dialogData?.titleTwoId }}\">\n      {{ dialogData?.titleTwo }}\n    </h2>\n    <h2 class=\" col subcontent mb-2 text-center\" id=\"{{ dialogData?.titleThreeId }}\">\n      {{ dialogData?.titleThree }}\n    </h2>\n  </div>\n</mat-dialog-content>\n<mat-dialog-actions>\n  <div class=\"col text-center pb-2\">\n    <div class=\"row\">\n      <div class=\"col-lg-5 offset-lg-1 col-sm-6 pt-2 justify-content-center\">\n        <button type=\"button\" id=\"{{ dialogData?.buttonLableOneId }}\"\n          class=\"btn btn-default center-block w-70 {{dialogData?.buttonCustomClass}}\" mat-dialog-close\n          (click)=\"cancel()\" tabindex=\"-1\">\n          {{ dialogData?.buttonLableOne }}\n        </button>\n      </div>\n      <div class=\"col-lg-5 col-sm-6 pt-2 justify-content-center\">\n        <button type=\"button\" tabindex=\"1\" (click)=\"submit()\" id=\"{{ dialogData?.buttonLableTwoId }}\" mat-dialog-close\n          class=\"btn btn-info center-block w-70 {{dialogData?.buttonCustomClass}}\">\n          {{ dialogData?.buttonLableTwo }}\n        </button>\n      </div>\n    </div>\n  </div>\n</mat-dialog-actions>",
+                template: "<div class=\"col p-0\">\n  <div class=\"col text-center\">\n    <div class=\"row justify-content-center\">\n      <div class=\"dialog-title-box {{dialogData?.titleBoxCustomClass}}\">\n        <div class=\"col\">\n          <div class=\"row\">\n            <div class=\"col pt-3\">\n              <i class=\"{{dialogData?.icon}} icon {{dialogData?.iconCustomClass}}\" id=\"iconId\"></i>\n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"col pb-3 pt-3\">\n              <span id=\"{{ dialogData?.titleOneId }}\" class=\"title pb-1 mt-3 mb-3\">\n                {{ dialogData?.titleOne }}\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n<mat-dialog-content class=\"mat-typography\">\n  <div class=\"col p-0\">\n    <h2 class=\"col maincontent pt-4 mb-1 text-center\" id=\"{{ dialogData?.titleTwoId }}\">\n      {{ dialogData?.titleTwo }}\n    </h2>\n    <h2 class=\" col subcontent mb-2 text-center\" id=\"{{ dialogData?.titleThreeId }}\">\n      {{ dialogData?.titleThree }}\n    </h2>\n  </div>\n</mat-dialog-content>\n<mat-dialog-actions>\n  <div class=\"col text-center pb-3\">\n    <div class=\"row\">\n      <div class=\"col-lg-5 offset-lg-1 col-sm-6 pt-3 justify-content-center\">\n        <button type=\"button\" id=\"{{ dialogData?.buttonLableOneId }}\"\n          class=\"btn btn-default center-block w-70 {{dialogData?.buttonCustomClass}}\" mat-dialog-close\n          (click)=\"cancel()\" tabindex=\"-1\">\n          {{ dialogData?.buttonLableOne }}\n        </button>\n      </div>\n      <div class=\"col-lg-5 col-sm-6 pt-3 justify-content-center\">\n        <button type=\"button\" tabindex=\"1\" (click)=\"submit()\" id=\"{{ dialogData?.buttonLableTwoId }}\" mat-dialog-close\n          class=\"btn btn-info center-block w-70 {{dialogData?.buttonCustomClass}}\">\n          {{ dialogData?.buttonLableTwo }}\n        </button>\n      </div>\n    </div>\n  </div>\n</mat-dialog-actions>",
                 styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.dialog-title-box{width:100%;float:left;background-image:linear-gradient(to bottom,rgba(101,102,243,.06),rgba(101,102,243,.06)),radial-gradient(circle at 50% 0,#3a3a3a,#000);border-radius:0;box-shadow:-4px 4px 5px 0 rgba(0,0,0,.08);margin:0}.title{font-family:var(--suku-primary-font)!important;color:#fff!important;font-size:20px;font-weight:300}.icon{font-size:50px;color:#a7bf2e}.width100{width:100%}.maincontent{font-family:var(--suku-primary-font)!important;font-size:17px;letter-spacing:.4px;font-weight:700}.subcontent{font-family:var(--suku-primary-font)!important;font-size:17px;letter-spacing:.4px;font-weight:300}::ng-deep mat-dialog-container{padding:0!important;overflow:hidden!important}:host ::ng-deep mat-dialog-content{max-height:91%!important;overflow-y:none!important;margin:0!important;height:100%!important}:host ::ng-deep mat-dialog-actions{margin:5px 10px!important}/deep/div ::-webkit-scrollbar{width:4px!important}/deep/div ::-webkit-scrollbar-track{background:rgba(0,0,0,.1)}/deep/div ::-webkit-scrollbar-thumb{background:rgba(0,0,0,.8)}.w-70{min-width:70%}"]
             }] }
 ];
@@ -3163,33 +3163,35 @@ class SukuModalService {
      */
     constructor(dialogService) {
         this.dialogService = dialogService;
-        this.dialogHeight = 'auto';
-        this.dialogWidth = '564px';
+        this.onDialogClose = new EventEmitter();
+        this.confirmationDialogHeight = 'auto';
+        this.confirmationDialogWidth = '564px';
     }
     /**
      * @param {?=} data
      * @return {?}
      */
-    openInfoModal(data) {
+    openConfirmationDialog(data) {
         /** @type {?} */
         const dialogRef = this.dialogService.open(SukuConfirmationComponent, {
-            width: this.dialogWidth,
-            height: this.dialogHeight,
+            width: this.confirmationDialogWidth,
+            height: this.confirmationDialogHeight,
+            disableClose: this.confirmationDialogClose,
             data: {
-                icon: data.icon,
-                iconCustomClass: data.iconCustomClass,
-                iconId: data.iconId,
-                titleOne: data.titleOne,
-                titleOneId: data.titleOneId,
-                titleTwo: data.titleTwo,
-                titleTwoId: data.titleOneId,
-                titleThree: data.titleThree,
-                titleThreeId: data.titleThreeId,
-                buttonLableOne: data.buttonLableOne,
-                buttonLableOneId: data.buttonLableOneId,
-                buttonLableTwo: data.buttonLableTwo,
-                buttonLableTwoId: data.buttonLableTwoId,
-                buttonCustomClass: data.buttonCustomClass
+                icon: data ? data.icon : '',
+                iconCustomClass: data ? data.iconCustomClass : '',
+                iconId: data ? data.iconId : '',
+                titleOne: data ? data.titleOne : '',
+                titleOneId: data ? data.titleOneId : '',
+                titleTwo: data ? data.titleTwo : '',
+                titleTwoId: data ? data.titleOneId : '',
+                titleThree: data ? data.titleThree : '',
+                titleThreeId: data ? data.titleThreeId : '',
+                buttonLableOne: data ? data.buttonLableOne : '',
+                buttonLableOneId: data ? data.buttonLableOneId : '',
+                buttonLableTwo: data ? data.buttonLableTwo : '',
+                buttonLableTwoId: data ? data.buttonLableTwoId : '',
+                buttonCustomClass: data ? data.buttonCustomClass : ''
             }
         });
         dialogRef.afterClosed().subscribe((/**
@@ -3197,7 +3199,7 @@ class SukuModalService {
          * @return {?}
          */
         (result) => {
-            console.log('result', result);
+            this.onDialogClose.emit(result);
         }));
     }
     /**
@@ -5475,7 +5477,69 @@ SukuWebcomponentsModule.decorators = [
                     SukuBidTagModule
                 ],
                 providers: [SukuModalService],
-                exports: [],
+                exports: [SukuCardLineComponent,
+                    SukuDashboardProfileComponent,
+                    SukuDefaultButtonComponent,
+                    SukuHeadingComponent,
+                    SukuHomeItalicHeadingComponent,
+                    SukuHomeWidgetComponent,
+                    SukuInfoButtonComponent,
+                    SukuInlineDropdownComponent,
+                    SukuMailWidgetComponent,
+                    SukuMatchChipComponent,
+                    SukuNotificationWidgetComponent,
+                    SukuPrimaryButtonComponent,
+                    SukuProgressBarTypeOneComponent,
+                    SukuProgressBarTypeTwoComponent,
+                    SukuSecondaryButtonComponent,
+                    SukuSubHeadingComponent,
+                    SukuLinkComponent,
+                    SukuSelectInputComponent,
+                    SukuNavSubmenuComponent,
+                    SukuBidInfoComponent,
+                    SukuPhoneWidgetComponent,
+                    SukuAddressWidgetComponent,
+                    SukuSearchInputComponent,
+                    SukuProfileWidgetComponent,
+                    SukuStarBadgeComponent,
+                    SukuFiltersComponent,
+                    SukuTrackProgressBarComponent,
+                    SukuProductTraceWidgetComponent,
+                    SukuTreeComponent,
+                    SukuCardTitleComponent,
+                    SukuRatingStarComponent,
+                    SukuShippingWidgetComponent,
+                    SukuResponseComponent,
+                    SukuTransactionHistoryComponent,
+                    SukuFundingSourceComponent,
+                    SukuCreateCustomerComponent,
+                    SukuBeneficialOwnerComponent,
+                    SukuDwollaFundingAgreementComponent,
+                    SukuDwollaFundingSourceComponent,
+                    SukuCreationCustomerFileuploadComponent,
+                    SukuPaymentPortalHelpComponent,
+                    SukuTermsAndConditionsComponent,
+                    SukuCardLineTypeOneComponent,
+                    SukuCardLineTypeTwoComponent,
+                    SukuRatingCardLineComponent,
+                    SukuNotificationPanelComponent,
+                    SukuAddIconComponent,
+                    SukuHomepageComponent,
+                    SukuHomepageSectionComponent,
+                    SukuHomepageButtonComponent,
+                    SukuProfileHeaderComponent,
+                    SukuSocialIconsComponent,
+                    SukuRadioButtonComponent,
+                    SukuDropdownComponent,
+                    SukuHeaderComponent,
+                    SukuTitleHeaderComponent,
+                    SukuShippingInfoWidgetComponent,
+                    SukuImageWidgetComponent,
+                    SukuChatWidgetComponent,
+                    SukuLoaderComponent,
+                    ScrollToBottomDirective,
+                    SukuLargeBidTagComponent,
+                    SukuBidWidgetTagComponent],
                 entryComponents: []
             },] }
 ];

@@ -1,9 +1,12 @@
+import { EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material';
 export declare class SukuModalService {
     dialogService: MatDialog;
-    dialogWidth: any;
-    dialogHeight: any;
+    confirmationDialogWidth: any;
+    confirmationDialogHeight: any;
+    confirmationDialogClose: any;
+    onDialogClose: EventEmitter<any>;
     constructor(dialogService: MatDialog);
-    openInfoModal(data?: any): void;
+    openConfirmationDialog(data?: any): void;
     loader(): void;
 }
