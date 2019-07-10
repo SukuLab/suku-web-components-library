@@ -9,10 +9,13 @@ export declare class SukuConfirmationComponent implements OnInit {
         'iconId': string;
         'titleOne': string;
         'titleOneId': string;
+        'titleOneCustomClass': string;
         'titleTwo': string;
         'titleTwoId': string;
+        'titleTwoCustomClass': string;
         'titleThree': string;
         'titleThreeId': string;
+        'titleThreeCustomClass': string;
         'titleBoxCustomClass': string;
         'buttonLableOne': string;
         'buttonLableOneId': string;
