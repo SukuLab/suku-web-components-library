@@ -1,11 +1,11 @@
 import { CountdownTimerModule } from 'ngx-countdown-timer';
-import { createCustomElement } from '@angular/elements';
-import { CommonModule } from '@angular/common';
 import { __values, __read } from 'tslib';
 import { MatSnackBar, MatDialogRef, MAT_DIALOG_DATA, MatDialog, MatAutocompleteModule, MatBadgeModule, MatBottomSheetModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule as MatDialogModule$1, MatDividerModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatSortModule, MatStepperModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 import { MatDialogModule, MatDialog as MatDialog$1 } from '@angular/material/dialog';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { layout, select } from 'd3';
+import { CommonModule } from '@angular/common';
+import { createCustomElement } from '@angular/elements';
 import { Component, Input, Output, EventEmitter, NgModule, Injector, Directive, ElementRef, ViewChild, HostListener, Inject, Injectable, ChangeDetectionStrategy, defineInjectable, inject } from '@angular/core';
 
 /**
@@ -2262,39 +2262,6 @@ var SukuDashboardProfileComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-var SukuDefaultButtonComponent = /** @class */ (function () {
-    function SukuDefaultButtonComponent() {
-        this.trigger = new EventEmitter();
-    }
-    /**
-     * @return {?}
-     */
-    SukuDefaultButtonComponent.prototype.ngOnInit = /**
-     * @return {?}
-     */
-    function () {
-    };
-    SukuDefaultButtonComponent.decorators = [
-        { type: Component, args: [{
-                    selector: 'suku-default-button',
-                    template: "<a class=\"default-btn c-pointer\" id=\"{{id}}\" (click)=\"trigger.emit()\">\n  <ng-content></ng-content>\n </a>\n",
-                    styles: [".default-btn{font-family:'Encode Sans',sans-serif;font-size:14px;font-weight:400;font-style:normal;font-stretch:normal;line-height:1.43;letter-spacing:-.4px;color:#fff!important}.c-pointer:hover{cursor:pointer;text-decoration:underline!important}"]
-                }] }
-    ];
-    /** @nocollapse */
-    SukuDefaultButtonComponent.ctorParameters = function () { return []; };
-    SukuDefaultButtonComponent.propDecorators = {
-        name: [{ type: Input }],
-        id: [{ type: Input }],
-        trigger: [{ type: Output }]
-    };
-    return SukuDefaultButtonComponent;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
 var SukuDropdownComponent = /** @class */ (function () {
     function SukuDropdownComponent() {
         this.control = 'productTraceability';
@@ -2841,248 +2808,6 @@ var SukuHomeWidgetComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-var SukuHomepageButton = /** @class */ (function () {
-    function SukuHomepageButton(values) {
-        if (values === void 0) { values = {}; }
-        Object.assign(this, values);
-    }
-    return SukuHomepageButton;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var SukuHomepageButtonComponent = /** @class */ (function () {
-    function SukuHomepageButtonComponent() {
-        this.sendRoutePath = new EventEmitter();
-    }
-    /**
-     * @return {?}
-     */
-    SukuHomepageButtonComponent.prototype.ngOnInit = /**
-     * @return {?}
-     */
-    function () { };
-    /**
-     * @return {?}
-     */
-    SukuHomepageButtonComponent.prototype.onClick = /**
-     * @return {?}
-     */
-    function () {
-        if (!this.buttonData.disabled) {
-            this.sendRoutePath.emit(this.buttonData.path);
-        }
-    };
-    SukuHomepageButtonComponent.decorators = [
-        { type: Component, args: [{
-                    selector: 'suku-homepage-button',
-                    template: "<div class=\"button-container d-flex flex-column align-items-center\">\r\n  <div class=\"suku-button d-flex justify-content-center align-items-center\" *ngIf=\"!(buttonData.disabled == null)\"\r\n    [ngClass]=\"{\r\n      'disabled': buttonData.disabled\r\n    }\" (click)=\"onClick()\" id=\"{{buttonData?.id}}\">\r\n    <i [ngClass]=\"[buttonData.icon, 'icon']\"></i>\r\n  </div>\r\n  <div class=\"suku-button-text text-center mt-3\" *ngIf=\"!(buttonData.disabled == null)\">\r\n    <h3 class=\"button-title\">{{buttonData.title}}</h3>\r\n  </div>\r\n </div>",
-                    styles: [".button-container{width:106.4px;font-family:Poppins,sans-serif;font-weight:700}.suku-button{height:80px;width:80px;background:#303030;color:#d8f40b;cursor:pointer!important;box-shadow:0 3px 3px 0 rgba(0,0,0,.5);transition:.1s ease-in-out;border-radius:12px 28px}.suku-button:hover{-webkit-transform:translateY(-3px);transform:translateY(-3px);box-shadow:0 6px 3px 0 rgba(0,0,0,.5)}.suku-button:active{box-shadow:0 4px 3px 0 rgba(0,0,0,.5);-webkit-transform:translateY(-1px);transform:translateY(-1px);transition:none}.disabled{background:#d9d9d9;color:#7f7f7f;cursor:default}.disabled:active,.disabled:hover{box-shadow:0 3px 3px 0 rgba(0,0,0,.5);-webkit-transform:translateY(0);transform:translateY(0)}.icon{font-size:40px}.button-title{font-size:14px;font-weight:700}"]
-                }] }
-    ];
-    /** @nocollapse */
-    SukuHomepageButtonComponent.ctorParameters = function () { return []; };
-    SukuHomepageButtonComponent.propDecorators = {
-        buttonData: [{ type: Input }],
-        sendRoutePath: [{ type: Output }]
-    };
-    return SukuHomepageButtonComponent;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var SukuHomepageSection = /** @class */ (function () {
-    function SukuHomepageSection(values) {
-        if (values === void 0) { values = {}; }
-        Object.assign(this, values);
-    }
-    return SukuHomepageSection;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var SukuHomepageSectionComponent = /** @class */ (function () {
-    function SukuHomepageSectionComponent() {
-        this.sendRoutePath = new EventEmitter();
-    }
-    /**
-     * @return {?}
-     */
-    SukuHomepageSectionComponent.prototype.ngOnInit = /**
-     * @return {?}
-     */
-    function () { };
-    /**
-     * @param {?} string
-     * @return {?}
-     */
-    SukuHomepageSectionComponent.prototype.onSendRoutePath = /**
-     * @param {?} string
-     * @return {?}
-     */
-    function (string) {
-        this.sendRoutePath.emit(string);
-    };
-    SukuHomepageSectionComponent.decorators = [
-        { type: Component, args: [{
-                    selector: 'suku-homepage-section',
-                    template: "<section class=\"homepage-section\">\r\n  <div class=\"header row ml-3 ml-sm-5\">\r\n    <div class=\"title mt-3\">{{sectionData.header}}</div>\r\n    <div class=\"mt-3 d-flex pr-5\">\r\n      <span class=\"title italic font-italic\">{{sectionData.subheader}}</span>\r\n      <div class=\"ml-2 info\">\r\n        <i class=\"fas fa-info\"></i>\r\n        <div class=\"info-box\">{{sectionData.info}}</div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"row m-3 d-flex justify-content-around\">\r\n    <div class=\"justify-content-center d-flex mt-3 mt-md-5 col-lg-2 col-md-6 col-12\"\r\n      *ngFor=\"let button of sectionData.buttons\">\r\n      <suku-homepage-button [buttonData]=\"button\" (sendRoutePath)=\"onSendRoutePath($event)\"></suku-homepage-button>\r\n    </div>\r\n  </div>\r\n</section>",
-                    styles: [".homepage-section{font-family:Poppins,sans-serif}.title{font-size:23px;font-weight:700}.italic{font-weight:400}.info{text-align:center;height:23px;width:23px;border-radius:100px;background:#303030;color:#d8f40b}.info:hover .info-box{display:block}.info-box{z-index:100;width:300px;border-radius:6px;word-wrap:break-word;background:#000;display:none;position:relative;bottom:-10px;right:23px;text-align:left;padding:20px;font-size:13px;font-family:\"Encode Sans\",sans-serif;font-weight:500;font-style:normal;font-stretch:normal;line-height:1.45;letter-spacing:.4px;color:#b6b6b6}.info-box::after{content:\"\";position:absolute;top:-10px;left:35px;margin-left:-5px;border-width:5px;border-style:solid;border-color:transparent transparent #191922;font-style:normal;font-stretch:normal}"]
-                }] }
-    ];
-    /** @nocollapse */
-    SukuHomepageSectionComponent.ctorParameters = function () { return []; };
-    SukuHomepageSectionComponent.propDecorators = {
-        sectionData: [{ type: Input }],
-        sendRoutePath: [{ type: Output }]
-    };
-    return SukuHomepageSectionComponent;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-/** @type {?} */
-var sukuHomepageData = [
-    new SukuHomepageSection({
-        header: 'SUKU Core Applications',
-        subheader: '',
-        info: 'SUKU Core Applications offer the primary feature set on the SUKU Platform. Click any of the icons below to open that SUKU Core Application.',
-        buttons: [
-            new SukuHomepageButton({
-                title: 'Marketplace',
-                icon: 'fas fa-shopping-cart',
-                path: '/marketplaceDashboard',
-                disabled: false,
-                id: 'Marketplace'
-            }),
-            new SukuHomepageButton({
-                title: 'Track & Trace',
-                icon: 'fas fa-link',
-                path: '/traceProductSearch',
-                disabled: false,
-                id: 'trackAndTrace'
-            }),
-            new SukuHomepageButton({
-                title: 'Document Authenticator',
-                icon: 'far fa-file-code',
-                path: '/documentAuth',
-                disabled: false,
-                id: 'documentAuthenticator'
-            }),
-            new SukuHomepageButton({
-                title: 'Payment Portal',
-                icon: 'fas fa-sliders-h',
-                path: '/paymentPortal',
-                disabled: false,
-                id: 'paymentPortal'
-            }),
-            new SukuHomepageButton({
-                title: 'Governance',
-                icon: 'fas fa-landmark',
-                path: '/governance',
-                disabled: false,
-                id: 'governance'
-            })
-        ]
-    }),
-    new SukuHomepageSection({
-        header: 'SUKU Applications and Services',
-        subheader: '- Coming Soon',
-        info: 'SUKU Applications and Services provide additional functionality and features, which typically leverage the the SUKU Core. We expect these Applications and Services to be built by 3rd parties and by the SUKU Team. These features are coming soon!',
-        buttons: [
-            new SukuHomepageButton({
-                title: 'Inventory Management',
-                icon: 'fas fa-box-open',
-                path: '/',
-                disabled: true,
-                id: 'inventoryManagement'
-            }),
-            new SukuHomepageButton({
-                title: 'Warehouse Management',
-                icon: 'fas fa-dolly',
-                path: '/',
-                disabled: true,
-                id: 'warehouseManagement'
-            }),
-            new SukuHomepageButton({
-                title: 'Insurance',
-                icon: 'fas fa-shield-alt',
-                path: '/',
-                disabled: true,
-                id: 'insurance'
-            }),
-            new SukuHomepageButton({
-                title: 'Quorum Block Explorer',
-                icon: 'fas fa-cubes',
-                path: '/',
-                disabled: true,
-                id: 'quorumBlockExplorer'
-            }),
-            new SukuHomepageButton({
-                title: 'Dummy',
-                icon: 'fas fa-plus',
-                path: '/',
-                disabled: null,
-                id: 'dummy'
-            })
-        ]
-    })
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var SukuHomepageComponent = /** @class */ (function () {
-    function SukuHomepageComponent() {
-        this.sendRoutePath = new EventEmitter();
-        this.homepageData = sukuHomepageData;
-    }
-    /**
-     * @return {?}
-     */
-    SukuHomepageComponent.prototype.ngOnInit = /**
-     * @return {?}
-     */
-    function () { };
-    /**
-     * @param {?} string
-     * @return {?}
-     */
-    SukuHomepageComponent.prototype.onSendRoutePath = /**
-     * @param {?} string
-     * @return {?}
-     */
-    function (string) {
-        this.sendRoutePath.emit(string);
-    };
-    SukuHomepageComponent.decorators = [
-        { type: Component, args: [{
-                    selector: 'suku-homepage',
-                    template: "<div class=\"homepage col-md-10 col-12 m-auto\">\r\n  <div *ngFor=\"let section of homepageData\">\r\n    <suku-homepage-section (sendRoutePath)=\"onSendRoutePath($event)\" [sectionData]=\"section\"></suku-homepage-section>\r\n  </div>\r\n</div>",
-                    styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);.homepage{padding:30px 0 40px;font-family:Poppins,sans-serif;background:#fff;box-shadow:0 12px 14px 0 rgba(0,0,0,.05);border-radius:0 0 41px 41px}"]
-                }] }
-    ];
-    /** @nocollapse */
-    SukuHomepageComponent.ctorParameters = function () { return []; };
-    SukuHomepageComponent.propDecorators = {
-        sendRoutePath: [{ type: Output }]
-    };
-    return SukuHomepageComponent;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
 var SukuImageWidgetComponent = /** @class */ (function () {
     function SukuImageWidgetComponent() {
         this.imageSrc = '';
@@ -3108,42 +2833,6 @@ var SukuImageWidgetComponent = /** @class */ (function () {
         imageSrc: [{ type: Input }]
     };
     return SukuImageWidgetComponent;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var SukuInfoButtonComponent = /** @class */ (function () {
-    function SukuInfoButtonComponent() {
-        this.fontWeight = 400;
-        this.trigger = new EventEmitter();
-    }
-    /**
-     * @return {?}
-     */
-    SukuInfoButtonComponent.prototype.ngOnInit = /**
-     * @return {?}
-     */
-    function () { };
-    SukuInfoButtonComponent.decorators = [
-        { type: Component, args: [{
-                    selector: 'suku-info-button',
-                    template: "<div class=\"col p-0\">\n  <button class=\"btn btn-info btn-lg btn-block\" [disabled]=\"disableValue\" [style.font-size.px]=\"size\" [style.font-weight]=\"fontWeight\" id=\"{{id}}\" (click)=\"trigger.emit()\">\n    <ng-content></ng-content>\n  </button>\n</div>",
-                    styles: [".btn{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#fff;color:#3e3e3e;font-family:'Encode Sans',sans-serif;font-weight:600;font-size:14px;padding:.55rem .85rem}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn.disabled:hover{border:2px solid #a7bf2e!important;border-radius:28px 76px 63px;background-color:#fff;color:#3e3e3e}.btn-info{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#fff;color:#3e3e3e}.btn-info:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn-info:click{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e!important;color:#fff}.btn-info:active{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn-info.disabled{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#fff;color:grey}.btn-info.disabled.focus,.btn-info.disabled:focus,.btn-info.disabled:hover,.btn-info[disabled].focus,.btn-info[disabled]:focus,.btn-info[disabled]:hover,fieldset[disabled] .btn-info.focus,fieldset[disabled] .btn-info:focus,fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#fff!important;color:grey}.btn-info.focus,.btn-info:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn-info.active.focus,.btn-info.active:focus,.btn-info.active:hover,.btn-info:active.focus,.btn-info:active:focus,.btn-info:active:hover,.open>.dropdown-toggle .btn-info.focus,.open>.dropdown-toggle .btn-info:focus,.open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn-info:not(:disabled):not(.disabled).active,.btn-info:not(:disabled):not(.disabled):active,.show>.btn-info.dropdown-toggle{color:#fff;background-color:#a7bf2e;border-color:#a7bf2e}.btn-info.focus,.btn-info:focus,.btn-info:not(:disabled):not(.disabled).active:focus,.btn-info:not(:disabled):not(.disabled):active:focus,.show>.btn-info.dropdown-toggle:focus{box-shadow:0 0 0 .2rem #a7bf2e}"]
-                }] }
-    ];
-    /** @nocollapse */
-    SukuInfoButtonComponent.ctorParameters = function () { return []; };
-    SukuInfoButtonComponent.propDecorators = {
-        name: [{ type: Input }],
-        id: [{ type: Input }],
-        size: [{ type: Input }],
-        fontWeight: [{ type: Input }],
-        disableValue: [{ type: Input }],
-        trigger: [{ type: Output }]
-    };
-    return SukuInfoButtonComponent;
 }());
 
 /**
@@ -3796,40 +3485,6 @@ var SukuPhoneWidgetComponent = /** @class */ (function () {
         id: [{ type: Input }]
     };
     return SukuPhoneWidgetComponent;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var SukuPrimaryButtonComponent = /** @class */ (function () {
-    function SukuPrimaryButtonComponent() {
-        this.id = 'primary';
-        this.customClass = 'btn-p btn-primary c-pointer';
-        this.trigger = new EventEmitter();
-    }
-    /**
-     * @return {?}
-     */
-    SukuPrimaryButtonComponent.prototype.ngOnInit = /**
-     * @return {?}
-     */
-    function () { };
-    SukuPrimaryButtonComponent.decorators = [
-        { type: Component, args: [{
-                    selector: 'suku-primary-button',
-                    template: "<button [class]=\"customClass\" id=\"{{id}}\" (click)=\"trigger.emit()\">\n  <ng-content></ng-content>\n </button>",
-                    styles: [".btn-p{border:2px solid #a7bf2e;border-radius:10px 20px 15px;background-color:#343a40!important;color:#fff;font-family:'Encode Sans',sans-serif;font-weight:600;font-size:14px;padding:.75rem 2.1rem}.btn-p:hover{border:2px solid #a7bf2e;border-radius:10px 20px 15px;background-color:#a7bf2e!important;color:#fff}.btn-p:click{border:2px solid #a7bf2e;border-radius:10px 20px 15px;background-color:#a7bf2e!important;color:#fff}.btn-p-p.disabled:hover{border:2px solid #a7bf2e!important;border-radius:10px 20px 15px;background-color:#fff;color:#1d1d1d}.btn-primary{border:2px solid #a7bf2e;border-radius:10px 20px 15px}.btn-primary:hover{border:2px solid #a7bf2e;border-radius:10px 20px 15px;background-color:#a7bf2e;color:#fff}.btn-primary:click{border:2px solid #a7bf2e;border-radius:10px 20px 15px;background-color:#a7bf2e!important;color:#fff}.btn-primary:active{border:2px solid #a7bf2e;border-radius:10px 20px 15px;background-color:#a7bf2e;color:#fff}.btn-primary.disabled{border:2px solid #a7bf2e;border-radius:10px 20px 15px;background-color:#fff;color:grey}.btn-primary.disabled.focus,.btn-primary.disabled:focus,.btn-primary.disabled:hover,.btn-primary[disabled].focus,.btn-primary[disabled]:focus,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary.focus,fieldset[disabled] .btn-primary:focus,fieldset[disabled] .btn-primary:hover{border:2px solid #a7bf2e;border-radius:10px 20px 15px;background-color:#fff!important;color:grey}.btn-primary.focus,.btn-primary:focus{border:2px solid #a7bf2e;border-radius:10px 20px 15px;background-color:#a7bf2e;color:#fff}.btn-primary.active.focus,.btn-primary.active:focus,.btn-primary.active:hover,.btn-primary:active.focus,.btn-primary:active:focus,.btn-primary:active:hover,.open>.dropdown-toggle .btn-primary.focus,.open>.dropdown-toggle .btn-primary:focus,.open>.dropdown-toggle.btn-primary:hover{border:2px solid #a7bf2e;border-radius:10px 20px 15px;background-color:#a7bf2e;color:#fff}.btn-primary:not(:disabled):not(.disabled).active,.btn-primary:not(:disabled):not(.disabled):active,.show>.btn-primary.dropdown-toggle{color:#fff;background-color:#a7bf2e;border-color:#a7bf2e}.btn-primary.focus,.btn-primary:focus,.btn-primary:not(:disabled):not(.disabled).active:focus,.btn-primary:not(:disabled):not(.disabled):active:focus,.show>.btn-primary.dropdown-toggle:focus{box-shadow:0 0 0 .2rem #a7bf2e}.REVIEW-BIDS{font-family:'Encode Sans',sans-serif!important;font-size:14px;font-weight:600;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.2px;text-align:center;color:#fff}.zeplin_button1{width:100%;height:40px;color:#f2f2f2!important;border:2px solid #757575!important;background-color:#272727!important}.btn_zep1:hover{background-color:#757575!important}.zeplin_button2{width:100%;height:40px;color:#000!important;border:2px solid #757575!important;background-color:#fff!important}.btn_zep2:hover{background-color:#757575!important;color:#fff!important}"]
-                }] }
-    ];
-    /** @nocollapse */
-    SukuPrimaryButtonComponent.ctorParameters = function () { return []; };
-    SukuPrimaryButtonComponent.propDecorators = {
-        id: [{ type: Input }],
-        customClass: [{ type: Input }],
-        trigger: [{ type: Output }]
-    };
-    return SukuPrimaryButtonComponent;
 }());
 
 /**
@@ -4758,39 +4413,6 @@ var SukuSearchInputComponent = /** @class */ (function () {
         customClass: [{ type: Input }]
     };
     return SukuSearchInputComponent;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var SukuSecondaryButtonComponent = /** @class */ (function () {
-    function SukuSecondaryButtonComponent() {
-        this.trigger = new EventEmitter();
-    }
-    /**
-     * @return {?}
-     */
-    SukuSecondaryButtonComponent.prototype.ngOnInit = /**
-     * @return {?}
-     */
-    function () { };
-    SukuSecondaryButtonComponent.decorators = [
-        { type: Component, args: [{
-                    selector: 'suku-secondary-button',
-                    template: "<a class=\"secondary-btn c-pointer\" id=\"{{id}}\" [style.color]=\"color\" [style.font-size.px]=\"size\" (click)=\"trigger.emit()\">\n  <ng-content></ng-content>\n</a>\n",
-                    styles: [".secondary-btn{font-family:'Encode Sans',sans-serif;font-size:14px;font-weight:800;font-style:normal;font-stretch:normal;line-height:1.43;letter-spacing:-.4px;color:#1c1c1c!important;border-bottom:3.5px solid #a7bf2e}"]
-                }] }
-    ];
-    /** @nocollapse */
-    SukuSecondaryButtonComponent.ctorParameters = function () { return []; };
-    SukuSecondaryButtonComponent.propDecorators = {
-        id: [{ type: Input }],
-        size: [{ type: Input }],
-        color: [{ type: Input }],
-        trigger: [{ type: Output }]
-    };
-    return SukuSecondaryButtonComponent;
 }());
 
 /**
@@ -5857,6 +5479,242 @@ var SukuTreeComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var SukuHomepageButtonComponent = /** @class */ (function () {
+    function SukuHomepageButtonComponent() {
+        this.sendRoutePath = new EventEmitter();
+    }
+    /**
+     * @return {?}
+     */
+    SukuHomepageButtonComponent.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () { };
+    /**
+     * @return {?}
+     */
+    SukuHomepageButtonComponent.prototype.onClick = /**
+     * @return {?}
+     */
+    function () {
+        if (!this.buttonData.disabled) {
+            this.sendRoutePath.emit(this.buttonData.path);
+        }
+    };
+    SukuHomepageButtonComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'suku-homepage-button',
+                    template: "<div class=\"button-container d-flex flex-column align-items-center \">\n  <div class=\"suku-button d-flex justify-content-center align-items-center {{sukuButtonCustomClass}}\"\n    *ngIf=\"!(buttonData.disabled == null)\" [ngClass]=\"{\n      'disabled': buttonData.disabled\n    }\" (click)=\"onClick()\" id=\"{{buttonData?.id}}\">\n    <i class=\"{{iconCustomClass}}\" [ngClass]=\"[buttonData.icon, 'icon']\"></i>\n  </div>\n  <div class=\"suku-button-text text-center mt-3\" *ngIf=\"!(buttonData.disabled == null)\">\n    <h3 class=\"button-title {{titleCustomClass}}\">{{buttonData.title}}</h3>\n  </div>\n</div>",
+                    styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.button-container{width:106.4px;font-family:var(--suku-primary-font)!important;font-weight:700}.suku-button{height:80px;width:80px;background:var(--suku-button-default-bg);color:var(--suku-secondary-color);cursor:pointer!important;box-shadow:0 3px 3px 0 rgba(0,0,0,.5);transition:.1s ease-in-out;border-radius:12px 28px}.suku-button:hover{box-shadow:0 4px 3px 0 rgba(0,0,0,.5);-webkit-transform:translateY(-3px);transform:translateY(-3px)}.suku-button:active{box-shadow:0 4px 3px 0 rgba(0,0,0,.5);-webkit-transform:translateY(-1px);transform:translateY(-1px);transition:none}.disabled{background:var(--suku-button-disabled-bg);color:var(--suku-icon-disabled-bg);cursor:default}.disabled:active,.disabled:hover{box-shadow:0 3px 3px 0 rgba(0,0,0,.5);-webkit-transform:translateY(0);transform:translateY(0)}.icon{font-size:40px}.button-title{font-size:14px;font-weight:700}"]
+                }] }
+    ];
+    /** @nocollapse */
+    SukuHomepageButtonComponent.ctorParameters = function () { return []; };
+    SukuHomepageButtonComponent.propDecorators = {
+        titleId: [{ type: Input }],
+        titleCustomClass: [{ type: Input }],
+        iconCustomClass: [{ type: Input }],
+        sukuButtonCustomClass: [{ type: Input }],
+        buttonData: [{ type: Input }],
+        sendRoutePath: [{ type: Output }]
+    };
+    return SukuHomepageButtonComponent;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var SukuInfoButtonComponent = /** @class */ (function () {
+    function SukuInfoButtonComponent() {
+        this.weight = '600';
+        this.action = new EventEmitter();
+    }
+    /**
+     * @return {?}
+     */
+    SukuInfoButtonComponent.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () { };
+    SukuInfoButtonComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'suku-info-button',
+                    template: "<div class=\"col p-0\">\n  <button class=\"btn btn-info btn-lg\" [ngClass]=\"{'disabled' : disableValue}\" [disabled]=\"disableValue\"\n    [style.font-size.px]=\"size\" [style.font-weight]=\"weight\" [id]=\"id\" (click)=\"action.emit()\">\n    <ng-content></ng-content>\n  </button>\n</div>",
+                    styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn:hover{border-radius:28px 76px 63px;background-color:#a7bf2e}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn-info:hover{background-color:var(--suku-primary-border-color)!important}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.btn{font-size:12px!important;border:2px solid;border-color:var(--suku-primary-color);border-radius:28px 76px 63px;background-color:#fff;color:#3e3e3e;font-family:var(--suku-secondary-font)!important;font-weight:600;padding:.5rem 2rem!important}.btn:hover{border:2px solid;border-color:var(--suku-primary-color);background-color:var(--suku-primary-color);color:#fff}.btn-info,.btn.disabled:hover{border:2px solid;border-color:var(--suku-primary-color);background-color:#fff;color:#3e3e3e}.btn-info:hover{border:2px solid;border-color:var(--suku-primary-color);background-color:var(--suku-primary-color);color:#fff}.btn-info:click{border:2px solid;border-color:var(--suku-primary-color);background-color:var(--suku-primary-color);color:#fff}.btn-info:active{border:2px solid;border-color:var(--suku-primary-color);background-color:var(--suku-primary-color);color:#fff}.btn-info.disabled{border:2px solid;border-color:var(--suku-primary-color);background-color:#fff;color:grey}.btn-info.disabled.focus,.btn-info.disabled:focus,.btn-info.disabled:hover,.btn-info[disabled].focus,.btn-info[disabled]:focus,.btn-info[disabled]:hover,fieldset[disabled] .btn-info.focus,fieldset[disabled] .btn-info:focus,fieldset[disabled] .btn-info:hover{border:2px solid;border-color:var(--suku-primary-color);background-color:#fff!important;color:grey}.btn-info.focus,.btn-info:focus{border:2px solid;border-color:var(--suku-primary-color);background-color:var(--suku-primary-color);color:#fff}.btn-info.active.focus,.btn-info.active:focus,.btn-info.active:hover,.btn-info:active.focus,.btn-info:active:focus,.btn-info:active:hover,.open>.dropdown-toggle .btn-info.focus,.open>.dropdown-toggle .btn-info:focus,.open>.dropdown-toggle.btn-info:hover{border:2px solid;border-color:var(--suku-primary-color);background-color:var(--suku-primary-color);color:#fff}.btn-info:not(:disabled):not(.disabled).active,.btn-info:not(:disabled):not(.disabled):active,.show>.btn-info.dropdown-toggle{color:#fff;background-color:#a7bf2e;border-color:var(--suku-primary-color)}.btn-info.focus,.btn-info:focus,.btn-info:not(:disabled):not(.disabled).active:focus,.btn-info:not(:disabled):not(.disabled):active:focus,.show>.btn-info.dropdown-toggle:focus{box-shadow:0 0 0 .2rem var(--suku-primary-color)}"]
+                }] }
+    ];
+    /** @nocollapse */
+    SukuInfoButtonComponent.ctorParameters = function () { return []; };
+    SukuInfoButtonComponent.propDecorators = {
+        name: [{ type: Input }],
+        id: [{ type: Input }],
+        size: [{ type: Input }],
+        weight: [{ type: Input }],
+        disableValue: [{ type: Input }],
+        action: [{ type: Output }]
+    };
+    return SukuInfoButtonComponent;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var SukuPrimaryButtonComponent = /** @class */ (function () {
+    function SukuPrimaryButtonComponent() {
+        this.id = 'primary';
+        this.customClass = 'btn-p btn-primary c-pointer';
+        this.trigger = new EventEmitter();
+    }
+    /**
+     * @return {?}
+     */
+    SukuPrimaryButtonComponent.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () { };
+    SukuPrimaryButtonComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'suku-primary-button',
+                    template: "<button class=\"{{customClass}}\" [ngClass]=\"{'disabled' : disableValue}\" [id]=\"id\" (click)=\"trigger.emit()\">\n  <ng-content></ng-content>\n</button>\n\n<!-- <div class=\"col p-0\">\n  <button class=\"btn btn-info btn-lg\" [ngClass]=\"{'disabled' : disableValue}\" [disabled]=\"disableValue\"\n    [style.font-size.px]=\"size\" [style.font-weight]=\"weight\" [id]=\"id\" (click)=\"action.emit()\">\n    <ng-content></ng-content>\n  </button>\n</div> -->",
+                    styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.btn-p{border:2px solid var(--suku-primary-color);background-color:#343a40!important;color:#fff;font-family:var(--suku-primary-font)!important;font-weight:600;font-size:14px;padding:.8rem 1.3rem;border-radius:30px 90px 77px}.btn-p:hover{cursor:pointer;background-color:var(--suku-primary-color)!important;color:#fff}.btn-p:focus{color:#fff;background-color:var(--suku-primary-color)!important;outline:0!important;box-shadow:none!important}.btn-p-p.disabled:hover{border:2px solid!important;background-color:#fff;color:#1d1d1d}.btn-primary.disabled{background-color:#fff;color:grey}.btn-primary.disabled.focus,.btn-primary.disabled:focus,.btn-primary.disabled:hover,.btn-primary[disabled].focus,.btn-primary[disabled]:focus,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary.focus,fieldset[disabled] .btn-primary:focus,fieldset[disabled] .btn-primary:hover{background-color:#fff!important;color:grey}.btn-primary.focus,.btn-primary:focus{background-color:var(--suku-primary-color);color:#fff}.btn-primary.active.focus,.btn-primary.active:focus,.btn-primary.active:hover,.btn-primary:active.focus,.btn-primary:active:focus,.btn-primary:active:hover,.open>.dropdown-toggle .btn-primary.focus,.open>.dropdown-toggle .btn-primary:focus,.open>.dropdown-toggle.btn-primary:hover{background-color:var(--suku-primary-color);color:#fff}.btn-primary:not(:disabled):not(.disabled).active,.btn-primary:not(:disabled):not(.disabled):active,.show>.btn-primary.dropdown-toggle{color:#fff;background-color:var(--suku-primary-color);border-color:var(--suku-primary-color)}"]
+                }] }
+    ];
+    /** @nocollapse */
+    SukuPrimaryButtonComponent.ctorParameters = function () { return []; };
+    SukuPrimaryButtonComponent.propDecorators = {
+        id: [{ type: Input }],
+        disableValue: [{ type: Input }],
+        customClass: [{ type: Input }],
+        trigger: [{ type: Output }]
+    };
+    return SukuPrimaryButtonComponent;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var SukuSecondaryButtonComponent = /** @class */ (function () {
+    function SukuSecondaryButtonComponent() {
+        this.trigger = new EventEmitter();
+    }
+    /**
+     * @return {?}
+     */
+    SukuSecondaryButtonComponent.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () { };
+    SukuSecondaryButtonComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'suku-secondary-button',
+                    template: "<a class=\"secondary-btn c-pointer\" id=\"{{id}}\" [style.color]=\"color\" [style.font-size.px]=\"size\"\n  (click)=\"trigger.emit()\">\n  <ng-content></ng-content>\n</a>",
+                    styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.secondary-btn{font-family:var(--suku-secondary-font)!important;font-size:14px;font-weight:800;font-style:normal;font-stretch:normal;line-height:1.43;letter-spacing:-.4px;color:#1c1c1c!important;border-bottom:3.5px solid;border-color:var(--suku-primary-color);word-break:break-word}"]
+                }] }
+    ];
+    /** @nocollapse */
+    SukuSecondaryButtonComponent.ctorParameters = function () { return []; };
+    SukuSecondaryButtonComponent.propDecorators = {
+        id: [{ type: Input }],
+        size: [{ type: Input }],
+        color: [{ type: Input }],
+        trigger: [{ type: Output }]
+    };
+    return SukuSecondaryButtonComponent;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var SukuDefaultButtonComponent = /** @class */ (function () {
+    function SukuDefaultButtonComponent() {
+        this.id = 'deafultButton';
+        this.size = '1';
+        this.color = 'white';
+        this.action = new EventEmitter();
+    }
+    /**
+     * @return {?}
+     */
+    SukuDefaultButtonComponent.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () {
+    };
+    SukuDefaultButtonComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'suku-default-button',
+                    template: "<a class=\"default-btn c-pointer\" [id]=\"id\" [style.font-size.rem]=\"size\" [style.color]=\"color\" (click)=\"action.emit()\">\n  <ng-content></ng-content>\n</a>\n\n<!-- <span class=\"default-btn c-pointer\" [id]=\"id\" [style.font-size.rem]=\"size\" [style.color]=\"color\"\n  (click)=\"action.emit()\">\n  <ng-content></ng-content>\n</span> -->",
+                    styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.default-btn{font-family:var(--suku-secondary-font)!important;font-size:14px;font-weight:400;font-style:normal;font-stretch:normal;line-height:1.43;letter-spacing:-.4px;word-break:break-word}.c-pointer:hover{cursor:pointer;text-decoration:underline!important}"]
+                }] }
+    ];
+    /** @nocollapse */
+    SukuDefaultButtonComponent.ctorParameters = function () { return []; };
+    SukuDefaultButtonComponent.propDecorators = {
+        id: [{ type: Input }],
+        size: [{ type: Input }],
+        color: [{ type: Input }],
+        action: [{ type: Output }]
+    };
+    return SukuDefaultButtonComponent;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var SukuButtonsModule = /** @class */ (function () {
+    function SukuButtonsModule(injector) {
+        this.injector = injector;
+        /** @type {?} */
+        var customElement = createCustomElement(SukuPrimaryButtonComponent, { injector: injector });
+        customElements.define('suku-primary-button', customElement);
+    }
+    /**
+     * @return {?}
+     */
+    SukuButtonsModule.prototype.ngDoBootstrap = /**
+     * @return {?}
+     */
+    function () { };
+    SukuButtonsModule.decorators = [
+        { type: NgModule, args: [{
+                    imports: [
+                        CommonModule
+                    ],
+                    declarations: [
+                        SukuInfoButtonComponent,
+                        SukuPrimaryButtonComponent,
+                        SukuSecondaryButtonComponent,
+                        SukuDefaultButtonComponent
+                    ],
+                    entryComponents: [
+                        SukuInfoButtonComponent,
+                        SukuPrimaryButtonComponent,
+                        SukuSecondaryButtonComponent,
+                        SukuDefaultButtonComponent
+                    ]
+                },] }
+    ];
+    /** @nocollapse */
+    SukuButtonsModule.ctorParameters = function () { return [
+        { type: Injector }
+    ]; };
+    return SukuButtonsModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var SukuWebcomponentsModule = /** @class */ (function () {
     function SukuWebcomponentsModule() {
     }
@@ -5865,19 +5723,15 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                     declarations: [
                         SukuCardLineComponent,
                         SukuDashboardProfileComponent,
-                        SukuDefaultButtonComponent,
                         SukuHeadingComponent,
                         SukuHomeItalicHeadingComponent,
                         SukuHomeWidgetComponent,
-                        SukuInfoButtonComponent,
                         SukuInlineDropdownComponent,
                         SukuMailWidgetComponent,
                         SukuMatchChipComponent,
                         SukuNotificationWidgetComponent,
-                        SukuPrimaryButtonComponent,
                         SukuProgressBarTypeOneComponent,
                         SukuProgressBarTypeTwoComponent,
-                        SukuSecondaryButtonComponent,
                         SukuSubHeadingComponent,
                         SukuLinkComponent,
                         SukuSelectInputComponent,
@@ -5910,9 +5764,8 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         SukuRatingCardLineComponent,
                         SukuNotificationPanelComponent,
                         SukuAddIconComponent,
-                        SukuHomepageComponent,
-                        SukuHomepageSectionComponent,
-                        SukuHomepageButtonComponent,
+                        // SukuHomepageComponent,
+                        // SukuHomepageSectionComponent,
                         SukuProfileHeaderComponent,
                         SukuSocialIconsComponent,
                         SukuRadioButtonComponent,
@@ -5925,7 +5778,12 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         SukuLoaderComponent,
                         ScrollToBottomDirective,
                         SukuLargeBidTagComponent,
-                        SukuBidWidgetTagComponent
+                        SukuBidWidgetTagComponent,
+                        // SukuDefaultButtonComponent,
+                        // SukuInfoButtonComponent,
+                        // SukuPrimaryButtonComponent,
+                        // SukuSecondaryButtonComponent,
+                        SukuHomepageButtonComponent
                     ],
                     imports: [
                         CommonModule,
@@ -5969,24 +5827,22 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         SukuModalModule,
                         SukuAchSettingModule,
                         SukuAddIconWidgetModule,
-                        SukuBidTagModule
+                        SukuBidTagModule,
+                        SukuButtonsModule
                     ],
                     providers: [SukuModalService],
-                    exports: [SukuCardLineComponent,
+                    exports: [
+                        SukuCardLineComponent,
                         SukuDashboardProfileComponent,
-                        SukuDefaultButtonComponent,
                         SukuHeadingComponent,
                         SukuHomeItalicHeadingComponent,
                         SukuHomeWidgetComponent,
-                        SukuInfoButtonComponent,
                         SukuInlineDropdownComponent,
                         SukuMailWidgetComponent,
                         SukuMatchChipComponent,
                         SukuNotificationWidgetComponent,
-                        SukuPrimaryButtonComponent,
                         SukuProgressBarTypeOneComponent,
                         SukuProgressBarTypeTwoComponent,
-                        SukuSecondaryButtonComponent,
                         SukuSubHeadingComponent,
                         SukuLinkComponent,
                         SukuSelectInputComponent,
@@ -6019,9 +5875,8 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         SukuRatingCardLineComponent,
                         SukuNotificationPanelComponent,
                         SukuAddIconComponent,
-                        SukuHomepageComponent,
-                        SukuHomepageSectionComponent,
-                        SukuHomepageButtonComponent,
+                        // SukuHomepageComponent,
+                        // SukuHomepageSectionComponent,
                         SukuProfileHeaderComponent,
                         SukuSocialIconsComponent,
                         SukuRadioButtonComponent,
@@ -6034,8 +5889,15 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         SukuLoaderComponent,
                         ScrollToBottomDirective,
                         SukuLargeBidTagComponent,
-                        SukuBidWidgetTagComponent],
-                    entryComponents: []
+                        SukuBidWidgetTagComponent,
+                        // SukuDefaultButtonComponent,
+                        // SukuInfoButtonComponent,
+                        // SukuPrimaryButtonComponent,
+                        // SukuSecondaryButtonComponent,
+                        SukuHomepageButtonComponent
+                    ],
+                    entryComponents: [],
+                    schemas: []
                 },] }
     ];
     return SukuWebcomponentsModule;
@@ -6057,6 +5919,9 @@ var suku = {
         '--suku-bg-primary': '#2f2e2e',
         '--suku-bg-secondary': '#272727',
         '--suku-bg-ternary': '#35393e',
+        '--suku-button-default-bg': '#303030',
+        '--suku-button-disabled-bg': '#d9d9d9',
+        '--suku-icon-disabled-color': '#7f7f7f',
         '--suku-text-heading': '#1d1d1d',
         '--suku-text-sub-heading': '#cccccc',
         '--suku-text-label-one': '#b6b6b6',
@@ -6085,6 +5950,9 @@ var dark = {
         '--suku-bg-primary': '#363b4e',
         '--suku-bg-secondary': '#272727',
         '--suku-bg-ternary': '#35393e',
+        '--suku-button-default-bg': '#303030',
+        '--suku-button-disabled-bg': '#d9d9d9',
+        '--suku-icon-disabled-color': '#7f7f7f',
         '--suku-text-heading': '#1d1d1d',
         '--suku-text-sub-heading': '#f2f2f2',
         '--suku-text-label-one': '#b6b6b6',
@@ -6113,6 +5981,9 @@ var light = {
         '--suku-bg-primary': '#a6c36f',
         '--suku-bg-secondary': '#282828',
         '--suku-bg-ternary': '#35393e',
+        '--suku-button-default-bg': '#303030',
+        '--suku-button-disabled-bg': '#d9d9d9',
+        '--suku-icon-disabled-color': '#7f7f7f',
         '--suku-text-heading': '#1d1d1d',
         '--suku-text-sub-heading': '#1d1d1d',
         '--suku-text-label-one': '#b6b6b6',
@@ -6200,6 +6071,6 @@ var SukuWebcomponentsService = /** @class */ (function () {
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { SukuWebcomponentsModule, suku, dark, light, SukuWebcomponentsService, SukuAchSettingModule, SukuAddIconWidgetModule, SukuBidTagModule, SukuModalModule, SukuModalService, SukuACHSettingsComponent as ɵcm, SukuAddIconComponent as ɵbu, SukuAddWidgetComponent as ɵcn, SukuAddressWidgetComponent as ɵv, SukuBeneficialOwnerComponent as ɵbk, SukuBidInfoComponent as ɵt, SukuLargeBidTagComponent as ɵcj, SukuBidTagComponent as ɵco, SukuBidWidgetTagComponent as ɵck, SukuCardLineTypeOneComponent as ɵbq, SukuCardLineTypeTwoComponent as ɵbr, SukuCardLineComponent as ɵa, SukuCardTitleComponent as ɵbd, ScrollToBottomDirective as ɵch, SukuChatWidgetComponent as ɵcg, SukuConfirmationComponent as ɵcl, SukuCreateCustomerComponent as ɵbj, SukuCreationCustomerFileuploadComponent as ɵbn, SukuDashboardProfileComponent as ɵb, SukuDefaultButtonComponent as ɵc, SukuDropdownComponent as ɵcb, SukuDwollaFundingAgreementComponent as ɵbl, SukuDwollaFundingSourceComponent as ɵbm, SukuFiltersComponent as ɵz, SukuFundingSourceComponent as ɵbi, SukuHeaderComponent as ɵcc, SukuHeadingComponent as ɵd, SukuHomeItalicHeadingComponent as ɵe, SukuHomeWidgetComponent as ɵf, SukuHomepageButtonComponent as ɵbx, SukuHomepageSectionComponent as ɵbw, SukuHomepageComponent as ɵbv, SukuImageWidgetComponent as ɵcf, SukuInfoButtonComponent as ɵg, SukuInlineDropdownComponent as ɵh, SukuLinkComponent as ɵq, SukuLoaderComponent as ɵci, SukuMailWidgetComponent as ɵi, SukuMatchChipComponent as ɵj, SukuNavSubmenuComponent as ɵs, SukuNotificationPanelComponent as ɵbt, SukuNotificationWidgetComponent as ɵk, SukuPaymentPortalHelpComponent as ɵbo, SukuPhoneWidgetComponent as ɵu, SukuPrimaryButtonComponent as ɵl, SukuProductTraceWidgetComponent as ɵbb, SukuProfileHeaderComponent as ɵby, SukuProfileWidgetComponent as ɵx, SukuProgressBarTypeOneComponent as ɵm, SukuProgressBarTypeTwoComponent as ɵn, SukuRadioButtonComponent as ɵca, SukuRatingCardLineComponent as ɵbs, SukuRatingStarComponent as ɵbe, SukuResponseComponent as ɵbg, SukuSearchInputComponent as ɵw, SukuSecondaryButtonComponent as ɵo, SukuSelectInputComponent as ɵr, SukuShippingInfoWidgetComponent as ɵce, SukuShippingWidgetComponent as ɵbf, SukuSocialIconsComponent as ɵbz, SukuStarBadgeComponent as ɵy, SukuSubHeadingComponent as ɵp, SukuTermsAndConditionsComponent as ɵbp, SukuTitleHeaderComponent as ɵcd, SukuTrackProgressBarComponent as ɵba, SukuTransactionHistoryComponent as ɵbh, SukuTreeComponent as ɵbc };
+export { SukuWebcomponentsModule, suku, dark, light, SukuWebcomponentsService, SukuAchSettingModule, SukuAddIconWidgetModule, SukuBidTagModule, SukuButtonsModule, SukuModalModule, SukuModalService, SukuACHSettingsComponent as ɵcg, SukuAddIconComponent as ɵbq, SukuAddWidgetComponent as ɵch, SukuAddressWidgetComponent as ɵr, SukuBeneficialOwnerComponent as ɵbg, SukuBidInfoComponent as ɵp, SukuLargeBidTagComponent as ɵcc, SukuBidTagComponent as ɵci, SukuBidWidgetTagComponent as ɵcd, SukuDefaultButtonComponent as ɵcm, SukuHomepageButtonComponent as ɵce, SukuInfoButtonComponent as ɵcj, SukuPrimaryButtonComponent as ɵck, SukuSecondaryButtonComponent as ɵcl, SukuCardLineTypeOneComponent as ɵbm, SukuCardLineTypeTwoComponent as ɵbn, SukuCardLineComponent as ɵa, SukuCardTitleComponent as ɵz, ScrollToBottomDirective as ɵca, SukuChatWidgetComponent as ɵbz, SukuConfirmationComponent as ɵcf, SukuCreateCustomerComponent as ɵbf, SukuCreationCustomerFileuploadComponent as ɵbj, SukuDashboardProfileComponent as ɵb, SukuDropdownComponent as ɵbu, SukuDwollaFundingAgreementComponent as ɵbh, SukuDwollaFundingSourceComponent as ɵbi, SukuFiltersComponent as ɵv, SukuFundingSourceComponent as ɵbe, SukuHeaderComponent as ɵbv, SukuHeadingComponent as ɵc, SukuHomeItalicHeadingComponent as ɵd, SukuHomeWidgetComponent as ɵe, SukuImageWidgetComponent as ɵby, SukuInlineDropdownComponent as ɵf, SukuLinkComponent as ɵm, SukuLoaderComponent as ɵcb, SukuMailWidgetComponent as ɵg, SukuMatchChipComponent as ɵh, SukuNavSubmenuComponent as ɵo, SukuNotificationPanelComponent as ɵbp, SukuNotificationWidgetComponent as ɵi, SukuPaymentPortalHelpComponent as ɵbk, SukuPhoneWidgetComponent as ɵq, SukuProductTraceWidgetComponent as ɵx, SukuProfileHeaderComponent as ɵbr, SukuProfileWidgetComponent as ɵt, SukuProgressBarTypeOneComponent as ɵj, SukuProgressBarTypeTwoComponent as ɵk, SukuRadioButtonComponent as ɵbt, SukuRatingCardLineComponent as ɵbo, SukuRatingStarComponent as ɵba, SukuResponseComponent as ɵbc, SukuSearchInputComponent as ɵs, SukuSelectInputComponent as ɵn, SukuShippingInfoWidgetComponent as ɵbx, SukuShippingWidgetComponent as ɵbb, SukuSocialIconsComponent as ɵbs, SukuStarBadgeComponent as ɵu, SukuSubHeadingComponent as ɵl, SukuTermsAndConditionsComponent as ɵbl, SukuTitleHeaderComponent as ɵbw, SukuTrackProgressBarComponent as ɵw, SukuTransactionHistoryComponent as ɵbd, SukuTreeComponent as ɵy };
 
 //# sourceMappingURL=suku-webcomponents.js.map

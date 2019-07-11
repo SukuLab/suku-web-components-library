@@ -8,6 +8,9 @@ function addPackageJsonDependencies() {
         const dependencies = [
             { type: schematics_utilities_1.NodeDependencyType.Default, version: '~6.1.1', name: '@angular/elements' },
             { type: schematics_utilities_1.NodeDependencyType.Default, version: '~1.1.0', name: '@webcomponents/custom-elements' },
+            { type: schematics_utilities_1.NodeDependencyType.Default, version: '~7.0.4', name: '@angular/material' },
+            { type: schematics_utilities_1.NodeDependencyType.Default, version: '~7.0.4', name: '@angular/forms' },
+            { type: schematics_utilities_1.NodeDependencyType.Default, version: '^0.1.9', name: 'ngx-countdown-timer' }
         ];
         dependencies.forEach((dependency) => {
             schematics_utilities_1.addPackageJsonDependency(host, dependency);
@@ -53,8 +56,12 @@ function installPackageJsonDependencies() {
                   '"""""8b'  88        88  8888"88'     88        88  
                         '8b  88        88  88P   Y8b    88        88  
                 Y8a     a8P  Y8a.    .a8P  88     "88'  Y8a.    .a8P  
-                  "Y88888P"    "Y8888Y"    88       Y8b   "Y8888Y"'                          
-                   `;
+                  "Y88888P"    "Y8888Y"    88       Y8b   "Y8888Y"'
+
+       
+       
+         ✅️ Thanks for installing ❤️ *suku-webcomponents* ❤️
+                  `;
         context.logger.log('info', author);
         return host;
     };
@@ -66,7 +73,7 @@ function addModuleToImports(options) {
         // Takes the first project in case it's not provided by CLI
         options.project ? options.project : Object.keys(workspace['projects'])[0]);
         const moduleName = 'SukuWebcomponentsModule';
-        schematics_utilities_1.addModuleImportToRootModule(host, moduleName, 'suku-webcomponents', project);
+        schematics_utilities_1.addModuleImportToRootModule(host, moduleName, '@suku/suku-webcomponents', project);
         context.logger.log('info', `✅️ "${moduleName}" is imported`);
         return host;
     };
