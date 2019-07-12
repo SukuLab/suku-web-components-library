@@ -4423,6 +4423,28 @@
      */
     var SukuSocialIconsComponent = /** @class */ (function () {
         function SukuSocialIconsComponent() {
+            this.socialIcons = [
+                {
+                    icon: 'fa fa-twitter',
+                    path: 'https://twitter.com/login',
+                    id: 'twitter'
+                },
+                {
+                    icon: 'fa fa-facebook',
+                    path: 'https://www.facebook.com/',
+                    id: 'facebook'
+                },
+                {
+                    icon: 'fa fa-linkedin',
+                    path: 'https://in.linkedin.com/',
+                    id: 'linkedin'
+                },
+                {
+                    icon: 'fa fa-instagram',
+                    path: 'https://www.instagram.com/',
+                    id: 'instagram'
+                }
+            ];
             this.action = new i0.EventEmitter();
         }
         /**
@@ -4432,28 +4454,6 @@
          * @return {?}
          */
             function () {
-                this.socialIcons = [
-                    {
-                        icon: 'fa fa-twitter',
-                        path: 'https://twitter.com/login',
-                        id: 'twitter'
-                    },
-                    {
-                        icon: 'fa fa-facebook',
-                        path: 'https://www.facebook.com/',
-                        id: 'facebook'
-                    },
-                    {
-                        icon: 'fa fa-linkedin',
-                        path: 'https://in.linkedin.com/',
-                        id: 'linkedin'
-                    },
-                    {
-                        icon: 'fa fa-instagram',
-                        path: 'https://www.instagram.com/',
-                        id: 'instagram'
-                    }
-                ];
             };
         /**
          * @param {?} e

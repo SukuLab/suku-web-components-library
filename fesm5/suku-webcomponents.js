@@ -4461,15 +4461,6 @@ var SukuProfileHeaderComponent = /** @class */ (function () {
  */
 var SukuSocialIconsComponent = /** @class */ (function () {
     function SukuSocialIconsComponent() {
-        this.action = new EventEmitter();
-    }
-    /**
-     * @return {?}
-     */
-    SukuSocialIconsComponent.prototype.ngOnInit = /**
-     * @return {?}
-     */
-    function () {
         this.socialIcons = [
             {
                 icon: 'fa fa-twitter',
@@ -4492,6 +4483,15 @@ var SukuSocialIconsComponent = /** @class */ (function () {
                 id: 'instagram'
             }
         ];
+        this.action = new EventEmitter();
+    }
+    /**
+     * @return {?}
+     */
+    SukuSocialIconsComponent.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () {
     };
     /**
      * @param {?} e

@@ -4133,12 +4133,6 @@ SukuProfileHeaderComponent.propDecorators = {
  */
 class SukuSocialIconsComponent {
     constructor() {
-        this.action = new EventEmitter();
-    }
-    /**
-     * @return {?}
-     */
-    ngOnInit() {
         this.socialIcons = [
             {
                 icon: 'fa fa-twitter',
@@ -4161,6 +4155,12 @@ class SukuSocialIconsComponent {
                 id: 'instagram'
             }
         ];
+        this.action = new EventEmitter();
+    }
+    /**
+     * @return {?}
+     */
+    ngOnInit() {
     }
     /**
      * @param {?} e
