@@ -1,9 +1,11 @@
 import { OnInit, EventEmitter } from '@angular/core';
 export declare class SukuSecondaryButtonComponent implements OnInit {
     id: any;
-    size: any;
+    size: number;
+    weight: any;
     color: any;
-    trigger: EventEmitter<{}>;
+    customClass: any;
+    action: EventEmitter<{}>;
     constructor();
     ngOnInit(): void;
 }

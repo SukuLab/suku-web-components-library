@@ -1,9 +1,10 @@
 import { OnInit, EventEmitter } from '@angular/core';
 export declare class SukuInfoButtonComponent implements OnInit {
-    name: any;
     id: any;
-    size: any;
+    size: string;
     weight: string;
+    type: string;
+    customClass: string;
     disableValue: Boolean;
     action: EventEmitter<{}>;
     constructor();
