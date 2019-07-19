@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { OnInit, EventEmitter } from '@angular/core';
 export declare class SukuProgressBarTypeTwoComponent implements OnInit {
     progressStyleOne: string;
     progressStyleTwo: string;
@@ -31,6 +31,11 @@ export declare class SukuProgressBarTypeTwoComponent implements OnInit {
         labelFourId: string;
         labelFiveId: string;
     };
+    progressOneAction: EventEmitter<{}>;
+    progressTwoAction: EventEmitter<{}>;
+    progressThreeAction: EventEmitter<{}>;
+    progressFourAction: EventEmitter<{}>;
+    progressFiveAction: EventEmitter<{}>;
     constructor();
     ngOnInit(): void;
 }

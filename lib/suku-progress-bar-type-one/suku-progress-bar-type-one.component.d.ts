@@ -1,15 +1,13 @@
-import { OnInit } from '@angular/core';
+import { OnInit, EventEmitter } from '@angular/core';
 export declare class SukuProgressBarTypeOneComponent implements OnInit {
     progressStyleOne: string;
     progressStyleTwo: string;
     progressStyleThree: string;
     progressStyleFour: string;
-    progressStyleFive: string;
     customHeadingOneClass: string;
     customHeadingTwoClass: string;
     customHeadingThreeClass: string;
     customHeadingFourClass: string;
-    customHeadingFiveClass: string;
     progressBarLabels: {
         labelOne: string;
         labelTwo: string;
@@ -28,6 +26,10 @@ export declare class SukuProgressBarTypeOneComponent implements OnInit {
         labelThreeId: string;
         labelFourId: string;
     };
+    progressOneAction: EventEmitter<{}>;
+    progressTwoAction: EventEmitter<{}>;
+    progressThreeAction: EventEmitter<{}>;
+    progressFourAction: EventEmitter<{}>;
     constructor();
     ngOnInit(): void;
 }
