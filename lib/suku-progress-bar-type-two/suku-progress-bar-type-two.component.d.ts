@@ -10,6 +10,7 @@ export declare class SukuProgressBarTypeTwoComponent implements OnInit {
     customHeadingThreeClass: string;
     customHeadingFourClass: string;
     customHeadingFiveClass: string;
+    enablePointer: boolean;
     progressBarLabels: {
         labelOne: string;
         labelTwo: string;
