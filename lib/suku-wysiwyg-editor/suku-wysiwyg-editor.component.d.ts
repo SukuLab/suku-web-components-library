@@ -4,6 +4,7 @@ export declare class SukuWysiwygEditorComponent implements OnInit {
     htmlQuillContent: any;
     form: FormGroup;
     control: string;
+    placeholder: string;
     moduleConfig: {
         toolbar: (string[] | {
             header: number;

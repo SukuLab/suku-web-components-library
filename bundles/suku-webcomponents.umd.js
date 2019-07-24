@@ -5655,6 +5655,7 @@
     var SukuWysiwygEditorComponent = /** @class */ (function () {
         function SukuWysiwygEditorComponent() {
             this.control = 'productTraceability';
+            this.placeholder = 'Enter text';
             this.moduleConfig = {
                 toolbar: [
                     ['bold', 'italic', 'underline', 'strike'],
@@ -5705,7 +5706,8 @@
         SukuWysiwygEditorComponent.ctorParameters = function () { return []; };
         SukuWysiwygEditorComponent.propDecorators = {
             form: [{ type: i0.Input }],
-            control: [{ type: i0.Input }]
+            control: [{ type: i0.Input }],
+            placeholder: [{ type: i0.Input }]
         };
         return SukuWysiwygEditorComponent;
     }());

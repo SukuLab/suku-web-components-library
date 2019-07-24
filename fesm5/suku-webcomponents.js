@@ -5703,6 +5703,7 @@ var SukuTreeComponent = /** @class */ (function () {
 var SukuWysiwygEditorComponent = /** @class */ (function () {
     function SukuWysiwygEditorComponent() {
         this.control = 'productTraceability';
+        this.placeholder = 'Enter text';
         this.moduleConfig = {
             toolbar: [
                 ['bold', 'italic', 'underline', 'strike'],
@@ -5753,7 +5754,8 @@ var SukuWysiwygEditorComponent = /** @class */ (function () {
     SukuWysiwygEditorComponent.ctorParameters = function () { return []; };
     SukuWysiwygEditorComponent.propDecorators = {
         form: [{ type: Input }],
-        control: [{ type: Input }]
+        control: [{ type: Input }],
+        placeholder: [{ type: Input }]
     };
     return SukuWysiwygEditorComponent;
 }());

@@ -5255,6 +5255,7 @@ SukuTreeComponent.propDecorators = {
 class SukuWysiwygEditorComponent {
     constructor() {
         this.control = 'productTraceability';
+        this.placeholder = 'Enter text';
         this.moduleConfig = {
             toolbar: [
                 ['bold', 'italic', 'underline', 'strike'],
@@ -5299,7 +5300,8 @@ SukuWysiwygEditorComponent.decorators = [
 SukuWysiwygEditorComponent.ctorParameters = () => [];
 SukuWysiwygEditorComponent.propDecorators = {
     form: [{ type: Input }],
-    control: [{ type: Input }]
+    control: [{ type: Input }],
+    placeholder: [{ type: Input }]
 };
 
 /**
