@@ -69,3 +69,4 @@ export { SukuTitleHeaderComponent as ɵcg } from './lib/suku-title-header/suku-t
 export { SukuTrackProgressBarComponent as ɵbc } from './lib/suku-track-progress-bar/suku-track-progress-bar.component';
 export { SukuTransactionHistoryComponent as ɵbk } from './lib/suku-transaction-history/suku-transaction-history.component';
 export { SukuTreeComponent as ɵbe } from './lib/suku-tree/suku-tree.component';
+export { SukuWysiwygEditorComponent as ɵcp } from './lib/suku-wysiwyg-editor/suku-wysiwyg-editor.component';

@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('ngx-countdown-timer'), require('@angular/material'), require('@angular/forms'), require('@angular/core'), require('d3')) :
-    typeof define === 'function' && define.amd ? define('suku-webcomponents', ['exports', '@angular/common', 'ngx-countdown-timer', '@angular/material', '@angular/forms', '@angular/core', 'd3'], factory) :
-    (factory((global['suku-webcomponents'] = {}),global.ng.common,global.ngxCountdownTimer,global.ng.material,global.ng.forms,global.ng.core,global.d3));
-}(this, (function (exports,common,ngxCountdownTimer,material,forms,i0,d3) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('ngx-countdown-timer'), require('@angular/material'), require('@angular/forms'), require('d3'), require('@angular/core'), require('ngx-quill')) :
+    typeof define === 'function' && define.amd ? define('suku-webcomponents', ['exports', '@angular/common', 'ngx-countdown-timer', '@angular/material', '@angular/forms', 'd3', '@angular/core', 'ngx-quill'], factory) :
+    (factory((global['suku-webcomponents'] = {}),global.ng.common,global.ngxCountdownTimer,global.ng.material,global.ng.forms,global.d3,global.ng.core,global.ngxQuill));
+}(this, (function (exports,common,ngxCountdownTimer,material,forms,d3,i0,ngxQuill) { 'use strict';
 
     /**
      * @fileoverview added by tsickle
@@ -5652,6 +5652,68 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
+    var SukuWysiwygEditorComponent = /** @class */ (function () {
+        function SukuWysiwygEditorComponent() {
+            this.control = 'productTraceability';
+            this.moduleConfig = {
+                toolbar: [
+                    ['bold', 'italic', 'underline', 'strike'],
+                    ['blockquote', 'code-block'],
+                    [{ header: 1 }, { header: 2 }],
+                    [{ list: 'ordered' }, { list: 'bullet' }],
+                    [{ script: 'sub' }, { script: 'super' }],
+                    [{ indent: '-1' }, { indent: '+1' }],
+                    [{ direction: 'rtl' }],
+                    // [ { size: [ 'small', false, 'large', 'huge' ] } ], // custom dropdown
+                    [{ header: [1, 2, 3, 4, 5, 6, false] }],
+                    [{ color: [] }, { background: [] }],
+                    [{ font: [] }],
+                    [{ align: [] }],
+                    ['clean'] // remove formatting button
+                ]
+            };
+        }
+        /**
+         * @return {?}
+         */
+        SukuWysiwygEditorComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+            function () {
+                // this.htmlQuillContent =
+                // 	'<h2 class="ql-align-justify"><strong>JCET006 NFC</strong> rfid animal identification tracking management number plastic card cattle cow <em><u>livestock</u></em> ear tag.<span style="color: rgb(51, 51, 51);">&nbsp;</span></h2><p><br></p><p><strong>1.Specializing:&nbsp;</strong></p><p><span style="color: rgb(51, 51, 51);">Our&nbsp;company&nbsp;is&nbsp;specializing&nbsp;in&nbsp;the&nbsp;production&nbsp;of&nbsp;various&nbsp;kinds&nbsp;of&nbsp;security&nbsp;seals:&nbsp;high&nbsp;security&nbsp;bolt&nbsp;seals,&nbsp;cable&nbsp;seals,&nbsp;plastic&nbsp;seals,&nbsp;meter&nbsp;seals,&nbsp;metal&nbsp;strap&nbsp;seals&nbsp;and&nbsp;barrier&nbsp;seals,&nbsp;etc.&nbsp;</span></p><p><strong style="color: rgb(51, 51, 51);">2.Variety:&nbsp;</strong></p><p><span style="color: rgb(51, 51, 51);">The&nbsp;company&nbsp;producesvarious&nbsp;kinds&nbsp;of&nbsp;security&nbsp;seals,&nbsp;various&nbsp;types,&nbsp;shapes&nbsp;and&nbsp;sizes&nbsp;of&nbsp;the&nbsp;seals,&nbsp;in&nbsp;order&nbsp;to&nbsp;meet&nbsp;your&nbsp;different&nbsp;needs.&nbsp;</span></p><p><strong style="color: rgb(51, 51, 51);">3.Quality&nbsp;Controlled&nbsp;: </strong></p><h4>The&nbsp;company&nbsp;is&nbsp;considering.<u>”</u><strong style="color: rgb(0, 97, 0);"><u>Quality&nbsp;First</u></strong><strong style="color: rgb(230, 0, 0);"><u>,</u></strong><strong style="color: rgb(102, 102, 0);"><u>&nbsp;</u></strong><strong style="color: rgb(0, 71, 178);"><u>Service&nbsp;Firs</u></strong><u style="color: rgb(0, 71, 178);">t</u><u>"&nbsp;</u></h4><p><strong style="color: rgb(51, 51, 51);">4.Favorable&nbsp;Price:</strong></p><p><strong style="color: rgb(51, 51, 51);">&nbsp;</strong><span style="color: rgb(51, 51, 51);">We&nbsp;will&nbsp;provide&nbsp;you&nbsp;favorable&nbsp;and&nbsp;reasonable&nbsp;price!&nbsp;The&nbsp;larger&nbsp;quantity,the more discount.</span></p><p><strong style="color: rgb(51, 51, 51);">5.Timely&nbsp;Delivery:</strong></p><p><strong style="color: rgb(51, 51, 51);">&nbsp;</strong><span style="color: rgb(51, 51, 51);">No&nbsp;matter how small or big your&nbsp;order&nbsp;is,&nbsp;timely&nbsp;delivery&nbsp;is&nbsp;our&nbsp;long-term&nbsp;goal!&nbsp;</span></p><p><strong style="color: rgb(51, 51, 51);">6.Special&nbsp;Customized:</strong></p><p><span style="color: rgb(51, 51, 51);">&nbsp;At&nbsp;the&nbsp;same&nbsp;time,&nbsp;we&nbsp;provide&nbsp;customizing&nbsp;service,&nbsp;if&nbsp;all&nbsp;of&nbsp;our&nbsp;products&nbsp;cannot&nbsp;meet&nbsp;your&nbsp;requests,&nbsp;we&nbsp;also&nbsp;can&nbsp;specially&nbsp;customize the&nbsp;products&nbsp;for you&nbsp;as&nbsp;per&nbsp;your&nbsp;samples,&nbsp;drawings,&nbsp;etc.</span></p>';
+            };
+        /**
+         * @param {?} data
+         * @return {?}
+         */
+        SukuWysiwygEditorComponent.prototype.onContentChanged = /**
+         * @param {?} data
+         * @return {?}
+         */
+            function (data) {
+                console.log(data.html);
+            };
+        SukuWysiwygEditorComponent.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'suku-wysiwyg-editor',
+                        template: "<span [formGroup]=\"form\">\n  <quill-editor [modules]=\"moduleConfig\" \n  placeholder=\"Enter Text\" formControlName=\"{{control}}\" [(ngModel)]=\"htmlQuillContent\" (onContentChanged)=\"onContentChanged($event)\">\n  </quill-editor>\n</span>",
+                        styles: [""]
+                    }] }
+        ];
+        /** @nocollapse */
+        SukuWysiwygEditorComponent.ctorParameters = function () { return []; };
+        SukuWysiwygEditorComponent.propDecorators = {
+            form: [{ type: i0.Input }],
+            control: [{ type: i0.Input }]
+        };
+        return SukuWysiwygEditorComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
     var SukuWebcomponentsModule = /** @class */ (function () {
         function SukuWebcomponentsModule() {
         }
@@ -5724,7 +5786,8 @@
                             SukuConfirmationComponent,
                             ScrollToBottomDirective,
                             SukuLargeBidTagComponent,
-                            SukuBidWidgetTagComponent
+                            SukuBidWidgetTagComponent,
+                            SukuWysiwygEditorComponent
                         ],
                         imports: [
                             common.CommonModule,
@@ -5764,7 +5827,8 @@
                             material.MatTableModule,
                             material.MatTabsModule,
                             material.MatToolbarModule,
-                            material.MatTooltipModule
+                            material.MatTooltipModule,
+                            ngxQuill.QuillModule
                         ],
                         exports: [SukuBidTagComponent,
                             SukuCardLineComponent,
@@ -5832,7 +5896,9 @@
                             SukuConfirmationComponent,
                             ScrollToBottomDirective,
                             SukuLargeBidTagComponent,
-                            SukuBidWidgetTagComponent]
+                            SukuBidWidgetTagComponent,
+                            SukuWysiwygEditorComponent
+                        ]
                     },] }
         ];
         return SukuWebcomponentsModule;
@@ -5920,6 +5986,7 @@
     exports.ɵbc = SukuTrackProgressBarComponent;
     exports.ɵbk = SukuTransactionHistoryComponent;
     exports.ɵbe = SukuTreeComponent;
+    exports.ɵcp = SukuWysiwygEditorComponent;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
