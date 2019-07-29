@@ -1,13 +1,15 @@
 import { OnInit } from '@angular/core';
 export declare class SukuMailWidgetComponent implements OnInit {
-    name: string;
+    id: string;
     size: string;
     color: string;
     weight: string;
-    alt: string;
     customClass: string;
-    id: string;
-    image: string;
+    icon: string;
+    iconId: string;
+    iconCustomClass: string;
+    imageWidth: string;
+    widgetCustomClass: string;
     constructor();
     ngOnInit(): void;
 }

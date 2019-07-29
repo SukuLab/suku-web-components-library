@@ -1,6 +1,6 @@
 import { OnInit } from '@angular/core';
 export declare class SukuHomeItalicHeadingComponent implements OnInit {
-    name: any;
+    id: any;
     size: any;
     color: any;
     weight: any;

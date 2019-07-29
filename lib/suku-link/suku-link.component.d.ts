@@ -1,6 +1,5 @@
 import { OnInit, EventEmitter } from '@angular/core';
 export declare class SukuLinkComponent implements OnInit {
-    name: any;
     size: any;
     color: any;
     weight: any;

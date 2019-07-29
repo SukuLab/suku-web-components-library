@@ -1,15 +1,16 @@
 import { OnInit, EventEmitter } from '@angular/core';
 export declare class SukuCardLineTypeTwoComponent implements OnInit {
     image: string;
+    bgColor: string;
     iconOne: string;
     iconTwo: string;
     msgStatus: any;
     customclass: string;
     customImgclass: string;
-    customIconclass: string;
-    bgColor: string;
-    interest: any;
+    customIconClass: string;
     imageColSize: string;
+    iconOneId: string;
+    iconTwoId: string;
     txtcolsize: string;
     txttwocolsize: string;
     txtthreecolsize: string;

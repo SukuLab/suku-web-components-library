@@ -17,12 +17,19 @@ export declare class SukuProfileWidgetComponent implements OnInit {
     ratingWeight: string;
     rDustomClass: string;
     id: string;
+    subCustomClass: string;
+    mainCustomClass: string;
     myHTML: any;
     _rate: number;
     rating: EventEmitter<{}>;
     customClass: any;
+    fullStars: number;
+    fullStarsArray: any[];
+    halfStar: number;
+    emptyStars: number;
+    emptyStarsArray: any[];
+    action: EventEmitter<{}>;
     ratingValue: number;
     constructor();
-    callOfStarts(e: any): void;
     ngOnInit(): void;
 }

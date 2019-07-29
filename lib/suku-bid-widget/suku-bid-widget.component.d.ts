@@ -22,15 +22,19 @@ export declare class SukuBidWidgetTagComponent implements OnInit {
     listFontSize: string;
     bidTitleFontColor: string;
     bidTitleFontSize: string;
-    bidDetilsFontColor: string;
-    bidDetilsFontSize: string;
+    bidDetailFontColor: string;
+    bidDetailFontSize: string;
     priceFontWeight: string;
     listFontWeight: string;
     bidTitleFontWeight: string;
-    bidDetilsFontWeight: string;
+    bidDetailFontWeight: string;
     titleFontColor: string;
     titleFontSize: string;
     titleFontWeight: string;
+    asideBgColor: any;
+    productPaymentCustomClass: string;
+    bidDetailCustomClass: string;
+    articleAlignmentCustomClass: string;
     constructor();
     ngOnInit(): void;
 }

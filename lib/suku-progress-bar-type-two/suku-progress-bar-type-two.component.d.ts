@@ -31,6 +31,16 @@ export declare class SukuProgressBarTypeTwoComponent implements OnInit {
         labelFourId: string;
         labelFiveId: string;
     };
+    progressNamesCustomClass: string;
+    progressLabelOne: string;
+    progressLabelTwo: string;
+    progressLabelThree: string;
+    progressLabelFour: string;
+    progressLabelFive: string;
+    checkMarkCustomClass: string;
+    progressTextAlignCustomClass: string;
+    progressBarLabelCustomClass: string;
+    labelContentCustomClass: string;
     progressOneAction: EventEmitter<{}>;
     progressTwoAction: EventEmitter<{}>;
     progressThreeAction: EventEmitter<{}>;

@@ -1,18 +1,17 @@
 import { OnInit, EventEmitter } from '@angular/core';
 export declare class SukuCardLineTypeOneComponent implements OnInit {
+    bgColor: string;
     image: string;
     chatReadIcon: string;
     chatUnreadIcon: string;
     msgStatus: any;
-    customclass: string;
+    customClass: string;
     customImgclass: string;
-    customIconclass: string;
-    bgColor: string;
-    interest: any;
+    customIconClass: string;
     imageColSize: string;
     txtcolsize: string;
-    txttwocolsize: string;
-    txtthreecolsize: string;
+    txtTwocolsize: string;
+    txtThreecolsize: string;
     titleOne: string;
     titleOneColor: string;
     titleOneWeight: string;
@@ -43,6 +42,7 @@ export declare class SukuCardLineTypeOneComponent implements OnInit {
     contentThreeWeight: string;
     contentThreeSize: string;
     contentThreecustomclass: string;
+    imgCustomClass: string;
     action: EventEmitter<{}>;
     userAction: EventEmitter<{}>;
     constructor();

@@ -1,6 +1,6 @@
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 import { Component, Input } from '@angular/core';
 var SukuCardTitleComponent = /** @class */ (function () {
@@ -14,8 +14,8 @@ var SukuCardTitleComponent = /** @class */ (function () {
         this.cardContentsize = '17';
         this.cardContentcolor = '#1d1d1d';
         this.cardContentweight = '700';
-        this.customclassContent = '';
-        this.customclasstitle = '';
+        this.customTitleClass = '';
+        this.customContentClass = '';
     }
     /**
      * @return {?}
@@ -28,25 +28,25 @@ var SukuCardTitleComponent = /** @class */ (function () {
     SukuCardTitleComponent.decorators = [
         { type: Component, args: [{
                     selector: 'suku-card-title',
-                    template: "<div class=\"product-title\">\n  <h1 [style.font-size.px]=\"cardTitlesize\" [class]=\"customclasstitle\" [style.color]=\"cardTitlecolor\" id=\"{{cardTitleId}}\">\n    {{cardTitleName}}\n  </h1>\n  <h2 [style.font-size.px]=\"cardContentsize\" [class]=\"customclassContent\" id=\"{{cardContentId}}\" [style.font-weight]=\"cardContentweight\"\n    [style.color]=\"cardContentcolor\">\n    {{cardContentName}}\n  </h2>\n</div>\n",
-                    styles: ["h1{font-family:\"Encode Sans\",sans-serif!important;font-size:12px;font-weight:500;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:0;color:#b6b6b6!important;margin-bottom:1px}h2{font-family:Poppins,sans-serif!important;font-size:17px;font-weight:900;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.2px;color:#1d1d1d}"]
+                    template: "<div class=\"product-title\">\n  <h1 [style.font-size.px]=\"cardTitlesize\" [class]=\"customTitleClass\" [style.color]=\"cardTitlecolor\"\n    id=\"{{cardTitleId}}\">\n    {{cardTitleName}}\n  </h1>\n  <h2 [style.font-size.px]=\"cardContentsize\" [class]=\"customContentClass\" id=\"{{cardContentId}}\"\n    [style.font-weight]=\"cardContentweight\" [style.color]=\"cardContentcolor\">\n    {{cardContentName}}\n  </h2>\n</div>",
+                    styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}h1{font-family:var(--suku-secondary-font)!important;font-weight:500;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:0;color:var(--suku-text-label-one);margin-bottom:1px}h2{font-family:var(--suku-primary-font)!important;font-size:var(--suku-font-size-5);font-weight:900;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.2px;color:#1d1d1d}"]
                 }] }
     ];
     /** @nocollapse */
     SukuCardTitleComponent.ctorParameters = function () { return []; };
     SukuCardTitleComponent.propDecorators = {
-        cardTitleName: [{ type: Input }],
-        cardTitleId: [{ type: Input }],
-        cardTitlesize: [{ type: Input }],
-        cardTitlecolor: [{ type: Input }],
-        cardTitleweight: [{ type: Input }],
-        cardContentName: [{ type: Input }],
-        cardContentId: [{ type: Input }],
-        cardContentsize: [{ type: Input }],
-        cardContentcolor: [{ type: Input }],
-        cardContentweight: [{ type: Input }],
-        customclassContent: [{ type: Input }],
-        customclasstitle: [{ type: Input }]
+        cardTitleName: [{ type: Input, args: ['card-title-name',] }],
+        cardTitleId: [{ type: Input, args: ['card-title-id',] }],
+        cardTitlesize: [{ type: Input, args: ['card-title-size',] }],
+        cardTitlecolor: [{ type: Input, args: ['card-title-color',] }],
+        cardTitleweight: [{ type: Input, args: ['card-title-weight',] }],
+        cardContentName: [{ type: Input, args: ['card-content-name',] }],
+        cardContentId: [{ type: Input, args: ['card-content-id',] }],
+        cardContentsize: [{ type: Input, args: ['card-content-size',] }],
+        cardContentcolor: [{ type: Input, args: ['card-content-color',] }],
+        cardContentweight: [{ type: Input, args: ['card-content-weight',] }],
+        customTitleClass: [{ type: Input, args: ['custom-title-class',] }],
+        customContentClass: [{ type: Input, args: ['custom-content-class',] }]
     };
     return SukuCardTitleComponent;
 }());
@@ -73,8 +73,8 @@ if (false) {
     /** @type {?} */
     SukuCardTitleComponent.prototype.cardContentweight;
     /** @type {?} */
-    SukuCardTitleComponent.prototype.customclassContent;
+    SukuCardTitleComponent.prototype.customTitleClass;
     /** @type {?} */
-    SukuCardTitleComponent.prototype.customclasstitle;
+    SukuCardTitleComponent.prototype.customContentClass;
 }
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3VrdS1jYXJkLXRpdGxlLmNvbXBvbmVudC5qcyIsInNvdXJjZVJvb3QiOiJuZzovL3N1a3Utd2ViY29tcG9uZW50cy8iLCJzb3VyY2VzIjpbImxpYi9zdWt1LWNhcmQtdGl0bGUvc3VrdS1jYXJkLXRpdGxlLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxLQUFLLEVBQXdCLE1BQU0sZUFBZSxDQUFDO0FBRS9FO0lBbUJFO1FBWlMsa0JBQWEsR0FBRyxlQUFlLENBQUM7UUFDaEMsZ0JBQVcsR0FBRyxTQUFTLENBQUM7UUFDeEIsa0JBQWEsR0FBRyxJQUFJLENBQUM7UUFDckIsbUJBQWMsR0FBRyxTQUFTLENBQUM7UUFFM0Isb0JBQWUsR0FBSSxjQUFjLENBQUM7UUFDbEMsa0JBQWEsR0FBRyxTQUFTLENBQUM7UUFDMUIsb0JBQWUsR0FBRyxJQUFJLENBQUM7UUFDdkIscUJBQWdCLEdBQUcsU0FBUyxDQUFDO1FBQzdCLHNCQUFpQixHQUFJLEtBQUssQ0FBQztRQUMzQix1QkFBa0IsR0FBSSxFQUFFLENBQUM7UUFDekIscUJBQWdCLEdBQUksRUFBRSxDQUFDO0lBQ2hCLENBQUM7Ozs7SUFFakIseUNBQVE7OztJQUFSO0lBQ0EsQ0FBQzs7Z0JBdEJGLFNBQVMsU0FBQztvQkFDVCxRQUFRLEVBQUUsaUJBQWlCO29CQUMzQixvYkFBK0M7O2lCQUVoRDs7Ozs7Z0NBR0UsS0FBSzs4QkFDTCxLQUFLO2dDQUNMLEtBQUs7aUNBQ0wsS0FBSztrQ0FDTCxLQUFLO2tDQUNMLEtBQUs7Z0NBQ0wsS0FBSztrQ0FDTCxLQUFLO21DQUNMLEtBQUs7b0NBQ0wsS0FBSztxQ0FDTCxLQUFLO21DQUNMLEtBQUs7O0lBTVIsNkJBQUM7Q0FBQSxBQXhCRCxJQXdCQztTQW5CWSxzQkFBc0I7OztJQUVqQywrQ0FBeUM7O0lBQ3pDLDZDQUFpQzs7SUFDakMsK0NBQThCOztJQUM5QixnREFBb0M7O0lBQ3BDLGlEQUF5Qjs7SUFDekIsaURBQTJDOztJQUMzQywrQ0FBbUM7O0lBQ25DLGlEQUFnQzs7SUFDaEMsa0RBQXNDOztJQUN0QyxtREFBb0M7O0lBQ3BDLG9EQUFrQzs7SUFDbEMsa0RBQWdDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tcG9uZW50LCBPbkluaXQsIElucHV0LCBFdmVudEVtaXR0ZXIsIE91dHB1dCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgUm91dGVyIH0gZnJvbSAnQGFuZ3VsYXIvcm91dGVyJztcbkBDb21wb25lbnQoe1xuICBzZWxlY3RvcjogJ3N1a3UtY2FyZC10aXRsZScsXG4gIHRlbXBsYXRlVXJsOiAnLi9zdWt1LWNhcmQtdGl0bGUuY29tcG9uZW50Lmh0bWwnLFxuICBzdHlsZVVybHM6IFsnLi9zdWt1LWNhcmQtdGl0bGUuY29tcG9uZW50LnNjc3MnXVxufSlcbmV4cG9ydCBjbGFzcyBTdWt1Q2FyZFRpdGxlQ29tcG9uZW50IGltcGxlbWVudHMgT25Jbml0IHtcblxuICBASW5wdXQoKSBjYXJkVGl0bGVOYW1lID0gJ0lOVEVSRVNUIE5BTUUnO1xuICBASW5wdXQoKSBjYXJkVGl0bGVJZCA9ICdoZWFkaW5nJztcbiAgQElucHV0KCkgY2FyZFRpdGxlc2l6ZSA9ICcxMic7XG4gIEBJbnB1dCgpIGNhcmRUaXRsZWNvbG9yID0gJyNiNmI2YjYnO1xuICBASW5wdXQoKSBjYXJkVGl0bGV3ZWlnaHQ7XG4gIEBJbnB1dCgpIGNhcmRDb250ZW50TmFtZSAgPSAnU3ByaW5nIENhc2VzJztcbiAgQElucHV0KCkgY2FyZENvbnRlbnRJZCA9ICdDb250ZW50JztcbiAgQElucHV0KCkgY2FyZENvbnRlbnRzaXplID0gJzE3JztcbiAgQElucHV0KCkgY2FyZENvbnRlbnRjb2xvciA9ICcjMWQxZDFkJztcbiAgQElucHV0KCkgY2FyZENvbnRlbnR3ZWlnaHQgID0gJzcwMCc7XG4gIEBJbnB1dCgpIGN1c3RvbWNsYXNzQ29udGVudCAgPSAnJztcbiAgQElucHV0KCkgY3VzdG9tY2xhc3N0aXRsZSAgPSAnJztcbiAgY29uc3RydWN0b3IoKSB7IH1cblxuICBuZ09uSW5pdCgpIHtcbiAgfVxuXG59XG4iXX0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3VrdS1jYXJkLXRpdGxlLmNvbXBvbmVudC5qcyIsInNvdXJjZVJvb3QiOiJuZzovL3N1a3Utd2ViY29tcG9uZW50cy8iLCJzb3VyY2VzIjpbImxpYi9zdWt1LWNhcmQtdGl0bGUvc3VrdS1jYXJkLXRpdGxlLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxLQUFLLEVBQXdCLE1BQU0sZUFBZSxDQUFDO0FBRS9FO0lBa0JFO1FBWjBCLGtCQUFhLEdBQUcsZUFBZSxDQUFDO1FBQ2xDLGdCQUFXLEdBQUcsU0FBUyxDQUFDO1FBQ3RCLGtCQUFhLEdBQUcsSUFBSSxDQUFDO1FBQ3BCLG1CQUFjLEdBQUcsU0FBUyxDQUFDO1FBRTFCLG9CQUFlLEdBQUcsY0FBYyxDQUFDO1FBQ25DLGtCQUFhLEdBQUcsU0FBUyxDQUFDO1FBQ3hCLG9CQUFlLEdBQUcsSUFBSSxDQUFDO1FBQ3RCLHFCQUFnQixHQUFHLFNBQVMsQ0FBQztRQUM1QixzQkFBaUIsR0FBRyxLQUFLLENBQUM7UUFDM0IscUJBQWdCLEdBQUcsRUFBRSxDQUFDO1FBQ3BCLHVCQUFrQixHQUFHLEVBQUUsQ0FBQztJQUN2QyxDQUFDOzs7O0lBRWpCLHlDQUFROzs7SUFBUjtJQUNBLENBQUM7O2dCQXJCRixTQUFTLFNBQUM7b0JBQ1QsUUFBUSxFQUFFLGlCQUFpQjtvQkFDM0IsdWJBQStDOztpQkFFaEQ7Ozs7O2dDQUVFLEtBQUssU0FBQyxpQkFBaUI7OEJBQ3ZCLEtBQUssU0FBQyxlQUFlO2dDQUNyQixLQUFLLFNBQUMsaUJBQWlCO2lDQUN2QixLQUFLLFNBQUMsa0JBQWtCO2tDQUN4QixLQUFLLFNBQUMsbUJBQW1CO2tDQUN6QixLQUFLLFNBQUMsbUJBQW1CO2dDQUN6QixLQUFLLFNBQUMsaUJBQWlCO2tDQUN2QixLQUFLLFNBQUMsbUJBQW1CO21DQUN6QixLQUFLLFNBQUMsb0JBQW9CO29DQUMxQixLQUFLLFNBQUMscUJBQXFCO21DQUMzQixLQUFLLFNBQUMsb0JBQW9CO3FDQUMxQixLQUFLLFNBQUMsc0JBQXNCOztJQU0vQiw2QkFBQztDQUFBLEFBdkJELElBdUJDO1NBbEJZLHNCQUFzQjs7O0lBQ2pDLCtDQUEwRDs7SUFDMUQsNkNBQWdEOztJQUNoRCwrQ0FBK0M7O0lBQy9DLGdEQUFzRDs7SUFDdEQsaURBQTRDOztJQUM1QyxpREFBNkQ7O0lBQzdELCtDQUFvRDs7SUFDcEQsaURBQW1EOztJQUNuRCxrREFBMEQ7O0lBQzFELG1EQUF3RDs7SUFDeEQsa0RBQW1EOztJQUNuRCxvREFBdUQiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQsIE9uSW5pdCwgSW5wdXQsIEV2ZW50RW1pdHRlciwgT3V0cHV0IH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBSb3V0ZXIgfSBmcm9tICdAYW5ndWxhci9yb3V0ZXInO1xuQENvbXBvbmVudCh7XG4gIHNlbGVjdG9yOiAnc3VrdS1jYXJkLXRpdGxlJyxcbiAgdGVtcGxhdGVVcmw6ICcuL3N1a3UtY2FyZC10aXRsZS5jb21wb25lbnQuaHRtbCcsXG4gIHN0eWxlVXJsczogWycuL3N1a3UtY2FyZC10aXRsZS5jb21wb25lbnQuc2NzcyddXG59KVxuZXhwb3J0IGNsYXNzIFN1a3VDYXJkVGl0bGVDb21wb25lbnQgaW1wbGVtZW50cyBPbkluaXQge1xuICBASW5wdXQoJ2NhcmQtdGl0bGUtbmFtZScpIGNhcmRUaXRsZU5hbWUgPSAnSU5URVJFU1QgTkFNRSc7XG4gIEBJbnB1dCgnY2FyZC10aXRsZS1pZCcpIGNhcmRUaXRsZUlkID0gJ2hlYWRpbmcnO1xuICBASW5wdXQoJ2NhcmQtdGl0bGUtc2l6ZScpIGNhcmRUaXRsZXNpemUgPSAnMTInO1xuICBASW5wdXQoJ2NhcmQtdGl0bGUtY29sb3InKSBjYXJkVGl0bGVjb2xvciA9ICcjYjZiNmI2JztcbiAgQElucHV0KCdjYXJkLXRpdGxlLXdlaWdodCcpIGNhcmRUaXRsZXdlaWdodDtcbiAgQElucHV0KCdjYXJkLWNvbnRlbnQtbmFtZScpIGNhcmRDb250ZW50TmFtZSA9ICdTcHJpbmcgQ2FzZXMnO1xuICBASW5wdXQoJ2NhcmQtY29udGVudC1pZCcpIGNhcmRDb250ZW50SWQgPSAnQ29udGVudCc7XG4gIEBJbnB1dCgnY2FyZC1jb250ZW50LXNpemUnKSBjYXJkQ29udGVudHNpemUgPSAnMTcnO1xuICBASW5wdXQoJ2NhcmQtY29udGVudC1jb2xvcicpIGNhcmRDb250ZW50Y29sb3IgPSAnIzFkMWQxZCc7XG4gIEBJbnB1dCgnY2FyZC1jb250ZW50LXdlaWdodCcpIGNhcmRDb250ZW50d2VpZ2h0ID0gJzcwMCc7XG4gIEBJbnB1dCgnY3VzdG9tLXRpdGxlLWNsYXNzJykgY3VzdG9tVGl0bGVDbGFzcyA9ICcnO1xuICBASW5wdXQoJ2N1c3RvbS1jb250ZW50LWNsYXNzJykgY3VzdG9tQ29udGVudENsYXNzID0gJyc7XG4gIGNvbnN0cnVjdG9yKCkgeyB9XG5cbiAgbmdPbkluaXQoKSB7XG4gIH1cblxufVxuIl19

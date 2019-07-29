@@ -1,16 +1,20 @@
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 import { Component, Input } from '@angular/core';
 var SukuPhoneWidgetComponent = /** @class */ (function () {
     function SukuPhoneWidgetComponent() {
+        this.id = '';
         this.name = '4806069863';
-        this.size = '14';
+        this.size = '0.9';
         this.color = '#3e3e3e';
         this.weight = '500';
-        this.customClass = 'pl-2 mt-1 mb-1';
-        this.id = '';
+        this.customClass = 'pl-3 mt-auto mb-auto';
+        this.icon = 'suku-phone-icon';
+        this.iconId = 'phoneIcon';
+        this.iconCustomClass = 'icon';
+        this.widgetCustomClass = 'col';
     }
     /**
      * @return {?}
@@ -18,29 +22,34 @@ var SukuPhoneWidgetComponent = /** @class */ (function () {
     SukuPhoneWidgetComponent.prototype.ngOnInit = /**
      * @return {?}
      */
-    function () {
-    };
+    function () { };
     SukuPhoneWidgetComponent.decorators = [
         { type: Component, args: [{
                     selector: 'suku-phone-widget',
-                    template: "<span class=\"row\">\n  <img src=\"../../assets/images/phone-light.png\" height=\"20px\" class=\"mt-1\">\n  <h2 [style.font-size.px]=\"size\" [class]=\"customClass\" id=\"{{id}}\" [style.font-weight]=\"weight\" [style.color]=\"color\">\n    {{name}}\n  </h2>\n</span>",
-                    styles: ["h2{font-family:'Encode Sans',sans-serif!important;font-size:12px;font-weight:500;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.4px;color:#b6b6b6!important;word-break:break-all!important}"]
+                    template: "<div class=\"{{widgetCustomClass}}\">\n  <span class=\"row pb-1\">\n    <i class=\"{{icon}} {{iconCustomClass}}\" [id]=\"iconId\"></i>\n    <h2 [style.font-size.rem]=\"size\" class=\"{{customClass}}\" id=\"{{id}}\" [style.font-weight]=\"weight\"\n      [style.color]=\"color\">\n      <ng-content></ng-content>\n    </h2>\n  </span>\n</div>",
+                    styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}h2{font-family:var(--suku-secondary-font)!important;font-size:var(--suku-font-size-2);font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.4px;color:var(--suku-text-label-one);position:absolute;display:inline;margin-left:14px;padding-top:3px;word-break:break-word!important}"]
                 }] }
     ];
     /** @nocollapse */
     SukuPhoneWidgetComponent.ctorParameters = function () { return []; };
     SukuPhoneWidgetComponent.propDecorators = {
+        id: [{ type: Input }],
         name: [{ type: Input }],
         size: [{ type: Input }],
         color: [{ type: Input }],
         weight: [{ type: Input }],
         customClass: [{ type: Input }],
-        id: [{ type: Input }]
+        icon: [{ type: Input, args: ['icon',] }],
+        iconId: [{ type: Input, args: ['icon-id',] }],
+        iconCustomClass: [{ type: Input, args: ['icon-custom-class',] }],
+        widgetCustomClass: [{ type: Input, args: ['widget-custom-class',] }]
     };
     return SukuPhoneWidgetComponent;
 }());
 export { SukuPhoneWidgetComponent };
 if (false) {
+    /** @type {?} */
+    SukuPhoneWidgetComponent.prototype.id;
     /** @type {?} */
     SukuPhoneWidgetComponent.prototype.name;
     /** @type {?} */
@@ -52,6 +61,12 @@ if (false) {
     /** @type {?} */
     SukuPhoneWidgetComponent.prototype.customClass;
     /** @type {?} */
-    SukuPhoneWidgetComponent.prototype.id;
+    SukuPhoneWidgetComponent.prototype.icon;
+    /** @type {?} */
+    SukuPhoneWidgetComponent.prototype.iconId;
+    /** @type {?} */
+    SukuPhoneWidgetComponent.prototype.iconCustomClass;
+    /** @type {?} */
+    SukuPhoneWidgetComponent.prototype.widgetCustomClass;
 }
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3VrdS1waG9uZS13aWRnZXQuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6Im5nOi8vc3VrdS13ZWJjb21wb25lbnRzLyIsInNvdXJjZXMiOlsibGliL3N1a3UtcGhvbmUtd2lkZ2V0L3N1a3UtcGhvbmUtd2lkZ2V0LmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxLQUFLLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFFekQ7SUFXRTtRQU5nRSxTQUFJLEdBQUcsWUFBWSxDQUFDO1FBQzdFLFNBQUksR0FBRyxJQUFJLENBQUM7UUFDWixVQUFLLEdBQUcsU0FBUyxDQUFDO1FBQ2xCLFdBQU0sR0FBRyxLQUFLLENBQUM7UUFDZixnQkFBVyxHQUFHLGdCQUFnQixDQUFDO1FBQy9CLE9BQUUsR0FBRyxFQUFFLENBQUM7SUFDQyxDQUFDOzs7O0lBRWpCLDJDQUFROzs7SUFBUjtJQUNBLENBQUM7O2dCQWRGLFNBQVMsU0FBQztvQkFDVCxRQUFRLEVBQUUsbUJBQW1CO29CQUM3Qix1UkFBaUQ7O2lCQUVsRDs7Ozs7dUJBQ3lELEtBQUs7dUJBQzlELEtBQUs7d0JBQ0wsS0FBSzt5QkFDTCxLQUFLOzhCQUNMLEtBQUs7cUJBQ0wsS0FBSzs7SUFNTiwrQkFBQztDQUFBLEFBaEJELElBZ0JDO1NBWFksd0JBQXdCOzs7SUFBb0Isd0NBQTZCOztJQUN0Rix3Q0FBcUI7O0lBQ3JCLHlDQUEyQjs7SUFDM0IsMENBQXdCOztJQUN4QiwrQ0FBd0M7O0lBQ3hDLHNDQUFpQiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgT25Jbml0LCBJbnB1dCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdzdWt1LXBob25lLXdpZGdldCcsXG4gIHRlbXBsYXRlVXJsOiAnLi9zdWt1LXBob25lLXdpZGdldC5jb21wb25lbnQuaHRtbCcsXG4gIHN0eWxlVXJsczogWycuL3N1a3UtcGhvbmUtd2lkZ2V0LmNvbXBvbmVudC5zY3NzJ11cbn0pXG5leHBvcnQgY2xhc3MgU3VrdVBob25lV2lkZ2V0Q29tcG9uZW50IGltcGxlbWVudHMgT25Jbml0IHtASW5wdXQoKSBuYW1lID0gJzQ4MDYwNjk4NjMnO1xuQElucHV0KCkgc2l6ZSA9ICcxNCc7XG5ASW5wdXQoKSBjb2xvciA9ICcjM2UzZTNlJztcbkBJbnB1dCgpIHdlaWdodCA9ICc1MDAnO1xuQElucHV0KCkgY3VzdG9tQ2xhc3MgPSAncGwtMiBtdC0xIG1iLTEnO1xuQElucHV0KCkgaWQgPSAnJztcbiAgY29uc3RydWN0b3IoKSB7IH1cblxuICBuZ09uSW5pdCgpIHtcbiAgfVxuXG59XG4iXX0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3VrdS1waG9uZS13aWRnZXQuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6Im5nOi8vc3VrdS13ZWJjb21wb25lbnRzLyIsInNvdXJjZXMiOlsibGliL3N1a3UtcGhvbmUtd2lkZ2V0L3N1a3UtcGhvbmUtd2lkZ2V0LmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxLQUFLLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFFekQ7SUFnQkU7UUFWUyxPQUFFLEdBQUcsRUFBRSxDQUFDO1FBQ1IsU0FBSSxHQUFHLFlBQVksQ0FBQztRQUNwQixTQUFJLEdBQUcsS0FBSyxDQUFDO1FBQ2IsVUFBSyxHQUFHLFNBQVMsQ0FBQztRQUNsQixXQUFNLEdBQUcsS0FBSyxDQUFDO1FBQ2YsZ0JBQVcsR0FBRyxzQkFBc0IsQ0FBQztRQUMvQixTQUFJLEdBQUcsaUJBQWlCLENBQUM7UUFDdEIsV0FBTSxHQUFHLFdBQVcsQ0FBQztRQUNYLG9CQUFlLEdBQUcsTUFBTSxDQUFDO1FBQ3ZCLHNCQUFpQixHQUFHLEtBQUssQ0FBQztJQUN6QyxDQUFDOzs7O0lBRWhCLDJDQUFROzs7SUFBUixjQUFZLENBQUM7O2dCQWxCZCxTQUFTLFNBQUM7b0JBQ1QsUUFBUSxFQUFFLG1CQUFtQjtvQkFDN0IsZ1dBQWlEOztpQkFFbEQ7Ozs7O3FCQUVFLEtBQUs7dUJBQ0wsS0FBSzt1QkFDTCxLQUFLO3dCQUNMLEtBQUs7eUJBQ0wsS0FBSzs4QkFDTCxLQUFLO3VCQUNMLEtBQUssU0FBQyxNQUFNO3lCQUNaLEtBQUssU0FBQyxTQUFTO2tDQUNmLEtBQUssU0FBQyxtQkFBbUI7b0NBQ3pCLEtBQUssU0FBQyxxQkFBcUI7O0lBSTlCLCtCQUFDO0NBQUEsQUFuQkQsSUFtQkM7U0FkWSx3QkFBd0I7OztJQUNuQyxzQ0FBaUI7O0lBQ2pCLHdDQUE2Qjs7SUFDN0Isd0NBQXNCOztJQUN0Qix5Q0FBMkI7O0lBQzNCLDBDQUF3Qjs7SUFDeEIsK0NBQThDOztJQUM5Qyx3Q0FBd0M7O0lBQ3hDLDBDQUF1Qzs7SUFDdkMsbURBQXFEOztJQUNyRCxxREFBd0QiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQsIE9uSW5pdCwgSW5wdXQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcblxuQENvbXBvbmVudCh7XG4gIHNlbGVjdG9yOiAnc3VrdS1waG9uZS13aWRnZXQnLFxuICB0ZW1wbGF0ZVVybDogJy4vc3VrdS1waG9uZS13aWRnZXQuY29tcG9uZW50Lmh0bWwnLFxuICBzdHlsZVVybHM6IFsnLi9zdWt1LXBob25lLXdpZGdldC5jb21wb25lbnQuc2NzcyddXG59KVxuZXhwb3J0IGNsYXNzIFN1a3VQaG9uZVdpZGdldENvbXBvbmVudCBpbXBsZW1lbnRzIE9uSW5pdCB7XG4gIEBJbnB1dCgpIGlkID0gJyc7XG4gIEBJbnB1dCgpIG5hbWUgPSAnNDgwNjA2OTg2Myc7XG4gIEBJbnB1dCgpIHNpemUgPSAnMC45JztcbiAgQElucHV0KCkgY29sb3IgPSAnIzNlM2UzZSc7XG4gIEBJbnB1dCgpIHdlaWdodCA9ICc1MDAnO1xuICBASW5wdXQoKSBjdXN0b21DbGFzcyA9ICdwbC0zIG10LWF1dG8gbWItYXV0byc7XG4gIEBJbnB1dCgnaWNvbicpIGljb24gPSAnc3VrdS1waG9uZS1pY29uJztcbiAgQElucHV0KCdpY29uLWlkJykgaWNvbklkID0gJ3Bob25lSWNvbic7XG4gIEBJbnB1dCgnaWNvbi1jdXN0b20tY2xhc3MnKSBpY29uQ3VzdG9tQ2xhc3MgPSAnaWNvbic7XG4gIEBJbnB1dCgnd2lkZ2V0LWN1c3RvbS1jbGFzcycpIHdpZGdldEN1c3RvbUNsYXNzID0gJ2NvbCc7XG4gIGNvbnN0cnVjdG9yKCkge31cblxuICBuZ09uSW5pdCgpIHt9XG59XG4iXX0=

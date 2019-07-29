@@ -17,10 +17,16 @@ $suku-yellow-green : var(--suku-secondary-color); // warm-green
 $suku-bg-primary: var(--suku-bg-primary); // dark-grey
 $suku-bg-secondary: var(--suku-bg-secondary);
 $suku-bg-ternary: var(--suku-bg-ternary);
+$suku-warning-color: var(--suku-warning-color);
 $suku-homepage-bg: var(--suku-homepage-bg);
-$suku-star-empty-bg:var(--suku-star-empty-bg);
-$suku-star-full-bg:var(--suku-star-full-bg);
-$suku-star-size:var(--suku-star-size);
+$suku-default-bg: var(--suku-default-bg);
+$suku-star-empty-bg: var(--suku-star-empty-bg);
+$suku-star-full-bg: var(--suku-star-full-bg);
+$suku-progressbar-active-bg: var(--suku-progressbar-active-bg);
+$suku-progressbar-upcoming-bg: var(--suku-progressbar-upcoming-bg);
+$suku-progressbar-completed-bg: var(--suku-progressbar-completed-bg);
+
+$suku-star-size: var(--suku-star-size);
 
 $suku-text-heading: var(--suku-text-heading);
 $suku-text-sub-heading: var(--suku-text-sub-heading);
@@ -35,7 +41,10 @@ $suku-secondary-border-color: var(--suku-secondary-border-color); // pale-grey
 $suku-primary-border-radius: var(--suku-primary-border-radius); // right-top-curve
 $suku-secondary-border-radius: var(--suku-secondary-border-radius);
 $suku-default-border-radius: var(--suku-default-border-radius);
+$suku-default-button-border-radius: var(--suku-default-button-border-radius);
 $suku-search-border-radius: var(--suku-search-border-radius);
+
+$suku-default-icon-color: var(--suku-default-icon-color);
 
 $suku-filter-bg: var(--suku-filter-bg);
 $suku-filter-label: var(--suku-filter-label);
@@ -45,15 +54,22 @@ $suku-button-default-bg: var(--suku-button-default-bg);
 $suku-button-disabled-bg: var(--suku-button-disabled-bg);
 $suku-icon-disabled-bg: var(--suku-icon-disabled-bg);
 
+$suku-profile-bg-color: var(--suku-profile-bg-color);
+$suku-profile-text-one : var(--suku-profile-text-one);
+$suku-profile-text-two: var(--suku-profile-text-two);
+
 // font-size 
 $suku-font-size-1: var(--suku-font-size-1); // 11px
 $suku-font-size-2: var(--suku-font-size-2); // 12px
 $suku-font-size-3: var(--suku-font-size-3); // 14px
-$suku-font-size-4: var(--suku-font-size-4); // 17px
-$suku-font-size-5: var(--suku-font-size-5); // 20px
-$suku-font-size-6: var(--suku-font-size-6); // 24px
-$suku-font-size-7: var(--suku-font-size-7); // 26px
-$suku-font-size-8: var(--suku-font-size-8); // 30px
+$suku-font-size-4: var(--suku-font-size-4); // 15px
+$suku-font-size-5: var(--suku-font-size-5); // 17px
+$suku-font-size-6: var(--suku-font-size-6); // 20px
+$suku-font-size-7: var(--suku-font-size-7); // 24px
+$suku-font-size-8: var(--suku-font-size-8); // 22px
+$suku-font-size-9: var(--suku-font-size-9); // 26px
+$suku-font-size-10: var(--suku-font-size-10); // 30px
+$suku-font-size-11: var(--suku-font-size-11); // 50px
 
 @mixin suku-container {
   border-radius: 0 0 41px 41px;
@@ -67,6 +83,20 @@ $suku-font-size-8: var(--suku-font-size-8); // 30px
 
 @mixin hover-shadow {
   box-shadow: 0px 4px 3px 0px rgba(0, 0, 0, 0.5);
+}
+
+@mixin suku-box {
+  background: $suku-bg-primary;
+  border-left: 5px solid $suku-primary-border-color;
+  border-radius: 0 40px 0 0;
+  box-shadow: -4px 4px 5px 0px rgba(0, 0, 0, 0.08);
+}
+
+@mixin suku-title-box {
+  background-image: linear-gradient(to bottom, rgba(101, 102, 243, 0.06), rgba(101, 102, 243, 0.06)),
+    radial-gradient(circle at 50% 0, #3a3a3a, #000000);
+  border-radius: 0px;
+  box-shadow: -4px 4px 5px 0px rgba(0, 0, 0, 0.08);
 }
 
 .btn {

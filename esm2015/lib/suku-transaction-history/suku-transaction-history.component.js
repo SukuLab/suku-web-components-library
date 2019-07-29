@@ -1,23 +1,35 @@
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class SukuTransactionHistoryComponent {
     constructor() {
         this.transactionHistory = 'Transaction History';
         this.transactionDetailsId = 'transactionDetailsId';
+        this.customClass = 'historyWidget p-4 pt-2 pb-3 text-white text-center ';
+        this.tableBgColor = 'tableBg mb-0 pl-4 pr-5';
+        this.transactionHistoryTittle = 'pop text-center mb-0';
+        this.bgCustomClass = 'box-shadows mb-3 p-0';
+        this.spinnerCustomClass = 'justify-content-center';
+        this.spinnerRadius = '65';
+        this.spinnerColor = 'primary';
+        this.loadingCustomClass = 'mt-4 pb-3 col-sm-12 text-center';
+        this.loaderMessage = 'Please wait... ';
+        this.tableHeaderCustomClass = 'text-center';
+        this.tableBodyCustomClass = 'text-left';
+        this.buttonCustomClass = 'btn  btnCancel';
         this.typeId = 'typeId';
         this.myAccountId = 'myAccountId';
         this.counterPartyId = 'counterPartyId';
-        this.counterparty = 'Counter Party';
         this.amountId = 'AmountId';
         this.statusId = 'statusId';
         this.dateCreatedId = 'dateCreatedId';
         this.paymentManagementId = 'paymentManagementId';
         this.action = new EventEmitter();
+        this.cancelBtnLabel = 'Cancel';
         this.cancelId = 'cancelId';
-        this.cancel = 'Cancel';
+        this.transactionDetails = [];
     }
     /**
      * @return {?}
@@ -38,28 +50,42 @@ export class SukuTransactionHistoryComponent {
 SukuTransactionHistoryComponent.decorators = [
     { type: Component, args: [{
                 selector: 'suku-transaction-history',
-                template: "<div class=\"col fontPoppins d-flex p-0\">\n  <div class=\"form-group col-12 p-0\">\n    <div class=\"col-sm-12 text-center text-white historyWidget p-4 pt-2 pb-3\">\n      <p class=\"pop text-center mb-0\">{{transactionHistory | uppercase}}</p>\n    </div>\n    <div class=\"col-sm-12 table-responsive box-shadows mb-3 p-0\" id=\"transactionTable\">\n      <div class=\"col-sm-12 p-5\" *ngIf=\"!transactionDetails\">\n        <div class=\"col-sm-12 d-flex justify-content-center\">\n          <mat-spinner diameter=\"65\"></mat-spinner>\n        </div>\n        <div class=\"mt-4 pb-3 col-sm-12 text-center\">\n          <span id=\"loading\">Please wait...</span>\n        </div>\n      </div>\n      <table class=\"col-sm-12 table table-striped tableBg mb-0 pl-4 pr-5\" *ngIf=\"transactionDetails\"\n        id=\"transactionHisTable\" style=\"overflow-x:auto;\">\n        <thead>\n          <tr>\n            <th scope=\"col\" class=\"text-center\" id=\"{{typeId}}\">{{heading.type}}</th>\n            <th scope=\"col\" class=\"text-center\" id=\"{{myAccountId}}\">{{heading.myAccount}}</th>\n            <th scope=\"col\" class=\"text-center\" id=\"{{counterPartyId}}\">{{heading.counterparty}}</th>\n            <th scope=\"col\" class=\"text-center\" id=\"{{amountId}}\">{{heading.amount}}</th>\n            <th scope=\"col\" class=\"text-center\" id=\"{{statusId}}\">{{heading.status}}</th>\n            <th scope=\"col\" class=\"text-center\" id=\"{{dateCreatedId}}\">{{heading.dateInitiated}}</th>\n            <th scope=\"col\" class=\"text-center\" id=\"{{dateCreatedId}}\">{{heading.dateCreated}}</th>\n            <th scope=\"col\" class=\"text-center\" id=\"{{paymentManagementId}}\">{{heading.paymentManagement}}</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr id=\"{{transactionDetailsId}}\" *ngFor=\"let transaction of transactionDetails\">\n            <td scope=\"row\" class=\"text-left {{( (transaction?.type) == 'outgoing') ? 'outgoing' : 'incoming'}}\">\n              <span class=\"pl-4\">{{transaction?.type || 'Not available'}}</span></td>\n            <td scope=\"row\" class=\"text-left\"><span class=\"pl-4\">{{transaction?.accountName || 'Not available'}}</span>\n            </td>\n            <td scope=\"row\" class=\"text-left\"><span class=\"pl-4\">{{transaction?.counterParty || 'Not available'}}</span>\n            </td>\n            <td scope=\"row\" class=\"text-left\"><span class=\"pl-4\">${{transaction?.amount || 'Not available'}}</span></td>\n            <td scope=\"row\" class=\"text-left {{( (transaction.status) == 'Failed') ? 'falied' : 'incoming'}}\">\n              <span class=\"pl-4\">{{transaction?.status || 'Not available'}}</span></td>\n            <td scope=\"row\" class=\"text-left\"><span\n                class=\"pl-4\">{{transaction?.created | date:'d MMM yyyy h:mm:s a'  || 'Not available'}}</span>\n            </td>\n            <td scope=\"row\" class=\"text-left\"><span class=\"pl-4\">\n                {{(transaction?.completedOn | date:'d MMM yyyy h:mm:s a') || 'Not available'}}</span>\n            </td>\n            <td class=\"text-center\"><button id=\"{{cancelId}}\" *ngIf=\"transaction?.status=='pending'\"\n                (click)=\"action.emit(transaction);\" class=\"btn  btnCancel\">{{cancel}}</button></td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n  </div>\n</div>",
-                styles: [".cancelText{font-size:12px;color:red}.outgoing{color:#af0a0a}.incoming{color:#000}.falied{color:red}.defaultDiv{background-color:#d8fc40;border-radius:30px}.dangerBtn{background-color:#f13030;color:#fff}.bankDiv{background-color:#f0f4f5;border-radius:30px;border:1px solid gray}.mT-35{margin-top:18%}#transactionTable{max-height:287px;overflow-x:auto;overflow-y:auto}#transactionHisTable{white-space:nowrap}.fontPoppins{font-family:Poppins,sans-serif!important}.btn{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.375rem .75rem;font-size:10px;font-weight:700;font-family:Poppins,sans-serif!important}.btnCancel{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#fff;color:red;padding:.475rem 2.95rem;font-size:10px;font-weight:700;font-family:Poppins,sans-serif!important}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{outline:0!important;box-shadow:none!important;color:#000}.tableBg{background-color:#fff}.pT-5{padding-top:2%}.historyWidget{background:#2f2e2e;border-left:5px solid #a7bf2e;border-radius:0 40px 0 0;box-shadow:-4px 4px 5px 0 rgba(0,0,0,.08)}.box-shadows{box-shadow:0 12px 14px 0 rgba(0,0,0,.05);background-color:#fff}.pop{font-family:Poppins,sans-serif!important;font-weight:600;font-size:20px}.table{font-family:Poppins,sans-serif!important}td{border:none}.table-striped tbody tr:nth-of-type(odd){background-color:rgba(0,0,0,.03)}::-webkit-scrollbar{width:3px;height:3px}::-webkit-scrollbar:vertical{width:3px!important}::-webkit-scrollbar-track{-webkit-box-shadow:inset 10px 5px 6px #27272f36;border-radius:10px;box-shadow:inset 10px 5px 6px #27272f36}::-webkit-scrollbar-thumb{border-radius:32px;box-shadow:0 0 0 #000;-webkit-box-shadow:inset 28px 28px 28px 28px #2b30348f}"]
+                template: "<div class=\"col d-flex p-0\">\n  <div class=\"col-12 p-0\">\n    <div class=\"col-sm-12 {{customClass}}\">\n      <p [class]=\"transactionHistoryTittle\">{{transactionHistory | uppercase}}</p>\n    </div>\n    <div class=\"col-sm-12 table-responsive {{bgCustomClass}}\" id=\"transactionTable\">\n      <div class=\"col-sm-12 p-5\" *ngIf=\"!transactionDetails\">\n        <div class=\"col-sm-12 d-flex {{spinnerCustomClass}}\">\n          <mat-spinner color=\"{{spinnerColor}}\" diameter=\"{{spinnerRadius}}\"></mat-spinner>\n        </div>\n        <div [class]=\"loadingCustomClass\">\n          <span [style.font-size.rem]=\"loadingSize\" id=\"loading\" [style.color]=\"loadingColor\"\n            [style.font-weight]=\"loadingWeight\">{{loaderMessage}}</span>\n        </div>\n      </div>\n      <table class=\"col-sm-12 table table-striped {{tableBgColor}} responsive\" *ngIf=\"transactionDetails\"\n        id=\"transactionHisTable\">\n        <thead>\n          <tr>\n            <th scope=\"col\" [class]=\"tableHeaderCustomClass\" id=\"{{typeId}}\">{{heading.type}}</th>\n            <th scope=\"col\" [class]=\"tableHeaderCustomClass\" id=\"{{myAccountId}}\">{{heading.myAccount}}</th>\n            <th scope=\"col\" [class]=\"tableHeaderCustomClass\" id=\"{{counterPartyId}}\">{{heading.counterparty}}</th>\n            <th scope=\"col\" [class]=\"tableHeaderCustomClass\" id=\"{{amountId}}\">{{heading.amount}}</th>\n            <th scope=\"col\" [class]=\"tableHeaderCustomClass\" id=\"{{statusId}}\">{{heading.status}}</th>\n            <th scope=\"col\" [class]=\"tableHeaderCustomClass\" id=\"{{dateCreatedId}}\">{{heading.dateInitiated}}</th>\n            <th scope=\"col\" [class]=\"tableHeaderCustomClass\" id=\"{{dateCreatedId}}\">{{heading.dateCreated}}</th>\n            <th scope=\"col\" [class]=\"tableHeaderCustomClass\" id=\"{{paymentManagementId}}\">{{heading.paymentManagement}}\n            </th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr id=\"{{transactionDetailsId}}\" *ngFor=\"let transaction of transactionDetails\">\n            <td scope=\"row\"\n              class=\" {{tableBodyCustomClass}} {{( (transaction?.type) == 'outgoing') ? 'outgoing' : 'incoming'}}\">\n              <span class=\"pl-4\">{{transaction?.type || 'Not available'}}</span></td>\n            <td scope=\"row\" [class]=\"tableBodyCustomClass\"><span\n                class=\"pl-4\">{{transaction?.accountName || 'Not available'}}</span>\n            </td>\n            <td scope=\"row\" [class]=\"tableBodyCustomClass\"><span\n                class=\"pl-4\">{{transaction?.counterParty || 'Not available'}}</span>\n            </td>\n            <td scope=\"row\" [class]=\"tableBodyCustomClass\"><span\n                class=\"pl-4\">${{transaction?.amount || 'Not available'}}</span></td>\n            <td scope=\"row\"\n              class=\" {{tableBodyCustomClass}} {{( (transaction.status) == 'Failed') ? 'falied' : 'incoming'}}\">\n              <span class=\"pl-4\">{{transaction?.status || 'Not available'}}</span></td>\n            <td scope=\"row\" [class]=\"tableBodyCustomClass\"><span\n                class=\"pl-4\">{{transaction?.created | date:'d MMM yyyy h:mm:s a'  || 'Not available'}}</span>\n            </td>\n            <td scope=\"row\" [class]=\"tableBodyCustomClass\"><span class=\"pl-4\">\n                {{(transaction?.completedOn | date:'d MMM yyyy h:mm:s a') || 'Not available'}}</span>\n            </td>\n            <td [class]=\"tableBodyCustomClass\"><button id=\"{{cancelId}}\" *ngIf=\"transaction?.status=='pending'\"\n                (click)=\"action.emit(transaction);\" [class]=\"buttonCustomClass\">{{cancelBtnLabel}}</button></td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n  </div>\n</div>",
+                styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{background-color:#fff;color:#000;font-size:12px!important;font-family:var(--suku-primary-font)!important}.btn:hover{border:2px solid #a7bf2e;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.cancelText{font-size:12px;color:var(--suku-warning-color)}.outgoing{color:var(--suku-warning-color)}.incoming{color:var(--suku-filter-label-selected)}.falied{color:var(--suku-warning-color)}.defaultDiv{background-color:var(--suku-secondary-color);border-radius:30px}.responsive{overflow-x:auto}.mT-35{margin-top:18%}#transactionTable{max-height:287px;overflow-x:auto;overflow-y:auto}#transactionHisTable{white-space:nowrap}.fontPoppins{font-family:var(--suku-primary-font) !important!important}.btn{border:solid 2px var(--suku-primary-border-color);border-radius:28px 76px 63px;background-color:var(--suku-homepage-bg);color:var(--suku-filter-label-selected);padding:.375rem .75rem;font-weight:700;font-family:var(--suku-primary-font) !important!important}.btnCancel{border:solid 2px var(--suku-primary-border-color);border-radius:28px 76px 63px;background-color:var(--suku-homepage-bg);color:var(--suku-warning-color);padding:.475rem 2.95rem;font-size:10px;font-weight:700;font-family:var(--suku-primary-font) !important!important}.btn:hover{border:solid 2px var(--suku-primary-border-color);border-radius:28px 76px 63px;background-color:var(--suku-primary-color);color:var(--suku-text-label-two)}.btn:focus{outline:0!important;box-shadow:none!important;color:var(--suku-filter-label-selected)}.tableBg{background-color:var(--suku-homepage-bg)}.pT-5{padding-top:2%}.historyWidget{background:var(--suku-bg-primary);border-left:5px solid var(--suku-primary-border-color);border-radius:0 40px 0 0;box-shadow:-4px 4px 5px 0 rgba(0,0,0,.08)}.box-shadows{box-shadow:0 12px 14px 0 rgba(0,0,0,.05);background-color:var(--suku-homepage-bg)}.pop{font-family:var(--suku-primary-font)!important;font-weight:600;font-size:20px}.table{font-family:var(--suku-primary-font)!important}td{border:none}.table-striped tbody tr:nth-of-type(odd){background-color:rgba(0,0,0,.03)}::-webkit-scrollbar{width:3px;height:3px}::-webkit-scrollbar:vertical{width:3px!important}::-webkit-scrollbar-track{-webkit-box-shadow:inset 10px 5px 6px #27272f36;border-radius:10px;box-shadow:inset 10px 5px 6px #27272f36}::-webkit-scrollbar-thumb{border-radius:32px;box-shadow:0 0 0 #000;-webkit-box-shadow:inset 28px 28px 28px 28px #2b30348f}"]
             }] }
 ];
 /** @nocollapse */
 SukuTransactionHistoryComponent.ctorParameters = () => [];
 SukuTransactionHistoryComponent.propDecorators = {
-    transactionHistory: [{ type: Input }],
-    transactionDetailsId: [{ type: Input }],
-    transactionDetails: [{ type: Input }],
+    transactionHistory: [{ type: Input, args: ['transaction-history',] }],
+    transactionDetailsId: [{ type: Input, args: ['transaction-details-id',] }],
     heading: [{ type: Input }],
-    typeId: [{ type: Input }],
-    myAccountId: [{ type: Input }],
-    counterPartyId: [{ type: Input }],
-    counterparty: [{ type: Input }],
-    amountId: [{ type: Input }],
-    statusId: [{ type: Input }],
-    dateCreatedId: [{ type: Input }],
-    paymentManagementId: [{ type: Input }],
+    customClass: [{ type: Input, args: ['custom-class',] }],
+    tableBgColor: [{ type: Input, args: ['table-bg-color',] }],
+    transactionHistoryTittle: [{ type: Input, args: ['transaction-history-tittle',] }],
+    bgCustomClass: [{ type: Input, args: ['bg-custom-class',] }],
+    spinnerCustomClass: [{ type: Input, args: ['spinner-custom-class',] }],
+    spinnerRadius: [{ type: Input, args: ['spinner-radius',] }],
+    spinnerColor: [{ type: Input, args: ['spinner-color',] }],
+    loadingCustomClass: [{ type: Input, args: ['loading-custom-class',] }],
+    loaderMessage: [{ type: Input, args: ['loader-message',] }],
+    loadingColor: [{ type: Input, args: ['loading-color',] }],
+    loadingSize: [{ type: Input, args: ['loading-size',] }],
+    loadingWeight: [{ type: Input, args: ['loading-weight',] }],
+    tableHeaderCustomClass: [{ type: Input, args: ['table-header-custom-class',] }],
+    tableBodyCustomClass: [{ type: Input, args: ['table-body-custom-class',] }],
+    buttonCustomClass: [{ type: Input, args: ['button-custom-class',] }],
+    typeId: [{ type: Input, args: ['type-id',] }],
+    myAccountId: [{ type: Input, args: ['my-account-id',] }],
+    counterPartyId: [{ type: Input, args: ['counter-party-id',] }],
+    amountId: [{ type: Input, args: ['amount-id',] }],
+    statusId: [{ type: Input, args: ['status-id',] }],
+    dateCreatedId: [{ type: Input, args: ['date-created-id',] }],
+    paymentManagementId: [{ type: Input, args: ['payment-management-Id',] }],
     action: [{ type: Output }],
-    cancelId: [{ type: Input }],
-    cancel: [{ type: Input }]
+    cancelBtnLabel: [{ type: Input, args: ['cancel-btn-label',] }],
+    cancelId: [{ type: Input, args: ['cancel-id',] }],
+    transactionDetails: [{ type: Input }]
 };
 if (false) {
     /** @type {?} */
@@ -67,17 +93,43 @@ if (false) {
     /** @type {?} */
     SukuTransactionHistoryComponent.prototype.transactionDetailsId;
     /** @type {?} */
-    SukuTransactionHistoryComponent.prototype.transactionDetails;
-    /** @type {?} */
     SukuTransactionHistoryComponent.prototype.heading;
+    /** @type {?} */
+    SukuTransactionHistoryComponent.prototype.customClass;
+    /** @type {?} */
+    SukuTransactionHistoryComponent.prototype.tableBgColor;
+    /** @type {?} */
+    SukuTransactionHistoryComponent.prototype.transactionHistoryTittle;
+    /** @type {?} */
+    SukuTransactionHistoryComponent.prototype.bgCustomClass;
+    /** @type {?} */
+    SukuTransactionHistoryComponent.prototype.spinnerCustomClass;
+    /** @type {?} */
+    SukuTransactionHistoryComponent.prototype.spinnerRadius;
+    /** @type {?} */
+    SukuTransactionHistoryComponent.prototype.spinnerColor;
+    /** @type {?} */
+    SukuTransactionHistoryComponent.prototype.loadingCustomClass;
+    /** @type {?} */
+    SukuTransactionHistoryComponent.prototype.loaderMessage;
+    /** @type {?} */
+    SukuTransactionHistoryComponent.prototype.loadingColor;
+    /** @type {?} */
+    SukuTransactionHistoryComponent.prototype.loadingSize;
+    /** @type {?} */
+    SukuTransactionHistoryComponent.prototype.loadingWeight;
+    /** @type {?} */
+    SukuTransactionHistoryComponent.prototype.tableHeaderCustomClass;
+    /** @type {?} */
+    SukuTransactionHistoryComponent.prototype.tableBodyCustomClass;
+    /** @type {?} */
+    SukuTransactionHistoryComponent.prototype.buttonCustomClass;
     /** @type {?} */
     SukuTransactionHistoryComponent.prototype.typeId;
     /** @type {?} */
     SukuTransactionHistoryComponent.prototype.myAccountId;
     /** @type {?} */
     SukuTransactionHistoryComponent.prototype.counterPartyId;
-    /** @type {?} */
-    SukuTransactionHistoryComponent.prototype.counterparty;
     /** @type {?} */
     SukuTransactionHistoryComponent.prototype.amountId;
     /** @type {?} */
@@ -89,8 +141,10 @@ if (false) {
     /** @type {?} */
     SukuTransactionHistoryComponent.prototype.action;
     /** @type {?} */
+    SukuTransactionHistoryComponent.prototype.cancelBtnLabel;
+    /** @type {?} */
     SukuTransactionHistoryComponent.prototype.cancelId;
     /** @type {?} */
-    SukuTransactionHistoryComponent.prototype.cancel;
+    SukuTransactionHistoryComponent.prototype.transactionDetails;
 }
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3VrdS10cmFuc2FjdGlvbi1oaXN0b3J5LmNvbXBvbmVudC5qcyIsInNvdXJjZVJvb3QiOiJuZzovL3N1a3Utd2ViY29tcG9uZW50cy8iLCJzb3VyY2VzIjpbImxpYi9zdWt1LXRyYW5zYWN0aW9uLWhpc3Rvcnkvc3VrdS10cmFuc2FjdGlvbi1oaXN0b3J5LmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxLQUFLLEVBQUUsTUFBTSxFQUFFLFlBQVksRUFBRSxNQUFNLGVBQWUsQ0FBQztBQU0vRSxNQUFNLE9BQU8sK0JBQStCO0lBZ0IzQztRQWZTLHVCQUFrQixHQUFHLHFCQUFxQixDQUFDO1FBQzNDLHlCQUFvQixHQUFHLHNCQUFzQixDQUFDO1FBRzlDLFdBQU0sR0FBRyxRQUFRLENBQUM7UUFDbEIsZ0JBQVcsR0FBRyxhQUFhLENBQUM7UUFDNUIsbUJBQWMsR0FBRyxnQkFBZ0IsQ0FBQztRQUNsQyxpQkFBWSxHQUFHLGVBQWUsQ0FBQztRQUMvQixhQUFRLEdBQUcsVUFBVSxDQUFDO1FBQ3RCLGFBQVEsR0FBRyxVQUFVLENBQUM7UUFDdEIsa0JBQWEsR0FBRyxlQUFlLENBQUM7UUFDaEMsd0JBQW1CLEdBQUcscUJBQXFCLENBQUM7UUFDM0MsV0FBTSxHQUFHLElBQUksWUFBWSxFQUFFLENBQUM7UUFDN0IsYUFBUSxHQUFHLFVBQVUsQ0FBQztRQUN0QixXQUFNLEdBQUcsUUFBUSxDQUFDO0lBQ1osQ0FBQzs7OztJQUVoQixRQUFRO1FBQ1AsSUFBSSxDQUFDLE9BQU8sR0FBRztZQUNkLElBQUksRUFBRSxNQUFNO1lBQ1osU0FBUyxFQUFFLFlBQVk7WUFDdkIsWUFBWSxFQUFFLGNBQWM7WUFDNUIsTUFBTSxFQUFFLFFBQVE7WUFDaEIsTUFBTSxFQUFFLFFBQVE7WUFDaEIsYUFBYSxFQUFFLGNBQWM7WUFDN0IsV0FBVyxFQUFFLGNBQWM7WUFDM0IsaUJBQWlCLEVBQUUsb0JBQW9CO1NBQ3ZDLENBQUM7SUFDSCxDQUFDOzs7WUFsQ0QsU0FBUyxTQUFDO2dCQUNWLFFBQVEsRUFBRSwwQkFBMEI7Z0JBQ3BDLDgwR0FBd0Q7O2FBRXhEOzs7OztpQ0FFQyxLQUFLO21DQUNMLEtBQUs7aUNBQ0wsS0FBSztzQkFDTCxLQUFLO3FCQUNMLEtBQUs7MEJBQ0wsS0FBSzs2QkFDTCxLQUFLOzJCQUNMLEtBQUs7dUJBQ0wsS0FBSzt1QkFDTCxLQUFLOzRCQUNMLEtBQUs7a0NBQ0wsS0FBSztxQkFDTCxNQUFNO3VCQUNOLEtBQUs7cUJBQ0wsS0FBSzs7OztJQWROLDZEQUFvRDs7SUFDcEQsK0RBQXVEOztJQUN2RCw2REFBNEI7O0lBQzVCLGtEQUFpQjs7SUFDakIsaURBQTJCOztJQUMzQixzREFBcUM7O0lBQ3JDLHlEQUEyQzs7SUFDM0MsdURBQXdDOztJQUN4QyxtREFBK0I7O0lBQy9CLG1EQUErQjs7SUFDL0Isd0RBQXlDOztJQUN6Qyw4REFBcUQ7O0lBQ3JELGlEQUFzQzs7SUFDdEMsbURBQStCOztJQUMvQixpREFBMkIiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQsIE9uSW5pdCwgSW5wdXQsIE91dHB1dCwgRXZlbnRFbWl0dGVyIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5AQ29tcG9uZW50KHtcblx0c2VsZWN0b3I6ICdzdWt1LXRyYW5zYWN0aW9uLWhpc3RvcnknLFxuXHR0ZW1wbGF0ZVVybDogJy4vc3VrdS10cmFuc2FjdGlvbi1oaXN0b3J5LmNvbXBvbmVudC5odG1sJyxcblx0c3R5bGVVcmxzOiBbICcuL3N1a3UtdHJhbnNhY3Rpb24taGlzdG9yeS5jb21wb25lbnQuc2NzcycgXVxufSlcbmV4cG9ydCBjbGFzcyBTdWt1VHJhbnNhY3Rpb25IaXN0b3J5Q29tcG9uZW50IGltcGxlbWVudHMgT25Jbml0IHtcblx0QElucHV0KCkgdHJhbnNhY3Rpb25IaXN0b3J5ID0gJ1RyYW5zYWN0aW9uIEhpc3RvcnknO1xuXHRASW5wdXQoKSB0cmFuc2FjdGlvbkRldGFpbHNJZCA9ICd0cmFuc2FjdGlvbkRldGFpbHNJZCc7XG5cdEBJbnB1dCgpIHRyYW5zYWN0aW9uRGV0YWlscztcblx0QElucHV0KCkgaGVhZGluZztcblx0QElucHV0KCkgdHlwZUlkID0gJ3R5cGVJZCc7XG5cdEBJbnB1dCgpIG15QWNjb3VudElkID0gJ215QWNjb3VudElkJztcblx0QElucHV0KCkgY291bnRlclBhcnR5SWQgPSAnY291bnRlclBhcnR5SWQnO1xuXHRASW5wdXQoKSBjb3VudGVycGFydHkgPSAnQ291bnRlciBQYXJ0eSc7XG5cdEBJbnB1dCgpIGFtb3VudElkID0gJ0Ftb3VudElkJztcblx0QElucHV0KCkgc3RhdHVzSWQgPSAnc3RhdHVzSWQnO1xuXHRASW5wdXQoKSBkYXRlQ3JlYXRlZElkID0gJ2RhdGVDcmVhdGVkSWQnO1xuXHRASW5wdXQoKSBwYXltZW50TWFuYWdlbWVudElkID0gJ3BheW1lbnRNYW5hZ2VtZW50SWQnO1xuXHRAT3V0cHV0KCkgYWN0aW9uID0gbmV3IEV2ZW50RW1pdHRlcigpO1xuXHRASW5wdXQoKSBjYW5jZWxJZCA9ICdjYW5jZWxJZCc7XG5cdEBJbnB1dCgpIGNhbmNlbCA9ICdDYW5jZWwnO1xuXHRjb25zdHJ1Y3RvcigpIHt9XG5cblx0bmdPbkluaXQoKSB7XG5cdFx0dGhpcy5oZWFkaW5nID0ge1xuXHRcdFx0dHlwZTogJ1R5cGUnLFxuXHRcdFx0bXlBY2NvdW50OiAnTXkgQWNjb3VudCcsXG5cdFx0XHRjb3VudGVycGFydHk6ICdDb3VudGVycGFydHknLFxuXHRcdFx0YW1vdW50OiAnQW1vdW50Jyxcblx0XHRcdHN0YXR1czogJ1N0YXR1cycsXG5cdFx0XHRkYXRlSW5pdGlhdGVkOiAnSW5pdGlhdGVkIE9uJyxcblx0XHRcdGRhdGVDcmVhdGVkOiAnQ29tcGxldGVkIE9uJyxcblx0XHRcdHBheW1lbnRNYW5hZ2VtZW50OiAnUGF5bWVudCBNYW5hZ2VtZW50J1xuXHRcdH07XG5cdH1cbn0iXX0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3VrdS10cmFuc2FjdGlvbi1oaXN0b3J5LmNvbXBvbmVudC5qcyIsInNvdXJjZVJvb3QiOiJuZzovL3N1a3Utd2ViY29tcG9uZW50cy8iLCJzb3VyY2VzIjpbImxpYi9zdWt1LXRyYW5zYWN0aW9uLWhpc3Rvcnkvc3VrdS10cmFuc2FjdGlvbi1oaXN0b3J5LmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxLQUFLLEVBQUUsTUFBTSxFQUFFLFlBQVksRUFBRSxNQUFNLGVBQWUsQ0FBQztBQU0vRSxNQUFNLE9BQU8sK0JBQStCO0lBOEIzQztRQTdCOEIsdUJBQWtCLEdBQUcscUJBQXFCLENBQUM7UUFDeEMseUJBQW9CLEdBQUcsc0JBQXNCLENBQUM7UUFFeEQsZ0JBQVcsR0FBRyxxREFBcUQsQ0FBQztRQUNsRSxpQkFBWSxHQUFHLHdCQUF3QixDQUFDO1FBQzVCLDZCQUF3QixHQUFHLHNCQUFzQixDQUFDO1FBQzdELGtCQUFhLEdBQUcsc0JBQXNCLENBQUM7UUFDbEMsdUJBQWtCLEdBQUcsd0JBQXdCLENBQUM7UUFDcEQsa0JBQWEsR0FBRyxJQUFJLENBQUM7UUFDdEIsaUJBQVksR0FBRyxTQUFTLENBQUM7UUFDbEIsdUJBQWtCLEdBQUcsaUNBQWlDLENBQUM7UUFDN0Qsa0JBQWEsR0FBRyxpQkFBaUIsQ0FBQztRQUl2QiwyQkFBc0IsR0FBRyxhQUFhLENBQUM7UUFDekMseUJBQW9CLEdBQUcsV0FBVyxDQUFDO1FBQ3ZDLHNCQUFpQixHQUFHLGdCQUFnQixDQUFDO1FBQ2pELFdBQU0sR0FBRyxRQUFRLENBQUM7UUFDWixnQkFBVyxHQUFHLGFBQWEsQ0FBQztRQUN6QixtQkFBYyxHQUFHLGdCQUFnQixDQUFDO1FBQ3pDLGFBQVEsR0FBRyxVQUFVLENBQUM7UUFDdEIsYUFBUSxHQUFHLFVBQVUsQ0FBQztRQUNoQixrQkFBYSxHQUFHLGVBQWUsQ0FBQztRQUMxQix3QkFBbUIsR0FBRyxxQkFBcUIsQ0FBQztRQUNsRSxXQUFNLEdBQUcsSUFBSSxZQUFZLEVBQUUsQ0FBQztRQUNYLG1CQUFjLEdBQUcsUUFBUSxDQUFDO1FBQ2pDLGFBQVEsR0FBRyxVQUFVLENBQUM7UUFDakMsdUJBQWtCLEdBQUcsRUFBRSxDQUFDO0lBQ2pCLENBQUM7Ozs7SUFFakIsUUFBUTtRQUNQLElBQUksQ0FBQyxPQUFPLEdBQUc7WUFDZCxJQUFJLEVBQUUsTUFBTTtZQUNaLFNBQVMsRUFBRSxZQUFZO1lBQ3ZCLFlBQVksRUFBRSxjQUFjO1lBQzVCLE1BQU0sRUFBRSxRQUFRO1lBQ2hCLE1BQU0sRUFBRSxRQUFRO1lBQ2hCLGFBQWEsRUFBRSxjQUFjO1lBQzdCLFdBQVcsRUFBRSxjQUFjO1lBQzNCLGlCQUFpQixFQUFFLG9CQUFvQjtTQUN2QyxDQUFDO0lBQ0gsQ0FBQzs7O1lBaERELFNBQVMsU0FBQztnQkFDVixRQUFRLEVBQUUsMEJBQTBCO2dCQUNwQywydEhBQXdEOzthQUV4RDs7Ozs7aUNBRUMsS0FBSyxTQUFDLHFCQUFxQjttQ0FDM0IsS0FBSyxTQUFDLHdCQUF3QjtzQkFDOUIsS0FBSzswQkFDTCxLQUFLLFNBQUMsY0FBYzsyQkFDcEIsS0FBSyxTQUFDLGdCQUFnQjt1Q0FDdEIsS0FBSyxTQUFDLDRCQUE0Qjs0QkFDbEMsS0FBSyxTQUFDLGlCQUFpQjtpQ0FDdkIsS0FBSyxTQUFDLHNCQUFzQjs0QkFDNUIsS0FBSyxTQUFDLGdCQUFnQjsyQkFDdEIsS0FBSyxTQUFDLGVBQWU7aUNBQ3JCLEtBQUssU0FBQyxzQkFBc0I7NEJBQzVCLEtBQUssU0FBQyxnQkFBZ0I7MkJBQ3RCLEtBQUssU0FBQyxlQUFlOzBCQUNyQixLQUFLLFNBQUMsY0FBYzs0QkFDcEIsS0FBSyxTQUFDLGdCQUFnQjtxQ0FDdEIsS0FBSyxTQUFDLDJCQUEyQjttQ0FDakMsS0FBSyxTQUFDLHlCQUF5QjtnQ0FDL0IsS0FBSyxTQUFDLHFCQUFxQjtxQkFDM0IsS0FBSyxTQUFDLFNBQVM7MEJBQ2YsS0FBSyxTQUFDLGVBQWU7NkJBQ3JCLEtBQUssU0FBQyxrQkFBa0I7dUJBQ3hCLEtBQUssU0FBQyxXQUFXO3VCQUNqQixLQUFLLFNBQUMsV0FBVzs0QkFDakIsS0FBSyxTQUFDLGlCQUFpQjtrQ0FDdkIsS0FBSyxTQUFDLHVCQUF1QjtxQkFDN0IsTUFBTTs2QkFDTixLQUFLLFNBQUMsa0JBQWtCO3VCQUN4QixLQUFLLFNBQUMsV0FBVztpQ0FDakIsS0FBSzs7OztJQTVCTiw2REFBeUU7O0lBQ3pFLCtEQUErRTs7SUFDL0Usa0RBQWlCOztJQUNqQixzREFBMkY7O0lBQzNGLHVEQUFpRTs7SUFDakUsbUVBQXVGOztJQUN2Rix3REFBaUU7O0lBQ2pFLDZEQUE2RTs7SUFDN0Usd0RBQThDOztJQUM5Qyx1REFBaUQ7O0lBQ2pELDZEQUFzRjs7SUFDdEYsd0RBQTJEOztJQUMzRCx1REFBcUM7O0lBQ3JDLHNEQUFtQzs7SUFDbkMsd0RBQXVDOztJQUN2QyxpRUFBMkU7O0lBQzNFLCtEQUFxRTs7SUFDckUsNERBQW1FOztJQUNuRSxpREFBb0M7O0lBQ3BDLHNEQUFvRDs7SUFDcEQseURBQTZEOztJQUM3RCxtREFBMEM7O0lBQzFDLG1EQUEwQzs7SUFDMUMsd0RBQTBEOztJQUMxRCw4REFBNEU7O0lBQzVFLGlEQUFzQzs7SUFDdEMseURBQXFEOztJQUNyRCxtREFBMEM7O0lBQzFDLDZEQUFpQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgT25Jbml0LCBJbnB1dCwgT3V0cHV0LCBFdmVudEVtaXR0ZXIgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbkBDb21wb25lbnQoe1xuXHRzZWxlY3RvcjogJ3N1a3UtdHJhbnNhY3Rpb24taGlzdG9yeScsXG5cdHRlbXBsYXRlVXJsOiAnLi9zdWt1LXRyYW5zYWN0aW9uLWhpc3RvcnkuY29tcG9uZW50Lmh0bWwnLFxuXHRzdHlsZVVybHM6IFsnLi9zdWt1LXRyYW5zYWN0aW9uLWhpc3RvcnkuY29tcG9uZW50LnNjc3MnXVxufSlcbmV4cG9ydCBjbGFzcyBTdWt1VHJhbnNhY3Rpb25IaXN0b3J5Q29tcG9uZW50IGltcGxlbWVudHMgT25Jbml0IHtcblx0QElucHV0KCd0cmFuc2FjdGlvbi1oaXN0b3J5JykgdHJhbnNhY3Rpb25IaXN0b3J5ID0gJ1RyYW5zYWN0aW9uIEhpc3RvcnknO1xuXHRASW5wdXQoJ3RyYW5zYWN0aW9uLWRldGFpbHMtaWQnKSB0cmFuc2FjdGlvbkRldGFpbHNJZCA9ICd0cmFuc2FjdGlvbkRldGFpbHNJZCc7XG5cdEBJbnB1dCgpIGhlYWRpbmc7XG5cdEBJbnB1dCgnY3VzdG9tLWNsYXNzJykgY3VzdG9tQ2xhc3MgPSAnaGlzdG9yeVdpZGdldCBwLTQgcHQtMiBwYi0zIHRleHQtd2hpdGUgdGV4dC1jZW50ZXIgJztcblx0QElucHV0KCd0YWJsZS1iZy1jb2xvcicpIHRhYmxlQmdDb2xvciA9ICd0YWJsZUJnIG1iLTAgcGwtNCBwci01Jztcblx0QElucHV0KCd0cmFuc2FjdGlvbi1oaXN0b3J5LXRpdHRsZScpIHRyYW5zYWN0aW9uSGlzdG9yeVRpdHRsZSA9ICdwb3AgdGV4dC1jZW50ZXIgbWItMCc7XG5cdEBJbnB1dCgnYmctY3VzdG9tLWNsYXNzJykgYmdDdXN0b21DbGFzcyA9ICdib3gtc2hhZG93cyBtYi0zIHAtMCc7XG5cdEBJbnB1dCgnc3Bpbm5lci1jdXN0b20tY2xhc3MnKSBzcGlubmVyQ3VzdG9tQ2xhc3MgPSAnanVzdGlmeS1jb250ZW50LWNlbnRlcic7XG5cdEBJbnB1dCgnc3Bpbm5lci1yYWRpdXMnKSBzcGlubmVyUmFkaXVzID0gJzY1Jztcblx0QElucHV0KCdzcGlubmVyLWNvbG9yJykgc3Bpbm5lckNvbG9yID0gJ3ByaW1hcnknO1xuXHRASW5wdXQoJ2xvYWRpbmctY3VzdG9tLWNsYXNzJykgbG9hZGluZ0N1c3RvbUNsYXNzID0gJ210LTQgcGItMyBjb2wtc20tMTIgdGV4dC1jZW50ZXInO1xuXHRASW5wdXQoJ2xvYWRlci1tZXNzYWdlJykgbG9hZGVyTWVzc2FnZSA9ICdQbGVhc2Ugd2FpdC4uLiAnO1xuXHRASW5wdXQoJ2xvYWRpbmctY29sb3InKSBsb2FkaW5nQ29sb3I7XG5cdEBJbnB1dCgnbG9hZGluZy1zaXplJykgbG9hZGluZ1NpemU7XG5cdEBJbnB1dCgnbG9hZGluZy13ZWlnaHQnKSBsb2FkaW5nV2VpZ2h0O1xuXHRASW5wdXQoJ3RhYmxlLWhlYWRlci1jdXN0b20tY2xhc3MnKSB0YWJsZUhlYWRlckN1c3RvbUNsYXNzID0gJ3RleHQtY2VudGVyJztcblx0QElucHV0KCd0YWJsZS1ib2R5LWN1c3RvbS1jbGFzcycpIHRhYmxlQm9keUN1c3RvbUNsYXNzID0gJ3RleHQtbGVmdCc7XG5cdEBJbnB1dCgnYnV0dG9uLWN1c3RvbS1jbGFzcycpIGJ1dHRvbkN1c3RvbUNsYXNzID0gJ2J0biAgYnRuQ2FuY2VsJztcblx0QElucHV0KCd0eXBlLWlkJykgdHlwZUlkID0gJ3R5cGVJZCc7XG5cdEBJbnB1dCgnbXktYWNjb3VudC1pZCcpIG15QWNjb3VudElkID0gJ215QWNjb3VudElkJztcblx0QElucHV0KCdjb3VudGVyLXBhcnR5LWlkJykgY291bnRlclBhcnR5SWQgPSAnY291bnRlclBhcnR5SWQnO1xuXHRASW5wdXQoJ2Ftb3VudC1pZCcpIGFtb3VudElkID0gJ0Ftb3VudElkJztcblx0QElucHV0KCdzdGF0dXMtaWQnKSBzdGF0dXNJZCA9ICdzdGF0dXNJZCc7XG5cdEBJbnB1dCgnZGF0ZS1jcmVhdGVkLWlkJykgZGF0ZUNyZWF0ZWRJZCA9ICdkYXRlQ3JlYXRlZElkJztcblx0QElucHV0KCdwYXltZW50LW1hbmFnZW1lbnQtSWQnKSBwYXltZW50TWFuYWdlbWVudElkID0gJ3BheW1lbnRNYW5hZ2VtZW50SWQnO1xuXHRAT3V0cHV0KCkgYWN0aW9uID0gbmV3IEV2ZW50RW1pdHRlcigpO1xuXHRASW5wdXQoJ2NhbmNlbC1idG4tbGFiZWwnKSBjYW5jZWxCdG5MYWJlbCA9ICdDYW5jZWwnO1xuXHRASW5wdXQoJ2NhbmNlbC1pZCcpIGNhbmNlbElkID0gJ2NhbmNlbElkJztcblx0QElucHV0KCkgdHJhbnNhY3Rpb25EZXRhaWxzID0gW107XG5cdGNvbnN0cnVjdG9yKCkgeyB9XG5cblx0bmdPbkluaXQoKSB7XG5cdFx0dGhpcy5oZWFkaW5nID0ge1xuXHRcdFx0dHlwZTogJ1R5cGUnLFxuXHRcdFx0bXlBY2NvdW50OiAnTXkgQWNjb3VudCcsXG5cdFx0XHRjb3VudGVycGFydHk6ICdDb3VudGVycGFydHknLFxuXHRcdFx0YW1vdW50OiAnQW1vdW50Jyxcblx0XHRcdHN0YXR1czogJ1N0YXR1cycsXG5cdFx0XHRkYXRlSW5pdGlhdGVkOiAnSW5pdGlhdGVkIE9uJyxcblx0XHRcdGRhdGVDcmVhdGVkOiAnQ29tcGxldGVkIE9uJyxcblx0XHRcdHBheW1lbnRNYW5hZ2VtZW50OiAnUGF5bWVudCBNYW5hZ2VtZW50J1xuXHRcdH07XG5cdH1cbn1cbiJdfQ==

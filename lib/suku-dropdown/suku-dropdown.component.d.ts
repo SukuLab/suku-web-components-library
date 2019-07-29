@@ -4,7 +4,6 @@ export declare class SukuDropdownComponent implements OnInit {
     form: FormGroup;
     control: string;
     data: any[];
-    icon: string;
     keyValue: string;
     displayKey: string;
     placeholder: string;
@@ -12,6 +11,9 @@ export declare class SukuDropdownComponent implements OnInit {
     selectId: string;
     errorMsg: string;
     customSelectClass: string;
+    icon: string;
+    iconCustomClass: string;
+    iconId: string;
     select: EventEmitter<{}>;
     constructor();
     ngOnInit(): void;

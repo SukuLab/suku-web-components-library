@@ -13,7 +13,7 @@ export declare class SukuHeaderComponent implements OnInit {
     contentOneSize: any;
     contentOneColor: any;
     contentOneWeight: any;
-    contentOneCustomClass: any;
+    contentOneCustomClass: string;
     titleTwo: string;
     titleTwoId: any;
     titleTwoSize: any;
@@ -32,13 +32,15 @@ export declare class SukuHeaderComponent implements OnInit {
     titleThreeColor: any;
     titleThreeWeight: any;
     titleThreeCustomClass: any;
+    productBoxContentCustomClass: string;
+    productBoxContentBgColor: any;
     contentThree: any;
     enableTimer: any;
     contentThreeId: any;
     contentThreeSize: any;
     contentThreeColor: any;
     contentThreeWeight: any;
-    contentThreeCustomClass: any;
+    contentThreeCustomClass: string;
     action: EventEmitter<{}>;
     constructor();
     ngOnInit(): void;

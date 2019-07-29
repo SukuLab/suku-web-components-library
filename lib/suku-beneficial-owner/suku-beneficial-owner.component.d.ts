@@ -14,7 +14,7 @@ export declare class SukuBeneficialOwnerComponent implements OnInit {
     countriesList: any;
     statesList: any;
     formValid: Boolean;
-    control: any;
+    control: string;
     arrayControlName: any;
     content: string;
     countrySelect: EventEmitter<{}>;
@@ -29,12 +29,23 @@ export declare class SukuBeneficialOwnerComponent implements OnInit {
     customClass: any;
     documentType: any;
     uploadType: any;
+    type: string;
+    btnOne: string;
+    btnOneId: string;
+    btnOneCustomClass: string;
+    btnOneDisable: Boolean;
+    btnTwo: string;
+    btnTwoCustomClass: string;
+    btnTwoId: string;
+    btnTwoDisable: Boolean;
+    labelOne: string;
+    labelOneId: string;
     constructor(snackBar: MatSnackBar);
     ngOnInit(): void;
     active(i: any): void;
     action(): void;
     countrySelectAction(val: any, i: any): void;
     agree(): void;
-    fileupload(e: any): void;
+    submitDatas(): void;
     snackbar(msg: any): void;
 }

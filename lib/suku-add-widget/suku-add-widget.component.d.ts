@@ -1,14 +1,14 @@
 import { OnInit, EventEmitter } from '@angular/core';
 export declare class SukuAddWidgetComponent implements OnInit {
-    size: any;
-    color: any;
-    weight: any;
     id: string;
-    icon: string;
+    size: string;
+    color: string;
+    weight: string;
     customClass: string;
+    icon: string;
     iconId: string;
-    iconColor: any;
     iconCustomClass: string;
+    widgetCustomClass: string;
     action: EventEmitter<{}>;
     constructor();
     ngOnInit(): void;

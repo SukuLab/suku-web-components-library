@@ -1,9 +1,8 @@
 import { OnInit } from '@angular/core';
 export declare class SukuTitleHeaderComponent implements OnInit {
-    titleOne: string;
     titleOneId: any;
     titleOneSize: any;
-    titleOneColor: any;
+    titleOneColor: string;
     titleOneWeight: any;
     titleOneCustomClass: string;
     constructor();
