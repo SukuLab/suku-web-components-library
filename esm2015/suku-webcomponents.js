@@ -5,7 +5,7 @@
 /**
  * Generated bundle index. Do not edit.
  */
-export { SukuFormFooterModule, SukuAchSettingModule, SukuAddIconWidgetModule, SukuBidTagModule, SukuButtonsModule, SukuLoaderModule, SukuModalModule, SukuWebcomponentsModule, suku, dark, light, SukuWebcomponentsService, SukuModalService, SukuLoaderService } from './public_api';
+export { SukuFormFooterModule, SukuAchSettingModule, SukuAddIconWidgetModule, SukuBidTagModule, SukuButtonsModule, SukuLoaderModule, SukuModalModule, SukuModalService, SukuWebcomponentsModule, suku, dark, light, SukuWebcomponentsService, SukuLoaderService } from './public_api';
 export { SukuACHSettingsComponent as ɵb } from './lib/suku-achsettings/suku-achsettings.component';
 export { SukuAddIconComponent as ɵcb } from './lib/suku-add-icon/suku-add-icon.component';
 export { SukuAddWidgetComponent as ɵc } from './lib/suku-add-widget/suku-add-widget.component';

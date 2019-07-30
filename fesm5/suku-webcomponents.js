@@ -2,11 +2,11 @@ import { createCustomElement } from '@angular/elements';
 import { __values, __read } from 'tslib';
 import { CommonModule } from '@angular/common';
 import { CountdownTimerModule } from 'ngx-countdown-timer';
-import { MAT_DIALOG_DATA, MatDialogRef, MatSnackBar, MatDialog, MatAutocompleteModule, MatBadgeModule, MatBottomSheetModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule as MatDialogModule$1, MatDividerModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatSortModule, MatStepperModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialog, MatSnackBar, MatAutocompleteModule, MatBadgeModule, MatBottomSheetModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule as MatDialogModule$1, MatDividerModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatSortModule, MatStepperModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 import { MatDialogModule, MatDialog as MatDialog$1 } from '@angular/material/dialog';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { layout, select } from 'd3';
-import { Component, Input, Output, EventEmitter, NgModule, Injector, Inject, Directive, ElementRef, ViewChild, HostListener, Injectable, ChangeDetectionStrategy, defineInjectable, inject } from '@angular/core';
+import { Component, Input, Output, EventEmitter, NgModule, Injector, Inject, Injectable, Directive, ElementRef, ViewChild, HostListener, ChangeDetectionStrategy, defineInjectable, inject } from '@angular/core';
 
 /**
  * @fileoverview added by tsickle
@@ -1201,6 +1201,70 @@ var SukuModalModule = /** @class */ (function () {
                 },] }
     ];
     return SukuModalModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var SukuModalService = /** @class */ (function () {
+    function SukuModalService(dialogService) {
+        this.dialogService = dialogService;
+        this.onDialogClose = new EventEmitter();
+        this.confirmationDialogHeight = 'auto';
+        this.confirmationDialogWidth = '500px';
+    }
+    /**
+     * @param {?=} data
+     * @return {?}
+     */
+    SukuModalService.prototype.openConfirmationDialog = /**
+     * @param {?=} data
+     * @return {?}
+     */
+    function (data) {
+        var _this = this;
+        /** @type {?} */
+        var dialogRef = this.dialogService.open(SukuConfirmationComponent, {
+            width: this.confirmationDialogWidth,
+            height: this.confirmationDialogHeight,
+            disableClose: this.confirmationDialogClose,
+            data: {
+                icon: data ? data.icon : '',
+                iconCustomClass: data ? data.iconCustomClass : '',
+                iconId: data ? data.iconId : '',
+                titleOne: data ? data.titleOne : '',
+                titleOneId: data ? data.titleOneId : '',
+                titleTwo: data ? data.titleTwo : '',
+                titleTwoId: data ? data.titleOneId : '',
+                titleThree: data ? data.titleThree : '',
+                titleThreeId: data ? data.titleThreeId : '',
+                buttonLableOne: data ? data.buttonLableOne : '',
+                buttonLableOneId: data ? data.buttonLableOneId : '',
+                buttonLableTwo: data ? data.buttonLableTwo : '',
+                buttonLableTwoId: data ? data.buttonLableTwoId : '',
+                buttonCustomClass: data ? data.buttonCustomClass : ''
+            }
+        });
+        dialogRef.afterClosed().subscribe((/**
+         * @param {?} result
+         * @return {?}
+         */
+        function (result) {
+            _this.onDialogClose.emit(result);
+        }));
+    };
+    SukuModalService.decorators = [
+        { type: Injectable, args: [{
+                    providedIn: 'root'
+                },] }
+    ];
+    /** @nocollapse */
+    SukuModalService.ctorParameters = function () { return [
+        { type: MatDialog }
+    ]; };
+    /** @nocollapse */ SukuModalService.ngInjectableDef = defineInjectable({ factory: function SukuModalService_Factory() { return new SukuModalService(inject(MatDialog$1)); }, token: SukuModalService, providedIn: "root" });
+    return SukuModalService;
 }());
 
 /**
@@ -4038,70 +4102,6 @@ var SukuMatchChipComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-var SukuModalService = /** @class */ (function () {
-    function SukuModalService(dialogService) {
-        this.dialogService = dialogService;
-        this.onDialogClose = new EventEmitter();
-        this.confirmationDialogHeight = 'auto';
-        this.confirmationDialogWidth = '564px';
-    }
-    /**
-     * @param {?=} data
-     * @return {?}
-     */
-    SukuModalService.prototype.openConfirmationDialog = /**
-     * @param {?=} data
-     * @return {?}
-     */
-    function (data) {
-        var _this = this;
-        /** @type {?} */
-        var dialogRef = this.dialogService.open(SukuConfirmationComponent, {
-            width: this.confirmationDialogWidth,
-            height: this.confirmationDialogHeight,
-            disableClose: this.confirmationDialogClose,
-            data: {
-                icon: data ? data.icon : '',
-                iconCustomClass: data ? data.iconCustomClass : '',
-                iconId: data ? data.iconId : '',
-                titleOne: data ? data.titleOne : '',
-                titleOneId: data ? data.titleOneId : '',
-                titleTwo: data ? data.titleTwo : '',
-                titleTwoId: data ? data.titleOneId : '',
-                titleThree: data ? data.titleThree : '',
-                titleThreeId: data ? data.titleThreeId : '',
-                buttonLableOne: data ? data.buttonLableOne : '',
-                buttonLableOneId: data ? data.buttonLableOneId : '',
-                buttonLableTwo: data ? data.buttonLableTwo : '',
-                buttonLableTwoId: data ? data.buttonLableTwoId : '',
-                buttonCustomClass: data ? data.buttonCustomClass : ''
-            }
-        });
-        dialogRef.afterClosed().subscribe((/**
-         * @param {?} result
-         * @return {?}
-         */
-        function (result) {
-            _this.onDialogClose.emit(result);
-        }));
-    };
-    SukuModalService.decorators = [
-        { type: Injectable, args: [{
-                    providedIn: 'root'
-                },] }
-    ];
-    /** @nocollapse */
-    SukuModalService.ctorParameters = function () { return [
-        { type: MatDialog }
-    ]; };
-    /** @nocollapse */ SukuModalService.ngInjectableDef = defineInjectable({ factory: function SukuModalService_Factory() { return new SukuModalService(inject(MatDialog$1)); }, token: SukuModalService, providedIn: "root" });
-    return SukuModalService;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
 var SukuNavSubmenuComponent = /** @class */ (function () {
     function SukuNavSubmenuComponent() {
         this.subMenuList = [];
@@ -5833,7 +5833,7 @@ var SukuTitleHeaderComponent = /** @class */ (function () {
     SukuTitleHeaderComponent.decorators = [
         { type: Component, args: [{
                     selector: 'suku-title-header',
-                    template: "<div class=\"header\">\n  <div class=\"col pt-3 pb-3\">\n    <div class=\"row\">\n      <div class=\"col\">\n        <h1 [style.font-size.px]=\"titleOneSize\" class=\"title mt-auto mb-0 {{titleOneCustomClass}}\" [style.font-weight]=\"titleOneWeight\"\n          [style.color]=\"titleOneColor\" id=\"{{titleOneId}}\"><ng-content></ng-content></h1>\n      </div>\n    </div>\n  </div>\n</div>",
+                    template: "<div class=\"header\">\n  <div class=\"col pt-4 pb-4\">\n    <div class=\"row\">\n      <div class=\"col\">\n        <h1 [style.font-size.px]=\"titleOneSize\" class=\"title mt-auto mb-0 {{titleOneCustomClass}}\"\n          [style.font-weight]=\"titleOneWeight\" [style.color]=\"titleOneColor\" id=\"{{titleOneId}}\">\n          <ng-content></ng-content>\n        </h1>\n      </div>\n    </div>\n  </div>\n</div>",
                     styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)!important}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.header{background:var(--suku-bg-primary);border-left:5px solid var(--suku-primary-border-color);border-radius:0 40px 0 0;box-shadow:-4px 4px 5px 0 rgba(0,0,0,.08)}.title{font-family:var(--suku-primary-font)!important;font-weight:600;font-size:var(--suku-font-size-6);text-transform:uppercase}"]
                 }] }
     ];
@@ -7142,6 +7142,6 @@ var SukuWebcomponentsService = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { SukuFormFooterModule, SukuAchSettingModule, SukuAddIconWidgetModule, SukuBidTagModule, SukuButtonsModule, SukuLoaderModule, SukuModalModule, SukuWebcomponentsModule, suku, dark, light, SukuWebcomponentsService, SukuModalService, SukuLoaderService, SukuACHSettingsComponent as ɵb, SukuAddIconComponent as ɵcb, SukuAddWidgetComponent as ɵc, SukuAddressWidgetComponent as ɵbc, SukuBeneficialOwnerComponent as ɵbr, SukuBidInfoComponent as ɵba, SukuLargeBidTagComponent as ɵco, SukuBidTagComponent as ɵd, SukuBidWidgetTagComponent as ɵcp, SukuDefaultButtonComponent as ɵh, SukuHomepageButtonComponent as ɵi, SukuInfoButtonComponent as ɵe, SukuPrimaryButtonComponent as ɵf, SukuSecondaryButtonComponent as ɵg, SukuCardLineTypeOneComponent as ɵbx, SukuCardLineTypeTwoComponent as ɵby, SukuCardLineComponent as ɵl, SukuCardTitleComponent as ɵbk, ScrollToBottomDirective as ɵcn, SukuChatWidgetComponent as ɵcm, SukuConfirmationComponent as ɵk, SukuCreateCustomerComponent as ɵbq, SukuCreationCustomerFileuploadComponent as ɵbu, SukuDashboardProfileComponent as ɵm, SukuDropdownComponent as ɵch, SukuDwollaFundingAgreementComponent as ɵbs, SukuDwollaFundingSourceComponent as ɵbt, SukuFiltersComponent as ɵbg, SukuFormFooterComponent as ɵa, SukuFundingSourceComponent as ɵbp, SukuGalleryComponent as ɵcq, SukuHeaderComponent as ɵci, SukuHeadingComponent as ɵn, SukuHomeItalicHeadingComponent as ɵo, SukuHomeWidgetComponent as ɵp, SukuHomepageSectionComponent as ɵcd, SukuHomepageComponent as ɵcc, SukuImageWidgetComponent as ɵcl, SukuInlineDropdownComponent as ɵq, SukuLinkComponent as ɵx, SukuLoaderComponent as ɵj, SukuMailWidgetComponent as ɵr, SukuMatchChipComponent as ɵs, SukuNavSubmenuComponent as ɵz, SukuNotificationPanelComponent as ɵca, SukuNotificationWidgetComponent as ɵt, SukuPaymentPortalHelpComponent as ɵbv, SukuPhoneWidgetComponent as ɵbb, SukuProductTraceWidgetComponent as ɵbi, SukuProfileHeaderComponent as ɵce, SukuProfileWidgetComponent as ɵbe, SukuProgressBarTypeOneComponent as ɵu, SukuProgressBarTypeTwoComponent as ɵv, SukuRadioButtonComponent as ɵcg, SukuRatingCardLineComponent as ɵbz, SukuRatingStarComponent as ɵbl, SukuResponseComponent as ɵbn, SukuSearchInputComponent as ɵbd, SukuSelectInputComponent as ɵy, SukuShippingInfoWidgetComponent as ɵck, SukuShippingWidgetComponent as ɵbm, SukuSocialIconsComponent as ɵcf, SukuStarBadgeComponent as ɵbf, SukuSubHeadingComponent as ɵw, SukuTermsAndConditionsComponent as ɵbw, SukuTitleHeaderComponent as ɵcj, SukuTrackProgressBarComponent as ɵbh, SukuTransactionHistoryComponent as ɵbo, SukuTreeComponent as ɵbj };
+export { SukuFormFooterModule, SukuAchSettingModule, SukuAddIconWidgetModule, SukuBidTagModule, SukuButtonsModule, SukuLoaderModule, SukuModalModule, SukuModalService, SukuWebcomponentsModule, suku, dark, light, SukuWebcomponentsService, SukuLoaderService, SukuACHSettingsComponent as ɵb, SukuAddIconComponent as ɵcb, SukuAddWidgetComponent as ɵc, SukuAddressWidgetComponent as ɵbc, SukuBeneficialOwnerComponent as ɵbr, SukuBidInfoComponent as ɵba, SukuLargeBidTagComponent as ɵco, SukuBidTagComponent as ɵd, SukuBidWidgetTagComponent as ɵcp, SukuDefaultButtonComponent as ɵh, SukuHomepageButtonComponent as ɵi, SukuInfoButtonComponent as ɵe, SukuPrimaryButtonComponent as ɵf, SukuSecondaryButtonComponent as ɵg, SukuCardLineTypeOneComponent as ɵbx, SukuCardLineTypeTwoComponent as ɵby, SukuCardLineComponent as ɵl, SukuCardTitleComponent as ɵbk, ScrollToBottomDirective as ɵcn, SukuChatWidgetComponent as ɵcm, SukuConfirmationComponent as ɵk, SukuCreateCustomerComponent as ɵbq, SukuCreationCustomerFileuploadComponent as ɵbu, SukuDashboardProfileComponent as ɵm, SukuDropdownComponent as ɵch, SukuDwollaFundingAgreementComponent as ɵbs, SukuDwollaFundingSourceComponent as ɵbt, SukuFiltersComponent as ɵbg, SukuFormFooterComponent as ɵa, SukuFundingSourceComponent as ɵbp, SukuGalleryComponent as ɵcq, SukuHeaderComponent as ɵci, SukuHeadingComponent as ɵn, SukuHomeItalicHeadingComponent as ɵo, SukuHomeWidgetComponent as ɵp, SukuHomepageSectionComponent as ɵcd, SukuHomepageComponent as ɵcc, SukuImageWidgetComponent as ɵcl, SukuInlineDropdownComponent as ɵq, SukuLinkComponent as ɵx, SukuLoaderComponent as ɵj, SukuMailWidgetComponent as ɵr, SukuMatchChipComponent as ɵs, SukuNavSubmenuComponent as ɵz, SukuNotificationPanelComponent as ɵca, SukuNotificationWidgetComponent as ɵt, SukuPaymentPortalHelpComponent as ɵbv, SukuPhoneWidgetComponent as ɵbb, SukuProductTraceWidgetComponent as ɵbi, SukuProfileHeaderComponent as ɵce, SukuProfileWidgetComponent as ɵbe, SukuProgressBarTypeOneComponent as ɵu, SukuProgressBarTypeTwoComponent as ɵv, SukuRadioButtonComponent as ɵcg, SukuRatingCardLineComponent as ɵbz, SukuRatingStarComponent as ɵbl, SukuResponseComponent as ɵbn, SukuSearchInputComponent as ɵbd, SukuSelectInputComponent as ɵy, SukuShippingInfoWidgetComponent as ɵck, SukuShippingWidgetComponent as ɵbm, SukuSocialIconsComponent as ɵcf, SukuStarBadgeComponent as ɵbf, SukuSubHeadingComponent as ɵw, SukuTermsAndConditionsComponent as ɵbw, SukuTitleHeaderComponent as ɵcj, SukuTrackProgressBarComponent as ɵbh, SukuTransactionHistoryComponent as ɵbo, SukuTreeComponent as ɵbj };
 
 //# sourceMappingURL=suku-webcomponents.js.map
