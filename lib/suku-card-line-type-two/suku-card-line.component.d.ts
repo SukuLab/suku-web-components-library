@@ -5,7 +5,7 @@ export declare class SukuCardLineTypeTwoComponent implements OnInit {
     iconOne: string;
     iconTwo: string;
     msgStatus: any;
-    customclass: string;
+    customClass: string;
     customImgclass: string;
     customIconClass: string;
     imageColSize: string;

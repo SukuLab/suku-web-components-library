@@ -11,10 +11,10 @@ export declare class SukuGalleryComponent implements OnInit {
     vidWidth: any;
     controlNextIconCustomClass: any;
     controlPrevIconCustomClass: any;
+    videoElement: ElementRef;
     prevBtnVisible: boolean;
     nextBtnVisible: boolean;
     autoplay: boolean;
-    videoElement: ElementRef;
     constructor();
     ngOnInit(): void;
     active(i: any, position: any): void;
