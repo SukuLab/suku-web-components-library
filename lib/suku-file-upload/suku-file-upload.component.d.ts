@@ -1,5 +1,7 @@
 import { OnInit, EventEmitter } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
 export declare class SukuFileUploadComponent implements OnInit {
+    private snackBar;
     isHovering: any;
     enableContainer: boolean;
     titleId: string;
@@ -14,9 +16,10 @@ export declare class SukuFileUploadComponent implements OnInit {
     imgSrc: string;
     fileInputId: string;
     action: EventEmitter<{}>;
-    constructor();
+    constructor(snackBar: MatSnackBar);
     ngOnInit(): void;
     toggleHover(event: boolean): void;
     startUpload(event: FileList): void;
     upload(e: any): void;
+    snackbar(msg: any): void;
 }

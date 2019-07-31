@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { CountdownTimerModule } from 'ngx-countdown-timer';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog, MatSnackBar, MatAutocompleteModule, MatBadgeModule, MatBottomSheetModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule as MatDialogModule$1, MatDividerModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatSortModule, MatStepperModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 import { MatDialogModule, MatDialog as MatDialog$1 } from '@angular/material/dialog';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { layout, select } from 'd3';
-import { Component, Input, Output, EventEmitter, NgModule, Injector, Inject, Injectable, Directive, ElementRef, HostListener, ViewChild, ChangeDetectionStrategy, defineInjectable, inject } from '@angular/core';
+import { EventEmitter as EventEmitter$1 } from 'events';
+import { FormBuilder, FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Component, Input, Output, EventEmitter, NgModule, Injector, Inject, Injectable, Directive, ElementRef, HostListener, ViewChild, ViewEncapsulation, ChangeDetectionStrategy, defineInjectable, inject } from '@angular/core';
 
 /**
  * @fileoverview added by tsickle
@@ -618,7 +619,7 @@ SukuInfoButtonComponent.decorators = [
     { type: Component, args: [{
                 selector: 'suku-info-button',
                 template: "<button class=\"suku-i suku-{{type}} {{customClass}}\" [ngClass]=\"{'disabled' : disableValue}\" [disabled]=\"disableValue\"\n  [style.font-size.rem]=\"size\" [style.font-weight]=\"weight\" [id]=\"id\" (click)=\"action.emit()\">\n  <ng-content></ng-content>\n</button>",
-                styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-i{border:2px solid;border-radius:28px 76px 63px;color:#3e3e3e;font-family:var(--suku-secondary-font);font-size:var(--suku-font-size-3);font-weight:600;padding:.55rem 2rem}.suku-i:hover{color:#fff;cursor:pointer}.suku-i:focus{outline:0!important}.suku.disabled:hover{border:2px solid;border-color:var(--suku-primary-color);background-color:#fff;color:var(--suku-text-link);cursor:not-allowed}.suku-info{border:2px solid;border-color:var(--suku-primary-color);background-color:var(--suku-text-label-two);color:var(--suku-text-heading)}.suku-info:active,.suku-info:hover{border:2px solid;border-color:var(--suku-primary-color);background-color:var(--suku-primary-color);color:#fff}.suku-info.disabled{border:2px solid;border-color:var(--suku-primary-color);background-color:#fff;color:grey}.suku-info.disabled.focus,.suku-info.disabled:focus,.suku-info.disabled:hover,.suku-info[disabled].focus,.suku-info[disabled]:focus,.suku-info[disabled]:hover,fieldset[disabled] .suku-info.focus,fieldset[disabled] .suku-info:focus,fieldset[disabled] .suku-info:hover{border:2px solid;border-color:var(--suku-primary-color);background-color:#fff!important;color:grey}.suku-info.focus,.suku-info:focus{border:2px solid;border-color:var(--suku-primary-color);background-color:var(--suku-primary-color);color:#fff}.open>.dropdown-toggle .suku-info.focus,.open>.dropdown-toggle .suku-info:focus,.open>.dropdown-toggle.suku-info:hover,.suku-info.active.focus,.suku-info.active:focus,.suku-info.active:hover,.suku-info:active.focus,.suku-info:active:focus,.suku-info:active:hover{border:2px solid;border-color:var(--suku-primary-color);background-color:var(--suku-primary-color);color:#fff}.show>.suku-info.dropdown-toggle,.suku-info:not(:disabled):not(.disabled).active,.suku-info:not(:disabled):not(.disabled):active{color:#fff;background-color:var(--suku-primary-color);border-color:var(--suku-primary-color)}.show>.suku-info.dropdown-toggle:focus,.suku-info.focus,.suku-info:focus,.suku-info:not(:disabled):not(.disabled).active:focus,.suku-info:not(:disabled):not(.disabled):active:focus{box-shadow:none!important}.suku-default{border:2px solid;border-color:var(--suku-text-info);background-color:var(--suku-bg-secondary);color:var(--suku-text-label-one)}.suku-default:active,.suku-default:hover{border:2px solid;border-color:var(--suku-text-info);background-color:var(--suku-text-info);color:#fff}.suku-default.disabled{border:2px solid;border-color:var(--suku-text-info);background-color:#fff;color:grey}.suku-default.disabled.focus,.suku-default.disabled:focus,.suku-default.disabled:hover,.suku-default[disabled].focus,.suku-default[disabled]:focus,.suku-default[disabled]:hover,fieldset[disabled] .suku-default.focus,fieldset[disabled] .suku-default:focus,fieldset[disabled] .suku-default:hover{border:2px solid;border-color:var(--suku-text-info);background-color:#fff!important;color:grey}.suku-default.focus,.suku-default:focus{border:2px solid;border-color:var(--suku-text-info);background-color:var(--suku-text-info);color:#fff}.open>.dropdown-toggle .suku-default.focus,.open>.dropdown-toggle .suku-default:focus,.open>.dropdown-toggle.suku-default:hover,.suku-default.active.focus,.suku-default.active:focus,.suku-default.active:hover,.suku-default:active.focus,.suku-default:active:focus,.suku-default:active:hover{border:2px solid;border-color:var(--suku-text-info);background-color:var(--suku-text-info);color:#fff}.show>.suku-default.dropdown-toggle,.suku-default:not(:disabled):not(.disabled).active,.suku-default:not(:disabled):not(.disabled):active{color:#fff;background-color:var(--suku-text-info);border-color:var(--suku-text-info)}.show>.suku-default.dropdown-toggle:focus,.suku-default.focus,.suku-default:focus,.suku-default:not(:disabled):not(.disabled).active:focus,.suku-default:not(:disabled):not(.disabled):active:focus{box-shadow:none!important}"]
+                styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-i{border:2px solid;border-radius:28px 76px 63px;color:#3e3e3e;font-family:var(--suku-secondary-font);font-size:var(--suku-font-size-3);font-weight:600;padding:.55rem 2rem}.suku-i:hover{color:#fff;cursor:pointer}.suku-i:focus{outline:0!important}.suku.disabled:hover{border:2px solid;border-color:var(--suku-primary-color);background-color:#fff;color:var(--suku-text-link);cursor:not-allowed}.suku-info{border:2px solid;border-color:var(--suku-primary-color);background-color:var(--suku-default-bg);color:var(--suku-text-heading)}.suku-info:active,.suku-info:hover{border:2px solid;border-color:var(--suku-primary-color);background-color:var(--suku-primary-color);color:#fff}.suku-info.disabled{border:2px solid;border-color:var(--suku-primary-color);background-color:#fff;color:grey}.suku-info.disabled.focus,.suku-info.disabled:focus,.suku-info.disabled:hover,.suku-info[disabled].focus,.suku-info[disabled]:focus,.suku-info[disabled]:hover,fieldset[disabled] .suku-info.focus,fieldset[disabled] .suku-info:focus,fieldset[disabled] .suku-info:hover{border:2px solid;border-color:var(--suku-primary-color);background-color:#fff!important;color:grey}.suku-info.focus,.suku-info:focus{border:2px solid;border-color:var(--suku-primary-color);background-color:var(--suku-primary-color);color:#fff}.open>.dropdown-toggle .suku-info.focus,.open>.dropdown-toggle .suku-info:focus,.open>.dropdown-toggle.suku-info:hover,.suku-info.active.focus,.suku-info.active:focus,.suku-info.active:hover,.suku-info:active.focus,.suku-info:active:focus,.suku-info:active:hover{border:2px solid;border-color:var(--suku-primary-color);background-color:var(--suku-primary-color);color:#fff}.show>.suku-info.dropdown-toggle,.suku-info:not(:disabled):not(.disabled).active,.suku-info:not(:disabled):not(.disabled):active{color:#fff;background-color:var(--suku-primary-color);border-color:var(--suku-primary-color)}.show>.suku-info.dropdown-toggle:focus,.suku-info.focus,.suku-info:focus,.suku-info:not(:disabled):not(.disabled).active:focus,.suku-info:not(:disabled):not(.disabled):active:focus{box-shadow:none!important}.suku-default{border:2px solid;border-color:var(--suku-text-info);background-color:var(--suku-default-bg);color:var(--suku-text-heading)}.suku-default:active,.suku-default:hover{border:2px solid;border-color:var(--suku-text-info);background-color:var(--suku-text-info);color:#fff}.suku-default.disabled{border:2px solid;border-color:var(--suku-text-info);background-color:#fff;color:grey}.suku-default.disabled.focus,.suku-default.disabled:focus,.suku-default.disabled:hover,.suku-default[disabled].focus,.suku-default[disabled]:focus,.suku-default[disabled]:hover,fieldset[disabled] .suku-default.focus,fieldset[disabled] .suku-default:focus,fieldset[disabled] .suku-default:hover{border:2px solid;border-color:var(--suku-text-info);background-color:#fff!important;color:grey}.suku-default.focus,.suku-default:focus{border:2px solid;border-color:var(--suku-text-info);background-color:var(--suku-text-info);color:#fff}.open>.dropdown-toggle .suku-default.focus,.open>.dropdown-toggle .suku-default:focus,.open>.dropdown-toggle.suku-default:hover,.suku-default.active.focus,.suku-default.active:focus,.suku-default.active:hover,.suku-default:active.focus,.suku-default:active:focus,.suku-default:active:hover{border:2px solid;border-color:var(--suku-text-info);background-color:var(--suku-text-info);color:#fff}.show>.suku-default.dropdown-toggle,.suku-default:not(:disabled):not(.disabled).active,.suku-default:not(:disabled):not(.disabled):active{color:#fff;background-color:var(--suku-text-info);border-color:var(--suku-text-info)}.show>.suku-default.dropdown-toggle:focus,.suku-default.focus,.suku-default:focus,.suku-default:not(:disabled):not(.disabled).active:focus,.suku-default:not(:disabled):not(.disabled):active:focus{box-shadow:none!important}"]
             }] }
 ];
 /** @nocollapse */
@@ -1154,7 +1155,11 @@ SukuDropZoneDirective.propDecorators = {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class SukuFileUploadComponent {
-    constructor() {
+    /**
+     * @param {?} snackBar
+     */
+    constructor(snackBar) {
+        this.snackBar = snackBar;
         this.enableContainer = false;
         this.titleId = 'heading';
         this.titleColor = '#747470eb';
@@ -1186,8 +1191,27 @@ class SukuFileUploadComponent {
      * @return {?}
      */
     startUpload(event) {
-        console.log('event', event);
-        this.action.emit(event);
+        /** @type {?} */
+        const maxFileSize = 9999999;
+        if (event.length > 0) {
+            for (let i = 0; i < event.length; i++) {
+                if (event[i].type == 'image/jpeg' || event[i].type == 'image/png' || event[i].type == 'image/jpg' ||
+                    event[i].type == 'application/pdf') {
+                    if (event[i].size <= maxFileSize) {
+                        console.log('event', event[i]);
+                        /** @type {?} */
+                        const e = event[i];
+                        this.action.emit(e);
+                    }
+                    else {
+                        this.snackbar('The file size cannot exceed 10 MB');
+                    }
+                }
+                else {
+                    this.snackbar('The file type jpg/jpeg/png/pdf files are allowed!');
+                }
+            }
+        }
     }
     /**
      * @param {?} e
@@ -1196,17 +1220,31 @@ class SukuFileUploadComponent {
     upload(e) {
         console.log('file-upload');
         ((/** @type {?} */ (document.getElementById('file')))).click();
+        e.stopPropagation();
+    }
+    /**
+     * @param {?} msg
+     * @return {?}
+     */
+    snackbar(msg) {
+        this.snackBar.open(msg, 'close', {
+            verticalPosition: 'bottom',
+            horizontalPosition: 'right',
+            duration: 3500
+        });
     }
 }
 SukuFileUploadComponent.decorators = [
     { type: Component, args: [{
                 selector: 'suku-file-upload',
-                template: "     <div class=\"col\">\n       <div class=\"col text-center p-0\" [ngClass]=\"{'upload-container': enableContainer}\" (click)=\"upload($event)\">\n         <div class=\"text-center col-sm-12 p-4\">\n           <div class=\"dropzone\" dropZone [style.width.rem]=\"dropZoneWidth\" (hovered)=\"toggleHover($event)\"\n             (dropped)=\"startUpload($event)\" [class.hovering]=\"isHovering\">\n             <h1 class=\" title {{customClass}}\" [style.font-size.rem]=\"titleSize\" [style.font-weight]=\"titleWeight\"\n               [style.color]=\"titleColor\" [id]=\"titleId\">Verify the authenticity of a document by uploading it here</h1>\n             <div class=\"file\">\n               <label class=\"file-label\" [style.height.rem]=\"dropZoneHeight\">\n                 <span class=\"file-cta\">\n                   <span class=\"file-icon\">\n                     <img class=\"mt-5\" [style.height.%]=\"imgHeight\" [style.width.%]=\"imgWidth\" [src]=\"imgSrc\" />\n                   </span>\n                   <span class=\"file-label\">\n                     <input class=\"file-input\" [id]=\"fileInputId\" type=\"file\">\n                   </span>\n                 </span>\n               </label>\n             </div>\n           </div>\n         </div>\n       </div>\n     </div>",
-                styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.upload-container{border-radius:0 0 41px 41px;background-color:#fff;box-shadow:0 12px 14px 0 rgba(0,0,0,.05)}h1{font-family:var(--suku-primary-font);font-size:var(--suku-font-size-4);font-weight:600;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px;word-break:break-word!important;overflow:hidden;text-overflow:ellipsis!important;white-space:normal}.file-wrapper{cursor:pointer;display:inline-block;overflow:hidden;position:relative}.file-wrapper input{cursor:pointer;font-size:100px;-moz-opacity:.01;opacity:.01;position:absolute;right:0;top:0}.file-wrapper .button{border:solid 2px var(--suku-default-border-color);border-radius:28px 76px 63px;color:#000;cursor:pointer;display:inline-block;font-size:14px;font-weight:700;margin-right:5px;padding:4px 18px}.dropzone{display:flex;align-items:center;justify-content:center;flex-direction:column;font-weight:200;height:30%;border:2px dashed var(--suku-default-border-color);border-radius:3px;background-color:#eaeaea5e;margin:1rem}.dropzone.hovering{border:2px solid var(--suku-default-border-color)}.dropzone .file-label{font-size:.2rem;position:relative;z-index:10;display:flex}.file-input{visibility:hidden}"]
+                template: "     <div class=\"col\">\n       <div class=\"col text-center p-0\" [ngClass]=\"{'upload-container': enableContainer}\" >\n         <div class=\"text-center col-sm-12 p-4\">\n           <div class=\"dropzone\" dropZone [style.width.rem]=\"dropZoneWidth\" (hovered)=\"toggleHover($event)\"\n             (dropped)=\"startUpload($event)\" [class.hovering]=\"isHovering\" (click)=\"upload($event)\">\n             <h1 class=\" title {{customClass}}\" [style.font-size.rem]=\"titleSize\" [style.font-weight]=\"titleWeight\"\n               [style.color]=\"titleColor\" [id]=\"titleId\">Verify the authenticity of a document by uploading it here</h1>\n             <div class=\"file\">\n               <label class=\"file-label\" [style.height.rem]=\"dropZoneHeight\">\n                 <span class=\"file-cta\">\n                   <span class=\"file-icon\">\n                     <img class=\"mt-5\" [style.height.%]=\"imgHeight\" [style.width.%]=\"imgWidth\" [src]=\"imgSrc\" />\n                    </span>\n                  </span>\n                </label>\n              </div>\n              <input class=\"file-input\" [id]=\"fileInputId\" type=\"file\" (change)=\"startUpload($event.target.files)\">\n            </div>\n          </div>\n        </div>\n      </div>",
+                styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.upload-container{border-radius:0 0 41px 41px;background-color:#fff;box-shadow:0 12px 14px 0 rgba(0,0,0,.05)}h1{font-family:var(--suku-primary-font);font-size:var(--suku-font-size-4);font-weight:600;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px;word-break:break-word!important;overflow:hidden;text-overflow:ellipsis!important;white-space:normal}.file-wrapper{cursor:pointer;display:inline-block;overflow:hidden;position:relative}.file-wrapper input{cursor:pointer;font-size:100px;-moz-opacity:.01;opacity:.01;position:absolute;right:0;top:0}.file-wrapper .button{border:solid 2px var(--suku-default-border-color);border-radius:28px 76px 63px;color:#000;cursor:pointer;display:inline-block;font-size:14px;font-weight:700;margin-right:5px;padding:4px 18px}.dropzone{display:flex;align-items:center;justify-content:center;flex-direction:column;font-weight:200;height:30%;border:2px dashed var(--suku-default-border-color);border-radius:3px;background-color:#eaeaea5e;margin:1rem}.dropzone.hovering{border:2px solid var(--suku-default-border-color)}.dropzone .file-label{font-size:.2rem;position:relative;z-index:2;display:flex}.file-input{visibility:hidden;z-index:-20!important;pointer-events:none}"]
             }] }
 ];
 /** @nocollapse */
-SukuFileUploadComponent.ctorParameters = () => [];
+SukuFileUploadComponent.ctorParameters = () => [
+    { type: MatSnackBar }
+];
 SukuFileUploadComponent.propDecorators = {
     enableContainer: [{ type: Input, args: ['enable-container',] }],
     titleId: [{ type: Input, args: ['title-Id',] }],
@@ -3615,6 +3653,7 @@ class SukuLoaderService {
      */
     constructor(dialogService) {
         this.dialogService = dialogService;
+        this.loaderDialogClose = true;
         this.onDialogClose = new EventEmitter();
         this.loaderDialogHeight = '420px';
         this.loaderDialogWidth = '42%';
@@ -4066,8 +4105,6 @@ class SukuProductTraceWidgetComponent {
         this.tracetheProductId = '';
         this.searchFun = new EventEmitter();
         this.selectproducts = new EventEmitter();
-        this.searchByProduct = new EventEmitter();
-        this.traceproduct = new EventEmitter();
         this.productdetails = [];
     }
     /**
@@ -4083,14 +4120,6 @@ class SukuProductTraceWidgetComponent {
     set disableBtn(val) {
         this._disableBtn = val;
     }
-    // get () {
-    //   return this._data;
-    // }
-    // set productdetails(val) {
-    //   if (val) {
-    //     this._data = (val);
-    //   }
-    // }
     /**
      * @return {?}
      */
@@ -4183,8 +4212,6 @@ SukuProductTraceWidgetComponent.propDecorators = {
     tracetheProductId: [{ type: Input }],
     searchFun: [{ type: Output }],
     selectproducts: [{ type: Output }],
-    searchByProduct: [{ type: Output }],
-    traceproduct: [{ type: Output }],
     disableBtn: [{ type: Input }],
     productdetails: [{ type: Input }],
     result: [{ type: Input }],
@@ -6143,6 +6170,218 @@ SukuTreeComponent.propDecorators = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+class SukuCheckboxComponent {
+    constructor() {
+        this.checkboxId = 'suku-checkbox';
+        this.customClass = '';
+        this.color = 'primary';
+        this.labelPosition = 'after';
+        this.checkBoxControl = new FormControl();
+        this.action = new EventEmitter$1();
+    }
+    /**
+     * @param {?} val
+     * @return {?}
+     */
+    set checked(val) {
+        if (val) {
+            this.checkBoxControl.patchValue(val);
+        }
+    }
+    /**
+     * @param {?} value
+     * @return {?}
+     */
+    set disabled(value) {
+        console.log(value);
+        if (value) {
+            this.checkBoxControl.disable();
+        }
+        else {
+            this.checkBoxControl.enable();
+        }
+    }
+    /**
+     * @return {?}
+     */
+    ngOnInit() {
+        this._subscription = this.checkBoxControl.valueChanges.subscribe((/**
+         * @param {?} value
+         * @return {?}
+         */
+        value => {
+            this.action.emit(value);
+            console.log('checkBoxControl', value);
+        }));
+    }
+    /**
+     * @return {?}
+     */
+    ngDestroy() {
+        this._subscription.unsubscribe();
+    }
+}
+SukuCheckboxComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'suku-checkbox',
+                template: "<mat-checkbox [color]=\"color\" [formControl]=\"checkBoxControl\" [(indeterminate)]=\"indeterminate\"\n  [labelPosition]=\"labelPosition\"><span class=\"suku-checkbox {{customClass}}\">\n    Suku checkbox</span></mat-checkbox>\n",
+                styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-checkbox{font-family:var(--suku-primary-font);font-weight:500;font-size:var(--suku-font-size-3);color:var(--suku-text-label-one);letter-spacing:0;word-break:break-word}"]
+            }] }
+];
+/** @nocollapse */
+SukuCheckboxComponent.ctorParameters = () => [];
+SukuCheckboxComponent.propDecorators = {
+    checkboxId: [{ type: Input, args: ['checkbox-id',] }],
+    customClass: [{ type: Input, args: ['custom-class',] }],
+    color: [{ type: Input }],
+    control: [{ type: Input }],
+    checked: [{ type: Input }],
+    indeterminate: [{ type: Input }],
+    labelPosition: [{ type: Input }],
+    disabled: [{ type: Input }],
+    action: [{ type: Output }]
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * Error when invalid control is dirty, touched, or submitted.
+ */
+class MyErrorStateMatcher {
+    /**
+     * @param {?} control
+     * @param {?} form
+     * @return {?}
+     */
+    isErrorState(control, form) {
+        return !!(control && control.invalid && (control.dirty || control.touched));
+    }
+}
+class SukuUserInputComponent {
+    constructor() {
+        this.usernameControl = new FormControl();
+        this.color = 'primary';
+        this.placeholder = 'Username';
+        this.enableUserIcon = true;
+        this.errorMessageOne = 'cannot be blank.';
+        this.errorMessageTwo = '';
+        this.errorMessageThree = '';
+        this.errorMessageFour = '';
+        this.email = new FormControl('', [Validators.required, Validators.email]);
+        this.action = new EventEmitter();
+        this.matcher = new MyErrorStateMatcher();
+    }
+    /**
+     * @param {?} val
+     * @return {?}
+     */
+    set enableRequiredValidator(val) {
+        console.log('enableRequiredValidator', val);
+        if (val) {
+            this.usernameControl.setValidators(Validators.required);
+            this.usernameControl.updateValueAndValidity();
+        }
+    }
+    /**
+     * @param {?} val
+     * @return {?}
+     */
+    set enablePatternValidators(val) {
+        if (val) {
+            this.usernameControl.setValidators(Validators.pattern(this.pattern));
+            this.usernameControl.updateValueAndValidity();
+        }
+    }
+    /**
+     * @param {?} val
+     * @return {?}
+     */
+    set enableMaxLenValidators(val) {
+        console.log('enableMaxValidator', val);
+        if (val) {
+            this.usernameControl.setValidators(Validators.maxLength(val));
+            this.usernameControl.updateValueAndValidity();
+        }
+    }
+    /**
+     * @param {?} val
+     * @return {?}
+     */
+    set enableMinLenValidators(val) {
+        console.log('enableMinValidator', val);
+        if (val) {
+            this.usernameControl.setValidators(Validators.minLength(val));
+            this.usernameControl.updateValueAndValidity();
+        }
+    }
+    /**
+     * @return {?}
+     */
+    ngOnInit() {
+        this._subscription = this.usernameControl.valueChanges.subscribe((/**
+         * @param {?} value
+         * @return {?}
+         */
+        value => {
+            if (value) {
+                this.action.emit(value);
+            }
+            console.log('usernameControl', this.usernameControl);
+        }));
+    }
+    // getErrorMessage() {
+    //   return this.usernameControl.hasError('required') ? 'You must enter a value' :
+    //       this.usernameControl.hasError('email') ? 'Not a valid email' :
+    //           '';
+    // }
+    /**
+     * @return {?}
+     */
+    getErrorMessage() {
+        return this.email.hasError('required') ? 'You must enter a value' :
+            this.email.hasError('email') ? 'Not a valid email' :
+                '';
+    }
+    /**
+     * @return {?}
+     */
+    ngDestroy() {
+        this._subscription.unsubscribe();
+    }
+}
+SukuUserInputComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'suku-user-input',
+                template: "<mat-form-field [class]=\"customClass\" [color]=\"color\">\n  <span matPrefix class=\"mr-2\" *ngIf=\"enableUserIcon\">\n    <mat-icon class=\"material-icons\">account_circle</mat-icon>\n  </span>\n  <input matInput [placeholder]=\"placeholder\" [formControl]=\"usernameControl\"  [errorStateMatcher]=\"matcher\">\n  <!-- <mat-error *ngIf=\"usernameControl.invalid\">{{getErrorMessage()}}</mat-error> -->\n  <mat-error *ngIf=\"usernameControl.hasError('required')\">\n    {{errorMessageOne}}\n  </mat-error>\n  <mat-error *ngIf=\"usernameControl.hasError('pattern') && !usernameControl.hasError('required')\">\n    {{errorMessageTwo}}\n  </mat-error>\n  <mat-error *ngIf=\"usernameControl.hasError('maxLength')\">\n    {{errorMessageThree}}\n  </mat-error>\n  <mat-error *ngIf=\"usernameControl.hasError('minlength')\">\n    {{errorMessageFour}}\n  </mat-error>\n</mat-form-field>\n{{ usernameControl.hasError('required')}}\n\n<!-- \n<div class=\"example-container\">\n    <mat-form-field>\n      <input matInput placeholder=\"Enter your email\" [formControl]=\"usernameControl\"  [errorStateMatcher]=\"matcher\">\n      <mat-error *ngIf=\"usernameControl.invalid\">{{getErrorMessage()}}</mat-error>\n    </mat-form-field>\n  </div> -->\n  ",
+                encapsulation: ViewEncapsulation.None,
+                styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.input-full-width{width:100%}::ng-deep .mat-input-element{padding:1%!important}.material-icons{font-size:var(--suku-font-size-6)}.mat-form-field.ng-dirty.ng-invalid .mat-form-field-underline{background-color:red}.mat-form-field.ng-dirty.ng-invalid .mat-form-field-label{color:red}"]
+            }] }
+];
+/** @nocollapse */
+SukuUserInputComponent.ctorParameters = () => [];
+SukuUserInputComponent.propDecorators = {
+    pattern: [{ type: Input }],
+    color: [{ type: Input }],
+    placeholder: [{ type: Input }],
+    customClass: [{ type: Input, args: ['custom-class',] }],
+    enableUserIcon: [{ type: Input, args: ['enable-user-icon',] }],
+    errorMessageOne: [{ type: Input, args: ['error-message-one',] }],
+    errorMessageTwo: [{ type: Input, args: ['error-message-two',] }],
+    errorMessageThree: [{ type: Input, args: ['error-message-three',] }],
+    errorMessageFour: [{ type: Input, args: ['error-message-four',] }],
+    enableRequiredValidator: [{ type: Input, args: ['enable-required-validator',] }],
+    enablePatternValidators: [{ type: Input, args: ['enable-pattern-validator',] }],
+    enableMaxLenValidators: [{ type: Input, args: ['enable-max-len-validator',] }],
+    enableMinLenValidators: [{ type: Input, args: ['enable-min-len-validator',] }],
+    action: [{ type: Output }]
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 class SukuWebcomponentsModule {
 }
 SukuWebcomponentsModule.decorators = [
@@ -6205,7 +6444,9 @@ SukuWebcomponentsModule.decorators = [
                     ScrollToBottomDirective,
                     SukuLargeBidTagComponent,
                     SukuBidWidgetTagComponent,
-                    SukuGalleryComponent
+                    SukuGalleryComponent,
+                    SukuCheckboxComponent,
+                    SukuUserInputComponent
                 ],
                 imports: [
                     CommonModule,
@@ -6314,6 +6555,8 @@ SukuWebcomponentsModule.decorators = [
                     ScrollToBottomDirective,
                     SukuLargeBidTagComponent,
                     SukuGalleryComponent,
+                    SukuCheckboxComponent,
+                    SukuUserInputComponent,
                     SukuButtonsModule,
                     SukuBidWidgetTagComponent,
                     SukuAddIconWidgetModule,
@@ -6577,6 +6820,6 @@ SukuWebcomponentsService.ctorParameters = () => [];
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { SukuFormFooterModule, SukuAchSettingModule, SukuAddIconWidgetModule, SukuBidTagModule, SukuButtonsModule, SukuLoaderModule, SukuModalModule, SukuModalService, SukuFileUploadModule, SukuWebcomponentsModule, suku, dark, light, SukuWebcomponentsService, SukuLoaderService, SukuACHSettingsComponent as ɵb, SukuAddIconComponent as ɵcd, SukuAddWidgetComponent as ɵc, SukuAddressWidgetComponent as ɵbe, SukuBeneficialOwnerComponent as ɵbt, SukuBidInfoComponent as ɵbc, SukuLargeBidTagComponent as ɵcq, SukuBidTagComponent as ɵd, SukuBidWidgetTagComponent as ɵcr, SukuDefaultButtonComponent as ɵh, SukuHomepageButtonComponent as ɵi, SukuInfoButtonComponent as ɵe, SukuPrimaryButtonComponent as ɵf, SukuSecondaryButtonComponent as ɵg, SukuCardLineTypeOneComponent as ɵbz, SukuCardLineTypeTwoComponent as ɵca, SukuCardLineComponent as ɵn, SukuCardTitleComponent as ɵbm, ScrollToBottomDirective as ɵcp, SukuChatWidgetComponent as ɵco, SukuConfirmationComponent as ɵk, SukuCreateCustomerComponent as ɵbs, SukuCreationCustomerFileuploadComponent as ɵbw, SukuDashboardProfileComponent as ɵo, SukuDropdownComponent as ɵcj, SukuDwollaFundingAgreementComponent as ɵbu, SukuDwollaFundingSourceComponent as ɵbv, SukuDropZoneDirective as ɵm, SukuFileUploadComponent as ɵl, SukuFiltersComponent as ɵbi, SukuFormFooterComponent as ɵa, SukuFundingSourceComponent as ɵbr, SukuGalleryComponent as ɵcs, SukuHeaderComponent as ɵck, SukuHeadingComponent as ɵp, SukuHomeItalicHeadingComponent as ɵq, SukuHomeWidgetComponent as ɵr, SukuHomepageSectionComponent as ɵcf, SukuHomepageComponent as ɵce, SukuImageWidgetComponent as ɵcn, SukuInlineDropdownComponent as ɵs, SukuLinkComponent as ɵz, SukuLoaderComponent as ɵj, SukuMailWidgetComponent as ɵt, SukuMatchChipComponent as ɵu, SukuNavSubmenuComponent as ɵbb, SukuNotificationPanelComponent as ɵcc, SukuNotificationWidgetComponent as ɵv, SukuPaymentPortalHelpComponent as ɵbx, SukuPhoneWidgetComponent as ɵbd, SukuProductTraceWidgetComponent as ɵbk, SukuProfileHeaderComponent as ɵcg, SukuProfileWidgetComponent as ɵbg, SukuProgressBarTypeOneComponent as ɵw, SukuProgressBarTypeTwoComponent as ɵx, SukuRadioButtonComponent as ɵci, SukuRatingCardLineComponent as ɵcb, SukuRatingStarComponent as ɵbn, SukuResponseComponent as ɵbp, SukuSearchInputComponent as ɵbf, SukuSelectInputComponent as ɵba, SukuShippingInfoWidgetComponent as ɵcm, SukuShippingWidgetComponent as ɵbo, SukuSocialIconsComponent as ɵch, SukuStarBadgeComponent as ɵbh, SukuSubHeadingComponent as ɵy, SukuTermsAndConditionsComponent as ɵby, SukuTitleHeaderComponent as ɵcl, SukuTrackProgressBarComponent as ɵbj, SukuTransactionHistoryComponent as ɵbq, SukuTreeComponent as ɵbl };
+export { SukuFormFooterModule, SukuAchSettingModule, SukuAddIconWidgetModule, SukuBidTagModule, SukuButtonsModule, SukuLoaderModule, SukuModalModule, SukuModalService, SukuFileUploadModule, SukuWebcomponentsModule, suku, dark, light, SukuWebcomponentsService, SukuLoaderService, SukuACHSettingsComponent as ɵb, SukuAddIconComponent as ɵcd, SukuAddWidgetComponent as ɵc, SukuAddressWidgetComponent as ɵbe, SukuBeneficialOwnerComponent as ɵbt, SukuBidInfoComponent as ɵbc, SukuLargeBidTagComponent as ɵcq, SukuBidTagComponent as ɵd, SukuBidWidgetTagComponent as ɵcr, SukuDefaultButtonComponent as ɵh, SukuHomepageButtonComponent as ɵi, SukuInfoButtonComponent as ɵe, SukuPrimaryButtonComponent as ɵf, SukuSecondaryButtonComponent as ɵg, SukuCardLineTypeOneComponent as ɵbz, SukuCardLineTypeTwoComponent as ɵca, SukuCardLineComponent as ɵn, SukuCardTitleComponent as ɵbm, ScrollToBottomDirective as ɵcp, SukuChatWidgetComponent as ɵco, SukuCheckboxComponent as ɵct, SukuConfirmationComponent as ɵk, SukuCreateCustomerComponent as ɵbs, SukuCreationCustomerFileuploadComponent as ɵbw, SukuDashboardProfileComponent as ɵo, SukuDropdownComponent as ɵcj, SukuDwollaFundingAgreementComponent as ɵbu, SukuDwollaFundingSourceComponent as ɵbv, SukuDropZoneDirective as ɵm, SukuFileUploadComponent as ɵl, SukuFiltersComponent as ɵbi, SukuFormFooterComponent as ɵa, SukuFundingSourceComponent as ɵbr, SukuGalleryComponent as ɵcs, SukuHeaderComponent as ɵck, SukuHeadingComponent as ɵp, SukuHomeItalicHeadingComponent as ɵq, SukuHomeWidgetComponent as ɵr, SukuHomepageSectionComponent as ɵcf, SukuHomepageComponent as ɵce, SukuImageWidgetComponent as ɵcn, SukuInlineDropdownComponent as ɵs, SukuLinkComponent as ɵz, SukuLoaderComponent as ɵj, SukuMailWidgetComponent as ɵt, SukuMatchChipComponent as ɵu, SukuNavSubmenuComponent as ɵbb, SukuNotificationPanelComponent as ɵcc, SukuNotificationWidgetComponent as ɵv, SukuPaymentPortalHelpComponent as ɵbx, SukuPhoneWidgetComponent as ɵbd, SukuProductTraceWidgetComponent as ɵbk, SukuProfileHeaderComponent as ɵcg, SukuProfileWidgetComponent as ɵbg, SukuProgressBarTypeOneComponent as ɵw, SukuProgressBarTypeTwoComponent as ɵx, SukuRadioButtonComponent as ɵci, SukuRatingCardLineComponent as ɵcb, SukuRatingStarComponent as ɵbn, SukuResponseComponent as ɵbp, SukuSearchInputComponent as ɵbf, SukuSelectInputComponent as ɵba, SukuShippingInfoWidgetComponent as ɵcm, SukuShippingWidgetComponent as ɵbo, SukuSocialIconsComponent as ɵch, SukuStarBadgeComponent as ɵbh, SukuSubHeadingComponent as ɵy, SukuTermsAndConditionsComponent as ɵby, SukuTitleHeaderComponent as ɵcl, SukuTrackProgressBarComponent as ɵbj, SukuTransactionHistoryComponent as ɵbq, SukuTreeComponent as ɵbl, SukuUserInputComponent as ɵcu };
 
 //# sourceMappingURL=suku-webcomponents.js.map
