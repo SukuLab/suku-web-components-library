@@ -1,6 +1,5 @@
-import { OnInit } from '@angular/core';
+import { OnInit, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { EventEmitter } from 'events';
 export declare class SukuCheckboxComponent implements OnInit {
     _subscription: any;
     checkboxId: string;
@@ -12,7 +11,7 @@ export declare class SukuCheckboxComponent implements OnInit {
     labelPosition: string;
     disabled: any;
     checkBoxControl: FormControl;
-    action: EventEmitter;
+    action: EventEmitter<{}>;
     constructor();
     ngOnInit(): void;
     ngDestroy(): void;

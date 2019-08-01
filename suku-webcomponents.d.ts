@@ -55,6 +55,7 @@ export { SukuPaymentPortalHelpComponent as ɵbx } from './lib/suku-payment-porta
 export { SukuPhoneWidgetComponent as ɵbd } from './lib/suku-phone-widget/suku-phone-widget.component';
 export { SukuProductTraceWidgetComponent as ɵbk } from './lib/suku-product-trace-widget/suku-product-trace-widget.component';
 export { SukuProfileHeaderComponent as ɵcg } from './lib/suku-profile-header/suku-profile-header.component';
+export { SukuProfileImageIconComponent as ɵcw } from './lib/suku-profile-image-icon/suku-profile-image-icon.component';
 export { SukuProfileWidgetComponent as ɵbg } from './lib/suku-profile-widget/suku-profile-widget.component';
 export { SukuProgressBarTypeOneComponent as ɵw } from './lib/suku-progress-bar-type-one/suku-progress-bar-type-one.component';
 export { SukuProgressBarTypeTwoComponent as ɵx } from './lib/suku-progress-bar-type-two/suku-progress-bar-type-two.component';
@@ -75,3 +76,4 @@ export { SukuTrackProgressBarComponent as ɵbj } from './lib/suku-track-progress
 export { SukuTransactionHistoryComponent as ɵbq } from './lib/suku-transaction-history/suku-transaction-history.component';
 export { SukuTreeComponent as ɵbl } from './lib/suku-tree/suku-tree.component';
 export { SukuUserInputComponent as ɵcu } from './lib/suku-user-input/suku-user-input.component';
+export { SukuWysiwygEditorComponent as ɵcv } from './lib/suku-wysiwyg-editor/suku-wysiwyg-editor.component';

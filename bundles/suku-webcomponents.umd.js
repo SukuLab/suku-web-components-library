@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/elements'), require('@angular/common'), require('ngx-countdown-timer'), require('@angular/material'), require('@angular/material/dialog'), require('d3'), require('events'), require('@angular/forms'), require('@angular/core')) :
-    typeof define === 'function' && define.amd ? define('suku-webcomponents', ['exports', '@angular/elements', '@angular/common', 'ngx-countdown-timer', '@angular/material', '@angular/material/dialog', 'd3', 'events', '@angular/forms', '@angular/core'], factory) :
-    (factory((global['suku-webcomponents'] = {}),global.ng.elements,global.ng.common,global.ngxCountdownTimer,global.ng.material,global.ng.material.dialog,global.d3,global.events,global.ng.forms,global.ng.core));
-}(this, (function (exports,elements,common,ngxCountdownTimer,material,i1,d3,events,forms,i0) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/elements'), require('@angular/common'), require('ngx-countdown-timer'), require('@angular/material'), require('@angular/material/dialog'), require('d3'), require('@angular/forms'), require('ngx-quill'), require('@angular/core')) :
+    typeof define === 'function' && define.amd ? define('suku-webcomponents', ['exports', '@angular/elements', '@angular/common', 'ngx-countdown-timer', '@angular/material', '@angular/material/dialog', 'd3', '@angular/forms', 'ngx-quill', '@angular/core'], factory) :
+    (factory((global['suku-webcomponents'] = {}),global.ng.elements,global.ng.common,global.ngxCountdownTimer,global.ng.material,global.ng.material.dialog,global.d3,global.ng.forms,global.ngxQuill,global.ng.core));
+}(this, (function (exports,elements,common,ngxCountdownTimer,material,i1,d3,forms,ngxQuill,i0) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -6874,7 +6874,7 @@
             this.color = 'primary';
             this.labelPosition = 'after';
             this.checkBoxControl = new forms.FormControl();
-            this.action = new events.EventEmitter();
+            this.action = new i0.EventEmitter();
         }
         Object.defineProperty(SukuCheckboxComponent.prototype, "checked", {
             set: /**
@@ -6932,7 +6932,7 @@
         SukuCheckboxComponent.decorators = [
             { type: i0.Component, args: [{
                         selector: 'suku-checkbox',
-                        template: "<mat-checkbox [color]=\"color\" [formControl]=\"checkBoxControl\" [(indeterminate)]=\"indeterminate\"\n  [labelPosition]=\"labelPosition\"><span class=\"suku-checkbox {{customClass}}\">\n    Suku checkbox</span></mat-checkbox>\n",
+                        template: "<mat-checkbox [color]=\"color\" [formControl]=\"checkBoxControl\" [(indeterminate)]=\"indeterminate\"\n  [labelPosition]=\"labelPosition\"><span class=\"suku-checkbox {{customClass}}\">\n    <ng-content></ng-content>\n  </span></mat-checkbox>",
                         styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-checkbox{font-family:var(--suku-primary-font);font-weight:500;font-size:var(--suku-font-size-3);color:var(--suku-text-label-one);letter-spacing:0;word-break:break-word}"]
                     }] }
         ];
@@ -6981,7 +6981,7 @@
     }());
     var SukuUserInputComponent = /** @class */ (function () {
         function SukuUserInputComponent() {
-            this.usernameControl = new forms.FormControl();
+            this.usernameControl = new forms.FormControl('');
             this.color = 'primary';
             this.placeholder = 'Username';
             this.enableUserIcon = true;
@@ -6989,8 +6989,8 @@
             this.errorMessageTwo = '';
             this.errorMessageThree = '';
             this.errorMessageFour = '';
-            this.email = new forms.FormControl('', [forms.Validators.required, forms.Validators.email]);
             this.action = new i0.EventEmitter();
+            this.email = new forms.FormControl('', [forms.Validators.required, forms.Validators.email]);
             this.matcher = new MyErrorStateMatcher();
         }
         Object.defineProperty(SukuUserInputComponent.prototype, "enableRequiredValidator", {
@@ -7089,8 +7089,8 @@
              * @return {?}
              */
             function () {
-                return this.email.hasError('required') ? 'You must enter a value' :
-                    this.email.hasError('email') ? 'Not a valid email' :
+                return this.usernameControl.hasError('required') ? 'You must enter a value' :
+                    this.usernameControl.hasError('minlength') ? 'username should be more than 2 letters' :
                         '';
             };
         /**
@@ -7105,7 +7105,7 @@
         SukuUserInputComponent.decorators = [
             { type: i0.Component, args: [{
                         selector: 'suku-user-input',
-                        template: "<mat-form-field [class]=\"customClass\" [color]=\"color\">\n  <span matPrefix class=\"mr-2\" *ngIf=\"enableUserIcon\">\n    <mat-icon class=\"material-icons\">account_circle</mat-icon>\n  </span>\n  <input matInput [placeholder]=\"placeholder\" [formControl]=\"usernameControl\"  [errorStateMatcher]=\"matcher\">\n  <!-- <mat-error *ngIf=\"usernameControl.invalid\">{{getErrorMessage()}}</mat-error> -->\n  <mat-error *ngIf=\"usernameControl.hasError('required')\">\n    {{errorMessageOne}}\n  </mat-error>\n  <mat-error *ngIf=\"usernameControl.hasError('pattern') && !usernameControl.hasError('required')\">\n    {{errorMessageTwo}}\n  </mat-error>\n  <mat-error *ngIf=\"usernameControl.hasError('maxLength')\">\n    {{errorMessageThree}}\n  </mat-error>\n  <mat-error *ngIf=\"usernameControl.hasError('minlength')\">\n    {{errorMessageFour}}\n  </mat-error>\n</mat-form-field>\n{{ usernameControl.hasError('required')}}\n\n<!-- \n<div class=\"example-container\">\n    <mat-form-field>\n      <input matInput placeholder=\"Enter your email\" [formControl]=\"usernameControl\"  [errorStateMatcher]=\"matcher\">\n      <mat-error *ngIf=\"usernameControl.invalid\">{{getErrorMessage()}}</mat-error>\n    </mat-form-field>\n  </div> -->\n  ",
+                        template: "<mat-form-field [class]=\"customClass\" [color]=\"color\">\n  <span matPrefix class=\"mr-2\" *ngIf=\"enableUserIcon\">\n    <mat-icon class=\"material-icons\">account_circle</mat-icon>\n  </span>\n  <input matInput [placeholder]=\"placeholder\" [formControl]=\"usernameControl\" name=\"usernameControl\">\n  <mat-error *ngIf=\"usernameControl.invalid\">{{getErrorMessage()}}</mat-error>\n  <mat-error *ngIf=\"usernameControl.hasError('required')\">\n    {{errorMessageOne}}\n  </mat-error>\n  <mat-error *ngIf=\"usernameControl.hasError('pattern') && !usernameControl.hasError('required')\">\n    {{errorMessageTwo}}\n  </mat-error>\n  <mat-error *ngIf=\"usernameControl.hasError('maxLength')\">\n    {{errorMessageThree}}\n  </mat-error>\n  <mat-error *ngIf=\"usernameControl.hasError('minlength')\">\n    {{errorMessageFour}}\n  </mat-error>\n</mat-form-field>\n{{ usernameControl.hasError('required')}}\n\n<!-- <div class=\"example-container\">\n  <mat-form-field>\n    <span matPrefix class=\"mr-2\" *ngIf=\"enableUserIcon\">\n      <mat-icon class=\"material-icons\">account_circle</mat-icon>\n    </span>\n    <input matInput [placeholder]=\"placeholder\" [formControl]=\"usernameControl\" [errorStateMatcher]=\"matcher\">\n    <mat-error *ngIf=\"usernameControl.invalid\">{{getErrorMessage()}}</mat-error>\n  </mat-form-field>\n</div> -->",
                         encapsulation: i0.ViewEncapsulation.None,
                         styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.input-full-width{width:100%}::ng-deep .mat-input-element{padding:1%!important}.material-icons{font-size:var(--suku-font-size-6)}.mat-form-field.ng-dirty.ng-invalid .mat-form-field-underline{background-color:red}.mat-form-field.ng-dirty.ng-invalid .mat-form-field-label{color:red}"]
                     }] }
@@ -7129,6 +7129,106 @@
             action: [{ type: i0.Output }]
         };
         return SukuUserInputComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+    var SukuWysiwygEditorComponent = /** @class */ (function () {
+        function SukuWysiwygEditorComponent() {
+            this.control = 'productTraceability';
+            this.placeholder = 'Enter text';
+            this.moduleConfig = {
+                toolbar: [
+                    ['bold', 'italic', 'underline', 'strike'],
+                    ['blockquote', 'code-block'],
+                    [{ header: 1 }, { header: 2 }],
+                    [{ list: 'ordered' }, { list: 'bullet' }],
+                    [{ script: 'sub' }, { script: 'super' }],
+                    [{ indent: '-1' }, { indent: '+1' }],
+                    [{ direction: 'rtl' }],
+                    // [ { size: [ 'small', false, 'large', 'huge' ] } ], // custom dropdown
+                    [{ header: [1, 2, 3, 4, 5, 6, false] }],
+                    [{ color: [] }, { background: [] }],
+                    [{ font: [] }],
+                    [{ align: [] }],
+                    ['clean'] // remove formatting button
+                ]
+            };
+        }
+        /**
+         * @return {?}
+         */
+        SukuWysiwygEditorComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+            function () { };
+        /**
+         * @param {?} data
+         * @return {?}
+         */
+        SukuWysiwygEditorComponent.prototype.onContentChanged = /**
+         * @param {?} data
+         * @return {?}
+         */
+            function (data) {
+                console.log(data.html);
+            };
+        SukuWysiwygEditorComponent.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'suku-wysiwyg-editor',
+                        template: "<span [formGroup]=\"form\">\n  <quill-editor [modules]=\"moduleConfig\" \n  placeholder=\"{{placeholder}}\" formControlName=\"{{control}}\" [(ngModel)]=\"htmlQuillContent\" (onContentChanged)=\"onContentChanged($event)\">\n  </quill-editor>\n</span>",
+                        styles: [""]
+                    }] }
+        ];
+        /** @nocollapse */
+        SukuWysiwygEditorComponent.ctorParameters = function () { return []; };
+        SukuWysiwygEditorComponent.propDecorators = {
+            form: [{ type: i0.Input }],
+            control: [{ type: i0.Input }],
+            placeholder: [{ type: i0.Input }]
+        };
+        return SukuWysiwygEditorComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+    var SukuProfileImageIconComponent = /** @class */ (function () {
+        function SukuProfileImageIconComponent() {
+            this.alternativeText = 'profileImage';
+            this.height = '50';
+            this.width = '50';
+            this.image = '../../assets/images/browser.png';
+            this.customClass = 'img-circle';
+        }
+        /**
+         * @return {?}
+         */
+        SukuProfileImageIconComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+            function () {
+            };
+        SukuProfileImageIconComponent.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'suku-profile-image-icon',
+                        template: "<img alt=\"{{alternativeText}}\" class=\"{{customClass}}\" height=\"{{height}}\" width=\"{{width}}\" src=\"{{image}}\">\n<!-- <img src=\"{{image}}\" class=\" img-circle\" alt=\"profile\" width=\"150\" height=\"150\"> -->",
+                        styles: [".img-circle{display:inline-block;position:relative;z-index:0;line-height:42px;text-align:center;box-shadow:0 2px 2px 0 rgba(0,0,0,.1);background-color:#fff}"]
+                    }] }
+        ];
+        /** @nocollapse */
+        SukuProfileImageIconComponent.ctorParameters = function () { return []; };
+        SukuProfileImageIconComponent.propDecorators = {
+            alternativeText: [{ type: i0.Input }],
+            height: [{ type: i0.Input }],
+            width: [{ type: i0.Input }],
+            image: [{ type: i0.Input }],
+            customClass: [{ type: i0.Input }]
+        };
+        return SukuProfileImageIconComponent;
     }());
 
     /**
@@ -7200,7 +7300,9 @@
                             SukuBidWidgetTagComponent,
                             SukuGalleryComponent,
                             SukuCheckboxComponent,
-                            SukuUserInputComponent
+                            SukuUserInputComponent,
+                            SukuWysiwygEditorComponent,
+                            SukuProfileImageIconComponent
                         ],
                         imports: [
                             common.CommonModule,
@@ -7248,7 +7350,8 @@
                             SukuButtonsModule,
                             SukuFormFooterModule,
                             SukuLoaderModule,
-                            SukuFileUploadModule
+                            SukuFileUploadModule,
+                            ngxQuill.QuillModule
                         ],
                         providers: [SukuModalService, SukuLoaderService],
                         exports: [
@@ -7315,7 +7418,9 @@
                             SukuBidWidgetTagComponent,
                             SukuAddIconWidgetModule,
                             SukuFileUploadModule,
-                            SukuModalModule
+                            SukuModalModule,
+                            SukuWysiwygEditorComponent,
+                            SukuProfileImageIconComponent
                         ],
                         entryComponents: [],
                         schemas: []
@@ -7659,6 +7764,7 @@
     exports.ɵbd = SukuPhoneWidgetComponent;
     exports.ɵbk = SukuProductTraceWidgetComponent;
     exports.ɵcg = SukuProfileHeaderComponent;
+    exports.ɵcw = SukuProfileImageIconComponent;
     exports.ɵbg = SukuProfileWidgetComponent;
     exports.ɵw = SukuProgressBarTypeOneComponent;
     exports.ɵx = SukuProgressBarTypeTwoComponent;
@@ -7679,6 +7785,7 @@
     exports.ɵbq = SukuTransactionHistoryComponent;
     exports.ɵbl = SukuTreeComponent;
     exports.ɵcu = SukuUserInputComponent;
+    exports.ɵcv = SukuWysiwygEditorComponent;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

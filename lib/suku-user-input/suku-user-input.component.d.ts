@@ -21,11 +21,11 @@ export declare class SukuUserInputComponent implements OnInit {
     enablePatternValidators: any;
     enableMaxLenValidators: any;
     enableMinLenValidators: any;
-    email: FormControl;
     action: EventEmitter<{}>;
+    email: FormControl;
     matcher: MyErrorStateMatcher;
     constructor();
     ngOnInit(): void;
-    getErrorMessage(): "" | "You must enter a value" | "Not a valid email";
+    getErrorMessage(): "" | "You must enter a value" | "username should be more than 2 letters";
     ngDestroy(): void;
 }
