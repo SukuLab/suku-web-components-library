@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { CountdownTimerModule } from 'ngx-countdown-timer';
 import { MatSnackBar, MatAutocompleteModule, MatBadgeModule, MatBottomSheetModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule, MatDividerModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatSortModule, MatStepperModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 import { layout, select } from 'd3';
-import { Injectable, Component, Input, Output, EventEmitter, Directive, ElementRef, ChangeDetectionStrategy, ViewChild, HostListener, defineInjectable, NgModule } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QuillModule } from 'ngx-quill';
+import { Injectable, Component, Input, Output, EventEmitter, Directive, ElementRef, ChangeDetectionStrategy, ViewChild, HostListener, defineInjectable, NgModule } from '@angular/core';
 
 /**
  * @fileoverview added by tsickle
@@ -5746,7 +5746,7 @@ var SukuWysiwygEditorComponent = /** @class */ (function () {
     SukuWysiwygEditorComponent.decorators = [
         { type: Component, args: [{
                     selector: 'suku-wysiwyg-editor',
-                    template: "<span [formGroup]=\"form\">\n  <quill-editor [modules]=\"moduleConfig\" \n  placeholder=\"Enter Text\" formControlName=\"{{control}}\" [(ngModel)]=\"htmlQuillContent\" (onContentChanged)=\"onContentChanged($event)\">\n  </quill-editor>\n</span>",
+                    template: "<span [formGroup]=\"form\">\n  <quill-editor [modules]=\"moduleConfig\" \n  placeholder=\"{{placeholder}}\" formControlName=\"{{control}}\" [(ngModel)]=\"htmlQuillContent\" (onContentChanged)=\"onContentChanged($event)\">\n  </quill-editor>\n</span>",
                     styles: [""]
                 }] }
     ];
@@ -5758,6 +5758,45 @@ var SukuWysiwygEditorComponent = /** @class */ (function () {
         placeholder: [{ type: Input }]
     };
     return SukuWysiwygEditorComponent;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var SukuProfileImageIconComponent = /** @class */ (function () {
+    function SukuProfileImageIconComponent() {
+        this.alternativeText = 'profileImage';
+        this.height = '50';
+        this.width = '50';
+        this.image = '../../assets/images/browser.png';
+        this.customClass = 'img-circle';
+    }
+    /**
+     * @return {?}
+     */
+    SukuProfileImageIconComponent.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () {
+    };
+    SukuProfileImageIconComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'suku-profile-image-icon',
+                    template: "<img alt=\"{{alternativeText}}\" class=\"{{customClass}}\" height=\"{{height}}\" width=\"{{width}}\" src=\"{{image}}\">\n<!-- <img src=\"{{image}}\" class=\" img-circle\" alt=\"profile\" width=\"150\" height=\"150\"> -->",
+                    styles: [".img-circle{display:inline-block;position:relative;z-index:0;line-height:42px;text-align:center;box-shadow:0 2px 2px 0 rgba(0,0,0,.1);background-color:#fff}"]
+                }] }
+    ];
+    /** @nocollapse */
+    SukuProfileImageIconComponent.ctorParameters = function () { return []; };
+    SukuProfileImageIconComponent.propDecorators = {
+        alternativeText: [{ type: Input }],
+        height: [{ type: Input }],
+        width: [{ type: Input }],
+        image: [{ type: Input }],
+        customClass: [{ type: Input }]
+    };
+    return SukuProfileImageIconComponent;
 }());
 
 /**
@@ -5837,7 +5876,8 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         ScrollToBottomDirective,
                         SukuLargeBidTagComponent,
                         SukuBidWidgetTagComponent,
-                        SukuWysiwygEditorComponent
+                        SukuWysiwygEditorComponent,
+                        SukuProfileImageIconComponent
                     ],
                     imports: [
                         CommonModule,
@@ -5947,7 +5987,8 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         ScrollToBottomDirective,
                         SukuLargeBidTagComponent,
                         SukuBidWidgetTagComponent,
-                        SukuWysiwygEditorComponent
+                        SukuWysiwygEditorComponent,
+                        SukuProfileImageIconComponent
                     ]
                 },] }
     ];
@@ -5964,6 +6005,6 @@ var SukuWebcomponentsModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { suku, dark, light, SukuWebcomponentsService, SukuWebcomponentsModule, SukuACHSettingsComponent as ɵbj, SukuAddIconComponent as ɵbx, SukuAddWidgetComponent as ɵs, SukuAddressWidgetComponent as ɵx, SukuBeneficialOwnerComponent as ɵbn, SukuBidInfoComponent as ɵv, SukuLargeBidTagComponent as ɵcn, SukuBidTagComponent as ɵa, SukuBidWidgetTagComponent as ɵco, SukuCardLineTypeOneComponent as ɵbt, SukuCardLineTypeTwoComponent as ɵbu, SukuCardLineComponent as ɵb, SukuCardTitleComponent as ɵbf, ScrollToBottomDirective as ɵck, SukuChatWidgetComponent as ɵcj, SukuConfirmationComponent as ɵcm, SukuCreateCustomerComponent as ɵbm, SukuCreationCustomerFileuploadComponent as ɵbq, SukuDashboardProfileComponent as ɵc, SukuDefaultButtonComponent as ɵd, SukuDropdownComponent as ɵce, SukuDwollaFundingAgreementComponent as ɵbo, SukuDwollaFundingSourceComponent as ɵbp, SukuFiltersComponent as ɵbb, SukuFundingSourceComponent as ɵbl, SukuHeaderComponent as ɵcf, SukuHeadingComponent as ɵe, SukuHomeItalicHeadingComponent as ɵf, SukuHomeWidgetComponent as ɵg, SukuHomepageButtonComponent as ɵca, SukuHomepageSectionComponent as ɵbz, SukuHomepageComponent as ɵby, SukuImageWidgetComponent as ɵci, SukuInfoButtonComponent as ɵh, SukuInlineDropdownComponent as ɵi, SukuLinkComponent as ɵr, SukuLoaderComponent as ɵcl, SukuMailWidgetComponent as ɵj, SukuMatchChipComponent as ɵk, SukuNavSubmenuComponent as ɵu, SukuNotificationPanelComponent as ɵbw, SukuNotificationWidgetComponent as ɵl, SukuPaymentPortalHelpComponent as ɵbr, SukuPhoneWidgetComponent as ɵw, SukuPrimaryButtonComponent as ɵm, SukuProductTraceWidgetComponent as ɵbd, SukuProfileHeaderComponent as ɵcb, SukuProfileWidgetComponent as ɵz, SukuProgressBarTypeOneComponent as ɵn, SukuProgressBarTypeTwoComponent as ɵo, SukuRadioButtonComponent as ɵcd, SukuRatingCardLineComponent as ɵbv, SukuRatingStarComponent as ɵbg, SukuResponseComponent as ɵbi, SukuSearchInputComponent as ɵy, SukuSecondaryButtonComponent as ɵp, SukuSelectInputComponent as ɵt, SukuShippingInfoWidgetComponent as ɵch, SukuShippingWidgetComponent as ɵbh, SukuSocialIconsComponent as ɵcc, SukuStarBadgeComponent as ɵba, SukuSubHeadingComponent as ɵq, SukuTermsAndConditionsComponent as ɵbs, SukuTitleHeaderComponent as ɵcg, SukuTrackProgressBarComponent as ɵbc, SukuTransactionHistoryComponent as ɵbk, SukuTreeComponent as ɵbe, SukuWysiwygEditorComponent as ɵcp };
+export { suku, dark, light, SukuWebcomponentsService, SukuWebcomponentsModule, SukuACHSettingsComponent as ɵbj, SukuAddIconComponent as ɵbx, SukuAddWidgetComponent as ɵs, SukuAddressWidgetComponent as ɵx, SukuBeneficialOwnerComponent as ɵbn, SukuBidInfoComponent as ɵv, SukuLargeBidTagComponent as ɵcn, SukuBidTagComponent as ɵa, SukuBidWidgetTagComponent as ɵco, SukuCardLineTypeOneComponent as ɵbt, SukuCardLineTypeTwoComponent as ɵbu, SukuCardLineComponent as ɵb, SukuCardTitleComponent as ɵbf, ScrollToBottomDirective as ɵck, SukuChatWidgetComponent as ɵcj, SukuConfirmationComponent as ɵcm, SukuCreateCustomerComponent as ɵbm, SukuCreationCustomerFileuploadComponent as ɵbq, SukuDashboardProfileComponent as ɵc, SukuDefaultButtonComponent as ɵd, SukuDropdownComponent as ɵce, SukuDwollaFundingAgreementComponent as ɵbo, SukuDwollaFundingSourceComponent as ɵbp, SukuFiltersComponent as ɵbb, SukuFundingSourceComponent as ɵbl, SukuHeaderComponent as ɵcf, SukuHeadingComponent as ɵe, SukuHomeItalicHeadingComponent as ɵf, SukuHomeWidgetComponent as ɵg, SukuHomepageButtonComponent as ɵca, SukuHomepageSectionComponent as ɵbz, SukuHomepageComponent as ɵby, SukuImageWidgetComponent as ɵci, SukuInfoButtonComponent as ɵh, SukuInlineDropdownComponent as ɵi, SukuLinkComponent as ɵr, SukuLoaderComponent as ɵcl, SukuMailWidgetComponent as ɵj, SukuMatchChipComponent as ɵk, SukuNavSubmenuComponent as ɵu, SukuNotificationPanelComponent as ɵbw, SukuNotificationWidgetComponent as ɵl, SukuPaymentPortalHelpComponent as ɵbr, SukuPhoneWidgetComponent as ɵw, SukuPrimaryButtonComponent as ɵm, SukuProductTraceWidgetComponent as ɵbd, SukuProfileHeaderComponent as ɵcb, SukuProfileImageIconComponent as ɵcq, SukuProfileWidgetComponent as ɵz, SukuProgressBarTypeOneComponent as ɵn, SukuProgressBarTypeTwoComponent as ɵo, SukuRadioButtonComponent as ɵcd, SukuRatingCardLineComponent as ɵbv, SukuRatingStarComponent as ɵbg, SukuResponseComponent as ɵbi, SukuSearchInputComponent as ɵy, SukuSecondaryButtonComponent as ɵp, SukuSelectInputComponent as ɵt, SukuShippingInfoWidgetComponent as ɵch, SukuShippingWidgetComponent as ɵbh, SukuSocialIconsComponent as ɵcc, SukuStarBadgeComponent as ɵba, SukuSubHeadingComponent as ɵq, SukuTermsAndConditionsComponent as ɵbs, SukuTitleHeaderComponent as ɵcg, SukuTrackProgressBarComponent as ɵbc, SukuTransactionHistoryComponent as ɵbk, SukuTreeComponent as ɵbe, SukuWysiwygEditorComponent as ɵcp };
 
 //# sourceMappingURL=suku-webcomponents.js.map

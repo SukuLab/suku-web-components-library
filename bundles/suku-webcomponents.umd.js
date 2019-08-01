@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('ngx-countdown-timer'), require('@angular/material'), require('@angular/forms'), require('d3'), require('@angular/core'), require('ngx-quill')) :
-    typeof define === 'function' && define.amd ? define('suku-webcomponents', ['exports', '@angular/common', 'ngx-countdown-timer', '@angular/material', '@angular/forms', 'd3', '@angular/core', 'ngx-quill'], factory) :
-    (factory((global['suku-webcomponents'] = {}),global.ng.common,global.ngxCountdownTimer,global.ng.material,global.ng.forms,global.d3,global.ng.core,global.ngxQuill));
-}(this, (function (exports,common,ngxCountdownTimer,material,forms,d3,i0,ngxQuill) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('ngx-countdown-timer'), require('@angular/material'), require('@angular/forms'), require('d3'), require('ngx-quill'), require('@angular/core')) :
+    typeof define === 'function' && define.amd ? define('suku-webcomponents', ['exports', '@angular/common', 'ngx-countdown-timer', '@angular/material', '@angular/forms', 'd3', 'ngx-quill', '@angular/core'], factory) :
+    (factory((global['suku-webcomponents'] = {}),global.ng.common,global.ngxCountdownTimer,global.ng.material,global.ng.forms,global.d3,global.ngxQuill,global.ng.core));
+}(this, (function (exports,common,ngxCountdownTimer,material,forms,d3,ngxQuill,i0) { 'use strict';
 
     /**
      * @fileoverview added by tsickle
@@ -5698,7 +5698,7 @@
         SukuWysiwygEditorComponent.decorators = [
             { type: i0.Component, args: [{
                         selector: 'suku-wysiwyg-editor',
-                        template: "<span [formGroup]=\"form\">\n  <quill-editor [modules]=\"moduleConfig\" \n  placeholder=\"Enter Text\" formControlName=\"{{control}}\" [(ngModel)]=\"htmlQuillContent\" (onContentChanged)=\"onContentChanged($event)\">\n  </quill-editor>\n</span>",
+                        template: "<span [formGroup]=\"form\">\n  <quill-editor [modules]=\"moduleConfig\" \n  placeholder=\"{{placeholder}}\" formControlName=\"{{control}}\" [(ngModel)]=\"htmlQuillContent\" (onContentChanged)=\"onContentChanged($event)\">\n  </quill-editor>\n</span>",
                         styles: [""]
                     }] }
         ];
@@ -5710,6 +5710,45 @@
             placeholder: [{ type: i0.Input }]
         };
         return SukuWysiwygEditorComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+    var SukuProfileImageIconComponent = /** @class */ (function () {
+        function SukuProfileImageIconComponent() {
+            this.alternativeText = 'profileImage';
+            this.height = '50';
+            this.width = '50';
+            this.image = '../../assets/images/browser.png';
+            this.customClass = 'img-circle';
+        }
+        /**
+         * @return {?}
+         */
+        SukuProfileImageIconComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+            function () {
+            };
+        SukuProfileImageIconComponent.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'suku-profile-image-icon',
+                        template: "<img alt=\"{{alternativeText}}\" class=\"{{customClass}}\" height=\"{{height}}\" width=\"{{width}}\" src=\"{{image}}\">\n<!-- <img src=\"{{image}}\" class=\" img-circle\" alt=\"profile\" width=\"150\" height=\"150\"> -->",
+                        styles: [".img-circle{display:inline-block;position:relative;z-index:0;line-height:42px;text-align:center;box-shadow:0 2px 2px 0 rgba(0,0,0,.1);background-color:#fff}"]
+                    }] }
+        ];
+        /** @nocollapse */
+        SukuProfileImageIconComponent.ctorParameters = function () { return []; };
+        SukuProfileImageIconComponent.propDecorators = {
+            alternativeText: [{ type: i0.Input }],
+            height: [{ type: i0.Input }],
+            width: [{ type: i0.Input }],
+            image: [{ type: i0.Input }],
+            customClass: [{ type: i0.Input }]
+        };
+        return SukuProfileImageIconComponent;
     }());
 
     /**
@@ -5789,7 +5828,8 @@
                             ScrollToBottomDirective,
                             SukuLargeBidTagComponent,
                             SukuBidWidgetTagComponent,
-                            SukuWysiwygEditorComponent
+                            SukuWysiwygEditorComponent,
+                            SukuProfileImageIconComponent
                         ],
                         imports: [
                             common.CommonModule,
@@ -5899,7 +5939,8 @@
                             ScrollToBottomDirective,
                             SukuLargeBidTagComponent,
                             SukuBidWidgetTagComponent,
-                            SukuWysiwygEditorComponent
+                            SukuWysiwygEditorComponent,
+                            SukuProfileImageIconComponent
                         ]
                     },] }
         ];
@@ -5968,6 +6009,7 @@
     exports.ɵm = SukuPrimaryButtonComponent;
     exports.ɵbd = SukuProductTraceWidgetComponent;
     exports.ɵcb = SukuProfileHeaderComponent;
+    exports.ɵcq = SukuProfileImageIconComponent;
     exports.ɵz = SukuProfileWidgetComponent;
     exports.ɵn = SukuProgressBarTypeOneComponent;
     exports.ɵo = SukuProgressBarTypeTwoComponent;

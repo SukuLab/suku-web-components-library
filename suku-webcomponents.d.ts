@@ -49,6 +49,7 @@ export { SukuPhoneWidgetComponent as ɵw } from './lib/suku-phone-widget/suku-ph
 export { SukuPrimaryButtonComponent as ɵm } from './lib/suku-primary-button/suku-primary-button.component';
 export { SukuProductTraceWidgetComponent as ɵbd } from './lib/suku-product-trace-widget/suku-product-trace-widget.component';
 export { SukuProfileHeaderComponent as ɵcb } from './lib/suku-profile-header/suku-profile-header.component';
+export { SukuProfileImageIconComponent as ɵcq } from './lib/suku-profile-image-icon/suku-profile-image-icon.component';
 export { SukuProfileWidgetComponent as ɵz } from './lib/suku-profile-widget/suku-profile-widget.component';
 export { SukuProgressBarTypeOneComponent as ɵn } from './lib/suku-progress-bar-type-one/suku-progress-bar-type-one.component';
 export { SukuProgressBarTypeTwoComponent as ɵo } from './lib/suku-progress-bar-type-two/suku-progress-bar-type-two.component';
