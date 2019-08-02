@@ -1086,6 +1086,7 @@ class SukuModalService {
          */
         (result) => {
             this.onDialogClose.emit(result);
+            result = false;
         }));
     }
 }

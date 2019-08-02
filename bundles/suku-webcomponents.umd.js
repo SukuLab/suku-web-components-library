@@ -1337,6 +1337,7 @@
                  * @return {?}
                  */function (result) {
                     _this.onDialogClose.emit(result);
+                    result = false;
                 }));
             };
         SukuModalService.decorators = [

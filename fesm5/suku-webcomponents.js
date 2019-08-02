@@ -1250,6 +1250,7 @@ var SukuModalService = /** @class */ (function () {
          */
         function (result) {
             _this.onDialogClose.emit(result);
+            result = false;
         }));
     };
     SukuModalService.decorators = [
