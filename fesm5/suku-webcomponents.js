@@ -1208,7 +1208,15 @@ var SukuModalModule = /** @class */ (function () {
 var SukuModalService = /** @class */ (function () {
     function SukuModalService(dialogService) {
         this.dialogService = dialogService;
-        this.onDialogClose = new EventEmitter();
+        // public onDialogClose: EventEmitter<any> = new EventEmitter<any>();
+        this.onDialogCloseInterest = new EventEmitter();
+        this.onDialogCloseList = new EventEmitter();
+        this.onDialogClosePlaceBid = new EventEmitter();
+        this.onDialogCloseAcceptBid = new EventEmitter();
+        this.onDialogCloseSendPayment = new EventEmitter();
+        this.onDialogCloseDeleteList = new EventEmitter();
+        this.onDialogCloseCancelBid = new EventEmitter();
+        this.onDialogCloseUpdateInterest = new EventEmitter();
         this.confirmationDialogHeight = 'auto';
         this.confirmationDialogWidth = '500px';
     }
@@ -1216,7 +1224,7 @@ var SukuModalService = /** @class */ (function () {
      * @param {?=} data
      * @return {?}
      */
-    SukuModalService.prototype.openConfirmationDialog = /**
+    SukuModalService.prototype.openConfirmationDialogInterest = /**
      * @param {?=} data
      * @return {?}
      */
@@ -1249,8 +1257,287 @@ var SukuModalService = /** @class */ (function () {
          * @return {?}
          */
         function (result) {
-            _this.onDialogClose.emit(result);
-            result = false;
+            _this.onDialogCloseInterest.emit(result);
+        }));
+    };
+    /**
+     * @param {?=} data
+     * @return {?}
+     */
+    SukuModalService.prototype.openConfirmationDialogList = /**
+     * @param {?=} data
+     * @return {?}
+     */
+    function (data) {
+        var _this = this;
+        /** @type {?} */
+        var dialogRef = this.dialogService.open(SukuConfirmationComponent, {
+            width: this.confirmationDialogWidth,
+            height: this.confirmationDialogHeight,
+            disableClose: this.confirmationDialogClose,
+            data: {
+                icon: data ? data.icon : '',
+                iconCustomClass: data ? data.iconCustomClass : '',
+                iconId: data ? data.iconId : '',
+                titleOne: data ? data.titleOne : '',
+                titleOneId: data ? data.titleOneId : '',
+                titleTwo: data ? data.titleTwo : '',
+                titleTwoId: data ? data.titleOneId : '',
+                titleThree: data ? data.titleThree : '',
+                titleThreeId: data ? data.titleThreeId : '',
+                buttonLableOne: data ? data.buttonLableOne : '',
+                buttonLableOneId: data ? data.buttonLableOneId : '',
+                buttonLableTwo: data ? data.buttonLableTwo : '',
+                buttonLableTwoId: data ? data.buttonLableTwoId : '',
+                buttonCustomClass: data ? data.buttonCustomClass : ''
+            }
+        });
+        dialogRef.afterClosed().subscribe((/**
+         * @param {?} result
+         * @return {?}
+         */
+        function (result) {
+            _this.onDialogCloseList.emit(result);
+        }));
+    };
+    /**
+     * @param {?=} data
+     * @return {?}
+     */
+    SukuModalService.prototype.openConfirmationDialogPlaceBid = /**
+     * @param {?=} data
+     * @return {?}
+     */
+    function (data) {
+        var _this = this;
+        /** @type {?} */
+        var dialogRef = this.dialogService.open(SukuConfirmationComponent, {
+            width: this.confirmationDialogWidth,
+            height: this.confirmationDialogHeight,
+            disableClose: this.confirmationDialogClose,
+            data: {
+                icon: data ? data.icon : '',
+                iconCustomClass: data ? data.iconCustomClass : '',
+                iconId: data ? data.iconId : '',
+                titleOne: data ? data.titleOne : '',
+                titleOneId: data ? data.titleOneId : '',
+                titleTwo: data ? data.titleTwo : '',
+                titleTwoId: data ? data.titleOneId : '',
+                titleThree: data ? data.titleThree : '',
+                titleThreeId: data ? data.titleThreeId : '',
+                buttonLableOne: data ? data.buttonLableOne : '',
+                buttonLableOneId: data ? data.buttonLableOneId : '',
+                buttonLableTwo: data ? data.buttonLableTwo : '',
+                buttonLableTwoId: data ? data.buttonLableTwoId : '',
+                buttonCustomClass: data ? data.buttonCustomClass : ''
+            }
+        });
+        dialogRef.afterClosed().subscribe((/**
+         * @param {?} result
+         * @return {?}
+         */
+        function (result) {
+            _this.onDialogClosePlaceBid.emit(result);
+        }));
+    };
+    /**
+     * @param {?=} data
+     * @return {?}
+     */
+    SukuModalService.prototype.openConfirmationDialogAcceptBid = /**
+     * @param {?=} data
+     * @return {?}
+     */
+    function (data) {
+        var _this = this;
+        /** @type {?} */
+        var dialogRef = this.dialogService.open(SukuConfirmationComponent, {
+            width: this.confirmationDialogWidth,
+            height: this.confirmationDialogHeight,
+            disableClose: this.confirmationDialogClose,
+            data: {
+                icon: data ? data.icon : '',
+                iconCustomClass: data ? data.iconCustomClass : '',
+                iconId: data ? data.iconId : '',
+                titleOne: data ? data.titleOne : '',
+                titleOneId: data ? data.titleOneId : '',
+                titleTwo: data ? data.titleTwo : '',
+                titleTwoId: data ? data.titleOneId : '',
+                titleThree: data ? data.titleThree : '',
+                titleThreeId: data ? data.titleThreeId : '',
+                buttonLableOne: data ? data.buttonLableOne : '',
+                buttonLableOneId: data ? data.buttonLableOneId : '',
+                buttonLableTwo: data ? data.buttonLableTwo : '',
+                buttonLableTwoId: data ? data.buttonLableTwoId : '',
+                buttonCustomClass: data ? data.buttonCustomClass : ''
+            }
+        });
+        dialogRef.afterClosed().subscribe((/**
+         * @param {?} result
+         * @return {?}
+         */
+        function (result) {
+            _this.onDialogCloseAcceptBid.emit(result);
+        }));
+    };
+    /**
+     * @param {?=} data
+     * @return {?}
+     */
+    SukuModalService.prototype.openConfirmationDialogSendPayment = /**
+     * @param {?=} data
+     * @return {?}
+     */
+    function (data) {
+        var _this = this;
+        /** @type {?} */
+        var dialogRef = this.dialogService.open(SukuConfirmationComponent, {
+            width: this.confirmationDialogWidth,
+            height: this.confirmationDialogHeight,
+            disableClose: this.confirmationDialogClose,
+            data: {
+                icon: data ? data.icon : '',
+                iconCustomClass: data ? data.iconCustomClass : '',
+                iconId: data ? data.iconId : '',
+                titleOne: data ? data.titleOne : '',
+                titleOneId: data ? data.titleOneId : '',
+                titleTwo: data ? data.titleTwo : '',
+                titleTwoId: data ? data.titleOneId : '',
+                titleThree: data ? data.titleThree : '',
+                titleThreeId: data ? data.titleThreeId : '',
+                buttonLableOne: data ? data.buttonLableOne : '',
+                buttonLableOneId: data ? data.buttonLableOneId : '',
+                buttonLableTwo: data ? data.buttonLableTwo : '',
+                buttonLableTwoId: data ? data.buttonLableTwoId : '',
+                buttonCustomClass: data ? data.buttonCustomClass : ''
+            }
+        });
+        dialogRef.afterClosed().subscribe((/**
+         * @param {?} result
+         * @return {?}
+         */
+        function (result) {
+            _this.onDialogCloseSendPayment.emit(result);
+        }));
+    };
+    /**
+     * @param {?=} data
+     * @return {?}
+     */
+    SukuModalService.prototype.openConfirmationDialogDeleteList = /**
+     * @param {?=} data
+     * @return {?}
+     */
+    function (data) {
+        var _this = this;
+        /** @type {?} */
+        var dialogRef = this.dialogService.open(SukuConfirmationComponent, {
+            width: this.confirmationDialogWidth,
+            height: this.confirmationDialogHeight,
+            disableClose: this.confirmationDialogClose,
+            data: {
+                icon: data ? data.icon : '',
+                iconCustomClass: data ? data.iconCustomClass : '',
+                iconId: data ? data.iconId : '',
+                titleOne: data ? data.titleOne : '',
+                titleOneId: data ? data.titleOneId : '',
+                titleTwo: data ? data.titleTwo : '',
+                titleTwoId: data ? data.titleOneId : '',
+                titleThree: data ? data.titleThree : '',
+                titleThreeId: data ? data.titleThreeId : '',
+                buttonLableOne: data ? data.buttonLableOne : '',
+                buttonLableOneId: data ? data.buttonLableOneId : '',
+                buttonLableTwo: data ? data.buttonLableTwo : '',
+                buttonLableTwoId: data ? data.buttonLableTwoId : '',
+                buttonCustomClass: data ? data.buttonCustomClass : ''
+            }
+        });
+        dialogRef.afterClosed().subscribe((/**
+         * @param {?} result
+         * @return {?}
+         */
+        function (result) {
+            _this.onDialogCloseDeleteList.emit(result);
+        }));
+    };
+    /**
+     * @param {?=} data
+     * @return {?}
+     */
+    SukuModalService.prototype.openConfirmationDialogCancelBid = /**
+     * @param {?=} data
+     * @return {?}
+     */
+    function (data) {
+        var _this = this;
+        /** @type {?} */
+        var dialogRef = this.dialogService.open(SukuConfirmationComponent, {
+            width: this.confirmationDialogWidth,
+            height: this.confirmationDialogHeight,
+            disableClose: this.confirmationDialogClose,
+            data: {
+                icon: data ? data.icon : '',
+                iconCustomClass: data ? data.iconCustomClass : '',
+                iconId: data ? data.iconId : '',
+                titleOne: data ? data.titleOne : '',
+                titleOneId: data ? data.titleOneId : '',
+                titleTwo: data ? data.titleTwo : '',
+                titleTwoId: data ? data.titleOneId : '',
+                titleThree: data ? data.titleThree : '',
+                titleThreeId: data ? data.titleThreeId : '',
+                buttonLableOne: data ? data.buttonLableOne : '',
+                buttonLableOneId: data ? data.buttonLableOneId : '',
+                buttonLableTwo: data ? data.buttonLableTwo : '',
+                buttonLableTwoId: data ? data.buttonLableTwoId : '',
+                buttonCustomClass: data ? data.buttonCustomClass : ''
+            }
+        });
+        dialogRef.afterClosed().subscribe((/**
+         * @param {?} result
+         * @return {?}
+         */
+        function (result) {
+            _this.onDialogCloseCancelBid.emit(result);
+        }));
+    };
+    /**
+     * @param {?=} data
+     * @return {?}
+     */
+    SukuModalService.prototype.openConfirmationDialogUpdateInterest = /**
+     * @param {?=} data
+     * @return {?}
+     */
+    function (data) {
+        var _this = this;
+        /** @type {?} */
+        var dialogRef = this.dialogService.open(SukuConfirmationComponent, {
+            width: this.confirmationDialogWidth,
+            height: this.confirmationDialogHeight,
+            disableClose: this.confirmationDialogClose,
+            data: {
+                icon: data ? data.icon : '',
+                iconCustomClass: data ? data.iconCustomClass : '',
+                iconId: data ? data.iconId : '',
+                titleOne: data ? data.titleOne : '',
+                titleOneId: data ? data.titleOneId : '',
+                titleTwo: data ? data.titleTwo : '',
+                titleTwoId: data ? data.titleOneId : '',
+                titleThree: data ? data.titleThree : '',
+                titleThreeId: data ? data.titleThreeId : '',
+                buttonLableOne: data ? data.buttonLableOne : '',
+                buttonLableOneId: data ? data.buttonLableOneId : '',
+                buttonLableTwo: data ? data.buttonLableTwo : '',
+                buttonLableTwoId: data ? data.buttonLableTwoId : '',
+                buttonCustomClass: data ? data.buttonCustomClass : ''
+            }
+        });
+        dialogRef.afterClosed().subscribe((/**
+         * @param {?} result
+         * @return {?}
+         */
+        function (result) {
+            _this.onDialogCloseUpdateInterest.emit(result);
         }));
     };
     SukuModalService.decorators = [

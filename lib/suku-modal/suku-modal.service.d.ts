@@ -5,7 +5,21 @@ export declare class SukuModalService {
     confirmationDialogWidth: any;
     confirmationDialogHeight: any;
     confirmationDialogClose: any;
-    onDialogClose: EventEmitter<any>;
+    onDialogCloseInterest: EventEmitter<any>;
+    onDialogCloseList: EventEmitter<any>;
+    onDialogClosePlaceBid: EventEmitter<any>;
+    onDialogCloseAcceptBid: EventEmitter<any>;
+    onDialogCloseSendPayment: EventEmitter<any>;
+    onDialogCloseDeleteList: EventEmitter<any>;
+    onDialogCloseCancelBid: EventEmitter<any>;
+    onDialogCloseUpdateInterest: EventEmitter<any>;
     constructor(dialogService: MatDialog);
-    openConfirmationDialog(data?: any): void;
+    openConfirmationDialogInterest(data?: any): void;
+    openConfirmationDialogList(data?: any): void;
+    openConfirmationDialogPlaceBid(data?: any): void;
+    openConfirmationDialogAcceptBid(data?: any): void;
+    openConfirmationDialogSendPayment(data?: any): void;
+    openConfirmationDialogDeleteList(data?: any): void;
+    openConfirmationDialogCancelBid(data?: any): void;
+    openConfirmationDialogUpdateInterest(data?: any): void;
 }
