@@ -4,6 +4,7 @@ export declare class SukuInfoButtonComponent implements OnInit {
     size: string;
     weight: string;
     type: string;
+    btnType: string;
     customClass: string;
     disableValue: Boolean;
     action: EventEmitter<{}>;
