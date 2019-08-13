@@ -37,6 +37,7 @@ export { SukuFileUploadComponent as ɵl } from './lib/suku-file-upload/suku-file
 export { SukuFiltersComponent as ɵbi } from './lib/suku-filters/suku-filters.component';
 export { SukuFormFooterComponent as ɵa } from './lib/suku-form-footer/suku-form-footer.component';
 export { SukuFundingSourceComponent as ɵbr } from './lib/suku-funding-source/suku-funding-source.component';
+export { SukuGalleryUploadComponent as ɵcz } from './lib/suku-gallery-upload/suku-gallery-upload.component';
 export { SukuGalleryComponent as ɵcs } from './lib/suku-gallery/suku-gallery.component';
 export { SukuHeaderComponent as ɵck } from './lib/suku-header/suku-header.component';
 export { SukuHeadingComponent as ɵp } from './lib/suku-heading/suku-heading.component';
