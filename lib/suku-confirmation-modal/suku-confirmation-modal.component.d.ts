@@ -1,7 +1,7 @@
 import { OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
-export declare class SukuConfirmationModelComponent implements OnInit {
-    dialogCustomRef: MatDialogRef<SukuConfirmationModelComponent>;
+export declare class SukuConfirmationModalComponent implements OnInit {
+    dialogCustomRef: MatDialogRef<SukuConfirmationModalComponent>;
     data: any;
     dialogData: {
         'imgSrc': string;
@@ -14,7 +14,7 @@ export declare class SukuConfirmationModelComponent implements OnInit {
         'messageId': string;
         'buttonId': string;
     };
-    constructor(dialogCustomRef: MatDialogRef<SukuConfirmationModelComponent>, data: any);
+    constructor(dialogCustomRef: MatDialogRef<SukuConfirmationModalComponent>, data: any);
     ngOnInit(): void;
     close(): void;
 }
