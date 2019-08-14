@@ -7511,6 +7511,63 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
+    var SukuChipListComponent = /** @class */ (function () {
+        function SukuChipListComponent() {
+            this.DocumentList = [];
+            this.actionOne = new i0.EventEmitter();
+            this.actionTwo = new i0.EventEmitter();
+        }
+        /**
+         * @return {?}
+         */
+        SukuChipListComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+            function () {
+            };
+        /**
+         * @param {?} val
+         * @return {?}
+         */
+        SukuChipListComponent.prototype.downloadDoc = /**
+         * @param {?} val
+         * @return {?}
+         */
+            function (val) {
+                this.actionOne.emit(val);
+            };
+        /**
+         * @param {?} val
+         * @return {?}
+         */
+        SukuChipListComponent.prototype.deleteDoc = /**
+         * @param {?} val
+         * @return {?}
+         */
+            function (val) {
+                this.actionTwo.emit(val);
+            };
+        SukuChipListComponent.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'suku-chip-list',
+                        template: "<div class=\"col\">\n  <mat-chip-list>\n    <mat-chip class=\"whiteSpace\" *ngFor=\"let doc of DocumentList;let docIndex = index;\"> <br>\n      <mat-icon matChipRemove (click)=\"downloadDoc(doc)\" matTooltip=\"Download\">\n        save_alt\n      </mat-icon>\n      <mat-icon matChipRemove matTooltip=\"Delete\" (click)=\"deleteDoc(doc)\">clear\n      </mat-icon>\n      <span> {{doc.name}}</span>\n    </mat-chip>\n  </mat-chip-list>\n</div>",
+                        styles: [".whiteSpace{white-space:nowrap}"]
+                    }] }
+        ];
+        /** @nocollapse */
+        SukuChipListComponent.ctorParameters = function () { return []; };
+        SukuChipListComponent.propDecorators = {
+            DocumentList: [{ type: i0.Input, args: ['document-list',] }],
+            actionOne: [{ type: i0.Output, args: ['action-one',] }],
+            actionTwo: [{ type: i0.Output, args: ['action-two',] }]
+        };
+        return SukuChipListComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
     var SukuWebcomponentsModule = /** @class */ (function () {
         function SukuWebcomponentsModule() {
         }
@@ -7581,7 +7638,8 @@
                             SukuProfileImageIconComponent,
                             SukuConfirmationModalComponent,
                             SukuAddLicenseModelComponent,
-                            SukuGalleryUploadComponent
+                            SukuGalleryUploadComponent,
+                            SukuChipListComponent
                         ],
                         imports: [
                             common.CommonModule,
@@ -7702,7 +7760,8 @@
                             SukuProfileImageIconComponent,
                             SukuConfirmationModalComponent,
                             SukuAddLicenseModelComponent,
-                            SukuGalleryUploadComponent
+                            SukuGalleryUploadComponent,
+                            SukuChipListComponent
                         ],
                         entryComponents: [SukuConfirmationModalComponent],
                         schemas: []
@@ -8015,6 +8074,7 @@
     exports.ɵcp = ScrollToBottomDirective;
     exports.ɵco = SukuChatWidgetComponent;
     exports.ɵct = SukuCheckboxComponent;
+    exports.ɵda = SukuChipListComponent;
     exports.ɵcx = SukuConfirmationModalComponent;
     exports.ɵk = SukuConfirmationComponent;
     exports.ɵbs = SukuCreateCustomerComponent;

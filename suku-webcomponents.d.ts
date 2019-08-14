@@ -24,6 +24,7 @@ export { SukuCardTitleComponent as ɵbm } from './lib/suku-card-title/suku-card-
 export { ScrollToBottomDirective as ɵcp } from './lib/suku-chat-widget/suku-chat-scroll-directive';
 export { SukuChatWidgetComponent as ɵco } from './lib/suku-chat-widget/suku-chat-widget.component';
 export { SukuCheckboxComponent as ɵct } from './lib/suku-checkbox/suku-checkbox.component';
+export { SukuChipListComponent as ɵda } from './lib/suku-chip-list/suku-chip-list.component';
 export { SukuConfirmationModalComponent as ɵcx } from './lib/suku-confirmation-modal/suku-confirmation-modal.component';
 export { SukuConfirmationComponent as ɵk } from './lib/suku-confirmation/suku-confirmation.component';
 export { SukuCreateCustomerComponent as ɵbs } from './lib/suku-create-customer/suku-create-customer.component';
