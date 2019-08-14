@@ -2,10 +2,10 @@ import { createCustomElement } from '@angular/elements';
 import { __values, __read } from 'tslib';
 import { CommonModule } from '@angular/common';
 import { CountdownTimerModule } from 'ngx-countdown-timer';
-import { MAT_DIALOG_DATA, MatDialogRef, MatDialog, MatSnackBar, MatAutocompleteModule, MatBadgeModule, MatBottomSheetModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule as MatDialogModule$1, MatDividerModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatSortModule, MatStepperModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef, MatSnackBar, MatDialog, MatAutocompleteModule, MatBadgeModule, MatBottomSheetModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule as MatDialogModule$1, MatDividerModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatSortModule, MatStepperModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 import { MatDialogModule, MatDialog as MatDialog$1 } from '@angular/material/dialog';
 import { layout, select } from 'd3';
-import { FormBuilder, FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, Validators, FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QuillModule } from 'ngx-quill';
 import { Component, Input, Output, EventEmitter, NgModule, Injector, Inject, Injectable, Directive, ElementRef, HostListener, ViewChild, ViewEncapsulation, ChangeDetectionStrategy, defineInjectable, inject } from '@angular/core';
 
@@ -1278,6 +1278,332 @@ var SukuConfirmationModalComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+var SukuAddLicenseModalComponent = /** @class */ (function () {
+    // @Input('enable-required-validator-for-control-one')
+    // set enableRequiredValidatorForControlOne(val) {
+    //   if (val) {
+    //     this.controlOne.setValidators(Validators.required);
+    //     this.controlOne.updateValueAndValidity();
+    //   }
+    // }
+    // @Input('enable-pattern-for-control-one')
+    // set enablePatternValidatorsForControlOne(val) {
+    //   if (val) {
+    //     this.controlOne.setValidators(Validators.pattern(this.dialogData.controlOnePattern));
+    //     this.controlOne.updateValueAndValidity();
+    //   }
+    // }
+    // @Input('enable-required-validator-for-control-two')
+    // set enableRequiredValidatorForControlTwo(val) {
+    //   if (val) {
+    //     this.controlTwo.setValidators(Validators.required);
+    //     this.controlTwo.updateValueAndValidity();
+    //   }
+    // }
+    // @Input('enable-pattern-for-control-two')
+    // set enableRequiredValidatorsForDateControlOne(val) {
+    //   if (val) {
+    //     this.dateControlOne.setValidators(Validators.required);
+    //     this.dateControlOne.updateValueAndValidity();
+    //   }
+    // }
+    // @Input('enable-required-validator-for-dateControl-one')
+    // set enableRequiredValidatorForDateControlTwo(val) {
+    //   if (val) {
+    //     this.dateControlTwo.setValidators(Validators.required);
+    //     this.dateControlTwo.updateValueAndValidity();
+    //   }
+    // }
+    function SukuAddLicenseModalComponent(snackBar, dialogCustomRef, data) {
+        this.snackBar = snackBar;
+        this.dialogCustomRef = dialogCustomRef;
+        this.data = data;
+        this.formSumitAttempt = false;
+        this.mulFiles = [];
+        // uploadFiles = []; 
+        this.dialogData = {
+            controlOne: 'controlOne',
+            controlTwo: 'controlTwo',
+            dateControlOne: 'dateControlOne',
+            dateControlTwo: 'dateControlTwo',
+            'controlOnePatternEnabled': '',
+            'controlTwoPatternEnabled': '',
+            controlOneRequired: '',
+            controlTwoRequired: '',
+            controlTwoRequiredd: '',
+            dateControlOneRequired: '',
+            dateControlTwoRequired: '',
+            'controlOnePattern': '',
+            'controlTwoPattern': '',
+            'title': 'Licence and Registration',
+            'subTitle': 'Enter your license details here',
+            'controlHint': 'Example: 123456789a12345',
+            'hintClass': '',
+            'headerCutomStyle': '',
+            'startDateMaxDate': '',
+            'endDateMaxDate': '',
+            'startDateMinDate': '',
+            'endDateMinDate': '',
+            'controlOneId': 'licenseName',
+            controlTwoId: 'licenseNumber',
+            dateControlOneId: 'startDate',
+            dateControlTwoId: 'endDate',
+            controlTwoToolTip: 'The format should be 123456789a12345',
+            controlOnePlaceholder: 'License Name',
+            controlTwoPlaceholder: 'License Number',
+            dateControlOnePlaceholder: 'Licence Issue Date',
+            dateControlTwoPlaceholder: 'Licence Expiry Date(Optional)',
+            controlOneRquiredErrorMsg: 'Cannot be blank.',
+            controlTwoRquiredErrorMsg: 'Cannot be blank.',
+            controlTwoPatternErrorMsg: 'Invalid Licence number',
+            dateControlOneRquiredErrorMsg: 'Cannot be blank.',
+            dateControlTwoRquiredErrorMsg: 'Cannot be blank.',
+            acceptDocment: 'application/msword, text/plain, application/pdf, image/*',
+            uploadImg: 'http://34.217.89.204/assets/images/fileUpload.png',
+            uploadTitle: ' Upload Licence',
+            fileListTitle: 'Uploaded Documents',
+            fileInputId: 'file-input',
+            filesArray: [],
+            fileRemoveBtnTxt: 'Delete',
+            fileRemoveBtnId: 'fileDelete',
+            uploadImgAltTxt: '',
+            cancelBtnText: 'Cancel',
+            submitBtnTxt: 'Add License',
+            submitBtnCustomClass: '',
+            cancelBtnCustomClass: '',
+        };
+        this.controlOne = new FormControl('');
+        this.controlTwo = new FormControl('');
+        this.dateControlOne = new FormControl('');
+        this.dateControlTwo = new FormControl('');
+    }
+    /**
+     * @return {?}
+     */
+    SukuAddLicenseModalComponent.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        var e_1, _a;
+        try {
+            for (var _b = __values(Object.keys(this.data)), _c = _b.next(); !_c.done; _c = _b.next()) {
+                var key = _c.value;
+                if (this.data[key]) {
+                    this.dialogData[key] = this.data[key];
+                }
+            }
+        }
+        catch (e_1_1) { e_1 = { error: e_1_1 }; }
+        finally {
+            try {
+                if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+            }
+            finally { if (e_1) throw e_1.error; }
+        }
+        if (this.dialogData.controlOneRequired) {
+            this.controlOne.setValidators(Validators.required);
+            this.controlOne.updateValueAndValidity();
+        }
+        if (this.dialogData.controlTwoRequired) {
+            this.controlTwo.setValidators(Validators.required);
+            this.controlTwo.updateValueAndValidity();
+        }
+        if (this.dialogData.dateControlOneRequired) {
+            this.dateControlOne.setValidators(Validators.required);
+            this.dateControlOne.updateValueAndValidity();
+        }
+        if (this.dialogData.dateControlTwoRequired) {
+            this.dateControlTwo.setValidators(Validators.required);
+            this.dateControlTwo.updateValueAndValidity();
+        }
+        if (this.dialogData.controlTwoPatternEnabled && this.dialogData.controlTwoRequired) {
+            this.controlTwo.setValidators([Validators.required, Validators.pattern(this.dialogData.controlTwoPattern)]);
+            this.controlTwo.updateValueAndValidity();
+        }
+        // if (this.dialogData.controlOnePatternEnabled) {
+        //   this.controlOne.setValidators(Validators.pattern(this.dialogData.controlOnePattern));
+        //   this.controlOne.updateValueAndValidity();
+        // }
+        console.log('this.dialogData', this.dialogData);
+        this._subscriptionOne = this.controlOne.valueChanges.subscribe((/**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            if (value) {
+                _this.controlOneValue = value;
+            }
+        }));
+        this._subscriptionTwo = this.controlTwo.valueChanges.subscribe((/**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            if (value) {
+                _this.controlTwoValue = value;
+            }
+        }));
+        this._subscriptionThree = this.dateControlOne.valueChanges.subscribe((/**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            if (value) {
+                _this.dateControlOneValue = value;
+            }
+        }));
+        this._subscriptionFour = this.dateControlTwo.valueChanges.subscribe((/**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            if (value) {
+                _this.dateControlTwoValue = value;
+            }
+        }));
+        // this._subscribeFiles = this.getUploadedFiles().subscribe(value => {
+        //     if (value) {
+        //       this.uploadFiles = value;
+        //     } else {
+        //       // this.usernameControl.
+        //     }
+        // })
+    };
+    /**
+     * @return {?}
+     */
+    SukuAddLicenseModalComponent.prototype.addLicense = /**
+     * @return {?}
+     */
+    function () {
+        if (this.controlOne.invalid || this.controlTwo.invalid ||
+            this.dateControlOne.invalid || this.dateControlTwo.invalid) {
+            this.snackBar.open('Please fill all the mandatory fields.', 'close', {
+                verticalPosition: 'top',
+                horizontalPosition: 'right',
+                duration: 5000
+            });
+        }
+        else {
+            /** @type {?} */
+            var reqObj = {
+                license: {
+                    licenseName: this.controlOneValue,
+                    licenseNumber: this.controlTwoValue,
+                    startDate: this.dateControlOneValue,
+                    endDate: this.dateControlTwoValue,
+                    files: this.mulFiles
+                }
+            };
+            this.dialogCustomRef.close(reqObj);
+        }
+    };
+    /**
+     * @return {?}
+     */
+    SukuAddLicenseModalComponent.prototype.closeDialog = /**
+     * @return {?}
+     */
+    function () {
+        this.dialogCustomRef.close(false);
+    };
+    /**
+     * @param {?} e
+     * @return {?}
+     */
+    SukuAddLicenseModalComponent.prototype.startUpload = /**
+     * @param {?} e
+     * @return {?}
+     */
+    function (e) {
+        /** @type {?} */
+        var maxFileSize = 10097152;
+        /** @type {?} */
+        var currentFileSize;
+        if (e.target.files && e.target.files.length > 0) {
+            for (var i = 0; i < e.target.files.length; i++) {
+                /** @type {?} */
+                var file = e.target.files[i];
+                currentFileSize = file.size;
+                console.log('file.type', file.type);
+                if (currentFileSize <= maxFileSize &&
+                    (file.type == 'image/jpeg' || file.type == 'image/png' || file.type == 'image/jpg' || file.type == '.pdf' ||
+                        file.type == 'application/rtf' || file.type == 'application/msword' ||
+                        file.type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || file.type == 'application/pdf')) {
+                    // this.mulFiles.push(e.target.files[i]);
+                    // this.imagepath = this.LicencesAndRegistration.value.logo;
+                    // this.imageAdded = 'Image addednsbmdbmbnmb';
+                    this.mulFiles.push(e.target.files[i]);
+                    console.log(this.mulFiles);
+                    // let reader = new FileReader();
+                    // reader.onload = (e: any) => {
+                    //   this.imagePreviewUrls.push({ file: e.target.result, name: file.name });
+                    // };
+                    // reader.readAsDataURL(file);
+                }
+                else {
+                    this.snackBar.open('Upload Word, Image or PDF format of your License, Size should be below 10MB.', 'close', {
+                        verticalPosition: 'top',
+                        horizontalPosition: 'right',
+                        duration: 5000
+                    });
+                }
+            }
+        }
+    };
+    /**
+     * @param {?} param
+     * @return {?}
+     */
+    SukuAddLicenseModalComponent.prototype.removeFile = /**
+     * @param {?} param
+     * @return {?}
+     */
+    function (param) {
+        this.mulFiles.splice(param, 1);
+        console.log('param', param);
+    };
+    /**
+     * @param {?} msg
+     * @return {?}
+     */
+    SukuAddLicenseModalComponent.prototype.snackbar = /**
+     * @param {?} msg
+     * @return {?}
+     */
+    function (msg) {
+        this.snackBar.open(msg, 'close', {
+            verticalPosition: 'bottom',
+            horizontalPosition: 'right',
+            duration: 3500
+        });
+    };
+    SukuAddLicenseModalComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'suku-add-license-modal',
+                    template: " <div>\n    <div class=\"col-sm-12  card-header {{ dialogData?.headerCutomStyle }}\">\n        <div class=\"col-sm-12\">\n          <h1 class=\"headerFont\">{{dialogData?.title}}</h1>\n          <p>{{dialogData?.subTitle}}</p>\n        </div>\n      </div>\n      <div class=\"modal-body col-sm-12\">\n          <div>\n          \t  <div id=\"collapseOne\" class=\"collapse show\" aria-labelledby=\"headingOne\"\n              dialogData-parent=\"#accordionExample\">\n              <div>\n                <div class=\"pL\">\n                <div class=\"col-sm-12 mT-7\">\n                  <div class=\"row\">\n                    <mat-form-field class=\"col-sm-6\">\n                        <input matInput placeholder=\"{{ dialogData?.controlOnePlaceholder }}\"  [formControl]=\"controlOne\" name=\"{{dialogData?.controlOne}}\" id=\"{{ dialogData?.controlOneId }}\">\n                        <mat-error *ngIf=\"controlOne.hasError('required')\">\n                            {{ dialogData?.controlOneRquiredErrorMsg }}\n                          </mat-error>\n                    </mat-form-field>\n                    <div class=\"col-sm-6 p-0\">\n                    <mat-form-field class=\"col-12 \">\n                      <input matInput placeholder=\"{{dialogData?.controlTwoPlaceholder}}\" \n                        [formControl]=\"controlTwo\" id=\"{{ dialogData?.controlTwoId }}\"\n                        name=\"{{dialogData?.controlTwo}}\" #tooltip=\"matTooltip\"\n                        matTooltip=\"{{ dialogData?.controlTwoToolTip }}\">\n                      <mat-error *ngIf=\"controlTwo.hasError('required')\">\n                          \t{{ dialogData?.controlTwoRquiredErrorMsg }}\n                      </mat-error>\n                      <mat-error *ngIf=\"controlTwo.hasError('pattern')\">\n                            {{ dialogData?.controlTwoPatternErrorMsg }}\n                      </mat-error>\n                    </mat-form-field>\n                    <div >\n                    <p class=\"pl-4 {{ dialogData?.hintClass }}\">{{ dialogData?.controlHint }}</p>\n                  </div>\n                  </div>\n                  </div>\n                </div>\n                <div class=\"col-sm-12 mT-7\">\n                  <div class=\"row\">\n                    <mat-form-field  class=\"col-sm-6\">\n                      <mat-label>{{ dialogData?.dateControlOnePlaceholder }}</mat-label>\n                      <input matInput [matDatepicker]=\"picker1\" [formControl]=\"dateControlOne\" \n                       id=\"{{ dialogData?.dateControlOneId }}\"   #checkin1 name=\"{{ dialogData?.dateControlOne }}\" [min]=\"dialogData?.startDateMinDate\"  [max]=\"dialogData?.startDateMaxDate\">\n                      <mat-datepicker-toggle matSuffix [for]=\"picker1\"></mat-datepicker-toggle>\n                      <mat-datepicker #picker1></mat-datepicker>\n                      <mat-error *ngIf=\"dateControlOne.hasError('required')\">\n                            {{ dialogData?.dateControlOneRquiredErrorMsg }}\n                      </mat-error>\n                    </mat-form-field>\n                    <mat-form-field  class=\"col-sm-6\">\n                      <mat-label>{{ dialogData?.dateControlTwoPlaceholder }}</mat-label>\n                      <input matInput [matDatepicker]=\"picker2\" id=\"{{ dialogData?.dateControlTwoId }}\" name=\"{{dialogData?.dateControlTwo}}\"\n                        #checkout1 [formControl]=\"dateControlTwo\"   [min]=\"dialogData?.endDateMinDate\" [max]=\"dialogData?.endDateMaxDate\" >\n                      <mat-datepicker-toggle matSuffix [for]=\"picker2\"></mat-datepicker-toggle>\n                      <mat-datepicker #picker2 color=\"primary\"></mat-datepicker>\n                      <mat-error *ngIf=\"dateControlTwo.hasError('required')\">\n                            {{ dialogData?.dateControlTwoRquiredErrorMsg }}\n                      </mat-error>\n                    </mat-form-field>                           \n                    <div class=\"col-sm-12 pL\">\n                      <div class=\"row\">\n                        <div class=\"col-lg-3 col-md-6 col-sm-12\">\n                       <aside >{{ dialogData?.uploadTitle }}</aside>\n                         <div class=\" form-group\">\n                          <input   #fileInput (change)=\"startUpload($event);\"\n                           accept=\"{{ dialogData?.acceptDocment }}\"  id=\"{{ dialogData?.fileInputId }}\"\n                            type=\"file\" style=\"display: none\" />\n                        </div>\n                        <div class=\"bT text-center\">\n                        <a (click)=\"fileInput.click()\"><img [src]=\"dialogData?.uploadImg\" alt=\"{{ dialogData?.uploadImgAltTxt }}\" \n                          width=\"90px\" height=\"100px\"></a>\n                      </div>\n                      </div>\n                      <div class=\"col-sm-9\">\n                      <aside>{{ dialogData?.fileListTitle }}</aside>\n                      <div *ngFor=\"let file of mulFiles; let i = index;\" class=\"pdfText\">\n                          <div>{{file.name}} \n                           <a (click)=\"removeFile(i)\" id=\"{{ dialogData?.fileRemoveBtnId }}\" class=\"fT8\"><u>{{ dialogData?.fileRemoveBtnTxt }}</u></a>\n                          </div>\n                        </div>\n                      </div>\n                     </div>\n                  </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div>\n          </div>\n          <div>\n          </div>\n        </div>\n        <div class=\"col-sm-12 mt-5 mb-5\">\n          <div class=\"row  d-flex justify-content-around\">\n            <div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-end\n            mb-lg-0 mb-md-0 mb-sm-2 mb-xs-2\">\n                <button  type=\"button\" (click)=\"closeDialog()\"\n                  class=\"btn btn-secondary btn-default btn-lg col-lg-6 col-md-6 {{ dialogData?.cancelBtnCustomClass }}\">{{ dialogData?.cancelBtnText }}</button>\n            </div>\n            <div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\n                <button type=\"button\" class=\"btn btn-info btn btn-info btn-lg col-lg-6 col-md-6 col-sm-12 col-xs-12 {{ dialogData?.submitBtnCustomClass }}\" (click)=\"addLicense();\">{{ dialogData?.submitBtnTxt }}</button>\n            </div>\n          </div>\n        </div>\n      </div>\n </div>\n",
+                    styles: [".btn-info{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#fff;color:#000}.headerFont{font-family:Poppins,sans-serif;letter-spacing:0;margin-top:8px;color:#aba4a4e0;font-size:2.5rem}.pointer{cursor:pointer}.bT{border:2px solid #e6e1e18c!important;background-color:#f7f3f354!important;margin-right:24px}.card-header{background-color:#272727;box-shadow:0 1px 1px rgba(0,0,0,.5);color:#fff}.licNum{position:absolute;top:44px;right:267px;font-size:12px;margin-left:50px;color:#000000ad;font-family:'Encode Sans',sans-serif!important}::ng-deep mat-dialog-container{padding:0!important;overflow:hidden!important}:host ::ng-deep mat-dialog-content{max-height:91%!important;overflow-y:none!important;margin:0!important;height:100%!important}:host ::ng-deep mat-dialog-actions{margin:5px 10px!important}.btn-default{border:2px solid #757575;border-radius:28px 76px 63px;background-color:#fff;color:#000}.btn-default:hover{border:2px solid #757575;border-radius:28px 76px 63px;background-color:#757575;color:#fff}.btn-default:click{border:2px solid #757575;border-radius:28px 76px 63px;background-color:#757575!important;color:#fff}.btn-default:active{border:2px solid #757575;border-radius:28px 76px 63px;background-color:#757575;color:#fff}.bgWhite{background-color:#fff!important}.btn-info:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn-info:click{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e!important;color:#fff}.btn-info:active{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn-info.disabled{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#fff;color:grey}"]
+                }] }
+    ];
+    /** @nocollapse */
+    SukuAddLicenseModalComponent.ctorParameters = function () { return [
+        { type: MatSnackBar },
+        { type: MatDialogRef },
+        { type: undefined, decorators: [{ type: Inject, args: [MAT_DIALOG_DATA,] }] }
+    ]; };
+    SukuAddLicenseModalComponent.propDecorators = {
+        dialogData: [{ type: Input }]
+    };
+    return SukuAddLicenseModalComponent;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+// import { Observable } from 'rxjs/Rx';
+// import { BehaviorSubject } from 'rxjs/BehaviorSubject'; 
 var SukuModalService = /** @class */ (function () {
     function SukuModalService(dialogService) {
         this.dialogService = dialogService;
@@ -1345,6 +1671,81 @@ var SukuModalService = /** @class */ (function () {
                 message: data ? data.message : '',
                 description: data ? data.description : '',
                 buttonText: data ? data.buttonText : ''
+            }
+        });
+        dialogRef.afterClosed().subscribe((/**
+         * @param {?} result
+         * @return {?}
+         */
+        function (result) {
+            _this.onDialogClose.emit(result);
+        }));
+    };
+    /**
+     * @param {?=} data
+     * @return {?}
+     */
+    SukuModalService.prototype.openLicenseModalDialogDialog = /**
+     * @param {?=} data
+     * @return {?}
+     */
+    function (data) {
+        var _this = this;
+        /** @type {?} */
+        var dialogRef = this.dialogService.open(SukuAddLicenseModalComponent, {
+            width: 'auto',
+            height: 'auto',
+            disableClose: this.confirmationDialogClose,
+            data: {
+                controlOne: data ? data.controlOne : '',
+                controlTwo: data ? data.controlTwo : '',
+                dateControlOne: data ? data.dateControlOne : '',
+                controlTwoRequiredd: data ? data.controlTwoRequiredd : '',
+                dateControlTwo: data ? data.dateControlTwo : '',
+                'controlOneRequired': data ? data.controlOneRequired : '',
+                controlTwoRequired: data ? data.controlTwoRequired : '',
+                dateControlOneRequired: data ? data.dateControlOneRequired : '',
+                dateControlTwoRequired: data ? data.dateControlTwoRequired : '',
+                'controlOnePatternEnabled': data ? data.controlOnePatternEnabled : '',
+                'controlTwoPatternEnabled': data ? data.controlTwoPatternEnabled : '',
+                'controlOnePattern': data ? data.controlOnePattern : '',
+                'controlTwoPattern': data ? data.controlTwoPattern : '',
+                'title': data ? data.title : '',
+                'subTitle': data ? data.subTitle : '',
+                'controlHint': data ? data.controlHint : '',
+                'hintClass': data ? data.hintClass : '',
+                'headerCutomStyle': data ? data.headerCutomStyle : '',
+                'startDateMaxDate': data ? data.startDateMaxDate : '',
+                'endDateMaxDate': data ? data.endDateMaxDate : '',
+                'startDateMinDate': data ? data.startDateMinDate : '',
+                'endDateMinDate': data ? data.endDateMinDate : '',
+                'controlOneId': data ? data.controlOneId : '',
+                controlTwoId: data ? data.controlTwoId : '',
+                dateControlOneId: data ? data.dateControlOneId : '',
+                dateControlTwoId: data ? data.dateControlTwoId : '',
+                controlTwoToolTip: data ? data.controlTwoToolTip : '',
+                controlOnePlaceholder: data ? data.controlOnePlaceholder : '',
+                controlTwoPlaceholder: data ? data.controlTwoPlaceholder : '',
+                dateControlOnePlaceholder: data ? data.dateControlOnePlaceholder : '',
+                dateControlTwoPlaceholder: data ? data.dateControlTwoPlaceholder : '',
+                controlOneRquiredErrorMsg: data ? data.controlOneRquiredErrorMsg : '',
+                controlTwoRquiredErrorMsg: data ? data.controlTwoRquiredErrorMsg : '',
+                controlTwoPatternErrorMsg: data ? data.controlTwoPatternErrorMsg : '',
+                dateControlOneRquiredErrorMsg: data ? data.dateControlOneRquired : '',
+                dateControlTwoRquiredErrorMsg: data ? data.dateControlTwoRquiredErrorMsg : '',
+                acceptDocment: data ? data.acceptDocment : '',
+                uploadImg: data ? data.uploadImg : '',
+                uploadTitle: data ? data.uploadTitle : '',
+                fileListTitle: data ? data.fileListTitle : '',
+                fileInputId: data ? data.fileInputId : '',
+                filesArray: data ? data.filesArray : '',
+                fileRemoveBtnTxt: data ? data.fileRemoveBtnTxt : '',
+                fileRemoveBtnId: data ? data.fileRemoveBtnId : '',
+                uploadImgAltTxt: data ? data.uploadImgAltTxt : '',
+                cancelBtnText: data ? data.cancelBtnText : '',
+                submitBtnTxt: data ? data.submitBtnTxt : '',
+                submitBtnCustomClass: data ? data.submitBtnCustomClass : '',
+                cancelBtnCustomClass: data ? data.cancelBtnCustomClass : '',
             }
         });
         dialogRef.afterClosed().subscribe((/**
@@ -7259,33 +7660,6 @@ var SukuProfileImageIconComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-var SukuAddLicenseModelComponent = /** @class */ (function () {
-    function SukuAddLicenseModelComponent() {
-    }
-    /**
-     * @return {?}
-     */
-    SukuAddLicenseModelComponent.prototype.ngOnInit = /**
-     * @return {?}
-     */
-    function () {
-    };
-    SukuAddLicenseModelComponent.decorators = [
-        { type: Component, args: [{
-                    selector: 'app-suku-add-license-model',
-                    template: "<p>\n  suku-add-license-model works!\n</p>\n",
-                    styles: [""]
-                }] }
-    ];
-    /** @nocollapse */
-    SukuAddLicenseModelComponent.ctorParameters = function () { return []; };
-    return SukuAddLicenseModelComponent;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
 var SukuGalleryUploadComponent = /** @class */ (function () {
     function SukuGalleryUploadComponent() {
         this.gallery = [];
@@ -7600,7 +7974,7 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         SukuWysiwygEditorComponent,
                         SukuProfileImageIconComponent,
                         SukuConfirmationModalComponent,
-                        SukuAddLicenseModelComponent,
+                        SukuAddLicenseModalComponent,
                         SukuGalleryUploadComponent,
                         SukuChipListComponent
                     ],
@@ -7722,11 +8096,11 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         SukuWysiwygEditorComponent,
                         SukuProfileImageIconComponent,
                         SukuConfirmationModalComponent,
-                        SukuAddLicenseModelComponent,
+                        SukuAddLicenseModalComponent,
                         SukuGalleryUploadComponent,
                         SukuChipListComponent
                     ],
-                    entryComponents: [SukuConfirmationModalComponent],
+                    entryComponents: [SukuConfirmationModalComponent, SukuAddLicenseModalComponent],
                     schemas: []
                 },] }
     ];
@@ -8001,6 +8375,6 @@ var SukuWebcomponentsService = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { SukuFormFooterModule, SukuAchSettingModule, SukuAddIconWidgetModule, SukuBidTagModule, SukuButtonsModule, SukuLoaderModule, SukuModalModule, SukuModalService, SukuFileUploadModule, SukuWebcomponentsModule, suku, dark, light, SukuWebcomponentsService, SukuLoaderService, SukuACHSettingsComponent as ɵb, SukuAddIconComponent as ɵcd, SukuAddLicenseModelComponent as ɵcy, SukuAddWidgetComponent as ɵc, SukuAddressWidgetComponent as ɵbe, SukuBeneficialOwnerComponent as ɵbt, SukuBidInfoComponent as ɵbc, SukuLargeBidTagComponent as ɵcq, SukuBidTagComponent as ɵd, SukuBidWidgetTagComponent as ɵcr, SukuDefaultButtonComponent as ɵh, SukuHomepageButtonComponent as ɵi, SukuInfoButtonComponent as ɵe, SukuPrimaryButtonComponent as ɵf, SukuSecondaryButtonComponent as ɵg, SukuCardLineTypeOneComponent as ɵbz, SukuCardLineTypeTwoComponent as ɵca, SukuCardLineComponent as ɵn, SukuCardTitleComponent as ɵbm, ScrollToBottomDirective as ɵcp, SukuChatWidgetComponent as ɵco, SukuCheckboxComponent as ɵct, SukuChipListComponent as ɵda, SukuConfirmationModalComponent as ɵcx, SukuConfirmationComponent as ɵk, SukuCreateCustomerComponent as ɵbs, SukuCreationCustomerFileuploadComponent as ɵbw, SukuDashboardProfileComponent as ɵo, SukuDropdownComponent as ɵcj, SukuDwollaFundingAgreementComponent as ɵbu, SukuDwollaFundingSourceComponent as ɵbv, SukuDropZoneDirective as ɵm, SukuFileUploadComponent as ɵl, SukuFiltersComponent as ɵbi, SukuFormFooterComponent as ɵa, SukuFundingSourceComponent as ɵbr, SukuGalleryUploadComponent as ɵcz, SukuGalleryComponent as ɵcs, SukuHeaderComponent as ɵck, SukuHeadingComponent as ɵp, SukuHomeItalicHeadingComponent as ɵq, SukuHomeWidgetComponent as ɵr, SukuHomepageSectionComponent as ɵcf, SukuHomepageComponent as ɵce, SukuImageWidgetComponent as ɵcn, SukuInlineDropdownComponent as ɵs, SukuLinkComponent as ɵz, SukuLoaderComponent as ɵj, SukuMailWidgetComponent as ɵt, SukuMatchChipComponent as ɵu, SukuNavSubmenuComponent as ɵbb, SukuNotificationPanelComponent as ɵcc, SukuNotificationWidgetComponent as ɵv, SukuPaymentPortalHelpComponent as ɵbx, SukuPhoneWidgetComponent as ɵbd, SukuProductTraceWidgetComponent as ɵbk, SukuProfileHeaderComponent as ɵcg, SukuProfileImageIconComponent as ɵcw, SukuProfileWidgetComponent as ɵbg, SukuProgressBarTypeOneComponent as ɵw, SukuProgressBarTypeTwoComponent as ɵx, SukuRadioButtonComponent as ɵci, SukuRatingCardLineComponent as ɵcb, SukuRatingStarComponent as ɵbn, SukuResponseComponent as ɵbp, SukuSearchInputComponent as ɵbf, SukuSelectInputComponent as ɵba, SukuShippingInfoWidgetComponent as ɵcm, SukuShippingWidgetComponent as ɵbo, SukuSocialIconsComponent as ɵch, SukuStarBadgeComponent as ɵbh, SukuSubHeadingComponent as ɵy, SukuTermsAndConditionsComponent as ɵby, SukuTitleHeaderComponent as ɵcl, SukuTrackProgressBarComponent as ɵbj, SukuTransactionHistoryComponent as ɵbq, SukuTreeComponent as ɵbl, SukuUserInputComponent as ɵcu, SukuWysiwygEditorComponent as ɵcv };
+export { SukuFormFooterModule, SukuAchSettingModule, SukuAddIconWidgetModule, SukuBidTagModule, SukuButtonsModule, SukuLoaderModule, SukuModalModule, SukuModalService, SukuFileUploadModule, SukuWebcomponentsModule, suku, dark, light, SukuWebcomponentsService, SukuLoaderService, SukuACHSettingsComponent as ɵb, SukuAddIconComponent as ɵcd, SukuAddLicenseModalComponent as ɵcy, SukuAddWidgetComponent as ɵc, SukuAddressWidgetComponent as ɵbe, SukuBeneficialOwnerComponent as ɵbt, SukuBidInfoComponent as ɵbc, SukuLargeBidTagComponent as ɵcq, SukuBidTagComponent as ɵd, SukuBidWidgetTagComponent as ɵcr, SukuDefaultButtonComponent as ɵh, SukuHomepageButtonComponent as ɵi, SukuInfoButtonComponent as ɵe, SukuPrimaryButtonComponent as ɵf, SukuSecondaryButtonComponent as ɵg, SukuCardLineTypeOneComponent as ɵbz, SukuCardLineTypeTwoComponent as ɵca, SukuCardLineComponent as ɵn, SukuCardTitleComponent as ɵbm, ScrollToBottomDirective as ɵcp, SukuChatWidgetComponent as ɵco, SukuCheckboxComponent as ɵct, SukuChipListComponent as ɵda, SukuConfirmationModalComponent as ɵcx, SukuConfirmationComponent as ɵk, SukuCreateCustomerComponent as ɵbs, SukuCreationCustomerFileuploadComponent as ɵbw, SukuDashboardProfileComponent as ɵo, SukuDropdownComponent as ɵcj, SukuDwollaFundingAgreementComponent as ɵbu, SukuDwollaFundingSourceComponent as ɵbv, SukuDropZoneDirective as ɵm, SukuFileUploadComponent as ɵl, SukuFiltersComponent as ɵbi, SukuFormFooterComponent as ɵa, SukuFundingSourceComponent as ɵbr, SukuGalleryUploadComponent as ɵcz, SukuGalleryComponent as ɵcs, SukuHeaderComponent as ɵck, SukuHeadingComponent as ɵp, SukuHomeItalicHeadingComponent as ɵq, SukuHomeWidgetComponent as ɵr, SukuHomepageSectionComponent as ɵcf, SukuHomepageComponent as ɵce, SukuImageWidgetComponent as ɵcn, SukuInlineDropdownComponent as ɵs, SukuLinkComponent as ɵz, SukuLoaderComponent as ɵj, SukuMailWidgetComponent as ɵt, SukuMatchChipComponent as ɵu, SukuNavSubmenuComponent as ɵbb, SukuNotificationPanelComponent as ɵcc, SukuNotificationWidgetComponent as ɵv, SukuPaymentPortalHelpComponent as ɵbx, SukuPhoneWidgetComponent as ɵbd, SukuProductTraceWidgetComponent as ɵbk, SukuProfileHeaderComponent as ɵcg, SukuProfileImageIconComponent as ɵcw, SukuProfileWidgetComponent as ɵbg, SukuProgressBarTypeOneComponent as ɵw, SukuProgressBarTypeTwoComponent as ɵx, SukuRadioButtonComponent as ɵci, SukuRatingCardLineComponent as ɵcb, SukuRatingStarComponent as ɵbn, SukuResponseComponent as ɵbp, SukuSearchInputComponent as ɵbf, SukuSelectInputComponent as ɵba, SukuShippingInfoWidgetComponent as ɵcm, SukuShippingWidgetComponent as ɵbo, SukuSocialIconsComponent as ɵch, SukuStarBadgeComponent as ɵbh, SukuSubHeadingComponent as ɵy, SukuTermsAndConditionsComponent as ɵby, SukuTitleHeaderComponent as ɵcl, SukuTrackProgressBarComponent as ɵbj, SukuTransactionHistoryComponent as ɵbq, SukuTreeComponent as ɵbl, SukuUserInputComponent as ɵcu, SukuWysiwygEditorComponent as ɵcv };
 
 //# sourceMappingURL=suku-webcomponents.js.map

@@ -4,7 +4,7 @@
 export * from './public_api';
 export { SukuACHSettingsComponent as ɵb } from './lib/suku-achsettings/suku-achsettings.component';
 export { SukuAddIconComponent as ɵcd } from './lib/suku-add-icon/suku-add-icon.component';
-export { SukuAddLicenseModelComponent as ɵcy } from './lib/suku-add-license-model/suku-add-license-model.component';
+export { SukuAddLicenseModalComponent as ɵcy } from './lib/suku-add-license-modal/suku-add-license-modal.component';
 export { SukuAddWidgetComponent as ɵc } from './lib/suku-add-widget/suku-add-widget.component';
 export { SukuAddressWidgetComponent as ɵbe } from './lib/suku-address-widget/suku-address-widget.component';
 export { SukuBeneficialOwnerComponent as ɵbt } from './lib/suku-beneficial-owner/suku-beneficial-owner.component';

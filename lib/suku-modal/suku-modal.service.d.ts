@@ -9,4 +9,5 @@ export declare class SukuModalService {
     constructor(dialogService: MatDialog);
     openConfirmationDialog(data?: any): void;
     openConfirmationModalDialog(data?: any): void;
+    openLicenseModalDialogDialog(data?: any): void;
 }
