@@ -4,7 +4,7 @@ export declare class SukuModalService {
     dialogService: MatDialog;
     confirmationDialogWidth: any;
     confirmationDialogHeight: any;
-    confirmationDialogClose: any;
+    confirmationDialogClose: boolean;
     onDialogClose: EventEmitter<any>;
     constructor(dialogService: MatDialog);
     openConfirmationDialog(data?: any): void;
