@@ -7894,8 +7894,6 @@
             this.DocumentList = [];
             this.actionOne = new i0.EventEmitter();
             this.actionTwo = new i0.EventEmitter();
-            this.tempDataOne = ( /** @type {?} */([]));
-            this.tempDataTwo = ( /** @type {?} */([]));
         }
         /**
          * @return {?}
@@ -7907,48 +7905,30 @@
             };
         /**
          * @param {?} val
-         * @param {?} docIndex
          * @return {?}
          */
         SukuChipListComponent.prototype.downloadDoc = /**
          * @param {?} val
-         * @param {?} docIndex
          * @return {?}
          */
-            function (val, docIndex) {
-                this.tempDataOne.map(( /**
-                 * @param {?} d
-                 * @return {?}
-                 */function (d) {
-                    d.value = val;
-                    d.index = docIndex;
-                }));
-                this.actionOne.emit(this.tempDataOne);
+            function (val) {
+                this.actionOne.emit(val);
             };
         /**
          * @param {?} val
-         * @param {?} docIndex
          * @return {?}
          */
         SukuChipListComponent.prototype.deleteDoc = /**
          * @param {?} val
-         * @param {?} docIndex
          * @return {?}
          */
-            function (val, docIndex) {
-                this.tempDataTwo.map(( /**
-                 * @param {?} d
-                 * @return {?}
-                 */function (d) {
-                    d.value = val;
-                    d.index = docIndex;
-                }));
-                this.actionTwo.emit(this.tempDataTwo);
+            function (val) {
+                this.actionTwo.emit(val);
             };
         SukuChipListComponent.decorators = [
             { type: i0.Component, args: [{
                         selector: 'suku-chip-list',
-                        template: "<div class=\"col\">\n  <mat-chip-list>\n    <mat-chip class=\"whiteSpace\" *ngFor=\"let doc of DocumentList;let docIndex = index;\"> <br>\n      <mat-icon matChipRemove (click)=\"downloadDoc(doc,docIndex)\" matTooltip=\"Download\">\n        save_alt\n      </mat-icon>\n      <mat-icon matChipRemove matTooltip=\"Delete\" (click)=\"deleteDoc(doc,docIndex)\">clear\n      </mat-icon>\n      <span> {{doc.name}}</span>\n    </mat-chip>\n  </mat-chip-list>\n</div>",
+                        template: "<div class=\"col\">\n  <mat-chip-list>\n    <mat-chip class=\"whiteSpace\" *ngFor=\"let doc of DocumentList;let docIndex = index;\"> <br>\n      <mat-icon matChipRemove (click)=\"downloadDoc(doc)\" matTooltip=\"Download\">\n        save_alt\n      </mat-icon>\n      <mat-icon matChipRemove matTooltip=\"Delete\" (click)=\"deleteDoc(doc)\">clear\n      </mat-icon>\n      <span> {{doc.name}}</span>\n    </mat-chip>\n  </mat-chip-list>\n</div>",
                         styles: [".whiteSpace{white-space:nowrap}"]
                     }] }
         ];

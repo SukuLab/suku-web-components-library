@@ -8,8 +8,6 @@ var SukuChipListComponent = /** @class */ (function () {
         this.DocumentList = [];
         this.actionOne = new EventEmitter();
         this.actionTwo = new EventEmitter();
-        this.tempDataOne = (/** @type {?} */ ([]));
-        this.tempDataTwo = (/** @type {?} */ ([]));
     }
     /**
      * @return {?}
@@ -21,50 +19,30 @@ var SukuChipListComponent = /** @class */ (function () {
     };
     /**
      * @param {?} val
-     * @param {?} docIndex
      * @return {?}
      */
     SukuChipListComponent.prototype.downloadDoc = /**
      * @param {?} val
-     * @param {?} docIndex
      * @return {?}
      */
-    function (val, docIndex) {
-        this.tempDataOne.map((/**
-         * @param {?} d
-         * @return {?}
-         */
-        function (d) {
-            d.value = val;
-            d.index = docIndex;
-        }));
-        this.actionOne.emit(this.tempDataOne);
+    function (val) {
+        this.actionOne.emit(val);
     };
     /**
      * @param {?} val
-     * @param {?} docIndex
      * @return {?}
      */
     SukuChipListComponent.prototype.deleteDoc = /**
      * @param {?} val
-     * @param {?} docIndex
      * @return {?}
      */
-    function (val, docIndex) {
-        this.tempDataTwo.map((/**
-         * @param {?} d
-         * @return {?}
-         */
-        function (d) {
-            d.value = val;
-            d.index = docIndex;
-        }));
-        this.actionTwo.emit(this.tempDataTwo);
+    function (val) {
+        this.actionTwo.emit(val);
     };
     SukuChipListComponent.decorators = [
         { type: Component, args: [{
                     selector: 'suku-chip-list',
-                    template: "<div class=\"col\">\n  <mat-chip-list>\n    <mat-chip class=\"whiteSpace\" *ngFor=\"let doc of DocumentList;let docIndex = index;\"> <br>\n      <mat-icon matChipRemove (click)=\"downloadDoc(doc,docIndex)\" matTooltip=\"Download\">\n        save_alt\n      </mat-icon>\n      <mat-icon matChipRemove matTooltip=\"Delete\" (click)=\"deleteDoc(doc,docIndex)\">clear\n      </mat-icon>\n      <span> {{doc.name}}</span>\n    </mat-chip>\n  </mat-chip-list>\n</div>",
+                    template: "<div class=\"col\">\n  <mat-chip-list>\n    <mat-chip class=\"whiteSpace\" *ngFor=\"let doc of DocumentList;let docIndex = index;\"> <br>\n      <mat-icon matChipRemove (click)=\"downloadDoc(doc)\" matTooltip=\"Download\">\n        save_alt\n      </mat-icon>\n      <mat-icon matChipRemove matTooltip=\"Delete\" (click)=\"deleteDoc(doc)\">clear\n      </mat-icon>\n      <span> {{doc.name}}</span>\n    </mat-chip>\n  </mat-chip-list>\n</div>",
                     styles: [".whiteSpace{white-space:nowrap}"]
                 }] }
     ];
@@ -85,9 +63,5 @@ if (false) {
     SukuChipListComponent.prototype.actionOne;
     /** @type {?} */
     SukuChipListComponent.prototype.actionTwo;
-    /** @type {?} */
-    SukuChipListComponent.prototype.tempDataOne;
-    /** @type {?} */
-    SukuChipListComponent.prototype.tempDataTwo;
 }
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3VrdS1jaGlwLWxpc3QuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6Im5nOi8vc3VrdS13ZWJjb21wb25lbnRzLyIsInNvdXJjZXMiOlsibGliL3N1a3UtY2hpcC1saXN0L3N1a3UtY2hpcC1saXN0LmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxLQUFLLEVBQUcsTUFBTSxFQUFFLFlBQVksR0FBRyxNQUFNLGVBQWUsQ0FBQztBQUVqRjtJQVlFO1FBTHdCLGlCQUFZLEdBQUcsRUFBRSxDQUFDO1FBQ3BCLGNBQVMsR0FBRyxJQUFJLFlBQVksRUFBRSxDQUFDO1FBQy9CLGNBQVMsR0FBRyxJQUFJLFlBQVksRUFBRSxDQUFDO1FBQ3JELGdCQUFXLEdBQUcsbUJBQUssRUFBRSxFQUFBLENBQUM7UUFDdkIsZ0JBQVcsR0FBRyxtQkFBSyxFQUFFLEVBQUEsQ0FBQztJQUNMLENBQUM7Ozs7SUFFakIsd0NBQVE7OztJQUFSO0lBQ0EsQ0FBQzs7Ozs7O0lBRUYsMkNBQVc7Ozs7O0lBQVgsVUFBWSxHQUFHLEVBQUMsUUFBUTtRQUNyQixJQUFJLENBQUMsV0FBVyxDQUFDLEdBQUc7Ozs7UUFBQyxVQUFDLENBQUM7WUFDckIsQ0FBQyxDQUFDLEtBQUssR0FBRyxHQUFHLENBQUM7WUFDZCxDQUFDLENBQUMsS0FBSyxHQUFHLFFBQVEsQ0FBQTtRQUNwQixDQUFDLEVBQUMsQ0FBQztRQUNMLElBQUksQ0FBQyxTQUFTLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxXQUFXLENBQUMsQ0FBQztJQUN0QyxDQUFDOzs7Ozs7SUFFRCx5Q0FBUzs7Ozs7SUFBVCxVQUFVLEdBQUcsRUFBQyxRQUFRO1FBQ3BCLElBQUksQ0FBQyxXQUFXLENBQUMsR0FBRzs7OztRQUFDLFVBQUMsQ0FBQztZQUNyQixDQUFDLENBQUMsS0FBSyxHQUFHLEdBQUcsQ0FBQztZQUNkLENBQUMsQ0FBQyxLQUFLLEdBQUcsUUFBUSxDQUFBO1FBQ3BCLENBQUMsRUFBQyxDQUFDO1FBQ0wsSUFBSSxDQUFDLFNBQVMsQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLFdBQVcsQ0FBQyxDQUFDO0lBQ3ZDLENBQUM7O2dCQS9CRCxTQUFTLFNBQUM7b0JBQ1QsUUFBUSxFQUFFLGdCQUFnQjtvQkFDMUIseWRBQThDOztpQkFFL0M7Ozs7OytCQUdFLEtBQUssU0FBQyxlQUFlOzRCQUNyQixNQUFNLFNBQUMsWUFBWTs0QkFDbkIsTUFBTSxTQUFDLFlBQVk7O0lBdUJ0Qiw0QkFBQztDQUFBLEFBaENELElBZ0NDO1NBM0JZLHFCQUFxQjs7O0lBRWhDLDZDQUEwQzs7SUFDMUMsMENBQXFEOztJQUNyRCwwQ0FBcUQ7O0lBQ3JELDRDQUFzQjs7SUFDdkIsNENBQXNCIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tcG9uZW50LCBPbkluaXQsIElucHV0ICxcdE91dHB1dCxcdEV2ZW50RW1pdHRlciwgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcblxuQENvbXBvbmVudCh7XG4gIHNlbGVjdG9yOiAnc3VrdS1jaGlwLWxpc3QnLFxuICB0ZW1wbGF0ZVVybDogJy4vc3VrdS1jaGlwLWxpc3QuY29tcG9uZW50Lmh0bWwnLFxuICBzdHlsZVVybHM6IFsnLi9zdWt1LWNoaXAtbGlzdC5jb21wb25lbnQuc2NzcyddXG59KVxuZXhwb3J0IGNsYXNzIFN1a3VDaGlwTGlzdENvbXBvbmVudCBpbXBsZW1lbnRzIE9uSW5pdCB7XG5cbiAgQElucHV0KCdkb2N1bWVudC1saXN0JykgRG9jdW1lbnRMaXN0ID0gW107XG4gIEBPdXRwdXQoJ2FjdGlvbi1vbmUnKSBhY3Rpb25PbmUgPSBuZXcgRXZlbnRFbWl0dGVyKCk7XG4gIEBPdXRwdXQoJ2FjdGlvbi10d28nKSBhY3Rpb25Ud28gPSBuZXcgRXZlbnRFbWl0dGVyKCk7XG4gIHRlbXBEYXRhT25lID0gPGFueT5bXTtcblx0dGVtcERhdGFUd28gPSA8YW55PltdO1xuICBjb25zdHJ1Y3RvcigpIHsgfVxuXG4gIG5nT25Jbml0KCkge1xuICB9XG5cblx0ZG93bmxvYWREb2ModmFsLGRvY0luZGV4KSB7XG4gICAgdGhpcy50ZW1wRGF0YU9uZS5tYXAoKGQpID0+IHtcbiAgICAgIGQudmFsdWUgPSB2YWw7XG4gICAgICBkLmluZGV4ID0gZG9jSW5kZXhcbiAgICB9KTtcblx0XHR0aGlzLmFjdGlvbk9uZS5lbWl0KHRoaXMudGVtcERhdGFPbmUpO1xuICB9XG4gIFxuICBkZWxldGVEb2ModmFsLGRvY0luZGV4KSB7XG4gICAgdGhpcy50ZW1wRGF0YVR3by5tYXAoKGQpID0+IHtcbiAgICAgIGQudmFsdWUgPSB2YWw7XG4gICAgICBkLmluZGV4ID0gZG9jSW5kZXhcbiAgICB9KTtcblx0XHR0aGlzLmFjdGlvblR3by5lbWl0KHRoaXMudGVtcERhdGFUd28pO1xuXHR9XG59XG4iXX0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3VrdS1jaGlwLWxpc3QuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6Im5nOi8vc3VrdS13ZWJjb21wb25lbnRzLyIsInNvdXJjZXMiOlsibGliL3N1a3UtY2hpcC1saXN0L3N1a3UtY2hpcC1saXN0LmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxLQUFLLEVBQUcsTUFBTSxFQUFFLFlBQVksR0FBRyxNQUFNLGVBQWUsQ0FBQztBQUVqRjtJQVVFO1FBSHdCLGlCQUFZLEdBQUcsRUFBRSxDQUFDO1FBQ3BCLGNBQVMsR0FBRyxJQUFJLFlBQVksRUFBRSxDQUFDO1FBQy9CLGNBQVMsR0FBRyxJQUFJLFlBQVksRUFBRSxDQUFDO0lBQ3JDLENBQUM7Ozs7SUFFakIsd0NBQVE7OztJQUFSO0lBQ0EsQ0FBQzs7Ozs7SUFFRiwyQ0FBVzs7OztJQUFYLFVBQVksR0FBRztRQUNkLElBQUksQ0FBQyxTQUFTLENBQUMsSUFBSSxDQUFDLEdBQUcsQ0FBQyxDQUFDO0lBQ3pCLENBQUM7Ozs7O0lBRUQseUNBQVM7Ozs7SUFBVCxVQUFVLEdBQUc7UUFDYixJQUFJLENBQUMsU0FBUyxDQUFDLElBQUksQ0FBQyxHQUFHLENBQUMsQ0FBQztJQUMxQixDQUFDOztnQkFyQkQsU0FBUyxTQUFDO29CQUNULFFBQVEsRUFBRSxnQkFBZ0I7b0JBQzFCLHVjQUE4Qzs7aUJBRS9DOzs7OzsrQkFHRSxLQUFLLFNBQUMsZUFBZTs0QkFDckIsTUFBTSxTQUFDLFlBQVk7NEJBQ25CLE1BQU0sU0FBQyxZQUFZOztJQWF0Qiw0QkFBQztDQUFBLEFBdEJELElBc0JDO1NBakJZLHFCQUFxQjs7O0lBRWhDLDZDQUEwQzs7SUFDMUMsMENBQXFEOztJQUNyRCwwQ0FBcUQiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQsIE9uSW5pdCwgSW5wdXQgLFx0T3V0cHV0LFx0RXZlbnRFbWl0dGVyLCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdzdWt1LWNoaXAtbGlzdCcsXG4gIHRlbXBsYXRlVXJsOiAnLi9zdWt1LWNoaXAtbGlzdC5jb21wb25lbnQuaHRtbCcsXG4gIHN0eWxlVXJsczogWycuL3N1a3UtY2hpcC1saXN0LmNvbXBvbmVudC5zY3NzJ11cbn0pXG5leHBvcnQgY2xhc3MgU3VrdUNoaXBMaXN0Q29tcG9uZW50IGltcGxlbWVudHMgT25Jbml0IHtcblxuICBASW5wdXQoJ2RvY3VtZW50LWxpc3QnKSBEb2N1bWVudExpc3QgPSBbXTtcbiAgQE91dHB1dCgnYWN0aW9uLW9uZScpIGFjdGlvbk9uZSA9IG5ldyBFdmVudEVtaXR0ZXIoKTtcbiAgQE91dHB1dCgnYWN0aW9uLXR3bycpIGFjdGlvblR3byA9IG5ldyBFdmVudEVtaXR0ZXIoKTtcbiAgY29uc3RydWN0b3IoKSB7IH1cblxuICBuZ09uSW5pdCgpIHtcbiAgfVxuXG5cdGRvd25sb2FkRG9jKHZhbCkge1xuXHRcdHRoaXMuYWN0aW9uT25lLmVtaXQodmFsKTtcbiAgfVxuICBcbiAgZGVsZXRlRG9jKHZhbCkge1xuXHRcdHRoaXMuYWN0aW9uVHdvLmVtaXQodmFsKTtcblx0fVxufVxuIl19
