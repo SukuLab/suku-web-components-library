@@ -30,6 +30,7 @@ export { SukuConfirmationComponent as ɵk } from './lib/suku-confirmation/suku-c
 export { SukuCreateCustomerComponent as ɵbs } from './lib/suku-create-customer/suku-create-customer.component';
 export { SukuCreationCustomerFileuploadComponent as ɵbw } from './lib/suku-creation-customer-fileupload/suku-creation-customer-fileupload.component';
 export { SukuDashboardProfileComponent as ɵo } from './lib/suku-dashboard-profile/suku-dashboard-profile.component';
+export { SukuDateTimePickerComponent as ɵdb } from './lib/suku-date-time-picker/suku-date-time-picker.component';
 export { SukuDropdownComponent as ɵcj } from './lib/suku-dropdown/suku-dropdown.component';
 export { SukuDwollaFundingAgreementComponent as ɵbu } from './lib/suku-dwolla-funding-agreement/suku-dwolla-funding-agreement.component';
 export { SukuDwollaFundingSourceComponent as ɵbv } from './lib/suku-dwolla-funding-source/suku-dwolla-funding-source.component';

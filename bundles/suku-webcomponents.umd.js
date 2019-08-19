@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/elements'), require('@angular/common'), require('ngx-countdown-timer'), require('@angular/material'), require('@angular/material/dialog'), require('d3'), require('@angular/forms'), require('ngx-quill'), require('@angular/core')) :
-    typeof define === 'function' && define.amd ? define('suku-webcomponents', ['exports', '@angular/elements', '@angular/common', 'ngx-countdown-timer', '@angular/material', '@angular/material/dialog', 'd3', '@angular/forms', 'ngx-quill', '@angular/core'], factory) :
-    (factory((global['suku-webcomponents'] = {}),global.ng.elements,global.ng.common,global.ngxCountdownTimer,global.ng.material,global.ng.material.dialog,global.d3,global.ng.forms,global.ngxQuill,global.ng.core));
-}(this, (function (exports,elements,common,ngxCountdownTimer,material,i1,d3,forms,ngxQuill,i0) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/elements'), require('@angular/common'), require('ngx-countdown-timer'), require('@angular/material'), require('@angular/material/dialog'), require('d3'), require('@angular/forms'), require('ngx-quill'), require('ng-pick-datetime'), require('@angular/core')) :
+    typeof define === 'function' && define.amd ? define('suku-webcomponents', ['exports', '@angular/elements', '@angular/common', 'ngx-countdown-timer', '@angular/material', '@angular/material/dialog', 'd3', '@angular/forms', 'ngx-quill', 'ng-pick-datetime', '@angular/core'], factory) :
+    (factory((global['suku-webcomponents'] = {}),global.ng.elements,global.ng.common,global.ngxCountdownTimer,global.ng.material,global.ng.material.dialog,global.d3,global.ng.forms,global.ngxQuill,global.ngPickDatetime,global.ng.core));
+}(this, (function (exports,elements,common,ngxCountdownTimer,material,i1,d3,forms,ngxQuill,ngPickDatetime,i0) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -7946,6 +7946,44 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
+    var SukuDateTimePickerComponent = /** @class */ (function () {
+        function SukuDateTimePickerComponent() {
+            this.control = 'controlName';
+            this.placeholder = 'Date picker';
+            this.dateId = 'datepicker';
+        }
+        /**
+         * @return {?}
+         */
+        SukuDateTimePickerComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+            function () {
+            };
+        SukuDateTimePickerComponent.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'suku-date-time-picker',
+                        template: "<div class=\"col flex\"  [formGroup]=\"form\">\n  <mat-form-field>\n    <input matInput id=\"{{dateId}}\" formControlName=\"{{control}}\" placeholder=\"{{placeholder}}\"\n      min=\"{{min}}\" max=\"{{max}}\" [owlDateTimeTrigger]=\"picker\" [owlDateTime]=\"picker\">\n    <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n    <owl-date-time #picker></owl-date-time>\n  </mat-form-field>\n</div>",
+                        styles: [""]
+                    }] }
+        ];
+        /** @nocollapse */
+        SukuDateTimePickerComponent.ctorParameters = function () { return []; };
+        SukuDateTimePickerComponent.propDecorators = {
+            form: [{ type: i0.Input }],
+            control: [{ type: i0.Input }],
+            placeholder: [{ type: i0.Input, args: ['place-holder',] }],
+            dateId: [{ type: i0.Input, args: ['id',] }],
+            max: [{ type: i0.Input, args: ['max-date',] }],
+            min: [{ type: i0.Input, args: ['min-date',] }]
+        };
+        return SukuDateTimePickerComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
     var SukuWebcomponentsModule = /** @class */ (function () {
         function SukuWebcomponentsModule() {
         }
@@ -8017,7 +8055,8 @@
                             SukuConfirmationModalComponent,
                             SukuAddLicenseModalComponent,
                             SukuGalleryUploadComponent,
-                            SukuChipListComponent
+                            SukuChipListComponent,
+                            SukuDateTimePickerComponent
                         ],
                         imports: [
                             common.CommonModule,
@@ -8066,7 +8105,9 @@
                             SukuFormFooterModule,
                             SukuLoaderModule,
                             SukuFileUploadModule,
-                            ngxQuill.QuillModule
+                            ngxQuill.QuillModule,
+                            ngPickDatetime.OwlDateTimeModule,
+                            ngPickDatetime.OwlNativeDateTimeModule
                         ],
                         providers: [SukuModalService, SukuLoaderService],
                         exports: [
@@ -8139,7 +8180,8 @@
                             SukuConfirmationModalComponent,
                             SukuAddLicenseModalComponent,
                             SukuGalleryUploadComponent,
-                            SukuChipListComponent
+                            SukuChipListComponent,
+                            SukuDateTimePickerComponent
                         ],
                         entryComponents: [SukuConfirmationModalComponent, SukuAddLicenseModalComponent],
                         schemas: []
@@ -8458,6 +8500,7 @@
     exports.ɵbs = SukuCreateCustomerComponent;
     exports.ɵbw = SukuCreationCustomerFileuploadComponent;
     exports.ɵo = SukuDashboardProfileComponent;
+    exports.ɵdb = SukuDateTimePickerComponent;
     exports.ɵcj = SukuDropdownComponent;
     exports.ɵbu = SukuDwollaFundingAgreementComponent;
     exports.ɵbv = SukuDwollaFundingSourceComponent;
