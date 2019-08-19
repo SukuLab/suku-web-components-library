@@ -16,6 +16,7 @@ export declare class SukuAddLicenseModalComponent implements OnInit {
     dateControlOneValue: any;
     dateControlTwoValue: any;
     mulFiles: any[];
+    imagePreviewUrls: any[];
     uploadFiles: any[];
     dialogData: {
         controlOne: string;
@@ -78,5 +79,6 @@ export declare class SukuAddLicenseModalComponent implements OnInit {
     closeDialog(): void;
     startUpload(e: any): void;
     removeFile(param: any): void;
+    downloadDoc(file: any): void;
     snackbar(msg: any): void;
 }

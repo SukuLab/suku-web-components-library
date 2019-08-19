@@ -7,6 +7,9 @@ export declare class SukuDateTimePickerComponent implements OnInit {
     dateId: string;
     max: any;
     min: any;
+    formSumitAttempt: any;
+    errorMsg: string;
     constructor();
     ngOnInit(): void;
+    isFieldValid(field: string): any;
 }

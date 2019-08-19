@@ -9,6 +9,7 @@ var SukuDateTimePickerComponent = /** @class */ (function () {
         this.control = 'controlName';
         this.placeholder = 'Date picker';
         this.dateId = 'datepicker';
+        this.errorMsg = 'Cannot be blank';
     }
     /**
      * @return {?}
@@ -16,12 +17,23 @@ var SukuDateTimePickerComponent = /** @class */ (function () {
     SukuDateTimePickerComponent.prototype.ngOnInit = /**
      * @return {?}
      */
-    function () {
+    function () { };
+    /**
+     * @param {?} field
+     * @return {?}
+     */
+    SukuDateTimePickerComponent.prototype.isFieldValid = /**
+     * @param {?} field
+     * @return {?}
+     */
+    function (field) {
+        return ((!this.form.get(field).valid && this.form.get(field).touched) ||
+            (this.form.get(field).untouched && this.formSumitAttempt));
     };
     SukuDateTimePickerComponent.decorators = [
         { type: Component, args: [{
                     selector: 'suku-date-time-picker',
-                    template: "<div class=\"col flex\"  [formGroup]=\"form\">\n  <mat-form-field>\n    <input matInput id=\"{{dateId}}\" formControlName=\"{{control}}\" placeholder=\"{{placeholder}}\"\n      min=\"{{min}}\" max=\"{{max}}\" [owlDateTimeTrigger]=\"picker\" [owlDateTime]=\"picker\">\n    <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n    <owl-date-time #picker></owl-date-time>\n  </mat-form-field>\n</div>",
+                    template: "<div class=\"col flex\" [formGroup]=\"form\">\n  <mat-form-field class=\"col p-0\">\n    <input matInput id=\"{{dateId}}\" formControlName=\"{{control}}\" placeholder=\"{{placeholder}}\" min=\"{{min}}\"\n      max=\"{{max}}\" [owlDateTimeTrigger]=\"picker\" [owlDateTime]=\"picker\">\n    <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n    <owl-date-time #picker></owl-date-time>\n    <mat-error>\n      <span class=\"err_style\">\n        <span *ngIf=\"form.hasError('required',[control])\" id=\"errorMsg{{dateId}}\">{{errorMsg}}</span>\n      </span>\n    </mat-error>\n  </mat-form-field>\n</div>",
                     styles: [""]
                 }] }
     ];
@@ -33,7 +45,9 @@ var SukuDateTimePickerComponent = /** @class */ (function () {
         placeholder: [{ type: Input, args: ['place-holder',] }],
         dateId: [{ type: Input, args: ['id',] }],
         max: [{ type: Input, args: ['max-date',] }],
-        min: [{ type: Input, args: ['min-date',] }]
+        min: [{ type: Input, args: ['min-date',] }],
+        formSumitAttempt: [{ type: Input }],
+        errorMsg: [{ type: Input }]
     };
     return SukuDateTimePickerComponent;
 }());
@@ -51,5 +65,9 @@ if (false) {
     SukuDateTimePickerComponent.prototype.max;
     /** @type {?} */
     SukuDateTimePickerComponent.prototype.min;
+    /** @type {?} */
+    SukuDateTimePickerComponent.prototype.formSumitAttempt;
+    /** @type {?} */
+    SukuDateTimePickerComponent.prototype.errorMsg;
 }
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3VrdS1kYXRlLXRpbWUtcGlja2VyLmNvbXBvbmVudC5qcyIsInNvdXJjZVJvb3QiOiJuZzovL3N1a3Utd2ViY29tcG9uZW50cy8iLCJzb3VyY2VzIjpbImxpYi9zdWt1LWRhdGUtdGltZS1waWNrZXIvc3VrdS1kYXRlLXRpbWUtcGlja2VyLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxLQUFLLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFDekQsT0FBTyxFQUFFLFNBQVMsRUFBRSxNQUFNLGdCQUFnQixDQUFDO0FBRTNDO0lBYUU7UUFMUyxZQUFPLEdBQUcsYUFBYSxDQUFDO1FBQ1YsZ0JBQVcsR0FBRyxhQUFhLENBQUM7UUFDdEMsV0FBTSxHQUFHLFlBQVksQ0FBQztJQUduQixDQUFDOzs7O0lBR2pCLDhDQUFROzs7SUFBUjtJQUNBLENBQUM7O2dCQWpCRixTQUFTLFNBQUM7b0JBQ1QsUUFBUSxFQUFFLHVCQUF1QjtvQkFDakMsZ2JBQXFEOztpQkFFdEQ7Ozs7O3VCQUdFLEtBQUs7MEJBQ0wsS0FBSzs4QkFDTCxLQUFLLFNBQUMsY0FBYzt5QkFDcEIsS0FBSyxTQUFDLElBQUk7c0JBQ1YsS0FBSyxTQUFDLFVBQVU7c0JBQ2hCLEtBQUssU0FBQyxVQUFVOztJQU9uQixrQ0FBQztDQUFBLEFBbkJELElBbUJDO1NBZFksMkJBQTJCOzs7SUFFdEMsMkNBQXlCOztJQUN6Qiw4Q0FBaUM7O0lBQ2pDLGtEQUFtRDs7SUFDbkQsNkNBQW1DOztJQUNuQywwQ0FBdUI7O0lBQ3ZCLDBDQUF1QiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgT25Jbml0LCBJbnB1dCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgRm9ybUdyb3VwIH0gZnJvbSAnQGFuZ3VsYXIvZm9ybXMnO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdzdWt1LWRhdGUtdGltZS1waWNrZXInLFxuICB0ZW1wbGF0ZVVybDogJy4vc3VrdS1kYXRlLXRpbWUtcGlja2VyLmNvbXBvbmVudC5odG1sJyxcbiAgc3R5bGVVcmxzOiBbJy4vc3VrdS1kYXRlLXRpbWUtcGlja2VyLmNvbXBvbmVudC5zY3NzJ11cbn0pXG5leHBvcnQgY2xhc3MgU3VrdURhdGVUaW1lUGlja2VyQ29tcG9uZW50IGltcGxlbWVudHMgT25Jbml0IHtcblxuICBASW5wdXQoKSBmb3JtOiBGb3JtR3JvdXA7XG4gIEBJbnB1dCgpIGNvbnRyb2wgPSAnY29udHJvbE5hbWUnO1xuICBASW5wdXQoJ3BsYWNlLWhvbGRlcicpIHBsYWNlaG9sZGVyID0gJ0RhdGUgcGlja2VyJztcbiAgQElucHV0KCdpZCcpIGRhdGVJZCA9ICdkYXRlcGlja2VyJztcbiAgQElucHV0KCdtYXgtZGF0ZScpIG1heDtcbiAgQElucHV0KCdtaW4tZGF0ZScpIG1pbjtcbiAgY29uc3RydWN0b3IoKSB7IH1cblxuIFxuICBuZ09uSW5pdCgpIHtcbiAgfVxuXG59XG4iXX0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3VrdS1kYXRlLXRpbWUtcGlja2VyLmNvbXBvbmVudC5qcyIsInNvdXJjZVJvb3QiOiJuZzovL3N1a3Utd2ViY29tcG9uZW50cy8iLCJzb3VyY2VzIjpbImxpYi9zdWt1LWRhdGUtdGltZS1waWNrZXIvc3VrdS1kYXRlLXRpbWUtcGlja2VyLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxLQUFLLEVBQXdCLE1BQU0sZUFBZSxDQUFDO0FBQy9FLE9BQU8sRUFBRSxTQUFTLEVBQUUsTUFBTSxnQkFBZ0IsQ0FBQztBQUczQztJQWdCRTtRQVJTLFlBQU8sR0FBRyxhQUFhLENBQUM7UUFDVixnQkFBVyxHQUFHLGFBQWEsQ0FBQztRQUN0QyxXQUFNLEdBQUcsWUFBWSxDQUFDO1FBSTFCLGFBQVEsR0FBRyxpQkFBaUIsQ0FBQztJQUV0QixDQUFDOzs7O0lBRWpCLDhDQUFROzs7SUFBUixjQUFhLENBQUM7Ozs7O0lBRWYsa0RBQVk7Ozs7SUFBWixVQUFhLEtBQWE7UUFDekIsT0FBTyxDQUNOLENBQUMsQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLEdBQUcsQ0FBQyxLQUFLLENBQUMsQ0FBQyxLQUFLLElBQUksSUFBSSxDQUFDLElBQUksQ0FBQyxHQUFHLENBQUMsS0FBSyxDQUFDLENBQUMsT0FBTyxDQUFDO1lBQzdELENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxHQUFHLENBQUMsS0FBSyxDQUFDLENBQUMsU0FBUyxJQUFJLElBQUksQ0FBQyxnQkFBZ0IsQ0FBQyxDQUN6RCxDQUFDO0lBQ0gsQ0FBQzs7Z0JBekJELFNBQVMsU0FBQztvQkFDVCxRQUFRLEVBQUUsdUJBQXVCO29CQUNqQyxnb0JBQXFEOztpQkFFdEQ7Ozs7O3VCQUdFLEtBQUs7MEJBQ0wsS0FBSzs4QkFDTCxLQUFLLFNBQUMsY0FBYzt5QkFDcEIsS0FBSyxTQUFDLElBQUk7c0JBQ1YsS0FBSyxTQUFDLFVBQVU7c0JBQ2hCLEtBQUssU0FBQyxVQUFVO21DQUNoQixLQUFLOzJCQUNMLEtBQUs7O0lBWVIsa0NBQUM7Q0FBQSxBQTFCRCxJQTBCQztTQXJCWSwyQkFBMkI7OztJQUV0QywyQ0FBeUI7O0lBQ3pCLDhDQUFpQzs7SUFDakMsa0RBQW1EOztJQUNuRCw2Q0FBbUM7O0lBQ25DLDBDQUF1Qjs7SUFDdkIsMENBQXVCOztJQUN2Qix1REFBMEI7O0lBQzFCLCtDQUFzQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgT25Jbml0LCBJbnB1dCwgT3V0cHV0LCBFdmVudEVtaXR0ZXIgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IEZvcm1Hcm91cCB9IGZyb20gJ0Bhbmd1bGFyL2Zvcm1zJztcbmltcG9ydCB7IF9rZXlWYWx1ZURpZmZlcnNGYWN0b3J5IH0gZnJvbSAnQGFuZ3VsYXIvY29yZS9zcmMvYXBwbGljYXRpb25fbW9kdWxlJztcblxuQENvbXBvbmVudCh7XG4gIHNlbGVjdG9yOiAnc3VrdS1kYXRlLXRpbWUtcGlja2VyJyxcbiAgdGVtcGxhdGVVcmw6ICcuL3N1a3UtZGF0ZS10aW1lLXBpY2tlci5jb21wb25lbnQuaHRtbCcsXG4gIHN0eWxlVXJsczogWycuL3N1a3UtZGF0ZS10aW1lLXBpY2tlci5jb21wb25lbnQuc2NzcyddXG59KVxuZXhwb3J0IGNsYXNzIFN1a3VEYXRlVGltZVBpY2tlckNvbXBvbmVudCBpbXBsZW1lbnRzIE9uSW5pdCB7XG5cbiAgQElucHV0KCkgZm9ybTogRm9ybUdyb3VwO1xuICBASW5wdXQoKSBjb250cm9sID0gJ2NvbnRyb2xOYW1lJztcbiAgQElucHV0KCdwbGFjZS1ob2xkZXInKSBwbGFjZWhvbGRlciA9ICdEYXRlIHBpY2tlcic7XG4gIEBJbnB1dCgnaWQnKSBkYXRlSWQgPSAnZGF0ZXBpY2tlcic7XG4gIEBJbnB1dCgnbWF4LWRhdGUnKSBtYXg7XG4gIEBJbnB1dCgnbWluLWRhdGUnKSBtaW47XG4gIEBJbnB1dCgpIGZvcm1TdW1pdEF0dGVtcHQ7XG4gIEBJbnB1dCgpIGVycm9yTXNnID0gJ0Nhbm5vdCBiZSBibGFuayc7XG4gIFxuICBjb25zdHJ1Y3RvcigpIHsgfVxuXG4gIG5nT25Jbml0KCkgeyB9XG4gIFxuXHRpc0ZpZWxkVmFsaWQoZmllbGQ6IHN0cmluZykge1xuXHRcdHJldHVybiAoXG5cdFx0XHQoIXRoaXMuZm9ybS5nZXQoZmllbGQpLnZhbGlkICYmIHRoaXMuZm9ybS5nZXQoZmllbGQpLnRvdWNoZWQpIHx8XG5cdFx0XHQodGhpcy5mb3JtLmdldChmaWVsZCkudW50b3VjaGVkICYmIHRoaXMuZm9ybVN1bWl0QXR0ZW1wdClcblx0XHQpO1xuXHR9XG59XG4iXX0=
