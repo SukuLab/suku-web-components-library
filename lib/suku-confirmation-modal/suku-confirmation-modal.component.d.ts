@@ -7,6 +7,7 @@ export declare class SukuConfirmationModalComponent implements OnInit {
         'imgSrc': string;
         'message': string;
         'description': string;
+        'loader': string;
         'buttonText': string;
         'messageCustomClass': string;
         'descriptionCustomClass': string;
