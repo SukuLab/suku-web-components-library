@@ -1,8 +1,10 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/elements'), require('rxjs'), require('@angular/common'), require('ngx-countdown-timer'), require('@angular/material'), require('@angular/material/dialog'), require('d3'), require('@angular/forms'), require('ngx-quill'), require('ng-pick-datetime'), require('@angular/core')) :
-    typeof define === 'function' && define.amd ? define('suku-webcomponents', ['exports', '@angular/elements', 'rxjs', '@angular/common', 'ngx-countdown-timer', '@angular/material', '@angular/material/dialog', 'd3', '@angular/forms', 'ngx-quill', 'ng-pick-datetime', '@angular/core'], factory) :
-    (factory((global['suku-webcomponents'] = {}),global.ng.elements,global.rxjs,global.ng.common,global.ngxCountdownTimer,global.ng.material,global.ng.material.dialog,global.d3,global.ng.forms,global.ngxQuill,global.ngPickDatetime,global.ng.core));
-}(this, (function (exports,elements,rxjs,common,ngxCountdownTimer,material,i1,d3,forms,ngxQuill,ngPickDatetime,i0) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/elements'), require('rxjs'), require('@angular/common'), require('ngx-countdown-timer'), require('@angular/material'), require('@angular/material/dialog'), require('d3'), require('@angular/forms'), require('ngx-quill'), require('moment'), require('ng-pick-datetime'), require('@angular/core')) :
+    typeof define === 'function' && define.amd ? define('suku-webcomponents', ['exports', '@angular/elements', 'rxjs', '@angular/common', 'ngx-countdown-timer', '@angular/material', '@angular/material/dialog', 'd3', '@angular/forms', 'ngx-quill', 'moment', 'ng-pick-datetime', '@angular/core'], factory) :
+    (factory((global['suku-webcomponents'] = {}),global.ng.elements,global.rxjs,global.ng.common,global.ngxCountdownTimer,global.ng.material,global.ng.material.dialog,global.d3,global.ng.forms,global.ngxQuill,global._moment,global.ngPickDatetime,global.ng.core));
+}(this, (function (exports,elements,rxjs,common,ngxCountdownTimer,material,i1,d3,forms,ngxQuill,_moment,ngPickDatetime,i0) { 'use strict';
+
+    var _moment__default = 'default' in _moment ? _moment['default'] : _moment;
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -7996,6 +7998,7 @@
             this.placeholder = 'Date picker';
             this.dateId = 'datepicker';
             this.errorMsg = 'Cannot be blank';
+            this.dateSelect = new i0.EventEmitter();
         }
         /**
          * @return {?}
@@ -8016,10 +8019,24 @@
                 return ((!this.form.get(field).valid && this.form.get(field).touched) ||
                     (this.form.get(field).untouched && this.formSumitAttempt));
             };
+        /**
+         * @param {?} val
+         * @return {?}
+         */
+        SukuDateTimePickerComponent.prototype.selectedDate = /**
+         * @param {?} val
+         * @return {?}
+         */
+            function (val) {
+                console.log('this is value ', val._selected);
+                /** @type {?} */
+                var selectedDate = val._selected;
+                this.dateSelect.emit(selectedDate);
+            };
         SukuDateTimePickerComponent.decorators = [
             { type: i0.Component, args: [{
                         selector: 'suku-date-time-picker',
-                        template: "<div class=\"col flex\" [formGroup]=\"form\">\n  <mat-form-field class=\"col p-0\">\n    <input matInput id=\"{{dateId}}\" formControlName=\"{{control}}\" placeholder=\"{{placeholder}}\" min=\"{{min}}\"\n      max=\"{{max}}\" [owlDateTimeTrigger]=\"picker\" [owlDateTime]=\"picker\">\n    <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n    <owl-date-time #picker></owl-date-time>\n    <mat-error>\n      <span class=\"err_style\">\n        <span *ngIf=\"form.hasError('required',[control])\" id=\"errorMsg{{dateId}}\">{{errorMsg}}</span>\n      </span>\n    </mat-error>\n  </mat-form-field>\n</div>",
+                        template: "<div class=\"col flex\" [formGroup]=\"form\">\n  <mat-form-field class=\"col p-0\">\n      <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n    <owl-date-time  #picker (afterPickerClosed)=\"selectedDate(picker)\" ></owl-date-time>\n    <input matInput id=\"{{dateId}}\" formControlName=\"{{control}}\" placeholder=\"{{placeholder}}\" [min]=\"min\"\n      [max]=\"max\" [owlDateTimeTrigger]=\"picker\" [owlDateTime]=\"picker\">\n    <mat-error>\n      <span class=\"err_style\">\n        <span *ngIf=\"form.hasError('required',[control])\" id=\"errorMsg{{dateId}}\">{{errorMsg}}</span>\n      </span>\n    </mat-error>\n  </mat-form-field>\n</div>",
                         styles: [""]
                     }] }
         ];
@@ -8033,7 +8050,8 @@
             max: [{ type: i0.Input, args: ['max-date',] }],
             min: [{ type: i0.Input, args: ['min-date',] }],
             formSumitAttempt: [{ type: i0.Input }],
-            errorMsg: [{ type: i0.Input }]
+            errorMsg: [{ type: i0.Input }],
+            dateSelect: [{ type: i0.Output }]
         };
         return SukuDateTimePickerComponent;
     }());
@@ -8165,7 +8183,7 @@
                             SukuFileUploadModule,
                             ngxQuill.QuillModule,
                             ngPickDatetime.OwlDateTimeModule,
-                            ngPickDatetime.OwlNativeDateTimeModule
+                            ngPickDatetime.OwlNativeDateTimeModule,
                         ],
                         providers: [SukuModalService, SukuLoaderService],
                         exports: [
