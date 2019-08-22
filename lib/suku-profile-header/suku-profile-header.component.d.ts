@@ -46,6 +46,9 @@ export declare class SukuProfileHeaderComponent implements OnInit {
     mailId: string;
     mailIcon: string;
     mailIconClass: string;
+    iconOneId: string;
+    iconOne: string;
+    iconOneCustomClass: string;
     number: string;
     phnumberSize: string;
     phnumberColor: string;
@@ -53,6 +56,9 @@ export declare class SukuProfileHeaderComponent implements OnInit {
     phnumberCustomClass: string;
     phNumberIcon: string;
     phoneId: string;
+    iconTwoId: string;
+    iconTwo: string;
+    iconTwoCustomClass: string;
     addressIcon: string;
     address: string;
     addressSize: string;
@@ -60,9 +66,15 @@ export declare class SukuProfileHeaderComponent implements OnInit {
     addressWeight: string;
     addressId: string;
     addressCustomClass: string;
+    iconThreeId: string;
+    iconThree: string;
+    iconThreeCustomClass: string;
     samBadgeIcon: string;
     samBadgeClass: string;
     samIconAction: EventEmitter<{}>;
+    iconFourId: string;
+    iconFour: string;
+    iconFourCustomClass: string;
     constructor();
     ngOnInit(): void;
     editAccount(): void;

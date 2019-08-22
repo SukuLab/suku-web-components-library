@@ -47,6 +47,7 @@ export { SukuHomeItalicHeadingComponent as ɵq } from './lib/suku-home-italic-he
 export { SukuHomeWidgetComponent as ɵr } from './lib/suku-home-widget/suku-home-widget.component';
 export { SukuHomepageSectionComponent as ɵcf } from './lib/suku-homepage-section/suku-homepage-section.component';
 export { SukuHomepageComponent as ɵce } from './lib/suku-homepage/suku-homepage.component';
+export { SukuIconWidgetComponent as ɵdc } from './lib/suku-icon-widget/suku-icon-widget.component';
 export { SukuImageWidgetComponent as ɵcn } from './lib/suku-image-widget/suku-image-widget.component';
 export { SukuInlineDropdownComponent as ɵs } from './lib/suku-inline-dropdown/suku-inline-dropdown.component';
 export { SukuLinkComponent as ɵz } from './lib/suku-link/suku-link.component';

@@ -4,6 +4,8 @@ export declare class SukuCardLineTypeOneComponent implements OnInit {
     image: string;
     chatReadIcon: string;
     chatUnreadIcon: string;
+    chatReadIconId: string;
+    chatUnreadIconId: string;
     msgStatus: any;
     customClass: string;
     customImgclass: string;

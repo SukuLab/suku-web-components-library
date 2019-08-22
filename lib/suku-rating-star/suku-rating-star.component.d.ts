@@ -8,7 +8,7 @@ export declare class SukuRatingStarComponent implements OnInit {
     emptyStars: number;
     emptyStarsArray: any[];
     action: EventEmitter<{}>;
-    customclass: any;
+    customClass: any;
     ratingValue: number;
     constructor();
     ngOnInit(): void;

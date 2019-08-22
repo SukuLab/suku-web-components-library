@@ -9,6 +9,13 @@ export declare class SukuSelectInputComponent implements OnInit {
     displayKey: string;
     titleText: string;
     placeHolder: string;
+    imgheight: string;
+    imgwidth: string;
+    imgurl: string;
+    imageCustomClass: string;
+    icon: string;
+    iconId: string;
+    iconCustomClass: string;
     sort: EventEmitter<{}>;
     options: any[];
     constructor();

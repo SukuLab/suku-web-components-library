@@ -15,5 +15,8 @@ export declare class SukuResponseComponent {
     bgColor: string;
     imgCustomClass: string;
     sukuResponseLogo: string;
+    icon: string;
+    iconId: string;
+    iconCustomClass: string;
     subCustomClass: string;
 }

@@ -14,6 +14,9 @@ export declare class SukuFileUploadComponent implements OnInit {
     imgHeight: string;
     imgWidth: string;
     imgSrc: string;
+    icon: string;
+    iconId: string;
+    iconCustomClass: string;
     fileInputId: string;
     action: EventEmitter<{}>;
     constructor(snackBar: MatSnackBar);
