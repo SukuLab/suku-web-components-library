@@ -8060,6 +8060,49 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
+    var SukuDateComponent = /** @class */ (function () {
+        function SukuDateComponent() {
+            this.dateId = 'dateId';
+        }
+        /**
+         * @return {?}
+         */
+        SukuDateComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+            function () {
+                if (this.fontFamily == 'secondary') {
+                    this.fontFamilyClass = 'sukuSecondaryFont';
+                }
+                else {
+                    this.fontFamilyClass = 'sukuPrimaryFont';
+                }
+            };
+        SukuDateComponent.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'suku-date',
+                        template: "<span [style.font-size.px]=\"fontSize\" [style.font-weight]=\"fontWeight\" [style.color]=\"fontColor\" id=\"{{dateId}}\" class=\"{{fontFamilyClass}}\">\n  {{dateString | date: 'MMM-d-y h:mm a'}}\n</span>\n",
+                        styles: ["@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.sukuPrimaryFont{font-family:var(--suku-primary-font)!important}.sukuSecondaryFont{font-family:var(--suku-secondary-font)!important}"]
+                    }] }
+        ];
+        /** @nocollapse */
+        SukuDateComponent.ctorParameters = function () { return []; };
+        SukuDateComponent.propDecorators = {
+            dateString: [{ type: i0.Input }],
+            fontSize: [{ type: i0.Input }],
+            fontWeight: [{ type: i0.Input }],
+            dateId: [{ type: i0.Input }],
+            fontFamily: [{ type: i0.Input }],
+            fontFamilyClass: [{ type: i0.Input }],
+            fontColor: [{ type: i0.Input }]
+        };
+        return SukuDateComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
     var SukuWebcomponentsModule = /** @class */ (function () {
         function SukuWebcomponentsModule() {
         }
@@ -8132,7 +8175,8 @@
                             SukuAddLicenseModalComponent,
                             SukuGalleryUploadComponent,
                             SukuChipListComponent,
-                            SukuDateTimePickerComponent
+                            SukuDateTimePickerComponent,
+                            SukuDateComponent
                         ],
                         imports: [
                             common.CommonModule,
@@ -8257,7 +8301,8 @@
                             SukuAddLicenseModalComponent,
                             SukuGalleryUploadComponent,
                             SukuChipListComponent,
-                            SukuDateTimePickerComponent
+                            SukuDateTimePickerComponent,
+                            SukuDateComponent
                         ],
                         entryComponents: [SukuConfirmationModalComponent, SukuAddLicenseModalComponent],
                         schemas: []
@@ -8577,6 +8622,7 @@
     exports.ɵbw = SukuCreationCustomerFileuploadComponent;
     exports.ɵo = SukuDashboardProfileComponent;
     exports.ɵdb = SukuDateTimePickerComponent;
+    exports.ɵdc = SukuDateComponent;
     exports.ɵcj = SukuDropdownComponent;
     exports.ɵbu = SukuDwollaFundingAgreementComponent;
     exports.ɵbv = SukuDwollaFundingSourceComponent;
