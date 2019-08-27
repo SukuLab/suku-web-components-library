@@ -5692,10 +5692,10 @@
             this.progressStyleTwo = 'progressUpcoming';
             this.progressStyleThree = 'progressUpcoming';
             this.progressStyleFour = 'progressUpcoming';
-            this.customHeadingOneClass = 'pl-4 p-xs-0 ';
-            this.customHeadingTwoClass = ' pl-4 p-xs-0';
+            this.customHeadingOneClass = 'p-xs-0 ';
+            this.customHeadingTwoClass = '  p-xs-0';
             this.customHeadingThreeClass = 'p-xs-0';
-            this.customHeadingFourClass = 'pr-3 p-xs-0';
+            this.customHeadingFourClass = 'p-xs-0';
             this.enablePointer = false;
             this.progressBarLabels = {
                 labelOne: 'RETRIEVE COMPANY DATA',
