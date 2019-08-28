@@ -12,6 +12,8 @@ export declare class SukuCardTitleComponent implements OnInit {
     cardContentweight: string;
     customTitleClass: string;
     customContentClass: string;
+    contentTypeArray: boolean;
+    displayKey: string;
     constructor();
     ngOnInit(): void;
 }

@@ -1,0 +1,33 @@
+import { OnInit, EventEmitter } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { MatSnackBar } from '@angular/material';
+import { BehaviorSubject } from 'rxjs';
+export declare class SukuLoginComponent implements OnInit {
+    private snackBar;
+    hide: any;
+    remeberMeValue: any;
+    _enableRequiredValidator: BehaviorSubject<string>;
+    color: string;
+    usernameControl: FormControl;
+    placeholderOne: string;
+    userNameId: string;
+    passwordControl: FormControl;
+    placeholderTwo: string;
+    passwordId: string;
+    customClass: any;
+    enableUserIcon: boolean;
+    errorMessageOne: string;
+    errorMessageTwo: string;
+    errorMessageThree: string;
+    errorMessageFour: string;
+    remeberMeChecked: any;
+    snackbarMessage: string;
+    enableRequiredValidator: string;
+    value: any;
+    formSubmit: EventEmitter<{}>;
+    constructor(snackBar: MatSnackBar);
+    ngOnInit(): void;
+    remeberMeAction(e: any): void;
+    onSubmit(): void;
+    snackbar(msg: any): void;
+}
