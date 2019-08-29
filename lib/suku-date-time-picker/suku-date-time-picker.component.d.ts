@@ -7,6 +7,7 @@ export declare class SukuDateTimePickerComponent implements OnInit {
     dateId: string;
     max: any;
     min: any;
+    startAt: any;
     formSumitAttempt: any;
     errorMsg: string;
     dateSelect: EventEmitter<{}>;

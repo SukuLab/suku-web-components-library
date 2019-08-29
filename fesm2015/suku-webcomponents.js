@@ -7204,7 +7204,7 @@ class SukuDateTimePickerComponent {
 SukuDateTimePickerComponent.decorators = [
     { type: Component, args: [{
                 selector: 'suku-date-time-picker',
-                template: "<div class=\"col flex\" [formGroup]=\"form\">\n  <mat-form-field class=\"col p-0\">\n      <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n    <owl-date-time  #picker (afterPickerClosed)=\"selectedDate(picker)\" ></owl-date-time>\n    <input matInput id=\"{{dateId}}\" formControlName=\"{{control}}\" placeholder=\"{{placeholder}}\" [min]=\"min\"\n      [max]=\"max\" [owlDateTimeTrigger]=\"picker\" [owlDateTime]=\"picker\">\n    <mat-error>\n      <span class=\"err_style\">\n        <span *ngIf=\"form.hasError('required',[control])\" id=\"errorMsg{{dateId}}\">{{errorMsg}}</span>\n      </span>\n    </mat-error>\n  </mat-form-field>\n</div>",
+                template: "<div class=\"col flex\" [formGroup]=\"form\">\n  <mat-form-field class=\"col p-0\">\n      <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n    <owl-date-time  #picker (afterPickerClosed)=\"selectedDate(picker)\"  [startAt]=\"startAt\" ></owl-date-time>\n    <input matInput id=\"{{dateId}}\" formControlName=\"{{control}}\" placeholder=\"{{placeholder}}\" [min]=\"min\"\n      [max]=\"max\" [owlDateTimeTrigger]=\"picker\" [owlDateTime]=\"picker\">\n    <mat-error>\n      <span class=\"err_style\">\n        <span *ngIf=\"form.hasError('required',[control])\" id=\"errorMsg{{dateId}}\">{{errorMsg}}</span>\n      </span>\n    </mat-error>\n  </mat-form-field>\n</div>",
                 styles: [""]
             }] }
 ];
@@ -7217,6 +7217,7 @@ SukuDateTimePickerComponent.propDecorators = {
     dateId: [{ type: Input, args: ['id',] }],
     max: [{ type: Input, args: ['max-date',] }],
     min: [{ type: Input, args: ['min-date',] }],
+    startAt: [{ type: Input, args: ['start-date',] }],
     formSumitAttempt: [{ type: Input }],
     errorMsg: [{ type: Input }],
     dateSelect: [{ type: Output }]
