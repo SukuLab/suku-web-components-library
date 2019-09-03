@@ -7525,7 +7525,167 @@ SukuLoginComponent.propDecorators = {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class SukuProgressBarTypeThreeComponent {
-    constructor() { }
+    constructor() {
+        this.statusKey = ['inProgress', 'inComplete', 'complete'];
+        this.steps = [
+            {
+                '_order': 1,
+                'step': {
+                    'facility': {
+                        '_id': '082721c3e14d1d7c062ee158',
+                        'name': 'Finca Nueva'
+                    },
+                    'description': 'At Finca Nueva, we raise the healthiest, happiest cattle.',
+                    'facilityType': 'Producer',
+                    'templateLocator': '8fe2a17eeab6ea096210205f',
+                    'inputs': [
+                        {
+                            'assetId': 'f3122dfe6a015dd7cac477fe',
+                            'timestamp': '2019-07-02T08:14:27.307Z',
+                            'attestedBy': '1b5151760a12352333748894'
+                        }
+                    ],
+                    'outputs': [
+                        {
+                            'assetId': '2ab8b31fb08a1236a83c495a',
+                            'timestamp': '2019-07-02T08:14:27.307Z',
+                            'attestedBy': '2a6b57f3a123d3b41e410795'
+                        }
+                    ]
+                }
+            },
+            {
+                'order': 10,
+                'step': {
+                    'facility': {
+                        '_id': 'dacc5fd46f386e7cd10a7f1d',
+                        'name': 'Esmeralda'
+                    },
+                    'description': 'At Esmeralda, we are here to process your goods.',
+                    'facilityType': 'Processor',
+                    'templateLocator': 'dba2424a243d8b6b2a4f1410',
+                    'inputs': [
+                        {
+                            'assetId': '69b4edb0f32a8ccfaf562645',
+                            'timestamp': '2019-07-02T08:14:27.307Z',
+                            'attestedBy': '6aba2bdb1a123fa2d6972277'
+                        }
+                    ],
+                    'outputs': [
+                        {
+                            'assetId': '2969713e87e448e71dce795f',
+                            'timestamp': '2019-07-02T08:14:27.307Z',
+                            'attestedBy': '6aba2bda123b1fa2d6972277'
+                        }
+                    ]
+                }
+            },
+            {
+                'order': 20,
+                'step': {
+                    'facility': {
+                        '_id': 'aa8e71b242ddac8cbeedeb81',
+                        'name': 'Sasmar'
+                    },
+                    'description': 'At Sasmar, we are here to move your goods.',
+                    'facilityType': 'Logistics',
+                    'templateLocator': '95c5e8ac473c4315f546ae39',
+                    'inputs': [
+                        {
+                            'assetId': '6893733cadef0c3cc831953d',
+                            'timestamp': '2019-07-02T08:14:27.307Z',
+                            'attestedBy': '6aba2ba123db1fa2d6972277'
+                        }
+                    ],
+                    'outputs': [
+                        {
+                            'assetId': 'c03bed502f70eda2587fa88e',
+                            'timestamp': '2019-07-02T08:14:27.307Z',
+                            'attestedBy': '6aba2bda123b1fa2d6972277'
+                        }
+                    ]
+                }
+            },
+            {
+                'order': 30,
+                'step': {
+                    'facility': {
+                        '_id': '2153ec1c6a99eb8ed6525926',
+                        'name': 'Cedicar'
+                    },
+                    'description': 'At Cedicar, we are here to distribute your goods correctly.',
+                    'facilityType': 'Distributor',
+                    'templateLocator': 'bc15408ae4a9b7fe10aaff56',
+                    'inputs': [
+                        {
+                            'assetId': '7a3c779e8297ca6c3cdbdb2e',
+                            'timestamp': '2019-07-02T08:14:27.307Z',
+                            'attestedBy': '6aba2ba123db1fa2d6972277'
+                        }
+                    ],
+                    'outputs': [
+                        {
+                            'assetId': '17cd5c76c1865613b37c7e37',
+                            'timestamp': '2019-07-02T08:14:27.307Z',
+                            'attestedBy': '6aba2ba123db1fa2d6972277'
+                        }
+                    ]
+                }
+            },
+            {
+                'order': 40,
+                'step': {
+                    'facility': {
+                        '_id': '3021c8b0b062fc85cd0e8c5d',
+                        'name': 'Wong'
+                    },
+                    'description': 'We are proud to sell healthy food products for a great price!',
+                    'facilityType': 'Supermarket',
+                    'templateLocator': '28c1849161583c73d38d76a7',
+                    'inputs': [
+                        {
+                            'assetId': '0df488a27a1231f293ea47c3',
+                            'timestamp': '2019-07-02T08:14:27.307Z',
+                            'attestedBy': '6aba2ba123db1fa2d6972277'
+                        }
+                    ],
+                    'outputs': [
+                        {
+                            'assetId': '67e7dff46a1231e9e505dcc8',
+                            'timestamp': '2019-07-02T08:14:27.307Z',
+                            'attestedBy': '6aba2ba123db1fa2d6972277'
+                        },
+                        {
+                            'assetId': '67e7dff46a1231e9e505dcc7'
+                        }
+                    ]
+                }
+            }
+        ];
+        this.iconInfo = 'suku-shipped-icon';
+        this.iconInfoCustomClass = 'suku-shipped-icon';
+        this.customIconClass = 'suku-xl';
+    }
+    /**
+     * @param {?} val
+     * @return {?}
+     */
+    set data(val) {
+        if (val) {
+            if (val.length == 0) {
+                /** @type {?} */
+                const data = '1';
+                document.documentElement.style.setProperty('--suku-progress-bar-count', data);
+            }
+            else {
+                console.log('val.length.toString()', val.length.toString());
+                /** @type {?} */
+                const data = val.length.toString();
+                document.documentElement.style.setProperty('--suku-progress-bar-count', data);
+            }
+            this.progressBarData = val;
+        }
+    }
     /**
      * @return {?}
      */
@@ -7535,12 +7695,21 @@ class SukuProgressBarTypeThreeComponent {
 SukuProgressBarTypeThreeComponent.decorators = [
     { type: Component, args: [{
                 selector: 'suku-progress-bar-type-three',
-                template: "<div class=\"col-12\">\n  <ul class=\"progressbar\">\n    <li class=\"completed checkmark\">Step 1</li>\n    <li class=\"active\">Step 2</li>\n    <li>Step 3</li>\n    <li>Step 4</li>\n    <!-- <li>Step 5</li> -->\n  </ul>\n</div>",
-                styles: ["@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);@import url(https://fonts.googleapis.com/icon?family=Material+Icons);@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.progressActive{width:50px!important;height:50px;color:#fff;background:var(--suku-primary-color);border-radius:50%!important;font-family:var(--suku-primary-font)}.progressUpcoming{width:50px!important;height:50px!important;color:#fff;background:#757575;border-radius:50%!important;font-family:var(--suku-primary-font)}.progressCompleted{width:50px!important;height:50px!important;color:#fff;background-color:#1c1c1c;border-radius:50%!important;font-family:var(--suku-primary-font)}.container{width:100%;position:absolute;z-index:1}.progressbar li{float:left;width:20%;position:relative;text-align:center}.progressbar li:before{content:\"\";content:counter(step);counter-increment:step;width:50px;height:50px;display:block;margin:0 auto 10px;border-radius:50%;line-height:50px;background:#757575;color:#fff;text-align:center;font-weight:400;font-size:14px;font-family:var(--suku-primary-font)}.progressbar{counter-reset:step}.progressbar li:after{content:'';position:absolute;width:100%;height:1px;color:#fff;background:#b3b3b3;top:25px;left:-50%;z-index:-1}.progressbar li.active:before{color:#fff;background:var(--suku-primary-color)}.progressbar li.completed:before{color:#fff;background-color:#1c1c1c}.progressbar li.completed+li:after{background-color:#b3b3b3}.progressbar li.completed+.checkmark{content:'';display:block;width:8px;height:15px;border:solid #d8fc40;border-width:0 3px 3px 0;transform:rotate(45deg)}.progressbar li.active+li:after{background-color:#b3b3b3}.progressbar li:first-child:after{content:none}li{list-style:none;font-family:var(--suku-secondary-font);font-size:12px;font-weight:500;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.4px;text-align:center;color:#b6b6b6}.checkmark{display:inline-block}.checkmark:after{content:'';display:block;width:8px;height:15px;border:solid #d8fc40;border-width:0 3px 3px 0;transform:rotate(45deg)}"]
+                template: "<div class=\"col-12\">\n  <ul class=\"progressbar\">\n    <li [ngClass]=\"{ 'active' : (data?.status == statusKey[0]), \n    'completed' : (data?.status == statusKey[2]), 'toolTip': (data?.status == statusKey[1]) }\" *ngFor=\"let data of\n    progressBarData;let i\n    =index\">\n      <!-- <span class=\"tipTool\" [style.left.rem]=\"positionTooltip\"> -->\n      <span class=\"tipTooltext\" [style.left.rem]=\"positionTooltext\">\n        <span>{{iconInfo}}</span>\n      </span>\n      <span *ngIf=\"(data?.status == statusKey[2])\" class=\"checkmark\"></span>\n      {{data?.name}}\n      <!-- </span> -->\n    </li>\n  </ul>\n</div>",
+                styles: ["@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);@import url(https://fonts.googleapis.com/icon?family=Material+Icons);@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.progressActive{width:50px!important;height:50px;color:#fff;background:var(--suku-primary-color);border-radius:50%!important;font-family:var(--suku-primary-font)}.progressUpcoming{width:50px!important;height:50px!important;color:#fff;background:#757575;border-radius:50%!important;font-family:var(--suku-primary-font)}.progressCompleted{width:50px!important;height:50px!important;color:#fff;background-color:#1c1c1c;border-radius:50%!important;font-family:var(--suku-primary-font)}.container{width:100%;position:absolute;z-index:1}.progressbar li{float:left;width:calc(82%/var(--suku-progress-bar-count));position:relative;text-align:center}.progressbar li:before{content:\"\";content:counter(step);counter-increment:step;width:50px;height:50px;display:block;margin:0 auto 10px;border-radius:50%;line-height:50px;background:#757575;color:#fff;text-align:center;font-weight:400;font-size:14px;font-family:var(--suku-primary-font)}.progressbar{counter-reset:step}.progressbar li:after{content:'';position:absolute;width:100%;height:1px;color:#fff;background:#b3b3b3;top:25px;left:-50%;z-index:-1}.progressbar li.active:before{color:#fff;background:var(--suku-primary-color)}.progressbar li.completed:before{color:#fff;background-color:#1c1c1c}.progressbar li.active+li:after,.progressbar li.completed+li:after{background-color:#b3b3b3}.progressbar li:first-child:after{content:none}li{list-style:none;font-family:var(--suku-secondary-font);font-size:14px;font-weight:500;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.4px;text-align:center;color:#b6b6b6}.checkmark{position:absolute;top:20%;right:44.5%;z-index:5;background:#1c1c1c;width:12px;height:21px}.checkmark:after{content:'';display:block;width:8px;height:15px;border:solid #d8fc40;border-width:0 3px 3px 0;transform:rotate(45deg)}.tipTool{position:relative;display:inline-block;height:0;text-align:center;border-radius:15px;background-color:#d8d8d8a8 transparent;font-size:18px;color:#757575;font-weight:700;font-style:italic;font-stretch:normal;letter-spacing:.5px}.tipTooltext{visibility:hidden;width:-webkit-max-content;width:-moz-max-content;width:max-content;background-color:#000000eb;text-align:left;border-radius:6px;padding:15px 18px;position:absolute;z-index:1;bottom:110%;left:51%;margin-left:-60px;font-style:normal;font-stretch:normal;font-size:13px;font-family:var(--suku-secondary-font);font-weight:500;line-height:1.45;letter-spacing:.4px;color:#b6b6b6}.tipTooltext::after{content:\"\";position:absolute;top:100%;left:36.5%;margin-left:0;border-width:5px;border-style:solid;border-color:#191922 transparent transparent;font-style:normal;font-stretch:normal}li:hover::before .tipTooltext{visibility:visible}.tooltip-info-content{font-family:var(--suku-secondary-font)}"]
             }] }
 ];
 /** @nocollapse */
 SukuProgressBarTypeThreeComponent.ctorParameters = () => [];
+SukuProgressBarTypeThreeComponent.propDecorators = {
+    statusKey: [{ type: Input, args: ['status-Key',] }],
+    data: [{ type: Input }],
+    iconInfo: [{ type: Input, args: ['icon-info',] }],
+    positionTooltip: [{ type: Input, args: ['position-tooltip',] }],
+    positionTooltext: [{ type: Input, args: ['position-tooltext',] }],
+    iconInfoCustomClass: [{ type: Input, args: ['icon-info-custom-class',] }],
+    customIconClass: [{ type: Input, args: ['custom-icon-class',] }]
+};
 
 /**
  * @fileoverview added by tsickle
@@ -8221,6 +8390,7 @@ const dark = {
         '--suku-progressbar-inprogress-bg': '#a7bf2e',
         '--suku-progressbar-upcoming-bg': '#757575',
         '--suku-progressbar-completed-bg': '#1c1c1c',
+        '--suku-submenu-bg-color': '',
         '--suku-font-size-1': '0.75rem',
         // 12px	- 0.75rem
         '--suku-font-size-2': '0.875rem',
