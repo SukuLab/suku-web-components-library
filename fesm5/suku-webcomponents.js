@@ -8440,7 +8440,7 @@ var SukuDisplayTableComponent = /** @class */ (function () {
     SukuDisplayTableComponent.decorators = [
         { type: Component, args: [{
                     selector: 'suku-display-table',
-                    template: "<div class=\"col content\">\n  <div class=\"header\">\n    <div class=\"col pt-3 pb-3\">\n      <div class=\"row\">\n        <div class=\"col\">\n          <h1 [style.font-size.px]=\"titleOneSize\" class=\"title mt-auto mb-0 {{titleOneCustomClass}}\"\n            [style.font-weight]=\"titleOneWeight\" [style.color]=\"titleOneColor\" id=\"{{titleOneId}}\">\n            {{titleContent}}\n          </h1>\n        </div>\n      </div>\n    </div>\n  </div>\n  <table class=\"table table-striped\">\n    <thead>\n      <tr>\n        <th [style.color]=\"headerColor\"  [style.font-size.px]=\"headerSize\"   [style.font-weight]=\"headerWeight\" *ngFor=\"let header of header;\">{{header.title}}</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let data of tableData;\">\n        <td *ngFor=\"let key of tableDataKey;\" [style.color]=\"dataColor\"  [style.font-size.px]=\"dataSize\"   [style.font-weight]=\"dataWeight\">\n          <span>{{data[key]}}</span>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>",
+                    template: "<div class=\"col content\">\n  <div class=\"header\">\n    <div class=\"col pt-4 pb-4\">\n      <div class=\"row\">\n        <div class=\"col\">\n          <h1 [style.font-size.px]=\"titleOneSize\" class=\"title mt-auto mb-0 {{titleOneCustomClass}}\"\n            [style.font-weight]=\"titleOneWeight\" [style.color]=\"titleOneColor\" id=\"{{titleOneId}}\">\n            {{titleContent}}\n          </h1>\n        </div>\n      </div>\n    </div>\n  </div>\n  <table class=\"table table-striped\">\n    <thead>\n      <tr>\n        <th [style.color]=\"headerColor\"  [style.font-size.px]=\"headerSize\"   [style.font-weight]=\"headerWeight\" *ngFor=\"let header of header;\" id=\"{{header.id}}\">{{header.title}}</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let data of tableData;\">\n        <td *ngFor=\"let key of tableDataKey;\" [style.color]=\"dataColor\"  [style.font-size.px]=\"dataSize\"   [style.font-weight]=\"dataWeight\">\n          <span>{{data[key]}}</span>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>",
                     styles: ["@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);@import url(https://fonts.googleapis.com/icon?family=Material+Icons);@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.header{background:var(--suku-bg-primary);border-left:5px solid var(--suku-primary-border-color);border-radius:0 40px 0 0;box-shadow:-4px 4px 5px 0 rgba(0,0,0,.08)}.title{font-family:var(--suku-primary-font);font-weight:600;font-size:var(--suku-font-size-6);text-transform:uppercase}"]
                 }] }
     ];
@@ -8721,6 +8721,73 @@ var SukuNavBarComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+var SukuUserDetailsComponent = /** @class */ (function () {
+    function SukuUserDetailsComponent() {
+        this.widgetTitle = 'User Information';
+        this.widgetTitleColor = '';
+        this.widgetTitleWeight = '';
+        this.widgetTitleSize = '';
+        this.widgetTitlecustomclass = '';
+        this.widgetTitleid = '';
+        this.shippingaddressCustomClass = '';
+        this.email = '';
+        this.phoneNumber = '';
+        this.fullName = '';
+        this.fullAddress = '';
+        this.firstName = '';
+        this.secondName = '';
+        this.addressOne = '';
+        this.addressTwo = '';
+        this.city = '';
+        this.state = '';
+        this.zip = '';
+        this.country = '';
+    }
+    /**
+     * @return {?}
+     */
+    SukuUserDetailsComponent.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () {
+    };
+    SukuUserDetailsComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'suku-user-details',
+                    template: "<div class=\"headingStyle\" [style.font-size.px]=\"widgetTitleSize\" [class]=\"widgetTitlecustomclass\" id=\"{{widgetTitleid}}\"\n  [style.font-weight]=\"widgetTitleWeight\" [style.color]=\"widgetTitleColor\">{{widgetTitle}} </div>\n<div class=\"article mb-3 p-0 pt-3\">\n  <div class=\"col-sm-12 col-xs-12 border\">\n    <div class=\"col-sm-12 col-xs-12 pt-3 p-2\">\n      <div class=\"font_weight contentStyle shipping-address\" [class]=\"shippingaddressCustomClass\">\n        <p class=\"mb-1\"><span>{{fullName}}</span></p>\n        <p class=\"mb-1\">{{email}}</p>\n        <p class=\"mb-1\">{{phoneNumber}}</p>\n        <p class=\"mb-1\"><span>{{firstName}}</span>\n          <span class=\"ml-2\">{{secondName}}</span></p>\n        <p class=\"mb-1\">{{addressOne}}</p>\n        <p class=\"mb-1\">{{addressTwo}}</p>\n        <p class=\"mb-1\"><span>{{city}}</span><span class=\"ml-2\">{{state}}</span><span class=\"ml-2\">\n            {{zip}}</span></p>\n        <p class=\"mb-1\">{{country}}</p>\n        <p class=\"mb-1\">{{fullAddress}}</p>\n      </div>\n    </div>\n  </div>\n</div>",
+                    styles: ["@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);@import url(https://fonts.googleapis.com/icon?family=Material+Icons);@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.headingStyle{font-family:var(--suku-primary-font);padding-bottom:9px}.contentStyle{padding-top:15px}.marginBottom22{margin-bottom:22px}.shipping-address{font-family:var(--suku-secondary-font);font-size:var(--suku-font-size-2);font-weight:400;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.4px;color:#020202d9;margin-bottom:1px;text-transform:capitalize}.article{width:100%;float:left}"]
+                }] }
+    ];
+    /** @nocollapse */
+    SukuUserDetailsComponent.ctorParameters = function () { return []; };
+    SukuUserDetailsComponent.propDecorators = {
+        widgetTitle: [{ type: Input }],
+        widgetTitleColor: [{ type: Input }],
+        widgetTitleWeight: [{ type: Input }],
+        widgetTitleSize: [{ type: Input }],
+        widgetTitlecustomclass: [{ type: Input }],
+        widgetTitleid: [{ type: Input }],
+        shippingaddressCustomClass: [{ type: Input }],
+        email: [{ type: Input }],
+        phoneNumber: [{ type: Input }],
+        fullName: [{ type: Input }],
+        fullAddress: [{ type: Input }],
+        firstName: [{ type: Input }],
+        secondName: [{ type: Input }],
+        addressOne: [{ type: Input }],
+        addressTwo: [{ type: Input }],
+        city: [{ type: Input }],
+        state: [{ type: Input }],
+        zip: [{ type: Input }],
+        country: [{ type: Input }]
+    };
+    return SukuUserDetailsComponent;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var SukuWebcomponentsModule = /** @class */ (function () {
     function SukuWebcomponentsModule() {
     }
@@ -8801,7 +8868,8 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         SukuProgressBarTypeThreeComponent,
                         SukuDisplayTableComponent,
                         SukuUsernameIconWidgetComponent,
-                        SukuNavBarComponent
+                        SukuNavBarComponent,
+                        SukuUserDetailsComponent
                     ],
                     imports: [
                         CommonModule,
@@ -8934,7 +9002,8 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         SukuProgressBarTypeThreeComponent,
                         SukuDisplayTableComponent,
                         SukuUsernameIconWidgetComponent,
-                        SukuNavBarComponent
+                        SukuNavBarComponent,
+                        SukuUserDetailsComponent
                     ],
                     entryComponents: [SukuConfirmationModalComponent, SukuAddLicenseModalComponent],
                     schemas: [],
@@ -9211,6 +9280,6 @@ var SukuWebcomponentsService = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { SukuFormFooterModule, SukuAchSettingModule, SukuAddIconWidgetModule, SukuBidTagModule, SukuButtonsModule, SukuLoaderModule, SukuModalModule, SukuModalService, SukuFileUploadModule, SukuWebcomponentsModule, suku, dark, light, SukuWebcomponentsService, SukuLoaderService, SukuACHSettingsComponent as ɵb, SukuAddIconComponent as ɵcd, SukuAddLicenseModalComponent as ɵcy, SukuAddWidgetComponent as ɵc, SukuAddressWidgetComponent as ɵbe, SukuBeneficialOwnerComponent as ɵbt, SukuBidInfoComponent as ɵbc, SukuLargeBidTagComponent as ɵcq, SukuBidTagComponent as ɵd, SukuBidWidgetTagComponent as ɵcr, SukuDefaultButtonComponent as ɵh, SukuHomepageButtonComponent as ɵi, SukuInfoButtonComponent as ɵe, SukuPrimaryButtonComponent as ɵf, SukuSecondaryButtonComponent as ɵg, SukuCardLineTypeOneComponent as ɵbz, SukuCardLineTypeTwoComponent as ɵca, SukuCardLineComponent as ɵn, SukuCardTitleComponent as ɵbm, ScrollToBottomDirective as ɵcp, SukuChatWidgetComponent as ɵco, SukuCheckboxComponent as ɵct, SukuChipListComponent as ɵda, SukuConfirmationModalComponent as ɵcx, SukuConfirmationComponent as ɵk, SukuCreateCustomerComponent as ɵbs, SukuCreationCustomerFileuploadComponent as ɵbw, SukuDashboardProfileComponent as ɵo, SukuDateTimePickerComponent as ɵdb, SukuDateComponent as ɵde, SukuDisplayTableComponent as ɵdh, SukuDropdownWfcComponent as ɵdd, SukuDropdownComponent as ɵcj, SukuDwollaFundingAgreementComponent as ɵbu, SukuDwollaFundingSourceComponent as ɵbv, SukuDropZoneDirective as ɵm, SukuFileUploadComponent as ɵl, SukuFiltersComponent as ɵbi, SukuFormFooterComponent as ɵa, SukuFundingSourceComponent as ɵbr, SukuGalleryUploadComponent as ɵcz, SukuGalleryComponent as ɵcs, SukuHeaderComponent as ɵck, SukuHeadingComponent as ɵp, SukuHomeItalicHeadingComponent as ɵq, SukuHomeWidgetComponent as ɵr, SukuHomepageSectionComponent as ɵcf, SukuHomepageComponent as ɵce, SukuIconWidgetComponent as ɵdc, SukuImageWidgetComponent as ɵcn, SukuInlineDropdownComponent as ɵs, SukuLinkComponent as ɵz, SukuLoaderComponent as ɵj, SukuLoginComponent as ɵdf, SukuMailWidgetComponent as ɵt, SukuMatchChipComponent as ɵu, SukuNavBarComponent as ɵdj, SukuNavSubmenuComponent as ɵbb, SukuNotificationPanelComponent as ɵcc, SukuNotificationWidgetComponent as ɵv, SukuPaymentPortalHelpComponent as ɵbx, SukuPhoneWidgetComponent as ɵbd, SukuProductTraceWidgetComponent as ɵbk, SukuProfileHeaderComponent as ɵcg, SukuProfileImageIconComponent as ɵcw, SukuProfileWidgetComponent as ɵbg, SukuProgressBarTypeOneComponent as ɵw, SukuProgressBarTypeThreeComponent as ɵdg, SukuProgressBarTypeTwoComponent as ɵx, SukuRadioButtonComponent as ɵci, SukuRatingCardLineComponent as ɵcb, SukuRatingStarComponent as ɵbn, SukuResponseComponent as ɵbp, SukuSearchInputComponent as ɵbf, SukuSelectInputComponent as ɵba, SukuShippingInfoWidgetComponent as ɵcm, SukuShippingWidgetComponent as ɵbo, SukuSocialIconsComponent as ɵch, SukuStarBadgeComponent as ɵbh, SukuSubHeadingComponent as ɵy, SukuTermsAndConditionsComponent as ɵby, SukuTitleHeaderComponent as ɵcl, SukuTrackProgressBarComponent as ɵbj, SukuTransactionHistoryComponent as ɵbq, SukuTreeComponent as ɵbl, SukuUserInputComponent as ɵcu, SukuUsernameIconWidgetComponent as ɵdi, SukuWysiwygEditorComponent as ɵcv };
+export { SukuFormFooterModule, SukuAchSettingModule, SukuAddIconWidgetModule, SukuBidTagModule, SukuButtonsModule, SukuLoaderModule, SukuModalModule, SukuModalService, SukuFileUploadModule, SukuWebcomponentsModule, suku, dark, light, SukuWebcomponentsService, SukuLoaderService, SukuACHSettingsComponent as ɵb, SukuAddIconComponent as ɵcd, SukuAddLicenseModalComponent as ɵcy, SukuAddWidgetComponent as ɵc, SukuAddressWidgetComponent as ɵbe, SukuBeneficialOwnerComponent as ɵbt, SukuBidInfoComponent as ɵbc, SukuLargeBidTagComponent as ɵcq, SukuBidTagComponent as ɵd, SukuBidWidgetTagComponent as ɵcr, SukuDefaultButtonComponent as ɵh, SukuHomepageButtonComponent as ɵi, SukuInfoButtonComponent as ɵe, SukuPrimaryButtonComponent as ɵf, SukuSecondaryButtonComponent as ɵg, SukuCardLineTypeOneComponent as ɵbz, SukuCardLineTypeTwoComponent as ɵca, SukuCardLineComponent as ɵn, SukuCardTitleComponent as ɵbm, ScrollToBottomDirective as ɵcp, SukuChatWidgetComponent as ɵco, SukuCheckboxComponent as ɵct, SukuChipListComponent as ɵda, SukuConfirmationModalComponent as ɵcx, SukuConfirmationComponent as ɵk, SukuCreateCustomerComponent as ɵbs, SukuCreationCustomerFileuploadComponent as ɵbw, SukuDashboardProfileComponent as ɵo, SukuDateTimePickerComponent as ɵdb, SukuDateComponent as ɵde, SukuDisplayTableComponent as ɵdh, SukuDropdownWfcComponent as ɵdd, SukuDropdownComponent as ɵcj, SukuDwollaFundingAgreementComponent as ɵbu, SukuDwollaFundingSourceComponent as ɵbv, SukuDropZoneDirective as ɵm, SukuFileUploadComponent as ɵl, SukuFiltersComponent as ɵbi, SukuFormFooterComponent as ɵa, SukuFundingSourceComponent as ɵbr, SukuGalleryUploadComponent as ɵcz, SukuGalleryComponent as ɵcs, SukuHeaderComponent as ɵck, SukuHeadingComponent as ɵp, SukuHomeItalicHeadingComponent as ɵq, SukuHomeWidgetComponent as ɵr, SukuHomepageSectionComponent as ɵcf, SukuHomepageComponent as ɵce, SukuIconWidgetComponent as ɵdc, SukuImageWidgetComponent as ɵcn, SukuInlineDropdownComponent as ɵs, SukuLinkComponent as ɵz, SukuLoaderComponent as ɵj, SukuLoginComponent as ɵdf, SukuMailWidgetComponent as ɵt, SukuMatchChipComponent as ɵu, SukuNavBarComponent as ɵdj, SukuNavSubmenuComponent as ɵbb, SukuNotificationPanelComponent as ɵcc, SukuNotificationWidgetComponent as ɵv, SukuPaymentPortalHelpComponent as ɵbx, SukuPhoneWidgetComponent as ɵbd, SukuProductTraceWidgetComponent as ɵbk, SukuProfileHeaderComponent as ɵcg, SukuProfileImageIconComponent as ɵcw, SukuProfileWidgetComponent as ɵbg, SukuProgressBarTypeOneComponent as ɵw, SukuProgressBarTypeThreeComponent as ɵdg, SukuProgressBarTypeTwoComponent as ɵx, SukuRadioButtonComponent as ɵci, SukuRatingCardLineComponent as ɵcb, SukuRatingStarComponent as ɵbn, SukuResponseComponent as ɵbp, SukuSearchInputComponent as ɵbf, SukuSelectInputComponent as ɵba, SukuShippingInfoWidgetComponent as ɵcm, SukuShippingWidgetComponent as ɵbo, SukuSocialIconsComponent as ɵch, SukuStarBadgeComponent as ɵbh, SukuSubHeadingComponent as ɵy, SukuTermsAndConditionsComponent as ɵby, SukuTitleHeaderComponent as ɵcl, SukuTrackProgressBarComponent as ɵbj, SukuTransactionHistoryComponent as ɵbq, SukuTreeComponent as ɵbl, SukuUserDetailsComponent as ɵdk, SukuUserInputComponent as ɵcu, SukuUsernameIconWidgetComponent as ɵdi, SukuWysiwygEditorComponent as ɵcv };
 
 //# sourceMappingURL=suku-webcomponents.js.map
