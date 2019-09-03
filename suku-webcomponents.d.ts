@@ -32,7 +32,7 @@ export { SukuCreationCustomerFileuploadComponent as ɵbw } from './lib/suku-crea
 export { SukuDashboardProfileComponent as ɵo } from './lib/suku-dashboard-profile/suku-dashboard-profile.component';
 export { SukuDateTimePickerComponent as ɵdb } from './lib/suku-date-time-picker/suku-date-time-picker.component';
 export { SukuDateComponent as ɵde } from './lib/suku-date/suku-date.component';
-export { SukuDisplayTableComponent as ɵdg } from './lib/suku-display-table/suku-display-table.component';
+export { SukuDisplayTableComponent as ɵdh } from './lib/suku-display-table/suku-display-table.component';
 export { SukuDropdownWfcComponent as ɵdd } from './lib/suku-dropdown-wfc/suku-dropdown-wfc.component';
 export { SukuDropdownComponent as ɵcj } from './lib/suku-dropdown/suku-dropdown.component';
 export { SukuDwollaFundingAgreementComponent as ɵbu } from './lib/suku-dwolla-funding-agreement/suku-dwolla-funding-agreement.component';
@@ -68,6 +68,7 @@ export { SukuProfileHeaderComponent as ɵcg } from './lib/suku-profile-header/su
 export { SukuProfileImageIconComponent as ɵcw } from './lib/suku-profile-image-icon/suku-profile-image-icon.component';
 export { SukuProfileWidgetComponent as ɵbg } from './lib/suku-profile-widget/suku-profile-widget.component';
 export { SukuProgressBarTypeOneComponent as ɵw } from './lib/suku-progress-bar-type-one/suku-progress-bar-type-one.component';
+export { SukuProgressBarTypeThreeComponent as ɵdg } from './lib/suku-progress-bar-type-three/suku-progress-bar-type-three.component';
 export { SukuProgressBarTypeTwoComponent as ɵx } from './lib/suku-progress-bar-type-two/suku-progress-bar-type-two.component';
 export { SukuRadioButtonComponent as ɵci } from './lib/suku-radio-button/suku-radio-button.component';
 export { SukuRatingCardLineComponent as ɵcb } from './lib/suku-rating-card-line/suku-rating-card-line.component';
