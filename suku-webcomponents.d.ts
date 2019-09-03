@@ -87,4 +87,5 @@ export { SukuTrackProgressBarComponent as ɵbj } from './lib/suku-track-progress
 export { SukuTransactionHistoryComponent as ɵbq } from './lib/suku-transaction-history/suku-transaction-history.component';
 export { SukuTreeComponent as ɵbl } from './lib/suku-tree/suku-tree.component';
 export { SukuUserInputComponent as ɵcu } from './lib/suku-user-input/suku-user-input.component';
+export { SukuUsernameIconWidgetComponent as ɵdi } from './lib/suku-username-icon-widget/suku-username-icon-widget.component';
 export { SukuWysiwygEditorComponent as ɵcv } from './lib/suku-wysiwyg-editor/suku-wysiwyg-editor.component';

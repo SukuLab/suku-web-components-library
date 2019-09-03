@@ -8524,6 +8524,42 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
+    var SukuUsernameIconWidgetComponent = /** @class */ (function () {
+        function SukuUsernameIconWidgetComponent() {
+            this.customClass = 'img-circle';
+        }
+        /**
+         * @return {?}
+         */
+        SukuUsernameIconWidgetComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+            function () {
+            };
+        SukuUsernameIconWidgetComponent.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'suku-username-icon-widget',
+                        template: "<img alt=\"{{alternativeText}}\" class=\"{{customClass}}\" height=\"{{height}}\" width=\"{{width}}\" src=\"{{image}}\"><span class=\"title\">{{welcomeTitle}}</span>",
+                        styles: [".img-circle{display:inline-block;position:relative;z-index:0;line-height:42px;text-align:center;box-shadow:0 2px 2px 0 rgba(0,0,0,.1);background-color:#fff;border-radius:50%}.title{font-size:27px;border-bottom:2px solid #c3cfd9;display:inline-block;margin-left:5px;vertical-align:bottom}"]
+                    }] }
+        ];
+        /** @nocollapse */
+        SukuUsernameIconWidgetComponent.ctorParameters = function () { return []; };
+        SukuUsernameIconWidgetComponent.propDecorators = {
+            alternativeText: [{ type: i0.Input, args: ['image-text',] }],
+            height: [{ type: i0.Input, args: ['image-height',] }],
+            width: [{ type: i0.Input, args: ['image-width',] }],
+            image: [{ type: i0.Input, args: ['image-src',] }],
+            customClass: [{ type: i0.Input, args: ['image-style',] }],
+            welcomeTitle: [{ type: i0.Input, args: ['image-title',] }]
+        };
+        return SukuUsernameIconWidgetComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
     var SukuWebcomponentsModule = /** @class */ (function () {
         function SukuWebcomponentsModule() {
         }
@@ -8602,7 +8638,8 @@
                             SukuDateComponent,
                             SukuLoginComponent,
                             SukuProgressBarTypeThreeComponent,
-                            SukuDisplayTableComponent
+                            SukuDisplayTableComponent,
+                            SukuUsernameIconWidgetComponent
                         ],
                         imports: [
                             common.CommonModule,
@@ -8733,7 +8770,8 @@
                             SukuDateComponent,
                             SukuLoginComponent,
                             SukuProgressBarTypeThreeComponent,
-                            SukuDisplayTableComponent
+                            SukuDisplayTableComponent,
+                            SukuUsernameIconWidgetComponent
                         ],
                         entryComponents: [SukuConfirmationModalComponent, SukuAddLicenseModalComponent],
                         schemas: [],
@@ -9109,6 +9147,7 @@
     exports.ɵbq = SukuTransactionHistoryComponent;
     exports.ɵbl = SukuTreeComponent;
     exports.ɵcu = SukuUserInputComponent;
+    exports.ɵdi = SukuUsernameIconWidgetComponent;
     exports.ɵcv = SukuWysiwygEditorComponent;
 
     Object.defineProperty(exports, '__esModule', { value: true });
