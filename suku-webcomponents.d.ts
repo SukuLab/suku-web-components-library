@@ -58,6 +58,7 @@ export { SukuLoaderComponent as ɵj } from './lib/suku-loader/suku-loader.compon
 export { SukuLoginComponent as ɵdf } from './lib/suku-login/suku-login.component';
 export { SukuMailWidgetComponent as ɵt } from './lib/suku-mail-widget/suku-mail-widget.component';
 export { SukuMatchChipComponent as ɵu } from './lib/suku-match-chip/suku-match-chip.component';
+export { SukuNavBarComponent as ɵdj } from './lib/suku-nav-bar/suku-nav-bar.component';
 export { SukuNavSubmenuComponent as ɵbb } from './lib/suku-nav-submenu/suku-nav-submenu.component';
 export { SukuNotificationPanelComponent as ɵcc } from './lib/suku-notification-panel/suku-notification-panel.component';
 export { SukuNotificationWidgetComponent as ɵv } from './lib/suku-notification-widget/suku-notification-widget.component';

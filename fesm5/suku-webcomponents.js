@@ -8506,6 +8506,221 @@ var SukuUsernameIconWidgetComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+var SukuNavBarComponent = /** @class */ (function () {
+    function SukuNavBarComponent() {
+        this.navbarOpen = false;
+        this.panelOpenState = false;
+        this.isActive = false;
+        this.userIcon = '../../../assets/img/avatar-icon.svg';
+        this.UserName = 'Abigail';
+        this.navbarBgColor = 'bgcolor';
+        this.subMenuList = [];
+        this.logoCustomClass = 'img-width';
+        this.nameCustomClass = '';
+        this.data = {
+            logo: 'assets/images/Suku_Logo_white.png',
+            Username: 'Navbar',
+            companyName: 'Microsoft',
+            bellIcon: '../../../assets/img/alarm-icon.svg',
+            bellIconId: 'notificationIcon',
+            notificationCount: 2,
+            notificationCountId: 'notificationCount',
+            submenu: [
+                {
+                    name: 'Buy',
+                    subMenu: true,
+                    visible: false,
+                    id: 'collapseOne',
+                    subMenuData: [
+                        {
+                            name: 'Listings & Bids',
+                            path: 'pathOne',
+                            id: 1
+                        },
+                        {
+                            name: 'Negotiations',
+                            path: 'pathTwo',
+                            id: 2
+                        },
+                        {
+                            name: 'PurchaseOrders',
+                            path: 'pathThree',
+                            id: 3
+                        },
+                        {
+                            name: 'Transactions',
+                            path: 'pathFour',
+                            id: 4
+                        }
+                    ]
+                },
+                {
+                    name: 'Sell',
+                    subMenu: true,
+                    visible: false,
+                    id: 'collapseOne',
+                    subMenuData: [
+                        {
+                            name: 'Buy-Sell-Price',
+                            path: 'pathOne',
+                            id: 1
+                        },
+                        {
+                            name: 'BuyProducts',
+                            path: 'pathTwo',
+                            id: 2
+                        },
+                        {
+                            name: 'BuyPurchaseOrders',
+                            path: 'pathThree',
+                            id: 3
+                        },
+                        {
+                            name: 'BuyTransactions',
+                            path: 'pathFour',
+                            id: 4
+                        }
+                    ]
+                },
+                {
+                    name: 'Transaction',
+                    subMenu: true,
+                    visible: true,
+                    subMenuData: [
+                        {
+                            name: 'Listings & Bids',
+                            path: 'pathOne',
+                            id: 1
+                        },
+                        {
+                            name: 'Negotiations',
+                            path: 'pathTwo',
+                            id: 2
+                        },
+                        {
+                            name: 'PurchaseOrders',
+                            path: 'pathThree',
+                            id: 3
+                        },
+                        {
+                            name: 'Transactions',
+                            path: 'pathFour',
+                            id: 4
+                        }
+                    ]
+                },
+                {
+                    name: 'Logout',
+                    subMenu: false
+                },
+                {
+                    name: 'Help',
+                    subMenu: false
+                }
+            ]
+        };
+    }
+    /**
+     * @return {?}
+     */
+    SukuNavBarComponent.prototype.toggleNavbar = /**
+     * @return {?}
+     */
+    function () {
+        this.navbarOpen = !this.navbarOpen;
+    };
+    /**
+     * @param {?} names
+     * @return {?}
+     */
+    SukuNavBarComponent.prototype.isActiveFun = /**
+     * @param {?} names
+     * @return {?}
+     */
+    function (names) {
+        return this.selected === names;
+    };
+    /**
+     * @param {?} names
+     * @return {?}
+     */
+    SukuNavBarComponent.prototype.toggle = /**
+     * @param {?} names
+     * @return {?}
+     */
+    function (names) {
+        console.log('names', names);
+        this.selected = '';
+        this.isActive = true;
+        this.selected = names;
+        this.data.submenu.forEach((/**
+         * @param {?} element
+         * @return {?}
+         */
+        function (element) {
+            if (names == element) {
+                console.log('element', element);
+                element.visible = true;
+            }
+            else {
+                element.visible = false;
+            }
+        }));
+        this.collpose = names.id;
+        console.log('element1', this.collpose);
+    };
+    /**
+     * @param {?} name
+     * @return {?}
+     */
+    SukuNavBarComponent.prototype.select = /**
+     * @param {?} name
+     * @return {?}
+     */
+    function (name) {
+        this.selected1 = name;
+    };
+    /**
+     * @param {?} name
+     * @return {?}
+     */
+    SukuNavBarComponent.prototype.isActive2 = /**
+     * @param {?} name
+     * @return {?}
+     */
+    function (name) {
+        return this.selected1 === name;
+    };
+    SukuNavBarComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'suku-nav-bar',
+                    template: "<nav class=\"navbar navbar-expand-lg {{navbarBgColor}} {{navbarCustomClass}} bg-dark navbar-light navbar1\">\n  <div>\n    <a title=\"SUKU\">\n      <img [src]=\"data?.logo\" alt=\"brand-SUKU\" class=\"btLine {{logoCustomClass}}\" />\n    </a>\n  </div>\n  <div class=\"collapse navbar-collapse justify-content-end mr-5\" id=\"navbarNav\">\n    <div *ngFor=\"let names of data.submenu\" class=\"responseTab\">\n      <ul class=\"navbar-nav\">\n        <li class=\"pT\" (click)=\"toggle(names)\">\n          <a [ngClass]=\"{'active': isActiveFun(names)}\" class=\"{{nameCustomClass}}\">\n            {{names.name | uppercase}}\n          </a>\n        </li>\n      </ul>\n    </div>\n  </div>\n  <div class=\"row d-flex justify-content-around ml-lg-5\">\n    <a class=\"align-items-end d-flex\">\n      <i><img id=\"notificationBell\" src=\"{{data?.bellIcon}}\" id=\"{{data?.bellIconId}}\"></i>\n      <span class=\"count\" id=\"{{data?.notificationCountId}}\">{{data?.notificationCount}}</span>\n    </a>\n    <li class=\"iconColor\"><img [src]=\"userIcon\"></li>\n    <li class=\"userColor\" [style.color]=\"userNameColor\" [style.font-weight]=\"userNameFontWeight\"\n      [style.font-size.rem]=\"userNameFontSize\">{{UserName}}</li>\n  </div>\n</nav>\n<div *ngIf=\"isActive\">\n  <div *ngFor=\"let names of data.submenu\">\n    <div class=\"mobResponse1\" *ngIf=\"names?.visible\">\n      <div class=\"bgColor1 col-sm-12 wrapper {{submenuCustomClass}}\" *ngIf=\"names?.subMenu\">\n        <li *ngFor=\"let name of names?.subMenuData\" class=\"line\" (click)=\"select(name)\"\n          [ngClass]=\"{'active1': isActive2(name)}\">\n          <a>{{name.name}}</a>\n        </li>\n      </div>\n    </div>\n  </div>\n</div>\n<!-- Response -->\n<nav class=\"navbar navbar-expand-lg navbar-dark  mobResponse responseColor\">\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\"\n    aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n    <ul class=\"navbar-nav mr-auto\" id=\"accordion\">\n      <div *ngFor=\"let names of data.submenu;  let i = index\">\n        <span id=\"buy{{i}}\" class=\"nav-item nav-link\" data-toggle=\"collapse\" attr.data-target=\"#collapseOne{{i}}\">\n          <ul class=\"navbar-nav\">\n            <li class=\"pT\" (click)=\"toggle(names)\">\n              <a class=\"subMenuBgStyle\">{{names.name | uppercase}} <i class=\"fa fa-arrow-down flRight\"\n                  *ngIf=\"names.subMenu===true\"></i></a>\n            </li>\n          </ul>\n          <div attr.id=\"collapseOne{{i}}\" class=\"panel-collapse panel panel-default collapse in\" role=\"tabpanel\"\n            aria-labelledby=\"headingOne\" data-parent=\"#accordion\">\n            <div *ngIf=\"isActive\">\n              <div *ngFor=\"let names of data.submenu\">\n                <div *ngIf=\"names?.visible\">\n                  <div class=\"bgColor1 col-sm-12 wrapper\" *ngIf=\"names?.subMenu\">\n                    <li *ngFor=\"let name of names?.subMenuData\" class=\"line\">\n                      <a>{{name.name}}</a>\n                    </li>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </span>\n      </div>\n    </ul>\n  </div>\n</nav>",
+                    styles: ["@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);@import url(https://fonts.googleapis.com/icon?family=Material+Icons);@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}nav ul li{font-size:18px;cursor:pointer;font-family:var(--suku-primary-font);letter-spacing:-.3px;color:rgba(255,255,255,.5);letter-spacing:-.4px}.img-width{width:125px}.btLine{margin-left:59px}.iconColor{color:var(--suku-text-label-two);font-size:19px;cursor:pointer;font-family:var(--suku-primary-font);letter-spacing:-.3px;letter-spacing:-.4px;padding-top:40px;margin-right:7px!important}.userColor{color:var(--suku-text-label-two);font-size:15px;cursor:pointer;font-family:var(--suku-primary-font);letter-spacing:-.3px;letter-spacing:-.4px;padding-top:45px;margin-right:40px}.pT{padding-top:40px;padding-left:2rem}.bgColor1{background:var(--suku-bg-secondary);color:var(--suku-text-label-two);padding-left:60px;padding-right:60px}.bgcolor{background:-webkit-radial-gradient(circle,#303038,#07070f)}li{list-style:none}.wrapper{display:-ms-grid;display:grid;grid-auto-rows:auto;grid-template-columns:repeat(auto-fill,minmax(24%,1fr));grid-row-gap:.5em;grid-column-gap:.5em;text-align:center;border:1px solid #4c4848;font-family:var(--suku-primary-font);height:60px;align-items:center}.wrapper li{align-items:center!important;font-size:15px;font-family:var(--suku-primary-font);letter-spacing:-.3px;color:rgba(255,255,255,.5);letter-spacing:-.4px;cursor:pointer;text-align:center;padding:10px;margin-left:20px;margin-right:20px;word-break:break-all!important}.wrapper li:hover{color:#fff;background:#17181a;border-radius:15px 50px 50px}.active1{border-radius:15px 50px 50px!important;background:#17181a!important;color:#fff!important}.active,ul li a:hover{border-bottom:4px solid var(--suku-secondary-color);padding-bottom:11px;color:var(--suku-text-label-two)}.navbar1{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:.5rem 1rem}.responseColor{background-color:#343a40!important}@media only screen and (max-width:768px) and (min-width:320px){.wrapper{display:-ms-grid;display:grid;-ms-grid-rows:auto;grid-template-rows:auto;grid-template-columns:repeat(auto-fill,minmax(100%,1fr))!important;grid-row-gap:.1em;grid-column-gap:.1em;text-align:center;border:none!important;font-family:var(--suku-primary-font);height:auto!important}.pT{padding-top:10px!important;padding-left:0!important}nav ul li{font-size:15px!important;cursor:pointer;font-family:Poppins,sans-serif;letter-spacing:-.3px;color:rgba(255,255,255,.5);letter-spacing:-.4px;border-bottom:2px solid rgba(0,0,0,.08)!important}.bgColor1{background:#696767a1;color:var(--suku-text-label-two);padding-left:0!important;padding-right:0!important;border-left:20px;border-bottom-left-radius:8px;border-bottom-right-radius:8px}.pT a:hover{border-bottom:0 solid!important;padding-bottom:0!important;color:var(--suku-text-label-two)}.btLine{margin-left:0!important}.userColor{margin-right:6px!important}.wrapper li{padding:3px!important;margin-left:0;margin-right:0;align-items:left;text-align:left}.wrapper li:hover{border-radius:0!important;color:#fff;background:0 0!important}.mobResponse{display:block!important}.mobResponse1{display:none}.useralign{text-align:end!important}}.flRight{float:right;color:#d6d6d6}@media (max-width:1440px){.mobResponse{display:none}}@media (min-width:1440px){.mobResponse{display:none}}@media only screen and (max-width:1440px) and (min-width:1440px){.mobResponse{display:none}}.count{width:20px;height:20px;float:left;font-size:11px;color:#000;line-height:20px;letter-spacing:-.04em;text-align:center;background:#d8fc40;border-radius:360px;position:relative;top:-15px;right:12px}"]
+                }] }
+    ];
+    /** @nocollapse */
+    SukuNavBarComponent.ctorParameters = function () { return []; };
+    SukuNavBarComponent.propDecorators = {
+        userIcon: [{ type: Input, args: ['user-icon',] }],
+        UserName: [{ type: Input, args: ['User-name',] }],
+        userNameColor: [{ type: Input, args: ['user-name-color',] }],
+        userNameFontWeight: [{ type: Input, args: ['user-name-font-weight',] }],
+        userNameFontSize: [{ type: Input, args: ['user-name-font-size',] }],
+        navbarBgColor: [{ type: Input, args: ['navbar-bg-color',] }],
+        subMenuList: [{ type: Input }],
+        navbarCustomClass: [{ type: Input, args: ['navbar-custom-class',] }],
+        submenuCustomClass: [{ type: Input, args: ['submenu-custom-class',] }],
+        logoCustomClass: [{ type: Input, args: ['logo-custom-class',] }],
+        nameCustomClass: [{ type: Input, args: ['name-custom-class',] }],
+        data: [{ type: Input }]
+    };
+    return SukuNavBarComponent;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var SukuWebcomponentsModule = /** @class */ (function () {
     function SukuWebcomponentsModule() {
     }
@@ -8585,7 +8800,8 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         SukuLoginComponent,
                         SukuProgressBarTypeThreeComponent,
                         SukuDisplayTableComponent,
-                        SukuUsernameIconWidgetComponent
+                        SukuUsernameIconWidgetComponent,
+                        SukuNavBarComponent
                     ],
                     imports: [
                         CommonModule,
@@ -8717,7 +8933,8 @@ var SukuWebcomponentsModule = /** @class */ (function () {
                         SukuLoginComponent,
                         SukuProgressBarTypeThreeComponent,
                         SukuDisplayTableComponent,
-                        SukuUsernameIconWidgetComponent
+                        SukuUsernameIconWidgetComponent,
+                        SukuNavBarComponent
                     ],
                     entryComponents: [SukuConfirmationModalComponent, SukuAddLicenseModalComponent],
                     schemas: [],
@@ -8994,6 +9211,6 @@ var SukuWebcomponentsService = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { SukuFormFooterModule, SukuAchSettingModule, SukuAddIconWidgetModule, SukuBidTagModule, SukuButtonsModule, SukuLoaderModule, SukuModalModule, SukuModalService, SukuFileUploadModule, SukuWebcomponentsModule, suku, dark, light, SukuWebcomponentsService, SukuLoaderService, SukuACHSettingsComponent as ɵb, SukuAddIconComponent as ɵcd, SukuAddLicenseModalComponent as ɵcy, SukuAddWidgetComponent as ɵc, SukuAddressWidgetComponent as ɵbe, SukuBeneficialOwnerComponent as ɵbt, SukuBidInfoComponent as ɵbc, SukuLargeBidTagComponent as ɵcq, SukuBidTagComponent as ɵd, SukuBidWidgetTagComponent as ɵcr, SukuDefaultButtonComponent as ɵh, SukuHomepageButtonComponent as ɵi, SukuInfoButtonComponent as ɵe, SukuPrimaryButtonComponent as ɵf, SukuSecondaryButtonComponent as ɵg, SukuCardLineTypeOneComponent as ɵbz, SukuCardLineTypeTwoComponent as ɵca, SukuCardLineComponent as ɵn, SukuCardTitleComponent as ɵbm, ScrollToBottomDirective as ɵcp, SukuChatWidgetComponent as ɵco, SukuCheckboxComponent as ɵct, SukuChipListComponent as ɵda, SukuConfirmationModalComponent as ɵcx, SukuConfirmationComponent as ɵk, SukuCreateCustomerComponent as ɵbs, SukuCreationCustomerFileuploadComponent as ɵbw, SukuDashboardProfileComponent as ɵo, SukuDateTimePickerComponent as ɵdb, SukuDateComponent as ɵde, SukuDisplayTableComponent as ɵdh, SukuDropdownWfcComponent as ɵdd, SukuDropdownComponent as ɵcj, SukuDwollaFundingAgreementComponent as ɵbu, SukuDwollaFundingSourceComponent as ɵbv, SukuDropZoneDirective as ɵm, SukuFileUploadComponent as ɵl, SukuFiltersComponent as ɵbi, SukuFormFooterComponent as ɵa, SukuFundingSourceComponent as ɵbr, SukuGalleryUploadComponent as ɵcz, SukuGalleryComponent as ɵcs, SukuHeaderComponent as ɵck, SukuHeadingComponent as ɵp, SukuHomeItalicHeadingComponent as ɵq, SukuHomeWidgetComponent as ɵr, SukuHomepageSectionComponent as ɵcf, SukuHomepageComponent as ɵce, SukuIconWidgetComponent as ɵdc, SukuImageWidgetComponent as ɵcn, SukuInlineDropdownComponent as ɵs, SukuLinkComponent as ɵz, SukuLoaderComponent as ɵj, SukuLoginComponent as ɵdf, SukuMailWidgetComponent as ɵt, SukuMatchChipComponent as ɵu, SukuNavSubmenuComponent as ɵbb, SukuNotificationPanelComponent as ɵcc, SukuNotificationWidgetComponent as ɵv, SukuPaymentPortalHelpComponent as ɵbx, SukuPhoneWidgetComponent as ɵbd, SukuProductTraceWidgetComponent as ɵbk, SukuProfileHeaderComponent as ɵcg, SukuProfileImageIconComponent as ɵcw, SukuProfileWidgetComponent as ɵbg, SukuProgressBarTypeOneComponent as ɵw, SukuProgressBarTypeThreeComponent as ɵdg, SukuProgressBarTypeTwoComponent as ɵx, SukuRadioButtonComponent as ɵci, SukuRatingCardLineComponent as ɵcb, SukuRatingStarComponent as ɵbn, SukuResponseComponent as ɵbp, SukuSearchInputComponent as ɵbf, SukuSelectInputComponent as ɵba, SukuShippingInfoWidgetComponent as ɵcm, SukuShippingWidgetComponent as ɵbo, SukuSocialIconsComponent as ɵch, SukuStarBadgeComponent as ɵbh, SukuSubHeadingComponent as ɵy, SukuTermsAndConditionsComponent as ɵby, SukuTitleHeaderComponent as ɵcl, SukuTrackProgressBarComponent as ɵbj, SukuTransactionHistoryComponent as ɵbq, SukuTreeComponent as ɵbl, SukuUserInputComponent as ɵcu, SukuUsernameIconWidgetComponent as ɵdi, SukuWysiwygEditorComponent as ɵcv };
+export { SukuFormFooterModule, SukuAchSettingModule, SukuAddIconWidgetModule, SukuBidTagModule, SukuButtonsModule, SukuLoaderModule, SukuModalModule, SukuModalService, SukuFileUploadModule, SukuWebcomponentsModule, suku, dark, light, SukuWebcomponentsService, SukuLoaderService, SukuACHSettingsComponent as ɵb, SukuAddIconComponent as ɵcd, SukuAddLicenseModalComponent as ɵcy, SukuAddWidgetComponent as ɵc, SukuAddressWidgetComponent as ɵbe, SukuBeneficialOwnerComponent as ɵbt, SukuBidInfoComponent as ɵbc, SukuLargeBidTagComponent as ɵcq, SukuBidTagComponent as ɵd, SukuBidWidgetTagComponent as ɵcr, SukuDefaultButtonComponent as ɵh, SukuHomepageButtonComponent as ɵi, SukuInfoButtonComponent as ɵe, SukuPrimaryButtonComponent as ɵf, SukuSecondaryButtonComponent as ɵg, SukuCardLineTypeOneComponent as ɵbz, SukuCardLineTypeTwoComponent as ɵca, SukuCardLineComponent as ɵn, SukuCardTitleComponent as ɵbm, ScrollToBottomDirective as ɵcp, SukuChatWidgetComponent as ɵco, SukuCheckboxComponent as ɵct, SukuChipListComponent as ɵda, SukuConfirmationModalComponent as ɵcx, SukuConfirmationComponent as ɵk, SukuCreateCustomerComponent as ɵbs, SukuCreationCustomerFileuploadComponent as ɵbw, SukuDashboardProfileComponent as ɵo, SukuDateTimePickerComponent as ɵdb, SukuDateComponent as ɵde, SukuDisplayTableComponent as ɵdh, SukuDropdownWfcComponent as ɵdd, SukuDropdownComponent as ɵcj, SukuDwollaFundingAgreementComponent as ɵbu, SukuDwollaFundingSourceComponent as ɵbv, SukuDropZoneDirective as ɵm, SukuFileUploadComponent as ɵl, SukuFiltersComponent as ɵbi, SukuFormFooterComponent as ɵa, SukuFundingSourceComponent as ɵbr, SukuGalleryUploadComponent as ɵcz, SukuGalleryComponent as ɵcs, SukuHeaderComponent as ɵck, SukuHeadingComponent as ɵp, SukuHomeItalicHeadingComponent as ɵq, SukuHomeWidgetComponent as ɵr, SukuHomepageSectionComponent as ɵcf, SukuHomepageComponent as ɵce, SukuIconWidgetComponent as ɵdc, SukuImageWidgetComponent as ɵcn, SukuInlineDropdownComponent as ɵs, SukuLinkComponent as ɵz, SukuLoaderComponent as ɵj, SukuLoginComponent as ɵdf, SukuMailWidgetComponent as ɵt, SukuMatchChipComponent as ɵu, SukuNavBarComponent as ɵdj, SukuNavSubmenuComponent as ɵbb, SukuNotificationPanelComponent as ɵcc, SukuNotificationWidgetComponent as ɵv, SukuPaymentPortalHelpComponent as ɵbx, SukuPhoneWidgetComponent as ɵbd, SukuProductTraceWidgetComponent as ɵbk, SukuProfileHeaderComponent as ɵcg, SukuProfileImageIconComponent as ɵcw, SukuProfileWidgetComponent as ɵbg, SukuProgressBarTypeOneComponent as ɵw, SukuProgressBarTypeThreeComponent as ɵdg, SukuProgressBarTypeTwoComponent as ɵx, SukuRadioButtonComponent as ɵci, SukuRatingCardLineComponent as ɵcb, SukuRatingStarComponent as ɵbn, SukuResponseComponent as ɵbp, SukuSearchInputComponent as ɵbf, SukuSelectInputComponent as ɵba, SukuShippingInfoWidgetComponent as ɵcm, SukuShippingWidgetComponent as ɵbo, SukuSocialIconsComponent as ɵch, SukuStarBadgeComponent as ɵbh, SukuSubHeadingComponent as ɵy, SukuTermsAndConditionsComponent as ɵby, SukuTitleHeaderComponent as ɵcl, SukuTrackProgressBarComponent as ɵbj, SukuTransactionHistoryComponent as ɵbq, SukuTreeComponent as ɵbl, SukuUserInputComponent as ɵcu, SukuUsernameIconWidgetComponent as ɵdi, SukuWysiwygEditorComponent as ɵcv };
 
 //# sourceMappingURL=suku-webcomponents.js.map
