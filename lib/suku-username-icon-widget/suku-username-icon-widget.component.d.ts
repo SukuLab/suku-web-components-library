@@ -6,6 +6,7 @@ export declare class SukuUsernameIconWidgetComponent implements OnInit {
     image: any;
     customClass: string;
     welcomeTitle: any;
+    fontSize: string;
     constructor();
     ngOnInit(): void;
 }
