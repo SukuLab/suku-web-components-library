@@ -9000,6 +9000,53 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
+    var SukuMessageBoxComponent = /** @class */ (function () {
+        function SukuMessageBoxComponent() {
+            this.widgetTitle = 'User Information';
+            this.widgetTitleColor = '';
+            this.widgetTitleWeight = '';
+            this.widgetTitleSize = '';
+            this.widgetTitlecustomclass = '';
+            this.widgetTitleid = '';
+            this.shippingaddressCustomClass = '';
+        }
+        /**
+         * @return {?}
+         */
+        SukuMessageBoxComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+            function () {
+            };
+        SukuMessageBoxComponent.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'suku-message-box',
+                        template: "<div class=\"headingStyle\" [style.font-size.px]=\"widgetTitleSize\" [class]=\"widgetTitlecustomclass\" id=\"{{widgetTitleid}}\"\n  [style.font-weight]=\"widgetTitleWeight\" [style.color]=\"widgetTitleColor\">{{widgetTitle}} </div>\n<div class=\"article mb-3 p-0 pt-3\">\n  <div class=\"col-sm-12 col-xs-12 border\">\n    <div class=\"col-sm-12 col-xs-12 pt-3 p-2\">\n      <div class=\"font_weight contentStyle shipping-address\" [class]=\"shippingaddressCustomClass\">\n        <p class=\"mb-1\"><span>{{contentOne}}</span></p>\n        <p class=\"mb-1\">{{contentTwo}}</p>\n        <p class=\"mb-1\">{{contentThree}}</p>\n        <p class=\"mb-1\">{{contentFour}}</p>\n    </div>\n  </div>\n</div>",
+                        styles: [""]
+                    }] }
+        ];
+        /** @nocollapse */
+        SukuMessageBoxComponent.ctorParameters = function () { return []; };
+        SukuMessageBoxComponent.propDecorators = {
+            widgetTitle: [{ type: i0.Input }],
+            widgetTitleColor: [{ type: i0.Input }],
+            widgetTitleWeight: [{ type: i0.Input }],
+            widgetTitleSize: [{ type: i0.Input }],
+            widgetTitlecustomclass: [{ type: i0.Input }],
+            widgetTitleid: [{ type: i0.Input }],
+            shippingaddressCustomClass: [{ type: i0.Input }],
+            contentOne: [{ type: i0.Input, args: ['content-one',] }],
+            contentTwo: [{ type: i0.Input, args: ['content-two',] }],
+            contentThree: [{ type: i0.Input, args: ['content-three',] }],
+            contentFour: [{ type: i0.Input, args: ['content-four',] }]
+        };
+        return SukuMessageBoxComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
     var SukuWebcomponentsModule = /** @class */ (function () {
         function SukuWebcomponentsModule() {
         }
@@ -9081,7 +9128,8 @@
                             SukuDisplayTableComponent,
                             SukuUsernameIconWidgetComponent,
                             SukuNavBarComponent,
-                            SukuUserDetailsComponent
+                            SukuUserDetailsComponent,
+                            SukuMessageBoxComponent
                         ],
                         imports: [
                             common.CommonModule,
@@ -9215,7 +9263,8 @@
                             SukuDisplayTableComponent,
                             SukuUsernameIconWidgetComponent,
                             SukuNavBarComponent,
-                            SukuUserDetailsComponent
+                            SukuUserDetailsComponent,
+                            SukuMessageBoxComponent
                         ],
                         entryComponents: [SukuConfirmationModalComponent, SukuAddLicenseModalComponent],
                         schemas: [],
@@ -9563,6 +9612,7 @@
     exports.ɵdf = SukuLoginComponent;
     exports.ɵt = SukuMailWidgetComponent;
     exports.ɵu = SukuMatchChipComponent;
+    exports.ɵdl = SukuMessageBoxComponent;
     exports.ɵdj = SukuNavBarComponent;
     exports.ɵbb = SukuNavSubmenuComponent;
     exports.ɵcc = SukuNotificationPanelComponent;
