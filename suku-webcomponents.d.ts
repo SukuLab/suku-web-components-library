@@ -25,6 +25,7 @@ export { ScrollToBottomDirective as ɵcp } from './lib/suku-chat-widget/suku-cha
 export { SukuChatWidgetComponent as ɵco } from './lib/suku-chat-widget/suku-chat-widget.component';
 export { SukuCheckboxComponent as ɵct } from './lib/suku-checkbox/suku-checkbox.component';
 export { SukuChipListComponent as ɵda } from './lib/suku-chip-list/suku-chip-list.component';
+export { SukuClaimsWidgetComponent as ɵdm } from './lib/suku-claims-widget/suku-claims-widget.component';
 export { SukuConfirmationModalComponent as ɵcx } from './lib/suku-confirmation-modal/suku-confirmation-modal.component';
 export { SukuConfirmationComponent as ɵk } from './lib/suku-confirmation/suku-confirmation.component';
 export { SukuCreateCustomerComponent as ɵbs } from './lib/suku-create-customer/suku-create-customer.component';
