@@ -15,6 +15,7 @@ export declare class SukuNavBarComponent {
     submenuCustomClass: any;
     logoCustomClass: string;
     nameCustomClass: string;
+    hideBellIcon: boolean;
     selectedItem: any;
     data: {
         logo: string;
