@@ -17,6 +17,9 @@ export declare class SukuDisplayTableComponent implements OnInit {
     dataSize: string;
     dataColor: any;
     dataWeight: any;
+    hrefSelection: string;
+    colorPallete: string[];
+    status: string[];
     constructor();
     ngOnInit(): void;
 }
