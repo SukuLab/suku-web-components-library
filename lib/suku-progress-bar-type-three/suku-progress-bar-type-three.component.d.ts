@@ -6,10 +6,8 @@ export declare class SukuProgressBarTypeThreeComponent implements OnInit {
     statusKey: string[];
     data: any;
     tooltipInfo: string;
-    positionTooltip: any;
-    positionTooltext: any;
-    iconInfoCustomClass: string;
-    customIconClass: string;
+    positionTooltipLeft: any;
+    positionTooltipTop: any;
     customTitleClass: string;
     enablePointer: boolean;
     constructor();

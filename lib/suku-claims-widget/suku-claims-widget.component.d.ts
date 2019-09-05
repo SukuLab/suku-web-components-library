@@ -5,6 +5,8 @@ export declare class SukuClaimsWidgetComponent implements OnInit {
         verifiable: boolean;
     }[];
     tooltipInfo: string;
+    positionTooltipLeft: any;
+    positionTooltipTop: any;
     constructor();
     ngOnInit(): void;
 }
