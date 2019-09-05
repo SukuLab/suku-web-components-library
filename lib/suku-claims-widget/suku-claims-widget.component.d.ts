@@ -4,9 +4,11 @@ export declare class SukuClaimsWidgetComponent implements OnInit {
         name: string;
         verifiable: boolean;
     }[];
+    claimTitleCustomClass: string;
+    claimTooltipCustomClass: string;
     tooltipInfo: string;
-    positionTooltipLeft: any;
-    positionTooltipTop: any;
+    positionTooltipRight: any;
+    positionTooltipBottom: any;
     constructor();
     ngOnInit(): void;
 }

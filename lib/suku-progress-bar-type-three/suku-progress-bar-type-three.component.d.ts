@@ -9,6 +9,7 @@ export declare class SukuProgressBarTypeThreeComponent implements OnInit {
     positionTooltipLeft: any;
     positionTooltipTop: any;
     customTitleClass: string;
+    customSubtitleClass: string;
     enablePointer: boolean;
     constructor();
     ngOnInit(): void;
