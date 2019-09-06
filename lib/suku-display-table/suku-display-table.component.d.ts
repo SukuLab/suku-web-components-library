@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { OnInit, EventEmitter } from '@angular/core';
 export declare class SukuDisplayTableComponent implements OnInit {
     header: any;
     headerContent: string;
@@ -20,6 +20,7 @@ export declare class SukuDisplayTableComponent implements OnInit {
     hrefSelection: string;
     colorPallete: string[];
     status: string[];
+    action: EventEmitter<{}>;
     constructor();
     ngOnInit(): void;
 }
