@@ -1,11 +1,8 @@
 import { OnInit } from '@angular/core';
 export declare class SukuFormTableComponent implements OnInit {
     j: any;
-    header: any;
-    headerContent: string;
-    _tableData: any;
-    tableDataKey: any;
-    tableData: any;
+    _items: any[];
+    editable: any[];
     titleOneId: any;
     titleOneSize: any;
     titleOneColor: string;
@@ -15,21 +12,11 @@ export declare class SukuFormTableComponent implements OnInit {
     headerSize: string;
     headerColor: any;
     headerWeight: any;
-    dataSize: string;
-    dataColor: any;
-    dataWeight: any;
-    hrefSelection: string;
     colorPallete: string[];
     status: string[];
-    dataHeader: {
-        CowId: string;
-        Birthdate: string;
-        Approx_Weight: string;
-        Breed: string;
-    };
-    editable: any[];
     typeKey: any;
-    items: any;
+    defaultCount: number;
+    items: any[];
     selectionKey: any;
     highlighterKey: any;
     patchKey: any;
@@ -37,12 +24,15 @@ export declare class SukuFormTableComponent implements OnInit {
     enableControls: boolean;
     enableSelectAll: boolean;
     selectAll: any;
+    keyData: any;
+    controlsSize: any;
+    controlCustomClass: any;
     constructor();
     ngOnInit(): void;
     addTable(val: any, editIndex: any): void;
     submit(): void;
     edit(i: any): void;
     remove(i: any): void;
-    validate(e: any, v: any): void;
+    checkValid(list: any): boolean;
     selectAllAction(): void;
 }
