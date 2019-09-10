@@ -42,6 +42,8 @@ export { SukuDropZoneDirective as ɵm } from './lib/suku-file-upload/suku-dropzo
 export { SukuFileUploadComponent as ɵl } from './lib/suku-file-upload/suku-file-upload.component';
 export { SukuFiltersComponent as ɵbi } from './lib/suku-filters/suku-filters.component';
 export { SukuFormFooterComponent as ɵa } from './lib/suku-form-footer/suku-form-footer.component';
+export { SukuFormTableComponent as ɵdn } from './lib/suku-form-table/suku-form-table.component';
+export { SukuKeysPipe as ɵdo } from './lib/suku-form-table/suku-key.pipe';
 export { SukuFundingSourceComponent as ɵbr } from './lib/suku-funding-source/suku-funding-source.component';
 export { SukuGalleryUploadComponent as ɵcz } from './lib/suku-gallery-upload/suku-gallery-upload.component';
 export { SukuGalleryComponent as ɵcs } from './lib/suku-gallery/suku-gallery.component';

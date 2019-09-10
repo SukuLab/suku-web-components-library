@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { OnInit, EventEmitter } from '@angular/core';
 export declare class SukuProgressBarTypeThreeComponent implements OnInit {
     progressBarData: any;
     selected: any;
@@ -11,6 +11,7 @@ export declare class SukuProgressBarTypeThreeComponent implements OnInit {
     customTitleClass: string;
     customSubtitleClass: string;
     enablePointer: boolean;
+    action: EventEmitter<{}>;
     constructor();
     ngOnInit(): void;
     showDetails(data: any): void;

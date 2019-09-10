@@ -1,0 +1,48 @@
+import { OnInit } from '@angular/core';
+export declare class SukuFormTableComponent implements OnInit {
+    j: any;
+    header: any;
+    headerContent: string;
+    _tableData: any;
+    tableDataKey: any;
+    tableData: any;
+    titleOneId: any;
+    titleOneSize: any;
+    titleOneColor: string;
+    titleOneWeight: any;
+    titleOneCustomClass: string;
+    titleContent: string;
+    headerSize: string;
+    headerColor: any;
+    headerWeight: any;
+    dataSize: string;
+    dataColor: any;
+    dataWeight: any;
+    hrefSelection: string;
+    colorPallete: string[];
+    status: string[];
+    dataHeader: {
+        CowId: string;
+        Birthdate: string;
+        Approx_Weight: string;
+        Breed: string;
+    };
+    editable: any[];
+    typeKey: any;
+    items: any;
+    selectionKey: any;
+    highlighterKey: any;
+    patchKey: any;
+    enableHighlighter: boolean;
+    enableControls: boolean;
+    enableSelectAll: boolean;
+    selectAll: any;
+    constructor();
+    ngOnInit(): void;
+    addTable(val: any, editIndex: any): void;
+    submit(): void;
+    edit(i: any): void;
+    remove(i: any): void;
+    validate(e: any, v: any): void;
+    selectAllAction(): void;
+}

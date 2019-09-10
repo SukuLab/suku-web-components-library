@@ -9,7 +9,7 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { FormControl, Validators, FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef, MatSnackBar, MatDialog, MatAutocompleteModule, MatBadgeModule, MatBottomSheetModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule as MatDialogModule$1, MatDividerModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatSortModule, MatStepperModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 import { BehaviorSubject } from 'rxjs';
-import { Component, Input, Output, EventEmitter, NgModule, Injector, Inject, Injectable, Directive, ElementRef, HostListener, ViewChild, ViewEncapsulation, ChangeDetectionStrategy, defineInjectable, inject } from '@angular/core';
+import { Component, Input, Output, EventEmitter, NgModule, Injector, Inject, Injectable, Directive, ElementRef, HostListener, Pipe, ViewChild, ViewEncapsulation, ChangeDetectionStrategy, defineInjectable, inject } from '@angular/core';
 
 /**
  * @fileoverview added by tsickle
@@ -7534,6 +7534,7 @@ class SukuProgressBarTypeThreeComponent {
         this.customTitleClass = '';
         this.customSubtitleClass = '';
         this.enablePointer = true;
+        this.action = new EventEmitter();
     }
     /**
      * @param {?} val
@@ -7565,19 +7566,25 @@ class SukuProgressBarTypeThreeComponent {
      * @return {?}
      */
     showDetails(data) {
-        console.log('e--', this.selected, data);
-        if (this.selected == data) {
-            this.selected = '';
+        console.log('e--', data);
+        if (data.status == 'inComplete') {
+            if (this.selected == data) {
+                this.selected = '';
+            }
+            else {
+                this.selected = data;
+            }
         }
         else {
-            this.selected = data;
+            this.selected = '';
+            this.action.emit(data);
         }
     }
 }
 SukuProgressBarTypeThreeComponent.decorators = [
     { type: Component, args: [{
                 selector: 'suku-progress-bar-type-three',
-                template: "<div class=\"col-12 w-100 d-flex flex-column\">\n  <ul class=\"progressbar\">\n    <li *ngFor=\"let data of progressBarData;let i=index\">\n      <p class=\"circle\" id=\"progressBar{{i}}\" (click)=\"showDetails(((data?.status == statusKey[1]) ? data : ''))\"\n        [ngClass]=\"{ \n    'active' : (data?.status == statusKey[0]), \n    'completed' : (data?.status == statusKey[2]), \n    'toolTip': (data?.status == statusKey[1] && selected == data), 'c-pointer': enablePointer }\">\n        <span *ngIf=\"!(data?.status == statusKey[2])\">{{i}}</span>\n        <span class=\"tipTooltext\" [style.visibility]=\"((selected == data) ? 'visible' : 'hidden')\"\n          [style.left.rem]=\"positionTooltipLeft\" [style.top.rem]=\"positionTooltipTop\">\n          <span id=\"progressToolTip\">{{tooltipInfo}}</span>\n        </span>\n        <span *ngIf=\"(data?.status == statusKey[2])\" class=\"checkmark\"></span>\n      </p>\n      <span id=\"progressBarTitle{{i}}\">\n        <span class=\"{{customTitleClass}} title\" id=\"title{{i}}\"\n          [ngClass]=\"{'text-bold': data?.status == statusKey[0], 'c-pointer': enablePointer}\">{{data?.type}}</span>\n        <p [ngClass]=\"{'subtitle-bold': data?.status == statusKey[0], 'c-pointer': enablePointer}\"\n          class=\"{{customSubtitleClass}} type mb-1\" id=\"subTitle{{i}}\">{{data?.name}}</p>\n      </span>\n    </li>\n  </ul>\n</div>",
+                template: "<div class=\"col-12 w-100 d-flex flex-column\">\n  <ul class=\"progressbar\">\n    <li *ngFor=\"let data of progressBarData;let i=index\">\n      <p class=\"circle\" id=\"progressBar{{i}}\" (click)=\"showDetails(data)\"\n        [ngClass]=\"{ \n    'active' : (data?.status == statusKey[0]), \n    'completed' : (data?.status == statusKey[2]), \n    'toolTip': (data?.status == statusKey[1] && selected == data), 'c-pointer': enablePointer }\">\n        <span *ngIf=\"!(data?.status == statusKey[2])\">{{i+1}}</span>\n        <span class=\"tipTooltext\" [style.visibility]=\"((selected == data) ? 'visible' : 'hidden')\"\n          [style.left.rem]=\"positionTooltipLeft\" [style.top.rem]=\"positionTooltipTop\">\n          <span id=\"progressToolTip\">{{tooltipInfo}}</span>\n        </span>\n        <span *ngIf=\"(data?.status == statusKey[2])\" class=\"checkmark\"></span>\n      </p>\n      <span id=\"progressBarTitle{{i}}\">\n        <span class=\"{{customTitleClass}} title\" id=\"title{{i}}\"\n          [ngClass]=\"{'text-bold': data?.status == statusKey[0], 'c-pointer': enablePointer}\">{{data?.type}}</span>\n        <p [ngClass]=\"{'subtitle-bold': data?.status == statusKey[0], 'c-pointer': enablePointer}\"\n          class=\"{{customSubtitleClass}} type mb-1\" id=\"subTitle{{i}}\">{{data?.name}}</p>\n      </span>\n    </li>\n  </ul>\n</div>",
                 styles: ["@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);@import url(https://fonts.googleapis.com/icon?family=Material+Icons);@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.progressActive{width:50px!important;height:50px;color:#fff;background:var(--suku-primary-color);border-radius:50%!important;font-family:var(--suku-primary-font)}.progressUpcoming{width:50px!important;height:50px!important;color:#fff;background:#757575;border-radius:50%!important;font-family:var(--suku-primary-font)}.progressCompleted{width:50px!important;height:50px!important;color:#fff;background-color:#1c1c1c;border-radius:50%!important;font-family:var(--suku-primary-font)}.progressbar li{float:left;width:calc(92%/var(--suku-progress-bar-count));position:relative;text-align:center}.progressbar{counter-reset:step}.progressbar li .circle{content:counter(step);counter-increment:step;width:50px;height:50px;display:block;margin:0 auto 10px;border-radius:50%;line-height:50px;background:#757575;color:#fff;text-align:center;font-weight:400;font-size:14px;font-family:var(--suku-primary-font);z-index:10;position:relative}.progressbar li:after{content:'';position:absolute;width:100%;height:1px;color:#fff;background:#b3b3b3;top:25px;left:-50%;z-index:0}.progressbar li.active:before{color:#fff;background:var(--suku-primary-color)}.progressbar li.completed:before{color:#fff;background-color:#1c1c1c}.progressbar li.active+li:after,.progressbar li.completed+li:after{background-color:#b3b3b3}.progressbar li:first-child:after{content:none}li{list-style:none;font-family:var(--suku-secondary-font);font-size:14px;font-weight:500;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.4px;text-align:center;color:#b6b6b6}.checkmark{position:absolute;top:32%;right:35.5%;z-index:5;background:#1c1c1c;width:12px;height:21px}.checkmark:after{content:'';display:block;width:8px;height:15px;border:solid #d8fc40;border-width:0 3px 3px 0;transform:rotate(45deg)}.tipTool{position:relative;display:inline-block;height:0;text-align:center;border-radius:15px;background-color:#d8d8d8a8 transparent;font-size:18px;color:#757575;font-weight:700;font-style:italic;font-stretch:normal;letter-spacing:.5px}.tipTooltext{width:-webkit-max-content;width:-moz-max-content;width:max-content;background-color:#000000eb;text-align:left;border-radius:6px;padding:15px 18px;position:absolute;z-index:1;bottom:130%;left:-60%;margin-left:-60px;font-style:normal;font-stretch:normal;font-size:13px;font-family:var(--suku-secondary-font);font-weight:500;line-height:1.45;letter-spacing:.4px;color:#b6b6b6}.tipTooltext::after{content:\"\";position:absolute;top:100%;left:36.5%;margin-left:0;border-width:5px;border-style:solid;border-color:#191922 transparent transparent;font-style:normal;font-stretch:normal}.active{color:#fff;background:var(--suku-primary-color)!important}.completed{color:#fff;background-color:#1c1c1c!important}button{background:0 0;color:inherit;border:none;padding:0;font:inherit;cursor:pointer;outline:inherit}.c-pointer{cursor:pointer!important}.text-bold{font-weight:600!important;color:#000!important}.title,.type{font-family:var(--suku-secondary-font);font-size:var(--suku-font-size-2)}.subtitle-bold{font-weight:500!important;color:#000}"]
             }] }
 ];
@@ -7591,7 +7598,8 @@ SukuProgressBarTypeThreeComponent.propDecorators = {
     positionTooltipTop: [{ type: Input, args: ['position-tooltip-top',] }],
     customTitleClass: [{ type: Input, args: ['custom-title-class',] }],
     customSubtitleClass: [{ type: Input, args: ['custom-subtitlee-class',] }],
-    enablePointer: [{ type: Input, args: ['enable-pointer',] }]
+    enablePointer: [{ type: Input, args: ['enable-pointer',] }],
+    action: [{ type: Input }]
 };
 
 /**
@@ -8042,6 +8050,232 @@ SukuClaimsWidgetComponent.propDecorators = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+class SukuFormTableComponent {
+    constructor() {
+        this.headerContent = 'cjkcsnns sjkcs jkkjs kjkjd kjdfkjdf jkdf';
+        this.titleOneColor = 'white';
+        this.titleOneCustomClass = '';
+        this.titleContent = 'Enter animal information:';
+        this.headerSize = '14px';
+        this.dataSize = '12px';
+        this.hrefSelection = 'lotid';
+        this.colorPallete = ['#a3ded8', '#f8dbb4', '#c7c3fa', 'gray'];
+        this.status = ['completed', 'not-completed', 'pending', 'others'];
+        this.dataHeader = {
+            CowId: 'Number',
+            Birthdate: 'String',
+            Approx_Weight: 'Number',
+            Breed: 'Array'
+        };
+        this.editable = [];
+        this.enableHighlighter = false;
+        this.enableControls = true;
+        this.enableSelectAll = false;
+    }
+    /**
+     * @return {?}
+     */
+    get tableData() {
+        return this._tableData;
+    }
+    /**
+     * @param {?} val
+     * @return {?}
+     */
+    set tableData(val) {
+        this._tableData = val;
+        if (this._tableData[0]) {
+            this.tableDataKey = Object.keys(this._tableData[0]);
+        }
+    }
+    /**
+     * @return {?}
+     */
+    ngOnInit() {
+        console.log('dataHeader', this.dataHeader);
+    }
+    /**
+     * @param {?} val
+     * @param {?} editIndex
+     * @return {?}
+     */
+    addTable(val, editIndex) {
+        for (let i = 0; i < val; i++) {
+            this.editable[editIndex + i] = true;
+            /** @type {?} */
+            const template = {};
+            /** @type {?} */
+            const typeKey = this.typeKey;
+            Object.keys(typeKey).forEach((/**
+             * @param {?} key
+             * @return {?}
+             */
+            (key) => {
+                if (typeKey[key] == 'Checkbox') {
+                    template[key] = false;
+                }
+                else if (typeKey[key] == 'String' || typeKey[key] == 'Number') {
+                    template[key] = '';
+                }
+            }));
+            this.items.push(template);
+        }
+    }
+    /**
+     * @return {?}
+     */
+    submit() {
+        console.log('items', this.items);
+    }
+    /**
+     * @param {?} i
+     * @return {?}
+     */
+    edit(i) {
+        console.log(i);
+        if (this.editable[i]) {
+            this.editable[i] = false;
+        }
+        else {
+            this.editable[i] = true;
+        }
+    }
+    /**
+     * @param {?} i
+     * @return {?}
+     */
+    remove(i) {
+        console.log('item', i);
+        this.items.splice(i, 1);
+        console.log('data', this.items);
+    }
+    /**
+     * @param {?} e
+     * @param {?} v
+     * @return {?}
+     */
+    validate(e, v) {
+        console.log(e, v);
+        if (+e.target.value > +v) {
+            e.preventDefault();
+        }
+    }
+    /**
+     * @return {?}
+     */
+    selectAllAction() {
+        /** @type {?} */
+        const selectAll = this.selectAll;
+        if (selectAll) {
+            this.items.forEach((/**
+             * @param {?} element
+             * @return {?}
+             */
+            element => {
+                Object.keys(element).forEach((/**
+                 * @param {?} key
+                 * @return {?}
+                 */
+                (key) => {
+                    if (key == 'Received All Boxes') {
+                        console.log('element', element[key]);
+                        element[key] = true;
+                    }
+                }));
+                console.log('data', element);
+            }));
+        }
+        else {
+            this.items.forEach((/**
+             * @param {?} element
+             * @return {?}
+             */
+            element => {
+                Object.keys(element).forEach((/**
+                 * @param {?} key
+                 * @return {?}
+                 */
+                (key) => {
+                    if (key == 'Received All Boxes') {
+                        console.log('element', element[key]);
+                        element[key] = false;
+                    }
+                    if (key == this.patchKey) {
+                        console.log('element', element[key]);
+                        element[key] = '';
+                    }
+                }));
+                console.log('data', element);
+            }));
+        }
+    }
+}
+SukuFormTableComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'suku-form-table',
+                template: "<div class=\"col\">\n  <div class=\"header\">\n    <div class=\"col pt-4 pb-4\">\n      <div class=\"row\">\n        <div class=\"col\">\n          <h1 [style.font-size.px]=\"titleOneSize\" class=\"title mt-auto mb-0 {{titleOneCustomClass}}\"\n            [style.font-weight]=\"titleOneWeight\" [style.color]=\"titleOneColor\" id=\"{{titleOneId}}\">\n            {{titleContent}}\n          </h1>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"col p-0\">\n    <table class=\"table bg-white table-responsive-sm\">\n      <thead>\n        <tr>\n          <th *ngFor=\"let head of items[0] | keys\">\n            <span>{{head | titlecase }}</span>\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let item of items;let j=index\">\n          <!-- '#d2d2d2' f8dbb4 -->\n          <td *ngFor=\"let list of item | keys; let i=index\" [style.background-color]=\"\n          ((list == highlighterKey) ? \n          ((item[selectionKey] && item[highlighterKey] && enableHighlighter) ? '#a3ded8':( !(item[selectionKey] && enableHighlighter) ? \n                 '#d3d9dc' : '#f8dbb4')) : '') || \n                 ((list == patchKey) ? \n          ((item[patchKey]) ? '#a3ded8' :( !(item[selectionKey]) ? '#f8dbb4' : '#d3d9dc')) : '')\n            \">\n            <span\n              *ngIf=\"!editable[j] && (list != 'action') && (typeKey[list]!='Checkbox') && (list != highlighterKey) && (list != patchKey)\">\n              {{item[list]}}\n            </span>\n            <!-- input -->\n            <input class=\"form-control\" [(ngModel)]=\"item[list]\" [maxLength]=\"25\"\n              *ngIf=\"editable[j] && (list != 'action') && ( typeKey[list]=='String' || typeKey[list]=='Number')\" />\n\n            <input type=\"date\" data-date=\"\" data-date-format=\"mm/dd/yyyy\" class=\"form-control\"\n              *ngIf=\"editable[j] && (list != 'action') && typeKey[list]=='Date'\" [(ngModel)]=\"item[list]\" />\n\n            <!-- checkbox -->\n            <span [ngClass]=\"{'align-checkbox': editable[j] }\" *ngIf=\"(typeKey[list]=='Checkbox')\">\n              <mat-checkbox color=\"primary\" [disabled]=\"!editable[j] && (list != selectionKey)\"\n                [(ngModel)]=\"item[list]\">\n              </mat-checkbox>\n            </span>\n\n            <!-- select -->\n            <select class=\"form-control\" *ngIf=\"editable[j] && (list != 'action') \n            && ( typeKey[list]!='String' && typeKey[list]!='Number' && typeKey[list]!='Checkbox' &&\n            typeKey[list] !='Date')\" [(ngModel)]=\"item[list]\">\n              <option *ngFor=\"let c of typeKey[list]\" [ngValue]=\"c\"> {{c}} </option>\n            </select>\n\n            <!-- input- highlighterKey -->\n            <input type=\"number\" [ngClass]=\"{'disabled': !item[selectionKey]}\" [disabled]=\"!item[selectionKey]\"\n              class=\"form-control sample\" [(ngModel)]=\"item[highlighterKey]\"\n              *ngIf=\"(list == highlighterKey) && (list != 'action') && highlighterKey\" />\n\n            <!-- input -patchKey -->\n            <input type=\"number\" [ngClass]=\"{'disabled': item[selectionKey]}\" [disabled]=\"item[selectionKey]\"\n              class=\"form-control sample\" [(ngModel)]=\"item[selectionKey] ? item[highlighterKey]: item[patchKey]\"\n              *ngIf=\"(list == patchKey) && (list != 'action') && patchKey\" />\n\n\n\n            <span class=\"col p-0 pl-2\" (click)=\"edit(j)\" *ngIf=\"list == 'action' && !editable[j]\">\n              <span class=\"secondary-btn\">\n                edit\n              </span>\n            </span>\n            <span class=\"col p-0 pl-2\" *ngIf=\"list == 'action' && editable[j]\">\n              <span class=\"secondary-btn\" (click)=\"edit(j)\">\n                save\n              </span>\n            </span>\n            <span class=\"col c-pointer pl-4\" *ngIf=\"list == 'action'\">\n              <span class=\"secondary-btn\" (click)=\"remove(j)\">\n                remove\n              </span>\n            </span>\n          </td>\n        </tr>\n        <tr *ngIf=\"enableSelectAll\">\n          <td *ngFor=\"let list of items[0] | keys; let i=index\">\n              <!-- checkbox -->\n              <span [ngClass]=\"{'align-checkbox': editable[j] }\" *ngIf=\"(typeKey[list]=='Checkbox')\">\n                <mat-checkbox color=\"primary\" [disabled]=\"!editable[j] && (list != selectionKey)\"\n                  [(ngModel)]=\"selectAll\" (change)=\"selectAllAction()\"> Select All\n                </mat-checkbox>\n              </span>\n            </td>\n          </tr>\n      </tbody>\n    </table>\n  </div>\n  <div class=\"col text-right\" *ngIf=\"enableControls\">\n    <span class=\"p-2\">\n      <a class=\"secondary-btn\" (click)=\"addTable(1,items?.length)\" color=\"primary\">Add 1 row</a>\n    </span>\n    <span class=\"p-2\">\n      <a class=\"secondary-btn\" (click)=\"addTable(10, items?.length)\" color=\"primary\">Add 10 rows</a>\n    </span>\n  </div>\n</div>",
+                styles: ["@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);@import url(https://fonts.googleapis.com/icon?family=Material+Icons);@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.header{background:var(--suku-bg-primary);border-left:5px solid var(--suku-primary-border-color);border-radius:0 40px 0 0;box-shadow:-4px 4px 5px 0 rgba(0,0,0,.08)}.title{font-family:var(--suku-primary-font);font-weight:600;font-size:var(--suku-font-size-5);text-transform:uppercase}.table{font-family:var(--suku-primary-font);box-shadow:0 1px 2px 0 rgba(0,0,0,.1)}table td{vertical-align:middle;padding-left:1%}input,select{width:100%;height:inherit!important}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;-moz-appearance:none;appearance:none;margin:0}td{width:15%}.form-control:focus{border:1px solid #ced4da;border-color:#ced4da!important;box-shadow:none!important}:host ::ng-deep.mat-checkbox{vertical-align:sub!important}td:last-child,th:last-child{width:12%!important}button:focus{outline:0!important}.secondary-btn{font-family:var(--suku-secondary-font);font-size:var(--suku-font-size-3);font-weight:600;font-style:normal;font-stretch:normal;line-height:1.43;letter-spacing:-.4px;color:var(--suku-text-heading);border-bottom:3.5px solid;border-color:var(--suku-primary-color);word-break:break-word!important;cursor:pointer}.align-checkbox{display:flex;padding-top:5%}.c-pointer{cursor:pointer}table>tbody>tr>td{flex-wrap:wrap!important}.sample{background:inherit!important;border:none!important}.disabled{cursor:not-allowed}select option{border:1px solid #757575}option{border:1px solid #aaa;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.1);color:#555}.table td,.table th{padding:.75rem .75rem .75rem 1.5rem;vertical-align:top;border-top:1px solid #bbbbbbcc}"]
+            }] }
+];
+/** @nocollapse */
+SukuFormTableComponent.ctorParameters = () => [];
+SukuFormTableComponent.propDecorators = {
+    header: [{ type: Input, args: ['table-header',] }],
+    headerContent: [{ type: Input, args: ['table-header-content',] }],
+    tableData: [{ type: Input, args: ['table-data',] }],
+    titleOneId: [{ type: Input, args: ['title-one-id',] }],
+    titleOneSize: [{ type: Input, args: ['title-one-size',] }],
+    titleOneColor: [{ type: Input, args: ['title-one-color',] }],
+    titleOneWeight: [{ type: Input, args: ['title-one-weight',] }],
+    titleOneCustomClass: [{ type: Input, args: ['title-one-custom-class',] }],
+    titleContent: [{ type: Input, args: ['title-content',] }],
+    headerSize: [{ type: Input, args: ['header-size',] }],
+    headerColor: [{ type: Input, args: ['header-color',] }],
+    headerWeight: [{ type: Input, args: ['header-weight',] }],
+    dataSize: [{ type: Input, args: ['data-size',] }],
+    dataColor: [{ type: Input, args: ['data-color',] }],
+    dataWeight: [{ type: Input, args: ['data-weight',] }],
+    hrefSelection: [{ type: Input, args: ['data-href',] }],
+    colorPallete: [{ type: Input, args: ['status-bg-style',] }],
+    status: [{ type: Input, args: ['status',] }],
+    dataHeader: [{ type: Input }],
+    typeKey: [{ type: Input }],
+    items: [{ type: Input }],
+    selectionKey: [{ type: Input }],
+    highlighterKey: [{ type: Input }],
+    patchKey: [{ type: Input }],
+    enableHighlighter: [{ type: Input }],
+    enableControls: [{ type: Input }],
+    enableSelectAll: [{ type: Input }],
+    selectAll: [{ type: Input }]
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class SukuKeysPipe {
+    /**
+     * @param {?} value
+     * @return {?}
+     */
+    transform(value) {
+        /** @type {?} */
+        const keys = [];
+        for (let key in value) {
+            keys.push(key);
+        }
+        return keys;
+    }
+}
+SukuKeysPipe.decorators = [
+    { type: Pipe, args: [{ name: 'keys' },] }
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 class SukuWebcomponentsModule {
 }
 SukuWebcomponentsModule.decorators = [
@@ -8124,7 +8358,9 @@ SukuWebcomponentsModule.decorators = [
                     SukuNavBarComponent,
                     SukuUserDetailsComponent,
                     SukuMessageBoxComponent,
-                    SukuClaimsWidgetComponent
+                    SukuClaimsWidgetComponent,
+                    SukuFormTableComponent,
+                    SukuKeysPipe
                 ],
                 imports: [
                     CommonModule,
@@ -8260,7 +8496,8 @@ SukuWebcomponentsModule.decorators = [
                     SukuNavBarComponent,
                     SukuUserDetailsComponent,
                     SukuMessageBoxComponent,
-                    SukuClaimsWidgetComponent
+                    SukuClaimsWidgetComponent,
+                    SukuFormTableComponent
                 ],
                 entryComponents: [SukuConfirmationModalComponent, SukuAddLicenseModalComponent],
                 schemas: [],
@@ -8520,6 +8757,6 @@ SukuWebcomponentsService.ctorParameters = () => [];
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { SukuFormFooterModule, SukuAchSettingModule, SukuAddIconWidgetModule, SukuBidTagModule, SukuButtonsModule, SukuLoaderModule, SukuModalModule, SukuModalService, SukuFileUploadModule, SukuWebcomponentsModule, suku, dark, light, SukuWebcomponentsService, SukuLoaderService, SukuACHSettingsComponent as ɵb, SukuAddIconComponent as ɵcd, SukuAddLicenseModalComponent as ɵcy, SukuAddWidgetComponent as ɵc, SukuAddressWidgetComponent as ɵbe, SukuBeneficialOwnerComponent as ɵbt, SukuBidInfoComponent as ɵbc, SukuLargeBidTagComponent as ɵcq, SukuBidTagComponent as ɵd, SukuBidWidgetTagComponent as ɵcr, SukuDefaultButtonComponent as ɵh, SukuHomepageButtonComponent as ɵi, SukuInfoButtonComponent as ɵe, SukuPrimaryButtonComponent as ɵf, SukuSecondaryButtonComponent as ɵg, SukuCardLineTypeOneComponent as ɵbz, SukuCardLineTypeTwoComponent as ɵca, SukuCardLineComponent as ɵn, SukuCardTitleComponent as ɵbm, ScrollToBottomDirective as ɵcp, SukuChatWidgetComponent as ɵco, SukuCheckboxComponent as ɵct, SukuChipListComponent as ɵda, SukuClaimsWidgetComponent as ɵdm, SukuConfirmationModalComponent as ɵcx, SukuConfirmationComponent as ɵk, SukuCreateCustomerComponent as ɵbs, SukuCreationCustomerFileuploadComponent as ɵbw, SukuDashboardProfileComponent as ɵo, SukuDateTimePickerComponent as ɵdb, SukuDateComponent as ɵde, SukuDisplayTableComponent as ɵdh, SukuDropdownWfcComponent as ɵdd, SukuDropdownComponent as ɵcj, SukuDwollaFundingAgreementComponent as ɵbu, SukuDwollaFundingSourceComponent as ɵbv, SukuDropZoneDirective as ɵm, SukuFileUploadComponent as ɵl, SukuFiltersComponent as ɵbi, SukuFormFooterComponent as ɵa, SukuFundingSourceComponent as ɵbr, SukuGalleryUploadComponent as ɵcz, SukuGalleryComponent as ɵcs, SukuHeaderComponent as ɵck, SukuHeadingComponent as ɵp, SukuHomeItalicHeadingComponent as ɵq, SukuHomeWidgetComponent as ɵr, SukuHomepageSectionComponent as ɵcf, SukuHomepageComponent as ɵce, SukuIconWidgetComponent as ɵdc, SukuImageWidgetComponent as ɵcn, SukuInlineDropdownComponent as ɵs, SukuLinkComponent as ɵz, SukuLoaderComponent as ɵj, SukuLoginComponent as ɵdf, SukuMailWidgetComponent as ɵt, SukuMatchChipComponent as ɵu, SukuMessageBoxComponent as ɵdl, SukuNavBarComponent as ɵdj, SukuNavSubmenuComponent as ɵbb, SukuNotificationPanelComponent as ɵcc, SukuNotificationWidgetComponent as ɵv, SukuPaymentPortalHelpComponent as ɵbx, SukuPhoneWidgetComponent as ɵbd, SukuProductTraceWidgetComponent as ɵbk, SukuProfileHeaderComponent as ɵcg, SukuProfileImageIconComponent as ɵcw, SukuProfileWidgetComponent as ɵbg, SukuProgressBarTypeOneComponent as ɵw, SukuProgressBarTypeThreeComponent as ɵdg, SukuProgressBarTypeTwoComponent as ɵx, SukuRadioButtonComponent as ɵci, SukuRatingCardLineComponent as ɵcb, SukuRatingStarComponent as ɵbn, SukuResponseComponent as ɵbp, SukuSearchInputComponent as ɵbf, SukuSelectInputComponent as ɵba, SukuShippingInfoWidgetComponent as ɵcm, SukuShippingWidgetComponent as ɵbo, SukuSocialIconsComponent as ɵch, SukuStarBadgeComponent as ɵbh, SukuSubHeadingComponent as ɵy, SukuTermsAndConditionsComponent as ɵby, SukuTitleHeaderComponent as ɵcl, SukuTrackProgressBarComponent as ɵbj, SukuTransactionHistoryComponent as ɵbq, SukuTreeComponent as ɵbl, SukuUserDetailsComponent as ɵdk, SukuUserInputComponent as ɵcu, SukuUsernameIconWidgetComponent as ɵdi, SukuWysiwygEditorComponent as ɵcv };
+export { SukuFormFooterModule, SukuAchSettingModule, SukuAddIconWidgetModule, SukuBidTagModule, SukuButtonsModule, SukuLoaderModule, SukuModalModule, SukuModalService, SukuFileUploadModule, SukuWebcomponentsModule, suku, dark, light, SukuWebcomponentsService, SukuLoaderService, SukuACHSettingsComponent as ɵb, SukuAddIconComponent as ɵcd, SukuAddLicenseModalComponent as ɵcy, SukuAddWidgetComponent as ɵc, SukuAddressWidgetComponent as ɵbe, SukuBeneficialOwnerComponent as ɵbt, SukuBidInfoComponent as ɵbc, SukuLargeBidTagComponent as ɵcq, SukuBidTagComponent as ɵd, SukuBidWidgetTagComponent as ɵcr, SukuDefaultButtonComponent as ɵh, SukuHomepageButtonComponent as ɵi, SukuInfoButtonComponent as ɵe, SukuPrimaryButtonComponent as ɵf, SukuSecondaryButtonComponent as ɵg, SukuCardLineTypeOneComponent as ɵbz, SukuCardLineTypeTwoComponent as ɵca, SukuCardLineComponent as ɵn, SukuCardTitleComponent as ɵbm, ScrollToBottomDirective as ɵcp, SukuChatWidgetComponent as ɵco, SukuCheckboxComponent as ɵct, SukuChipListComponent as ɵda, SukuClaimsWidgetComponent as ɵdm, SukuConfirmationModalComponent as ɵcx, SukuConfirmationComponent as ɵk, SukuCreateCustomerComponent as ɵbs, SukuCreationCustomerFileuploadComponent as ɵbw, SukuDashboardProfileComponent as ɵo, SukuDateTimePickerComponent as ɵdb, SukuDateComponent as ɵde, SukuDisplayTableComponent as ɵdh, SukuDropdownWfcComponent as ɵdd, SukuDropdownComponent as ɵcj, SukuDwollaFundingAgreementComponent as ɵbu, SukuDwollaFundingSourceComponent as ɵbv, SukuDropZoneDirective as ɵm, SukuFileUploadComponent as ɵl, SukuFiltersComponent as ɵbi, SukuFormFooterComponent as ɵa, SukuFormTableComponent as ɵdn, SukuKeysPipe as ɵdo, SukuFundingSourceComponent as ɵbr, SukuGalleryUploadComponent as ɵcz, SukuGalleryComponent as ɵcs, SukuHeaderComponent as ɵck, SukuHeadingComponent as ɵp, SukuHomeItalicHeadingComponent as ɵq, SukuHomeWidgetComponent as ɵr, SukuHomepageSectionComponent as ɵcf, SukuHomepageComponent as ɵce, SukuIconWidgetComponent as ɵdc, SukuImageWidgetComponent as ɵcn, SukuInlineDropdownComponent as ɵs, SukuLinkComponent as ɵz, SukuLoaderComponent as ɵj, SukuLoginComponent as ɵdf, SukuMailWidgetComponent as ɵt, SukuMatchChipComponent as ɵu, SukuMessageBoxComponent as ɵdl, SukuNavBarComponent as ɵdj, SukuNavSubmenuComponent as ɵbb, SukuNotificationPanelComponent as ɵcc, SukuNotificationWidgetComponent as ɵv, SukuPaymentPortalHelpComponent as ɵbx, SukuPhoneWidgetComponent as ɵbd, SukuProductTraceWidgetComponent as ɵbk, SukuProfileHeaderComponent as ɵcg, SukuProfileImageIconComponent as ɵcw, SukuProfileWidgetComponent as ɵbg, SukuProgressBarTypeOneComponent as ɵw, SukuProgressBarTypeThreeComponent as ɵdg, SukuProgressBarTypeTwoComponent as ɵx, SukuRadioButtonComponent as ɵci, SukuRatingCardLineComponent as ɵcb, SukuRatingStarComponent as ɵbn, SukuResponseComponent as ɵbp, SukuSearchInputComponent as ɵbf, SukuSelectInputComponent as ɵba, SukuShippingInfoWidgetComponent as ɵcm, SukuShippingWidgetComponent as ɵbo, SukuSocialIconsComponent as ɵch, SukuStarBadgeComponent as ɵbh, SukuSubHeadingComponent as ɵy, SukuTermsAndConditionsComponent as ɵby, SukuTitleHeaderComponent as ɵcl, SukuTrackProgressBarComponent as ɵbj, SukuTransactionHistoryComponent as ɵbq, SukuTreeComponent as ɵbl, SukuUserDetailsComponent as ɵdk, SukuUserInputComponent as ɵcu, SukuUsernameIconWidgetComponent as ɵdi, SukuWysiwygEditorComponent as ɵcv };
 
 //# sourceMappingURL=suku-webcomponents.js.map
