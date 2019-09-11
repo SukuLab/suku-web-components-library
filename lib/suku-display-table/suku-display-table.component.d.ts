@@ -2,7 +2,9 @@ import { OnInit, EventEmitter } from '@angular/core';
 export declare class SukuDisplayTableComponent implements OnInit {
     header: any;
     headerContent: string;
+    itemsPerPageCount: string;
     _tableData: any;
+    p: any;
     tableDataKey: any;
     tableData: any;
     titleOneId: any;
