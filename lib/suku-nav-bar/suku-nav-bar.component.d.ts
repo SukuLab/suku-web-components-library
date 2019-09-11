@@ -1,3 +1,4 @@
+import { EventEmitter } from '@angular/core';
 export declare class SukuNavBarComponent {
     collpose: any;
     selected: any;
@@ -16,6 +17,7 @@ export declare class SukuNavBarComponent {
     logoCustomClass: string;
     nameCustomClass: string;
     hideBellIcon: boolean;
+    action: EventEmitter<{}>;
     selectedItem: any;
     data: {
         logo: string;
