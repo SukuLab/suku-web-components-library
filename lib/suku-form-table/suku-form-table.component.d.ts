@@ -33,6 +33,7 @@ export declare class SukuFormTableComponent implements OnInit {
     save: EventEmitter<{}>;
     remove: EventEmitter<{}>;
     submitData: EventEmitter<{}>;
+    _null: any;
     constructor();
     ngOnInit(): void;
     addTable(val: any, editIndex: any): void;
@@ -42,5 +43,6 @@ export declare class SukuFormTableComponent implements OnInit {
     checkValid(list: any): boolean;
     selectAllAction(): void;
     chkHiddenKey(key: any): boolean;
+    patchValue(selection: any, defaultValue: any, index: any): void;
     sendData(): void;
 }
