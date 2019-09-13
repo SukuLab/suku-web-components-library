@@ -27,7 +27,7 @@ export declare class SukuFormTableComponent implements OnInit {
     enableControls: boolean;
     enableSelectAll: boolean;
     selectAll: any;
-    keyData: any;
+    keyData: any[];
     controlsSize: any;
     controlCustomClass: any;
     save: EventEmitter<{}>;
