@@ -9350,18 +9350,19 @@
                 if (selectAll) {
                     this._items.forEach(( /**
                      * @param {?} element
+                     * @param {?} mainIndex
                      * @return {?}
-                     */function (element) {
+                     */function (element, mainIndex) {
                         Object.keys(element).forEach(( /**
                          * @param {?} key
                          * @param {?} index
                          * @return {?}
                          */function (key, index) {
-                            if (key == 'Received All Boxes') {
-                                console.log('element', element[key], index);
+                            if (key == _this.selectionKey) {
+                                console.log('element', element[key], index, mainIndex, _this._items);
                                 element[key] = true;
                                 element[_this.patchKey] = element[_this.highlighterKey];
-                                _this._items[index][_this.patchKey] = _this._items[index][_this.highlighterKey];
+                                _this._items[mainIndex][_this.patchKey] = _this._items[mainIndex][_this.highlighterKey];
                             }
                         }));
                         console.log('data', element);
@@ -9376,7 +9377,7 @@
                          * @param {?} key
                          * @return {?}
                          */function (key) {
-                            if (key == 'Received All Boxes') {
+                            if (key == _this.selectionKey) {
                                 console.log('element', element[key]);
                                 element[key] = false;
                             }

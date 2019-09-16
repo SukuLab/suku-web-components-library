@@ -8328,20 +8328,21 @@ class SukuFormTableComponent {
         if (selectAll) {
             this._items.forEach((/**
              * @param {?} element
+             * @param {?} mainIndex
              * @return {?}
              */
-            element => {
+            (element, mainIndex) => {
                 Object.keys(element).forEach((/**
                  * @param {?} key
                  * @param {?} index
                  * @return {?}
                  */
                 (key, index) => {
-                    if (key == 'Received All Boxes') {
-                        console.log('element', element[key], index);
+                    if (key == this.selectionKey) {
+                        console.log('element', element[key], index, mainIndex, this._items);
                         element[key] = true;
                         element[this.patchKey] = element[this.highlighterKey];
-                        this._items[index][this.patchKey] = this._items[index][this.highlighterKey];
+                        this._items[mainIndex][this.patchKey] = this._items[mainIndex][this.highlighterKey];
                     }
                 }));
                 console.log('data', element);
@@ -8358,7 +8359,7 @@ class SukuFormTableComponent {
                  * @return {?}
                  */
                 (key) => {
-                    if (key == 'Received All Boxes') {
+                    if (key == this.selectionKey) {
                         console.log('element', element[key]);
                         element[key] = false;
                     }
