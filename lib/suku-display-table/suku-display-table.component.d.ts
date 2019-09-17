@@ -2,7 +2,6 @@ import { OnInit, EventEmitter } from '@angular/core';
 export declare class SukuDisplayTableComponent implements OnInit {
     header: any;
     headerContent: string;
-    itemsPerPageCount: string;
     _tableData: any;
     p: any;
     tableDataKey: any;
@@ -23,6 +22,8 @@ export declare class SukuDisplayTableComponent implements OnInit {
     colorPallete: string[];
     status: string[];
     action: EventEmitter<{}>;
+    showPagination: boolean;
+    itemsPerPageCount: any;
     constructor();
     ngOnInit(): void;
 }

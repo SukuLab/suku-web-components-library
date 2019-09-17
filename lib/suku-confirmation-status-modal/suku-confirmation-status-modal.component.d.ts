@@ -1,8 +1,12 @@
 import { OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
+import { FormControl } from '@angular/forms';
+import { MatDialogRef, MatSnackBar } from '@angular/material';
 export declare class SukuConfirmationStatusModalComponent implements OnInit {
     dialogCustomRef: MatDialogRef<SukuConfirmationStatusModalComponent>;
+    private snackBar;
     data: any;
+    controlOneValue: any;
+    controlTwoValue: any;
     dialogData: {
         'imgSrc': string;
         'imgId': string;
@@ -24,8 +28,20 @@ export declare class SukuConfirmationStatusModalComponent implements OnInit {
         submitBtnTxt: string;
         cancelBtnCustomClass: string;
         submitBtnCustomClass: string;
+        controlOne: string;
+        controlTwo: string;
+        controlTwoRequired: string;
+        controlOneId: string;
+        controlTwoId: string;
+        controlOnePlaceholder: string;
+        controlTwoPlaceholder: string;
+        controlTwoRquiredErrorMsg: string;
     };
-    constructor(dialogCustomRef: MatDialogRef<SukuConfirmationStatusModalComponent>, data: any);
+    controlOne: FormControl;
+    controlTwo: FormControl;
+    _subscriptionTwo: any;
+    _subscriptionOne: any;
+    constructor(dialogCustomRef: MatDialogRef<SukuConfirmationStatusModalComponent>, snackBar: MatSnackBar, data: any);
     ngOnInit(): void;
     close(): void;
     submit(): void;
