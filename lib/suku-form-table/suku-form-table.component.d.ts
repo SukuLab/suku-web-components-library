@@ -17,6 +17,7 @@ export declare class SukuFormTableComponent implements OnInit {
     status: string[];
     enableEditIndex: any;
     typeKey: any;
+    type: any;
     defaultCount: number;
     items: any[];
     selectionKey: any;
@@ -33,6 +34,7 @@ export declare class SukuFormTableComponent implements OnInit {
     save: EventEmitter<{}>;
     remove: EventEmitter<{}>;
     submitData: EventEmitter<{}>;
+    formStatus: EventEmitter<{}>;
     _null: any;
     constructor();
     ngOnInit(): void;
@@ -43,6 +45,6 @@ export declare class SukuFormTableComponent implements OnInit {
     checkValid(list: any): boolean;
     selectAllAction(): void;
     chkHiddenKey(key: any): boolean;
-    patchValue(selection: any, defaultValue: any, index: any): void;
+    patchValue(selection: any, defaultValue: any, index: any): Promise<void>;
     sendData(): void;
 }
