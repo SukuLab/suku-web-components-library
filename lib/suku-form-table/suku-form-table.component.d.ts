@@ -4,6 +4,8 @@ export declare class SukuFormTableComponent implements OnInit {
     _items: any[];
     _itemsKey: any;
     editable: any[];
+    errorvalidationIndex: any;
+    errorvalidationKey: any;
     titleOneId: any;
     titleOneSize: any;
     titleOneColor: string;
@@ -47,5 +49,6 @@ export declare class SukuFormTableComponent implements OnInit {
     chkHiddenKey(key: any): boolean;
     patchValue(selection: any, defaultValue: any, index: any): Promise<void>;
     sendData(): void;
+    validate(key: any, index: any): void;
     checkSpcialChar(event: any): boolean;
 }
