@@ -47,4 +47,5 @@ export declare class SukuFormTableComponent implements OnInit {
     chkHiddenKey(key: any): boolean;
     patchValue(selection: any, defaultValue: any, index: any): Promise<void>;
     sendData(): void;
+    checkSpcialChar(event: any): boolean;
 }

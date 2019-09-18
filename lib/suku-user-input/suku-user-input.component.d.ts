@@ -23,7 +23,6 @@ export declare class SukuUserInputComponent implements OnInit {
     enableMinLenValidators: any;
     action: EventEmitter<{}>;
     onChangeAction: EventEmitter<{}>;
-    email: FormControl;
     matcher: MyErrorStateMatcher;
     constructor();
     ngOnInit(): void;
