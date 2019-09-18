@@ -8470,9 +8470,11 @@ var SukuLoginComponent = /** @class */ (function () {
          */
         function (val) {
             console.log('val', val);
-            if (val.username && val.password) {
-                this.usernameControl.patchValue(val.username);
-                this.passwordControl.patchValue(val.password);
+            if (val) {
+                if (val.username && val.password) {
+                    this.usernameControl.patchValue(val.username);
+                    this.passwordControl.patchValue(val.password);
+                }
             }
         },
         enumerable: true,
@@ -8510,7 +8512,7 @@ var SukuLoginComponent = /** @class */ (function () {
                 var data = {
                     username: this.usernameControl.value,
                     password: this.passwordControl.value,
-                    rememberMe: this.remeberMeValue
+                    rememberMe: this.remeberMeValue || this.remeberMeChecked
                 };
                 console.log(data);
                 this.formSubmit.emit(data);
