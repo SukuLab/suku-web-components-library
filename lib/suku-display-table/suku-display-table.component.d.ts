@@ -21,9 +21,11 @@ export declare class SukuDisplayTableComponent implements OnInit {
     hrefSelection: string;
     colorPallete: string[];
     status: string[];
-    action: EventEmitter<{}>;
     showPagination: boolean;
     itemsPerPageCount: any;
+    action: EventEmitter<{}>;
+    pagination: EventEmitter<{}>;
     constructor();
     ngOnInit(): void;
+    paginationFun(p: any): void;
 }
