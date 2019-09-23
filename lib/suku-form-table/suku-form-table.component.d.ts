@@ -51,4 +51,5 @@ export declare class SukuFormTableComponent implements OnInit {
     sendData(): void;
     validate(key: any, index: any): void;
     checkSpcialChar(event: any): boolean;
+    sort(head: any, type: any): void;
 }

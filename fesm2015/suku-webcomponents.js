@@ -8554,7 +8554,8 @@ class SukuFormTableComponent {
             event.charCode == 40 ||
             event.charCode == 41 ||
             event.charCode == 39 ||
-            event.charCode == 33) {
+            event.charCode == 33 ||
+            event.charCode == 32) {
             event.returnValue = true;
             return true;
         }
@@ -8566,6 +8567,26 @@ class SukuFormTableComponent {
         }
         event.returnValue = true;
         return true;
+    }
+    /**
+     * @param {?} head
+     * @param {?} type
+     * @return {?}
+     */
+    sort(head, type) {
+        if (this._items) {
+            if (!(type == 'Checkbox')) {
+                this._items.sort((/**
+                 * @param {?} a
+                 * @param {?} b
+                 * @return {?}
+                 */
+                (a, b) => {
+                    return +a[head] - +b[head];
+                }));
+            }
+            console.log('sort -', this._items, head, type);
+        }
     }
 }
 SukuFormTableComponent.decorators = [
