@@ -11,4 +11,5 @@ export declare class SukuMessageWidgetComponent implements OnInit {
     constructor();
     ngOnInit(): void;
     submitData(): void;
+    checkSpcialChar(event: any): boolean;
 }
