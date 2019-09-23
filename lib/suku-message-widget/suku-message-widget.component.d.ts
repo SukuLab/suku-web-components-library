@@ -7,6 +7,8 @@ export declare class SukuMessageWidgetComponent implements OnInit {
     id: string;
     customClass: any;
     maxlength: number;
+    readOnly: any;
+    value: string;
     action: EventEmitter<{}>;
     constructor();
     ngOnInit(): void;

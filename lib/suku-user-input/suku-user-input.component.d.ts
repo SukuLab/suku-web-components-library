@@ -17,6 +17,8 @@ export declare class SukuUserInputComponent implements OnInit {
     errorMessageTwo: string;
     errorMessageThree: string;
     errorMessageFour: string;
+    value: string;
+    disable: any;
     enableRequiredValidator: any;
     enablePatternValidators: any;
     enableMaxLenValidators: any;
