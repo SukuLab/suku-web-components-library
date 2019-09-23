@@ -4,6 +4,7 @@ export declare class SukuClaimsWidgetComponent implements OnInit {
         name: string;
         verifiable: boolean;
         tooltipInfo: string;
+        description: string[];
     }[];
     claimTitleCustomClass: string;
     claimTooltipCustomClass: string;
