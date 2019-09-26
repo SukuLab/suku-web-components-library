@@ -7,10 +7,16 @@ export declare class SukuLoginComponent implements OnInit {
     hide: any;
     remeberMeValue: any;
     _enableRequiredValidator: BehaviorSubject<string>;
+    title: string;
     color: string;
     usernameControl: FormControl;
     placeholderOne: string;
     userNameId: string;
+    passwordLabelOne: string;
+    passwordLabelTwo: string;
+    remembermeLabel: string;
+    buttonLabel: string;
+    buttonId: string;
     passwordControl: FormControl;
     placeholderTwo: string;
     passwordId: string;

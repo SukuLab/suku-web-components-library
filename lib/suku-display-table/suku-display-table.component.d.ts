@@ -24,6 +24,9 @@ export declare class SukuDisplayTableComponent implements OnInit {
     showPagination: boolean;
     itemsPerPageCount: any;
     totalItem: any;
+    translator: boolean;
+    paginationPreviousLabel: string;
+    paginationNextLabel: string;
     action: EventEmitter<{}>;
     pagination: EventEmitter<{}>;
     constructor();

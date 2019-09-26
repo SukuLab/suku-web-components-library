@@ -17,7 +17,14 @@ export declare class SukuNavBarComponent {
     logoCustomClass: string;
     nameCustomClass: string;
     hideBellIcon: boolean;
+    hideUserDetail: boolean;
+    enableTranslate: boolean;
+    language: string;
+    sliderTheme: string;
+    sliderId: string;
+    translatorValue: boolean;
     action: EventEmitter<{}>;
+    languageChange: EventEmitter<{}>;
     selectedItem: any;
     data: {
         logo: string;
@@ -50,8 +57,8 @@ export declare class SukuNavBarComponent {
         } | {
             name: string;
             subMenu: boolean;
+            id: string;
             visible?: undefined;
-            id?: undefined;
             subMenuData?: undefined;
         })[];
     };
