@@ -22,6 +22,7 @@ export declare class SukuNavBarComponent {
     language: string;
     sliderTheme: string;
     sliderId: string;
+    toggleLabelPosition: string;
     translatorValue: boolean;
     action: EventEmitter<{}>;
     languageChange: EventEmitter<{}>;
