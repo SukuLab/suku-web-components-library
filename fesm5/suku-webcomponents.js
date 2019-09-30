@@ -8716,7 +8716,7 @@ var SukuProgressBarTypeThreeComponent = /** @class */ (function () {
         customTitleClass: [{ type: Input, args: ['custom-title-class',] }],
         customSubtitleClass: [{ type: Input, args: ['custom-subtitlee-class',] }],
         enablePointer: [{ type: Input, args: ['enable-pointer',] }],
-        action: [{ type: Input }]
+        action: [{ type: Output }]
     };
     return SukuProgressBarTypeThreeComponent;
 }());

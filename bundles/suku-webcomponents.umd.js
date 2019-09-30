@@ -8857,7 +8857,7 @@
             customTitleClass: [{ type: i0.Input, args: ['custom-title-class',] }],
             customSubtitleClass: [{ type: i0.Input, args: ['custom-subtitlee-class',] }],
             enablePointer: [{ type: i0.Input, args: ['enable-pointer',] }],
-            action: [{ type: i0.Input }]
+            action: [{ type: i0.Output }]
         };
         return SukuProgressBarTypeThreeComponent;
     }());
