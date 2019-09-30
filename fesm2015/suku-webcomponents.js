@@ -8654,10 +8654,10 @@ class SukuFormTableComponent {
                  * @return {?}
                  */
                 function (a, b) {
-                    if (a[head].toLowerCase() < b[head].toLowerCase()) {
+                    if (a[head].toLowerCase() < b[head].toLowerCase() && formate == 'asse') {
                         return -1;
                     }
-                    if (a[head].toLowerCase() > b[head].toLowerCase()) {
+                    if (b[head].toLowerCase() < a[head].toLowerCase() && formate == 'desc') {
                         return -1;
                     }
                     return 0;
