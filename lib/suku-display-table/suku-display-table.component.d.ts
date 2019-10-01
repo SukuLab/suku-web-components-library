@@ -29,7 +29,9 @@ export declare class SukuDisplayTableComponent implements OnInit {
     paginationNextLabel: string;
     action: EventEmitter<{}>;
     pagination: EventEmitter<{}>;
+    sortable: string;
     constructor();
     ngOnInit(): void;
     paginationFun(p: any): void;
+    sort(head: any, type: any, formate: any): void;
 }

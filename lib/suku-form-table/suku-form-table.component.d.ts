@@ -39,6 +39,7 @@ export declare class SukuFormTableComponent implements OnInit {
     remove: EventEmitter<{}>;
     submitData: EventEmitter<{}>;
     formStatus: EventEmitter<{}>;
+    sortable: string;
     _null: any;
     constructor();
     ngOnInit(): void;
