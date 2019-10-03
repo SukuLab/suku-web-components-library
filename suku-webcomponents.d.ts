@@ -34,6 +34,7 @@ export { SukuCreationCustomerFileuploadComponent as ɵbw } from './lib/suku-crea
 export { SukuDashboardProfileComponent as ɵo } from './lib/suku-dashboard-profile/suku-dashboard-profile.component';
 export { SukuDateTimePickerComponent as ɵdb } from './lib/suku-date-time-picker/suku-date-time-picker.component';
 export { SukuDateComponent as ɵde } from './lib/suku-date/suku-date.component';
+export { DateLocaleFilter as ɵdq } from './lib/suku-display-table/suku-date-pipe';
 export { SukuDisplayTableComponent as ɵdh } from './lib/suku-display-table/suku-display-table.component';
 export { SukuDropdownWfcComponent as ɵdd } from './lib/suku-dropdown-wfc/suku-dropdown-wfc.component';
 export { SukuDropdownComponent as ɵcj } from './lib/suku-dropdown/suku-dropdown.component';
@@ -63,7 +64,7 @@ export { SukuLoginComponent as ɵdf } from './lib/suku-login/suku-login.componen
 export { SukuMailWidgetComponent as ɵt } from './lib/suku-mail-widget/suku-mail-widget.component';
 export { SukuMatchChipComponent as ɵu } from './lib/suku-match-chip/suku-match-chip.component';
 export { SukuMessageBoxComponent as ɵdl } from './lib/suku-message-box/suku-message-box.component';
-export { SukuMessageWidgetComponent as ɵdq } from './lib/suku-message-widget/suku-message-widget.component';
+export { SukuMessageWidgetComponent as ɵdr } from './lib/suku-message-widget/suku-message-widget.component';
 export { SukuNavBarComponent as ɵdj } from './lib/suku-nav-bar/suku-nav-bar.component';
 export { SukuNavSubmenuComponent as ɵbb } from './lib/suku-nav-submenu/suku-nav-submenu.component';
 export { SukuNotificationPanelComponent as ɵcc } from './lib/suku-notification-panel/suku-notification-panel.component';
