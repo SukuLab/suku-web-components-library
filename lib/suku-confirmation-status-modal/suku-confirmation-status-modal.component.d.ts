@@ -39,10 +39,12 @@ export declare class SukuConfirmationStatusModalComponent implements OnInit {
     };
     controlOne: FormControl;
     controlTwo: FormControl;
+    disableValue: Boolean;
     _subscriptionTwo: any;
     _subscriptionOne: any;
     constructor(dialogCustomRef: MatDialogRef<SukuConfirmationStatusModalComponent>, snackBar: MatSnackBar, data: any);
     ngOnInit(): void;
     close(): void;
+    checkChar(event: any): void;
     submit(): void;
 }
