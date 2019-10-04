@@ -5,6 +5,5 @@ export declare class DateLocaleFilter implements PipeTransform {
     translate: TranslateService;
     private datePipe;
     constructor(translate: TranslateService, datePipe: DatePipe);
-    transform(value: string, dateFormat: string): string;
-    getTranslatedTxt(key: any): Promise<any>;
+    transform(value: string, dateFormat: string): any;
 }
