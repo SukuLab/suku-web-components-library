@@ -4253,6 +4253,7 @@
             this.icon = 'suku-dropdown-icon';
             this.iconCustomClass = 'arrow-icon';
             this.iconId = 'arrow';
+            this.disabled = false;
             this.select = new i0.EventEmitter();
         }
         /**
@@ -4277,7 +4278,7 @@
         SukuDropdownComponent.decorators = [
             { type: i0.Component, args: [{
                         selector: 'suku-dropdown',
-                        template: "<span [formGroup]=\"form\">\n  <mat-form-field class=\"col p-0\">\n    <mat-select id=\"{{selectId}}\" [class]=\"customSelectClass\" #selector formControlName=\"{{control}}\"\n      (selectionChange)=\"select.emit(selector.value)\" [placeholder]=\"placeholder\">\n      <mat-option *ngFor=\"let item of data;let i=index\" value=\"{{item[keyValue]}}\" id=\"option{{i}}\">\n        {{item[displayKey]}}\n      </mat-option>\n    </mat-select>\n    <span id=\"dropdown-arrow-icon\" matSuffix>\n      <mat-icon>\n        <span>\n          <i [id]=\"iconId\" class=\"{{iconCustomClass}} {{icon}}\"></i>\n          <!-- <img [id]=\"iconId\" class=\"{{iconCustomClass}}\" height=\"23\" src=\"{{icon}}\" width=\"20\"> -->\n        </span>\n      </mat-icon>\n    </span>\n    <mat-error>\n      <span class=\"err_style\">\n        <span *ngIf=\"form.hasError('required',[control])\" id=\"countryReq\">{{errorMsg}}</span>\n      </span>\n    </mat-error>\n  </mat-form-field>\n</span>",
+                        template: "<span [formGroup]=\"form\">\n  <mat-form-field class=\"col p-0\">\n    <mat-select id=\"{{selectId}}\" [class]=\"customSelectClass\" [disabled]=\"disabled\" #selector\n      formControlName=\"{{control}}\" (selectionChange)=\"select.emit(selector.value)\" [placeholder]=\"placeholder\">\n      <mat-option *ngFor=\"let item of data;let i=index\" value=\"{{item[keyValue]}}\" id=\"option{{i}}\">\n        {{item[displayKey]}}\n      </mat-option>\n    </mat-select>\n    <span id=\"dropdown-arrow-icon\" matSuffix>\n      <mat-icon>\n        <span>\n          <i [id]=\"iconId\" class=\"{{iconCustomClass}} {{icon}}\"></i>\n          <!-- <img [id]=\"iconId\" class=\"{{iconCustomClass}}\" height=\"23\" src=\"{{icon}}\" width=\"20\"> -->\n        </span>\n      </mat-icon>\n    </span>\n    <mat-error>\n      <span class=\"err_style\">\n        <span *ngIf=\"form.hasError('required',[control])\" id=\"countryReq\">{{errorMsg}}</span>\n      </span>\n    </mat-error>\n  </mat-form-field>\n</span>",
                         styles: ["::ng-deep .mat-select-arrow{border:0!important;-webkit-appearance:none;-moz-appearance:none}:host ::ng-deep.mat-select-trigger{height:1.7em!important;padding-bottom:.5em!important}:host ::ng-deep .mat-form-field-suffix{top:9px!important}.mat-select-panel{margin-left:10px!important}.mat-select-panel:focus,.mat-select-trigger:focus{outline:0!important}::ng-deep mat-select:focus{outline:0!important}.arrow-icon{font-size:2.5em}"]
                     }] }
         ];
@@ -4297,6 +4298,7 @@
             icon: [{ type: i0.Input }],
             iconCustomClass: [{ type: i0.Input, args: ['icon-custom-class',] }],
             iconId: [{ type: i0.Input, args: ['icon-id',] }],
+            disabled: [{ type: i0.Input, args: ['disabled',] }],
             select: [{ type: i0.Output }]
         };
         return SukuDropdownComponent;
@@ -8503,6 +8505,7 @@
             this.icon = 'suku-dropdown-icon';
             this.iconCustomClass = 'arrow-icon';
             this.iconId = 'arrow';
+            this.disabled = false;
             this.select = new i0.EventEmitter();
             this.valueChange = new i0.EventEmitter();
         }
@@ -8544,7 +8547,7 @@
         SukuDropdownWfcComponent.decorators = [
             { type: i0.Component, args: [{
                         selector: 'suku-dropdown-wfc',
-                        template: "<span>\n  <mat-form-field class=\"col p-0\">\n    <mat-select id=\"{{selectId}}\" [class]=\"customSelectClass\" #selector [formControl]=\"dropdownControl\"\n      name=\"dropdownControl\" (selectionChange)=\"select.emit(dropdownControl);\" [placeholder]=\"placeholder\">\n      <mat-option *ngFor=\"let item of data;let i=index\" value=\"{{item[keyValue]}}\" id=\"option{{i}}\">\n        {{item[displayKey]}}\n      </mat-option>\n    </mat-select>\n    <span matSuffix>\n      <mat-icon>\n        <span>\n          <i [id]=\"iconId\" class=\"{{iconCustomClass}} dropdown-icon {{icon}}\"></i>\n        </span>\n      </mat-icon>\n    </span>\n    <mat-error *ngIf=\"dropdownControl.hasError('required')\">\n      {{errorMsg}}\n    </mat-error>\n  </mat-form-field>\n</span>",
+                        template: "<span>\n  <mat-form-field class=\"col p-0\">\n    <mat-select id=\"{{selectId}}\" [disabled]=\"disabled\" [class]=\"customSelectClass\" #selector\n      [formControl]=\"dropdownControl\" name=\"dropdownControl\" (selectionChange)=\"select.emit(dropdownControl);\"\n      [placeholder]=\"placeholder\">\n      <mat-option *ngFor=\"let item of data;let i=index\" value=\"{{item[keyValue]}}\" id=\"option{{i}}\">\n        {{item[displayKey]}}\n      </mat-option>\n    </mat-select>\n    <span matSuffix>\n      <mat-icon>\n        <span>\n          <i [id]=\"iconId\" class=\"{{iconCustomClass}} dropdown-icon {{icon}}\"></i>\n        </span>\n      </mat-icon>\n    </span>\n    <mat-error *ngIf=\"dropdownControl.hasError('required')\">\n      {{errorMsg}}\n    </mat-error>\n  </mat-form-field>\n</span>",
                         styles: [":host ::ng-deep.mat-select-trigger{height:1.7em!important;padding-bottom:.5em!important}::ng-deep .mat-select-arrow{border:0!important;-webkit-appearance:none;-moz-appearance:none}.mat-select-panel{margin-left:10px!important}.mat-select-panel:focus,.mat-select-trigger:focus{outline:0!important}.mat-select-arrow+i.dropdown-icon{float:right;margin-top:-30px;margin-right:4px;pointer-events:none;font-size:large}::ng-deep mat-select:focus{outline:0!important}.arrow-icon{font-size:2.5em}"]
                     }] }
         ];
@@ -8564,6 +8567,7 @@
             icon: [{ type: i0.Input }],
             iconCustomClass: [{ type: i0.Input, args: ['icon-custom-class',] }],
             iconId: [{ type: i0.Input, args: ['icon-id',] }],
+            disabled: [{ type: i0.Input, args: ['disabled',] }],
             value: [{ type: i0.Input }],
             select: [{ type: i0.Output }],
             valueChange: [{ type: i0.Output }],

@@ -14,6 +14,7 @@ export declare class SukuDropdownComponent implements OnInit {
     icon: string;
     iconCustomClass: string;
     iconId: string;
+    disabled: boolean;
     select: EventEmitter<{}>;
     constructor();
     ngOnInit(): void;

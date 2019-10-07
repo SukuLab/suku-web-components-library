@@ -16,6 +16,7 @@ export declare class SukuDropdownWfcComponent implements OnInit {
     icon: string;
     iconCustomClass: string;
     iconId: string;
+    disabled: boolean;
     value: any;
     select: EventEmitter<{}>;
     valueChange: EventEmitter<{}>;
