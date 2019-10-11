@@ -7790,6 +7790,9 @@
                 if (val) {
                     this.checkBoxControl.patchValue(val);
                 }
+                else {
+                    this.checkBoxControl.patchValue(val);
+                }
             },
             enumerable: true,
             configurable: true

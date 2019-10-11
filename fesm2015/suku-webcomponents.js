@@ -6911,6 +6911,9 @@ class SukuCheckboxComponent {
         if (val) {
             this.checkBoxControl.patchValue(val);
         }
+        else {
+            this.checkBoxControl.patchValue(val);
+        }
     }
     /**
      * @param {?} value
