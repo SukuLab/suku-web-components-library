@@ -72,7 +72,6 @@ export { SukuNotificationPanelComponent as ɵcc } from './lib/suku-notification-
 export { SukuNotificationWidgetComponent as ɵv } from './lib/suku-notification-widget/suku-notification-widget.component';
 export { SukuPaymentPortalHelpComponent as ɵbx } from './lib/suku-payment-portal-help/suku-payment-portal-help.component';
 export { SukuPhoneWidgetComponent as ɵbd } from './lib/suku-phone-widget/suku-phone-widget.component';
-export { SafeHtmlPipe as ɵdt } from './lib/suku-product-trace-widget/safe-html.pipe';
 export { SukuProductTraceWidgetComponent as ɵbk } from './lib/suku-product-trace-widget/suku-product-trace-widget.component';
 export { SukuProfileHeaderComponent as ɵcg } from './lib/suku-profile-header/suku-profile-header.component';
 export { SukuProfileImageIconComponent as ɵcw } from './lib/suku-profile-image-icon/suku-profile-image-icon.component';
