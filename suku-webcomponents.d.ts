@@ -7,6 +7,7 @@ export { SukuAddIconComponent as ɵcd } from './lib/suku-add-icon/suku-add-icon.
 export { SukuAddLicenseModalComponent as ɵcy } from './lib/suku-add-license-modal/suku-add-license-modal.component';
 export { SukuAddWidgetComponent as ɵc } from './lib/suku-add-widget/suku-add-widget.component';
 export { SukuAddressWidgetComponent as ɵbe } from './lib/suku-address-widget/suku-address-widget.component';
+export { SukuAuthTableComponent as ɵds } from './lib/suku-auth-table/suku-auth-table.component';
 export { SukuBeneficialOwnerComponent as ɵbt } from './lib/suku-beneficial-owner/suku-beneficial-owner.component';
 export { SukuBidInfoComponent as ɵbc } from './lib/suku-bid-info/suku-bid-info.component';
 export { SukuLargeBidTagComponent as ɵcq } from './lib/suku-bid-tag-type-two/suku-bid-tag-type-two.component';
