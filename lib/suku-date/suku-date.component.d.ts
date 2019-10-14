@@ -1,6 +1,6 @@
 import { OnInit } from '@angular/core';
 export declare class SukuDateComponent implements OnInit {
-    dateString: any;
+    dateString: string;
     fontSize: any;
     fontWeight: any;
     dateId: string;
