@@ -42,6 +42,9 @@ export declare class SukuFormTableComponent implements OnInit {
     formStatus: EventEmitter<{}>;
     sortable: string;
     _null: any;
+    blockPaste(e: KeyboardEvent): void;
+    blockCopy(e: KeyboardEvent): void;
+    blockCut(e: KeyboardEvent): void;
     constructor();
     ngOnInit(): void;
     addTable(val: any, editIndex: any): void;
@@ -54,6 +57,6 @@ export declare class SukuFormTableComponent implements OnInit {
     patchValue(selection: any, defaultValue: any, index: any): Promise<void>;
     sendData(): void;
     validate(key: any, index: any): void;
-    checkSpcialChar(event: any): boolean;
+    checkSpcialChar(event: any, type: any): boolean;
     sort(head: any, type: any, formate: any): void;
 }
