@@ -26,7 +26,7 @@ export declare class SukuAuthTableComponent implements OnInit {
     valueTextColor: any;
     valueTextSize: any;
     valueBgColor: any;
-    tableBgColor: any;
+    tableBgColor: string;
     constructor();
     ngOnInit(): void;
     getKeyValue(obj: any): {};
