@@ -23,7 +23,7 @@ export declare class SukuFormTableComponent implements OnInit {
     type: any;
     defaultCount: number;
     actionkey: string;
-    items: any[];
+    items: any;
     selectionKey: any;
     highlighterKey: any;
     patchKey: any;
