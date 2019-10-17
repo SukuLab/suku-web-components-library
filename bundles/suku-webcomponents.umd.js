@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/elements'), require('ngx-countdown-timer'), require('ngx-pagination'), require('@angular/material/dialog'), require('d3'), require('ngx-quill'), require('moment'), require('ng-pick-datetime'), require('@angular/material'), require('rxjs'), require('@angular/forms'), require('@angular/common/http'), require('@ngx-translate/http-loader'), require('@ngx-translate/core'), require('@angular/common'), require('@angular/core')) :
-    typeof define === 'function' && define.amd ? define('suku-webcomponents', ['exports', '@angular/elements', 'ngx-countdown-timer', 'ngx-pagination', '@angular/material/dialog', 'd3', 'ngx-quill', 'moment', 'ng-pick-datetime', '@angular/material', 'rxjs', '@angular/forms', '@angular/common/http', '@ngx-translate/http-loader', '@ngx-translate/core', '@angular/common', '@angular/core'], factory) :
-    (factory((global['suku-webcomponents'] = {}),global.ng.elements,global.ngxCountdownTimer,global.ngxPagination,global.ng.material.dialog,global.d3,global.ngxQuill,global._moment,global.ngPickDatetime,global.ng.material,global.rxjs,global.ng.forms,global.ng.common.http,global.httpLoader,global.core,global.ng.common,global.ng.core));
-}(this, (function (exports,elements,ngxCountdownTimer,ngxPagination,i1,d3,ngxQuill,_moment,ngPickDatetime,material,rxjs,forms,http,httpLoader,core,common,i0) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/elements'), require('ngx-countdown-timer'), require('ngx-pagination'), require('@angular/material/dialog'), require('d3'), require('ngx-quill'), require('moment'), require('ng-pick-datetime'), require('@angular/material'), require('rxjs'), require('@angular/common/http'), require('@ngx-translate/http-loader'), require('@ngx-translate/core'), require('@angular/common'), require('@angular/forms'), require('@angular/core')) :
+    typeof define === 'function' && define.amd ? define('suku-webcomponents', ['exports', '@angular/elements', 'ngx-countdown-timer', 'ngx-pagination', '@angular/material/dialog', 'd3', 'ngx-quill', 'moment', 'ng-pick-datetime', '@angular/material', 'rxjs', '@angular/common/http', '@ngx-translate/http-loader', '@ngx-translate/core', '@angular/common', '@angular/forms', '@angular/core'], factory) :
+    (factory((global['suku-webcomponents'] = {}),global.ng.elements,global.ngxCountdownTimer,global.ngxPagination,global.ng.material.dialog,global.d3,global.ngxQuill,global._moment,global.ngPickDatetime,global.ng.material,global.rxjs,global.ng.common.http,global.httpLoader,global.core,global.ng.common,global.ng.forms,global.ng.core));
+}(this, (function (exports,elements,ngxCountdownTimer,ngxPagination,i1,d3,ngxQuill,_moment,ngPickDatetime,material,rxjs,http,httpLoader,core,common,forms,i0) { 'use strict';
 
     var _moment__default = 'default' in _moment ? _moment['default'] : _moment;
 
@@ -10382,6 +10382,221 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
+    var SukuSearchWidgetComponent = /** @class */ (function () {
+        function SukuSearchWidgetComponent() {
+            this.searchFieldFontSize = 16;
+            this.searchFiledPlaceHolder = 'Search here...';
+            this.searchFieldFontColor = 'black';
+            this.fieldId = 'fieldId';
+            this.fieldValue = 'fieldValue';
+            this.buttonId = 'buttonId';
+            this.buttonName = 'buttonName';
+            this.searchControl = new forms.FormControl('');
+            this.color = 'primary';
+            this.placeholder = 'Username';
+            this.enableUserIcon = true;
+            this.errorMessageOne = 'Cannot be blank.';
+            this.errorMessageTwo = 'Invalid value.';
+            this.errorMessageThree = '';
+            this.errorMessageFour = '';
+            this.action = new i0.EventEmitter();
+            this.onChangeAction = new i0.EventEmitter();
+        }
+        Object.defineProperty(SukuSearchWidgetComponent.prototype, "value", {
+            set: /**
+             * @param {?} val
+             * @return {?}
+             */ function (val) {
+                if (val) {
+                    this.searchControl.patchValue(val);
+                }
+                else {
+                    this.searchControl.patchValue(val);
+                    // this.searchControl.enable();
+                }
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(SukuSearchWidgetComponent.prototype, "disable", {
+            set: /**
+             * @param {?} val
+             * @return {?}
+             */ function (val) {
+                if (val) {
+                    this.searchControl.disable();
+                }
+                else {
+                    this.searchControl.enable();
+                }
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(SukuSearchWidgetComponent.prototype, "enableRequiredValidator", {
+            set: /**
+             * @param {?} val
+             * @return {?}
+             */ function (val) {
+                console.log('enableRequiredValidator', val);
+                if (val) {
+                    this.searchControl.setValidators(forms.Validators.required);
+                    this.searchControl.updateValueAndValidity();
+                }
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(SukuSearchWidgetComponent.prototype, "enablePatternValidators", {
+            set: /**
+             * @param {?} val
+             * @return {?}
+             */ function (val) {
+                if (val) {
+                    this.searchControl.setValidators([forms.Validators.required, forms.Validators.pattern(this.pattern)]);
+                    this.searchControl.updateValueAndValidity();
+                }
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(SukuSearchWidgetComponent.prototype, "enableMaxLenValidators", {
+            set: /**
+             * @param {?} val
+             * @return {?}
+             */ function (val) {
+                console.log('enableMaxValidator', val);
+                if (val) {
+                    this.searchControl.setValidators(forms.Validators.maxLength(val));
+                    this.searchControl.updateValueAndValidity();
+                }
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(SukuSearchWidgetComponent.prototype, "enableMinLenValidators", {
+            set: /**
+             * @param {?} val
+             * @return {?}
+             */ function (val) {
+                console.log('enableMinValidator', val);
+                if (val) {
+                    this.searchControl.setValidators(forms.Validators.minLength(val));
+                    this.searchControl.updateValueAndValidity();
+                }
+            },
+            enumerable: true,
+            configurable: true
+        });
+        /**
+         * @return {?}
+         */
+        SukuSearchWidgetComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+            function () {
+                var _this = this;
+                this._subscription = this.searchControl.valueChanges.subscribe(( /**
+                 * @param {?} value
+                 * @return {?}
+                 */function (value) {
+                    if (value) {
+                        /** @type {?} */
+                        var controlValue = {
+                            dirty: _this.searchControl.dirty,
+                            disabled: _this.searchControl.disabled,
+                            enabled: _this.searchControl.enabled,
+                            errors: _this.searchControl.errors,
+                            invalid: _this.searchControl.invalid,
+                            pristine: _this.searchControl.pristine,
+                            status: _this.searchControl.status,
+                            touched: _this.searchControl.touched,
+                            untouched: _this.searchControl.untouched,
+                            valid: _this.searchControl.valid,
+                            validator: _this.searchControl.validator,
+                            value: _this.searchControl.value
+                        };
+                        _this.action.emit(controlValue);
+                    }
+                    console.log('searchControl', _this.searchControl);
+                }));
+            };
+        /**
+         * @return {?}
+         */
+        SukuSearchWidgetComponent.prototype.getErrorMessage = /**
+         * @return {?}
+         */
+            function () {
+                return this.searchControl.hasError('required') ? 'You must enter a value' :
+                    this.searchControl.hasError('minlength') ? 'username should be more than 2 letters' :
+                        '';
+            };
+        /**
+         * @return {?}
+         */
+        SukuSearchWidgetComponent.prototype.getValue = /**
+         * @return {?}
+         */
+            function () {
+                /** @type {?} */
+                var value = this.searchControl.value;
+                this.action.emit(value);
+            };
+        /**
+         * @return {?}
+         */
+        SukuSearchWidgetComponent.prototype.ngDestroy = /**
+         * @return {?}
+         */
+            function () {
+                this._subscription.unsubscribe();
+            };
+        SukuSearchWidgetComponent.decorators = [
+            { type: i0.Component, args: [{
+                        selector: 'suku-search-widget',
+                        template: "<div class=\"col row mt-3 ml-0\">\n\t<input type=\"search\" class=\"col-lg-11 col-md-11 col-sm-8 col-xs-8 p-1 inputStyle pl-3\"  [style.font-weight]=\"searchFieldFontWeight\" [formControl]=\"searchControl\" [style.font-size.px]=\"searchFieldFontSize\" [style.color]=\"searchFieldFontColor\" placeholder=\"{{searchFiledPlaceHolder}}\" id=\"searchControl\" name=\"searchControl\"\n\taria-label=\"Search through site content\">\n\t<button type=\"button\" id=\"{{buttonId}}\" class=\"col-lg-1 col-md-1 col-sm-4 col-xs-8 suku-info\" [disabled]=\"!searchControl?.value\" [style.font-size.px]=\"buttonFontSize\" [style.font-weight]=\"buttonFontWeight\" (click)=\"getValue();\">Search</button>\n</div>",
+                        styles: ["@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);@import url(https://fonts.googleapis.com/icon?family=Material+Icons);@import url(https://fonts.googleapis.com/css?family=Poppins:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Encode+Sans:200i,400,700);@import url(https://fonts.googleapis.com/css?family=Abel&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900&display=swap);:root{--suku-primary-font:'Poppins',sans-serif;--suku-secondary-font:'Encode Sans',sans-serif;--suku-ternary-font:'abelregular',sans-serif;--suku-primary-color:#a7bf2e;--suku-secondary-color:#d8fc40;--suku-warning-color:#FF0000;--suku-bg-primary:#2f2e2e;--suku-bg-secondary:#272727;--suku-bg-ternary:#35393e;--suku-homepage-bg:#ffffff;--suku-button-default-bg:#303030;--suku-button-disabled-bg:#d9d9d9;--suku-icon-disabled-color:#7f7f7f;--suku-default-icon-color:#b6b6b6;--suku-text-heading:#1d1d1d;--suku-text-sub-heading:#cccccc;--suku-text-label-one:#b6b6b6;--suku-text-label-two:#ffffff;--suku-text-label-three:#f2f2f2;--suku-text-link:#3e3e3e;--suku-text-info:#757575;--suku-primary-border-color:#a7bf2e;--suku-default-border-color:#e2e2e2;--suku-secondary-border-color:#757575;--suku-primary-border-radius:0 40px 0 0;--suku-secondary-border-radius:0px 0px 41px 41px;--suku-search-border-radius:10px 18px 18px 16px;--suku-default-border-radius:0px;--suku-default-button-border-radius:28px 76px 63px;--suku-star-empty-bg:#e1e1e1;--suku-star-full-bg:rgb(137; 137; 137);--suku-star-size:20px;--suku-filter-bg:#ffffff;--suku-default-bg:#ffffff;--suku-filter-label:#b6b6b6;--suku-filter-label-selected:black;--suku-progressbar-active-bg:#a7bf2e;--suku-progressbar-upcoming-bg:#757575;--suku-progressbar-completed-bg:#1c1c1c;--suku-profile-bg-color:#b6b6b6;--suku-profile-text-one:#dcd8d8f0;--suku-profile-text-two:#504e4e;--suku-font-size-1:11px;--suku-font-size-2:12px;--suku-font-size-3:14px;--suku-font-size-4:15px;--suku-font-size-5:17px;--suku-font-size-6:20px;--suku-font-size-7:22px;--suku-font-size-8:24px;--suku-font-size-9:26px;--suku-font-size-10:30px;--suku-font-size-11:50px}.btn{border-radius:28px 76px 63px;background-color:#fff;color:#000;padding:.5rem 1.5rem;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn:hover{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff}.btn:focus{border:2px solid #a7bf2e;border-radius:28px 76px 63px;background-color:#a7bf2e;color:#fff;outline:0!important;box-shadow:none!important}.btn-info{border:2px solid;border-color:var(--suku-primary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-info:hover{background-color:var(--suku-primary-border-color)!important;color:#fff}.btn-info:focus{background-color:var(--suku-primary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.btn-default{border:2px solid;border-color:var(--suku-secondary-border-color)!important;border-radius:28px 76px 63px;background-color:#fff;color:#000;font-size:12px!important;font-weight:700;font-family:var(--suku-primary-font)}.btn-default:hover{background-color:var(--suku-secondary-border-color)!important;color:#fff}.btn-default:focus{background-color:var(--suku-secondary-border-color)!important;color:#fff;outline:0!important;box-shadow:none!important}.suku-info .btn-info{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:#00000099}.suku-info .btn-info:active,.suku-info .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff}.suku-info .btn-info.disabled{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff;color:grey}.suku-info .btn-info.disabled.focus,.suku-info .btn-info.disabled:focus,.suku-info .btn-info.disabled:hover,.suku-info .btn-info[disabled].focus,.suku-info .btn-info[disabled]:focus,.suku-info .btn-info[disabled]:hover,.suku-info fieldset[disabled] .btn-info.focus,.suku-info fieldset[disabled] .btn-info:focus,.suku-info fieldset[disabled] .btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#fff!important;color:grey;box-shadow:none!important}.suku-info .btn-info.focus,.suku-info .btn-info:focus{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info .btn-info.active.focus,.suku-info .btn-info.active:focus,.suku-info .btn-info.active:hover,.suku-info .btn-info:active.focus,.suku-info .btn-info:active:focus,.suku-info .btn-info:active:hover,.suku-info .open>.dropdown-toggle .btn-info.focus,.suku-info .open>.dropdown-toggle .btn-info:focus,.suku-info .open>.dropdown-toggle.btn-info:hover{border:2px solid #a7bf2e;padding:10px 32px;background-color:#a7bf2e;color:#fff;box-shadow:none!important}.suku-info{border-top-right-radius:1rem;border:2px solid;border-color:var(--suku-primary-color);background-color:var(--suku-default-bg);color:var(--suku-text-heading);font-family:var(--suku-primary-font)}.inputStyle{border-bottom-left-radius:1rem;border:2px solid #bcbaba}.inputStyle:focus,.suku-info:focus{outline-width:0}@media (max-width:575px){.suku-info{border-bottom-left-radius:1rem;border-top-right-radius:0}.inputStyle{border-top-right-radius:1rem;border-bottom-left-radius:0}}"]
+                    }] }
+        ];
+        /** @nocollapse */
+        SukuSearchWidgetComponent.ctorParameters = function () { return []; };
+        SukuSearchWidgetComponent.propDecorators = {
+            searchFieldFontSize: [{ type: i0.Input, args: ['search-field-font-size',] }],
+            searchFiledPlaceHolder: [{ type: i0.Input, args: ['search-field-placeholder',] }],
+            searchFieldFontColor: [{ type: i0.Input, args: ['search-field-font-color',] }],
+            fieldId: [{ type: i0.Input, args: ['fieldId',] }],
+            fieldValue: [{ type: i0.Input, args: ['fieldValue',] }],
+            buttonId: [{ type: i0.Input, args: ['buttonId',] }],
+            buttonName: [{ type: i0.Input, args: ['buttonName',] }],
+            buttonFontSize: [{ type: i0.Input, args: ['buttonFontSize',] }],
+            buttonFontWeight: [{ type: i0.Input, args: ['buttonFontWeight',] }],
+            searchFieldFontWeight: [{ type: i0.Input, args: ['searchFieldFontWeight',] }],
+            pattern: [{ type: i0.Input }],
+            color: [{ type: i0.Input }],
+            placeholder: [{ type: i0.Input }],
+            customClass: [{ type: i0.Input, args: ['custom-class',] }],
+            enableUserIcon: [{ type: i0.Input, args: ['enable-user-icon',] }],
+            errorMessageOne: [{ type: i0.Input, args: ['error-message-one',] }],
+            errorMessageTwo: [{ type: i0.Input, args: ['error-message-two',] }],
+            errorMessageThree: [{ type: i0.Input, args: ['error-message-three',] }],
+            errorMessageFour: [{ type: i0.Input, args: ['error-message-four',] }],
+            value: [{ type: i0.Input, args: ['value',] }],
+            disable: [{ type: i0.Input, args: ['disabled',] }],
+            enableRequiredValidator: [{ type: i0.Input, args: ['enable-required-validator',] }],
+            enablePatternValidators: [{ type: i0.Input, args: ['enable-pattern-validator',] }],
+            enableMaxLenValidators: [{ type: i0.Input, args: ['enable-max-len-validator',] }],
+            enableMinLenValidators: [{ type: i0.Input, args: ['enable-min-len-validator',] }],
+            action: [{ type: i0.Output }],
+            onChangeAction: [{ type: i0.Output }]
+        };
+        return SukuSearchWidgetComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
     // import { SafeHtmlPipe } from './suku-product-trace-widget/safe-html.pipe';
     // AoT requires an exported function for factories
     /**
@@ -10481,7 +10696,8 @@
                             DateLocaleFilter,
                             SukuMessageWidgetComponent,
                             SukuAuthTableComponent,
-                            SukuTrimPipe
+                            SukuTrimPipe,
+                            SukuSearchWidgetComponent
                             // SafeHtmlPipe
                         ],
                         imports: [
@@ -10631,7 +10847,8 @@
                             SukuConfirmationStatusModalComponent,
                             SukuFormTableComponent,
                             SukuMessageWidgetComponent,
-                            SukuAuthTableComponent
+                            SukuAuthTableComponent,
+                            SukuSearchWidgetComponent
                         ],
                         entryComponents: [SukuConfirmationModalComponent, SukuAddLicenseModalComponent, SukuConfirmationStatusModalComponent],
                         schemas: [],
@@ -11007,6 +11224,7 @@
     exports.ɵbn = SukuRatingStarComponent;
     exports.ɵbp = SukuResponseComponent;
     exports.ɵbf = SukuSearchInputComponent;
+    exports.ɵdu = SukuSearchWidgetComponent;
     exports.ɵba = SukuSelectInputComponent;
     exports.ɵcm = SukuShippingInfoWidgetComponent;
     exports.ɵbo = SukuShippingWidgetComponent;

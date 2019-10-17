@@ -85,6 +85,7 @@ export { SukuRatingCardLineComponent as ɵcb } from './lib/suku-rating-card-line
 export { SukuRatingStarComponent as ɵbn } from './lib/suku-rating-star/suku-rating-star.component';
 export { SukuResponseComponent as ɵbp } from './lib/suku-response/suku-response.component';
 export { SukuSearchInputComponent as ɵbf } from './lib/suku-search-input/suku-search-input.component';
+export { SukuSearchWidgetComponent as ɵdu } from './lib/suku-search-widget/suku-search-widget.component';
 export { SukuSelectInputComponent as ɵba } from './lib/suku-select-input/suku-select-input.component';
 export { SukuShippingInfoWidgetComponent as ɵcm } from './lib/suku-shipping-info-widget/suku-shipping-info-widget.component';
 export { SukuShippingWidgetComponent as ɵbo } from './lib/suku-shipping-widget/suku-shipping-widget.component';
