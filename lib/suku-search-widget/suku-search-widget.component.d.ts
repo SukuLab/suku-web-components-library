@@ -29,10 +29,11 @@ export declare class SukuSearchWidgetComponent implements OnInit {
     enableMaxLenValidators: any;
     enableMinLenValidators: any;
     action: EventEmitter<{}>;
+    getValue: EventEmitter<{}>;
     onChangeAction: EventEmitter<{}>;
     constructor();
     ngOnInit(): void;
     getErrorMessage(): "" | "You must enter a value" | "username should be more than 2 letters";
-    getValue(): void;
+    getFieldValue(): void;
     ngDestroy(): void;
 }
