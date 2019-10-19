@@ -4285,7 +4285,6 @@ var SukuDwollaFundingSourceComponent = /** @class */ (function () {
                 }
             }
             console.log('triggered', this._iavToken);
-            dwolla.configure('sandbox');
             dwolla.iav.start(this._iavToken, {
                 container: 'iavContainer',
                 stylesheets: ['https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext'],
