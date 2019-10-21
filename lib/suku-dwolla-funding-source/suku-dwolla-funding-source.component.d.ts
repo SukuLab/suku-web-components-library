@@ -7,6 +7,7 @@ export declare class SukuDwollaFundingSourceComponent implements OnInit {
     enable: {
         button: boolean;
     };
+    type: string;
     iavToken: any;
     validResponse: any;
     action: EventEmitter<{}>;

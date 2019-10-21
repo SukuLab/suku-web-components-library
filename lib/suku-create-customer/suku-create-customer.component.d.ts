@@ -28,6 +28,7 @@ export declare class SukuCreateCustomerComponent implements OnInit {
     businessClassificationValue: any;
     accountTypeChk: any;
     accountTypeControl: any;
+    disableBtn: boolean;
     accountType: {
         name: string;
         value: number;
