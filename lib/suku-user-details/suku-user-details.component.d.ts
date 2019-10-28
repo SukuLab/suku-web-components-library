@@ -19,8 +19,6 @@ export declare class SukuUserDetailsComponent implements OnInit {
     state: any;
     zip: any;
     country: any;
-    companyIconSize: number;
-    companyIconColor: string;
     constructor();
     ngOnInit(): void;
 }
