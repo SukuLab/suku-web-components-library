@@ -19,6 +19,7 @@ export declare class SukuDisplayTableComponent implements OnInit {
     dataColor: any;
     dataWeight: any;
     hrefSelection: string;
+    hrefSelectionOne: any;
     colorPallete: string[];
     status: string[];
     showPagination: boolean;
@@ -29,6 +30,7 @@ export declare class SukuDisplayTableComponent implements OnInit {
     paginationNextLabel: string;
     action: EventEmitter<{}>;
     pagination: EventEmitter<{}>;
+    actionTwo: EventEmitter<{}>;
     sortable: string;
     dateType: string[];
     enableDatePipe: boolean;
