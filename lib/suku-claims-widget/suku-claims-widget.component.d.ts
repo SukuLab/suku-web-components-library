@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { OnInit, EventEmitter } from '@angular/core';
 export declare class SukuClaimsWidgetComponent implements OnInit {
     claims: {
         name: string;
@@ -11,6 +11,7 @@ export declare class SukuClaimsWidgetComponent implements OnInit {
     tooltipInfo: string;
     positionTooltipRight: any;
     positionTooltipBottom: any;
+    action: EventEmitter<{}>;
     constructor();
     ngOnInit(): void;
 }
