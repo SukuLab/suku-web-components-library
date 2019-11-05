@@ -17,7 +17,7 @@ export declare class SukuFormTableComponent implements OnInit {
     headerWeight: any;
     colorPallete: string[];
     status: string[];
-    tableDisabled: boolean;
+    tableDisabled: any[];
     enableEditIndex: any;
     typeKey: any;
     type: any;
@@ -35,6 +35,7 @@ export declare class SukuFormTableComponent implements OnInit {
     keyData: any[];
     controlsSize: any;
     controlCustomClass: any;
+    disableSelectAll: boolean;
     patchEmpty: string;
     errorMessageOne: string;
     save: EventEmitter<{}>;
