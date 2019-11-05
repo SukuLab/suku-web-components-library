@@ -18,6 +18,7 @@ export declare class SukuFileUploadComponent implements OnInit {
     iconId: string;
     iconCustomClass: string;
     fileInputId: string;
+    title: string;
     action: EventEmitter<{}>;
     constructor(snackBar: MatSnackBar);
     ngOnInit(): void;
