@@ -37,6 +37,7 @@ export declare class SukuFormTableComponent implements OnInit {
     controlCustomClass: any;
     disableSelectAll: boolean;
     patchEmpty: string;
+    hideErrorMsg: boolean;
     errorMessageOne: string;
     save: EventEmitter<{}>;
     remove: EventEmitter<{}>;
