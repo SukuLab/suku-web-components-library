@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { OnInit, EventEmitter } from '@angular/core';
 export declare class SukuAuthTableComponent implements OnInit {
     tableHeading: string;
     tableContent: ({
@@ -27,6 +27,7 @@ export declare class SukuAuthTableComponent implements OnInit {
     valueTextSize: any;
     valueBgColor: any;
     tableBgColor: string;
+    action: EventEmitter<{}>;
     constructor();
     ngOnInit(): void;
     getKeyValue(obj: any): {};
