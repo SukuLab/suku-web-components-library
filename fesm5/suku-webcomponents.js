@@ -9761,11 +9761,19 @@ var SukuFormTableComponent = /** @class */ (function () {
                     if (key == _this.patchKey) {
                         console.log('element', element[key]);
                         if (!_this.tableDisabled[index]) {
-                            element[key] = '';
+                            element[_this.patchKey] = '';
+                        }
+                    }
+                    if (_this.type == 'Processor') {
+                        if (key == _this.highlighterKey) {
+                            console.log('element', element[key]);
+                            if (!_this.tableDisabled[index]) {
+                                element[_this.highlighterKey] = '';
+                            }
                         }
                     }
                 }));
-                console.log('data', element);
+                console.log('data', element, _this.patchKey);
             }));
         }
     };
