@@ -4,7 +4,10 @@ export declare class SukuFiltersComponent implements OnInit {
     form: FormGroup;
     filterHeading: any;
     size: string;
+    color: string;
+    diameter: string;
     filterSubHeading: any;
+    enableLoader: boolean;
     statusTypesDynamic: any[];
     filterOnChange: EventEmitter<{}>;
     applyFilter: EventEmitter<{}>;

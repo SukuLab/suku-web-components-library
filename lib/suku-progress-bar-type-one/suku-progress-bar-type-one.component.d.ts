@@ -4,12 +4,11 @@ export declare class SukuProgressBarTypeOneComponent implements OnInit {
     progressStyleTwo: string;
     progressStyleThree: string;
     progressStyleFour: string;
-    progressStyleFive: string;
     customHeadingOneClass: string;
     customHeadingTwoClass: string;
     customHeadingThreeClass: string;
     customHeadingFourClass: string;
-    customHeadingFiveClass: string;
+    enablePointer: boolean;
     progressBarLabels: {
         labelOne: string;
         labelTwo: string;
@@ -28,21 +27,6 @@ export declare class SukuProgressBarTypeOneComponent implements OnInit {
         labelThreeId: string;
         labelFourId: string;
     };
-    customClass: string;
-    progressBarTitle: string;
-    progressBarColor: any;
-    progressBarFontSize: any;
-    progressBarFontWight: any;
-    progressBarLabelOne: string;
-    progressBarLabelTwo: string;
-    progressBarLabelThree: string;
-    progressBarLabelFour: string;
-    labelTitleCustomClass: string;
-    lableTextCustomClass: string;
-    labelGridCustomClass: string;
-    progressBarNameGridAlign: string;
-    progressBarTitleClass: string;
-    checkMarkCustomClass: string;
     progressOneAction: EventEmitter<{}>;
     progressTwoAction: EventEmitter<{}>;
     progressThreeAction: EventEmitter<{}>;

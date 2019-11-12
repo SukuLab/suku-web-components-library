@@ -8,8 +8,11 @@ export declare class SukuModalService {
     confirmationDialogClose: boolean;
     onDialogClose: EventEmitter<any>;
     bSubject: BehaviorSubject<string>;
+    confirmationStatusDialogWidth: any;
+    confirmationStatusDialogHeight: any;
     constructor(dialogService: MatDialog);
     openConfirmationDialog(data?: any): void;
     openConfirmationModalDialog(data?: any): void;
+    openConfirmationStatusModalDialog(data?: any): void;
     openLicenseModalDialogDialog(data?: any): void;
 }

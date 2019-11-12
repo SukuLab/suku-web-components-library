@@ -29,11 +29,6 @@ export declare class SukuFundingSourceComponent implements OnInit {
         labelThreeId: string;
     };
     contentOne: string;
-    labelOneId: any;
-    labelOneSize: any;
-    labelOneColor: any;
-    labelOneWeight: any;
-    labelOneCustomClass: any;
     removeDefault: EventEmitter<{}>;
     makeDefaultAction: EventEmitter<{}>;
     removeSourceAction: EventEmitter<{}>;

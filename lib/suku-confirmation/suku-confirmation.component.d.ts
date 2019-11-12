@@ -4,6 +4,7 @@ export declare class SukuConfirmationComponent implements OnInit {
     dialogCustomRef: MatDialogRef<SukuConfirmationComponent>;
     data: any;
     dialogData: {
+        'showCloseButton': boolean;
         'icon': string;
         'iconCustomClass': string;
         'iconId': string;
@@ -19,12 +20,15 @@ export declare class SukuConfirmationComponent implements OnInit {
         'titleBoxCustomClass': string;
         'buttonLableOne': string;
         'buttonLableOneId': string;
+        'buttonLableThreeId': string;
         'buttonLableTwo': string;
         'buttonLableTwoId': string;
         'buttonCustomClass': string;
+        'buttonLableThree': string;
     };
     constructor(dialogCustomRef: MatDialogRef<SukuConfirmationComponent>, data: any);
     ngOnInit(): void;
+    closeDialog(): void;
     cancel(): void;
     submit(): void;
 }

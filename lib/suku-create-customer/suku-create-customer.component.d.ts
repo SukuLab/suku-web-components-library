@@ -26,6 +26,13 @@ export declare class SukuCreateCustomerComponent implements OnInit {
     businessTypeValue: any;
     industryTypeValue: any;
     businessClassificationValue: any;
+    accountTypeChk: any;
+    accountTypeControl: any;
+    disableBtn: boolean;
+    accountType: {
+        name: string;
+        value: number;
+    }[];
     ssnLimit: any;
     constructor(fb: FormBuilder);
     ngOnInit(): void;
@@ -35,4 +42,5 @@ export declare class SukuCreateCustomerComponent implements OnInit {
     validateTypeFun(type: any): void;
     action1(): void;
     GetFormattedDate(): void;
+    accountTypeAction(e: any): void;
 }
