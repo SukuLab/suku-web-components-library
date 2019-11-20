@@ -18,6 +18,7 @@ export declare class SukuFormTableComponent implements OnInit {
     colorPallete: string[];
     status: string[];
     tableDisabled: any[];
+    disableHighlightKey: boolean;
     enableEditIndex: any;
     typeKey: any;
     type: any;
