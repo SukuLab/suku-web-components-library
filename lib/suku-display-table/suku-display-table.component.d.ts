@@ -37,5 +37,5 @@ export declare class SukuDisplayTableComponent implements OnInit {
     constructor();
     ngOnInit(): void;
     paginationFun(p: any): void;
-    sort(head: any, type: any, formate: any): void;
+    sort(head: any, type: any, sortOption: any): void;
 }
