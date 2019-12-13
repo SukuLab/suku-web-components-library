@@ -8921,11 +8921,17 @@ var SukuDisplayTableComponent = /** @class */ (function () {
                  * @return {?}
                  */
                 function (a, b) {
-                    if (a[head] < b[head] && sortOption == 'asse') {
+                    if (a[head].toLowerCase() < b[head].toLowerCase() && sortOption == 'asse') {
                         return -1;
                     }
-                    if (b[head] < a[head] && sortOption == 'desc') {
+                    if (b[head].toLowerCase() < a[head].toLowerCase() && sortOption == 'desc') {
                         return -1;
+                    }
+                    if (a[head].toLowerCase() > b[head].toLowerCase() && sortOption == 'asse') {
+                        return 1;
+                    }
+                    if (b[head].toLowerCase() > a[head].toLowerCase() && sortOption == 'desc') {
+                        return 1;
                     }
                     return 0;
                 }));
@@ -10001,6 +10007,12 @@ var SukuFormTableComponent = /** @class */ (function () {
                     }
                     if (b[head].toLowerCase() < a[head].toLowerCase() && sortOption == 'desc') {
                         return -1;
+                    }
+                    if (a[head].toLowerCase() > b[head].toLowerCase() && sortOption == 'asse') {
+                        return 1;
+                    }
+                    if (b[head].toLowerCase() > a[head].toLowerCase() && sortOption == 'desc') {
+                        return 1;
                     }
                     return 0;
                 }));
