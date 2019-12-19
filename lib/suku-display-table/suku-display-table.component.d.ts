@@ -34,6 +34,7 @@ export declare class SukuDisplayTableComponent implements OnInit {
     sortable: string;
     dateType: string[];
     enableDatePipe: boolean;
+    statusKey: string;
     constructor();
     ngOnInit(): void;
     paginationFun(p: any): void;
