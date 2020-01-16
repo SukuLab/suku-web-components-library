@@ -22,7 +22,7 @@ This library aims to provide generic ui components for suku platform!
 
 #### To run locally:
 Refer following repository
-[suku-web-components-library](https://github.com/SukuLab/suku-web-component-builder/tree/ft_integration) repo.
+[suku-web-component-builder](https://github.com/SukuLab/suku-web-component-builder/tree/ft_integration) repo.
 
 Find Documentation Here
 [Suku webcomponent Browser](https://sukulab.co/webcomponents/documentation).
