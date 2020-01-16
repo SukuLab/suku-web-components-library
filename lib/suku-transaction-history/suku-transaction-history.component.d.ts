@@ -1,0 +1,34 @@
+import { OnInit, EventEmitter } from '@angular/core';
+export declare class SukuTransactionHistoryComponent implements OnInit {
+    transactionHistory: string;
+    transactionDetailsId: string;
+    heading: any;
+    customClass: string;
+    tableBgColor: string;
+    transactionHistoryTittle: string;
+    bgCustomClass: string;
+    spinnerCustomClass: string;
+    spinnerRadius: string;
+    spinnerColor: string;
+    loadingCustomClass: string;
+    loaderMessage: string;
+    loadingColor: any;
+    loadingSize: any;
+    loadingWeight: any;
+    tableHeaderCustomClass: string;
+    tableBodyCustomClass: string;
+    buttonCustomClass: string;
+    typeId: string;
+    myAccountId: string;
+    counterPartyId: string;
+    amountId: string;
+    statusId: string;
+    dateCreatedId: string;
+    paymentManagementId: string;
+    action: EventEmitter<{}>;
+    cancelBtnLabel: string;
+    cancelId: string;
+    transactionDetails: any[];
+    constructor();
+    ngOnInit(): void;
+}
