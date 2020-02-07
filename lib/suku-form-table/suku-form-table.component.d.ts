@@ -6,7 +6,6 @@ export declare class SukuFormTableComponent implements OnInit {
     editable: any[];
     errorvalidationIndex: any;
     errorvalidationKey: any;
-    disableArrList: number[];
     titleOneId: any;
     titleOneSize: any;
     titleOneColor: string;
@@ -19,16 +18,12 @@ export declare class SukuFormTableComponent implements OnInit {
     colorPallete: string[];
     status: string[];
     tableDisabled: any[];
-    disableHighlightKey: boolean;
-    keyLength: number;
     enableEditIndex: any;
     typeKey: any;
     type: any;
     defaultCount: number;
     actionkey: string;
-    disabledArrayKey: any[];
     items: any;
-    uniqueKey: string;
     selectionKey: any;
     highlighterKey: any;
     patchKey: any;
@@ -66,5 +61,5 @@ export declare class SukuFormTableComponent implements OnInit {
     sendData(): void;
     validate(key: any, index: any): void;
     checkSpcialChar(event: any, type: any): boolean;
-    sort(head: any, type: any, sortOption: any): void;
+    sort(head: any, type: any, formate: any): void;
 }
