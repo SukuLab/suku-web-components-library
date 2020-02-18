@@ -9729,7 +9729,9 @@
             this.remove = new i0.EventEmitter();
             this.submitData = new i0.EventEmitter();
             this.formStatus = new i0.EventEmitter();
+            this.limit = new i0.EventEmitter();
             this.sortable = 'false';
+            this.maxRowLength = 1;
             this._null = null;
         }
         Object.defineProperty(SukuFormTableComponent.prototype, "enableEditIndex", {
@@ -9844,6 +9846,16 @@
          * @return {?}
          */
             function (val, editIndex) {
+                if (this._items.length === this.maxRowLength) {
+                    this.limit.emit(true);
+                    return;
+                }
+                if (val === 10) {
+                    if (this._items.length + val !== this.maxRowLength) {
+                        this.limit.emit(true);
+                        return;
+                    }
+                }
                 var _loop_1 = function (i) {
                     this_1.editable[editIndex + i] = true;
                     /** @type {?} */
@@ -10361,7 +10373,9 @@
             remove: [{ type: i0.Output }],
             submitData: [{ type: i0.Output }],
             formStatus: [{ type: i0.Output }],
+            limit: [{ type: i0.Output }],
             sortable: [{ type: i0.Input, args: ['table-sortable',] }],
+            maxRowLength: [{ type: i0.Input }],
             blockPaste: [{ type: i0.HostListener, args: ['paste', ['$event'],] }],
             blockCopy: [{ type: i0.HostListener, args: ['copy', ['$event'],] }],
             blockCut: [{ type: i0.HostListener, args: ['cut', ['$event'],] }]

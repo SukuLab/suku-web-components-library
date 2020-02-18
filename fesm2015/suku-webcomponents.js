@@ -8641,7 +8641,9 @@ class SukuFormTableComponent {
         this.remove = new EventEmitter();
         this.submitData = new EventEmitter();
         this.formStatus = new EventEmitter();
+        this.limit = new EventEmitter();
         this.sortable = 'false';
+        this.maxRowLength = 1;
         this._null = null;
     }
     /**
@@ -8733,6 +8735,16 @@ class SukuFormTableComponent {
      * @return {?}
      */
     addTable(val, editIndex) {
+        if (this._items.length === this.maxRowLength) {
+            this.limit.emit(true);
+            return;
+        }
+        if (val === 10) {
+            if (this._items.length + val !== this.maxRowLength) {
+                this.limit.emit(true);
+                return;
+            }
+        }
         for (let i = 0; i < val; i++) {
             this.editable[editIndex + i] = true;
             /** @type {?} */
@@ -9208,7 +9220,9 @@ SukuFormTableComponent.propDecorators = {
     remove: [{ type: Output }],
     submitData: [{ type: Output }],
     formStatus: [{ type: Output }],
+    limit: [{ type: Output }],
     sortable: [{ type: Input, args: ['table-sortable',] }],
+    maxRowLength: [{ type: Input }],
     blockPaste: [{ type: HostListener, args: ['paste', ['$event'],] }],
     blockCopy: [{ type: HostListener, args: ['copy', ['$event'],] }],
     blockCut: [{ type: HostListener, args: ['cut', ['$event'],] }]
