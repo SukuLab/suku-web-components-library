@@ -8740,7 +8740,7 @@ class SukuFormTableComponent {
             return;
         }
         if (val === 10) {
-            if (this._items.length + val !== this.maxRowLength) {
+            if (this._items.length + val > this.maxRowLength) {
                 this.limit.emit(true);
                 return;
             }
