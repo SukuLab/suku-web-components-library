@@ -25,7 +25,7 @@ Refer following repository
 [suku-web-component-builder](https://github.com/SukuLab/suku-web-component-builder/tree/ft_integration) repo.
 
 Find Documentation Here
-[Suku webcomponent Browser](https://sukulab.co/webcomponents/documentation).
+[Suku webcomponent Browser](http://webcomponents.suku.network/webcomponents/documentation).
 
 `### Angular Configuration`
 
