@@ -1,5 +1,10 @@
 # suku-web-components-library
-Welcome to the suku-web-components Library. This library aims to provide generic ui components for suku platform.
+Welcome to the suku-web-components library. This library aims to provide Angular web components for the SUKU platform.
+
+> **Note:** This repository contains the build files that can be used to install and import web components into another Angular project (see steps below). For the web components source code see [SUKU Web Component Builder](https://github.com/SukuLab/suku-web-component-builder). A demo of every component is available using the [Suku Webcomponent Browser](http://webcomponents.suku.network/webcomponents/documentation).
+
+## Angular Web Components
+Check out [Angular's web component documententation](https://angular.io/guide/elements) for more information on how to use web components in your Angular project.
 
 ## Setup
 Install the package: `npm install @suku/suku-web-components-library`
