@@ -1,5 +1,6 @@
 # suku-web-components-library
 
+![Publish NPM Package](https://github.com/SukuLab/suku-web-components-library/workflows/Publish%20NPM%20Package/badge.svg)
 [![npm version](https://badge.fury.io/js/%40suku%2Fwebcomponents.svg)](https://badge.fury.io/js/%40suku%2Fwebcomponents)
 
 Welcome to the suku-web-components library. This library aims to provide Angular web components for the SUKU platform.
