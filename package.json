@@ -1,11 +1,15 @@
 {
   "name": "@suku/webcomponents",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "collection of suku web components",
-  "author": "comorin",
+  "author": "SUKU",
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/SukuLab/suku-web-components-library"
+	},
   "keywords": [
     "suku-utils"
-   ],
+  ],
   "peerDependencies": {
     "@angular/common": "^7.0.0",
     "@angular/core": "^7.0.0",
