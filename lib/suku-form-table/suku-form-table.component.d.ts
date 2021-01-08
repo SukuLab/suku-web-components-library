@@ -48,7 +48,9 @@ export declare class SukuFormTableComponent implements OnInit {
     remove: EventEmitter<{}>;
     submitData: EventEmitter<{}>;
     formStatus: EventEmitter<{}>;
+    limit: EventEmitter<{}>;
     sortable: string;
+    maxRowLength: number;
     _null: any;
     blockPaste(e: KeyboardEvent): void;
     blockCopy(e: KeyboardEvent): void;
