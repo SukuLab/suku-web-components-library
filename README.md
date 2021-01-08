@@ -11,7 +11,7 @@ Welcome to the suku-web-components library. This library aims to provide Angular
 Check out [Angular's web component documententation](https://angular.io/guide/elements) for more information on how to use web components in your Angular project.
 
 ## Setup
-Install the package: `npm install @suku/suku-web-components-library`
+Install the package: `npm install @suku/webcomponents`
 
 The following peer dependencies need to be installed:
 - `"d3": "^3.5.17"`
